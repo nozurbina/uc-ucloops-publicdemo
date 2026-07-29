@@ -1,0 +1,1376 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BB-INT018 — Sofia Tremblay</title>
+<style>/* base */
+/* ═══════════════════════════════════════════════════════════════
+   ucLoops — Urbina Consulting
+   Shared stylesheet for journey maps and persona profiles.
+
+   Loaded by:
+     • journey-map-template.html  (journey maps from /j-create-page)
+     • persona-template.html      (persona profiles from /p-create-page)
+
+   Structure:
+     1.  Global base
+     2.  Domain entity highlighting (shared)
+     3.  Item reference badges (shared)
+     4.  Journey map — layout
+     5.  Journey map — sidebar & persona cards
+     6.  Journey map — grid system
+     7.  Journey map — persona content blocks
+     8.  Journey map — persona-scoped rows
+     9.  Journey map — multi-persona shared rows
+     10. Journey map — brand / shared rows
+     11. Journey map — journey header UI
+     12. Persona profile — page header
+     13. Persona profile — content sections
+     14. Persona profile — emotions, voice, channels, relationships
+     15. Persona profile — footer
+     16. Responsive
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ───────────────────────────────────────────────────────────────
+   1. GLOBAL BASE
+   ─────────────────────────────────────────────────────────────── */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Journey maps use an app-shell layout (fixed sidebar, internal
+   scrolling). Lock body scrolling only when a .container is
+   present (i.e. on journey maps). Persona profiles flow normally. */
+body:has(.container) {
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+ul {
+    padding-left: 1em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   2. DOMAIN ENTITY HIGHLIGHTING (shared)
+   ─────────────────────────────────────────────────────────────── */
+
+.entity {
+    color: #1a1a6b;
+    font-weight: 700;
+    background-color: #CFCFFE;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 0.92em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   3. ITEM REFERENCE BADGES (shared)
+   Defaults: visible on persona profiles, hidden on journey maps
+   (where there are far more of them) until toggled on via the
+   "Show item IDs" button.
+   ─────────────────────────────────────────────────────────────── */
+
+.item-ref {
+    display: inline;
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #94a3b8;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    margin-right: 0.35rem;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+.journey-grid .item-ref               { display: none; }
+.journey-grid.show-refs .item-ref     { display: inline; }
+
+.ref-item-id {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #78350f;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    margin-right: 0.3rem;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   JOURNEY MAP STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   4. LAYOUT
+   ─────────────────────────────────────────────────────────────── */
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow-x: auto;
+}
+
+.main-content {
+    margin-left: 240px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   5. SIDEBAR & PERSONA CARDS
+   ─────────────────────────────────────────────────────────────── */
+
+.sidebar {
+    width: 240px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.show-all-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.show-all-btn:hover { background-color: #2980b9; }
+
+.persona-card {
+    background-color: #34495e;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.persona-card:hover {
+    background-color: #3d566e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.persona-card.active   { border-color: #3498db; background-color: #3d566e; }
+.persona-card.removed  { opacity: 0.5; transform: scale(0.95); }
+.persona-card.removed:hover { transform: scale(0.95); }
+
+.persona-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    background: #667eea;
+}
+.persona-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.persona-avatar .initials {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.15rem;
+    color: white;
+    font-size: 0.7rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+    z-index: 2;
+}
+
+/* Named avatar colours for journey sidebar */
+.persona1-avatar { background: #5b6abf; }
+.persona2-avatar { background: #c06195; }
+.persona3-avatar { background: #4facfe; }
+.persona4-avatar { background: #fa709a; }
+.persona5-avatar { background: #43d854; }
+.jordan-avatar   { background: #667eea; }
+.lisa-avatar     { background: #f093fb; }
+.samantha-avatar { background: #4facfe; }
+.marcus-avatar   { background: #fa709a; }
+.alex-avatar     { background: #43d854; }
+.cara-avatar     { background: #c06195; }
+
+/* Name + role inside sidebar cards (scoped to avoid clashing
+   with the persona page header) */
+.persona-card .persona-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+.persona-card .persona-role {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.persona-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    justify-content: center;
+}
+.persona-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    border: none;
+}
+.persona-btn.focus-btn  { background: #2c3e50d4; }
+.persona-btn.remove-btn { background: #502c2cd4; }
+.persona-btn span       { display: none; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   6. GRID SYSTEM
+   ─────────────────────────────────────────────────────────────── */
+
+.grid-container {
+    flex: 1;
+    overflow-x: scroll;
+    overflow-y: auto;
+    position: relative;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: 200px repeat(var(--stage-count, 5), 400px);
+    grid-auto-rows: min-content;
+    min-width: max-content;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    --stage-count: 5;
+}
+.journey-grid > * { align-self: stretch; }
+
+.grid-header {
+    position: sticky;
+    top: 0;
+    background-color: #34495e;
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid #2c3e50;
+}
+.grid-header.corner { background-color: #2c3e50; }
+
+.row-header {
+    position: sticky;
+    left: 0;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-right: 2px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 10;
+}
+.row-icon { font-size: 1.1rem; }
+
+.grid-cell {
+    padding: 1rem;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    display: grid;
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: 1rem;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   7. PERSONA CONTENT BLOCKS (inside grid cells)
+   ─────────────────────────────────────────────────────────────── */
+
+.persona-content {
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+.persona-content h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #2c3e50;
+}
+.persona-content p {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+.persona-content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.persona-content li {
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+.persona-content > *:last-child { margin-bottom: 0; }
+
+/* Persona-coloured left accents (match sidebar avatar colours) */
+.highlight-persona1 { border-left: 3px solid #5b6abf; }
+.highlight-persona2 { border-left: 3px solid #c06195; }
+.highlight-persona3 { border-left: 3px solid #4facfe; }
+.highlight-persona4 { border-left: 3px solid #fa709a; }
+.highlight-persona5 { border-left: 3px solid #43d854; }
+.highlight-jordan   { border-left: 3px solid #667eea; }
+.highlight-lisa     { border-left: 3px solid #f093fb; }
+.highlight-samantha { border-left: 3px solid #4facfe; }
+.highlight-marcus   { border-left: 3px solid #fa709a; }
+.highlight-alex     { border-left: 3px solid #43d854; }
+.highlight-cara     { border-left: 3px solid #c06195; }
+
+.persona-content.hidden,
+.hidden { display: none; }
+
+/* Shared list line-height */
+.grid-cell [class$="-row"] li,
+.grid-cell [class*="-row "] li { line-height: 1.4; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   8. PERSONA-SCOPED ROWS
+   ─────────────────────────────────────────────────────────────── */
+
+/* Goals — orange / amber */
+.row-header.goals-row          { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.grid-cell.goals-row           { background-color: #fffbeb; }
+.grid-cell.goals-row h4        { color: #92400e; }
+
+/* Narrative — warm yellow */
+.row-header.narrative-row      { background-color: #fef9c3; border-left: 4px solid #eab308; }
+.grid-cell.narrative-row       { background-color: #fefce8; }
+.grid-cell.narrative-row h4    { color: #713f12; }
+
+/* Questions — gold */
+.row-header.questions-row      { background-color: #fff3cd; border-left: 4px solid #f0ad4e; }
+.grid-cell.questions-row       { background-color: #fff8e1; }
+.grid-cell.questions-row h4    { color: #b7791f; }
+.grid-cell.questions-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.questions-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #fff3cd;
+    border-left: 3px solid #f0ad4e;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Problems — red */
+.row-header.problems-row       { background-color: #fee2e2; border-left: 4px solid #ef4444; }
+.grid-cell.problems-row        { background-color: #fef2f2; }
+.grid-cell.problems-row h4     { color: #991b1b; }
+.grid-cell.problems-row ul     { list-style: none; padding-left: 0; }
+.grid-cell.problems-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #fee2e2;
+    border-left: 3px solid #ef4444;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Tasks — green */
+.row-header.tasks-row          { background-color: #dcfce7; border-left: 4px solid #22c55e; }
+.grid-cell.tasks-row           { background-color: #f0fdf4; }
+.grid-cell.tasks-row h4        { color: #166534; }
+.grid-cell.tasks-row ul        { list-style: none; padding-left: 0; }
+.grid-cell.tasks-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #dcfce7;
+    border-left: 3px solid #22c55e;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Sentiment — cyan */
+.row-header.sentiment-row      { background-color: #cffafe; border-left: 4px solid #06b6d4; }
+.grid-cell.sentiment-row       { background-color: #ecfeff; }
+.grid-cell.sentiment-row h4    { color: #164e63; }
+.grid-cell.sentiment-row p     { font-weight: 600; font-size: 0.9rem; color: #0e7490; }
+
+/* Think/Feel quote — cool grey */
+.row-header.quote-row          { background-color: #f3f4f6; border-left: 4px solid #9ca3af; }
+.grid-cell.quote-row           { background-color: #fafafa; }
+.grid-cell.quote-row h4        { color: #374151; }
+.grid-cell.quote-row p {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #1f2937;
+    border-left: 3px solid #9ca3af;
+    padding-left: 0.75rem;
+    margin: 0.35rem 0 0;
+    line-height: 1.5;
+}
+
+/* Alternate paths — purple */
+.row-header.alternate-paths-row  { background-color: #ede9fe; border-left: 4px solid #a855f7; }
+.grid-cell.alternate-paths-row   { background-color: #faf5ff; }
+.grid-cell.alternate-paths-row h4 { color: #6b21a8; }
+.grid-cell.alternate-paths-row ul { list-style: none; padding-left: 0; }
+.grid-cell.alternate-paths-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #ede9fe;
+    border-left: 3px solid #a855f7;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Channels — blue */
+.row-header.channels-row       { background-color: #dbeafe; border-left: 4px solid #3b82f6; }
+.grid-cell.channels-row        { background-color: #eff6ff; }
+.grid-cell.channels-row h4     { color: #1e40af; }
+.channels-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+.channels-tags li {
+    background-color: #dbeafe;
+    border: 1px solid #93c5fd;
+    color: #1d4ed8;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   9. MULTI-PERSONA SHARED ROWS (j-multi-outline)
+   ─────────────────────────────────────────────────────────────── */
+
+/* Key shared activities — blue-grey */
+.row-header.activities-row     { background-color: #dde3ea; border-left: 4px solid #64748b; }
+.grid-cell.activities-row      { background-color: #f0f4f8; }
+.grid-cell.activities-row h4   { color: #1e293b; }
+.grid-cell.activities-row ul   { list-style: none; padding-left: 0; }
+.grid-cell.activities-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #e2e8f0;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Key communications — sage green */
+.row-header.communications-row { background-color: #bbf7d0; border-left: 4px solid #16a34a; }
+.grid-cell.communications-row  { background-color: #e8f5e8; }
+.grid-cell.communications-row h4 { color: #14532d; }
+.grid-cell.communications-row ul { list-style: none; padding-left: 0; }
+.grid-cell.communications-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #dcfce7;
+    border-left: 3px solid #4ade80;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Key assets — rose / pink */
+.row-header.assets-row         { background-color: #fce7f3; border-left: 4px solid #db2777; }
+.grid-cell.assets-row          { background-color: #fdf2f8; }
+.grid-cell.assets-row h4       { color: #831843; }
+.grid-cell.assets-row ul       { list-style: none; padding-left: 0; }
+.grid-cell.assets-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #fce7f3;
+    border-left: 3px solid #f472b6;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Decision gates — violet */
+.row-header.decisions-row      { background-color: #ede9fe; border-left: 4px solid #7c3aed; }
+.grid-cell.decisions-row       { background-color: #f5f3ff; }
+.grid-cell.decisions-row h4    { color: #4c1d95; }
+.grid-cell.decisions-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.decisions-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #ede9fe;
+    border-left: 3px solid #a78bfa;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   10. BRAND / SHARED ROWS (from /j-suggest, /j-data)
+   ─────────────────────────────────────────────────────────────── */
+
+/* Opportunities — warm amber + reference panels */
+.row-header.opportunities-row  { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.grid-cell.opportunities-row   { background-color: #fffbeb; }
+.grid-cell.opportunities-row h4 { color: #92400e; }
+
+.opportunity-card {
+    border: 1px solid #fde68a;
+    border-radius: 6px;
+    background: #fff;
+    padding: 0.6rem 0.75rem 0.5rem;
+    margin-bottom: 0.6rem;
+}
+.opportunity-card:last-child { margin-bottom: 0; }
+.opportunity-card p {
+    margin: 0 0 0.3rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #1c1917;
+}
+.opportunity-card p strong { color: #92400e; font-weight: 700; }
+
+.refs-toggle {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.18rem 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.refs-toggle:hover { background: #fde68a; }
+
+.opp-refs {
+    display: none;
+    margin-top: 0.45rem;
+    padding: 0.4rem 0.55rem;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #44403c;
+}
+.opp-refs.open                 { display: block; }
+.opp-refs .ref-item            { margin: 0 0 0.3rem; }
+.opp-refs .ref-item:last-child { margin-bottom: 0; }
+.opp-refs .ref-source          { font-weight: 600; color: #78350f; }
+.opp-refs .ref-verbatim        { font-style: italic; }
+
+/* Content assets — sky blue */
+.row-header.content-assets-row { background-color: #bae6fd; border-left: 4px solid #0284c7; }
+.grid-cell.content-assets-row  { background-color: #f0f9ff; }
+.grid-cell.content-assets-row h4 { color: #0c4a6e; }
+.grid-cell.content-assets-row ul  { list-style: none; padding-left: 0; }
+.grid-cell.content-assets-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #e0f2fe;
+    border-left: 3px solid #0284c7;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Calls to action — emerald green */
+.row-header.cta-row            { background-color: #bbf7d0; border-left: 4px solid #16a34a; }
+.grid-cell.cta-row             { background-color: #f0fdf4; }
+.grid-cell.cta-row h4          { color: #14532d; }
+.cta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+.cta-tags li {
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    color: #15803d;
+    border-radius: 999px;
+    padding: 0.22rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Stage transition signals — slate */
+.row-header.transitions-row    { background-color: #e2e8f0; border-left: 4px solid #64748b; }
+.grid-cell.transitions-row     { background-color: #f8fafc; }
+.grid-cell.transitions-row h4  { color: #1e293b; }
+.grid-cell.transitions-row ul  { list-style: none; padding-left: 0; }
+.grid-cell.transitions-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #f1f5f9;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Data generated — teal */
+.row-header.data-generated-row { background-color: #ccfbf1; border-left: 4px solid #14b8a6; }
+.grid-cell.data-generated-row  { background-color: #f0fdfa; }
+.grid-cell.data-generated-row h4 { color: #0f766e; }
+.grid-cell.data-generated-row ul { list-style: none; padding-left: 0; }
+.grid-cell.data-generated-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #ccfbf1;
+    border-left: 3px solid #14b8a6;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Data used — indigo */
+.row-header.data-used-row      { background-color: #e0e7ff; border-left: 4px solid #6366f1; }
+.grid-cell.data-used-row       { background-color: #f8fafc; }
+.grid-cell.data-used-row h4    { color: #1e40af; }
+.grid-cell.data-used-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.data-used-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #e0e7ff;
+    border-left: 3px solid #6366f1;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   11. JOURNEY HEADER UI
+   ─────────────────────────────────────────────────────────────── */
+
+.journey-header {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    flex-shrink: 0;
+}
+.journey-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    color: #2c3e50;
+}
+.journey-header p { color: #666; font-size: 0.9rem; }
+
+.journey-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.journey-id {
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 0.18rem 0.5rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.refs-toggle-btn {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+.refs-toggle-btn:hover         { background: #f1f5f9; border-color: #94a3b8; }
+.refs-toggle-btn.refs-visible  { background: #1e293b; border-color: #1e293b; color: #f8fafc; }
+
+.journey-description {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 900px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 0.15rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PERSONA PROFILE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   12. PAGE HEADER
+   ─────────────────────────────────────────────────────────────── */
+
+.page-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 2rem 1.5rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #4a6fa5;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+.avatar-wrapper .initials {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+    z-index: 3;
+}
+
+/* Persona name + role inside the page header */
+.page-header .persona-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.page-header .persona-role {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   13. CONTENT SECTIONS
+   ─────────────────────────────────────────────────────────────── */
+
+.content {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
+}
+
+.section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f59e0b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.section h3 .section-icon { font-size: 1.2rem; }
+
+.section ul    { padding-left: 1.25rem; }
+.section li    {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    font-size: 0.92rem;
+}
+.section p     {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Pain points + Fears variant — red accent */
+.section.pain-points              { background-color: #fef2f2; border-color: #ef4444; }
+.section.pain-points h3           { color: #991b1b; border-bottom-color: #ef4444; }
+.section.pain-points li           { color: #4a1c1c; }
+
+/* Goals variant — green accent */
+.section.goals                    { background-color: #f0fdf4; border-color: #22c55e; }
+.section.goals h3                 { color: #166534; border-bottom-color: #22c55e; }
+.section.goals li                 { color: #1a3a1a; }
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   14. EMOTIONS, VOICE, CHANNELS, RELATIONSHIPS
+   ─────────────────────────────────────────────────────────────── */
+
+.emotion-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.emotion-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #2c3e50;
+    transition: all 0.2s ease;
+}
+.emotion-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.emotion-tag .emotion-label {
+    font-weight: 400;
+    color: #555;
+    font-size: 0.82rem;
+}
+
+.voice-description {
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.quote-block {
+    background-color: #f8f9fa;
+    border-left: 4px solid #f59e0b;
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: #444;
+}
+.quote-block:last-child { margin-bottom: 0; }
+
+.channel-list {
+    list-style: none;
+    padding-left: 0;
+}
+.channel-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.92rem;
+}
+.channel-list li:last-child { border-bottom: none; }
+
+.channel-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #f59e0b;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.relationship-block {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e0e0e0;
+}
+.relationship-block:last-child { margin-bottom: 0; }
+.relationship-block h4 {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+.relationship-block p,
+.relationship-block li {
+    font-size: 0.88rem;
+    color: #555;
+}
+.relationship-block ul {
+    padding-left: 1.25rem;
+    margin-top: 0.35rem;
+}
+.relationship-block li { margin-bottom: 0.25rem; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   15. PAGE FOOTER
+   ─────────────────────────────────────────────────────────────── */
+
+.page-footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+.footer-divider {
+    width: 60px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.75rem auto;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   16. RESPONSIVE (persona profile only — journey maps are
+       designed for horizontal scroll on any screen)
+   ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .two-col           { grid-template-columns: 1fr; }
+    .page-header       { padding: 1.5rem 1rem 1.25rem; }
+    .page-header .persona-name { font-size: 1.6rem; }
+    .avatar-wrapper    { width: 100px; height: 100px; font-size: 2.2rem; }
+    .content           { padding: 0 1rem 2rem; }
+    .section           { padding: 1.25rem; }
+    .emotion-grid      { gap: 0.5rem; }
+    .emotion-tag       { padding: 0.4rem 0.75rem; font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+    .page-header .persona-name { font-size: 1.4rem; }
+    .avatar-wrapper    { width: 80px; height: 80px; font-size: 1.8rem; }
+    .emotion-grid      { flex-direction: column; }
+    .emotion-tag       { justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BorderBlend site supplement — brand-aligned (ucLoops / Urbina).
+   Appended AFTER humanloops-urbina.css. Light theme only.
+   Palette: slate #2c3e50 · orange #f59e0b · entity #CFCFFE/#1a1a6b
+            · id-badge slate on #f1f5f9 · source badge amber #fef3c7
+   Styles ONLY the custom components the generator emits (index, insights,
+   source pages, v1 personas/journeys). Template classes (.entity, .item-ref,
+   .section, .two-col, .quote-block, …) inherit from humanloops-urbina.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* link conventions: no underline at rest; underline text links on hover; badges/tiles never underline */
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+.tile,.tile:hover,.idbadge,.idbadge:hover,.item-ref,.item-ref:hover,.evref,.evref:hover,
+.rowid,.rowid:hover,.claimid,.claimid:hover,.refcite,.refcite:hover{text-decoration:none}
+
+/* Sticky compact bar (always shows the document + the provenance toggle, even when deep-linked down) */
+.stickybar{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:.6rem;
+  background:#2c3e50;color:#fff;padding:.4rem .7rem;border-radius:0 0 10px 10px;
+  box-shadow:0 3px 10px rgba(0,0,0,.18);margin:0 0 1rem}
+.stickybar .sb-home{color:#cdd7e0;text-decoration:none;font-size:1rem;flex:1;min-width:0;display:flex;align-items:center;gap:.4rem}
+.stickybar .sb-home:hover{color:#fff;text-decoration:none}
+.stickybar .sb-arrow{display:inline-block}
+.stickybar .sb-title{flex:1;font-weight:600;font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stickybar .sb-kicker{font-weight:400;opacity:.7;font-size:.72rem;margin-right:.35rem}
+/* "Show Item IDs & Provenance" toggle */
+.provtoggle{background:#f59e0b;color:#2c3e50;border:none;border-radius:6px;padding:.32rem .7rem;
+  font-size:.74rem;font-weight:700;cursor:pointer;margin:0;flex-shrink:0;white-space:nowrap}
+.provtoggle:hover{background:#e08e1e;text-decoration:none}
+body.prov-hidden .idbadge,body.prov-hidden .item-ref,body.prov-hidden .evidence,
+body.prov-hidden .prov-link,body.prov-hidden .reflist .idbadge{display:none}
+
+/* layout wrappers */
+.srcpage{max-width:64rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+.docwrap{max-width:72rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+.home{display:inline-block;font-size:.8rem;color:#667085;margin:.2rem 0 1rem}
+.home:hover{color:#2c3e50}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#b45309;font-weight:700}
+.srchead{border-bottom:2px solid #f59e0b;padding-bottom:1rem;margin-bottom:1.25rem}
+.srchead h1{font-size:1.5rem;margin:.25rem 0 .6rem;color:#2c3e50}
+.hint{font-weight:400;color:#667085;font-size:.82rem}
+.metagrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.2rem .9rem;font-size:.82rem}
+.metagrid .mk{color:#667085;margin-right:.4rem}
+.metagrid .mv{font-weight:600;color:#2c3e50}
+.lead{font-size:1.05rem;color:#444;margin:.6rem 0}
+
+/* clickable ID badges (match template .item-ref look) */
+.idbadge,.rowid,.claimid,.refcite{
+  font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-weight:700;font-size:.66rem;
+  letter-spacing:.3px;white-space:nowrap;background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;
+  border-radius:5px;padding:.08rem .34rem;text-decoration:none;display:inline-block}
+.idbadge:hover,.rowid:hover,.claimid:hover,.refcite:hover{text-decoration:none;outline:1px solid #f59e0b}
+.claimid{vertical-align:super;font-size:.58rem;margin-left:.15rem;background:#fef3c7;color:#78350f;border-color:#fde68a}
+.refcite{border-style:dashed}
+.reflist li{margin:.3rem 0;font-size:.86rem}
+
+/* transcript turns */
+.transcript{margin-top:.5rem}
+.turn{padding:.5rem .7rem;border-radius:9px;margin:.35rem 0;border:1px solid transparent}
+.turn.participant{background:#fff;border-color:#e0e0e0}
+.turn.interviewer{background:transparent}
+.turn.interviewer .turntext{color:#667085}
+.turnhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem}
+.spk{font-weight:700;font-size:.82rem;color:#2c3e50}
+.turn.interviewer .spk{color:#667085;font-weight:600}
+.turntext p{margin:.3rem 0}
+
+/* cards (social / tickets / pains) + doc */
+.cards{display:grid;gap:.7rem}
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.7rem .85rem;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.cardhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem}
+.ch{font-weight:700;font-size:.9rem;color:#2c3e50}
+.cardbody p{margin:.3rem 0;font-size:.9rem}
+.notes{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.4rem 1rem;margin:1rem 0}
+.doc h2{margin-top:1.6rem;border-bottom:1px solid #e0e0e0;padding-bottom:.3rem;color:#2c3e50}
+.doc h3{color:#2c3e50}
+
+/* home / index tiles */
+.hero{padding:2rem 0 1rem;border-bottom:2px solid #f59e0b;margin-bottom:1.5rem}
+.hero h1{font-size:2rem;margin:.2rem 0;color:#2c3e50}
+.hero p{color:#667085;max-width:46rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr))}
+.tile{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1rem;display:block;color:inherit;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.15s}
+.tile:hover{text-decoration:none;border-color:#f59e0b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.tile h3{margin:.1rem 0 .3rem;font-size:1.02rem;color:#2c3e50}
+.tile p{margin:0;font-size:.83rem;color:#667085}
+.sec-title{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#b45309;font-weight:700;margin:2rem 0 .8rem}
+.trailnote{background:#fff8ef;border:1px solid #f3c9ad;border-radius:10px;padding:.8rem 1rem;font-size:.86rem;margin:1rem 0;color:#7a4b2a}
+.trailnote code{background:#fff}
+/* Project Overview — prominent full-width white box */
+.overview{background:#fff;border:1px solid #e0e0e0;border-left:6px solid #f59e0b;border-radius:12px;
+  padding:1.3rem 1.6rem;margin:.4rem 0 1.4rem;box-shadow:0 4px 18px rgba(0,0,0,.09)}
+.overview h2{margin:0 0 .6rem;font-size:1.25rem;color:#2c3e50}
+.overview p{margin:.4rem 0;color:#333;font-size:.97rem;line-height:1.6;max-width:62rem}
+.overview p.ctx{font-size:.9rem;color:#555}
+.overview a{color:#b45309;font-weight:700}
+.srccode{font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-size:.72rem;font-weight:700;
+  color:#475569;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:4px;padding:.02rem .3rem}
+
+/* resolved evidence links + hover preview */
+.evidence{margin:.4rem 0 0;font-size:.8rem;color:#667085}
+.evidence .lbl{text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;margin-right:.3rem}
+.evref{font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-weight:700;font-size:.66rem;
+  background:#fef3c7;color:#78350f;border:1px solid #fde68a;border-radius:5px;padding:.08rem .34rem;
+  text-decoration:none;display:inline-block;margin:.1rem .25rem .1rem 0;position:relative}
+.evref:hover{outline:1px solid #f59e0b;text-decoration:none}
+.evref.insid{background:#e0f2f1;color:#0b6a5b;border-color:#b2dfdb}
+.evref .tip{display:none;position:absolute;left:0;top:135%;z-index:20;width:22rem;max-width:70vw;
+  background:#fff;border:1px solid #f59e0b;border-radius:9px;padding:.55rem .7rem;font-family:-apple-system,sans-serif;
+  font-weight:400;font-size:.78rem;color:#333;box-shadow:0 8px 26px rgba(0,0,0,.18);white-space:normal;line-height:1.4}
+.evref:hover .tip,.evref:focus .tip{display:block}
+.evref .tip .src{display:block;color:#b45309;font-weight:700;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
+
+/* insights page */
+.insight{background:#fff;border:1px solid #e0e0e0;border-left:4px solid #f59e0b;border-radius:10px;padding:.9rem 1.05rem;margin:.9rem 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.insight h3{font-size:1.05rem;margin:.1rem 0 .3rem;display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap;color:#2c3e50}
+.insight .cat{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:#667085;border:1px solid #e0e0e0;border-radius:20px;padding:.05rem .5rem}
+.insight .strength{font-size:.66rem;font-weight:700;padding:.05rem .45rem;border-radius:20px}
+.st-verified{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.st-strong{background:#fff7ed;color:#b45309;border:1px solid #fed7aa}
+.st-moderate{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.insight .body{font-size:.92rem}
+.insight .imp{color:#166534}
+.filterbar{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0;align-items:center}
+.filterbar button{background:#fff;border:1px solid #cbd5e1;border-radius:20px;padding:.3rem .8rem;cursor:pointer;color:#2c3e50;font-size:.8rem}
+.filterbar button.on{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.filterbar .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#667085}
+
+/* v1 persona pages (superseded by v3 but kept on-brand) */
+.persona-head{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;border-bottom:2px solid #f59e0b;padding-bottom:1rem;margin-bottom:1.2rem}
+.avatar{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;flex-shrink:0;background:#4a6fa5}
+.pblock{background:#fff;border:1px solid #e0e0e0;border-radius:11px;padding:.9rem 1.05rem;margin:.8rem 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.pblock h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#b45309;margin:0 0 .5rem}
+.pitem{margin:.45rem 0}.pitem .txt{font-size:.92rem}
+.two-col-cards{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:720px){.two-col-cards{grid-template-columns:1fr}}
+.quotebar{font-size:1.05rem;font-style:italic;border-left:4px solid #f59e0b;padding:.4rem 1rem;color:#333;margin:.6rem 0;background:#f8f9fa;border-radius:0 8px 8px 0}
+
+/* v1 journey grid (kept on-brand) */
+.jny-wrap{padding:1rem}
+.scrollx{overflow-x:auto;padding-bottom:1rem}
+.jgrid{display:grid;min-width:max-content;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;background:#fff}
+.jgrid>div{border-right:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;padding:.6rem .7rem}
+.jrow-label{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;background:#f1f5f9;color:#667085;position:sticky;left:0;z-index:2}
+.jstage-head{background:#2c3e50;color:#fff;font-weight:700}
+.jstage-head .sub{display:block;font-weight:400;font-size:.75rem;opacity:.9}
+.stagecell{font-size:.84rem}.stagecell .cellid{margin-bottom:.25rem}.emoji{font-size:1.1rem}
+
+/* flash on hash-nav */
+.flash,tr.flash td{animation:flash 1.6s ease-out}
+@keyframes flash{0%{background:#fff3c9}100%{}}
+
+/* tables in doc/source pages */
+.tablewrap{overflow-x:auto;margin:1rem 0}
+/* Banner — full width across all pages */
+body{position:relative}
+.promo-banner{position:fixed;top:0;left:0;right:0;background:rgba(80,8,80,.95);color:#fff;padding:.9rem 1.25rem;z-index:300}
+.promo-banner .banner-inner{max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:1.5rem}
+.promo-banner .banner-logo{height:34px;width:auto;flex-shrink:0;display:block}
+.promo-banner .banner-copy{flex:1;min-width:0}
+.promo-banner .banner-line{font-size:1.02rem;line-height:1.2;margin:0 0 .1rem}
+.promo-banner .banner-line:last-child{margin-bottom:0}
+.promo-banner b{color:#d7a32b;font-weight:700}
+.promo-banner a.banner-link{color:#d7a32b;font-weight:700;text-decoration:none}
+.promo-banner a.banner-link:hover{text-decoration:underline}
+.promo-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e8bc52,#d7a32b);color:#2c3e50;border:none;padding:.5rem 1.4rem;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;transition:.2s;white-space:nowrap;flex-shrink:0}
+.promo-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(215,163,43,.3);text-decoration:none}
+body{padding-top:8rem}
+@media(max-width:900px){.promo-banner{padding:.8rem 1.25rem}.promo-banner .banner-inner{flex-wrap:wrap}.promo-banner .banner-logo{height:26px}body{padding-top:12rem}}
+
+/* ── uc-chrome-v2: banner + sticky bar as one sticky wrapper ──
+   Previously both bars were position:fixed independently, offset from each
+   other by a JS-measured --banner-h, with body padding-top reserving room for
+   them. Three things had to agree and often didn't — hence the white seam.
+
+   Sticky instead of fixed, deliberately. These pages are normally viewed inside
+   the AI-projects viewer, which hides our .stickybar (it rebuilds it in the
+   parent page above the iframe) and auto-sizes the iframe to content height.
+   With no independent viewport, `fixed` buys nothing and the reserved padding
+   becomes a visible empty band. Sticky sits in normal flow — nothing to reserve,
+   nothing to measure — and still sticks when the page IS viewed directly. ── */
+.uc-chrome{position:sticky;top:0;z-index:300}
+.uc-chrome .promo-banner{position:relative !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+.uc-chrome .stickybar{position:static !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+/* The chrome is in flow now, so any reserved space is a gap. */
+body{padding-top:0 !important}
+
+/* Dismiss. Applied to <html> by a parser-blocking script before the banner is
+   parsed, so a previously-dismissed banner never flashes into view. */
+.uc-promo-hidden .promo-banner{display:none !important}
+.promo-close{position:absolute;top:.45rem;right:.55rem;width:26px;height:26px;padding:0;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:6px;
+  color:#fff;font-size:.8rem;line-height:1;cursor:pointer;font-family:inherit;
+  display:flex;align-items:center;justify-content:center}
+.promo-close:hover{background:rgba(255,255,255,.26)}
+
+@media(max-width:859px){
+  /* The logo is the first thing to sacrifice — it carries no information the
+     copy doesn't already, and it costs a whole row once the text wraps. */
+  .uc-chrome .promo-banner .banner-logo{display:none}
+  .uc-chrome .promo-banner .banner-inner{flex-direction:column;align-items:stretch;gap:.55rem}
+  .uc-chrome .promo-banner .banner-line{font-size:.92rem}
+  .uc-chrome .promo-banner .promo-btn{align-self:flex-start}
+  .promo-close{top:.3rem;right:.35rem}
+  .uc-chrome .promo-banner{padding-right:2.4rem}
+
+  /* The stage grid is several times wider than a phone. The drawer patch added
+     .container{overflow-x:hidden} so the off-canvas sidebar couldn't create a
+     page-level scrollbar — but that also clipped the grid, making every stage
+     after the first unreachable. Give the grid its own horizontal scroll. */
+  .main-content{overflow-x:auto !important;-webkit-overflow-scrolling:touch}
+}
+</style>
+</head><body class="srcpage prov-hidden">
+<script>try{if(localStorage.getItem("ucPromoDismissed")==="1")document.documentElement.className+=" uc-promo-hidden";}catch(e){}</script>
+<div class="uc-chrome"><div class="promo-banner"><button class="promo-close" type="button" onclick="ucCloseBanner()" aria-label="Dismiss this notice" title="Dismiss">&#10005;</button><div class="banner-inner"><img class="banner-logo" src="../2023-uc-logo-outline.svg" alt="Urbina Consulting"><div class="banner-copy"><div class="banner-line">This is a generated example built with Urbina's ucLoops AI methodology.</div><div class="banner-line">It's even better when used with <b>real research sources!</b></div><div class="banner-line">Learn how to use it yourself on our <a class="banner-link" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">cohort or private courses.</a></div></div><a class="promo-btn" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">Learn more</a></div></div><div class="stickybar"><a class="sb-home" href="../index.html" title="BorderBlend evidence map"><span class="sb-arrow">←</span><span class="sb-title">BorderBlend Evidence Map</span></a><button class="provtoggle" onclick="toggleProv(this)">Show Item IDs &amp; Provenance</button></div></div>
+
+
+<header class="srchead">
+  <div class="kicker">Source · Interview transcript</div>
+  <h1>BB-INT018 — Sofia Tremblay</h1>
+  <div class="metagrid"><div><span class="mk">Participant</span><span class="mv">Sofia Tremblay</span></div><div><span class="mk">Profile</span><span class="mv">28F, Montreal. DJ / creative-nightlife scene. Late-night after-venue foodie; food-culture-literate; bilingual (FR/EN). Discovers via Instagram + word of mouth in her scene.</span></div><div><span class="mk">Date</span><span class="mv">9 April 2026</span></div><div><span class="mk">Location</span><span class="mv">Video call — Sofia at home in Mile End, late afternoon (she&#x27;s DJing later that night)</span></div><div><span class="mk">Interviewer</span><span class="mv">Claire Fontaine (UC research team, bilingual)</span></div><div><span class="mk">Duration</span><span class="mv">41 minutes</span></div><div><span class="mk">Method</span><span class="mv">Video call</span></div><div><span class="mk">Status</span><span class="mv">Raw transcript — not yet cleaned</span></div></div>
+</header>
+<section class="notes"><h2>Pre-interview notes</h2><p>Recruited through the Montreal consumer panel with a nightlife/creative-scene screen. Sofia is a working DJ — plays club and warehouse nights across the Plateau and Mile End — and sits squarely in the after-venue food crowd the late-night archetype is built around. Bilingual, francophone first, code-switches naturally. Flagged during screening that BorderBlend&#x27;s national content &quot;reads English-only,&quot; which is why she was routed to Claire (bilingual interviewer). Second late-night foodie case after André (BB-INT017); Montreal lens. Calm, deliberate speaker — comfortable with silence.</p>
+<hr/></section>
+<section class="transcript"><h2>Transcript <span class="hint">· every line has a permalink ID — this is the leaf of the evidence trail</span></h2>
+<div class="turn interviewer" id="BB-INT018-t1"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t1" title="Permalink to this line">BB-INT018-t1</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Thanks for making time before your set. Maybe start with — how did you first come across BorderBlend?</p></div></div><div class="turn participant" id="BB-INT018-t2"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t2" title="Permalink to this line">BB-INT018-t2</a><span class="spk">Sofia</span></div><div class="turntext"><p>[pause] Word of mouth, first. Which is... the only way anything reaches me, honestly. A friend — she does lighting for a lot of the nights I play — she&#x27;d been to the truck after a show and she wouldn&#x27;t shut up about the brisket. And in my world, that&#x27;s the real signal, tsé. Not an ad. Somebody in the scene saying <em>&quot;non, but actually, go.&quot;</em> [pause] Then I found them on Instagram and, yeah. That was that.</p></div></div><div class="turn interviewer" id="BB-INT018-t3"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t3" title="Permalink to this line">BB-INT018-t3</a><span class="spk">Interviewer</span></div><div class="turntext"><p>So the scene is the discovery channel more than the app or search?</p></div></div><div class="turn participant" id="BB-INT018-t4"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t4" title="Permalink to this line">BB-INT018-t4</a><span class="spk">Sofia</span></div><div class="turntext"><p>Completely. Nobody&#x27;s Googling at 2 a.m. You&#x27;re leaving a venue, you&#x27;re with six people, everyone&#x27;s a little... elevated, and the question is just — <em>where do we go.</em> And whoever knows, knows. It travels by mouth. The Instagram is more like... confirmation. You already heard it&#x27;s good, then you look and the feed makes it feel real. Or it doesn&#x27;t.</p></div></div><div class="turn interviewer" id="BB-INT018-t5"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t5" title="Permalink to this line">BB-INT018-t5</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Tell me about that late-night moment. Walk me through it.</p></div></div><div class="turn participant" id="BB-INT018-t6"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t6" title="Permalink to this line">BB-INT018-t6</a><span class="spk">Sofia</span></div><div class="turntext"><p>[laughs softly] Okay. So — Montreal, late. You finish, you&#x27;re hungry in this very specific way that only happens after you&#x27;ve been on your feet for hours. It&#x27;s a ritual, that. The after. You don&#x27;t want a sit-down thing, you want something in your hand that&#x27;s <em>good,</em> that you eat standing on a corner in Mile End while everyone debriefs the night. [pause] BorderBlend fits that perfectly. When you can find it.</p></div></div><div class="turn interviewer" id="BB-INT018-t7"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t7" title="Permalink to this line">BB-INT018-t7</a><span class="spk">Interviewer</span></div><div class="turntext"><p>&quot;When you can find it&quot; — say more.</p></div></div><div class="turn participant" id="BB-INT018-t8"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t8" title="Permalink to this line">BB-INT018-t8</a><span class="spk">Sofia</span></div><div class="turntext"><p>That&#x27;s the whole problem, isn&#x27;t it. [pause] It&#x27;s a truck. It moves. So the question is never &quot;is it good,&quot; it&#x27;s &quot;is it <em>there,</em> right now, and where.&quot; And that — the brand makes surprisingly hard. I go to the Montreal Instagram to check and half the time the last post is, like, eleven days old. So I genuinely cannot tell if they&#x27;re open. If you&#x27;re open tonight, tell me you&#x27;re open tonight. C&#x27;est-à-dire — the silence reads as closed, even when you&#x27;re not.</p></div></div><div class="turn interviewer" id="BB-INT018-t9"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t9" title="Permalink to this line">BB-INT018-t9</a><span class="spk">Interviewer</span></div><div class="turntext"><p>So a dormant local account actively costs you the visit.</p></div></div><div class="turn participant" id="BB-INT018-t10"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t10" title="Permalink to this line">BB-INT018-t10</a><span class="spk">Sofia</span></div><div class="turntext"><p>Yes. And this is the frustrating part — because I <em>want</em> to come. The intent is there. I&#x27;m standing there with people ready to spend money and I can&#x27;t confirm you exist tonight, so we go to the place we <em>know</em> is open. Not because it&#x27;s better. Because it&#x27;s certain. [pause] You lose to certainty, not to quality.</p></div></div><div class="turn interviewer" id="BB-INT018-t11"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t11" title="Permalink to this line">BB-INT018-t11</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Do you ever use the app for that?</p></div></div><div class="turn participant" id="BB-INT018-t12"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t12" title="Permalink to this line">BB-INT018-t12</a><span class="spk">Sofia</span></div><div class="turntext"><p>I tried it once. It didn&#x27;t tell me anything the sad Instagram wasn&#x27;t already not telling me. [dry laugh] The menu on the app wasn&#x27;t what was on the truck board, and it couldn&#x27;t say where the truck actually was that night. So — same problem, different screen. I went back to just texting my friend &quot;you at the truck? is it there?&quot; A person is more reliable than the app, which... is a sentence a brand should not want to hear.</p></div></div><div class="turn interviewer" id="BB-INT018-t13"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t13" title="Permalink to this line">BB-INT018-t13</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Let me ask about the Instagram itself. You mentioned it reads English-only.</p></div></div><div class="turn participant" id="BB-INT018-t14"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t14" title="Permalink to this line">BB-INT018-t14</a><span class="spk">Sofia</span></div><div class="turntext"><p>[long pause] Yeah. This one I feel more than I can... let me say it right. The national account is all English. The captions, the launches, the — everything. And I notice it every single time. Not because I can&#x27;t read English, obviously I can. It&#x27;s that it tells me something. It says <em>this wasn&#x27;t made for here.</em> For us. It&#x27;s Toronto talking, and Montreal is just... a market on a map to them.</p></div></div><div class="turn interviewer" id="BB-INT018-t15"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t15" title="Permalink to this line">BB-INT018-t15</a><span class="spk">Interviewer</span></div><div class="turntext"><p>How does that land, emotionally?</p></div></div><div class="turn participant" id="BB-INT018-t16"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t16" title="Permalink to this line">BB-INT018-t16</a><span class="spk">Sofia</span></div><div class="turntext"><p>It&#x27;s a small exclusion but it&#x27;s a real one. You know when something&#x27;s translated late, or badly, or not at all — you feel like an afterthought. And in Quebec that&#x27;s not a neutral feeling, that has <em>history.</em> [pause] I saw a comment on one of their posts, somebody in French basically saying &quot;hello, we exist too,&quot; and — yeah. That&#x27;s the feeling exactly. It&#x27;s not anger. It&#x27;s just... <em>ah. Okay. I see where I am in the list.</em></p></div></div><div class="turn interviewer" id="BB-INT018-t17"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t17" title="Permalink to this line">BB-INT018-t17</a><span class="spk">Interviewer</span></div><div class="turntext"><p>If they got the French right — genuinely right — what would that signal?</p></div></div><div class="turn participant" id="BB-INT018-t18"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t18" title="Permalink to this line">BB-INT018-t18</a><span class="spk">Sofia</span></div><div class="turntext"><p>That they see Montreal as a place with its own culture and not a franchise you paste the English onto. [pause] And it has to be <em>Québécois</em> French. Not the French from France — we can smell that instantly, it&#x27;s almost worse than English, because it means you outsourced it to someone who&#x27;s never been here. Do it in fr-CA, in the actual voice of the city, or... honestly don&#x27;t bother, because half-doing it is its own kind of insult.</p></div></div><div class="turn interviewer" id="BB-INT018-t19"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t19" title="Permalink to this line">BB-INT018-t19</a><span class="spk">Interviewer</span></div><div class="turntext"><p>That&#x27;s a strong line. Let&#x27;s talk about the food. Where does the fusion sit for you — you&#x27;re clearly food-literate.</p></div></div><div class="turn participant" id="BB-INT018-t20"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t20" title="Permalink to this line">BB-INT018-t20</a><span class="spk">Sofia</span></div><div class="turntext"><p>[pause] So I&#x27;m suspicious of fusion by default. Most of it&#x27;s a gimmick — two cuisines in a headline to sell you a novelty, and it tastes like neither. But BorderBlend — the brisket, the Korean chicken one — it&#x27;s done <em>right.</em> The flavours actually make sense together, they&#x27;re not just... colliding for attention. That I respect. That&#x27;s the difference between fusion as a marketing word and fusion as somebody who actually cooks. [pause] I&#x27;d put that on my story. The gimmick version I&#x27;d never touch.</p></div></div><div class="turn interviewer" id="BB-INT018-t21"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t21" title="Permalink to this line">BB-INT018-t21</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Do you share it, then? When it&#x27;s good?</p></div></div><div class="turn participant" id="BB-INT018-t22"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t22" title="Permalink to this line">BB-INT018-t22</a><span class="spk">Sofia</span></div><div class="turntext"><p>Of course. But quietly, in my way — a story, the wrapper, the salsa verde, the corner we ended up on. My scene watches those. That&#x27;s more valuable to a brand than any billboard, and it costs them nothing. [pause] But — I&#x27;ll only tag them if the tag feels alive. If I look at their page and it&#x27;s a graveyard, tagging feels like shouting into an empty room. The dormancy kills the sharing too. It all connects.</p></div></div><div class="turn interviewer" id="BB-INT018-t23"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t23" title="Permalink to this line">BB-INT018-t23</a><span class="spk">Interviewer</span></div><div class="turntext"><p>So the scene amplifies you, but only if the brand feels present.</p></div></div><div class="turn participant" id="BB-INT018-t24"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t24" title="Permalink to this line">BB-INT018-t24</a><span class="spk">Sofia</span></div><div class="turntext"><p>Exactly. I&#x27;m doing the marketing for them, essentially, for free, out of genuine affection. The least they can do is be <em>there</em> on the other end. Post. Answer. Exist in French. Show me the truck&#x27;s out tonight. [pause] Meet me halfway, tsé.</p></div></div><div class="turn interviewer" id="BB-INT018-t25"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t25" title="Permalink to this line">BB-INT018-t25</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Let&#x27;s imagine they wanted to keep you close — loyalty, a newsletter, something. What would make you actually opt in?</p></div></div><div class="turn participant" id="BB-INT018-t26"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t26" title="Permalink to this line">BB-INT018-t26</a><span class="spk">Sofia</span></div><div class="turntext"><p>[pause] Okay. Real answer. Location drops. If there were a thing that told me, late — <em>&quot;the Mile End truck is parked on Saint-Viateur till 3&quot;</em> — I would subscribe to that in a heartbeat. That solves my actual problem. That&#x27;s not marketing, that&#x27;s <em>service.</em></p></div></div><div class="turn interviewer" id="BB-INT018-t27"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t27" title="Permalink to this line">BB-INT018-t27</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Location drops, late-night specifically.</p></div></div><div class="turn participant" id="BB-INT018-t28"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t28" title="Permalink to this line">BB-INT018-t28</a><span class="spk">Sofia</span></div><div class="turntext"><p>Late-night specifically. Nobody serves the 1 a.m. crowd information. And then — insider things. Seasonal previews, the new menu before it drops, a &quot;you&#x27;re on the list&quot; feeling for people in the scene. I&#x27;d value access over discounts, honestly. Make me feel like I know something before the room does. That&#x27;s currency for someone like me. [pause] And bilingual. All of it in French too, real French. If the loyalty thing came to me English-only I&#x27;d — that&#x27;s the whole point, non? You&#x27;d be inviting me in and speaking past me in the same breath.</p></div></div><div class="turn interviewer" id="BB-INT018-t29"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t29" title="Permalink to this line">BB-INT018-t29</a><span class="spk">Interviewer</span></div><div class="turntext"><p>And what would make you <em>not</em> subscribe — or unsubscribe fast?</p></div></div><div class="turn participant" id="BB-INT018-t30"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t30" title="Permalink to this line">BB-INT018-t30</a><span class="spk">Sofia</span></div><div class="turntext"><p>[immediately] English-only. Instant. That&#x27;s the make-or-break, that one. And spam — if it&#x27;s three &quot;ORDER NOW&quot; pushes a day with the little fire emojis, I&#x27;m gone, I don&#x27;t care how good the brisket is. [pause] The tone matters as much as the language. I want it to feel like a friend in the scene texting me a tip, not a brand shouting a promo. Get the register wrong and it doesn&#x27;t matter what language it&#x27;s in.</p></div></div><div class="turn interviewer" id="BB-INT018-t31"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t31" title="Permalink to this line">BB-INT018-t31</a><span class="spk">Interviewer</span></div><div class="turntext"><p>If you had one sentence for the brand team in Toronto, what is it?</p></div></div><div class="turn participant" id="BB-INT018-t32"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t32" title="Permalink to this line">BB-INT018-t32</a><span class="spk">Sofia</span></div><div class="turntext"><p>[long pause] ...You already have the food, and you have people like me doing your word of mouth for free. Don&#x27;t lose us over two things you could fix tomorrow — <em>tell us where the truck is,</em> and <em>speak to us in our own language, properly.</em> [pause] That&#x27;s not a complaint. That&#x27;s me telling you how to keep me.</p></div></div><div class="turn interviewer" id="BB-INT018-t33"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t33" title="Permalink to this line">BB-INT018-t33</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Thanks so much for your time — and have a good set tonight.</p></div></div><div class="turn participant" id="BB-INT018-t34"><div class="turnhead"><a class="idbadge" href="#BB-INT018-t34" title="Permalink to this line">BB-INT018-t34</a><span class="spk">Sofia</span></div><div class="turntext"><p>[laughs] Merci. Come find the truck after. If you can figure out where it is.</p><p>---</p></div></div>
+</section>
+<section class="notes"><h2>Post-interview notes</h2><p>Cultural-tastemaker profile — the second late-night foodie case (cf. André BB-INT017), Montreal lens. High passion, high scene-influence, and the lowest tolerance for two specific frictions: location uncertainty and French exclusion. She is unpaid word-of-mouth infrastructure for the brand within Montreal&#x27;s nightlife scene; the strategic read is &quot;win her properly,&quot; not &quot;handle a complaint.&quot;</p>
+<p>Location pain is acute and late-night-specific: the after-venue ritual creates real, spendable intent at 1–3 a.m., but a <strong>dormant Montreal Instagram</strong> (ties directly to social <strong>#003</strong>, &quot;can&#x27;t tell if you&#x27;re open&quot;) converts that intent into a lost visit — &quot;you lose to certainty, not to quality.&quot; The app failed her the same way (static menu ≠ truck board; no live location), reinforcing the canon real-time-status friction. Her single most compelling subscription hook is <strong>late-night location drops</strong> (&quot;the Mile End truck is on Saint-Viateur till 3&quot;) — framed as service, not marketing.</p>
+<p>French-localisation is a genuine <strong>make-or-break</strong> for loyalty, not a nice-to-have. She experiences the English-first national account as &quot;not made for here&quot; (cross-ref social <strong>#021</strong> French-language comment; franchisee <strong>Marc Bélanger BB-INT002</strong> French gap; canon note that fr-CA localisation arrives late / uses European-French terms). Critical nuance: European French is <em>worse</em> than English to her — signals outsourcing. Bilingual-done-right in authentic fr-CA is the price of entry; English-only loyalty content = instant no.</p>
+<p>Fusion credibility intact and echoes the canon consumer line — &quot;done right, not a gimmick,&quot; flavours &quot;make sense&quot; — and it&#x27;s a precondition for her sharing. Sharing behaviour is scene-native (Instagram stories, tagging) but conditional on the brand feeling <em>present</em>: account dormancy suppresses amplification as well as visits (&quot;tagging feels like shouting into an empty room&quot;). Compare Jasmine Oduro (BB-INT007), the other Montreal social-first consumer — both quality-anchored and values-driven; Sofia adds the nightlife-timing and language dimensions. Net: late-night Montreal = passion + location pain + French localisation as subscription make-or-break; addressable with bilingual (fr-CA) content, late-night location drops, and scene/insider access delivered in a friend-not-billboard register.</p></section>
+
+<script>
+// Toggle item IDs + provenance (evidence rows). Pages start with body.prov-hidden.
+function toggleProv(btn){
+  var on = document.body.classList.toggle('prov-hidden');
+  btn.innerHTML = on ? 'Show Item IDs &amp; Provenance' : 'Hide Item IDs &amp; Provenance';
+}
+// Evidence-trail helpers: hover/click preview of the verbatim a link points to.
+document.addEventListener('DOMContentLoaded',function(){
+  // highlight target on hash nav
+  function flash(){var h=location.hash.slice(1); if(!h)return;
+    var el=document.getElementById(decodeURIComponent(h)); if(el){el.classList.add('flash');
+    setTimeout(function(){el.classList.remove('flash');},1600); el.scrollIntoView({block:'center'});}}
+  window.addEventListener('hashchange',flash); flash();
+});
+</script>
+<script>
+/* uc-chrome-v2 sizing. The chrome is sticky and therefore in normal flow, so
+   nothing needs padding reserved for it. --chrome-h is still published because
+   the journey-map container sizes itself against it. */
+(function(){
+  var KEY="ucPromoDismissed";
+  function fit(){
+    var c=document.querySelector(".uc-chrome");
+    var h=c?c.offsetHeight:0;
+    document.documentElement.style.setProperty("--chrome-h",h+"px");
+  }
+  window.ucFitChrome=fit;
+  window.ucCloseBanner=function(){
+    document.documentElement.classList.add("uc-promo-hidden");
+    try{localStorage.setItem(KEY,"1");}catch(e){}
+    fit();
+  };
+  fit();
+  window.addEventListener("load",fit);
+  window.addEventListener("resize",fit);
+  /* The banner's height depends on how the copy wraps, which web fonts change
+     after first paint. Without this the reserved space can be stale. */
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+})();
+</script>
+</body></html>

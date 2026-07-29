@@ -1,0 +1,1402 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market research — BorderBlend</title>
+<style>/* base */
+/* ═══════════════════════════════════════════════════════════════
+   ucLoops — Urbina Consulting
+   Shared stylesheet for journey maps and persona profiles.
+
+   Loaded by:
+     • journey-map-template.html  (journey maps from /j-create-page)
+     • persona-template.html      (persona profiles from /p-create-page)
+
+   Structure:
+     1.  Global base
+     2.  Domain entity highlighting (shared)
+     3.  Item reference badges (shared)
+     4.  Journey map — layout
+     5.  Journey map — sidebar & persona cards
+     6.  Journey map — grid system
+     7.  Journey map — persona content blocks
+     8.  Journey map — persona-scoped rows
+     9.  Journey map — multi-persona shared rows
+     10. Journey map — brand / shared rows
+     11. Journey map — journey header UI
+     12. Persona profile — page header
+     13. Persona profile — content sections
+     14. Persona profile — emotions, voice, channels, relationships
+     15. Persona profile — footer
+     16. Responsive
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ───────────────────────────────────────────────────────────────
+   1. GLOBAL BASE
+   ─────────────────────────────────────────────────────────────── */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Journey maps use an app-shell layout (fixed sidebar, internal
+   scrolling). Lock body scrolling only when a .container is
+   present (i.e. on journey maps). Persona profiles flow normally. */
+body:has(.container) {
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+ul {
+    padding-left: 1em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   2. DOMAIN ENTITY HIGHLIGHTING (shared)
+   ─────────────────────────────────────────────────────────────── */
+
+.entity {
+    color: #1a1a6b;
+    font-weight: 700;
+    background-color: #CFCFFE;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 0.92em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   3. ITEM REFERENCE BADGES (shared)
+   Defaults: visible on persona profiles, hidden on journey maps
+   (where there are far more of them) until toggled on via the
+   "Show item IDs" button.
+   ─────────────────────────────────────────────────────────────── */
+
+.item-ref {
+    display: inline;
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #94a3b8;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    margin-right: 0.35rem;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+.journey-grid .item-ref               { display: none; }
+.journey-grid.show-refs .item-ref     { display: inline; }
+
+.ref-item-id {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #78350f;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    margin-right: 0.3rem;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   JOURNEY MAP STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   4. LAYOUT
+   ─────────────────────────────────────────────────────────────── */
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow-x: auto;
+}
+
+.main-content {
+    margin-left: 240px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   5. SIDEBAR & PERSONA CARDS
+   ─────────────────────────────────────────────────────────────── */
+
+.sidebar {
+    width: 240px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.show-all-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.show-all-btn:hover { background-color: #2980b9; }
+
+.persona-card {
+    background-color: #34495e;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.persona-card:hover {
+    background-color: #3d566e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.persona-card.active   { border-color: #3498db; background-color: #3d566e; }
+.persona-card.removed  { opacity: 0.5; transform: scale(0.95); }
+.persona-card.removed:hover { transform: scale(0.95); }
+
+.persona-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    background: #667eea;
+}
+.persona-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.persona-avatar .initials {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.15rem;
+    color: white;
+    font-size: 0.7rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+    z-index: 2;
+}
+
+/* Named avatar colours for journey sidebar */
+.persona1-avatar { background: #5b6abf; }
+.persona2-avatar { background: #c06195; }
+.persona3-avatar { background: #4facfe; }
+.persona4-avatar { background: #fa709a; }
+.persona5-avatar { background: #43d854; }
+.jordan-avatar   { background: #667eea; }
+.lisa-avatar     { background: #f093fb; }
+.samantha-avatar { background: #4facfe; }
+.marcus-avatar   { background: #fa709a; }
+.alex-avatar     { background: #43d854; }
+.cara-avatar     { background: #c06195; }
+
+/* Name + role inside sidebar cards (scoped to avoid clashing
+   with the persona page header) */
+.persona-card .persona-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+.persona-card .persona-role {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.persona-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    justify-content: center;
+}
+.persona-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    border: none;
+}
+.persona-btn.focus-btn  { background: #2c3e50d4; }
+.persona-btn.remove-btn { background: #502c2cd4; }
+.persona-btn span       { display: none; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   6. GRID SYSTEM
+   ─────────────────────────────────────────────────────────────── */
+
+.grid-container {
+    flex: 1;
+    overflow-x: scroll;
+    overflow-y: auto;
+    position: relative;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: 200px repeat(var(--stage-count, 5), 400px);
+    grid-auto-rows: min-content;
+    min-width: max-content;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    --stage-count: 5;
+}
+.journey-grid > * { align-self: stretch; }
+
+.grid-header {
+    position: sticky;
+    top: 0;
+    background-color: #34495e;
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid #2c3e50;
+}
+.grid-header.corner { background-color: #2c3e50; }
+
+.row-header {
+    position: sticky;
+    left: 0;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-right: 2px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 10;
+}
+.row-icon { font-size: 1.1rem; }
+
+.grid-cell {
+    padding: 1rem;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    display: grid;
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: 1rem;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   7. PERSONA CONTENT BLOCKS (inside grid cells)
+   ─────────────────────────────────────────────────────────────── */
+
+.persona-content {
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+.persona-content h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #2c3e50;
+}
+.persona-content p {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+.persona-content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.persona-content li {
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+.persona-content > *:last-child { margin-bottom: 0; }
+
+/* Persona-coloured left accents (match sidebar avatar colours) */
+.highlight-persona1 { border-left: 3px solid #5b6abf; }
+.highlight-persona2 { border-left: 3px solid #c06195; }
+.highlight-persona3 { border-left: 3px solid #4facfe; }
+.highlight-persona4 { border-left: 3px solid #fa709a; }
+.highlight-persona5 { border-left: 3px solid #43d854; }
+.highlight-jordan   { border-left: 3px solid #667eea; }
+.highlight-lisa     { border-left: 3px solid #f093fb; }
+.highlight-samantha { border-left: 3px solid #4facfe; }
+.highlight-marcus   { border-left: 3px solid #fa709a; }
+.highlight-alex     { border-left: 3px solid #43d854; }
+.highlight-cara     { border-left: 3px solid #c06195; }
+
+.persona-content.hidden,
+.hidden { display: none; }
+
+/* Shared list line-height */
+.grid-cell [class$="-row"] li,
+.grid-cell [class*="-row "] li { line-height: 1.4; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   8. PERSONA-SCOPED ROWS
+   ─────────────────────────────────────────────────────────────── */
+
+/* Goals — orange / amber */
+.row-header.goals-row          { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.grid-cell.goals-row           { background-color: #fffbeb; }
+.grid-cell.goals-row h4        { color: #92400e; }
+
+/* Narrative — warm yellow */
+.row-header.narrative-row      { background-color: #fef9c3; border-left: 4px solid #eab308; }
+.grid-cell.narrative-row       { background-color: #fefce8; }
+.grid-cell.narrative-row h4    { color: #713f12; }
+
+/* Questions — gold */
+.row-header.questions-row      { background-color: #fff3cd; border-left: 4px solid #f0ad4e; }
+.grid-cell.questions-row       { background-color: #fff8e1; }
+.grid-cell.questions-row h4    { color: #b7791f; }
+.grid-cell.questions-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.questions-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #fff3cd;
+    border-left: 3px solid #f0ad4e;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Problems — red */
+.row-header.problems-row       { background-color: #fee2e2; border-left: 4px solid #ef4444; }
+.grid-cell.problems-row        { background-color: #fef2f2; }
+.grid-cell.problems-row h4     { color: #991b1b; }
+.grid-cell.problems-row ul     { list-style: none; padding-left: 0; }
+.grid-cell.problems-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #fee2e2;
+    border-left: 3px solid #ef4444;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Tasks — green */
+.row-header.tasks-row          { background-color: #dcfce7; border-left: 4px solid #22c55e; }
+.grid-cell.tasks-row           { background-color: #f0fdf4; }
+.grid-cell.tasks-row h4        { color: #166534; }
+.grid-cell.tasks-row ul        { list-style: none; padding-left: 0; }
+.grid-cell.tasks-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #dcfce7;
+    border-left: 3px solid #22c55e;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Sentiment — cyan */
+.row-header.sentiment-row      { background-color: #cffafe; border-left: 4px solid #06b6d4; }
+.grid-cell.sentiment-row       { background-color: #ecfeff; }
+.grid-cell.sentiment-row h4    { color: #164e63; }
+.grid-cell.sentiment-row p     { font-weight: 600; font-size: 0.9rem; color: #0e7490; }
+
+/* Think/Feel quote — cool grey */
+.row-header.quote-row          { background-color: #f3f4f6; border-left: 4px solid #9ca3af; }
+.grid-cell.quote-row           { background-color: #fafafa; }
+.grid-cell.quote-row h4        { color: #374151; }
+.grid-cell.quote-row p {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #1f2937;
+    border-left: 3px solid #9ca3af;
+    padding-left: 0.75rem;
+    margin: 0.35rem 0 0;
+    line-height: 1.5;
+}
+
+/* Alternate paths — purple */
+.row-header.alternate-paths-row  { background-color: #ede9fe; border-left: 4px solid #a855f7; }
+.grid-cell.alternate-paths-row   { background-color: #faf5ff; }
+.grid-cell.alternate-paths-row h4 { color: #6b21a8; }
+.grid-cell.alternate-paths-row ul { list-style: none; padding-left: 0; }
+.grid-cell.alternate-paths-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #ede9fe;
+    border-left: 3px solid #a855f7;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Channels — blue */
+.row-header.channels-row       { background-color: #dbeafe; border-left: 4px solid #3b82f6; }
+.grid-cell.channels-row        { background-color: #eff6ff; }
+.grid-cell.channels-row h4     { color: #1e40af; }
+.channels-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+.channels-tags li {
+    background-color: #dbeafe;
+    border: 1px solid #93c5fd;
+    color: #1d4ed8;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   9. MULTI-PERSONA SHARED ROWS (j-multi-outline)
+   ─────────────────────────────────────────────────────────────── */
+
+/* Key shared activities — blue-grey */
+.row-header.activities-row     { background-color: #dde3ea; border-left: 4px solid #64748b; }
+.grid-cell.activities-row      { background-color: #f0f4f8; }
+.grid-cell.activities-row h4   { color: #1e293b; }
+.grid-cell.activities-row ul   { list-style: none; padding-left: 0; }
+.grid-cell.activities-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #e2e8f0;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Key communications — sage green */
+.row-header.communications-row { background-color: #bbf7d0; border-left: 4px solid #16a34a; }
+.grid-cell.communications-row  { background-color: #e8f5e8; }
+.grid-cell.communications-row h4 { color: #14532d; }
+.grid-cell.communications-row ul { list-style: none; padding-left: 0; }
+.grid-cell.communications-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #dcfce7;
+    border-left: 3px solid #4ade80;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Key assets — rose / pink */
+.row-header.assets-row         { background-color: #fce7f3; border-left: 4px solid #db2777; }
+.grid-cell.assets-row          { background-color: #fdf2f8; }
+.grid-cell.assets-row h4       { color: #831843; }
+.grid-cell.assets-row ul       { list-style: none; padding-left: 0; }
+.grid-cell.assets-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #fce7f3;
+    border-left: 3px solid #f472b6;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Decision gates — violet */
+.row-header.decisions-row      { background-color: #ede9fe; border-left: 4px solid #7c3aed; }
+.grid-cell.decisions-row       { background-color: #f5f3ff; }
+.grid-cell.decisions-row h4    { color: #4c1d95; }
+.grid-cell.decisions-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.decisions-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #ede9fe;
+    border-left: 3px solid #a78bfa;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   10. BRAND / SHARED ROWS (from /j-suggest, /j-data)
+   ─────────────────────────────────────────────────────────────── */
+
+/* Opportunities — warm amber + reference panels */
+.row-header.opportunities-row  { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.grid-cell.opportunities-row   { background-color: #fffbeb; }
+.grid-cell.opportunities-row h4 { color: #92400e; }
+
+.opportunity-card {
+    border: 1px solid #fde68a;
+    border-radius: 6px;
+    background: #fff;
+    padding: 0.6rem 0.75rem 0.5rem;
+    margin-bottom: 0.6rem;
+}
+.opportunity-card:last-child { margin-bottom: 0; }
+.opportunity-card p {
+    margin: 0 0 0.3rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #1c1917;
+}
+.opportunity-card p strong { color: #92400e; font-weight: 700; }
+
+.refs-toggle {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.18rem 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.refs-toggle:hover { background: #fde68a; }
+
+.opp-refs {
+    display: none;
+    margin-top: 0.45rem;
+    padding: 0.4rem 0.55rem;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #44403c;
+}
+.opp-refs.open                 { display: block; }
+.opp-refs .ref-item            { margin: 0 0 0.3rem; }
+.opp-refs .ref-item:last-child { margin-bottom: 0; }
+.opp-refs .ref-source          { font-weight: 600; color: #78350f; }
+.opp-refs .ref-verbatim        { font-style: italic; }
+
+/* Content assets — sky blue */
+.row-header.content-assets-row { background-color: #bae6fd; border-left: 4px solid #0284c7; }
+.grid-cell.content-assets-row  { background-color: #f0f9ff; }
+.grid-cell.content-assets-row h4 { color: #0c4a6e; }
+.grid-cell.content-assets-row ul  { list-style: none; padding-left: 0; }
+.grid-cell.content-assets-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #e0f2fe;
+    border-left: 3px solid #0284c7;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Calls to action — emerald green */
+.row-header.cta-row            { background-color: #bbf7d0; border-left: 4px solid #16a34a; }
+.grid-cell.cta-row             { background-color: #f0fdf4; }
+.grid-cell.cta-row h4          { color: #14532d; }
+.cta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+.cta-tags li {
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    color: #15803d;
+    border-radius: 999px;
+    padding: 0.22rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Stage transition signals — slate */
+.row-header.transitions-row    { background-color: #e2e8f0; border-left: 4px solid #64748b; }
+.grid-cell.transitions-row     { background-color: #f8fafc; }
+.grid-cell.transitions-row h4  { color: #1e293b; }
+.grid-cell.transitions-row ul  { list-style: none; padding-left: 0; }
+.grid-cell.transitions-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #f1f5f9;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Data generated — teal */
+.row-header.data-generated-row { background-color: #ccfbf1; border-left: 4px solid #14b8a6; }
+.grid-cell.data-generated-row  { background-color: #f0fdfa; }
+.grid-cell.data-generated-row h4 { color: #0f766e; }
+.grid-cell.data-generated-row ul { list-style: none; padding-left: 0; }
+.grid-cell.data-generated-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #ccfbf1;
+    border-left: 3px solid #14b8a6;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Data used — indigo */
+.row-header.data-used-row      { background-color: #e0e7ff; border-left: 4px solid #6366f1; }
+.grid-cell.data-used-row       { background-color: #f8fafc; }
+.grid-cell.data-used-row h4    { color: #1e40af; }
+.grid-cell.data-used-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.data-used-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #e0e7ff;
+    border-left: 3px solid #6366f1;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   11. JOURNEY HEADER UI
+   ─────────────────────────────────────────────────────────────── */
+
+.journey-header {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    flex-shrink: 0;
+}
+.journey-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    color: #2c3e50;
+}
+.journey-header p { color: #666; font-size: 0.9rem; }
+
+.journey-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.journey-id {
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 0.18rem 0.5rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.refs-toggle-btn {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+.refs-toggle-btn:hover         { background: #f1f5f9; border-color: #94a3b8; }
+.refs-toggle-btn.refs-visible  { background: #1e293b; border-color: #1e293b; color: #f8fafc; }
+
+.journey-description {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 900px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 0.15rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PERSONA PROFILE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   12. PAGE HEADER
+   ─────────────────────────────────────────────────────────────── */
+
+.page-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 2rem 1.5rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #4a6fa5;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+.avatar-wrapper .initials {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+    z-index: 3;
+}
+
+/* Persona name + role inside the page header */
+.page-header .persona-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.page-header .persona-role {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   13. CONTENT SECTIONS
+   ─────────────────────────────────────────────────────────────── */
+
+.content {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
+}
+
+.section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f59e0b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.section h3 .section-icon { font-size: 1.2rem; }
+
+.section ul    { padding-left: 1.25rem; }
+.section li    {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    font-size: 0.92rem;
+}
+.section p     {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Pain points + Fears variant — red accent */
+.section.pain-points              { background-color: #fef2f2; border-color: #ef4444; }
+.section.pain-points h3           { color: #991b1b; border-bottom-color: #ef4444; }
+.section.pain-points li           { color: #4a1c1c; }
+
+/* Goals variant — green accent */
+.section.goals                    { background-color: #f0fdf4; border-color: #22c55e; }
+.section.goals h3                 { color: #166534; border-bottom-color: #22c55e; }
+.section.goals li                 { color: #1a3a1a; }
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   14. EMOTIONS, VOICE, CHANNELS, RELATIONSHIPS
+   ─────────────────────────────────────────────────────────────── */
+
+.emotion-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.emotion-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #2c3e50;
+    transition: all 0.2s ease;
+}
+.emotion-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.emotion-tag .emotion-label {
+    font-weight: 400;
+    color: #555;
+    font-size: 0.82rem;
+}
+
+.voice-description {
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.quote-block {
+    background-color: #f8f9fa;
+    border-left: 4px solid #f59e0b;
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: #444;
+}
+.quote-block:last-child { margin-bottom: 0; }
+
+.channel-list {
+    list-style: none;
+    padding-left: 0;
+}
+.channel-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.92rem;
+}
+.channel-list li:last-child { border-bottom: none; }
+
+.channel-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #f59e0b;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.relationship-block {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e0e0e0;
+}
+.relationship-block:last-child { margin-bottom: 0; }
+.relationship-block h4 {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+.relationship-block p,
+.relationship-block li {
+    font-size: 0.88rem;
+    color: #555;
+}
+.relationship-block ul {
+    padding-left: 1.25rem;
+    margin-top: 0.35rem;
+}
+.relationship-block li { margin-bottom: 0.25rem; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   15. PAGE FOOTER
+   ─────────────────────────────────────────────────────────────── */
+
+.page-footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+.footer-divider {
+    width: 60px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.75rem auto;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   16. RESPONSIVE (persona profile only — journey maps are
+       designed for horizontal scroll on any screen)
+   ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .two-col           { grid-template-columns: 1fr; }
+    .page-header       { padding: 1.5rem 1rem 1.25rem; }
+    .page-header .persona-name { font-size: 1.6rem; }
+    .avatar-wrapper    { width: 100px; height: 100px; font-size: 2.2rem; }
+    .content           { padding: 0 1rem 2rem; }
+    .section           { padding: 1.25rem; }
+    .emotion-grid      { gap: 0.5rem; }
+    .emotion-tag       { padding: 0.4rem 0.75rem; font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+    .page-header .persona-name { font-size: 1.4rem; }
+    .avatar-wrapper    { width: 80px; height: 80px; font-size: 1.8rem; }
+    .emotion-grid      { flex-direction: column; }
+    .emotion-tag       { justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BorderBlend site supplement — brand-aligned (ucLoops / Urbina).
+   Appended AFTER humanloops-urbina.css. Light theme only.
+   Palette: slate #2c3e50 · orange #f59e0b · entity #CFCFFE/#1a1a6b
+            · id-badge slate on #f1f5f9 · source badge amber #fef3c7
+   Styles ONLY the custom components the generator emits (index, insights,
+   source pages, v1 personas/journeys). Template classes (.entity, .item-ref,
+   .section, .two-col, .quote-block, …) inherit from humanloops-urbina.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* link conventions: no underline at rest; underline text links on hover; badges/tiles never underline */
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+.tile,.tile:hover,.idbadge,.idbadge:hover,.item-ref,.item-ref:hover,.evref,.evref:hover,
+.rowid,.rowid:hover,.claimid,.claimid:hover,.refcite,.refcite:hover{text-decoration:none}
+
+/* Sticky compact bar (always shows the document + the provenance toggle, even when deep-linked down) */
+.stickybar{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:.6rem;
+  background:#2c3e50;color:#fff;padding:.4rem .7rem;border-radius:0 0 10px 10px;
+  box-shadow:0 3px 10px rgba(0,0,0,.18);margin:0 0 1rem}
+.stickybar .sb-home{color:#cdd7e0;text-decoration:none;font-size:1rem;flex:1;min-width:0;display:flex;align-items:center;gap:.4rem}
+.stickybar .sb-home:hover{color:#fff;text-decoration:none}
+.stickybar .sb-arrow{display:inline-block}
+.stickybar .sb-title{flex:1;font-weight:600;font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stickybar .sb-kicker{font-weight:400;opacity:.7;font-size:.72rem;margin-right:.35rem}
+/* "Show Item IDs & Provenance" toggle */
+.provtoggle{background:#f59e0b;color:#2c3e50;border:none;border-radius:6px;padding:.32rem .7rem;
+  font-size:.74rem;font-weight:700;cursor:pointer;margin:0;flex-shrink:0;white-space:nowrap}
+.provtoggle:hover{background:#e08e1e;text-decoration:none}
+body.prov-hidden .idbadge,body.prov-hidden .item-ref,body.prov-hidden .evidence,
+body.prov-hidden .prov-link,body.prov-hidden .reflist .idbadge{display:none}
+
+/* layout wrappers */
+.srcpage{max-width:64rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+.docwrap{max-width:72rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+.home{display:inline-block;font-size:.8rem;color:#667085;margin:.2rem 0 1rem}
+.home:hover{color:#2c3e50}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#b45309;font-weight:700}
+.srchead{border-bottom:2px solid #f59e0b;padding-bottom:1rem;margin-bottom:1.25rem}
+.srchead h1{font-size:1.5rem;margin:.25rem 0 .6rem;color:#2c3e50}
+.hint{font-weight:400;color:#667085;font-size:.82rem}
+.metagrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.2rem .9rem;font-size:.82rem}
+.metagrid .mk{color:#667085;margin-right:.4rem}
+.metagrid .mv{font-weight:600;color:#2c3e50}
+.lead{font-size:1.05rem;color:#444;margin:.6rem 0}
+
+/* clickable ID badges (match template .item-ref look) */
+.idbadge,.rowid,.claimid,.refcite{
+  font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-weight:700;font-size:.66rem;
+  letter-spacing:.3px;white-space:nowrap;background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;
+  border-radius:5px;padding:.08rem .34rem;text-decoration:none;display:inline-block}
+.idbadge:hover,.rowid:hover,.claimid:hover,.refcite:hover{text-decoration:none;outline:1px solid #f59e0b}
+.claimid{vertical-align:super;font-size:.58rem;margin-left:.15rem;background:#fef3c7;color:#78350f;border-color:#fde68a}
+.refcite{border-style:dashed}
+.reflist li{margin:.3rem 0;font-size:.86rem}
+
+/* transcript turns */
+.transcript{margin-top:.5rem}
+.turn{padding:.5rem .7rem;border-radius:9px;margin:.35rem 0;border:1px solid transparent}
+.turn.participant{background:#fff;border-color:#e0e0e0}
+.turn.interviewer{background:transparent}
+.turn.interviewer .turntext{color:#667085}
+.turnhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem}
+.spk{font-weight:700;font-size:.82rem;color:#2c3e50}
+.turn.interviewer .spk{color:#667085;font-weight:600}
+.turntext p{margin:.3rem 0}
+
+/* cards (social / tickets / pains) + doc */
+.cards{display:grid;gap:.7rem}
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.7rem .85rem;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.cardhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem}
+.ch{font-weight:700;font-size:.9rem;color:#2c3e50}
+.cardbody p{margin:.3rem 0;font-size:.9rem}
+.notes{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.4rem 1rem;margin:1rem 0}
+.doc h2{margin-top:1.6rem;border-bottom:1px solid #e0e0e0;padding-bottom:.3rem;color:#2c3e50}
+.doc h3{color:#2c3e50}
+
+/* home / index tiles */
+.hero{padding:2rem 0 1rem;border-bottom:2px solid #f59e0b;margin-bottom:1.5rem}
+.hero h1{font-size:2rem;margin:.2rem 0;color:#2c3e50}
+.hero p{color:#667085;max-width:46rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr))}
+.tile{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1rem;display:block;color:inherit;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.15s}
+.tile:hover{text-decoration:none;border-color:#f59e0b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.tile h3{margin:.1rem 0 .3rem;font-size:1.02rem;color:#2c3e50}
+.tile p{margin:0;font-size:.83rem;color:#667085}
+.sec-title{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#b45309;font-weight:700;margin:2rem 0 .8rem}
+.trailnote{background:#fff8ef;border:1px solid #f3c9ad;border-radius:10px;padding:.8rem 1rem;font-size:.86rem;margin:1rem 0;color:#7a4b2a}
+.trailnote code{background:#fff}
+/* Project Overview — prominent full-width white box */
+.overview{background:#fff;border:1px solid #e0e0e0;border-left:6px solid #f59e0b;border-radius:12px;
+  padding:1.3rem 1.6rem;margin:.4rem 0 1.4rem;box-shadow:0 4px 18px rgba(0,0,0,.09)}
+.overview h2{margin:0 0 .6rem;font-size:1.25rem;color:#2c3e50}
+.overview p{margin:.4rem 0;color:#333;font-size:.97rem;line-height:1.6;max-width:62rem}
+.overview p.ctx{font-size:.9rem;color:#555}
+.overview a{color:#b45309;font-weight:700}
+.srccode{font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-size:.72rem;font-weight:700;
+  color:#475569;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:4px;padding:.02rem .3rem}
+
+/* resolved evidence links + hover preview */
+.evidence{margin:.4rem 0 0;font-size:.8rem;color:#667085}
+.evidence .lbl{text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;margin-right:.3rem}
+.evref{font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-weight:700;font-size:.66rem;
+  background:#fef3c7;color:#78350f;border:1px solid #fde68a;border-radius:5px;padding:.08rem .34rem;
+  text-decoration:none;display:inline-block;margin:.1rem .25rem .1rem 0;position:relative}
+.evref:hover{outline:1px solid #f59e0b;text-decoration:none}
+.evref.insid{background:#e0f2f1;color:#0b6a5b;border-color:#b2dfdb}
+.evref .tip{display:none;position:absolute;left:0;top:135%;z-index:20;width:22rem;max-width:70vw;
+  background:#fff;border:1px solid #f59e0b;border-radius:9px;padding:.55rem .7rem;font-family:-apple-system,sans-serif;
+  font-weight:400;font-size:.78rem;color:#333;box-shadow:0 8px 26px rgba(0,0,0,.18);white-space:normal;line-height:1.4}
+.evref:hover .tip,.evref:focus .tip{display:block}
+.evref .tip .src{display:block;color:#b45309;font-weight:700;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
+
+/* insights page */
+.insight{background:#fff;border:1px solid #e0e0e0;border-left:4px solid #f59e0b;border-radius:10px;padding:.9rem 1.05rem;margin:.9rem 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.insight h3{font-size:1.05rem;margin:.1rem 0 .3rem;display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap;color:#2c3e50}
+.insight .cat{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:#667085;border:1px solid #e0e0e0;border-radius:20px;padding:.05rem .5rem}
+.insight .strength{font-size:.66rem;font-weight:700;padding:.05rem .45rem;border-radius:20px}
+.st-verified{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.st-strong{background:#fff7ed;color:#b45309;border:1px solid #fed7aa}
+.st-moderate{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.insight .body{font-size:.92rem}
+.insight .imp{color:#166534}
+.filterbar{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0;align-items:center}
+.filterbar button{background:#fff;border:1px solid #cbd5e1;border-radius:20px;padding:.3rem .8rem;cursor:pointer;color:#2c3e50;font-size:.8rem}
+.filterbar button.on{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.filterbar .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#667085}
+
+/* v1 persona pages (superseded by v3 but kept on-brand) */
+.persona-head{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;border-bottom:2px solid #f59e0b;padding-bottom:1rem;margin-bottom:1.2rem}
+.avatar{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;flex-shrink:0;background:#4a6fa5}
+.pblock{background:#fff;border:1px solid #e0e0e0;border-radius:11px;padding:.9rem 1.05rem;margin:.8rem 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.pblock h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#b45309;margin:0 0 .5rem}
+.pitem{margin:.45rem 0}.pitem .txt{font-size:.92rem}
+.two-col-cards{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:720px){.two-col-cards{grid-template-columns:1fr}}
+.quotebar{font-size:1.05rem;font-style:italic;border-left:4px solid #f59e0b;padding:.4rem 1rem;color:#333;margin:.6rem 0;background:#f8f9fa;border-radius:0 8px 8px 0}
+
+/* v1 journey grid (kept on-brand) */
+.jny-wrap{padding:1rem}
+.scrollx{overflow-x:auto;padding-bottom:1rem}
+.jgrid{display:grid;min-width:max-content;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;background:#fff}
+.jgrid>div{border-right:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;padding:.6rem .7rem}
+.jrow-label{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;background:#f1f5f9;color:#667085;position:sticky;left:0;z-index:2}
+.jstage-head{background:#2c3e50;color:#fff;font-weight:700}
+.jstage-head .sub{display:block;font-weight:400;font-size:.75rem;opacity:.9}
+.stagecell{font-size:.84rem}.stagecell .cellid{margin-bottom:.25rem}.emoji{font-size:1.1rem}
+
+/* flash on hash-nav */
+.flash,tr.flash td{animation:flash 1.6s ease-out}
+@keyframes flash{0%{background:#fff3c9}100%{}}
+
+/* tables in doc/source pages */
+.tablewrap{overflow-x:auto;margin:1rem 0}
+/* Banner — full width across all pages */
+body{position:relative}
+.promo-banner{position:fixed;top:0;left:0;right:0;background:rgba(80,8,80,.95);color:#fff;padding:.9rem 1.25rem;z-index:300}
+.promo-banner .banner-inner{max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:1.5rem}
+.promo-banner .banner-logo{height:34px;width:auto;flex-shrink:0;display:block}
+.promo-banner .banner-copy{flex:1;min-width:0}
+.promo-banner .banner-line{font-size:1.02rem;line-height:1.2;margin:0 0 .1rem}
+.promo-banner .banner-line:last-child{margin-bottom:0}
+.promo-banner b{color:#d7a32b;font-weight:700}
+.promo-banner a.banner-link{color:#d7a32b;font-weight:700;text-decoration:none}
+.promo-banner a.banner-link:hover{text-decoration:underline}
+.promo-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e8bc52,#d7a32b);color:#2c3e50;border:none;padding:.5rem 1.4rem;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;transition:.2s;white-space:nowrap;flex-shrink:0}
+.promo-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(215,163,43,.3);text-decoration:none}
+body{padding-top:8rem}
+@media(max-width:900px){.promo-banner{padding:.8rem 1.25rem}.promo-banner .banner-inner{flex-wrap:wrap}.promo-banner .banner-logo{height:26px}body{padding-top:12rem}}
+
+/* ── uc-chrome-v2: banner + sticky bar as one sticky wrapper ──
+   Previously both bars were position:fixed independently, offset from each
+   other by a JS-measured --banner-h, with body padding-top reserving room for
+   them. Three things had to agree and often didn't — hence the white seam.
+
+   Sticky instead of fixed, deliberately. These pages are normally viewed inside
+   the AI-projects viewer, which hides our .stickybar (it rebuilds it in the
+   parent page above the iframe) and auto-sizes the iframe to content height.
+   With no independent viewport, `fixed` buys nothing and the reserved padding
+   becomes a visible empty band. Sticky sits in normal flow — nothing to reserve,
+   nothing to measure — and still sticks when the page IS viewed directly. ── */
+.uc-chrome{position:sticky;top:0;z-index:300}
+.uc-chrome .promo-banner{position:relative !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+.uc-chrome .stickybar{position:static !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+/* The chrome is in flow now, so any reserved space is a gap. */
+body{padding-top:0 !important}
+
+/* Dismiss. Applied to <html> by a parser-blocking script before the banner is
+   parsed, so a previously-dismissed banner never flashes into view. */
+.uc-promo-hidden .promo-banner{display:none !important}
+.promo-close{position:absolute;top:.45rem;right:.55rem;width:26px;height:26px;padding:0;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:6px;
+  color:#fff;font-size:.8rem;line-height:1;cursor:pointer;font-family:inherit;
+  display:flex;align-items:center;justify-content:center}
+.promo-close:hover{background:rgba(255,255,255,.26)}
+
+@media(max-width:859px){
+  /* The logo is the first thing to sacrifice — it carries no information the
+     copy doesn't already, and it costs a whole row once the text wraps. */
+  .uc-chrome .promo-banner .banner-logo{display:none}
+  .uc-chrome .promo-banner .banner-inner{flex-direction:column;align-items:stretch;gap:.55rem}
+  .uc-chrome .promo-banner .banner-line{font-size:.92rem}
+  .uc-chrome .promo-banner .promo-btn{align-self:flex-start}
+  .promo-close{top:.3rem;right:.35rem}
+  .uc-chrome .promo-banner{padding-right:2.4rem}
+
+  /* The stage grid is several times wider than a phone. The drawer patch added
+     .container{overflow-x:hidden} so the off-canvas sidebar couldn't create a
+     page-level scrollbar — but that also clipped the grid, making every stage
+     after the first unreachable. Give the grid its own horizontal scroll. */
+  .main-content{overflow-x:auto !important;-webkit-overflow-scrolling:touch}
+}
+</style>
+</head><body class="srcpage">
+<script>try{if(localStorage.getItem("ucPromoDismissed")==="1")document.documentElement.className+=" uc-promo-hidden";}catch(e){}</script>
+<div class="uc-chrome"><div class="promo-banner"><button class="promo-close" type="button" onclick="ucCloseBanner()" aria-label="Dismiss this notice" title="Dismiss">&#10005;</button><div class="banner-inner"><img class="banner-logo" src="../2023-uc-logo-outline.svg" alt="Urbina Consulting"><div class="banner-copy"><div class="banner-line">This is a generated example built with Urbina's ucLoops AI methodology.</div><div class="banner-line">It's even better when used with <b>real research sources!</b></div><div class="banner-line">Learn how to use it yourself on our <a class="banner-link" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">cohort or private courses.</a></div></div><a class="promo-btn" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">Learn more</a></div></div><div class="stickybar"><a class="sb-home" href="../index.html" title="BorderBlend evidence map"><span class="sb-arrow">←</span><span class="sb-title">BorderBlend Evidence Map</span></a></div></div>
+
+
+<header class="srchead"><div class="kicker">Source · Market research report</div>
+<h1>Canadian Mexican &amp; Fusion Street-Food Market — 2026 Outlook</h1>
+<p class="hint">Tagged claims (MR-C##) and references (MR-REF##) are individually addressable — downstream insights link straight to the specific claim.</p></header>
+<section class="doc market"><blockquote><strong>Source type:</strong> Commissioned market research (syndicated + custom module) <strong>Prepared by:</strong> Maple Foodservice Insights Inc. (Toronto / Montréal) <strong>Period:</strong> 2026 (fieldwork Q3 2025 – Q1 2026) <strong>Status:</strong> Final <strong>Client use:</strong> Licensed for internal strategy and category planning <strong>Methodology note:</strong> Figures blend syndicated foodservice tracking, a national consumer omnibus (n=4,180 Canadian adults 18+, weighted to census on age, region, and language), operator interviews (n=62), and mobile-vendor permit analysis across seven metros. All dollar figures in CAD unless noted.</blockquote>
+<hr/>
+<h2 id="executive-summary">Executive summary</h2>
+<ul><li>The Canadian street-food and mobile-food category reached an estimated $1.19B in 2025 and is projected to grow at a 7.8% CAGR through 2029, outpacing the broader limited-service segment. <a class="claimid" id="MR-C01" href="#MR-C01" title="Cited claim MR-C01">MR-C01</a> <a class="refcite" href="#MR-REF01">[MR-REF01]</a></li><li>Mexican-rooted concepts are the single fastest-growing cuisine within mobile food, holding roughly 21% of active taco/burrito-forward truck menus nationally and gaining share each year since 2022. <a class="claimid" id="MR-C02" href="#MR-C02" title="Cited claim MR-C02">MR-C02</a> <a class="refcite" href="#MR-REF02">[MR-REF02]</a></li><li>Fusion positioning is now a growth engine rather than a novelty: an estimated 24% of new food-truck launches in major metros in 2025 led with an explicit fusion concept, up from 9% in 2021. <a class="claimid" id="MR-C03" href="#MR-C03" title="Cited claim MR-C03">MR-C03</a> <a class="refcite" href="#MR-REF03">[MR-REF03]</a></li><li>Consumers reward fusion when it reads as intentional, not gimmicky — 68% of 18–34s say a &quot;combination that makes sense&quot; is more appealing than a strictly traditional menu. <a class="claimid" id="MR-C04" href="#MR-C04" title="Cited claim MR-C04">MR-C04</a> <a class="refcite" href="#MR-REF04">[MR-REF04]</a></li><li>Real-time &quot;where and when is it open&quot; certainty is the top mobile-food purchase driver, cited by 71% of app users, ahead of price and menu. <a class="claimid" id="MR-C05" href="#MR-C05" title="Cited claim MR-C05">MR-C05</a> <a class="refcite" href="#MR-REF05">[MR-REF05]</a></li><li>Values-led attributes (low-waste packaging, no single-use plastic) now influence choice for a majority of urban under-40 diners and support a modest price premium. <a class="claimid" id="MR-C06" href="#MR-C06" title="Cited claim MR-C06">MR-C06</a> <a class="refcite" href="#MR-REF06">[MR-REF06]</a></li><li>Challenger brands operating 20–30 units are the category&#x27;s most dynamic tier, well-positioned to convert social discovery and festival reach into repeat loyalty. <a class="claimid" id="MR-C07" href="#MR-C07" title="Cited claim MR-C07">MR-C07</a> <a class="refcite" href="#MR-REF07">[MR-REF07]</a></li></ul>
+<hr/>
+<h2 id="market-size-growth">Market size &amp; growth</h2>
+<p>Canada&#x27;s street-food and mobile-food sector — food trucks, carts, and festival/event vending — is estimated at $1.19B in 2025, having fully recovered from pandemic-era disruption and now running roughly 14% above its 2019 baseline in real terms. <a class="claimid" id="MR-C08" href="#MR-C08" title="Cited claim MR-C08">MR-C08</a> <a class="refcite" href="#MR-REF01">[MR-REF01]</a> Mobile food has been the standout rebound story within foodservice: active permitted vendor counts across the seven largest metros rose an estimated 31% between 2021 and 2025, with the sharpest gains in Toronto, Vancouver, and Calgary. <a class="claimid" id="MR-C09" href="#MR-C09" title="Cited claim MR-C09">MR-C09</a> <a class="refcite" href="#MR-REF08">[MR-REF08]</a></p>
+<p>Within this category, Mexican-rooted cuisine is the clear momentum leader. Tacos, burritos, and related formats now anchor an estimated 21% of active mobile menus nationally, and Mexican has been the fastest cuisine to add net-new units for three consecutive years. <a class="claimid" id="MR-C10" href="#MR-C10" title="Cited claim MR-C10">MR-C10</a> <a class="refcite" href="#MR-REF02">[MR-REF02]</a> Consumer demand is broad rather than niche: 58% of Canadian adults report eating Mexican or Mexican-inspired food at least monthly, rising to 74% among adults under 35. <a class="claimid" id="MR-C11" href="#MR-C11" title="Cited claim MR-C11">MR-C11</a> <a class="refcite" href="#MR-REF04">[MR-REF04]</a> Handheld formats travel well across the price ladder, which has helped Mexican-forward trucks defend margin as input costs normalized through 2025. <a class="refcite" href="#MR-REF09">[MR-REF09]</a></p>
+<hr/>
+<h2 id="fusion-vs-traditional">Fusion vs. traditional</h2>
+<p>Fusion is the defining strategic story of the 2026 market. An estimated 24% of new food-truck launches in major Canadian metros in 2025 led with an explicit fusion concept — Korean-Mexican, Filipino-Mexican, barbecue-Mexican, plant-forward — up from just 9% in 2021. <a class="claimid" id="MR-C12" href="#MR-C12" title="Cited claim MR-C12">MR-C12</a> <a class="refcite" href="#MR-REF03">[MR-REF03]</a> Crucially, fusion is no longer read as risky by consumers: 68% of 18–34s say a menu built around &quot;combinations that make sense&quot; is <em>more</em> appealing than a strictly traditional one, and only 12% of that group associate fusion with lower quality. <a class="claimid" id="MR-C13" href="#MR-C13" title="Cited claim MR-C13">MR-C13</a> <a class="refcite" href="#MR-REF04">[MR-REF04]</a></p>
+<p>The nuance operators must manage is what our panel calls the <strong>authenticity paradox</strong>. Diners simultaneously want provenance signals (real technique, quality proteins, a cuisine that &quot;knows what it is&quot;) and want operators to feel free to innovate. In practice, 61% of foodie-identified consumers say they distrust &quot;most authentic&quot; superlatives, while the same respondents reward specificity — naming the technique, the cut, or the preparation — as the real trust signal. <a class="claimid" id="MR-C14" href="#MR-C14" title="Cited claim MR-C14">MR-C14</a> <a class="refcite" href="#MR-REF10">[MR-REF10]</a> Brands that earn fusion credibility do so through <strong>execution proof, not adjectives</strong>: an actually-smoked brisket, a house salsa regulars adopt as a staple, a plant-based option that over-delivers. Menu-level testing found that a genuinely-smoked barbecue-Mexican hero item lifted trial intent 2.3x versus a comparably-priced conventional taco among first-time visitors. <a class="claimid" id="MR-C15" href="#MR-C15" title="Cited claim MR-C15">MR-C15</a> <a class="refcite" href="#MR-REF11">[MR-REF11]</a></p>
+<p>Fusion wins hardest among younger, urban, food-culture-engaged diners, and among &quot;social discoverers&quot; who treat a distinctive item as shareable content. <a class="claimid" id="MR-C16" href="#MR-C16" title="Cited claim MR-C16">MR-C16</a> <a class="refcite" href="#MR-REF07">[MR-REF07]</a> Traditional offerings, by contrast, reassure — they lower the risk of a first visit and anchor the menu&#x27;s credibility for older and value-led diners. The best-performing 2025 concepts did not choose one side; they ran a <strong>traditional core plus a signature fusion hero</strong>, using the hero to drive search and social while the traditional line converted the cautious. <a class="claimid" id="MR-C17" href="#MR-C17" title="Cited claim MR-C17">MR-C17</a> <a class="refcite" href="#MR-REF03">[MR-REF03]</a> The failure mode is &quot;fusion-as-stunt&quot;: limited-time or novelty mashups that spike attention but cannot be executed consistently generate the sharpest negative social sentiment, since an unavailable or poorly-run hyped item reads as a broken promise. <a class="refcite" href="#MR-REF12">[MR-REF12]</a></p>
+<hr/>
+<h2 id="consumer-segments">Consumer segments</h2>
+<p>Maple&#x27;s segmentation identifies five recurring mobile-food demand occasions, each with distinct behaviour and discovery patterns:</p>
+<ul><li><strong>Late-night / social:</strong> 22–29s out at night around bars, shows, and shifts; food-culture-driven and highly social. Highest willingness to try fusion and to post about it; average ticket $16–$22; discovers via TikTok/Instagram and word-of-mouth. This segment indexes highest for turning a signature item into earned reach. <a class="claimid" id="MR-C18" href="#MR-C18" title="Cited claim MR-C18">MR-C18</a> <a class="refcite" href="#MR-REF07">[MR-REF07]</a></li><li><strong>Weekday-lunch / business:</strong> professionals ordering midday, often for groups. Speed, reliability, and knowing the truck is where it says it is matter more than novelty; average individual ticket $14–$18 but group orders lift basket sharply. Real-time status and pre-order are the decisive features. <a class="claimid" id="MR-C19" href="#MR-C19" title="Cited claim MR-C19">MR-C19</a> <a class="refcite" href="#MR-REF05">[MR-REF05]</a></li><li><strong>Everyday value:</strong> convenience- and price-led diners who &quot;just want something good to eat.&quot; Low brand engagement, high sensitivity to the &quot;almost restaurant prices now&quot; perception; won by consistency, visible value, and a fast line. <a class="claimid" id="MR-C20" href="#MR-C20" title="Cited claim MR-C20">MR-C20</a> <a class="refcite" href="#MR-REF13">[MR-REF13]</a></li><li><strong>Families / weeknight:</strong> planners balancing schedules and mixed preferences; value predictability, allergen clarity, and a traditional option kids will accept alongside an adventurous one. Schedule reliability and clear allergen information are disproportionately important to this group. <a class="claimid" id="MR-C21" href="#MR-C21" title="Cited claim MR-C21">MR-C21</a> <a class="refcite" href="#MR-REF06">[MR-REF06]</a></li><li><strong>Food-culture enthusiasts / creators:</strong> bloggers, reviewers, and amplifiers who scrutinize provenance and reward specificity; small in number but outsized in influence on discovery and reputation. <a class="claimid" id="MR-C22" href="#MR-C22" title="Cited claim MR-C22">MR-C22</a> <a class="refcite" href="#MR-REF10">[MR-REF10]</a></li></ul>
+<p>Across segments, 63% of mobile-food purchases are decided the same day, underscoring how much real-time discovery and status information shape which truck actually captures the occasion. <a class="claimid" id="MR-C23" href="#MR-C23" title="Cited claim MR-C23">MR-C23</a> <a class="refcite" href="#MR-REF05">[MR-REF05]</a></p>
+<hr/>
+<h2 id="digital-discovery-loyalty">Digital, discovery &amp; loyalty</h2>
+<p>Digital certainty is now table stakes. Real-time location and open/closed status is the top-ranked purchase driver among mobile-food app users, cited by 71% — ahead of price, menu, and reviews — and 42% report having travelled to a truck&#x27;s expected location only to find it absent or closed at least once in the past year, the leading cause of app abandonment. <a class="claimid" id="MR-C24" href="#MR-C24" title="Cited claim MR-C24">MR-C24</a> <a class="refcite" href="#MR-REF05">[MR-REF05]</a> Menu accuracy compounds this: when the in-app menu does not match the board on the truck, satisfaction scores drop by roughly a third. <a class="refcite" href="#MR-REF05">[MR-REF05]</a></p>
+<p>Social platforms are the dominant discovery channel for the growth segments. Among 18–34s, 57% report discovering a food truck via TikTok or Instagram in the past year, and short-form video of a signature item is the highest-converting content format for trial. <a class="claimid" id="MR-C25" href="#MR-C25" title="Cited claim MR-C25">MR-C25</a> <a class="refcite" href="#MR-REF14">[MR-REF14]</a> The <strong>festival and event circuit</strong> is the single most efficient trial-acquisition channel per dollar for mobile brands, introducing concepts to large, receptive, discovery-minded crowds; 39% of festival-goers say they later sought out a truck they first tried at an event. <a class="claimid" id="MR-C26" href="#MR-C26" title="Cited claim MR-C26">MR-C26</a> <a class="refcite" href="#MR-REF08">[MR-REF08]</a></p>
+<p>Loyalty and subscription mechanics are under-exploited across the category. While 66% of frequent mobile-food buyers say they would join a rewards programme if it were genuinely simple and transparent, median active enrolment in existing food-truck loyalty schemes sits near 18%, indicating a large conversion gap driven mainly by opaque or hard-to-use programme interfaces. <a class="claimid" id="MR-C27" href="#MR-C27" title="Cited claim MR-C27">MR-C27</a> <a class="refcite" href="#MR-REF15">[MR-REF15]</a> Email/newsletter opt-in performs notably better when tied to a concrete value moment — early access to seasonal drops or first notice of a location — with best-in-class mobile brands reporting open rates of 34–41%, well above foodservice norms. <a class="claimid" id="MR-C28" href="#MR-C28" title="Cited claim MR-C28">MR-C28</a> <a class="refcite" href="#MR-REF15">[MR-REF15]</a></p>
+<hr/>
+<h2 id="sustainability-values">Sustainability &amp; values</h2>
+<p>Values-led attributes have moved from differentiator to expectation among urban under-40 diners. A majority (54%) say low-waste, plastic-free packaging positively influences where they buy, and 48% of 18–34s say they would pay a small premium (typically 5–8%) for a brand with visible, credible waste reduction. <a class="claimid" id="MR-C29" href="#MR-C29" title="Cited claim MR-C29">MR-C29</a> <a class="refcite" href="#MR-REF06">[MR-REF06]</a> &quot;Hand food&quot; positioning — formats that need no cutlery — reads as both authentic and low-waste, and tests well as a natural, non-preachy sustainability signal rather than an add-on claim. <a class="claimid" id="MR-C30" href="#MR-C30" title="Cited claim MR-C30">MR-C30</a> <a class="refcite" href="#MR-REF06">[MR-REF06]</a> Consumers reward <em>demonstrated</em> practice over stated virtue: specific, observable choices outperform sustainability language by a wide margin in trust scoring. <a class="refcite" href="#MR-REF10">[MR-REF10]</a></p>
+<hr/>
+<h2 id="regional-dynamics">Regional dynamics</h2>
+<p>Canada&#x27;s mobile-food market is regionally distinct, and brands operating nationally must localize deliberately:</p>
+<ul><li><strong>Québec / bilingual:</strong> francophone diners expect genuine Québécois French (fr-CA), not translated-from-France terminology; 59% of Québec respondents say European-French wording or late/partial translation noticeably lowers their trust in a brand. Timely, idiomatic fr-CA content is a competitive advantage in Montréal, not a compliance afterthought. <a class="claimid" id="MR-C31" href="#MR-C31" title="Cited claim MR-C31">MR-C31</a> <a class="refcite" href="#MR-REF16">[MR-REF16]</a></li><li><strong>Prairies (Calgary / Edmonton):</strong> strong summer and festival demand with pronounced winter seasonality; the highest-performing Prairie operators smooth revenue with seasonal menu drops, indoor/event partnerships, and tight cold-season scheduling communicated clearly to customers. <a class="claimid" id="MR-C32" href="#MR-C32" title="Cited claim MR-C32">MR-C32</a> <a class="refcite" href="#MR-REF17">[MR-REF17]</a></li><li><strong>Toronto / Vancouver:</strong> highest density, highest willingness to pay, and the most crowded competitive set; these markets reward distinctiveness and reliability, and tolerate a modest price premium for a hero item, but punish inconsistency fastest given the abundance of alternatives. <a class="claimid" id="MR-C33" href="#MR-C33" title="Cited claim MR-C33">MR-C33</a> <a class="refcite" href="#MR-REF13">[MR-REF13]</a></li></ul>
+<hr/>
+<h2 id="competitive-landscape">Competitive landscape</h2>
+<p>The category spans three overlapping tiers: independent single-truck operators, multi-unit mobile brands, and fast-casual Mexican storefronts, with <strong>ghost/virtual kitchens</strong> increasingly used to extend brand reach into delivery without new physical footprint. <a class="claimid" id="MR-C34" href="#MR-C34" title="Cited claim MR-C34">MR-C34</a> <a class="refcite" href="#MR-REF18">[MR-REF18]</a> Multi-unit mobile brands are consolidating: franchising and operator-partner models are the fastest-growing structure in the segment, letting brands scale local presence while owner-operators carry day-to-day execution. <a class="claimid" id="MR-C35" href="#MR-C35" title="Cited claim MR-C35">MR-C35</a> <a class="refcite" href="#MR-REF02">[MR-REF02]</a> That structure&#x27;s strength — local ownership and energy — is also its central challenge, since brand consistency (menu story, voice, seasonal execution) becomes harder to hold as unit count rises; operators who invest early in a single source of truth for menu, story, and voice scale more cleanly. <a class="claimid" id="MR-C36" href="#MR-C36" title="Cited claim MR-C36">MR-C36</a> <a class="refcite" href="#MR-REF11">[MR-REF11]</a> Fast-casual Mexican chains compete on convenience and predictability, ceding distinctiveness and social energy to the more agile mobile fusion challengers. <a class="refcite" href="#MR-REF18">[MR-REF18]</a></p>
+<hr/>
+<h2 id="implications-for-challenger-brands">Implications for challenger brands</h2>
+<p>For a growing 20–30-unit brand running both traditional and fusion, the 2026 market rewards extending the lead on distinctiveness while closing the reliability gap that limits repeat purchase:</p>
+<ul><li><strong>Lead with a credible fusion hero, keep a traditional core.</strong> The hero drives search, social, and loyalty; the traditional line converts cautious first-timers and anchors trust. This barbell is the top-performing structure in the category. <a class="claimid" id="MR-C37" href="#MR-C37" title="Cited claim MR-C37">MR-C37</a> <a class="refcite" href="#MR-REF03">[MR-REF03]</a></li><li><strong>Win the real-time certainty battle.</strong> Accurate, live open/status and truck-board-matched menus address the single largest conversion barrier and the leading cause of app abandonment — the highest-ROI digital investment available to mobile brands. <a class="claimid" id="MR-C38" href="#MR-C38" title="Cited claim MR-C38">MR-C38</a> <a class="refcite" href="#MR-REF05">[MR-REF05]</a></li><li><strong>Turn festivals and short-form video into a repeatable acquisition-to-loyalty engine,</strong> then convert that reach with a genuinely simple rewards programme and a value-anchored newsletter, capturing the large enrolment gap competitors leave open. <a class="claimid" id="MR-C39" href="#MR-C39" title="Cited claim MR-C39">MR-C39</a> <a class="refcite" href="#MR-REF15">[MR-REF15]</a></li><li><strong>Localize Québec properly and treat sustainability as demonstrated practice,</strong> converting two areas most brands under-serve into visible points of differentiation. <a class="claimid" id="MR-C40" href="#MR-C40" title="Cited claim MR-C40">MR-C40</a> <a class="refcite" href="#MR-REF16">[MR-REF16]</a></li><li><strong>Protect consistency as you scale.</strong> A single source of truth for menu, fusion story, and brand voice lets a franchise-model brand grow unit count without diluting the distinctiveness that earned the lead. <a class="claimid" id="MR-C41" href="#MR-C41" title="Cited claim MR-C41">MR-C41</a> <a class="refcite" href="#MR-REF11">[MR-REF11]</a></li></ul>
+<hr/><h2 id="references">References</h2><ol class="reflist"><li id="MR-REF01"><a class="idbadge" href="#MR-REF01">MR-REF01</a> Maple Foodservice Insights Inc. (2026). <em>Canadian Mobile &amp; Street-Food Category Tracker, 2025 Annual.</em> Toronto.</li><li id="MR-REF02"><a class="idbadge" href="#MR-REF02">MR-REF02</a> Restaurants &amp; Mobile Foodservice Council of Canada (2025). <em>State of Street Food 2025: Cuisine Momentum &amp; Operator Models.</em> Ottawa.</li><li id="MR-REF03"><a class="idbadge" href="#MR-REF03">MR-REF03</a> Circana Canada (2025). <em>New Concept Launch Monitor — Foodservice Innovation Report.</em> (Metro launch panel, n=1,140 new units.)</li><li id="MR-REF04"><a class="idbadge" href="#MR-REF04">MR-REF04</a> Maple Foodservice Insights Inc. (2026). <em>National Consumer Omnibus — Cuisine &amp; Fusion Attitudes.</em> (n=4,180 adults 18+, weighted.)</li><li id="MR-REF05"><a class="idbadge" href="#MR-REF05">MR-REF05</a> Nourish Digital Foodservice Lab (2025). <em>Mobile Ordering &amp; Real-Time Discovery Benchmark.</em> (App-user survey, n=2,310.)</li><li id="MR-REF06"><a class="idbadge" href="#MR-REF06">MR-REF06</a> EcoTable Consumer Panel (2025). <em>Values, Packaging &amp; Willingness-to-Pay in Casual &amp; Mobile Food.</em> (n=3,050.)</li><li id="MR-REF07"><a class="idbadge" href="#MR-REF07">MR-REF07</a> Maple Foodservice Insights Inc. (2025). <em>Demand Occasions &amp; Segments in Canadian Street Food.</em> (Segmentation module, n=2,900.)</li><li id="MR-REF08"><a class="idbadge" href="#MR-REF08">MR-REF08</a> Prairie &amp; Metro Events Alliance (2025). <em>Festival Foodservice Impact Study, 2024–2025 Season.</em> (Festival-goer intercept survey, n=1,620.)</li><li id="MR-REF09"><a class="idbadge" href="#MR-REF09">MR-REF09</a> Statista Foodservice (2025). <em>Canada — Handheld &amp; Ethnic Cuisine Foodservice Outlook 2025–2029.</em></li><li id="MR-REF10"><a class="idbadge" href="#MR-REF10">MR-REF10</a> Journal of Culinary Culture &amp; Consumer Behaviour (2024). &quot;The Authenticity Paradox in Fusion Foodservice,&quot; Vol. 12(3), pp. 211–238.</li><li id="MR-REF11"><a class="idbadge" href="#MR-REF11">MR-REF11</a> Maple Foodservice Insights Inc. (2025). <em>Menu Architecture &amp; Hero-Item Testing in Multi-Unit Mobile Brands.</em> (Operator study, n=62; concept test, n=880.)</li><li id="MR-REF12"><a class="idbadge" href="#MR-REF12">MR-REF12</a> SocialPulse Analytics (2025). <em>Food-Truck Sentiment &amp; Limited-Time-Offer Report.</em> (Social listening, 1.4M Canadian posts.)</li><li id="MR-REF13"><a class="idbadge" href="#MR-REF13">MR-REF13</a> NPD/Datassential Canada (2025). <em>Value Perceptions &amp; Price Sensitivity in Casual Dining &amp; Mobile Food.</em></li><li id="MR-REF14"><a class="idbadge" href="#MR-REF14">MR-REF14</a> Short-Form Media &amp; Discovery Institute (2025). <em>TikTok/Instagram Food Discovery in Canada.</em> (n=2,050 adults 18–34.)</li><li id="MR-REF15"><a class="idbadge" href="#MR-REF15">MR-REF15</a> LoyaltyOne Foodservice Practice (2026). <em>Rewards, Subscription &amp; Newsletter Benchmarks — Mobile &amp; Fast-Casual.</em> (Programme audit + survey, n=1,780.)</li><li id="MR-REF16"><a class="idbadge" href="#MR-REF16">MR-REF16</a> Institut québécois de la consommation alimentaire (2025). <em>Attentes linguistiques et de marque au Québec / Language &amp; Brand Expectations in Québec.</em> (n=1,210 Québec adults.)</li><li id="MR-REF17"><a class="idbadge" href="#MR-REF17">MR-REF17</a> Prairie Foodservice Association (2024). <em>Seasonality &amp; Winter Operations in Western Canadian Mobile Food.</em></li><li id="MR-REF18"><a class="idbadge" href="#MR-REF18">MR-REF18</a> Circana Canada (2025). <em>Ghost Kitchens, Franchising &amp; Consolidation in Canadian Foodservice.</em></li></ol></section>
+<script>
+// Toggle item IDs + provenance (evidence rows). Pages start with body.prov-hidden.
+function toggleProv(btn){
+  var on = document.body.classList.toggle('prov-hidden');
+  btn.innerHTML = on ? 'Show Item IDs &amp; Provenance' : 'Hide Item IDs &amp; Provenance';
+}
+// Evidence-trail helpers: hover/click preview of the verbatim a link points to.
+document.addEventListener('DOMContentLoaded',function(){
+  // highlight target on hash nav
+  function flash(){var h=location.hash.slice(1); if(!h)return;
+    var el=document.getElementById(decodeURIComponent(h)); if(el){el.classList.add('flash');
+    setTimeout(function(){el.classList.remove('flash');},1600); el.scrollIntoView({block:'center'});}}
+  window.addEventListener('hashchange',flash); flash();
+});
+</script>
+<script>
+/* uc-chrome-v2 sizing. The chrome is sticky and therefore in normal flow, so
+   nothing needs padding reserved for it. --chrome-h is still published because
+   the journey-map container sizes itself against it. */
+(function(){
+  var KEY="ucPromoDismissed";
+  function fit(){
+    var c=document.querySelector(".uc-chrome");
+    var h=c?c.offsetHeight:0;
+    document.documentElement.style.setProperty("--chrome-h",h+"px");
+  }
+  window.ucFitChrome=fit;
+  window.ucCloseBanner=function(){
+    document.documentElement.classList.add("uc-promo-hidden");
+    try{localStorage.setItem(KEY,"1");}catch(e){}
+    fit();
+  };
+  fit();
+  window.addEventListener("load",fit);
+  window.addEventListener("resize",fit);
+  /* The banner's height depends on how the copy wraps, which web fonts change
+     after first paint. Without this the reserved space can be stale. */
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+})();
+</script>
+</body></html>

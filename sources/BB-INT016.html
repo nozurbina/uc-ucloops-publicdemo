@@ -1,0 +1,1373 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BB-INT016 — Megan Liu</title>
+<style>/* base */
+/* ═══════════════════════════════════════════════════════════════
+   ucLoops — Urbina Consulting
+   Shared stylesheet for journey maps and persona profiles.
+
+   Loaded by:
+     • journey-map-template.html  (journey maps from /j-create-page)
+     • persona-template.html      (persona profiles from /p-create-page)
+
+   Structure:
+     1.  Global base
+     2.  Domain entity highlighting (shared)
+     3.  Item reference badges (shared)
+     4.  Journey map — layout
+     5.  Journey map — sidebar & persona cards
+     6.  Journey map — grid system
+     7.  Journey map — persona content blocks
+     8.  Journey map — persona-scoped rows
+     9.  Journey map — multi-persona shared rows
+     10. Journey map — brand / shared rows
+     11. Journey map — journey header UI
+     12. Persona profile — page header
+     13. Persona profile — content sections
+     14. Persona profile — emotions, voice, channels, relationships
+     15. Persona profile — footer
+     16. Responsive
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ───────────────────────────────────────────────────────────────
+   1. GLOBAL BASE
+   ─────────────────────────────────────────────────────────────── */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Journey maps use an app-shell layout (fixed sidebar, internal
+   scrolling). Lock body scrolling only when a .container is
+   present (i.e. on journey maps). Persona profiles flow normally. */
+body:has(.container) {
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+ul {
+    padding-left: 1em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   2. DOMAIN ENTITY HIGHLIGHTING (shared)
+   ─────────────────────────────────────────────────────────────── */
+
+.entity {
+    color: #1a1a6b;
+    font-weight: 700;
+    background-color: #CFCFFE;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 0.92em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   3. ITEM REFERENCE BADGES (shared)
+   Defaults: visible on persona profiles, hidden on journey maps
+   (where there are far more of them) until toggled on via the
+   "Show item IDs" button.
+   ─────────────────────────────────────────────────────────────── */
+
+.item-ref {
+    display: inline;
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #94a3b8;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    margin-right: 0.35rem;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+.journey-grid .item-ref               { display: none; }
+.journey-grid.show-refs .item-ref     { display: inline; }
+
+.ref-item-id {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #78350f;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    margin-right: 0.3rem;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   JOURNEY MAP STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   4. LAYOUT
+   ─────────────────────────────────────────────────────────────── */
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow-x: auto;
+}
+
+.main-content {
+    margin-left: 240px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   5. SIDEBAR & PERSONA CARDS
+   ─────────────────────────────────────────────────────────────── */
+
+.sidebar {
+    width: 240px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.show-all-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.show-all-btn:hover { background-color: #2980b9; }
+
+.persona-card {
+    background-color: #34495e;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.persona-card:hover {
+    background-color: #3d566e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.persona-card.active   { border-color: #3498db; background-color: #3d566e; }
+.persona-card.removed  { opacity: 0.5; transform: scale(0.95); }
+.persona-card.removed:hover { transform: scale(0.95); }
+
+.persona-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    background: #667eea;
+}
+.persona-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.persona-avatar .initials {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.15rem;
+    color: white;
+    font-size: 0.7rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+    z-index: 2;
+}
+
+/* Named avatar colours for journey sidebar */
+.persona1-avatar { background: #5b6abf; }
+.persona2-avatar { background: #c06195; }
+.persona3-avatar { background: #4facfe; }
+.persona4-avatar { background: #fa709a; }
+.persona5-avatar { background: #43d854; }
+.jordan-avatar   { background: #667eea; }
+.lisa-avatar     { background: #f093fb; }
+.samantha-avatar { background: #4facfe; }
+.marcus-avatar   { background: #fa709a; }
+.alex-avatar     { background: #43d854; }
+.cara-avatar     { background: #c06195; }
+
+/* Name + role inside sidebar cards (scoped to avoid clashing
+   with the persona page header) */
+.persona-card .persona-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+.persona-card .persona-role {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.persona-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    justify-content: center;
+}
+.persona-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    border: none;
+}
+.persona-btn.focus-btn  { background: #2c3e50d4; }
+.persona-btn.remove-btn { background: #502c2cd4; }
+.persona-btn span       { display: none; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   6. GRID SYSTEM
+   ─────────────────────────────────────────────────────────────── */
+
+.grid-container {
+    flex: 1;
+    overflow-x: scroll;
+    overflow-y: auto;
+    position: relative;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: 200px repeat(var(--stage-count, 5), 400px);
+    grid-auto-rows: min-content;
+    min-width: max-content;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    --stage-count: 5;
+}
+.journey-grid > * { align-self: stretch; }
+
+.grid-header {
+    position: sticky;
+    top: 0;
+    background-color: #34495e;
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid #2c3e50;
+}
+.grid-header.corner { background-color: #2c3e50; }
+
+.row-header {
+    position: sticky;
+    left: 0;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-right: 2px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 10;
+}
+.row-icon { font-size: 1.1rem; }
+
+.grid-cell {
+    padding: 1rem;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    display: grid;
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: 1rem;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   7. PERSONA CONTENT BLOCKS (inside grid cells)
+   ─────────────────────────────────────────────────────────────── */
+
+.persona-content {
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+.persona-content h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #2c3e50;
+}
+.persona-content p {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+.persona-content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.persona-content li {
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+.persona-content > *:last-child { margin-bottom: 0; }
+
+/* Persona-coloured left accents (match sidebar avatar colours) */
+.highlight-persona1 { border-left: 3px solid #5b6abf; }
+.highlight-persona2 { border-left: 3px solid #c06195; }
+.highlight-persona3 { border-left: 3px solid #4facfe; }
+.highlight-persona4 { border-left: 3px solid #fa709a; }
+.highlight-persona5 { border-left: 3px solid #43d854; }
+.highlight-jordan   { border-left: 3px solid #667eea; }
+.highlight-lisa     { border-left: 3px solid #f093fb; }
+.highlight-samantha { border-left: 3px solid #4facfe; }
+.highlight-marcus   { border-left: 3px solid #fa709a; }
+.highlight-alex     { border-left: 3px solid #43d854; }
+.highlight-cara     { border-left: 3px solid #c06195; }
+
+.persona-content.hidden,
+.hidden { display: none; }
+
+/* Shared list line-height */
+.grid-cell [class$="-row"] li,
+.grid-cell [class*="-row "] li { line-height: 1.4; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   8. PERSONA-SCOPED ROWS
+   ─────────────────────────────────────────────────────────────── */
+
+/* Goals — orange / amber */
+.row-header.goals-row          { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.grid-cell.goals-row           { background-color: #fffbeb; }
+.grid-cell.goals-row h4        { color: #92400e; }
+
+/* Narrative — warm yellow */
+.row-header.narrative-row      { background-color: #fef9c3; border-left: 4px solid #eab308; }
+.grid-cell.narrative-row       { background-color: #fefce8; }
+.grid-cell.narrative-row h4    { color: #713f12; }
+
+/* Questions — gold */
+.row-header.questions-row      { background-color: #fff3cd; border-left: 4px solid #f0ad4e; }
+.grid-cell.questions-row       { background-color: #fff8e1; }
+.grid-cell.questions-row h4    { color: #b7791f; }
+.grid-cell.questions-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.questions-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #fff3cd;
+    border-left: 3px solid #f0ad4e;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Problems — red */
+.row-header.problems-row       { background-color: #fee2e2; border-left: 4px solid #ef4444; }
+.grid-cell.problems-row        { background-color: #fef2f2; }
+.grid-cell.problems-row h4     { color: #991b1b; }
+.grid-cell.problems-row ul     { list-style: none; padding-left: 0; }
+.grid-cell.problems-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #fee2e2;
+    border-left: 3px solid #ef4444;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Tasks — green */
+.row-header.tasks-row          { background-color: #dcfce7; border-left: 4px solid #22c55e; }
+.grid-cell.tasks-row           { background-color: #f0fdf4; }
+.grid-cell.tasks-row h4        { color: #166534; }
+.grid-cell.tasks-row ul        { list-style: none; padding-left: 0; }
+.grid-cell.tasks-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #dcfce7;
+    border-left: 3px solid #22c55e;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Sentiment — cyan */
+.row-header.sentiment-row      { background-color: #cffafe; border-left: 4px solid #06b6d4; }
+.grid-cell.sentiment-row       { background-color: #ecfeff; }
+.grid-cell.sentiment-row h4    { color: #164e63; }
+.grid-cell.sentiment-row p     { font-weight: 600; font-size: 0.9rem; color: #0e7490; }
+
+/* Think/Feel quote — cool grey */
+.row-header.quote-row          { background-color: #f3f4f6; border-left: 4px solid #9ca3af; }
+.grid-cell.quote-row           { background-color: #fafafa; }
+.grid-cell.quote-row h4        { color: #374151; }
+.grid-cell.quote-row p {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #1f2937;
+    border-left: 3px solid #9ca3af;
+    padding-left: 0.75rem;
+    margin: 0.35rem 0 0;
+    line-height: 1.5;
+}
+
+/* Alternate paths — purple */
+.row-header.alternate-paths-row  { background-color: #ede9fe; border-left: 4px solid #a855f7; }
+.grid-cell.alternate-paths-row   { background-color: #faf5ff; }
+.grid-cell.alternate-paths-row h4 { color: #6b21a8; }
+.grid-cell.alternate-paths-row ul { list-style: none; padding-left: 0; }
+.grid-cell.alternate-paths-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #ede9fe;
+    border-left: 3px solid #a855f7;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Channels — blue */
+.row-header.channels-row       { background-color: #dbeafe; border-left: 4px solid #3b82f6; }
+.grid-cell.channels-row        { background-color: #eff6ff; }
+.grid-cell.channels-row h4     { color: #1e40af; }
+.channels-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+.channels-tags li {
+    background-color: #dbeafe;
+    border: 1px solid #93c5fd;
+    color: #1d4ed8;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   9. MULTI-PERSONA SHARED ROWS (j-multi-outline)
+   ─────────────────────────────────────────────────────────────── */
+
+/* Key shared activities — blue-grey */
+.row-header.activities-row     { background-color: #dde3ea; border-left: 4px solid #64748b; }
+.grid-cell.activities-row      { background-color: #f0f4f8; }
+.grid-cell.activities-row h4   { color: #1e293b; }
+.grid-cell.activities-row ul   { list-style: none; padding-left: 0; }
+.grid-cell.activities-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #e2e8f0;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Key communications — sage green */
+.row-header.communications-row { background-color: #bbf7d0; border-left: 4px solid #16a34a; }
+.grid-cell.communications-row  { background-color: #e8f5e8; }
+.grid-cell.communications-row h4 { color: #14532d; }
+.grid-cell.communications-row ul { list-style: none; padding-left: 0; }
+.grid-cell.communications-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #dcfce7;
+    border-left: 3px solid #4ade80;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Key assets — rose / pink */
+.row-header.assets-row         { background-color: #fce7f3; border-left: 4px solid #db2777; }
+.grid-cell.assets-row          { background-color: #fdf2f8; }
+.grid-cell.assets-row h4       { color: #831843; }
+.grid-cell.assets-row ul       { list-style: none; padding-left: 0; }
+.grid-cell.assets-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #fce7f3;
+    border-left: 3px solid #f472b6;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Decision gates — violet */
+.row-header.decisions-row      { background-color: #ede9fe; border-left: 4px solid #7c3aed; }
+.grid-cell.decisions-row       { background-color: #f5f3ff; }
+.grid-cell.decisions-row h4    { color: #4c1d95; }
+.grid-cell.decisions-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.decisions-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #ede9fe;
+    border-left: 3px solid #a78bfa;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   10. BRAND / SHARED ROWS (from /j-suggest, /j-data)
+   ─────────────────────────────────────────────────────────────── */
+
+/* Opportunities — warm amber + reference panels */
+.row-header.opportunities-row  { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.grid-cell.opportunities-row   { background-color: #fffbeb; }
+.grid-cell.opportunities-row h4 { color: #92400e; }
+
+.opportunity-card {
+    border: 1px solid #fde68a;
+    border-radius: 6px;
+    background: #fff;
+    padding: 0.6rem 0.75rem 0.5rem;
+    margin-bottom: 0.6rem;
+}
+.opportunity-card:last-child { margin-bottom: 0; }
+.opportunity-card p {
+    margin: 0 0 0.3rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #1c1917;
+}
+.opportunity-card p strong { color: #92400e; font-weight: 700; }
+
+.refs-toggle {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.18rem 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.refs-toggle:hover { background: #fde68a; }
+
+.opp-refs {
+    display: none;
+    margin-top: 0.45rem;
+    padding: 0.4rem 0.55rem;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #44403c;
+}
+.opp-refs.open                 { display: block; }
+.opp-refs .ref-item            { margin: 0 0 0.3rem; }
+.opp-refs .ref-item:last-child { margin-bottom: 0; }
+.opp-refs .ref-source          { font-weight: 600; color: #78350f; }
+.opp-refs .ref-verbatim        { font-style: italic; }
+
+/* Content assets — sky blue */
+.row-header.content-assets-row { background-color: #bae6fd; border-left: 4px solid #0284c7; }
+.grid-cell.content-assets-row  { background-color: #f0f9ff; }
+.grid-cell.content-assets-row h4 { color: #0c4a6e; }
+.grid-cell.content-assets-row ul  { list-style: none; padding-left: 0; }
+.grid-cell.content-assets-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #e0f2fe;
+    border-left: 3px solid #0284c7;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Calls to action — emerald green */
+.row-header.cta-row            { background-color: #bbf7d0; border-left: 4px solid #16a34a; }
+.grid-cell.cta-row             { background-color: #f0fdf4; }
+.grid-cell.cta-row h4          { color: #14532d; }
+.cta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+.cta-tags li {
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    color: #15803d;
+    border-radius: 999px;
+    padding: 0.22rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Stage transition signals — slate */
+.row-header.transitions-row    { background-color: #e2e8f0; border-left: 4px solid #64748b; }
+.grid-cell.transitions-row     { background-color: #f8fafc; }
+.grid-cell.transitions-row h4  { color: #1e293b; }
+.grid-cell.transitions-row ul  { list-style: none; padding-left: 0; }
+.grid-cell.transitions-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #f1f5f9;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Data generated — teal */
+.row-header.data-generated-row { background-color: #ccfbf1; border-left: 4px solid #14b8a6; }
+.grid-cell.data-generated-row  { background-color: #f0fdfa; }
+.grid-cell.data-generated-row h4 { color: #0f766e; }
+.grid-cell.data-generated-row ul { list-style: none; padding-left: 0; }
+.grid-cell.data-generated-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #ccfbf1;
+    border-left: 3px solid #14b8a6;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Data used — indigo */
+.row-header.data-used-row      { background-color: #e0e7ff; border-left: 4px solid #6366f1; }
+.grid-cell.data-used-row       { background-color: #f8fafc; }
+.grid-cell.data-used-row h4    { color: #1e40af; }
+.grid-cell.data-used-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.data-used-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #e0e7ff;
+    border-left: 3px solid #6366f1;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   11. JOURNEY HEADER UI
+   ─────────────────────────────────────────────────────────────── */
+
+.journey-header {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    flex-shrink: 0;
+}
+.journey-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    color: #2c3e50;
+}
+.journey-header p { color: #666; font-size: 0.9rem; }
+
+.journey-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.journey-id {
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 0.18rem 0.5rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.refs-toggle-btn {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+.refs-toggle-btn:hover         { background: #f1f5f9; border-color: #94a3b8; }
+.refs-toggle-btn.refs-visible  { background: #1e293b; border-color: #1e293b; color: #f8fafc; }
+
+.journey-description {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 900px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 0.15rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PERSONA PROFILE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   12. PAGE HEADER
+   ─────────────────────────────────────────────────────────────── */
+
+.page-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 2rem 1.5rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #4a6fa5;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+.avatar-wrapper .initials {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+    z-index: 3;
+}
+
+/* Persona name + role inside the page header */
+.page-header .persona-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.page-header .persona-role {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   13. CONTENT SECTIONS
+   ─────────────────────────────────────────────────────────────── */
+
+.content {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
+}
+
+.section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f59e0b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.section h3 .section-icon { font-size: 1.2rem; }
+
+.section ul    { padding-left: 1.25rem; }
+.section li    {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    font-size: 0.92rem;
+}
+.section p     {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Pain points + Fears variant — red accent */
+.section.pain-points              { background-color: #fef2f2; border-color: #ef4444; }
+.section.pain-points h3           { color: #991b1b; border-bottom-color: #ef4444; }
+.section.pain-points li           { color: #4a1c1c; }
+
+/* Goals variant — green accent */
+.section.goals                    { background-color: #f0fdf4; border-color: #22c55e; }
+.section.goals h3                 { color: #166534; border-bottom-color: #22c55e; }
+.section.goals li                 { color: #1a3a1a; }
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   14. EMOTIONS, VOICE, CHANNELS, RELATIONSHIPS
+   ─────────────────────────────────────────────────────────────── */
+
+.emotion-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.emotion-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #2c3e50;
+    transition: all 0.2s ease;
+}
+.emotion-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.emotion-tag .emotion-label {
+    font-weight: 400;
+    color: #555;
+    font-size: 0.82rem;
+}
+
+.voice-description {
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.quote-block {
+    background-color: #f8f9fa;
+    border-left: 4px solid #f59e0b;
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: #444;
+}
+.quote-block:last-child { margin-bottom: 0; }
+
+.channel-list {
+    list-style: none;
+    padding-left: 0;
+}
+.channel-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.92rem;
+}
+.channel-list li:last-child { border-bottom: none; }
+
+.channel-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #f59e0b;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.relationship-block {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e0e0e0;
+}
+.relationship-block:last-child { margin-bottom: 0; }
+.relationship-block h4 {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+.relationship-block p,
+.relationship-block li {
+    font-size: 0.88rem;
+    color: #555;
+}
+.relationship-block ul {
+    padding-left: 1.25rem;
+    margin-top: 0.35rem;
+}
+.relationship-block li { margin-bottom: 0.25rem; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   15. PAGE FOOTER
+   ─────────────────────────────────────────────────────────────── */
+
+.page-footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+.footer-divider {
+    width: 60px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.75rem auto;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   16. RESPONSIVE (persona profile only — journey maps are
+       designed for horizontal scroll on any screen)
+   ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .two-col           { grid-template-columns: 1fr; }
+    .page-header       { padding: 1.5rem 1rem 1.25rem; }
+    .page-header .persona-name { font-size: 1.6rem; }
+    .avatar-wrapper    { width: 100px; height: 100px; font-size: 2.2rem; }
+    .content           { padding: 0 1rem 2rem; }
+    .section           { padding: 1.25rem; }
+    .emotion-grid      { gap: 0.5rem; }
+    .emotion-tag       { padding: 0.4rem 0.75rem; font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+    .page-header .persona-name { font-size: 1.4rem; }
+    .avatar-wrapper    { width: 80px; height: 80px; font-size: 1.8rem; }
+    .emotion-grid      { flex-direction: column; }
+    .emotion-tag       { justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BorderBlend site supplement — brand-aligned (ucLoops / Urbina).
+   Appended AFTER humanloops-urbina.css. Light theme only.
+   Palette: slate #2c3e50 · orange #f59e0b · entity #CFCFFE/#1a1a6b
+            · id-badge slate on #f1f5f9 · source badge amber #fef3c7
+   Styles ONLY the custom components the generator emits (index, insights,
+   source pages, v1 personas/journeys). Template classes (.entity, .item-ref,
+   .section, .two-col, .quote-block, …) inherit from humanloops-urbina.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* link conventions: no underline at rest; underline text links on hover; badges/tiles never underline */
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+.tile,.tile:hover,.idbadge,.idbadge:hover,.item-ref,.item-ref:hover,.evref,.evref:hover,
+.rowid,.rowid:hover,.claimid,.claimid:hover,.refcite,.refcite:hover{text-decoration:none}
+
+/* Sticky compact bar (always shows the document + the provenance toggle, even when deep-linked down) */
+.stickybar{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:.6rem;
+  background:#2c3e50;color:#fff;padding:.4rem .7rem;border-radius:0 0 10px 10px;
+  box-shadow:0 3px 10px rgba(0,0,0,.18);margin:0 0 1rem}
+.stickybar .sb-home{color:#cdd7e0;text-decoration:none;font-size:1rem;flex:1;min-width:0;display:flex;align-items:center;gap:.4rem}
+.stickybar .sb-home:hover{color:#fff;text-decoration:none}
+.stickybar .sb-arrow{display:inline-block}
+.stickybar .sb-title{flex:1;font-weight:600;font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stickybar .sb-kicker{font-weight:400;opacity:.7;font-size:.72rem;margin-right:.35rem}
+/* "Show Item IDs & Provenance" toggle */
+.provtoggle{background:#f59e0b;color:#2c3e50;border:none;border-radius:6px;padding:.32rem .7rem;
+  font-size:.74rem;font-weight:700;cursor:pointer;margin:0;flex-shrink:0;white-space:nowrap}
+.provtoggle:hover{background:#e08e1e;text-decoration:none}
+body.prov-hidden .idbadge,body.prov-hidden .item-ref,body.prov-hidden .evidence,
+body.prov-hidden .prov-link,body.prov-hidden .reflist .idbadge{display:none}
+
+/* layout wrappers */
+.srcpage{max-width:64rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+.docwrap{max-width:72rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+.home{display:inline-block;font-size:.8rem;color:#667085;margin:.2rem 0 1rem}
+.home:hover{color:#2c3e50}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#b45309;font-weight:700}
+.srchead{border-bottom:2px solid #f59e0b;padding-bottom:1rem;margin-bottom:1.25rem}
+.srchead h1{font-size:1.5rem;margin:.25rem 0 .6rem;color:#2c3e50}
+.hint{font-weight:400;color:#667085;font-size:.82rem}
+.metagrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.2rem .9rem;font-size:.82rem}
+.metagrid .mk{color:#667085;margin-right:.4rem}
+.metagrid .mv{font-weight:600;color:#2c3e50}
+.lead{font-size:1.05rem;color:#444;margin:.6rem 0}
+
+/* clickable ID badges (match template .item-ref look) */
+.idbadge,.rowid,.claimid,.refcite{
+  font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-weight:700;font-size:.66rem;
+  letter-spacing:.3px;white-space:nowrap;background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;
+  border-radius:5px;padding:.08rem .34rem;text-decoration:none;display:inline-block}
+.idbadge:hover,.rowid:hover,.claimid:hover,.refcite:hover{text-decoration:none;outline:1px solid #f59e0b}
+.claimid{vertical-align:super;font-size:.58rem;margin-left:.15rem;background:#fef3c7;color:#78350f;border-color:#fde68a}
+.refcite{border-style:dashed}
+.reflist li{margin:.3rem 0;font-size:.86rem}
+
+/* transcript turns */
+.transcript{margin-top:.5rem}
+.turn{padding:.5rem .7rem;border-radius:9px;margin:.35rem 0;border:1px solid transparent}
+.turn.participant{background:#fff;border-color:#e0e0e0}
+.turn.interviewer{background:transparent}
+.turn.interviewer .turntext{color:#667085}
+.turnhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem}
+.spk{font-weight:700;font-size:.82rem;color:#2c3e50}
+.turn.interviewer .spk{color:#667085;font-weight:600}
+.turntext p{margin:.3rem 0}
+
+/* cards (social / tickets / pains) + doc */
+.cards{display:grid;gap:.7rem}
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.7rem .85rem;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.cardhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem}
+.ch{font-weight:700;font-size:.9rem;color:#2c3e50}
+.cardbody p{margin:.3rem 0;font-size:.9rem}
+.notes{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.4rem 1rem;margin:1rem 0}
+.doc h2{margin-top:1.6rem;border-bottom:1px solid #e0e0e0;padding-bottom:.3rem;color:#2c3e50}
+.doc h3{color:#2c3e50}
+
+/* home / index tiles */
+.hero{padding:2rem 0 1rem;border-bottom:2px solid #f59e0b;margin-bottom:1.5rem}
+.hero h1{font-size:2rem;margin:.2rem 0;color:#2c3e50}
+.hero p{color:#667085;max-width:46rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr))}
+.tile{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1rem;display:block;color:inherit;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.15s}
+.tile:hover{text-decoration:none;border-color:#f59e0b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.tile h3{margin:.1rem 0 .3rem;font-size:1.02rem;color:#2c3e50}
+.tile p{margin:0;font-size:.83rem;color:#667085}
+.sec-title{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#b45309;font-weight:700;margin:2rem 0 .8rem}
+.trailnote{background:#fff8ef;border:1px solid #f3c9ad;border-radius:10px;padding:.8rem 1rem;font-size:.86rem;margin:1rem 0;color:#7a4b2a}
+.trailnote code{background:#fff}
+/* Project Overview — prominent full-width white box */
+.overview{background:#fff;border:1px solid #e0e0e0;border-left:6px solid #f59e0b;border-radius:12px;
+  padding:1.3rem 1.6rem;margin:.4rem 0 1.4rem;box-shadow:0 4px 18px rgba(0,0,0,.09)}
+.overview h2{margin:0 0 .6rem;font-size:1.25rem;color:#2c3e50}
+.overview p{margin:.4rem 0;color:#333;font-size:.97rem;line-height:1.6;max-width:62rem}
+.overview p.ctx{font-size:.9rem;color:#555}
+.overview a{color:#b45309;font-weight:700}
+.srccode{font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-size:.72rem;font-weight:700;
+  color:#475569;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:4px;padding:.02rem .3rem}
+
+/* resolved evidence links + hover preview */
+.evidence{margin:.4rem 0 0;font-size:.8rem;color:#667085}
+.evidence .lbl{text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;margin-right:.3rem}
+.evref{font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-weight:700;font-size:.66rem;
+  background:#fef3c7;color:#78350f;border:1px solid #fde68a;border-radius:5px;padding:.08rem .34rem;
+  text-decoration:none;display:inline-block;margin:.1rem .25rem .1rem 0;position:relative}
+.evref:hover{outline:1px solid #f59e0b;text-decoration:none}
+.evref.insid{background:#e0f2f1;color:#0b6a5b;border-color:#b2dfdb}
+.evref .tip{display:none;position:absolute;left:0;top:135%;z-index:20;width:22rem;max-width:70vw;
+  background:#fff;border:1px solid #f59e0b;border-radius:9px;padding:.55rem .7rem;font-family:-apple-system,sans-serif;
+  font-weight:400;font-size:.78rem;color:#333;box-shadow:0 8px 26px rgba(0,0,0,.18);white-space:normal;line-height:1.4}
+.evref:hover .tip,.evref:focus .tip{display:block}
+.evref .tip .src{display:block;color:#b45309;font-weight:700;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
+
+/* insights page */
+.insight{background:#fff;border:1px solid #e0e0e0;border-left:4px solid #f59e0b;border-radius:10px;padding:.9rem 1.05rem;margin:.9rem 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.insight h3{font-size:1.05rem;margin:.1rem 0 .3rem;display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap;color:#2c3e50}
+.insight .cat{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:#667085;border:1px solid #e0e0e0;border-radius:20px;padding:.05rem .5rem}
+.insight .strength{font-size:.66rem;font-weight:700;padding:.05rem .45rem;border-radius:20px}
+.st-verified{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.st-strong{background:#fff7ed;color:#b45309;border:1px solid #fed7aa}
+.st-moderate{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.insight .body{font-size:.92rem}
+.insight .imp{color:#166534}
+.filterbar{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0;align-items:center}
+.filterbar button{background:#fff;border:1px solid #cbd5e1;border-radius:20px;padding:.3rem .8rem;cursor:pointer;color:#2c3e50;font-size:.8rem}
+.filterbar button.on{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.filterbar .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#667085}
+
+/* v1 persona pages (superseded by v3 but kept on-brand) */
+.persona-head{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;border-bottom:2px solid #f59e0b;padding-bottom:1rem;margin-bottom:1.2rem}
+.avatar{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;flex-shrink:0;background:#4a6fa5}
+.pblock{background:#fff;border:1px solid #e0e0e0;border-radius:11px;padding:.9rem 1.05rem;margin:.8rem 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.pblock h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#b45309;margin:0 0 .5rem}
+.pitem{margin:.45rem 0}.pitem .txt{font-size:.92rem}
+.two-col-cards{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:720px){.two-col-cards{grid-template-columns:1fr}}
+.quotebar{font-size:1.05rem;font-style:italic;border-left:4px solid #f59e0b;padding:.4rem 1rem;color:#333;margin:.6rem 0;background:#f8f9fa;border-radius:0 8px 8px 0}
+
+/* v1 journey grid (kept on-brand) */
+.jny-wrap{padding:1rem}
+.scrollx{overflow-x:auto;padding-bottom:1rem}
+.jgrid{display:grid;min-width:max-content;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;background:#fff}
+.jgrid>div{border-right:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;padding:.6rem .7rem}
+.jrow-label{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;background:#f1f5f9;color:#667085;position:sticky;left:0;z-index:2}
+.jstage-head{background:#2c3e50;color:#fff;font-weight:700}
+.jstage-head .sub{display:block;font-weight:400;font-size:.75rem;opacity:.9}
+.stagecell{font-size:.84rem}.stagecell .cellid{margin-bottom:.25rem}.emoji{font-size:1.1rem}
+
+/* flash on hash-nav */
+.flash,tr.flash td{animation:flash 1.6s ease-out}
+@keyframes flash{0%{background:#fff3c9}100%{}}
+
+/* tables in doc/source pages */
+.tablewrap{overflow-x:auto;margin:1rem 0}
+/* Banner — full width across all pages */
+body{position:relative}
+.promo-banner{position:fixed;top:0;left:0;right:0;background:rgba(80,8,80,.95);color:#fff;padding:.9rem 1.25rem;z-index:300}
+.promo-banner .banner-inner{max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:1.5rem}
+.promo-banner .banner-logo{height:34px;width:auto;flex-shrink:0;display:block}
+.promo-banner .banner-copy{flex:1;min-width:0}
+.promo-banner .banner-line{font-size:1.02rem;line-height:1.2;margin:0 0 .1rem}
+.promo-banner .banner-line:last-child{margin-bottom:0}
+.promo-banner b{color:#d7a32b;font-weight:700}
+.promo-banner a.banner-link{color:#d7a32b;font-weight:700;text-decoration:none}
+.promo-banner a.banner-link:hover{text-decoration:underline}
+.promo-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e8bc52,#d7a32b);color:#2c3e50;border:none;padding:.5rem 1.4rem;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;transition:.2s;white-space:nowrap;flex-shrink:0}
+.promo-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(215,163,43,.3);text-decoration:none}
+body{padding-top:8rem}
+@media(max-width:900px){.promo-banner{padding:.8rem 1.25rem}.promo-banner .banner-inner{flex-wrap:wrap}.promo-banner .banner-logo{height:26px}body{padding-top:12rem}}
+
+/* ── uc-chrome-v2: banner + sticky bar as one sticky wrapper ──
+   Previously both bars were position:fixed independently, offset from each
+   other by a JS-measured --banner-h, with body padding-top reserving room for
+   them. Three things had to agree and often didn't — hence the white seam.
+
+   Sticky instead of fixed, deliberately. These pages are normally viewed inside
+   the AI-projects viewer, which hides our .stickybar (it rebuilds it in the
+   parent page above the iframe) and auto-sizes the iframe to content height.
+   With no independent viewport, `fixed` buys nothing and the reserved padding
+   becomes a visible empty band. Sticky sits in normal flow — nothing to reserve,
+   nothing to measure — and still sticks when the page IS viewed directly. ── */
+.uc-chrome{position:sticky;top:0;z-index:300}
+.uc-chrome .promo-banner{position:relative !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+.uc-chrome .stickybar{position:static !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+/* The chrome is in flow now, so any reserved space is a gap. */
+body{padding-top:0 !important}
+
+/* Dismiss. Applied to <html> by a parser-blocking script before the banner is
+   parsed, so a previously-dismissed banner never flashes into view. */
+.uc-promo-hidden .promo-banner{display:none !important}
+.promo-close{position:absolute;top:.45rem;right:.55rem;width:26px;height:26px;padding:0;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:6px;
+  color:#fff;font-size:.8rem;line-height:1;cursor:pointer;font-family:inherit;
+  display:flex;align-items:center;justify-content:center}
+.promo-close:hover{background:rgba(255,255,255,.26)}
+
+@media(max-width:859px){
+  /* The logo is the first thing to sacrifice — it carries no information the
+     copy doesn't already, and it costs a whole row once the text wraps. */
+  .uc-chrome .promo-banner .banner-logo{display:none}
+  .uc-chrome .promo-banner .banner-inner{flex-direction:column;align-items:stretch;gap:.55rem}
+  .uc-chrome .promo-banner .banner-line{font-size:.92rem}
+  .uc-chrome .promo-banner .promo-btn{align-self:flex-start}
+  .promo-close{top:.3rem;right:.35rem}
+  .uc-chrome .promo-banner{padding-right:2.4rem}
+
+  /* The stage grid is several times wider than a phone. The drawer patch added
+     .container{overflow-x:hidden} so the off-canvas sidebar couldn't create a
+     page-level scrollbar — but that also clipped the grid, making every stage
+     after the first unreachable. Give the grid its own horizontal scroll. */
+  .main-content{overflow-x:auto !important;-webkit-overflow-scrolling:touch}
+}
+</style>
+</head><body class="srcpage prov-hidden">
+<script>try{if(localStorage.getItem("ucPromoDismissed")==="1")document.documentElement.className+=" uc-promo-hidden";}catch(e){}</script>
+<div class="uc-chrome"><div class="promo-banner"><button class="promo-close" type="button" onclick="ucCloseBanner()" aria-label="Dismiss this notice" title="Dismiss">&#10005;</button><div class="banner-inner"><img class="banner-logo" src="../2023-uc-logo-outline.svg" alt="Urbina Consulting"><div class="banner-copy"><div class="banner-line">This is a generated example built with Urbina's ucLoops AI methodology.</div><div class="banner-line">It's even better when used with <b>real research sources!</b></div><div class="banner-line">Learn how to use it yourself on our <a class="banner-link" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">cohort or private courses.</a></div></div><a class="promo-btn" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">Learn more</a></div></div><div class="stickybar"><a class="sb-home" href="../index.html" title="BorderBlend evidence map"><span class="sb-arrow">←</span><span class="sb-title">BorderBlend Evidence Map</span></a><button class="provtoggle" onclick="toggleProv(this)">Show Item IDs &amp; Provenance</button></div></div>
+
+
+<header class="srchead">
+  <div class="kicker">Source · Interview transcript</div>
+  <h1>BB-INT016 — Megan Liu</h1>
+  <div class="metagrid"><div><span class="mk">Participant</span><span class="mv">Megan Liu</span></div><div><span class="mk">Profile</span><span class="mv">22F, Edmonton. University student, budget-driven, eats out cheap and often. Casually aware of BorderBlend (a friend-group thing, discovered near campus / at a festival). Price is her dominant lens.</span></div><div><span class="mk">Date</span><span class="mv">24 March 2026</span></div><div><span class="mk">Location</span><span class="mv">Video call from her apartment, Edmonton (roommate passes through once)</span></div><div><span class="mk">Interviewer</span><span class="mv">Reuben Osei (UC research team)</span></div><div><span class="mk">Duration</span><span class="mv">28 minutes</span></div><div><span class="mk">Method</span><span class="mv">Video call</span></div><div><span class="mk">Status</span><span class="mv">Raw transcript — not yet cleaned</span></div></div>
+</header>
+<section class="notes"><h2>Pre-interview notes</h2><p>Recruited through a campus panel in Edmonton. Third-year undergrad, lives in a shared apartment near the university, eats out several times a week on a tight budget. Represents the &quot;everyday value&quot; 20-something archetype: not a food enthusiast, decides by price, proximity, and whether a place is open right now. Aware of BorderBlend through friends and a festival appearance rather than through the brand&#x27;s own channels. Uses Instagram and TikTok heavily but doesn&#x27;t follow or engage with BorderBlend specifically. Useful as a contrast to the amplifier and foodie profiles — low brand engagement, high price sensitivity, potentially deal-convertible.</p>
+<hr/></section>
+<section class="transcript"><h2>Transcript <span class="hint">· every line has a permalink ID — this is the leaf of the evidence trail</span></h2>
+<div class="turn interviewer" id="BB-INT016-t1"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t1" title="Permalink to this line">BB-INT016-t1</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Thanks for hopping on, Megan. Maybe just start with — how did you first come across BorderBlend?</p></div></div><div class="turn participant" id="BB-INT016-t2"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t2" title="Permalink to this line">BB-INT016-t2</a><span class="spk">Megan</span></div><div class="turntext"><p>Oh my god, okay, so — it was my friends? Like it wasn&#x27;t me. [laughs] I feel like I never discover anything first, I&#x27;m always the last one. Um, so a bunch of us were at, like — there was this festival thing last summer, the food-truck lineup on the — I wanna say it was by the river? And they were just there, and everyone was like &quot;oh the brisket one, get the brisket one,&quot; and I was like okay, sure, and — yeah. That was the first time. And then it turns out one parks near campus sometimes so it kind of became a thing. Does that make sense?</p></div></div><div class="turn interviewer" id="BB-INT016-t3"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t3" title="Permalink to this line">BB-INT016-t3</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Totally. So it was social from the start — friends pulling you in.</p></div></div><div class="turn participant" id="BB-INT016-t4"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t4" title="Permalink to this line">BB-INT016-t4</a><span class="spk">Megan</span></div><div class="turntext"><p>Yeah, one hundred percent. Like I would not have gone up to a random taco truck by myself and been like, &quot;this is my brand now.&quot; [laughs] It&#x27;s always somebody in the group who&#x27;s like &quot;oh we should get BorderBlend,&quot; and then everyone just goes along with it. I&#x27;m very much a go-along-with-it person when it comes to food.</p></div></div><div class="turn interviewer" id="BB-INT016-t5"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t5" title="Permalink to this line">BB-INT016-t5</a><span class="spk">Interviewer</span></div><div class="turntext"><p>When you&#x27;re deciding where to eat on a normal day — not a festival, just a Tuesday — what actually drives that?</p></div></div><div class="turn participant" id="BB-INT016-t6"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t6" title="Permalink to this line">BB-INT016-t6</a><span class="spk">Megan</span></div><div class="turntext"><p>Honestly? Cheapest and closest. Like — that&#x27;s it, that&#x27;s the whole thing. [laughs] I&#x27;m a student, I&#x27;m broke, so it&#x27;s like, what&#x27;s near me, what&#x27;s open right now, and what&#x27;s not gonna, like, destroy my week financially. If a place is even a ten-minute walk further I&#x27;m probably not doing it, I&#x27;ll just get whatever&#x27;s right there. So it&#x27;s kind of — proximity first, then price, but honestly price is always in the back of my head the whole time.</p></div></div><div class="turn interviewer" id="BB-INT016-t7"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t7" title="Permalink to this line">BB-INT016-t7</a><span class="spk">Interviewer</span></div><div class="turntext"><p>And where does BorderBlend land on that? Is it your cheap-and-close option, or more of a treat?</p></div></div><div class="turn participant" id="BB-INT016-t8"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t8" title="Permalink to this line">BB-INT016-t8</a><span class="spk">Megan</span></div><div class="turntext"><p>See, that&#x27;s — okay, this is the thing. It used to feel like a normal option, and now it feels a little bit more like a treat? Which is kind of a bummer. Like when I first started getting it, it felt like, oh, this is a good deal for actually good food. And now I&#x27;m like — hmm. It&#x27;s creeping up. I feel like every time I go it&#x27;s, like, a dollar more or something. Which, individually, whatever, it&#x27;s a dollar. But when you&#x27;re doing the math on every single thing you buy, you notice.</p></div></div><div class="turn interviewer" id="BB-INT016-t9"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t9" title="Permalink to this line">BB-INT016-t9</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Do you remember roughly what it costs you now versus when you started?</p></div></div><div class="turn participant" id="BB-INT016-t10"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t10" title="Permalink to this line">BB-INT016-t10</a><span class="spk">Megan</span></div><div class="turntext"><p>Okay so — see, this is where I get weirdly specific. [laughs] When I started it was like, I could get out the door for under twelve bucks, like a taco and a drink and I was fine. And now I feel like it&#x27;s — with a drink it&#x27;s closer to fifteen, sixteen? And that&#x27;s the — like that&#x27;s the psychological line for me, honestly. Once it&#x27;s fifteen-plus I start going, is this basically just a restaurant now? Because at that point I could go somewhere with, like, a chair. Does that make sense? [laughs] So yeah. The price thing is real for me.</p></div></div><div class="turn interviewer" id="BB-INT016-t11"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t11" title="Permalink to this line">BB-INT016-t11</a><span class="spk">Interviewer</span></div><div class="turntext"><p>That&#x27;s really useful. What about the portions — when you spend that, do you feel like you got your money&#x27;s worth?</p></div></div><div class="turn participant" id="BB-INT016-t12"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t12" title="Permalink to this line">BB-INT016-t12</a><span class="spk">Megan</span></div><div class="turntext"><p>Um — yeah, mostly? Like the food&#x27;s good, I&#x27;m not — I don&#x27;t want to sound like I&#x27;m hating, the brisket one is genuinely really good, everyone&#x27;s right about it. It&#x27;s more that — it&#x27;s the kind of thing where one taco isn&#x27;t quite enough and two feels like a lot of money? So I&#x27;m always in this awkward middle zone of like, am I still hungry, or am I just being cheap. [laughs] I usually end up getting the one and then eating something at home. Which, I don&#x27;t know, maybe that&#x27;s just me being a student.</p></div></div><div class="turn interviewer" id="BB-INT016-t13"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t13" title="Permalink to this line">BB-INT016-t13</a><span class="spk">Interviewer</span></div><div class="turntext"><p>No, that&#x27;s exactly the kind of thing we want. When your friend group goes, how does that usually play out — who decides?</p></div></div><div class="turn participant" id="BB-INT016-t14"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t14" title="Permalink to this line">BB-INT016-t14</a><span class="spk">Megan</span></div><div class="turntext"><p>It&#x27;s — okay it&#x27;s always the same one or two people, honestly. There&#x27;s like a designated food person in every friend group and it&#x27;s not me. [laughs] Someone will just be like &quot;BorderBlend?&quot; in the chat and then it&#x27;s — everyone kind of piles on. And then the funny thing is, when we go as a group, I&#x27;ll actually spend more? Because everyone&#x27;s getting two, and getting the drink, and I don&#x27;t wanna be the person going &quot;actually I&#x27;ll just have one small thing,&quot; so I kind of — I get swept up. So it&#x27;s cheaper for them to get me to spend more, if that makes sense.</p></div></div><div class="turn interviewer" id="BB-INT016-t15"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t15" title="Permalink to this line">BB-INT016-t15</a><span class="spk">Interviewer</span></div><div class="turntext"><p>[laughs] It does. So the group is where the money goes.</p></div></div><div class="turn participant" id="BB-INT016-t16"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t16" title="Permalink to this line">BB-INT016-t16</a><span class="spk">Megan</span></div><div class="turntext"><p>Exactly, yeah. Solo I&#x27;m very disciplined, I get the one thing. In a group I&#x27;m a disaster. [laughs]</p></div></div><div class="turn interviewer" id="BB-INT016-t17"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t17" title="Permalink to this line">BB-INT016-t17</a><span class="spk">Interviewer</span></div><div class="turntext"><p>You mentioned you&#x27;re big on Instagram and TikTok — do you follow BorderBlend on there, or see their stuff?</p></div></div><div class="turn participant" id="BB-INT016-t18"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t18" title="Permalink to this line">BB-INT016-t18</a><span class="spk">Megan</span></div><div class="turntext"><p>So — no. Like I&#x27;ll watch it if it comes up? Like if the algorithm throws me a taco video I&#x27;m absolutely watching that, I&#x27;m not gonna scroll past a good first-bite video, that&#x27;s — that&#x27;s my Roman Empire. [laughs] But do I follow the actual brand, do I like check their page to see if they&#x27;re around — no. Not really. I don&#x27;t even know if the truck by campus has its own account, honestly. I feel like I found out where they&#x27;d be from my friends, not from, like, the brand telling me.</p></div></div><div class="turn interviewer" id="BB-INT016-t19"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t19" title="Permalink to this line">BB-INT016-t19</a><span class="spk">Interviewer</span></div><div class="turntext"><p>So you&#x27;ll consume the content but you don&#x27;t seek it out.</p></div></div><div class="turn participant" id="BB-INT016-t20"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t20" title="Permalink to this line">BB-INT016-t20</a><span class="spk">Megan</span></div><div class="turntext"><p>Yeah. And I definitely don&#x27;t post. Like, I&#x27;m a watcher, not a — I&#x27;m not gonna film myself eating a taco, that&#x27;s not my — some people do and that&#x27;s great, that&#x27;s not me. [laughs] I&#x27;ll send it in the group chat maybe. That&#x27;s about as far as my content creation goes.</p></div></div><div class="turn interviewer" id="BB-INT016-t21"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t21" title="Permalink to this line">BB-INT016-t21</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Fair enough. Let me ask about loyalty — do you know they have a points programme? Would you use something like that?</p></div></div><div class="turn participant" id="BB-INT016-t22"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t22" title="Permalink to this line">BB-INT016-t22</a><span class="spk">Megan</span></div><div class="turntext"><p>Oh — do they? See, I didn&#x27;t even — okay, no, I didn&#x27;t know that. Um. I mean — maybe? Like here&#x27;s the honest answer: if it was easy and it actually saved me money, yeah, I&#x27;d be all over it. I chase points on the coffee app, I have like four coffee apps, I&#x27;m not proud of it. [laughs] But the second it&#x27;s, like, complicated or I have to make an account and remember a password and scan some — no. I&#x27;ll just forget. So it&#x27;d have to be really easy. Like, my phone number at the window, done. If it&#x27;s more than that I&#x27;m out, honestly.</p></div></div><div class="turn interviewer" id="BB-INT016-t23"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t23" title="Permalink to this line">BB-INT016-t23</a><span class="spk">Interviewer</span></div><div class="turntext"><p>So low friction is the whole game for you.</p></div></div><div class="turn participant" id="BB-INT016-t24"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t24" title="Permalink to this line">BB-INT016-t24</a><span class="spk">Megan</span></div><div class="turntext"><p>One hundred percent. I&#x27;m lazy and broke, that&#x27;s the — [laughs] that&#x27;s the demographic. It has to save me money and it has to be, like, zero effort. If it hits both of those I&#x27;m genuinely a really easy sell. That&#x27;s the thing, I don&#x27;t think they realize people like me are actually easy to get, you just have to make it about the money and make it easy.</p></div></div><div class="turn interviewer" id="BB-INT016-t25"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t25" title="Permalink to this line">BB-INT016-t25</a><span class="spk">Interviewer</span></div><div class="turntext"><p>That&#x27;s a great point. What about a newsletter or emails — is there anything that would make you sign up?</p></div></div><div class="turn participant" id="BB-INT016-t26"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t26" title="Permalink to this line">BB-INT016-t26</a><span class="spk">Megan</span></div><div class="turntext"><p>Ugh, emails. [laughs] Okay — normally, no. Like my inbox is a graveyard, I don&#x27;t open brand emails ever. Butttt — if it was, like, a student discount thing? Or, like, &quot;here&#x27;s a deal this week&quot; — okay, that I might actually do. Because that&#x27;s just money. Like if signing up meant I get a code that knocks a couple bucks off, or there&#x27;s a student night, or — yeah. That&#x27;s literally the only reason I&#x27;d give them my email. The deal. Not the, like, &quot;story of our brisket&quot; or whatever. [laughs] Just — tell me how to spend less. That&#x27;s the hook.</p></div></div><div class="turn interviewer" id="BB-INT016-t27"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t27" title="Permalink to this line">BB-INT016-t27</a><span class="spk">Interviewer</span></div><div class="turntext"><p>Student-deal angle, basically.</p></div></div><div class="turn participant" id="BB-INT016-t28"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t28" title="Permalink to this line">BB-INT016-t28</a><span class="spk">Megan</span></div><div class="turntext"><p>Yeah. Like a proper student thing, show your student ID, or a code, whatever. That would genuinely change how often I go, I think. Because right now the only thing holding me back is the price creeping up. If there was a way to make it cheap again I&#x27;d be back to it being my normal option instead of a treat. Does that make sense? Like — the food&#x27;s not the problem. It&#x27;s never been the food. It&#x27;s the number.</p></div></div><div class="turn interviewer" id="BB-INT016-t29"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t29" title="Permalink to this line">BB-INT016-t29</a><span class="spk">Interviewer</span></div><div class="turntext"><p>That makes complete sense. Last thing — if BorderBlend could fix or change one thing for you specifically, what is it?</p></div></div><div class="turn participant" id="BB-INT016-t30"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t30" title="Permalink to this line">BB-INT016-t30</a><span class="spk">Megan</span></div><div class="turntext"><p>Just — the price, or, like, a student version of the price. [laughs] I know that&#x27;s boring. Everyone probably says something cooler. But genuinely — for me it&#x27;s that. Make it not feel like a restaurant bill and I&#x27;m there like three times a week. Oh — and honestly just, like, being able to know if the campus truck is actually there that day, because half the time I don&#x27;t know if they&#x27;re around and I just get something else. But mostly the price. Yeah. Sorry, that&#x27;s such a student answer. [laughs]</p></div></div><div class="turn interviewer" id="BB-INT016-t31"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t31" title="Permalink to this line">BB-INT016-t31</a><span class="spk">Interviewer</span></div><div class="turntext"><p>It&#x27;s a perfect answer. Thanks so much for your time, Megan.</p></div></div><div class="turn participant" id="BB-INT016-t32"><div class="turnhead"><a class="idbadge" href="#BB-INT016-t32" title="Permalink to this line">BB-INT016-t32</a><span class="spk">Megan</span></div><div class="turntext"><p>No worries! This was fun, I feel like I just talked about being broke for half an hour. [laughs] Good luck with it.</p><p>---</p></div></div>
+</section>
+<section class="notes"><h2>Post-interview notes</h2><p>Textbook &quot;everyday value&quot; 20-something and a clean contrast to the amplifier/foodie profiles: low brand engagement, high price sensitivity, decides on cheapest + closest + open-now. Discovery was entirely social/experiential — a festival appearance (echoes Thomas Hardy BB-INT011&#x27;s festival-discovered path) plus friend-group pull and a campus truck — never through brand-owned channels; she doesn&#x27;t follow BorderBlend on social despite heavy personal Instagram/TikTok use (&quot;a watcher, not a poster&quot;). Strongest signal is price-creep: her recollection moved from &quot;under $12&quot; to &quot;$15–16 with a drink,&quot; with an explicit $15 psychological ceiling and the &quot;basically a restaurant now&quot; line — direct corroboration of the emerging price-sensitivity friction and the franchisee &quot;Fuego Nights&quot; pricing complaint, and it aligns with Consumer Social Mention #007&#x27;s price complaint. Group dynamics invert her discipline: solo she buys one item, in a group she overspends — a useful upsell/basket insight. Loyalty and newsletter are both convertible but only through a money + zero-friction gate: phone-number-at-the-window loyalty and a student-discount/deal email are the only hooks that move her; brand-story content does nothing. Pair with Tyler (BB-INT015) as the second everyday-value case — same value lens, different voice (he&#x27;s terse, she&#x27;s chatty/scattered). Framing: this is a winnable growth segment — deal-convertible, loyalty upside if frictionless — where the only real barrier is price perception, not product; the food consistently over-delivers for her.</p></section>
+
+<script>
+// Toggle item IDs + provenance (evidence rows). Pages start with body.prov-hidden.
+function toggleProv(btn){
+  var on = document.body.classList.toggle('prov-hidden');
+  btn.innerHTML = on ? 'Show Item IDs &amp; Provenance' : 'Hide Item IDs &amp; Provenance';
+}
+// Evidence-trail helpers: hover/click preview of the verbatim a link points to.
+document.addEventListener('DOMContentLoaded',function(){
+  // highlight target on hash nav
+  function flash(){var h=location.hash.slice(1); if(!h)return;
+    var el=document.getElementById(decodeURIComponent(h)); if(el){el.classList.add('flash');
+    setTimeout(function(){el.classList.remove('flash');},1600); el.scrollIntoView({block:'center'});}}
+  window.addEventListener('hashchange',flash); flash();
+});
+</script>
+<script>
+/* uc-chrome-v2 sizing. The chrome is sticky and therefore in normal flow, so
+   nothing needs padding reserved for it. --chrome-h is still published because
+   the journey-map container sizes itself against it. */
+(function(){
+  var KEY="ucPromoDismissed";
+  function fit(){
+    var c=document.querySelector(".uc-chrome");
+    var h=c?c.offsetHeight:0;
+    document.documentElement.style.setProperty("--chrome-h",h+"px");
+  }
+  window.ucFitChrome=fit;
+  window.ucCloseBanner=function(){
+    document.documentElement.classList.add("uc-promo-hidden");
+    try{localStorage.setItem(KEY,"1");}catch(e){}
+    fit();
+  };
+  fit();
+  window.addEventListener("load",fit);
+  window.addEventListener("resize",fit);
+  /* The banner's height depends on how the copy wraps, which web fonts change
+     after first paint. Without this the reserved space can be stale. */
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+})();
+</script>
+</body></html>
