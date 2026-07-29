@@ -53,7 +53,7 @@ analysis repo deliberately — there is one copy, not two that drift.
 
 ## 3. Rebuilding — read this or you will ship regressions
 
-`build.py` does **not** emit the current markup. Three post-build patch scripts
+`build.py` does **not** emit the current markup. Four post-build patch scripts
 apply fixes it doesn't know about. Running the generator alone gives you a site
 with the old broken chrome, no mobile support, and no links to the persona app.
 
@@ -63,22 +63,25 @@ cd "<analysis>/OUTPUT/interim/borderblend"
 python build.py --full
 python postbuild/mobile-journey.py    "$BORDERBLEND_SITE"   # order matters
 python postbuild/chrome-v2.py         "$BORDERBLEND_SITE"
+python postbuild/chrome-v3.py         "$BORDERBLEND_SITE"
 python postbuild/persona-sim-links.py "$BORDERBLEND_SITE"
 python check_links.py
 ```
 
 - `BORDERBLEND_SITE` is required. Without it `build.py` falls back to the old
   in-repo path and recreates the duplicate folder the split removed.
-- **Order matters.** `chrome-v2.py` must run after `mobile-journey.py`: its CSS
-  has to land later in the cascade to beat the drawer's `!important` height rule.
-- All three are idempotent (each checks its own marker: `uc-mobile-drawer`,
-  `uc-chrome-v2`, `uc-persona-sim`), so re-running is safe.
+- **Order matters twice.** `chrome-v2.py` must run after `mobile-journey.py`: its
+  CSS has to land later in the cascade to beat the drawer's `!important` height
+  rule. And `chrome-v3.py` refuses to run before `chrome-v2.py` — it corrects v2's
+  own regressions and checks for the v2 marker.
+- All four are idempotent (each checks its own marker: `uc-mobile-drawer`,
+  `uc-chrome-v2`, `uc-chrome-v3`, `uc-persona-sim`), so re-running is safe.
 - `build.py --full` regenerates sources, insights, personas, v1 journeys and the
   index. It does **not** regenerate the v2/v3 journey maps — the index links them
   but they are separately produced.
 
 `postbuild/README.md` explains each patch and why. The durable fix is to fold all
-three into `build.py`; until someone does, treat postbuild as a required step.
+four into `build.py`; until someone does, treat postbuild as a required step.
 
 ## 4. Publishing
 
@@ -128,6 +131,15 @@ Consequences you must internalise:
   empty band. This is exactly what caused the white band above the promo banner.
   The chrome is now a single `position: sticky` wrapper (`.uc-chrome`) with both
   bars in normal flow. **Do not convert it back to fixed.**
+- Sticky has a knock-on cost: being in normal flow, the chrome inherits `body`'s
+  `max-width:72rem`, so it stopped stretching. It is pulled full-bleed with
+  negative margins plus a JS-published `--half-vw`. Read `postbuild/README.md`
+  before editing that — `width:100vw` and a bare `50vw` each introduce their own
+  off-by-a-scrollbar defect.
+- **`.svg` is served as `application/octet-stream`** by this host, which browsers
+  will not render in an `<img>`; the banner logo is a base64 data URI for that
+  reason. `.jpg` is served correctly. A 200 and correct bytes do **not** mean an
+  image will display — check the content type.
 - `100vh` inside the iframe resolves against the iframe's own auto height, which
   is close to circular. Be suspicious of viewport-height maths here.
 - Layout bugs may be **unreproducible locally** and vice versa. Always check the
@@ -272,14 +284,20 @@ Markup conventions that patches depend on, so change them carefully:
 
 ## 10. Known state and open work
 
-Done and verified live: chrome rebuild (no white band), banner dismiss remembered
+Done and verified live: chrome rebuild (no white band), full-bleed banner, logo via
+data URI, close button clear of Learn more at every width, banner dismiss remembered
 across pages via `localStorage`, narrow-screen banner layout (no logo, copy above
 button), mobile drawer on journey maps with desktop auto-close suppressed, stage
 grid scrollable on mobile, persona chat links and Launch AI Persona Sim buttons.
 
+Geometry was verified by measurement, not eye: 6 page types x 3 widths
+(1600/1100/700), asserting the chrome spans exactly the client width, no horizontal
+overflow, the close/button gap stays positive (min 39px), and the logo actually
+decodes (`naturalWidth > 0`).
+
 Open:
 
-- **Fold the three postbuild patches into `build.py`.** The highest-value cleanup.
+- **Fold the four postbuild patches into `build.py`.** The highest-value cleanup.
   Patches over generated HTML are fragile: a template change in `build.py` can
   silently stop a patch matching, and nothing will fail loudly.
 - **v2 journey maps have no persona action row** at all, so they got no chat link.

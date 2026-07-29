@@ -33,13 +33,15 @@ export BORDERBLEND_SITE=/d/DEV/uc-ucloops-publicdemo
 cd "<analysis>/OUTPUT/interim/borderblend"
 python build.py --full
 python postbuild/mobile-journey.py    "$BORDERBLEND_SITE"   # order matters:
-python postbuild/chrome-v2.py         "$BORDERBLEND_SITE"   # chrome-v2 must
-python postbuild/persona-sim-links.py "$BORDERBLEND_SITE"   # follow the drawer
+python postbuild/chrome-v2.py         "$BORDERBLEND_SITE"   # v2 after the drawer,
+python postbuild/chrome-v3.py         "$BORDERBLEND_SITE"   # v3 after v2
+python postbuild/persona-sim-links.py "$BORDERBLEND_SITE"
 python check_links.py
 ```
 
 `BORDERBLEND_SITE` is required — without it the generator writes to a stale
-in-repo path. All three patches are idempotent and marker-guarded.
+in-repo path. All four patches are idempotent and marker-guarded; `chrome-v3.py`
+refuses to run before `chrome-v2.py`.
 
 ## Publishing
 
@@ -66,7 +68,13 @@ language — nothing has changed yet.
   auto-sizes the iframe to content height, so `position: fixed` is pointless
   inside it and reserved padding shows up as an empty band. The top chrome is a
   single `position: sticky` wrapper (`.uc-chrome`) for that reason — **do not
-  convert it back to fixed.**
+  convert it back to fixed.** Because sticky is in normal flow it inherits
+  `body`'s 72rem cap, so the chrome is pulled full-bleed by negative margins; see
+  `postbuild/README.md` before touching that maths, it has two non-obvious traps.
+- **The host serves `.svg` as `application/octet-stream`**, which browsers refuse
+  to render in an `<img>`. The banner logo is therefore a base64 data URI. Don't
+  "tidy" it back to a file reference — it will silently break. (`.jpg` is served
+  correctly, so headshots are normal files.)
 - Chrome is installed; take headless screenshots and look at them rather than
   reasoning about CSS from source. Note Chrome's ~512px minimum window width on
   Windows makes narrower screenshots a misleading crop.
