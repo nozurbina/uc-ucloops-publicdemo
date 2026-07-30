@@ -174,7 +174,7 @@ a.trail-toggle:hover{text-decoration:none;border-bottom-style:solid}
    in under two seconds: outline plus a warm background that fades out. Background
    and box-shadow only, so nothing reflows and it works on a table row, an inline
    badge and a whole card alike. */
-.flash,tr.flash td{animation:flash 1.9s ease-out}
+.flash,tr.flash td{animation:flash 3s ease-out}
 .flash{border-radius:8px}
 @keyframes flash{
   0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}

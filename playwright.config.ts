@@ -26,7 +26,11 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  // One local retry on purpose: this suite drives real scrolling in three engines in
+  // parallel, and Firefox has a known teardown race (browserContext.close protocol
+  // error) under load. A retry distinguishes a flake from a regression; persistent
+  // failures still fail.
+  retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]]
                            : [['list'], ['html', { open: 'never' }]],

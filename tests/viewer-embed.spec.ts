@@ -118,6 +118,20 @@ test.describe('inside the viewer', () => {
       }), { timeout: 10_000 }).toBeGreaterThan(before + 1000);
     });
 
+  test('arriving from another page still lands and flashes', async ({ page }) => {
+    // The plugin strips the hash from the frame's URL and keeps it on the parent's,
+    // so location.hash inside the frame is empty on a cross-page arrival. The pages
+    // read the parent's hash instead — this is the case that used to land with no
+    // scroll and no highlight at all.
+    await page.goto(inViewer(PAGES.insights) + '#INS-C05');
+    await viewerReady(page);
+    const frame = page.frameLocator('#ai-projects-frame-content');
+    await expect.poll(async () => frame.locator('.flash').count(), { timeout: 10_000 })
+      .toBeGreaterThan(0);
+    // And the parent actually scrolled: INS-C05 is far down a very long page.
+    expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(500);
+  });
+
   test('clicking an evidence link scrolls the parent page', async ({ page }) => {
     // scrollIntoView inside the frame does nothing vertically here, so the page has to
     // scroll the parent itself — computed from the frame's offset and the toolbar height.
@@ -126,6 +140,12 @@ test.describe('inside the viewer', () => {
     await page.locator('.ai-projects-project-toolbar__toggle').click();
 
     await page.evaluate(() => window.scrollTo(0, 0));
+    // The helpers are emitted at the end of the body; under parallel load the click
+    // can otherwise race them.
+    await page.waitForFunction(() => {
+      const f = document.getElementById('ai-projects-frame-content') as HTMLIFrameElement;
+      return typeof (f.contentWindow as any).ucJumpTo === 'function';
+    });
     const target = await page.evaluate(() => {
       const d = (document.getElementById('ai-projects-frame-content') as HTMLIFrameElement)
         .contentDocument!;

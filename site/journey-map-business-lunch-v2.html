@@ -1297,7 +1297,7 @@ html{overflow-x:clip}
   0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
   70%{background:#fff8e1;box-shadow:0 0 0 3px rgba(251,191,36,.55),0 4px 12px rgba(0,0,0,.07)}
   100%{background:transparent;box-shadow:0 0 0 0 rgba(251,191,36,0)}}
-.uc-jump-flash{animation:uc-jump-flash 1.9s ease-out;border-radius:8px}
+.uc-jump-flash{animation:uc-jump-flash 3s ease-out;border-radius:8px}
 
 /* "Evidence trail" in the legend is a control, not a link out — same treatment as
    the persona pages give it. */
@@ -1481,7 +1481,7 @@ html{overflow-x:clip}
   0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
   70%{background:#fff8e1;box-shadow:0 0 0 3px rgba(251,191,36,.55),0 4px 12px rgba(0,0,0,.07)}
   100%{background:transparent;box-shadow:0 0 0 0 rgba(251,191,36,0)}}
-.flash{animation:flash 1.9s ease-out;border-radius:8px}
+.flash{animation:flash 3s ease-out;border-radius:8px}
 
 /* A hash jump should not land under the sticky chrome. */
 [id]{scroll-margin-top:calc(var(--chrome-h, 150px) + 1.5rem)}
@@ -3108,7 +3108,7 @@ document.addEventListener('DOMContentLoaded', function(){
     el.classList.remove("flash");
     void el.offsetWidth;                       /* restart a running animation */
     el.classList.add("flash");
-    setTimeout(function(){ el.classList.remove("flash"); }, 2100);
+    setTimeout(function(){ el.classList.remove("flash"); }, 3100);
   };
 
   window.ucJumpTo = function(id){
@@ -3148,17 +3148,36 @@ document.addEventListener('DOMContentLoaded', function(){
     if(!ucJumpTo(id)) return;
     e.preventDefault();
     e.stopPropagation();
+    lastHash = id;   /* so the arrival poll below doesn't re-jump this one */
     if(history.replaceState) history.replaceState(null, "", "#" + id);
   }, true);
 
   /* Arriving with a hash — from another page, or from the viewer's own hash sync.
+     Inside the viewer OUR url usually has no hash at all: the plugin strips it from
+     the frame and keeps it on the parent's URL, doing its own scroll. That is why a
+     cross-page evidence link used to land with no highlight — location.hash here was
+     empty. The parent is same-origin, so read the hash from it instead.
      The delay lets the viewer finish its own scroll attempt before we correct it. */
-  function onHash(){
+  function targetId(){
     var h = location.hash.slice(1);
-    if(h) setTimeout(function(){ ucJumpTo(decodeURIComponent(h)); }, 350);
+    if(h) return h;
+    var p = parentFrame();
+    if(p){ try{ return p.win.location.hash.slice(1); }catch(e){} }
+    return "";
+  }
+  var lastHash = "";
+  function onHash(){
+    var h = targetId();
+    if(h && h !== lastHash){
+      lastHash = h;
+      setTimeout(function(){ ucJumpTo(decodeURIComponent(h)); }, 350);
+    }
   }
   window.addEventListener("hashchange", onHash);
   window.addEventListener("load", onHash);
+  /* The parent's URL can change without any event reaching this document (its
+     pushState navigation). A slow poll catches that; it is idle when nothing moves. */
+  if(parentFrame()) setInterval(onHash, 700);
 })();
 </script>
 <script>

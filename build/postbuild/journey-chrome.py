@@ -376,7 +376,7 @@ CSS = """
   0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
   70%{background:#fff8e1;box-shadow:0 0 0 3px rgba(251,191,36,.55),0 4px 12px rgba(0,0,0,.07)}
   100%{background:transparent;box-shadow:0 0 0 0 rgba(251,191,36,0)}}
-.uc-jump-flash{animation:uc-jump-flash 1.9s ease-out;border-radius:8px}
+.uc-jump-flash{animation:uc-jump-flash 3s ease-out;border-radius:8px}
 
 /* "Evidence trail" in the legend is a control, not a link out — same treatment as
    the persona pages give it. */
@@ -652,7 +652,7 @@ def refresh_shared_css(path: Path) -> str:
   0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
   70%{background:#fff8e1;box-shadow:0 0 0 3px rgba(251,191,36,.55),0 4px 12px rgba(0,0,0,.07)}
   100%{background:transparent;box-shadow:0 0 0 0 rgba(251,191,36,0)}}
-.flash{animation:flash 1.9s ease-out;border-radius:8px}
+.flash{animation:flash 3s ease-out;border-radius:8px}
 
 /* A hash jump should not land under the sticky chrome. */
 [id]{scroll-margin-top:calc(var(--chrome-h, 150px) + 1.5rem)}

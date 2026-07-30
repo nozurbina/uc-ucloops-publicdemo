@@ -204,7 +204,7 @@ JUMP_HELPERS = """<script>
     el.classList.remove("flash");
     void el.offsetWidth;                       /* restart a running animation */
     el.classList.add("flash");
-    setTimeout(function(){ el.classList.remove("flash"); }, 2100);
+    setTimeout(function(){ el.classList.remove("flash"); }, 3100);
   };
 
   window.ucJumpTo = function(id){
@@ -244,17 +244,36 @@ JUMP_HELPERS = """<script>
     if(!ucJumpTo(id)) return;
     e.preventDefault();
     e.stopPropagation();
+    lastHash = id;   /* so the arrival poll below doesn't re-jump this one */
     if(history.replaceState) history.replaceState(null, "", "#" + id);
   }, true);
 
   /* Arriving with a hash — from another page, or from the viewer's own hash sync.
+     Inside the viewer OUR url usually has no hash at all: the plugin strips it from
+     the frame and keeps it on the parent's URL, doing its own scroll. That is why a
+     cross-page evidence link used to land with no highlight — location.hash here was
+     empty. The parent is same-origin, so read the hash from it instead.
      The delay lets the viewer finish its own scroll attempt before we correct it. */
-  function onHash(){
+  function targetId(){
     var h = location.hash.slice(1);
-    if(h) setTimeout(function(){ ucJumpTo(decodeURIComponent(h)); }, 350);
+    if(h) return h;
+    var p = parentFrame();
+    if(p){ try{ return p.win.location.hash.slice(1); }catch(e){} }
+    return "";
+  }
+  var lastHash = "";
+  function onHash(){
+    var h = targetId();
+    if(h && h !== lastHash){
+      lastHash = h;
+      setTimeout(function(){ ucJumpTo(decodeURIComponent(h)); }, 350);
+    }
   }
   window.addEventListener("hashchange", onHash);
   window.addEventListener("load", onHash);
+  /* The parent's URL can change without any event reaching this document (its
+     pushState navigation). A slow poll catches that; it is idle when nothing moves. */
+  if(parentFrame()) setInterval(onHash, 700);
 })();
 </script>
 """

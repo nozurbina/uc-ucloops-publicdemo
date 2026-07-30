@@ -1275,7 +1275,7 @@ a.trail-toggle:hover{text-decoration:none;border-bottom-style:solid}
    in under two seconds: outline plus a warm background that fades out. Background
    and box-shadow only, so nothing reflows and it works on a table row, an inline
    badge and a whole card alike. */
-.flash,tr.flash td{animation:flash 1.9s ease-out}
+.flash,tr.flash td{animation:flash 3s ease-out}
 .flash{border-radius:8px}
 @keyframes flash{
   0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
@@ -1502,7 +1502,7 @@ function toggleProv(btn){
     el.classList.remove("flash");
     void el.offsetWidth;                       /* restart a running animation */
     el.classList.add("flash");
-    setTimeout(function(){ el.classList.remove("flash"); }, 2100);
+    setTimeout(function(){ el.classList.remove("flash"); }, 3100);
   };
 
   window.ucJumpTo = function(id){
@@ -1542,17 +1542,36 @@ function toggleProv(btn){
     if(!ucJumpTo(id)) return;
     e.preventDefault();
     e.stopPropagation();
+    lastHash = id;   /* so the arrival poll below doesn't re-jump this one */
     if(history.replaceState) history.replaceState(null, "", "#" + id);
   }, true);
 
   /* Arriving with a hash — from another page, or from the viewer's own hash sync.
+     Inside the viewer OUR url usually has no hash at all: the plugin strips it from
+     the frame and keeps it on the parent's URL, doing its own scroll. That is why a
+     cross-page evidence link used to land with no highlight — location.hash here was
+     empty. The parent is same-origin, so read the hash from it instead.
      The delay lets the viewer finish its own scroll attempt before we correct it. */
-  function onHash(){
+  function targetId(){
     var h = location.hash.slice(1);
-    if(h) setTimeout(function(){ ucJumpTo(decodeURIComponent(h)); }, 350);
+    if(h) return h;
+    var p = parentFrame();
+    if(p){ try{ return p.win.location.hash.slice(1); }catch(e){} }
+    return "";
+  }
+  var lastHash = "";
+  function onHash(){
+    var h = targetId();
+    if(h && h !== lastHash){
+      lastHash = h;
+      setTimeout(function(){ ucJumpTo(decodeURIComponent(h)); }, 350);
+    }
   }
   window.addEventListener("hashchange", onHash);
   window.addEventListener("load", onHash);
+  /* The parent's URL can change without any event reaching this document (its
+     pushState navigation). A slow poll catches that; it is idle when nothing moves. */
+  if(parentFrame()) setInterval(onHash, 700);
 })();
 </script>
 <script>
