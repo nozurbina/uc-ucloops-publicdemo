@@ -6,14 +6,20 @@
 Reads: v3/persona-v3-*.json, anchor-index.json, merged insights.
 Writes: site/persona-<slug>-v3.html
 """
-import json, re, html, pathlib
+import json, os, re, sys, html, pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent
 WORK = HERE.parent / "data"
 ROOT = HERE.parents[1]
-SITE = ROOT / "site"
+# Same override as build.py, so a dry run into a scratch directory can be diffed
+# against site/ before anything overwrites it.
+SITE = pathlib.Path(os.environ.get("BORDERBLEND_SITE") or (ROOT / "site"))
 
-CSS = (WORK / "site.css").read_text(encoding="utf-8")
+sys.path.insert(0, str(HERE.parent))
+import chrome   # the shared top chrome — same markup build.py emits
+import styles   # the same composed stylesheet build.py inlines
+
+CSS = styles.stylesheet()
 IDX = json.loads((WORK / "anchor-index.json").read_text(encoding="utf-8"))
 ANCH, SRC = IDX["anchors"], IDX["sources"]
 INS = {}
@@ -159,6 +165,12 @@ def render(persona, out_slug):
     related = {"late-night-foodie":"journey-map-late-night-v3.html","omar":"journey-map-business-lunch-v3.html",
                "grace":"journey-map-business-lunch-v3.html"}.get(slug)
     rellink = f' · <a href="{related}">see journey map →</a>' if related else ""
+    # The headshot is named after the persona's agent id — the same lowercase id the
+    # companion app takes in ?agent=, so one value covers the photo and the sim link.
+    # It sits *before* .initials, which stays as the fallback underneath it.
+    agent = persona.get("agent")
+    headshot = (f'<img src="headshots/{agent}.jpg" alt="{esc(persona["name"])}">'
+                if agent else "")
     doc = f"""<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Persona: {esc(persona['name'])} — {esc(persona['role'])}</title>
@@ -169,10 +181,10 @@ a.item-ref{{text-decoration:none;cursor:pointer}}a.item-ref:hover{{outline:1px s
 .trail-note .tn{{background:#fff8ef;border:1px solid #f3c9ad;border-radius:10px;padding:.6rem .9rem;font-size:.82rem;color:#7a4b2a}}
 .persona-topbar .provtoggle{{float:right}}
 </style></head><body class="prov-hidden">
-<div class="stickybar"><a class="sb-home" href="index.html" title="BorderBlend evidence map">←</a><span class="sb-title"><span class="sb-kicker">Persona</span>{esc(persona['name'])} — {esc(persona['role'])}</span><button class="provtoggle" onclick="toggleProv(this)">Show Item IDs &amp; Provenance</button></div>
+{chrome.EARLY}{chrome.chrome(chrome.sticky_bar())}
 <header class="page-header">
 <h1>Persona Profile</h1>
-<div class="avatar-wrapper"><div class="initials">{esc(persona['initials'])}</div></div>
+<div class="avatar-wrapper">{headshot}<div class="initials">{esc(persona['initials'])}</div></div>
 <div class="persona-name">{esc(persona['name'])}</div>
 <div class="persona-role">{esc(persona['role'])}</div>
 </header>
@@ -183,7 +195,9 @@ a.item-ref{{text-decoration:none;cursor:pointer}}a.item-ref:hover{{outline:1px s
 <footer class="page-footer"><div>Prepared by: ucLoops UX Assistant | Urbina Consulting — BorderBlend (synthetic)</div></footer>
 <script>function toggleProv(btn){{var on=document.body.classList.toggle('prov-hidden');btn.innerHTML=on?'Show Item IDs &amp; Provenance':'Hide Item IDs &amp; Provenance';}}
 document.addEventListener('DOMContentLoaded',function(){{function f(){{var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(decodeURIComponent(h));if(el){{el.style.transition='background 1.5s';el.style.background='#fff3c9';setTimeout(function(){{el.style.background='';}},1500);el.scrollIntoView({{block:'center'}});}}}}window.addEventListener('hashchange',f);f();}});</script>
-</body></html>"""
+{chrome.SCRIPTS}</body></html>
+{chrome.MARKER}
+"""
     (SITE / f"persona-{slug}-v3.html").write_text(doc, encoding="utf-8")
     return slug, sum(counters.values())
 

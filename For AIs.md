@@ -4,7 +4,7 @@ Read this before changing anything in this repository. It exists because several
 things here are counter-intuitive and will waste your time or silently destroy
 work if you assume the obvious.
 
-Written 2026-07-29.
+Written 2026-07-29. Rebuild chain closed and re-verified 2026-07-30.
 
 ---
 
@@ -38,8 +38,9 @@ keeps the toolchain, the source data and these docs off the live site.
 
 If a fix belongs in the output, it belongs in `build.py` or a post-build patch.
 
-**But read §3 before rebuilding anything** — the chain has a known gap and a bare
-rebuild produces a *worse* site than what is committed.
+A rebuild now reproduces `site/` — see §3. That was not true before 2026-07-30, and
+the habit that gap taught is still the right one: build into a scratch directory and
+diff before letting anything near the published folder.
 
 ## 2. Where everything is
 
@@ -49,8 +50,10 @@ rebuild produces a *worse* site than what is committed.
 | Published artifact | `site/` — **publish this folder, not the repo root** |
 | Generator | `build/build.py` |
 | Synthetic sources | `build/source-data/` (27 .md) |
-| Working data | `build/data/` (JSON, anchor-index, site.css, CANON.md) |
-| Post-build patches | `build/postbuild/` |
+| Working data | `build/data/` (JSON, anchor-index, CANON.md) |
+| Stylesheet sources | `build/assets/` — composed by `build/styles.py`, not a file on disk |
+| Shared top chrome | `build/chrome.py` (banner + sticky bar markup and scripts) |
+| Post-build patches | `build/postbuild/` (two left, both journey-map only) |
 | v2/v3 tooling | `build/v2/`, `build/v3/` |
 | Link validator | `build/check_links.py` |
 | Companion chat app | `D:\DEV\uc-ucloops-ui1` · `github.com/nozurbina/uc-ucloops-ui1` |
@@ -65,59 +68,55 @@ rather than two that drift. The companion app was already self-contained.
 Nothing here reads from the analysis workspace any more. If you find a path
 pointing at it, that is a bug.
 
-## 3. Rebuilding — read this or you will ship regressions
-
-`build.py` does **not** emit the current markup. Four post-build patch scripts
-apply fixes it doesn't know about. Running the generator alone gives you a site
-with broken chrome, no mobile support, and no links to the persona app.
+## 3. Rebuilding
 
 ```sh
 cd build          # SITE defaults to ../site; BORDERBLEND_SITE overrides it
-python build.py --full
-python postbuild/mobile-journey.py    ../site   # order matters
-python postbuild/chrome-v2.py         ../site
-python postbuild/chrome-v3.py         ../site
-python postbuild/persona-sim-links.py ../site
-python check_links.py
+python build.py --full                          # 35 files: sources, insights, v1 personas/journeys, index
+python v3/render_personas_v3.py                 # 5 files: the v3 persona pages
+python postbuild/mobile-journey.py    ../site   # journey maps only
+python postbuild/persona-sim-links.py ../site   # journey maps + v3 persona pages
+python check_links.py                           # 6,461 internal links, expect 0 broken
 ```
 
-### KNOWN GAP — a rebuild does not reproduce `site/`
+Both postbuild scripts are idempotent (markers `uc-mobile-drawer`,
+`uc-persona-sim`), so re-running is safe and a partial run can be resumed. Order is
+no longer load-bearing between them; `persona-sim-links` must run *after* the v3
+persona renderer, because that renderer rewrites those five files.
 
-Verified 2026-07-29 by building into a scratch directory and diffing all 35
-generated files against the published ones: **every one differed.**
+**Four of the 44 files have no generator**: `journey-map-{late-night,business-lunch}-{v2,v3}.html`.
+They were authored on `journey-map-template.html` through the ucLoops prompt chain
+and are patched forward, never regenerated. `build/v2/` and `build/v3/patch_v3_maps.py`
+are the tooling that produced them. Everything else rebuilds from source.
 
-`build.py` emits **no promo banner at all** (0 occurrences vs 22 in the published
-index). That step was applied straight to the HTML in an earlier session and was
-never captured as a script. Consequences, in order:
+### How this used to be broken, and the habit to keep
 
-1. `chrome-v2.py` looks for the banner's old sizing script, finds none, and fails
-   with `no old sizing script found` on every page.
-2. `chrome-v3.py` checks for v2's marker, doesn't find it, and refuses to run.
-3. The result is roughly **16.7KB per page short** — no banner, no dismiss button,
-   no logo, none of the chrome fixes.
+Until 2026-07-30, `build.py` emitted no promo banner at all — that step had been
+applied straight to the HTML in an earlier session and never captured as a script.
+`chrome-v2.py` therefore found nothing to transform, `chrome-v3.py` refused to run
+after it, and a fresh build came out ~17KB per page short. `site/` was the only
+complete copy of the chrome layer, so a bare rebuild would have destroyed it.
 
-So: **never point a bare rebuild at `site/`.** Build into a scratch directory, run
-the patches there, and diff before letting anything near the published folder. The
-committed `site/` is currently the only complete copy of the chrome layer.
+Closing it turned up four further divergences worth knowing about, because they are
+the shape of drift this repo produces:
 
-Closing this — folding the banner and chrome into `build.py` so it emits final
-markup directly — is the highest-value open task. Until then `site/` cannot be
-regenerated from scratch, only patched forward.
+- The stylesheet had five rule fixes that existed only in the published HTML.
+- The sticky bar's markup had changed (arrow + label inside the link).
+- `build.py` still emitted a legacy `<a class="home">` nav link nothing wanted.
+- The v3 persona renderer had lost the headshot `<img>`, and its published pages
+  carried a stickybar that had drifted from build.py's copy.
 
-- `BORDERBLEND_SITE` overrides the output directory; it defaults to `../site`.
-  Use it for scratch builds.
-- **Order matters twice.** `chrome-v2.py` must run after `mobile-journey.py`: its
-  CSS has to land later in the cascade to beat the drawer's `!important` height
-  rule. And `chrome-v3.py` refuses to run before `chrome-v2.py` — it corrects v2's
-  own regressions and checks for the v2 marker.
-- All four are idempotent (each checks its own marker: `uc-mobile-drawer`,
-  `uc-chrome-v2`, `uc-chrome-v3`, `uc-persona-sim`), so re-running is safe.
-- `build.py --full` regenerates sources, insights, personas, v1 journeys and the
-  index. It does **not** regenerate the v2/v3 journey maps — the index links them
-  but they are separately produced.
+All of it came from the same cause: a fix applied to output instead of to source.
+**So: still build into a scratch directory and diff before touching `site/`.**
 
-`postbuild/README.md` explains each patch and why. The durable fix is to fold all
-four into `build.py`; until someone does, treat postbuild as a required step.
+```sh
+BORDERBLEND_SITE=/tmp/x python build.py --full   # then diff /tmp/x against site/
+```
+
+A clean run differs from `site/` in nothing. If your diff shows anything you did
+not intend, that is the signal — not noise.
+
+`postbuild/README.md` explains the two remaining patches and why they still exist.
 
 ## 4. Publishing
 
@@ -306,14 +305,13 @@ The invariant the whole thing exists to demonstrate: **every claim deep-links to
 its evidence.** A persona line links to the insight it rests on; each insight
 links down to the dated verbatim. Every ID is itself a link, and links target a
 specific `#anchor`, never a page top. `check_links.py` validates this — last run
-reported 5,021 links, 0 broken. Don't break the chain.
+(2026-07-30) reported 6,461 internal links, 0 broken. Don't break the chain.
 
 Markup conventions that patches depend on, so change them carefully:
 
-- `.uc-chrome` wraps the promo banner + sticky bar as one sticky element.
-- DOM order originally differed by page type (sources/insights emitted the bar
-  first, journeys/personas the banner). `chrome-v2.py` normalises this — don't
-  rely on the old inconsistency.
+- `.uc-chrome` wraps the promo banner + sticky bar as one sticky element, emitted
+  by `build/chrome.py`. Banner first, bar second, on every page — DOM order used to
+  differ by page type and a patch had to normalise it. Don't reintroduce the split.
 - Body classes vary: `srcpage`, `docwrap`, `jny-wrap`, `prov-hidden`. Match
   `<body\b[^>]*>`, never the literal `<body>`.
 - Journey sidebar persona cards carry `data-persona="personaN"` and link to their
@@ -333,11 +331,25 @@ Geometry was verified by measurement, not eye: 6 page types x 3 widths
 overflow, the close/button gap stays positive (min 39px), and the logo actually
 decodes (`naturalWidth > 0`).
 
+Closed 2026-07-30: the chrome now comes out of `build/chrome.py` at generation
+time, the stylesheet is composed from `build/assets/` by `build/styles.py`,
+`chrome-v2.py` and `chrome-v3.py` are deleted, and a scratch rebuild diffs clean
+against `site/`. The v3 persona pages regained their headshots and are generated
+from `build/v3/persona-v3-*.json` again. One live broken link
+(`index.html` -> `persona-mateo-v3.html`, which never existed) is fixed.
+
 Open:
 
-- **Fold the four postbuild patches into `build.py`.** The highest-value cleanup.
-  Patches over generated HTML are fragile: a template change in `build.py` can
-  silently stop a patch matching, and nothing will fail loudly.
+- **The two remaining patches still patch generated HTML** —
+  `mobile-journey.py` and `persona-sim-links.py`. They survive because their targets
+  include the four hand-authored journey maps, which have no generator to fold them
+  into. If those maps ever get one, both patches should go the same way the chrome
+  patches did.
+- **`assets/chrome.css` is three layered blocks that fight each other** with
+  `!important` — part 1 sets `position:fixed` and `body{padding-top}`, parts 2-3
+  override both. Flattening it into one block is safe but must be done with
+  before/after screenshots at 1600/1100/700; the comment at the top of part 1 says
+  the same thing.
 - **v2 journey maps have no persona action row** at all, so they got no chat link.
   Their drawer subtitle still reads "Focus or hide…", which is accurate for them.
   If they matter, the action row needs building.

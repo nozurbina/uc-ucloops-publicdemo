@@ -15,13 +15,16 @@ Design rules enforced here:
 """
 import json, re, html, os, pathlib
 
+import chrome   # shared top chrome (promo banner + sticky bar); see chrome.py
+import styles   # the composed stylesheet; see styles.py
+
 # Everything this needs lives in the repo, so paths are relative to this file.
 # It used to read from the uc-pharma-analysis workspace where BorderBlend was
 # first built; that dependency is gone.
 HERE = pathlib.Path(__file__).resolve().parent          # <repo>/build
 ROOT = HERE.parent                                      # <repo>
 SRC_DIR = HERE / "source-data"                          # the 27 synthetic .md sources
-WORK = HERE / "data"                                    # JSON, anchor index, site.css
+WORK = HERE / "data"                                    # JSON + the anchor index
 
 # `site/` is the published folder — the publisher is pointed at it directly, which
 # is why the toolchain sits outside it. BORDERBLEND_SITE can override for a dry run
@@ -148,26 +151,34 @@ def md_blocks(md, row_anchor_prefix=None, row_counter=None):
 
 # ───────────────────────── page shell ─────────────────────────
 def css():
-    return (WORK / "site.css").read_text(encoding="utf-8")
+    return styles.stylesheet()
 
-def sticky_bar(title, kicker="", home="index.html"):
-    k = f'<span class="sb-kicker">{esc(kicker)}</span>' if kicker else ''
-    return (f'<div class="stickybar"><a class="sb-home" href="{home}" '
-            f'title="BorderBlend evidence map">←</a>'
-            f'<span class="sb-title">{k}{esc(title)}</span>'
-            f'<button class="provtoggle" onclick="toggleProv(this)">Show Item IDs &amp; Provenance</button></div>')
+def page(title, body, rel="", extra_head="", body_class="", prov=False, bar=None):
+    """Full page. The top chrome (promo banner + sticky bar) is emitted here for
+    every page — see chrome.py; it used to be bolted on by postbuild patches, which
+    is what made the site un-rebuildable.
 
-def page(title, body, rel="", extra_head="", body_class="", prov=False, sticky_title=None, kicker=""):
+    `prov` gives the page a sticky bar with the provenance toggle, and starts it
+    folded. `bar=True` with `prov=False` gives the bar without the toggle — for the
+    factsheet and the market report, where every claim is an addressable anchor by
+    design and there is nothing to fold away.
+    """
+    show_bar = prov if bar is None else bar
+    bar_html = ""
     if prov:
         body_class = (body_class + " prov-hidden").strip()
-        body = sticky_bar(sticky_title or title, kicker, home=f'{rel}index.html') + body
+    if show_bar:
+        bar_html = chrome.sticky_bar(home=f'{rel}index.html', toggle=prov)
     return f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{esc(title)}</title>
 <style>{css()}</style>{extra_head}
-</head><body class="{body_class}">{body}
+</head><body class="{body_class}">
+{chrome.EARLY}{chrome.chrome(bar_html)}{body}
 <script>{JS}</script>
-</body></html>"""
+{chrome.SCRIPTS}</body></html>
+{chrome.MARKER}
+"""
 
 JS = r"""
 // Toggle item IDs + provenance (evidence rows). Pages start with body.prov-hidden.
@@ -253,7 +264,6 @@ def render_transcript(tid, meta, secs, turns):
           f'<span class="spk">{esc(t["speaker"])}</span></div>'
           f'<div class="turntext">{paras}</div></div>')
     body = f"""
-<a class="home" href="../index.html">← BorderBlend evidence map</a>
 <header class="srchead">
   <div class="kicker">Source · Interview transcript</div>
   <h1>{esc(tid)} — {esc(meta.get('Participant',''))}</h1>
@@ -301,7 +311,6 @@ def parse_card_dataset(path, key, id_from_heading, kind, title, kicker):
           f'<a class="idbadge" href="#{aid}">{aid}</a><span class="ch">{md_inline(heading)}</span></div>'
           f'<div class="cardbody">{chtml}</div></div>')
     body = f"""
-<a class="home" href="../index.html">← BorderBlend evidence map</a>
 <header class="srchead"><div class="kicker">Source · {esc(kicker)}</div>
 <h1>{esc(title)}</h1>{md_blocks(intro.split(chr(10),1)[1] if chr(10) in intro else '')[0]}</header>
 <section class="cards">{''.join(cardhtml)}</section>
@@ -322,10 +331,11 @@ def render_doc_source(path, key, kind, title, kicker, row_prefix=None):
                 ANCHORS[hid] = {'kind':'factsheet-section','text':txt,'source_key':key,'speaker':'','role':''}
     SOURCES[key] = {'kind':kind,'title':title,'html':f'sources/{key}.html','file':path.name}
     body = f"""
-<a class="home" href="../index.html">← BorderBlend evidence map</a>
 <header class="srchead"><div class="kicker">Source · {esc(kicker)}</div><h1>{esc(title)}</h1></header>
 <section class="doc">{hhtml}</section>"""
-    (SRC_OUT / f'{key}.html').write_text(page(title, body, body_class="srcpage", prov=True, rel="../"), encoding='utf-8')
+    is_ctx = kind == 'factsheet'
+    (SRC_OUT / f'{key}.html').write_text(page(title, body, body_class="srcpage",
+                                             prov=not is_ctx, bar=True, rel="../"), encoding='utf-8')
 
 # ───────────────────────── market research (claim anchors) ─────────────
 def render_market(path, key='MRKT'):
@@ -365,12 +375,12 @@ def render_market(path, key='MRKT'):
     SOURCES[key] = {'kind':'market','title':'Canadian Mexican & Fusion Street-Food Market — 2026',
                     'html':f'sources/{key}.html','file':path.name}
     body = f"""
-<a class="home" href="../index.html">← BorderBlend evidence map</a>
 <header class="srchead"><div class="kicker">Source · Market research report</div>
 <h1>Canadian Mexican &amp; Fusion Street-Food Market — 2026 Outlook</h1>
 <p class="hint">Tagged claims (MR-C##) and references (MR-REF##) are individually addressable — downstream insights link straight to the specific claim.</p></header>
 <section class="doc market">{hhtml}{refs_html}</section>"""
-    (SRC_OUT / f'{key}.html').write_text(page('Market research — BorderBlend', body, body_class="srcpage", prov=True, rel="../"), encoding='utf-8')
+    (SRC_OUT / f'{key}.html').write_text(page('Market research — BorderBlend', body, body_class="srcpage",
+                                             prov=False, bar=True, rel="../"), encoding='utf-8')
 
 # ───────────────────────── heading helpers for datasets ─────────────
 def social_id(h):
@@ -496,7 +506,6 @@ def render_insights():
     catbtns = ''.join(f'<button data-f="cat:{esc(c)}">{esc(c)}</button>' for c in cats)
     perbtns = ''.join(f'<button data-f="per:{p}">{p}</button>' for p in personas)
     body = f"""
-<a class="home" href="index.html">← BorderBlend evidence map</a>
 <header class="srchead"><div class="kicker">Discover phase · Insights</div>
 <h1>BorderBlend — Insights</h1>
 <p class="hint">{len(data)} insights, each grounded in verbatim evidence. Hover any <span class="evref">ID</span> to preview the source quote; click to jump to it. This is the middle link of the trail: <strong>Journey → Insight → Verbatim</strong>.</p>
@@ -567,7 +576,6 @@ def render_one_persona(p):
     srcline = ('<p class="hint">Built from: ' +
                ' '.join(evref(a) for a in p.get('evidence',[])) + '</p>') if p.get('evidence') else ''
     body = f"""
-<a class="home" href="index.html">← BorderBlend evidence map</a>
 <div class="persona-head">
   <div class="avatar" style="background:{p.get('color','var(--accent)')}">{p.get('emoji','🌮')}</div>
   <div><div class="kicker">Persona · <a class="idbadge" href="#{pid}" id="{pid}">{pid}</a></div>
@@ -628,7 +636,6 @@ def render_one_journey(j):
     plink = (f'<a href="persona-{j["persona"]}.html">{esc(persona.get("name",j.get("persona","")))}</a>'
              if j.get('persona') else '')
     body = f"""
-<a class="home" href="index.html">← BorderBlend evidence map</a>
 <header class="srchead"><div class="kicker">Journey map · <a class="idbadge" id="{jid}" href="#{jid}">{jid}</a></div>
 <h1>{esc(j.get('title',slug))}</h1>
 <p class="hint">Persona: {plink} · {md_inline(j.get('subtitle',''))}</p>
@@ -641,23 +648,16 @@ def render_one_journey(j):
 # ── index / home ──
 def render_index(insights, personas, journeys):
     def tiles(items): return '<div class="grid">' + ''.join(items) + '</div>'
-    jtiles = [f'<a class="tile" href="journey-{j["slug"]}.html"><h3>🗺️ {esc(j.get("title",j["slug"]))}</h3>'
-              f'<p>{md_inline(j.get("subtitle",""))}</p></a>' for j in journeys]
-    # v2 ucLoops-method maps (authored via /j-outline → /j-stage → /j-suggest + /j-data → /j-create-page;
-    # files are hand-rendered on journey-map-template.html, not regenerated here — just link them)
-    V2_MAPS = [
-        ('journey-map-late-night-v2.html', 'Late-Night Foodie — v2 (ucLoops method)',
-         'Persona: Mateo · 16-row template grid, opportunity cards with verbatim reference panels'),
-        ('journey-map-business-lunch-v2.html', 'Business Lunch — v2 (ucLoops method)',
-         'Personas: Omar + Grace (multi-persona) · 16-row template grid, opportunity cards with reference panels'),
-    ]
-    for fn, t, sub in V2_MAPS:
-        if (SITE/fn).exists():
-            jtiles.append(f'<a class="tile" href="{fn}"><h3>🗺️ {esc(t)}</h3><p>{esc(sub)}</p></a>')
-    ptiles = [f'<a class="tile" href="persona-{p["slug"]}.html"><h3>{p.get("emoji","🌮")} {esc(p.get("name",p["slug"]))}</h3>'
-              f'<p>{md_inline(p.get("tagline",""))}</p></a>' for p in personas]
+    # The v2/v3 maps and v3 personas are rendered by build/v2 and build/v3, not here,
+    # so the index just links them. Tiles are emitted unconditionally rather than
+    # gated on the file existing: a build into a scratch directory has to produce the
+    # same index as a build into site/, or it can't be diffed. check_links.py is what
+    # catches a link with no file behind it.
     stiles = []
     for sk,meta in SOURCES.items():
+        # FACT and MRKT get their own tiles under Organisational Context above.
+        if sk in ('FACT','MRKT'):
+            continue
         kind = meta.get('kind')
         icon = {'transcript':'🎙️','social':'📱','ticket':'🎫','pain':'⚠️','applog':'🔎',
                 'factsheet':'🏷️','market':'📊'}.get(kind,'📄')
@@ -669,7 +669,7 @@ def render_index(insights, personas, journeys):
                       f'<p><span class="srccode">{esc(sk)}</span> · {esc(sub)}</p></a>')
     # ── v3 (current) — ucLoops-method journey maps + real-structure personas ──
     def tile(fn, title, sub):
-        return f'<a class="tile" href="{fn}"><h3>{title}</h3><p>{esc(sub)}</p></a>' if (SITE/fn).exists() else ''
+        return f'<a class="tile" href="{fn}"><h3>{title}</h3><p>{esc(sub)}</p></a>'
     v3maps = tiles([tile('journey-map-late-night-v3.html','🗺️ Late-Night Foodie journey',
                          'Persona: Mateo · 16-row template grid, focus/hide personas, opportunity cards with verbatim references'),
                     tile('journey-map-business-lunch-v3.html','🗺️ Business Lunch journey',
@@ -683,31 +683,34 @@ def render_index(insights, personas, journeys):
     ])
     earlier = tiles(
         [f'<a class="tile" href="journey-{j["slug"]}.html"><h3>🗺️ {esc(j.get("title",j["slug"]))} <span class="cat">v1</span></h3><p>first draft</p></a>' for j in journeys]
-        + [f'<a class="tile" href="{fn}"><h3>🗺️ {esc(t)} <span class="cat">v2</span></h3><p>pre-restyle</p></a>' for fn,t,_ in [
-            ('journey-map-late-night-v2.html','Late-Night Foodie',''),('journey-map-business-lunch-v2.html','Business Lunch','')] if (SITE/fn).exists()]
+        + [f'<a class="tile" href="{fn}"><h3>🗺️ {esc(t)} <span class="cat">v2</span></h3><p>pre-restyle</p></a>' for fn,t in [
+            ('journey-map-late-night-v2.html','Late-Night Foodie'),('journey-map-business-lunch-v2.html','Business Lunch')]]
         + [f'<a class="tile" href="persona-{p["slug"]}.html"><h3>{p.get("emoji","🌮")} {esc(p.get("name",p["slug"]))} <span class="cat">v1 persona</span></h3><p>superseded</p></a>' for p in personas])
     fact_href = SOURCES.get('FACT',{}).get('html','sources/FACT.html')
     mrkt = SOURCES.get('MRKT',{})
-    orgtiles = tiles([
+    # Own grid class, not .grid: two tiles of very different copy length, and the
+    # equal-height two-column layout is what stops the shorter one looking orphaned.
+    orgtiles = ('<div class="orgcontext-grid">'
         f'<a class="tile" href="{fact_href}#brand-story"><h3>🏷️ BorderBlend Company Factsheet</h3>'
-        f'<p>Brand story, vision &amp; mission, menu, positioning, and the fusion-vs-traditional question</p></a>',
-        f'<a class="tile" href="{mrkt.get("html","sources/MRKT.html")}"><h3>📊 Canadian Mexican &amp; Fusion Street-Food Market — 2026</h3>'
-        f'<p>Commissioned market research · 41 cited claims on the market BorderBlend competes in</p></a>',
-    ])
+        f'<p>Brand story, vision &amp; mission, menu, positioning, and the fusion-vs-traditional question</p></a>'
+        f'<a class="tile" href="{mrkt.get("html","sources/MRKT.html")}#executive-summary"><h3>📊 Canadian Mexican &amp; Fusion Street-Food Market — 2026</h3>'
+        f'<p>Commissioned market research · 41 cited claims on the market BorderBlend competes in</p></a>'
+        '</div>')
     body = f"""
 <header class="hero">
 <div class="kicker">Urbina Consulting · ucLoops — synthetic case</div>
 <h1>BorderBlend — Evidence Map</h1>
-<p>A ucLoops <strong>discover → define</strong> engagement for BorderBlend, a Canadian food-truck brand. <strong>Trail:</strong> Journey&nbsp;→&nbsp;Persona&nbsp;→&nbsp;Insight&nbsp;→&nbsp;Verbatim.</p>
+<p>This is a demo of Urbina Consulting ucLoops.</p>
 </header>
-<div class="trailnote"><strong>How the evidence trail works.</strong> Open a <em>journey map</em> → each persona row links up to the <span class="evref">persona</span> section it draws on, and each cell shows the <span class="evref">insight</span> it rests on → each insight links to the exact <span class="evref">verbatim</span> line in a transcript, dataset row, pain point, or market-report claim. Every ID on every page is its own clickable link to the specific item it names.</div>
+<div class="overview"><strong>How this was created:</strong> ucLoops is a method you can use in the AI tools of your choice (Claude, ChatGPT, Grok, etc) that lets you ingest data sources like interviews, analytics, support tickets, existing persona/journey research, and more, and output richly linked, living deliverables. Everything you see here can be (re)built to your own templates for strategy, personas, journeys, and the rest.<br/><br/>
+<strong>How to use this demo:</strong> Click around the <a href="journey-map-late-night-v3.html">journey maps</a>, <a href="persona-late-night-foodie-v3.html">personas</a>, and <a href="insights.html">insights</a>, and click the <span class="evref">Show Item IDs and Provenance</span> buttons (top right). Each section will show what it draws on, linking all the way back to the exact <span class="evref">verbatim</span> lines in a transcript, dataset row, pain point, or market-report claim.<br/><br/><strong>How to have some <i>real</i> fun:</strong> You can chat live with the <a href="https://urbinaconsulting.com/ai/synthetic-users-vs-persona-simulations/">Persona Simulations</a> used to create these materials by clicking over to the <a href="https://ucloops-demo-v1.vercel.app/">interactive demo app</a>.</div>
 <div class="sec-title">Organisational Context</div>
 <div class="overview">
 <h2>Project Overview</h2>
 <p><a href="{fact_href}#brand-story"><strong>BorderBlend</strong></a> is a fast-growing Canadian food-truck brand — <strong>27 trucks, headquartered in Toronto</strong> — serving Mexican <em>fusion</em> alongside <em>traditional</em> street food, anchored by a signature smoked-brisket taco. As a challenger still deciding how hard to lean into fusion, it wants to extend its lead across discovery, loyalty, and its franchise network.</p>
 <p class="ctx">This site is the output of a <strong>discover → define</strong> UX &amp; content-strategy engagement. Real customer, franchisee and market research — interviews, consumer app &amp; social data, franchisee support tickets, and a market report — is distilled into <strong>insights → personas → journey maps</strong>, with <em>every</em> claim traceable back to the exact source line. Start with the <a href="{fact_href}#brand-story">company factsheet</a>, then follow any journey down to its verbatim evidence.</p>
 </div>
-<div class="grid">{orgtiles}</div>
+{orgtiles}
 <div class="sec-title">Journey maps</div>{v3maps}
 <div class="sec-title">Personas</div>{v3pers}
 <div class="sec-title">Insights</div>

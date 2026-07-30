@@ -14,11 +14,13 @@ cycle each. What follows is the short version.
 site/     the published artifact - the publisher is pointed HERE, not at the repo root
 build/    everything that produces it (self-contained; no outside dependencies)
             build.py            generator
+            chrome.py           shared top chrome (promo banner + sticky bar)
+            styles.py           composes the one stylesheet from assets/
             source-data/        27 synthetic .md sources
-            data/               working JSON, anchor index, site.css
-            postbuild/          required patch scripts
+            data/               working JSON + anchor index
+            assets/             humanloops-urbina.css + supplement.css + chrome.css + logo
+            postbuild/          two patches, journey-map targets only
             v2/ v3/             tooling for the v2/v3 maps and personas
-            assets/             vendored humanloops-urbina.css
 ```
 
 Anything outside `site/` is never published, which is why the toolchain and these
@@ -26,40 +28,31 @@ docs can live here safely.
 
 ## site/ is generated output, not source
 
-Every HTML file in `site/` is produced by `build/build.py`. **Do not hand-edit it
-as a fix** - it survives only until the next rebuild. Fixes belong in `build.py`
-or in `build/postbuild/`.
-
-Caveat, and it matters: several current fixes exist **only** as post-build patches,
-so `build.py` on its own produces a *worse* site than what is committed. Never
-rebuild without also running every postbuild script.
+Every HTML file in `site/` is produced by `build/build.py` (plus the v3 persona
+renderer). **Do not hand-edit it as a fix** - it survives only until the next
+rebuild, and every hand-edit here has eventually cost someone a day reconstructing
+what it changed. Fixes belong in `build.py`, `chrome.py`, `assets/*.css`, or
+`build/postbuild/`.
 
 ## Rebuild
 
 ```sh
 cd build          # SITE defaults to ../site; BORDERBLEND_SITE overrides it
-python build.py --full
-python postbuild/mobile-journey.py    ../site   # order matters:
-python postbuild/chrome-v2.py         ../site   # v2 after the drawer,
-python postbuild/chrome-v3.py         ../site   # v3 after v2
-python postbuild/persona-sim-links.py ../site
-python check_links.py
+python build.py --full                          # 35 files
+python v3/render_personas_v3.py                 # the 5 v3 persona pages
+python postbuild/mobile-journey.py    ../site   # journey maps only
+python postbuild/persona-sim-links.py ../site   # after the v3 renderer, which rewrites its targets
+python check_links.py                           # 6,461 links, expect 0 broken
 ```
 
-All four patches are idempotent and marker-guarded; `chrome-v3.py` refuses to run
-before `chrome-v2.py`.
+A clean rebuild reproduces `site/` exactly - that is the acceptance test, and it was
+not true before 2026-07-30. Keep it true: build into a scratch directory
+(`BORDERBLEND_SITE=/tmp/x`) and diff against `site/` before letting anything near the
+published folder. Anything in that diff you didn't intend is a bug you just caught.
 
-> ### The chain is incomplete — a rebuild does NOT reproduce `site/`
->
-> `build.py` emits **no promo banner**. That step was applied straight to the HTML
-> before anyone captured it as a script, so it exists only in the committed files.
-> `chrome-v2` then finds no banner to transform, reports `no old sizing script
-> found`, and `chrome-v3` refuses to run at all. A fresh build comes out roughly
-> **16.7KB per page short**: no banner, no dismiss button, no logo.
->
-> **Never overwrite `site/` from a bare rebuild.** Build into a scratch directory
-> (`BORDERBLEND_SITE=/tmp/x`) and diff before letting anything near `site/`.
-> Closing this gap — folding the chrome into `build.py` — is the top open task.
+Four files have **no generator** and are patched forward only:
+`journey-map-{late-night,business-lunch}-{v2,v3}.html`. They were authored on
+`journey-map-template.html` via the ucLoops prompt chain.
 
 ## Publishing
 
@@ -113,7 +106,7 @@ language — nothing has changed yet.
   or victim tone. Re-read this before generating any content.
 - **Don't break the evidence chain.** Every ID is a link; every link targets a
   specific `#anchor`, never a page top; trails resolve persona → insight →
-  dated verbatim. `check_links.py` validates it (last run: 5,021 links, 0 broken).
+  dated verbatim. `check_links.py` validates it (last run 2026-07-30: 6,461 links, 0 broken).
 
 ## Companion app
 
@@ -126,6 +119,8 @@ in a new tab so they don't replace the viewer iframe. Source lives at
 ## Conventions patches rely on
 
 - Mobile breakpoint is **859px** throughout.
+- The top chrome comes from `build/chrome.py` and its CSS from
+  `build/assets/chrome.css`. One sticky wrapper, banner then bar, on every page.
 - Body classes vary (`srcpage`, `docwrap`, `jny-wrap`, `prov-hidden`) — match
   `<body\b[^>]*>`, never a literal `<body>`.
 - Journey sidebar persona cards carry `data-persona="personaN"` and link to their

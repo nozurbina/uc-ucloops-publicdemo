@@ -133,6 +133,12 @@ def patch_persona(path: Path) -> str:
 base = Path(sys.argv[1])
 print("── journey maps ──")
 for f in sorted(base.glob("journey-map-*.html")):
+    # The v2 maps have no persona action row to add a Chat link to — they predate it.
+    # Skipping them by name keeps a clean run from printing a FAILED line that is
+    # expected, which is worse than useless: it teaches you to ignore failures.
+    if "-v2.html" in f.name:
+        print(f"  {f.name:42s} skipped (v2 has no persona action row)")
+        continue
     print(f"  {f.name:42s} {patch_journey(f)}")
 print("── persona pages ──")
 for name in sorted(PAGE_TO_AGENT):
