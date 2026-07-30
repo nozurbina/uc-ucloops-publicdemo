@@ -33,8 +33,10 @@ The single most important decision. Everything else hangs off it.
 Key property: **flexibility lives at the A→B boundary, strictness at B.** Users can
 restructure their markdown (different persona sections, different journey rows) and
 only the ingest step has to cope; the renderers never see the mess. This is also
-where "the .md structures will drift" is absorbed: drift produces ingest warnings
-and generic sections, never broken pages.
+where "the .md structures will drift" is absorbed: drift produces ingest warnings,
+never broken pages. **A section that isn't in the source simply isn't in the
+output** — no placeholders, no filler. Renderers emit only what the bundle
+contains; the section registry (below) only says how to lay out what they find.
 
 This layering already half-exists. `build.py`'s Pass A *is* an ingest step (md →
 anchors + source HTML) and Pass B *is* a render step (JSON → deliverables) — they're
@@ -64,9 +66,10 @@ already encode the method's concepts and 6,400 working links prove them out:
 - **Sections are data, not code.** The v3 persona renderer's `SECT` dict (DEMO,
   MIND, EMOT, VOIC…) becomes a per-demo **section registry** in the manifest: a
   list of `{key, heading-pattern, layout}` entries. A persona with a section the
-  registry doesn't name still renders — as a generic list section with a slugged id
-  — and the ingest logs "unknown section 'Media Diet' rendered generically." Same
-  for journey rows: today's 16-row template is a default registry, not a schema.
+  registry doesn't name still renders — as a plain list with a slugged id, plus an
+  ingest warning naming it so the registry can be extended. A section that is
+  *missing* is simply omitted. Same for journey rows: today's 16-row template is a
+  default registry, not a schema — a demo whose journeys have 11 rows renders 11.
 - **Anchor ids are assigned deterministically** (file id + turn/row counter), so
   re-ingesting unchanged sources yields identical ids. This is what makes the
   byte-identical-rebuild test survivable across the refactor.
@@ -81,6 +84,54 @@ already encode the method's concepts and 6,400 working links prove them out:
 3. The trail resolves: journey cell → insight → dated verbatim.
 4. Persona `agent` ids are lowercase and match the app exactly.
 5. A scratch rebuild reproduces `dist/<demo>/` byte-for-byte (enforced by test).
+
+## 2b. New deliverables, and the semantic layer underneath
+
+Two expansions the bundle format must leave room for, designed in now even though
+BorderBlend doesn't populate them yet.
+
+**New deliverable types: Jobs to be Done and User Stories.** Same shape as
+insights — id, statement/parts, evidence[], cross-links — so each costs a bundle
+type, a renderer and registry entries, not an architecture change. JTBD items and
+stories cite insights and verbatims the way journey cells do, and personas and
+journeys can cite them back. Their id families (`JTBD-*`, `STORY-*`) join the
+anchor index like everything else.
+
+**External endpoints: channels, repositories, work tracking.** Today every link in
+a demo resolves inside the demo. The model gains a second link kind — an **external
+reference**: typed, per-demo, declared in the manifest under `endpoints` (e.g.
+`cms`, `tasks`), each with a base URL and label. Concretely:
+
+- a journey's *content assets* row lists assets that live in a CMS, each linking
+  out to its record — mocked **generically in Notion** first, with Notion holding
+  **DITA XML payloads**, so a demo can show one source component rendered into
+  different channels and contexts;
+- *opportunities* link out to a task-management record tracking the work on them.
+
+External links get a distinct affordance (they leave the evidence world and must
+never masquerade as evidence), open in a new tab, and are excluded from
+`check_links.py`'s resolution pass but checked for well-formedness. Later the asset
+row can go *live* — query the CMS at build time — and the bundle shape is identical
+either way: a build-time query is just another ingest source.
+
+**The semantic layer** (`D:/DEV/uc-agentfarm-loopkit/ontology`). Relationship
+vocabulary aligns to PROV-O plus the ucLoops ladder module (`lc:`): Source ->
+Assumption/Observation -> Insight, `lc:derivedFrom` specialising
+`prov:wasDerivedFrom`, and the bright line that **derived text is never evidence**
+(`lc:DerivedText` is deliberately not an `lc:Evidence`). Practically, for the
+bundle:
+
+- Today's `evidence[]` arrays *are* `lc:derivedFrom` edges from an `lc:Insight`
+  down to `lc:Verbatim` evidence. Source > Insight is the only rung instantiated
+  in the materials so far — fine for now — but each link is stored with a
+  **relation-type field** (default `derivedFrom`) rather than as a bare id, so the
+  Assumption and Observation rungs slot in without a migration.
+- Ids stay human ids (`INS-C01`); a demo-scoped IRI is derivable mechanically when
+  we want to export a demo's trail as Turtle and query it in Fuseki next to the
+  ontology. Export is a later nicety, blocking nothing.
+- From here on the ladder vocabulary is the naming authority: new relationship
+  names come from `lc:`/PROV-O (`corroborates`, `contradicts`, `wasRevisionOf`),
+  not ad-hoc coinage.
 
 ## 3. The per-demo manifest
 
@@ -122,14 +173,15 @@ Framing/content rules (winning-challenger tone etc.) stay prose per demo — a
 
 ## 4. Repo layout and data ownership
 
-**The one decision that needs Noz, not me.** The raw `.md` currently exists twice:
-all 27 sources here, 15 of them byte-identical inside `ui1`'s `src/personas.js` — a
-2,030-line file whose header claims it is auto-assembled but which **has no
-generator** (verified by the previous session: `build-templates.mjs`'s EXPORTS map
-doesn't mention it). That is the promo-banner failure mode again, on the file most
-in the way of templating.
+**The one decision that needs Noz — in plain terms:** the interview transcripts
+exist in two places. This repo has all 27 as `.md` files. The chat app has 15 of
+them **pasted into its source code** (`personas.js`), and nothing keeps the copies
+in sync — edit a transcript here and the app's copy silently stays old. The
+question is only: *which copy is the master?* The plan: **the master lives here**,
+and a script regenerates the app's copy from it, so one edit updates both the site
+and the chat personas.
 
-**Recommendation: this repo owns the raw data.** It has the superset, the anchor
+**So: this repo owns the raw data.** It has the superset, the anchor
 pipeline, and now the test harness that catches drift. Target layout:
 
 ```
@@ -192,9 +244,9 @@ maps, so the abstraction forces the question. Options:
   build cost now, but every demo pays the authoring cost and inherits the drift
   risk the tests currently police.
 
-Recommendation: (a), scheduled as its own phase, *after* a second demo proves the
-rest of the pipeline — the renderer's requirements will be much clearer with two
-demos' maps in hand than one.
+**Decided 2026-07-30: (a) — build the renderer.** Scheduled as its own phase,
+after a second demo proves the rest of the pipeline: the renderer's requirements
+will be much clearer with two demos' maps in hand than one.
 
 ## 7. Phases
 
@@ -221,10 +273,17 @@ a byte diff.
       convention; new `demo.json`; published at `shares/ucloops/<demo>/`; app gets
       `?demo=`. This phase is the proof — expect it to flush out every hidden
       BorderBlend assumption the tests didn't.
-- [ ] **Phase 5 — Journey-map renderer** (§6a), retiring the postbuild patch chain
-      for maps.
+- [ ] **Phase 5 — Journey-map renderer** (§6, decided), retiring the postbuild
+      patch chain for maps.
 - [ ] **Phase 6 — Switcher UX.** Demo picker in the app; a demos index page on the
       site; cross-links carry the demo context.
+- [ ] **Phase 7 — New deliverables.** Jobs to be Done + User Stories as bundle
+      types with renderers and registry entries (§2b). The typed relation field on
+      evidence links lands here too.
+- [ ] **Phase 8 — External endpoints.** The generic Notion mock (CMS + task
+      tracker, DITA XML payloads rendered per channel/context), the external-link
+      affordance, manifest `endpoints`, the content-assets row pointing at it.
+      Turtle/Fuseki export of a demo's trail rides along when useful.
 
 ## 8. Traps already known (so nobody rediscovers them)
 
