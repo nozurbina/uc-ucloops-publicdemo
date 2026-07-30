@@ -5,7 +5,7 @@ Three changes:
   1. Journey sidebar — a Chat action on each persona card, first of the three,
      deep-linking to that persona in the app.
   2. Journey drawer handle — subtitle now mentions chatting.
-  3. Persona pages — a "Launch AI Persona Sim" button in the page header.
+  3. Persona pages — a "Chat with this persona" button in the page header.
 
 Links carry ?agent=<id>, which the app reads on boot to open that persona's
 conversation directly. Ids are lowercase because the app's parser is
@@ -116,9 +116,9 @@ def patch_persona(path: Path) -> str:
     button = (
         '\n<div class="sim-launch-wrap">'
         f'<a class="sim-launch" href="{APP}?agent={agent}" target="_blank" rel="noopener">'
-        f"&#128488;&#65039; Launch AI Persona Sim</a>"
-        f'<span class="sim-launch-note">Chat with {name} in the ucLoops demo app'
-        " &middot; opens in a new tab</span></div>\n"
+        f"&#128488;&#65039; Chat with this persona</a>"
+        f'<span class="sim-launch-note">{name} is a persona simulation, not a real'
+        " person &middot; opens in the ucLoops demo app</span></div>\n"
     )
     s = s[: m.end(1)] + button + s[m.end(1) : ]
 

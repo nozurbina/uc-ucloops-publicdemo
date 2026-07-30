@@ -1366,13 +1366,27 @@ html.uc-embedded .main-content{height:auto !important}
   html.uc-embedded .main-content{margin-left:0 !important}
 }
 
-/* Pan bar: the grid's horizontal scrollbar is now at the bottom of a very tall
-   element, so this is a second, reachable one. `position:sticky;left:0` inside the
-   horizontal scroller is what keeps it in place while the grid pans under it. */
-html.uc-embedded .uc-panbar{position:sticky;left:0;height:14px;margin:.6rem 1rem 0;
-  overflow-x:auto;overflow-y:hidden;background:#f1f5f9;border-radius:7px}
+/* Pan bar: the grid's own horizontal scrollbar is at the bottom of a very tall
+   element, so this is a reachable one, kept at the bottom of whatever part of the
+   map you are actually looking at.
+   `position:fixed` is no use here — inside an auto-height iframe the "viewport" is
+   the whole frame, so fixed behaves like absolute. The script computes the visible
+   band from the parent instead and sets `top`. Attached to <body>, not to the
+   scroller, so panning doesn't drag it along. */
+html.uc-embedded .uc-panbar{position:absolute;left:0;width:100%;height:18px;z-index:180;
+  overflow-x:auto;overflow-y:hidden;background:#e8edf3;border-top:1px solid #cbd5e1;
+  box-shadow:0 -3px 10px rgba(0,0,0,.12);scrollbar-color:#94a3b8 #e8edf3}
 html.uc-embedded .uc-panbar>div{height:1px}
+/* Give it a thumb worth grabbing — at 18px the platform default is a hairline. */
+html.uc-embedded .uc-panbar::-webkit-scrollbar{height:12px}
+html.uc-embedded .uc-panbar::-webkit-scrollbar-track{background:#e8edf3}
+html.uc-embedded .uc-panbar::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:6px;
+  border:2px solid #e8edf3}
+html.uc-embedded .uc-panbar::-webkit-scrollbar-thumb:hover{background:#64748b}
 html.uc-embedded .uc-panbar[hidden]{display:none}
+/* Fallback when the parent isn't readable: sit above the grid, in flow. */
+html.uc-embedded .uc-panbar.uc-panbar--top{position:sticky;top:auto;margin:.6rem 1rem 0;
+  width:auto;box-shadow:none;border-radius:8px}
 html.uc-embedded .journey-grid{cursor:grab}
 html.uc-embedded .journey-grid.uc-dragging{cursor:grabbing;user-select:none}
 </style></head>
@@ -2914,13 +2928,66 @@ function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle'));
   var grid = document.querySelector(".journey-grid");
   if(!scroller || !main || !grid) return;
 
-  /* A mirror of the grid's width, directly above the grid, held in place while the
-     grid pans under it. */
+  /* A mirror of the grid's width: same thumb, same drag, in the place a horizontal
+     scrollbar belongs — the bottom of the visible area. */
   var bar = document.createElement("div");
   bar.className = "uc-panbar";
   var inner = document.createElement("div");
   bar.appendChild(inner);
-  grid.parentNode.insertBefore(bar, grid);
+
+  /* Where the visible band is. Same-origin in the viewer, so the parent's scroll
+     position and our own frame's rect are both readable; our document never scrolls
+     itself, so its coordinates are just "offset from the top of the frame". If any
+     of that is unavailable (a cross-origin embed, a local file), fall back to a bar
+     above the grid — less conventional, but it needs nothing from the parent. */
+  var pwin = null, frameEl = null;
+  try {
+    pwin = window.parent;
+    frameEl = pwin.document.getElementById("ai-projects-frame-content");
+    if (frameEl && frameEl.contentWindow !== window) frameEl = null;
+  } catch (e) { frameEl = null; }
+
+  if (frameEl) {
+    document.body.appendChild(bar);
+  } else {
+    bar.classList.add("uc-panbar--top");
+    grid.parentNode.insertBefore(bar, grid);
+  }
+
+  var lastPlace = 0;
+  function place(){
+    if (!frameEl) return;
+    try {
+      var r = frameEl.getBoundingClientRect();
+      var visTop = Math.max(0, -r.top);
+      var visBottom = Math.min(pwin.innerHeight - r.top, r.height);
+      var g = grid.getBoundingClientRect();          /* == document coords here */
+      /* Only while some of the grid is on screen. */
+      bar.hidden = bar.hidden || false;
+      var offScreen = g.bottom < visTop || g.top > visBottom;
+      bar.style.visibility = offScreen ? "hidden" : "visible";
+      bar.style.top = Math.max(0, visBottom - bar.offsetHeight) + "px";
+    } catch (e) { /* parent went away mid-scroll */ }
+  }
+  /* Deliberately not requestAnimationFrame: rAF is throttled in a frame that is
+     mostly outside the parent's viewport, which is exactly when this runs. A cheap
+     time coalesce instead — place() is two getBoundingClientRects. */
+  function schedule(){
+    var now = Date.now();
+    if (now - lastPlace < 16) return;
+    lastPlace = now;
+    place();
+  }
+  if (frameEl) {
+    pwin.addEventListener("scroll", schedule, {passive:true});
+    pwin.addEventListener("resize", schedule);
+    window.addEventListener("resize", schedule);
+    /* Safety net, and the thing that actually carries this in practice: a parent
+       scroll event is not guaranteed to reach a listener registered from inside the
+       frame, and rAF is throttled while the frame is mostly off screen. Two
+       getBoundingClientRects five times a second costs nothing. */
+    setInterval(place, 200);
+  }
 
   var syncing = false;
   function size(){
@@ -2939,8 +3006,9 @@ function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle'));
     if(syncing) return; syncing = true; bar.scrollLeft = scroller.scrollLeft; syncing = false;
   });
   window.addEventListener("resize", size);
-  if(window.ResizeObserver) new ResizeObserver(size).observe(grid);
+  if(window.ResizeObserver) new ResizeObserver(function(){ size(); place(); }).observe(grid);
   size();
+  place();
 
   /* Drag anywhere on the grid. Guarded so it never eats a click on a link, a button
      or a text selection: panning only starts once the pointer has moved 5px. */

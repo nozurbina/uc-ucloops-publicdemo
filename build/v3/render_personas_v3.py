@@ -163,9 +163,8 @@ def render(persona, out_slug):
         else:
             body_parts.append(render_section(t)); done.add(t)
 
-    related = {"late-night-foodie":"journey-map-late-night-v3.html","omar":"journey-map-business-lunch-v3.html",
-               "grace":"journey-map-business-lunch-v3.html"}.get(slug)
-    rellink = f' · <a href="{related}">see journey map →</a>' if related else ""
+    # No link out to a journey map: a persona can appear in any number of them, so
+    # naming one here would be arbitrary. The maps link *to* the persona, not back.
     # The headshot is named after the persona's agent id — the same lowercase id the
     # companion app takes in ?agent=, so one value covers the photo and the sim link.
     # It sits *before* .initials, which stays as the fallback underneath it.
@@ -189,7 +188,7 @@ a.item-ref{{text-decoration:none;cursor:pointer}}a.item-ref:hover{{outline:1px s
 <div class="persona-name">{esc(persona['name'])}</div>
 <div class="persona-role">{esc(persona['role'])}</div>
 </header>
-<div class="trail-note"><div class="tn"><a class="trail-toggle" href="#" onclick="return ucToggleFromTrail()"><b>Evidence trail</b></a>: every item ID links to the <b>insight</b> it rests on; each insight links down to the <b>verbatim</b> source. Direct source quotes are linked inline too{rellink}.</div></div>
+<div class="trail-note"><div class="tn"><a class="trail-toggle" href="#" onclick="return ucToggleFromTrail()"><b>Evidence trail</b></a>: every item ID links to the <b>insight</b> it rests on; each insight links down to the <b>verbatim</b> source. Direct source quotes are linked inline too.</div></div>
 <main class="content">
 {''.join(body_parts)}
 </main>
