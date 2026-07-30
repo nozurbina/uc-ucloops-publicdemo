@@ -1,0 +1,2572 @@
+{
+ "GOAL-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C04",
+   "INS-C02"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT019-t6",
+   "BB-INT013-t4"
+  ]
+ },
+ "GOAL-OMAR-ST01-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t4",
+   "BB-INT019-t4"
+  ]
+ },
+ "GOAL-OMAR-ST01-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t4",
+   "BB-INT019-t4"
+  ]
+ },
+ "GOAL-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t2"
+  ]
+ },
+ "GOAL-GRAC-ST01-0002": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6",
+   "BB-INT020-t34"
+  ]
+ },
+ "GOAL-GRAC-ST01-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t4",
+   "BB-INT020-t4",
+   "BB-INT020-t34"
+  ]
+ },
+ "GOAL-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C06",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "BB-INT019-t8"
+  ]
+ },
+ "GOAL-OMAR-ST02-0002": {
+  "insights": [
+   "INS-C09",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "BB-INT019-t10"
+  ]
+ },
+ "GOAL-OMAR-ST02-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t4",
+   "BB-INT013-t12"
+  ]
+ },
+ "GOAL-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t4",
+   "BB-INT020-t4"
+  ]
+ },
+ "GOAL-GRAC-ST02-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "BB-INT020-t4",
+   "BB-INT014-t12"
+  ]
+ },
+ "GOAL-GRAC-ST02-0003": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t12",
+   "BB-INT020-t12"
+  ]
+ },
+ "GOAL-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t28",
+   "BB-INT019-t26"
+  ]
+ },
+ "GOAL-OMAR-ST03-0002": {
+  "insights": [
+   "INS-C10",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16",
+   "BB-INT013-t14"
+  ]
+ },
+ "GOAL-OMAR-ST03-0003": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12",
+   "APPLOG-r1"
+  ]
+ },
+ "GOAL-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t22",
+   "BB-INT020-t24"
+  ]
+ },
+ "GOAL-GRAC-ST03-0002": {
+  "insights": [
+   "INS-C08",
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t20",
+   "BB-INT020-t22"
+  ]
+ },
+ "GOAL-GRAC-ST03-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT014-t14"
+  ]
+ },
+ "GOAL-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "GOAL-OMAR-ST04-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t24",
+   "BB-INT013-t26"
+  ]
+ },
+ "GOAL-OMAR-ST04-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT019-t22"
+  ]
+ },
+ "GOAL-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "GOAL-GRAC-ST04-0002": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t16",
+   "BB-INT020-t16",
+   "SOC-M009"
+  ]
+ },
+ "GOAL-GRAC-ST04-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "BB-INT020-t8",
+   "PAIN-M"
+  ]
+ },
+ "GOAL-GRAC-ST04-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t22",
+   "BB-INT020-t24",
+   "FT-015"
+  ]
+ },
+ "GOAL-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "GOAL-OMAR-ST05-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t28",
+   "BB-INT019-t26"
+  ]
+ },
+ "GOAL-OMAR-ST05-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "GOAL-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t24",
+   "BB-INT020-t32"
+  ]
+ },
+ "GOAL-GRAC-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "GOAL-GRAC-ST05-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT020-t32",
+   "BB-INT014-t32"
+  ]
+ },
+ "NARR-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C04",
+   "INS-C02"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT019-t6",
+   "BB-INT013-t4"
+  ]
+ },
+ "NARR-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t2",
+   "BB-INT014-t8"
+  ]
+ },
+ "NARR-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C06",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "BB-INT019-t8",
+   "BB-INT013-t10"
+  ]
+ },
+ "NARR-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C06",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t4",
+   "BB-INT014-t30",
+   "BB-INT020-t4"
+  ]
+ },
+ "NARR-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C10",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t14",
+   "BB-INT013-t16",
+   "BB-INT019-t14"
+  ]
+ },
+ "NARR-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6",
+   "BB-INT014-t14"
+  ]
+ },
+ "NARR-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t24",
+   "BB-INT013-t26",
+   "BB-INT013-t18"
+  ]
+ },
+ "NARR-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10",
+   "BB-INT014-t16"
+  ]
+ },
+ "NARR-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22",
+   "BB-INT013-t20"
+  ]
+ },
+ "NARR-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t26",
+   "BB-INT020-t28",
+   "BB-INT020-t30"
+  ]
+ },
+ "QUES-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C06",
+   "INS-C02"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT019-t6"
+  ]
+ },
+ "QUES-OMAR-ST01-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t4"
+  ]
+ },
+ "QUES-OMAR-ST01-0003": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "BB-INT019-t10"
+  ]
+ },
+ "QUES-OMAR-ST01-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12",
+   "SOC-M005"
+  ]
+ },
+ "QUES-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "QUES-GRAC-ST01-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "QUES-GRAC-ST01-0003": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t4"
+  ]
+ },
+ "QUES-GRAC-ST01-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT014-t2"
+  ]
+ },
+ "QUES-GRAC-ST01-0005": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "FT-015",
+   "MR-C32"
+  ]
+ },
+ "QUES-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "BB-INT019-t10"
+  ]
+ },
+ "QUES-OMAR-ST02-0002": {
+  "insights": [
+   "INS-C06"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "BB-INT019-t8"
+  ]
+ },
+ "QUES-OMAR-ST02-0003": {
+  "insights": [
+   "INS-C06"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "PAIN-M"
+  ]
+ },
+ "QUES-OMAR-ST02-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12"
+  ]
+ },
+ "QUES-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "BB-INT020-t8",
+   "PAIN-M"
+  ]
+ },
+ "QUES-GRAC-ST02-0002": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t16",
+   "BB-INT020-t16",
+   "SOC-M009"
+  ]
+ },
+ "QUES-GRAC-ST02-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14"
+  ]
+ },
+ "QUES-GRAC-ST02-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t4"
+  ]
+ },
+ "QUES-GRAC-ST02-0005": {
+  "insights": [
+   "INS-C07",
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14"
+  ]
+ },
+ "QUES-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12",
+   "APPLOG-r3"
+  ]
+ },
+ "QUES-OMAR-ST03-0002": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16",
+   "BB-INT013-t14"
+  ]
+ },
+ "QUES-OMAR-ST03-0003": {
+  "insights": [
+   "INS-B02",
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t14",
+   "BB-INT019-t14",
+   "APPLOG-r14"
+  ]
+ },
+ "QUES-OMAR-ST03-0004": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t14",
+   "BB-INT019-t14",
+   "APPLOG-r16"
+  ]
+ },
+ "QUES-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C08"
+  ],
+  "verbatim": [
+   "BB-INT014-t20",
+   "BB-INT020-t22"
+  ]
+ },
+ "QUES-GRAC-ST03-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t22",
+   "BB-INT014-t24"
+  ]
+ },
+ "QUES-GRAC-ST03-0003": {
+  "insights": [
+   "INS-C11",
+   "INS-C07"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14"
+  ]
+ },
+ "QUES-GRAC-ST03-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT014-t24"
+  ]
+ },
+ "QUES-GRAC-ST03-0005": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t22",
+   "BB-INT020-t24"
+  ]
+ },
+ "QUES-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "QUES-OMAR-ST04-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "QUES-OMAR-ST04-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t24",
+   "BB-INT013-t26"
+  ]
+ },
+ "QUES-OMAR-ST04-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT013-t24"
+  ]
+ },
+ "QUES-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "QUES-GRAC-ST04-0002": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t16",
+   "BB-INT020-t16"
+  ]
+ },
+ "QUES-GRAC-ST04-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "PAIN-M"
+  ]
+ },
+ "QUES-GRAC-ST04-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "QUES-GRAC-ST04-0005": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "FT-015",
+   "MR-C32"
+  ]
+ },
+ "QUES-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "QUES-OMAR-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t20",
+   "BB-INT019-t20"
+  ]
+ },
+ "QUES-OMAR-ST05-0003": {
+  "insights": [
+   "INS-C12",
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "PAIN-O"
+  ]
+ },
+ "QUES-OMAR-ST05-0004": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "QUES-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t28",
+   "BB-INT020-t28"
+  ]
+ },
+ "QUES-GRAC-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "QUES-GRAC-ST05-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "FT-015",
+   "MR-C32"
+  ]
+ },
+ "QUES-GRAC-ST05-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t24",
+   "BB-INT020-t30"
+  ]
+ },
+ "QUES-GRAC-ST05-0005": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT020-t32",
+   "BB-INT014-t32"
+  ]
+ },
+ "PROB-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t4",
+   "BB-INT019-t4"
+  ]
+ },
+ "PROB-OMAR-ST01-0002": {
+  "insights": [
+   "INS-C09",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "BB-INT019-t10"
+  ]
+ },
+ "PROB-OMAR-ST01-0003": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t10"
+  ]
+ },
+ "PROB-OMAR-ST01-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t4",
+   "BB-INT013-t12"
+  ]
+ },
+ "PROB-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "PROB-GRAC-ST01-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t12",
+   "BB-INT020-t12"
+  ]
+ },
+ "PROB-GRAC-ST01-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t6",
+   "BB-INT020-t26"
+  ]
+ },
+ "PROB-GRAC-ST01-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "PROB-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12"
+  ]
+ },
+ "PROB-OMAR-ST02-0002": {
+  "insights": [
+   "INS-C06"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "PAIN-M"
+  ]
+ },
+ "PROB-OMAR-ST02-0003": {
+  "insights": [
+   "INS-C04",
+   "INS-C06"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "BB-INT013-t10"
+  ]
+ },
+ "PROB-OMAR-ST02-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12"
+  ]
+ },
+ "PROB-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t16",
+   "BB-INT020-t16",
+   "SOC-M009"
+  ]
+ },
+ "PROB-GRAC-ST02-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "PAIN-M"
+  ]
+ },
+ "PROB-GRAC-ST02-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14"
+  ]
+ },
+ "PROB-GRAC-ST02-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "FT-015",
+   "MR-C32"
+  ]
+ },
+ "PROB-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT019-t24",
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "PROB-OMAR-ST03-0002": {
+  "insights": [
+   "INS-B02",
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t14",
+   "BB-INT019-t14",
+   "APPLOG-r14"
+  ]
+ },
+ "PROB-OMAR-ST03-0003": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t14",
+   "BB-INT019-t14",
+   "APPLOG-r16"
+  ]
+ },
+ "PROB-OMAR-ST03-0004": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "PROB-OMAR-ST03-0005": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12"
+  ]
+ },
+ "PROB-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "PROB-GRAC-ST03-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "PROB-GRAC-ST03-0003": {
+  "insights": [
+   "INS-C14",
+   "INS-C08"
+  ],
+  "verbatim": [
+   "BB-INT014-t20",
+   "BB-INT020-t22"
+  ]
+ },
+ "PROB-GRAC-ST03-0004": {
+  "insights": [
+   "INS-C11",
+   "INS-C07"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14",
+   "BB-INT020-t16"
+  ]
+ },
+ "PROB-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "PROB-OMAR-ST04-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "PROB-OMAR-ST04-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "PROB-OMAR-ST04-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "PROB-OMAR-ST04-0005": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t28"
+  ]
+ },
+ "PROB-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "PROB-GRAC-ST04-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT020-t8",
+   "BB-INT014-t6",
+   "BB-INT020-t26"
+  ]
+ },
+ "PROB-GRAC-ST04-0003": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t16",
+   "BB-INT020-t16",
+   "BB-INT020-t18"
+  ]
+ },
+ "PROB-GRAC-ST04-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "PROB-GRAC-ST04-0005": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "BB-INT020-t8",
+   "PAIN-M"
+  ]
+ },
+ "PROB-GRAC-ST04-0006": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "FT-015",
+   "MR-C32"
+  ]
+ },
+ "PROB-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22",
+   "SOC-M013"
+  ]
+ },
+ "PROB-OMAR-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t20",
+   "BB-INT019-t20"
+  ]
+ },
+ "PROB-OMAR-ST05-0003": {
+  "insights": [
+   "INS-C10",
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "PROB-OMAR-ST05-0004": {
+  "insights": [
+   "INS-C12",
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t20",
+   "PAIN-O"
+  ]
+ },
+ "PROB-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t26",
+   "BB-INT020-t28"
+  ]
+ },
+ "PROB-GRAC-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t24",
+   "BB-INT020-t30"
+  ]
+ },
+ "PROB-GRAC-ST05-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "FT-015",
+   "MR-C32"
+  ]
+ },
+ "PROB-GRAC-ST05-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "TASK-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C02",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT019-t6"
+  ]
+ },
+ "TASK-OMAR-ST01-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t4"
+  ]
+ },
+ "TASK-OMAR-ST01-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t4",
+   "BB-INT019-t4"
+  ]
+ },
+ "TASK-OMAR-ST01-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t4",
+   "BB-INT013-t12"
+  ]
+ },
+ "TASK-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C02",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t2"
+  ]
+ },
+ "TASK-GRAC-ST01-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "TASK-GRAC-ST01-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t4",
+   "BB-INT020-t4"
+  ]
+ },
+ "TASK-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t10"
+  ]
+ },
+ "TASK-OMAR-ST02-0002": {
+  "insights": [
+   "INS-C06"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "BB-INT019-t8"
+  ]
+ },
+ "TASK-OMAR-ST02-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12"
+  ]
+ },
+ "TASK-OMAR-ST02-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT013-t4"
+  ]
+ },
+ "TASK-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C06",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t4",
+   "BB-INT020-t4"
+  ]
+ },
+ "TASK-GRAC-ST02-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "BB-INT020-t4"
+  ]
+ },
+ "TASK-GRAC-ST02-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t4"
+  ]
+ },
+ "TASK-GRAC-ST02-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "TASK-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "TASK-OMAR-ST03-0002": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "TASK-OMAR-ST03-0003": {
+  "insights": [
+   "INS-C10",
+   "INS-B02"
+  ],
+  "verbatim": [
+   "BB-INT013-t14",
+   "BB-INT019-t14",
+   "APPLOG-r16"
+  ]
+ },
+ "TASK-OMAR-ST03-0004": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "TASK-OMAR-ST03-0005": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "TASK-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "TASK-GRAC-ST03-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT014-t14"
+  ]
+ },
+ "TASK-GRAC-ST03-0003": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14"
+  ]
+ },
+ "TASK-GRAC-ST03-0004": {
+  "insights": [
+   "INS-C14",
+   "INS-C08"
+  ],
+  "verbatim": [
+   "BB-INT014-t20",
+   "BB-INT020-t20"
+  ]
+ },
+ "TASK-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "TASK-OMAR-ST04-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "TASK-OMAR-ST04-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t24",
+   "BB-INT013-t16"
+  ]
+ },
+ "TASK-OMAR-ST04-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "TASK-OMAR-ST04-0005": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t28",
+   "BB-INT013-t24"
+  ]
+ },
+ "TASK-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "TASK-GRAC-ST04-0002": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t16",
+   "BB-INT020-t16"
+  ]
+ },
+ "TASK-GRAC-ST04-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "TASK-GRAC-ST04-0004": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t22",
+   "BB-INT020-t24"
+  ]
+ },
+ "TASK-GRAC-ST04-0005": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "BB-INT014-t32",
+   "FT-015"
+  ]
+ },
+ "TASK-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t20",
+   "BB-INT019-t20",
+   "BB-INT013-t22"
+  ]
+ },
+ "TASK-OMAR-ST05-0002": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "TASK-OMAR-ST05-0003": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT019-t24",
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "TASK-OMAR-ST05-0004": {
+  "insights": [
+   "INS-C14",
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "TASK-OMAR-ST05-0005": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT013-t28"
+  ]
+ },
+ "TASK-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t26",
+   "BB-INT020-t30"
+  ]
+ },
+ "TASK-GRAC-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t22",
+   "BB-INT020-t24"
+  ]
+ },
+ "TASK-GRAC-ST05-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "FT-015",
+   "MR-C32"
+  ]
+ },
+ "TASK-GRAC-ST05-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT020-t32",
+   "BB-INT014-t32"
+  ]
+ },
+ "SENT-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t4"
+  ]
+ },
+ "SENT-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t2"
+  ]
+ },
+ "SENT-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C06",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "BB-INT019-t8"
+  ]
+ },
+ "SENT-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C06",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t12",
+   "BB-INT020-t12"
+  ]
+ },
+ "SENT-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t14",
+   "BB-INT019-t14"
+  ]
+ },
+ "SENT-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "SENT-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "SENT-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t8"
+  ]
+ },
+ "SENT-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t28",
+   "BB-INT019-t26"
+  ]
+ },
+ "SENT-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "BB-INT020-t32"
+  ]
+ },
+ "QUOT-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t4",
+   "BB-INT019-t4"
+  ]
+ },
+ "QUOT-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t2"
+  ]
+ },
+ "QUOT-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C06",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "BB-INT019-t8"
+  ]
+ },
+ "QUOT-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C04",
+   "INS-C06"
+  ],
+  "verbatim": [
+   "BB-INT014-t12",
+   "BB-INT020-t12"
+  ]
+ },
+ "QUOT-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C09",
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT013-t14"
+  ]
+ },
+ "QUOT-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT020-t32",
+   "BB-INT014-t8"
+  ]
+ },
+ "QUOT-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "QUOT-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "QUOT-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "QUOT-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t28",
+   "BB-INT020-t32"
+  ]
+ },
+ "ALTP-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t4"
+  ]
+ },
+ "ALTP-OMAR-ST01-0002": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "APPLOG-r1"
+  ]
+ },
+ "ALTP-OMAR-ST01-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "SOC-M005"
+  ]
+ },
+ "ALTP-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "ALTP-GRAC-ST01-0002": {
+  "insights": [
+   "INS-C02",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t2"
+  ]
+ },
+ "ALTP-GRAC-ST01-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6",
+   "FT-003"
+  ]
+ },
+ "ALTP-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "SOC-M005"
+  ]
+ },
+ "ALTP-OMAR-ST02-0002": {
+  "insights": [
+   "INS-C06"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "PAIN-M"
+  ]
+ },
+ "ALTP-OMAR-ST02-0003": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "BB-INT019-t24"
+  ]
+ },
+ "ALTP-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C09",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t12",
+   "BB-INT020-t12"
+  ]
+ },
+ "ALTP-GRAC-ST02-0002": {
+  "insights": [
+   "INS-C06",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t12",
+   "BB-INT020-t12"
+  ]
+ },
+ "ALTP-GRAC-ST02-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t4"
+  ]
+ },
+ "ALTP-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT019-t24",
+   "BB-INT013-t22"
+  ]
+ },
+ "ALTP-OMAR-ST03-0002": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "ALTP-OMAR-ST03-0003": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "ALTP-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t22",
+   "BB-INT014-t24"
+  ]
+ },
+ "ALTP-GRAC-ST03-0002": {
+  "insights": [
+   "INS-C14",
+   "INS-C08"
+  ],
+  "verbatim": [
+   "BB-INT014-t20",
+   "BB-INT020-t20"
+  ]
+ },
+ "ALTP-GRAC-ST03-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t16",
+   "BB-INT020-t18"
+  ]
+ },
+ "ALTP-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "ALTP-OMAR-ST04-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "ALTP-OMAR-ST04-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t28",
+   "BB-INT013-t26"
+  ]
+ },
+ "ALTP-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t16",
+   "BB-INT020-t18"
+  ]
+ },
+ "ALTP-GRAC-ST04-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "PAIN-M"
+  ]
+ },
+ "ALTP-GRAC-ST04-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "ALTP-GRAC-ST04-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "ALTP-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22",
+   "SOC-M013"
+  ]
+ },
+ "ALTP-OMAR-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t20",
+   "BB-INT019-t20"
+  ]
+ },
+ "ALTP-OMAR-ST05-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t28",
+   "BB-INT019-t26"
+  ]
+ },
+ "ALTP-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t26",
+   "BB-INT020-t28"
+  ]
+ },
+ "ALTP-GRAC-ST05-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t32",
+   "FT-015",
+   "MR-C32"
+  ]
+ },
+ "ALTP-GRAC-ST05-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t24"
+  ]
+ },
+ "ALTP-GRAC-ST05-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT020-t32",
+   "BB-INT014-t10"
+  ]
+ },
+ "CHAN-OMAR-ST01-0001": {
+  "insights": [
+   "INS-C02",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT019-t6"
+  ]
+ },
+ "CHAN-OMAR-ST01-0002": {
+  "insights": [
+   "INS-C02"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t10"
+  ]
+ },
+ "CHAN-OMAR-ST01-0003": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "APPLOG-r1"
+  ]
+ },
+ "CHAN-OMAR-ST01-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t4",
+   "BB-INT013-t12"
+  ]
+ },
+ "CHAN-GRAC-ST01-0001": {
+  "insights": [
+   "INS-C02",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t2"
+  ]
+ },
+ "CHAN-GRAC-ST01-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "CHAN-GRAC-ST01-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t4",
+   "BB-INT020-t4"
+  ]
+ },
+ "CHAN-GRAC-ST01-0004": {
+  "insights": [
+   "INS-C02"
+  ],
+  "verbatim": [
+   "BB-INT014-t2",
+   "BB-INT020-t2"
+  ]
+ },
+ "CHAN-OMAR-ST02-0001": {
+  "insights": [
+   "INS-C02"
+  ],
+  "verbatim": [
+   "BB-INT013-t6",
+   "BB-INT013-t10"
+  ]
+ },
+ "CHAN-OMAR-ST02-0002": {
+  "insights": [
+   "INS-C06"
+  ],
+  "verbatim": [
+   "BB-INT013-t8",
+   "BB-INT019-t8"
+  ]
+ },
+ "CHAN-OMAR-ST02-0003": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t10",
+   "BB-INT019-t10"
+  ]
+ },
+ "CHAN-OMAR-ST02-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t12"
+  ]
+ },
+ "CHAN-GRAC-ST02-0001": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t4",
+   "BB-INT020-t4"
+  ]
+ },
+ "CHAN-GRAC-ST02-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t4"
+  ]
+ },
+ "CHAN-GRAC-ST02-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "CHAN-GRAC-ST02-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "BB-INT020-t14"
+  ]
+ },
+ "CHAN-OMAR-ST03-0001": {
+  "insights": [
+   "INS-C10",
+   "INS-B02"
+  ],
+  "verbatim": [
+   "BB-INT013-t14",
+   "BB-INT019-t14",
+   "APPLOG-r16"
+  ]
+ },
+ "CHAN-OMAR-ST03-0002": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "CHAN-OMAR-ST03-0003": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t12",
+   "BB-INT019-t22"
+  ]
+ },
+ "CHAN-OMAR-ST03-0004": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "CHAN-OMAR-ST03-0005": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "CHAN-GRAC-ST03-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t6"
+  ]
+ },
+ "CHAN-GRAC-ST03-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT014-t10"
+  ]
+ },
+ "CHAN-GRAC-ST03-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t8",
+   "BB-INT020-t10"
+  ]
+ },
+ "CHAN-GRAC-ST03-0004": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14"
+  ]
+ },
+ "CHAN-GRAC-ST03-0005": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "CHAN-OMAR-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "CHAN-OMAR-ST04-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t26",
+   "BB-INT013-t24"
+  ]
+ },
+ "CHAN-OMAR-ST04-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t24",
+   "BB-INT013-t18"
+  ]
+ },
+ "CHAN-OMAR-ST04-0004": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "CHAN-OMAR-ST04-0005": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t18",
+   "BB-INT019-t18"
+  ]
+ },
+ "CHAN-GRAC-ST04-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "CHAN-GRAC-ST04-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "CHAN-GRAC-ST04-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "CHAN-GRAC-ST04-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT014-t30",
+   "BB-INT020-t8"
+  ]
+ },
+ "CHAN-GRAC-ST04-0005": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14"
+  ]
+ },
+ "CHAN-GRAC-ST04-0006": {
+  "insights": [
+   "INS-C14",
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT020-t34",
+   "BB-INT020-t8"
+  ]
+ },
+ "CHAN-OMAR-ST05-0001": {
+  "insights": [
+   "INS-C14",
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "CHAN-OMAR-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT013-t20",
+   "BB-INT019-t20"
+  ]
+ },
+ "CHAN-OMAR-ST05-0003": {
+  "insights": [
+   "INS-C10"
+  ],
+  "verbatim": [
+   "BB-INT013-t16",
+   "BB-INT019-t16"
+  ]
+ },
+ "CHAN-OMAR-ST05-0004": {
+  "insights": [
+   "INS-C04"
+  ],
+  "verbatim": [
+   "BB-INT013-t28",
+   "BB-INT019-t26"
+  ]
+ },
+ "CHAN-OMAR-ST05-0005": {
+  "insights": [
+   "INS-C09"
+  ],
+  "verbatim": [
+   "BB-INT013-t22",
+   "BB-INT019-t22"
+  ]
+ },
+ "CHAN-GRAC-ST05-0001": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t26",
+   "BB-INT020-t28"
+  ]
+ },
+ "CHAN-GRAC-ST05-0002": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t24",
+   "BB-INT020-t30"
+  ]
+ },
+ "CHAN-GRAC-ST05-0003": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t10",
+   "BB-INT020-t10"
+  ]
+ },
+ "CHAN-GRAC-ST05-0004": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT014-t18",
+   "BB-INT020-t20"
+  ]
+ },
+ "CHAN-GRAC-ST05-0005": {
+  "insights": [
+   "INS-C11"
+  ],
+  "verbatim": [
+   "BB-INT014-t14",
+   "BB-INT020-t14"
+  ]
+ },
+ "CHAN-GRAC-ST05-0006": {
+  "insights": [
+   "INS-C14"
+  ],
+  "verbatim": [
+   "BB-INT020-t32",
+   "BB-INT014-t32"
+  ]
+ }
+}

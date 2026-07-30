@@ -1,0 +1,130 @@
+{
+  "slug": "franchisee",
+  "code": "DIEG",
+  "name": "Diego",
+  "role": "Franchisee / Operator — multi-truck veteran (archetype) · Toronto · 4 years",
+  "initials": "D",
+  "sections": [
+    {
+      "type": "DEMO",
+      "items": [
+        {"text": "Four years in, two trucks in Toronto — a financial-district lunch spot and an east-end weekend-and-events truck — the archetype spans from three-month newcomers to five-year, three-truck operators.", "insights": ["INS-F09"], "evidence": ["BB-INT001-t1", "BB-INT003-t1"]},
+        {"text": "Mexican-Canadian, came for the food after one bite of the <span class=\"entity\">smoked brisket taco</span> at a festival; the archetype runs from fresh career-changers to ex-restaurant managers, and from bilingual Montreal to majority-French Quebec City.", "insights": ["INS-F01"], "evidence": ["BB-INT001-t2", "BB-INT006-t2", "VER-INT009-t2"]},
+        {"text": "Owns and runs the trucks as their own business, with their livelihood tied to BorderBlend — an invested partner, not an execution layer.", "insights": ["INS-F07"], "evidence": ["BB-INT001-t24"]},
+        {"text": "Runs on the <span class=\"entity\">franchisee portal</span>, the franchisee <span class=\"entity\">Slack</span>, and the phone line to brand support — with the Slack doing most of the real work.", "insights": ["INS-F10"], "evidence": ["BB-INT003-t14"]}
+      ]
+    },
+    {
+      "type": "MIND",
+      "items": [
+        {"text": "Treats BorderBlend as a business they own and want to grow, not a script to run — pushback is a partner's contribution, not a complaint.", "insights": ["INS-F07"], "evidence": ["BB-INT001-t20"]},
+        {"text": "Trusts the operational backbone completely — food-prep training and supply chain are genuinely strong — which frees their energy for the marketing and scaling questions.", "insights": ["INS-F08"], "evidence": ["BB-INT004-t16", "BB-INT002-t14"]},
+        {"text": "Knows local beats national for a food truck: their own truck account often out-followers the national one in-region, so they back their own read of the neighbourhood.", "insights": ["INS-F05"], "evidence": ["BB-INT003-t10"]},
+        {"text": "Range shows here — a veteran's hard-won local equity carries a mismatched campaign, while a six-month operator carries the quiet weight of not yet knowing what good looks like.", "insights": ["INS-F09"], "evidence": ["BB-INT003-t6", "BB-INT004-t12"]}
+      ]
+    },
+    {
+      "type": "EMOT",
+      "emotions": [
+        {"emoji": "💪", "label": "Invested", "tail": "livelihood tied to the brand; pushes precisely because they believe in it", "insights": ["INS-F07"]},
+        {"emoji": "🔥", "label": "Proud of the food", "tail": "the bite that gets 'that look' is why they do this", "insights": ["INS-C06"]},
+        {"emoji": "🤔", "label": "Constructively frustrated", "tail": "the biggest wins — fr-CA done right, one source of truth — are cheap and unclaimed", "insights": ["INS-B07"]},
+        {"emoji": "🤝", "label": "Belonging", "tail": "the peer Slack is where they feel backed and where they back the newcomers", "insights": ["INS-F10"]},
+        {"emoji": "😟", "label": "Quiet anxiety (new operators)", "tail": "no benchmark, so 'am I doing this right?' has no answer yet", "insights": ["INS-F09"]}
+      ]
+    },
+    {
+      "type": "VOIC",
+      "voice": "He talks like an operator, not a marketer — plain, specific, grounded in real numbers and real markets, generous toward HQ and quick to head off the 'complainer' label before he makes a point. He credits what works (the food, the supply chain, the support team that fixed his ticket) before he names what doesn't, and he frames every gap as money on the table rather than something broken. Measured, warm, and precise; the Quebec operators in the range make the same points in Québécois, with a craftsman's ear for register.",
+      "voice_insights": ["INS-F07"],
+      "quotes": [
+        {"text": "I'm not here to complain. I'm here because I want this brand to succeed. I've tied my livelihood to it. When I push back, it's because I think we can do better.", "evidence": ["BB-INT001-t24"]},
+        {"text": "Involve us before the campaign is built, not after. Treat us as business partners, not as an execution layer. We've got four combined years of customer data across my two trucks.", "evidence": ["BB-INT001-t20"]},
+        {"text": "Don't treat Quebec as a translation problem. It's a market with its own language and its own instinct — treat it like the advantage it is and Quebec becomes the easiest region you've got.", "evidence": ["VER-INT009-t28"]},
+        {"text": "The best ideas for improving this brand aren't coming from the boardroom. They're coming from the trucks.", "evidence": ["BB-INT003-t18"]}
+      ]
+    },
+    {
+      "type": "GOAL",
+      "items": [
+        {"text": "Grow from one truck to a small fleet while holding every location at brisket-level quality — the <span class=\"entity\">smoked brisket taco</span> is the reason they bought in and the standard they refuse to drop.", "insights": ["INS-F09", "INS-B01"], "evidence": ["BB-INT003-t2"]},
+        {"text": "Act as a genuine business partner in BorderBlend's success — help push the brand further and faster, not just execute what lands.", "insights": ["INS-F07"], "evidence": ["BB-INT001-t20"]},
+        {"text": "Own their local market — take the national look and make it land for their actual neighbourhood, audience, and language.", "insights": ["INS-F05"], "evidence": ["BB-INT001-t8"]},
+        {"text": "Tell the fusion story the same confident way every operator would, so the differentiation reads clearly at every window.", "insights": ["INS-F01", "INS-B04"], "evidence": ["VER-INT009-t22"]},
+        {"text": "For Quebec operators: win the market by doing Québécois properly — an advantage nobody else in street food bothers to earn.", "insights": ["INS-F04"], "evidence": ["VER-INT009-t26"]}
+      ]
+    },
+    {
+      "type": "TASK",
+      "items": [
+        {"text": "Uses HQ imagery and templates but rewrites captions for their own accounts — tagging local events, naming specific neighbourhoods, shooting their own trucks and crew.", "insights": ["INS-F05", "INS-F07"], "evidence": ["BB-INT001-t8"]},
+        {"text": "Runs a parallel content operation on top of the official one, adapting the <span class=\"entity\">campaign kit</span> to what actually works locally.", "insights": ["INS-F05"], "evidence": ["BB-INT001-t10"]},
+        {"text": "Quebec operators self-translate every campaign into proper Québécois — roughly a working day a month, often late at night, doing the marketing team's job.", "insights": ["INS-F03", "INS-B06"], "evidence": ["VER-INT009-t16", "BB-INT002-t8"]},
+        {"text": "Improvises the answer to 'what is this?' at the window because there's no single agreed origin story to reach for.", "insights": ["INS-F01", "INS-B04"], "evidence": ["PAIN-C"]},
+        {"text": "Works around a static <span class=\"entity\">BorderBlend app</span> menu that doesn't match the truck board or POS on the day, absorbing the gap so customers still get served.", "insights": ["INS-B02"], "evidence": ["FT-009"]}
+      ]
+    },
+    {
+      "type": "PAIN",
+      "items": [
+        {"text": "No way to check a caption is on-brand before it goes live — the <span class=\"entity\">brand voice guide</span> is a static PDF you can't query, so compliance flags (superlatives, 'authentic' claims) are caught only after publication.", "insights": ["INS-F02", "INS-B05"], "evidence": ["PAIN-E", "FT-004"]},
+        {"text": "French assets arrive after the English drop and often in European French rather than fr-CA — the 'oignons marinés' error (marinated vs. pickled) is the emblem of it.", "insights": ["INS-F03", "INS-B06"], "evidence": ["FT-010", "VER-INT009-t10"]},
+        {"text": "National campaign pricing is set for one market and squeezes operators in higher-cost cities like Toronto — <span class=\"entity\">Fuego Nights</span> couldn't be run profitably at the suggested price.", "insights": ["INS-F06"], "evidence": ["FT-005", "BB-INT001-t12"]},
+        {"text": "New operators can't tell if their numbers are good — no anonymised benchmarks and no scaling financial model, which is avoidable anxiety at its sharpest for newcomers.", "insights": ["INS-F09"], "evidence": ["FT-014", "BB-INT004-t12"]},
+        {"text": "The portal holds extensive, well-made assets but is organised by document type, so finding the right one in the moment is the real challenge — and there's no marketing onboarding track to match the strong operational one.", "insights": ["INS-F08"], "evidence": ["BB-INT004-t4", "BB-INT005-t18"]}
+      ]
+    },
+    {
+      "type": "FEAR",
+      "items": [
+        {"text": "That a compliance slip goes out before anyone can catch it, because there's no way to check a draft against the brand voice first.", "insights": ["INS-F02", "INS-B05"], "evidence": ["PAIN-E", "FT-004"]},
+        {"text": "For newer operators: making a bad expansion decision on insufficient information, with no model for what the numbers should look like at each stage.", "insights": ["INS-F09"], "evidence": ["BB-INT003-t16"]},
+        {"text": "That the network's best knowledge is fragile — it lives in an unmonitored Slack and walks out the door if the key operators leave.", "insights": ["INS-F10", "INS-B08"], "evidence": ["BB-INT003-t14"]}
+      ]
+    },
+    {
+      "type": "ETRI",
+      "items": [
+        {"text": "A customer takes a bite and gets 'that look' — the moment that reaffirms why they tied their livelihood to this brand.", "insights": ["INS-C06"], "evidence": ["BB-INT001-t18"]},
+        {"text": "Being handed a finished plan to execute rather than asked — the felt difference between partner and execution layer.", "insights": ["INS-F07"], "evidence": ["BB-INT001-t20"]},
+        {"text": "For Quebec operators: getting the Québécois exactly right and feeling the warmth at the window — customers who feel spoken to, not talked past.", "insights": ["INS-F03"], "evidence": ["VER-INT009-t18"]}
+      ]
+    },
+    {
+      "type": "XTRI",
+      "items": [
+        {"text": "A campaign drop lands with English-only assets and one-market pricing while the promotional window is already closing.", "insights": ["INS-F06", "INS-F03"], "evidence": ["BB-INT001-t12", "VER-INT009-t6"]},
+        {"text": "A newer operator hits a problem and posts in the franchisee <span class=\"entity\">Slack</span> — a peer answers before HQ does.", "insights": ["INS-F10"], "evidence": ["BB-INT003-t14"]},
+        {"text": "A seasonal menu change or limited-time drop they now have to localise, shoot, and execute across every truck.", "insights": ["INS-B03"], "evidence": ["BB-INT001-t8"]}
+      ]
+    },
+    {
+      "type": "CRIT",
+      "items": [
+        {"text": "Does it fit my actual market and audience, or is it one national aesthetic shipped everywhere?", "insights": ["INS-F05"], "evidence": ["BB-INT001-t6"]},
+        {"text": "Does the French land on the same cadence as the English, in Québécois — not 'French is coming' two weeks later?", "insights": ["INS-F04"], "evidence": ["VER-INT009-t24"]},
+        {"text": "Can I ask it a question and check my work before I act, or is it a static document I scroll and hope?", "insights": ["INS-B05"], "evidence": ["VER-INT009-t20"]},
+        {"text": "Does it treat me as a partner with years of local customer data, or as a uniform execution layer?", "insights": ["INS-F07"], "evidence": ["BB-INT003-t18"]}
+      ]
+    },
+    {
+      "type": "CHAN",
+      "items": [
+        {"text": "The franchisee <span class=\"entity\">Slack</span> — the real support network, faster than HQ, and where they mentor the newcomers.", "insights": ["INS-F10"], "evidence": ["BB-INT003-t14"]},
+        {"text": "The <span class=\"entity\">franchisee portal</span> — extensive, well-made assets, though organised by document type rather than by the moment you need them.", "insights": ["INS-F08"], "evidence": ["BB-INT004-t4"]},
+        {"text": "Their own local Instagram and TikTok truck accounts, which in-region often out-follow the national account.", "insights": ["INS-F05"], "evidence": ["BB-INT003-t10"]},
+        {"text": "The franchisee advisory council — quarterly, consultative, slow, but a channel where a few raised points have landed.", "insights": ["INS-F07"], "evidence": ["BB-INT001-t16"]},
+        {"text": "The <span class=\"entity\">brand voice guide</span> PDF and the phone line to brand support — reference and escalation, but neither is queryable in the moment.", "insights": ["INS-B05"], "evidence": ["VER-INT009-t20"]}
+      ]
+    },
+    {
+      "type": "RELT",
+      "rels": [
+        {"label": "With HQ / the brand team", "points": ["Wants partnership, not top-down hand-off — to be involved before campaigns are built, not after.", "Experience is inconsistent: some people there genuinely want the market input, others are protective of their plans.", "Gives credit where due — HQ fixed the fr-CA ticket fast and put his name on the catch."], "insights": ["INS-F07"], "evidence": ["BB-INT001-t22", "VER-INT009-t12"]},
+        {"label": "With other franchisees (the Slack peer network)", "points": ["The de facto support system — a peer answers before HQ, and years of local know-how live here.", "As a veteran, he's the one flagged to newcomers as 'someone to talk to' and gives practical advice freely."], "insights": ["INS-F10", "INS-B08"], "evidence": ["BB-INT003-t14", "BB-INT005-t16"]},
+        {"label": "With their own crew and staff", "points": ["At scale the job shifts from running the truck to running the business — a manager at each location, staff scheduling, procurement.", "The gap they felt scaling: no staffing ratios or financial model from HQ, so they built their own by asking other operators."], "insights": ["INS-F09"], "evidence": ["BB-INT003-t4", "BB-INT003-t16"]},
+        {"label": "With customers", "points": ["Local following is the real brand equity — people follow the truck they eat from, not 'BorderBlend'.", "At the window they improvise the fusion story themselves, because there's no single version every operator tells."], "insights": ["INS-F01", "INS-B04"], "evidence": ["BB-INT003-t10", "BB-INT001-t18"]}
+      ]
+    }
+  ]
+}

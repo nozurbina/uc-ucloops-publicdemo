@@ -1,0 +1,743 @@
+# Citation menu (anchor id :: quote)
+
+### BB-INT001 — BB-INT001 — Diego Montoya Diego Montoya
+- BB-INT001-t1 :: [Q] Interviewer: Four years in — that's a long run. What made you choose BorderBlend in the first place?
+- BB-INT001-t2 :: Diego: The food. I ate from a BorderBlend truck at a festival in 2019 — this was before I had any thought of owning one — and the smoked brisket taco blew me away. I'm Mexican-C
+- BB-INT001-t3 :: [Q] Interviewer: What did the first year look like?
+- BB-INT001-t4 :: Diego: Steep. There's a lot the training prepares you for and a lot it doesn't. The brand kit was helpful for the basics — here's the logo, here's the colour palette, here's the
+- BB-INT001-t5 :: [Q] Interviewer: You mentioned the kit. How has that evolved over four years?
+- BB-INT001-t6 :: Diego: It's better than it was. More assets, more templates. But there's still a fundamental mismatch between what HQ produces and what works in my markets. My financial distric
+- BB-INT001-t7 :: [Q] Interviewer: What does adaptation look like in practice?
+- BB-INT001-t8 :: Diego: I use the imagery and the basic copy, but I rewrite captions for my own accounts. I tag local events. I name specific neighbourhoods. When there's a seasonal menu change,
+- BB-INT001-t9 :: [Q] Interviewer: HQ has a position on that, presumably.
+- BB-INT001-t10 :: Diego: [shrugs] They prefer you use the official assets. They understand that franchisees adapt. There's a grey zone where everyone mostly operates. As long as I'm not embarrass
+- BB-INT001-t11 :: [Q] Interviewer: You've been vocal in the network about some of the campaigns. What's been the specific frustration?
+- BB-INT001-t12 :: Diego: The Fuego Nights campaign last summer. Great concept — late night, live music, limited menu. The campaign materials were slick. But the pricing guidance was set for a mar
+- BB-INT001-t13 :: [Q] Interviewer: What would a better process look like?
+- BB-INT001-t14 :: Diego: Test it in one or two markets first. Get the numbers. Adjust. Then roll out. Right now it feels like campaigns are designed in a vacuum and then handed to us to execute. 
+- BB-INT001-t15 :: [Q] Interviewer: Is that changing?
+- BB-INT001-t16 :: Diego: There's a franchisee advisory council that I sit on. It's newer, maybe eighteen months old. We meet quarterly. It helps — I've seen a few things I raised get incorporated
+- BB-INT001-t17 :: [Q] Interviewer: What do you value most about being a BorderBlend franchisee?
+- BB-INT001-t18 :: Diego: The food is still the thing. Every time I'm at the truck and a customer takes a bite and gets that look — you know the one — that's why I do this. The brand stands for so
+- BB-INT001-t19 :: [Q] Interviewer: If you could change one thing about how HQ supports you?
+- BB-INT001-t20 :: Diego: Involve us before the campaign is built, not after. Treat us as business partners, not as an execution layer. We've got four combined years of customer data across my two
+- BB-INT001-t21 :: [Q] Interviewer: Is that a conversation you can have with HQ?
+- BB-INT001-t22 :: Diego: Sometimes. It depends on who you get. Some people there genuinely want to know. Others are protective of their plans. It's inconsistent.
+- BB-INT001-t23 :: [Q] Interviewer: Any last thoughts?
+- BB-INT001-t24 :: Diego: Just — I'm not here to complain. I'm here because I want this brand to succeed. I've tied my livelihood to it. When I push back, it's because I think we can do better. Th
+- BB-INT001-t25 :: [Q] Interviewer: That's a strong note. Thank you. ---
+
+### BB-INT002 — BB-INT002 — Marc Bélanger Marc Bélanger
+- BB-INT002-t1 :: [Q] Interviewer: Tell me about the Montreal market — what's specific to your context that someone operating in Toronto or Vancouver wouldn't face?
+- BB-INT002-t2 :: Marc: The obvious thing is language. My customers are predominantly French-speaking — the Plateau is very French. I post in French on my Instagram. I talk to customers in Frenc
+- BB-INT002-t3 :: [Q] Interviewer: What do you do about it?
+- BB-INT002-t4 :: Marc: I translate everything myself. Or I get help — my partner is a strong French writer, she helps. But that's time. It's not just translation — I have to adapt the voice too
+- BB-INT002-t5 :: [Q] Interviewer: Has HQ provided any French-language support?
+- BB-INT002-t6 :: Marc: They produced some French versions of the core menu items — the names and basic descriptions. And there's a French version of the consumer app, I believe. But the marketi
+- BB-INT002-t7 :: [Q] Interviewer: Tell me about the adaptation process for a specific campaign.
+- BB-INT002-t8 :: Marc: The Fuego Nights campaign — I took their caption templates and rewrote them in French. Kept the format, found the equivalent energy in French. Took me about three hours. 
+- BB-INT002-t9 :: [Q] Interviewer: How do your customers engage with what you produce?
+- BB-INT002-t10 :: Marc: Well, I think. My Instagram engagement rate is decent — better than some Toronto operators I've compared notes with. I think the French content is actually doing what goo
+- BB-INT002-t11 :: [Q] Interviewer: What are the other operational challenges in your market?
+- BB-INT002-t12 :: Marc: The event circuit is different. In Toronto there are established food truck festivals with big audiences. In Montreal the outdoor event season is shorter because of the c
+- BB-INT002-t13 :: [Q] Interviewer: What support from HQ has been most useful?
+- BB-INT002-t14 :: Marc: The supply chain is genuinely good. Ingredients quality is consistent, the supplier relationships work. I don't have to worry about sourcing the way some independent oper
+- BB-INT002-t15 :: [Q] Interviewer: Is it getting better?
+- BB-INT002-t16 :: Marc: A little. Slowly. I was told they're building a French-language content library. I have seen a few things come through. But it's inconsistent — some campaigns have French
+- BB-INT002-t17 :: [Q] Interviewer: What would make the most difference to you in the next six months?
+- BB-INT002-t18 :: Marc: Committed French-language versions of every campaign asset, on the same timeline as the English. Not "French is coming." On the same release. Even if the French version i
+- BB-INT002-t19 :: [Q] Interviewer: Any final thoughts?
+- BB-INT002-t20 :: Marc: I love this brand. The product is what I wanted. The food is real. The customers who discover it become regulars. I just want the tools to reach them in their language.
+- BB-INT002-t21 :: [Q] Interviewer: Merci, Marc. This has been really useful.
+- BB-INT002-t22 :: Marc: De rien. Bonne chance. ---
+
+### BB-INT003 — BB-INT003 — Beatriz Santos Beatriz Santos
+- BB-INT003-t1 :: [Q] Interviewer: Five years and three trucks — walk me through how you got here.
+- BB-INT003-t2 :: Beatriz: Started with one truck downtown. First year was the usual chaos — permits, equipment issues, learning what sells in the location. By year two I was profitable and started
+- BB-INT003-t3 :: [Q] Interviewer: What does operating at this scale change?
+- BB-INT003-t4 :: Beatriz: Everything is a system problem. I can't be at all three trucks. I have a manager at each location now. My job has shifted from running the truck to running the business. 
+- BB-INT003-t5 :: [Q] Interviewer: How has the brand's support changed over five years?
+- BB-INT003-t6 :: Beatriz: Better in some ways, same in others. The brand kit has grown substantially — when I started, it was a logo file, a colour guide, and some menu templates. Now there are ca
+- BB-INT003-t7 :: [Q] Interviewer: What's changed about the customer base over five years?
+- BB-INT003-t8 :: Beatriz: The fusion trend has moved from novel to mainstream. When I opened, "Korean-Mexican fusion" was still a slightly surprising thing to many customers. Now it's expected at 
+- BB-INT003-t9 :: [Q] Interviewer: What's your relationship with the brand's social media strategy?
+- BB-INT003-t10 :: Beatriz: Complicated. The national account does its thing and I do mine locally. My local Instagram has more followers than the national account for the BC region, which is a bit 
+- BB-INT003-t11 :: [Q] Interviewer: Has HQ tried to coordinate national and local social?
+- BB-INT003-t12 :: Beatriz: They've tried. There was an initiative to create a unified hashtag and get franchisees to use it consistently. Some did, some didn't. I used it when it fit; I didn't forc
+- BB-INT003-t13 :: [Q] Interviewer: What about the franchisee network — how does that function?
+- BB-INT003-t14 :: Beatriz: It's the best part of this arrangement. The Slack channel is active — when a new franchisee has a problem, usually another franchisee answers before HQ does. That's the r
+- BB-INT003-t15 :: [Q] Interviewer: Any specific things you wish you'd had earlier?
+- BB-INT003-t16 :: Beatriz: A financial model for scaling. When I was thinking about the second truck, I had no structured guidance from HQ on what the numbers should look like — staffing ratios, av
+- BB-INT003-t17 :: [Q] Interviewer: Last question — what would you tell HQ if you could say anything?
+- BB-INT003-t18 :: Beatriz: Trust the franchisees who are performing. We've built something real in our markets. Don't treat us like a uniform execution layer — we're businesses with specific custom
+- BB-INT003-t19 :: [Q] Interviewer: Five years of perspective has come through clearly. Thank you. ---
+
+### BB-INT004 — BB-INT004 — Yuki Tanaka Yuki Tanaka
+- BB-INT004-t1 :: [Q] Interviewer: Six months in — what has surprised you most?
+- BB-INT004-t2 :: Yuki: How physical it is. [laughs] That sounds obvious but when you're coming from an office career you don't fully anticipate what it means to be on your feet for ten hours in
+- BB-INT004-t3 :: [Q] Interviewer: What does the brand guidance cover and where does it fall short?
+- BB-INT004-t4 :: Yuki: The brand kit is extensive — I'll give them that. There's a lot in the portal. The challenge is finding what I need in the moment. The portal is organised by document typ
+- BB-INT004-t5 :: [Q] Interviewer: What about the marketing side?
+- BB-INT004-t6 :: Yuki: Overwhelming at first. There are so many assets. Social templates, story templates, promotional graphics, seasonal updates. More than I expected. But they're all designed
+- BB-INT004-t7 :: [Q] Interviewer: Did you ask HQ for guidance?
+- BB-INT004-t8 :: Yuki: I did once. I asked the support team if there was a social media guide for new franchisees. They sent me the brand guidelines document, which is a very long PDF about log
+- BB-INT004-t9 :: [Q] Interviewer: You mentioned Beatriz in the Slack channel. What has that relationship been like?
+- BB-INT004-t10 :: Yuki: She's been invaluable. I've had maybe five or six conversations with her over the last six months, always initiated by me. She answers quickly, she's direct, she doesn't 
+- BB-INT004-t11 :: [Q] Interviewer: What's the most stressful part of the job right now?
+- BB-INT004-t12 :: Yuki: Not knowing if I'm doing it right. The numbers are okay — not amazing, but okay for six months in. But I don't have a benchmark. HQ doesn't share performance data across 
+- BB-INT004-t13 :: [Q] Interviewer: Have you asked for benchmarking information?
+- BB-INT004-t14 :: Yuki: I've asked twice. Both times I was told that individual franchise performance data is confidential. I understand that for other franchisees' specific numbers. But I'd fin
+- BB-INT004-t15 :: [Q] Interviewer: What about the food itself — how confident are you in the product?
+- BB-INT004-t16 :: Yuki: Completely. That was the easiest part of the whole thing. The recipes are well-documented, the training on food prep was the best training I received. My food is consiste
+- BB-INT004-t17 :: [Q] Interviewer: If you could go back and talk to yourself six months ago before you opened — what would you say?
+- BB-INT004-t18 :: Yuki: Expect more chaos than they tell you about. But also — the chaos is manageable. You solve one problem at a time. I was so scared before I opened that I'd face a situation
+- BB-INT004-t19 :: [Q] Interviewer: That's a helpful insight. Thank you for your time.
+- BB-INT004-t20 :: Yuki: Of course. I hope it helps make things better for the next person. ---
+
+### BB-INT005 — BB-INT005 — Kenji Watanabe Kenji Watanabe
+- BB-INT005-t1 :: [Q] Interviewer: Three months in — you came from restaurant management. What's been different about food trucks?
+- BB-INT005-t2 :: Kenji: More than I expected, honestly. I thought food trucks would be simpler — smaller team, more contained operation. And it is in some ways. But the mobility aspect changes e
+- BB-INT005-t3 :: [Q] Interviewer: What has the brand's operational training covered well?
+- BB-INT005-t4 :: Kenji: The food prep and quality standards are excellent. The training on the recipes is thorough and the quality checks they've built in make sense. I've managed kitchens with 
+- BB-INT005-t5 :: [Q] Interviewer: What has been the most useful support?
+- BB-INT005-t6 :: Kenji: The supply chain. Same thing I hear from other franchisees — consistent quality, reliable sourcing. As a former restaurant manager I know how hard ingredient consistency 
+- BB-INT005-t7 :: [Q] Interviewer: Where have you struggled?
+- BB-INT005-t8 :: Kenji: Marketing. That's my gap. Running a restaurant, the marketing was handled by someone else at the company level or it was done through a local PR agency. I wasn't responsi
+- BB-INT005-t9 :: [Q] Interviewer: What is the social media guidance from HQ like?
+- BB-INT005-t10 :: Kenji: There are templates. They're well-designed. But there's no instruction on the strategy behind them. I feel like I'm given a set of tools and told to build something witho
+- BB-INT005-t11 :: [Q] Interviewer: Have you asked for guidance?
+- BB-INT005-t12 :: Kenji: I asked the brand support team if there was a social media onboarding call for new franchisees. There isn't one. There's a guide in the portal — I read it, it covered con
+- BB-INT005-t13 :: [Q] Interviewer: How are the numbers looking at three months?
+- BB-INT005-t14 :: Kenji: Revenue is on an upward trend, which is good. But I'm going in blind on what good looks like. No benchmarks. I've asked HQ if there's performance data for new franchisees
+- BB-INT005-t15 :: [Q] Interviewer: What's your relationship with the franchisee network like?
+- BB-INT005-t16 :: Kenji: I've connected with one person — Diego in Toronto, who was flagged to me by the support team as someone to talk to. He's been helpful. He gave me some practical advice on
+- BB-INT005-t17 :: [Q] Interviewer: If you could change the onboarding experience?
+- BB-INT005-t18 :: Kenji: Two things. First — a marketing onboarding track alongside the operational one. I need the same level of structured training for brand marketing as I got for food prep. I
+- BB-INT005-t19 :: [Q] Interviewer: Is there anything that's been better than expected?
+- BB-INT005-t20 :: Kenji: The product. Every time. A customer who comes back is a customer I know I've done something right. The food is doing the work of converting first-time customers to regula
+- BB-INT005-t21 :: [Q] Interviewer: Thanks for your time.
+- BB-INT005-t22 :: Kenji: Happy to help. This is the right conversation to be having. ---
+
+### BB-INT006 — BB-INT006 — Aisha Thompson Aisha Thompson
+- BB-INT006-t1 :: [Q] Interviewer: Can you tell me about your path to BorderBlend?
+- BB-INT006-t2 :: Aisha: I spent twelve years in community social work. I loved the work but I wanted to do something more tangible — build something I owned. I researched food truck franchises f
+- BB-INT006-t3 :: [Q] Interviewer: What was the early period like?
+- BB-INT006-t4 :: Aisha: Overwhelming. Month one I was on the phone with brand support almost daily. They were patient with me — I want to acknowledge that. I had questions about everything: food
+- BB-INT006-t5 :: [Q] Interviewer: What was most missing?
+- BB-INT006-t6 :: Aisha: A onboarding checklist for the first ninety days. Not a general checklist — a specific, sequenced list of "in week one, focus on this. In week two, add this. In week thre
+- BB-INT006-t7 :: [Q] Interviewer: Did any of the support materials help?
+- BB-INT006-t8 :: Aisha: Some of them. The food prep and quality guides are genuinely good — well-written, clear, practical. That part of the training I felt solid about from the start. The busin
+- BB-INT006-t9 :: [Q] Interviewer: What about the marketing materials?
+- BB-INT006-t10 :: Aisha: Better than expected in terms of quality. The social templates are easy to use — I figured out Canva quickly, the templates helped a lot. But I had a question early on ab
+- BB-INT006-t11 :: [Q] Interviewer: What about your community engagement — how has that gone?
+- BB-INT006-t12 :: Aisha: Really well, actually. My background is in community organising. I know how to build relationships. I've connected with local businesses, I'm at the Junction Triangle res
+- BB-INT006-t13 :: [Q] Interviewer: Has HQ acknowledged or supported that approach?
+- BB-INT006-t14 :: Aisha: Not specifically. It's not in the brand kit. But when I posted about a community event I helped with, the national account shared it. So there's recognition of it informa
+- BB-INT006-t15 :: [Q] Interviewer: How are you feeling about the business now, at eight months in?
+- BB-INT006-t16 :: Aisha: More confident. The support calls have gone from daily to twice a month — that's a real indicator of how much I've learned. My numbers are improving. I've built a custome
+- BB-INT006-t17 :: [Q] Interviewer: One thing you'd want HQ to understand?
+- BB-INT006-t18 :: Aisha: That some of us come to this completely fresh. Not everyone who buys a franchise has a business background or a food industry background. The onboarding needs to account 
+- BB-INT006-t19 :: [Q] Interviewer: Really thoughtful. Thank you.
+- BB-INT006-t20 :: Aisha: Thank you for asking. I hope it makes a difference. ---
+
+### BB-INT007 — BB-INT007 — Jasmine Oduro Jasmine Oduro
+- BB-INT007-t1 :: [Q] Interviewer: How did you first discover BorderBlend?
+- BB-INT007-t2 :: Jasmine: Instagram. Someone I follow posted a photo of the smoked brisket taco — it was a really good photo, very specific, not the generic overhead shot. Just a close-up of the t
+- BB-INT007-t3 :: [Q] Interviewer: What was your first visit like?
+- BB-INT007-t4 :: Jasmine: It delivered. That's honestly not always the case — a lot of food looks better on Instagram than it tastes. The brisket was genuinely good. The pickled onions. The tortil
+- BB-INT007-t5 :: [Q] Interviewer: What keeps you coming back?
+- BB-INT007-t6 :: Jasmine: Consistency. Every time I've been, the brisket is the same. The quality hasn't dipped. For a small food operation, that's actually hard to achieve. I've seen food trucks 
+- BB-INT007-t7 :: [Q] Interviewer: Tell me about how you engage with the brand online.
+- BB-INT007-t8 :: Jasmine: I follow the account. I watch stories. When they post something that catches my attention I engage — comment, share to my story occasionally. I'm not a superfan who comme
+- BB-INT007-t9 :: [Q] Interviewer: Has there been content that particularly stood out?
+- BB-INT007-t10 :: Jasmine: There was a video on the national account a few months ago that showed the smoked brisket being made — the whole smoking process, the temperature, the time it takes. That
+- BB-INT007-t11 :: [Q] Interviewer: Is there content that has felt off or inauthentic?
+- BB-INT007-t12 :: Jasmine: A few posts that have tried to engage with cultural moments in a way that felt a bit — reaching. There was something during a cultural heritage month that posted a genera
+- BB-INT007-t13 :: [Q] Interviewer: You mentioned caring about provenance — does the brand tell you enough about where the food comes from?
+- BB-INT007-t14 :: Jasmine: Not really. I'd like to know more about the ingredients — specifically the beef for the brisket, and whether there's any thought given to sourcing. Is it local? Is there 
+- BB-INT007-t15 :: [Q] Interviewer: What would make you more loyal — more frequent, more engaged?
+- BB-INT007-t16 :: Jasmine: Honestly? More consistency on the Instagram from the local truck account. The national account posts regularly but the local Montreal account goes quiet for weeks at a ti
+- BB-INT007-t17 :: [Q] Interviewer: Any final thoughts?
+- BB-INT007-t18 :: Jasmine: Just that I think they're actually doing something real with this brand. The food is honest and it's good. The potential for the social content to match that level of hon
+- BB-INT007-t19 :: [Q] Interviewer: Really helpful. Thank you. ---
+
+### BB-INT008 — BB-INT008 — Priya Sharma Priya Sharma
+- BB-INT008-t1 :: [Q] Interviewer: How often do you visit BorderBlend?
+- BB-INT008-t2 :: Priya: Probably two to three times a week. [laughs] I know that sounds like a lot. There's a truck near my office in the design district. Lunch is solved when I know that truck 
+- BB-INT008-t3 :: [Q] Interviewer: What do you order?
+- BB-INT008-t4 :: Priya: It depends on the day. I always get the smoked brisket as a baseline. Sometimes I'll add the Korean-style chicken or the plant-based option if I'm going lighter. The sals
+- BB-INT008-t5 :: [Q] Interviewer: You've posted about them on TikTok. What motivated that?
+- BB-INT008-t6 :: Priya: The first time was just — the food looked incredible and I filmed it without thinking about it. The video of me opening the wrapper and taking the first bite got way more
+- BB-INT008-t7 :: [Q] Interviewer: Did BorderBlend ever engage with those posts?
+- BB-INT008-t8 :: Priya: The brand account commented on the second one — a short, friendly response. The local truck account reposted my story when I tagged them. Which I appreciated. It felt lik
+- BB-INT008-t9 :: [Q] Interviewer: What would make you more likely to create content about them?
+- BB-INT008-t10 :: Priya: If there was something new to show. The menu is fairly consistent, which is good for quality and for my lunch choices, but it doesn't give me a reason to post again unles
+- BB-INT008-t11 :: [Q] Interviewer: What about a collaboration — if they reached out to you?
+- BB-INT008-t12 :: Priya: It would depend entirely on how they did it. If it was a "we'd like you to post about us in exchange for free food" thing, I'd probably say no — my following isn't big en
+- BB-INT008-t13 :: [Q] Interviewer: What does the TikTok food audience respond to?
+- BB-INT008-t14 :: Priya: Real moments. Ugly food that tastes good. First bites. Reactions that aren't performed. The food content that does really well on TikTok is not the Instagram aesthetic sh
+- BB-INT008-t15 :: [Q] Interviewer: Is there anything about the brand that puts you off?
+- BB-INT008-t16 :: Priya: The app. I downloaded it once to try ordering ahead. The ordering experience was clunky — I couldn't tell which trucks were currently open, the menu wasn't updated to mat
+- BB-INT008-t17 :: [Q] Interviewer: What would fix that for you?
+- BB-INT008-t18 :: Priya: Real-time truck status — open or not, where exactly. Live menu — what's available today, including any specials. Accurate wait time. Honestly the technology already exist
+- BB-INT008-t19 :: [Q] Interviewer: Any last thoughts?
+- BB-INT008-t20 :: Priya: Just that they have something real. Good food is the hardest thing to fake and they're not faking it. Everything else is fixable. The app can be fixed, the social strateg
+- BB-INT008-t21 :: [Q] Interviewer: Thanks so much for your time.
+- BB-INT008-t22 :: Priya: Any excuse to talk about tacos. ---
+
+### BB-INT009 — BB-INT009 — Lena Kowalski Lena Kowalski
+- BB-INT009-t1 :: [Q] Interviewer: You've reviewed BorderBlend twice. What's the arc of your impressions?
+- BB-INT009-t2 :: Lena: The first review was on the strength of the product. The smoked brisket taco is genuinely excellent — I stand by that. The technique is real. The flavour combinations are
+- BB-INT009-t3 :: [Q] Interviewer: How did the brand respond to the second review?
+- BB-INT009-t4 :: Lena: They didn't, to my public review. I did get a DM from the account, politely, saying they appreciated the feedback and that the limited-edition availability issue was a su
+- BB-INT009-t5 :: [Q] Interviewer: What do you think makes BorderBlend's brand positioning work and where does it fall short?
+- BB-INT009-t6 :: Lena: What works: the specificity. "Smoked brisket, pickled red onion, salsa verde. On a flour tortilla." That is genuinely how the brand talks about its food and it's right. I
+- BB-INT009-t7 :: [Q] Interviewer: Is that a dealbreaker for your readers?
+- BB-INT009-t8 :: Lena: For some of them, yes. Vancouver food culture skews sustainability-conscious. A significant portion of my readership won't visit a food business without some kind of sour
+- BB-INT009-t9 :: [Q] Interviewer: What about the brand's social media?
+- BB-INT009-t10 :: Lena: Inconsistent. The national account has good content — when they do the food-specific close-up photography it's excellent. But the posting frequency isn't reliable, and wh
+- BB-INT009-t11 :: [Q] Interviewer: Have you seen any brand content that particularly impressed you?
+- BB-INT009-t12 :: Lena: There was a post explaining the origin of the Korean-Mexican combination — how it developed in Los Angeles from Korean-owned taco trucks that started serving in Latino ne
+- BB-INT009-t13 :: [Q] Interviewer: What about content that felt off to you?
+- BB-INT009-t14 :: Lena: Superlatives. Any food brand that calls its product "the best" anything has lost me. BorderBlend generally avoids this but there have been moments — "the best tacos in [c
+- BB-INT009-t15 :: [Q] Interviewer: What would make you a more engaged advocate for the brand?
+- BB-INT009-t16 :: Lena: Sourcing transparency. A genuine story about where the beef comes from. If it's not sustainable, say what the plan is. If it is sustainable, say so clearly and specifical
+- BB-INT009-t17 :: [Q] Interviewer: Any final thoughts?
+- BB-INT009-t18 :: Lena: The food has enough quality to anchor a much stronger brand story. The fusion identity is genuinely interesting. The sourcing question is the gap between being a good foo
+- BB-INT009-t19 :: [Q] Interviewer: Really useful perspective. Thank you. ---
+
+### BB-INT010 — BB-INT010 — Rafael Cruz Rafael Cruz
+- BB-INT010-t1 :: [Q] Interviewer: Tell me about your typical BorderBlend visit.
+- BB-INT010-t2 :: Rafael: I work downtown. There's a truck that parks near my office building on Tuesdays and Thursdays. I go when I remember it's there and I'm not doing anything for lunch. I get
+- BB-INT010-t3 :: [Q] Interviewer: What keeps you going back rather than somewhere else?
+- BB-INT010-t4 :: Rafael: It's quick, it's decent, it's reasonably priced for lunch downtown. That's it. I'm not overthinking it. A lot of lunch options in this area are either fast food that's no
+- BB-INT010-t5 :: [Q] Interviewer: Have the prices changed since you started going?
+- BB-INT010-t6 :: Rafael: They went up a bit last year. I noticed. I didn't stop going but if they went up again significantly I'd probably reconsider. I have a number in my head — above a certain
+- BB-INT010-t7 :: [Q] Interviewer: You don't follow them on social media — what makes you decide to visit if not from seeing their content?
+- BB-INT010-t8 :: Rafael: I know the schedule. The truck is in the same spot on the same days. I don't need social media for that. If I need to know whether they're there on a day they don't usual
+- BB-INT010-t9 :: [Q] Interviewer: Have you ever used the app?
+- BB-INT010-t10 :: Rafael: [pause] I downloaded it, yeah. I think I was going to order ahead at some point but then the line wasn't that long anyway and I didn't bother. Haven't opened it since.
+- BB-INT010-t11 :: [Q] Interviewer: What would make you use the app?
+- BB-INT010-t12 :: Rafael: If it saved me time. If I could order while I was still in the building, walk over, and pick up without waiting. That I'd use. But the last time I checked, the app didn't
+- BB-INT010-t13 :: [Q] Interviewer: Is there anything about the brand that you particularly value?
+- BB-INT010-t14 :: Rafael: The food is consistent. I know what I'm getting every time. I've never had a bad one. There's no surprise in a bad direction. For a quick lunch choice, that's the main th
+- BB-INT010-t15 :: [Q] Interviewer: Is there anything you'd change?
+- BB-INT010-t16 :: Rafael: The inconsistency of knowing when the truck is there. I said I know the schedule, but it's not perfectly reliable. Sometimes the truck isn't there on a Tuesday and I've a
+- BB-INT010-t17 :: [Q] Interviewer: What would that look like?
+- BB-INT010-t18 :: Rafael: Just — a phone number, or a website that shows today's locations and hours and whether you're open. Basic. Some food trucks have an app, some have a website, some just ha
+- BB-INT010-t19 :: [Q] Interviewer: Any last thoughts?
+- BB-INT010-t20 :: Rafael: No. It's a good lunch. I'll keep going as long as the price is right.
+- BB-INT010-t21 :: [Q] Interviewer: Short and clear. Thanks for your time. ---
+
+### BB-INT011 — BB-INT011 — Thomas Hardy Thomas Hardy
+- BB-INT011-t1 :: [Q] Interviewer: How did you first encounter BorderBlend?
+- BB-INT011-t2 :: Thomas: Food truck festival last summer — the big one in the river valley. There were probably forty trucks there. I went with my brother. We tried a bunch of things and the Bord
+- BB-INT011-t3 :: [Q] Interviewer: What was it about it?
+- BB-INT011-t4 :: Thomas: The beef. The smoking technique is real — you can taste the difference from something that's just been braised and called brisket. And the combination. The salsa verde cu
+- BB-INT011-t5 :: [Q] Interviewer: After the festival, how did you find them regularly?
+- BB-INT011-t6 :: Thomas: I looked them up online — found their website, found the truck locations. There's one about a ten-minute drive from my house that runs on Saturday mornings. I started goi
+- BB-INT011-t7 :: [Q] Interviewer: How often do you go now?
+- BB-INT011-t8 :: Thomas: Two to three times a month. Saturday lunch mostly. Sometimes I'll stop by on a weekday if I'm near a truck during a work site visit.
+- BB-INT011-t9 :: [Q] Interviewer: You don't have a loyalty programme account. Is that deliberate?
+- BB-INT011-t10 :: Thomas: I signed up for a loyalty card for a coffee place years ago and never used the points because the interface to check them was annoying. I've been sceptical of loyalty pro
+- BB-INT011-t11 :: [Q] Interviewer: What would "actually easy" look like?
+- BB-INT011-t12 :: Thomas: You scan something when you pay, points accumulate, you get notified when you have enough for something. Done. No separate app download. No account creation before you ca
+- BB-INT011-t13 :: [Q] Interviewer: Is there anything about the brand that puts you off or creates friction?
+- BB-INT011-t14 :: Thomas: The location schedule. I know my Saturday truck is usually there, but I've shown up twice and it wasn't there with no notice. I don't follow their social media so I would
+- BB-INT011-t15 :: [Q] Interviewer: Do they have anything like that?
+- BB-INT011-t16 :: Thomas: Not that I know of. Maybe on the app. I haven't looked closely.
+- BB-INT011-t17 :: [Q] Interviewer: What about the food itself — are there items besides the brisket you've explored?
+- BB-INT011-t18 :: Thomas: The plant-based one surprised me. I'm not vegetarian but a friend is, and she came with me once. I tried the plant-based option out of curiosity and it was genuinely good
+- BB-INT011-t19 :: [Q] Interviewer: Would you recommend the brand to someone?
+- BB-INT011-t20 :: Thomas: I have. Multiple people at work. My sister-in-law. Usually I describe it the way I experienced it — "you won't expect it to be that good." Low expectations, good outcome.
+- BB-INT011-t21 :: [Q] Interviewer: Any last thoughts?
+- BB-INT011-t22 :: Thomas: Just that the basics are right. Good food, reasonable price, reliable enough. The small friction points — schedule reliability, the loyalty thing — don't outweigh the cor
+- BB-INT011-t23 :: [Q] Interviewer: Thanks very much. ---
+
+### BB-INT012 — BB-INT012 — Carmen Rodriguez Carmen Rodriguez
+- BB-INT012-t1 :: [Q] Interviewer: Thanks for making the time, Carmen. Maybe start me at the beginning — when it's a weeknight and dinner's your problem to solve, what actually happens?
+- BB-INT012-t2 :: Carmen: Oh, honestly? It's chaos, it's — okay so it's like 5:15, I've just got the kids from after-care, everybody's starving, everybody's got homework they haven't mentioned unt
+- BB-INT012-t3 :: [Q] Interviewer: And where does BorderBlend land on that list?
+- BB-INT012-t4 :: Carmen: So they're on it, which is kind of a miracle honestly, because — you have to understand my kids are brutal. My youngest thinks anything green is a personal attack. But th
+- BB-INT012-t5 :: [Q] Interviewer: How did you first come across them?
+- BB-INT012-t6 :: Carmen: A truck at a — it was one of those weekend festival things by the waterfront, summer before last I think? The kids smelled it before I did, they dragged me over. And I re
+- BB-INT012-t7 :: [Q] Interviewer: You mentioned the brisket. Anything else the kids have come around on?
+- BB-INT012-t8 :: Carmen: Okay, this is the one that got me — the plant-based one. I ordered it for me, right, thinking I'd be the only one, and my ten-year-old steals a bite off my plate like she
+- BB-INT012-t9 :: [Q] Interviewer: Let's talk money for a second. Where does price sit for you?
+- BB-INT012-t10 :: Carmen: Yeah. Yeah, so — this is the honest part. It's crept up. When I first started it felt like a treat that wasn't crazy, and now, feeding four of us, it's — it's basically t
+- BB-INT012-t11 :: [Q] Interviewer: So you'd trade some choice for a predictable price.
+- BB-INT012-t12 :: Carmen: A hundred percent. Give me "here's the family deal, it's this much," and I don't have to do math while three people yell menu items at me. That's the dream, honestly.
+- BB-INT012-t13 :: [Q] Interviewer: You said earlier you'd had a — a truck situation. Can you tell me what happened?
+- BB-INT012-t14 :: Carmen: Oh my god, yes, okay. [laughs] So — this still bugs me. It was a Thursday, brisket night, I'd sold it to the kids in the car, we're all excited, and I drive to where the 
+- BB-INT012-t15 :: [Q] Interviewer: That's really useful. Did you have any way to check before you left?
+- BB-INT012-t16 :: Carmen: So this is the thing — I have the app. And I did open it, actually, before, I think? Or after, I can't remember. But it didn't tell me anything useful. Like it showed me 
+- BB-INT012-t17 :: [Q] Interviewer: If the app could reliably answer that one question — is this truck open, and where — would that change things?
+- BB-INT012-t18 :: Carmen: Completely. Honestly that's the whole ballgame for me. I don't need it to be fancy, I don't need games or, you know, a spinny points wheel. I need "yes, go" or "no, don't
+- BB-INT012-t19 :: [Q] Interviewer: Let me ask about staying in touch — a newsletter, or a loyalty programme. Would you sign up?
+- BB-INT012-t20 :: Carmen: Ehhh. So — okay, my honest answer is my inbox is a war zone. It's a disaster. I get forty emails a day from every store I've ever walked into, and I delete all of them wi
+- BB-INT012-t21 :: [Q] Interviewer: So the bar is "help me plan," not "tell me things."
+- BB-INT012-t22 :: Carmen: Yes. Exactly that. Everything's a to-do list in my life, so if you can take one decision off my plate you're my favourite brand. If you're just talking at me you're in th
+- BB-INT012-t23 :: [Q] Interviewer: Not harsh at all. What about weekends — is that a different occasion for you?
+- BB-INT012-t24 :: Carmen: Totally different, yeah. Weekend it's not about solving dinner, it's — it's an outing, it's a thing we do. We'll go find the truck on purpose, make an afternoon of it, th
+- BB-INT012-t25 :: [Q] Interviewer: If a friend at the school gate asked you about it, what would you say?
+- BB-INT012-t26 :: Carmen: I'd say — go, the brisket'll win the kids over, it's genuinely good and not the greasy sad food-truck thing you're picturing. And then I'd say, but check before you drive
+- BB-INT012-t27 :: [Q] Interviewer: Thanks so much for your time, Carmen.
+- BB-INT012-t28 :: Carmen: Oh, anytime, honestly — this was basically therapy, I never get to talk about dinner for forty minutes without someone asking me for a snack halfway through. [background:
+
+### BB-INT013 — BB-INT013 — David Okonkwo David Okonkwo
+- BB-INT013-t1 :: Marcus: Thanks for making the time. I know it's tight — I'll keep us moving.
+- BB-INT013-t2 :: David: Appreciate that. I've got twenty minutes, maybe twenty-five. I carved it out between a client thing and another client thing, so — yeah. Go ahead.
+- BB-INT013-t3 :: Marcus: Let's start simple. When you think about lunch on a workday, what's the actual job you need done?
+- BB-INT013-t4 :: David: Honestly? The job is: feed me, don't cost me time, don't make me think. That's it. On a weekday my constraint is time, not money — I can expense a fifteen-dollar lunch wi
+- BB-INT013-t5 :: Marcus: How did you first come across the BorderBlend truck?
+- BB-INT013-t6 :: David: A colleague. We were walking back from a meeting near King and he said "the brisket one," pointed at the truck, and that was basically the whole pitch. I stood in the lin
+- BB-INT013-t7 :: Marcus: What is it about the brisket specifically? You keep coming back to it.
+- BB-INT013-t8 :: David: Because it's real. It's actually smoked — you can taste it, it's not a sauce pretending to be barbecue. And here's the thing, the sit-down alternative for something at th
+- BB-INT013-t9 :: Marcus: You mentioned the line being a risk. Tell me more about that.
+- BB-INT013-t10 :: David: So the reliability problem has two parts. Part one is: is the truck even there today. Some days it's not, or it's late, or it moved, and there's no way to know until I'm 
+- BB-INT013-t11 :: Marcus: So you'd want to know, before you leave the office —
+- BB-INT013-t12 :: David: Is it open, where exactly is it, and how long is the line. Those three things. If I had those three data points on my phone I would never have a bad lunch again. That's t
+- BB-INT013-t13 :: Marcus: There is an app. Have you used it?
+- BB-INT013-t14 :: David: I tried. I downloaded it specifically to order ahead, because order-ahead is the dream, right — I tap the order from my desk, I walk down, it's bagged and waiting, I don'
+- BB-INT013-t15 :: Marcus: If order-ahead actually worked — reliably — what would that change?
+- BB-INT013-t16 :: David: It would change everything about how often I use them, and more importantly it would change the group thing. Because it's not always just me. Two, three, four times a wee
+- BB-INT013-t17 :: Marcus: When you buy for the group, how does the money work?
+- BB-INT013-t18 :: David: That's the other gap, actually. Right now I pay, I get a paper receipt or nothing, and I expense it — and a crumpled thermal receipt that's already fading is not what my 
+- BB-INT013-t19 :: Marcus: Let's talk about staying in touch. Would you sign up for a newsletter or alerts?
+- BB-INT013-t20 :: David: Depends entirely on what's in it. If it's "here's our brand story" and "meet the team" and recipes — no, that's noise, I'll unsubscribe in four seconds. But there's a ver
+- BB-INT013-t21 :: Marcus: That's a useful distinction — signal versus noise. Say more about the "truck is here today" alert.
+- BB-INT013-t22 :: David: It's the highest-value message they could possibly send me and it costs them basically nothing. Because remember, my number one failure is walking down and it's not there
+- BB-INT013-t23 :: Marcus: You mentioned catering. Is that real, or hypothetical?
+- BB-INT013-t24 :: David: It's real. We do working lunches — internal offsites, a long client session where you don't want to break for an hour and lose the room. Right now that defaults to the sa
+- BB-INT013-t25 :: Marcus: So there's no clear path to book that.
+- BB-INT013-t26 :: David: None that I've found. And I'm the customer waving money. That's the part that surprises me. I'm not asking them to convince me — I'm already convinced. I just need them t
+- BB-INT013-t27 :: Marcus: Last one. If the app and the ordering all worked the way you wanted — where does BorderBlend sit for you then?
+- BB-INT013-t28 :: David: Then it stops being "the truck I take my chances on" and becomes infrastructure. Like, part of how my workday runs. And that's a much stickier position than being someone
+- BB-INT013-t29 :: Marcus: Thanks so much for your time.
+- BB-INT013-t30 :: David: Good. [checks watch] And I've got — yeah, perfect, I've got seven minutes to get back. See, that's a well-run lunch. Cheers. ---
+
+### BB-INT014 — BB-INT014 — Nadia Haddad Nadia Haddad
+- BB-INT014-t1 :: [Q] Interviewer: Thanks for making the time, Nadia. Maybe start with how BorderBlend first landed on your radar?
+- BB-INT014-t2 :: Nadia: Okay so — here's the thing, I didn't find them the way a normal person finds a taco truck. [laughs] I find everything through logistics. We had a team offsite last spring
+- BB-INT014-t3 :: [Q] Interviewer: So you tried it solo before you'd ever order for the team.
+- BB-INT014-t4 :: Nadia: Always. I will never put my name on something I haven't eaten myself. That's — I've been burned. I'll tell you the burned story later, remind me. But yes, I vet everythin
+- BB-INT014-t5 :: [Q] Interviewer: Please, tell me the burned story now if you'd like.
+- BB-INT014-t6 :: Nadia: [laughs] Okay, quick version — different vendor, not them. I booked a caterer for a client lunch, twenty-two people, big deal, our VP was hosting. Confirmed by email, I t
+- BB-INT014-t7 :: [Q] Interviewer: That makes a lot of sense. So when you did book BorderBlend for the group — walk me through it.
+- BB-INT014-t8 :: Nadia: So first I go to the website, borderblend.ca, and I'm looking for a catering page or a "book us" button. And it's — it's there, but it's kind of buried, honestly. It felt
+- BB-INT014-t9 :: [Q] Interviewer: And the confirmation piece — how did that feel, given the burned story?
+- BB-INT014-t10 :: Nadia: [pause] So this is my pet peeve. Which — okay, this is my pet peeve, so bear with me. I need a hard confirmation. Not "sounds good!" in an email. I need "Nadia, we are co
+- BB-INT014-t11 :: [Q] Interviewer: That anxiety — where does it sit for you compared to everything else about ordering?
+- BB-INT014-t12 :: Nadia: Oh it's number one. By a mile. Reliability is the whole game for me. The food being good is table stakes — I wouldn't book anyone whose food is bad. But "will you actuall
+- BB-INT014-t13 :: [Q] Interviewer: Let's talk headcount and dietary. How does that work when you're ordering for thirty?
+- BB-INT014-t14 :: Nadia: Right, so — this is where it gets fiddly. First I send out a form to the team, because I have to know: how many, and who can't eat what. And here's the thing, on a team o
+- BB-INT014-t15 :: [Q] Interviewer: So the allergen information gap creates real work for you.
+- BB-INT014-t16 :: Nadia: It creates work and it creates risk. And when I can't get a straight answer, honestly? Sometimes I just don't book the thing. I'll go with a vendor who has it all spelled
+- BB-INT014-t17 :: [Q] Interviewer: On the money side — invoicing, expensing. What do you need?
+- BB-INT014-t18 :: Nadia: Okay so, expenses. I run these through the company, so I need a proper invoice. Itemised, GST broken out, our billing name and PO reference on it, emailed to me as a PDF.
+- BB-INT014-t19 :: [Q] Interviewer: Is price itself a factor, or mostly the process around it?
+- BB-INT014-t20 :: Nadia: Bit of both. It's crept up — I've noticed it's not the bargain it maybe was, it's getting close to just catering from a restaurant. But honestly for the team I'll pay for
+- BB-INT014-t21 :: [Q] Interviewer: You mentioned Fridays — tell me about the rhythm of what you order and when.
+- BB-INT014-t22 :: Nadia: So there's a few things I run. There's the Friday team treat, which is smaller, more casual, sort of a morale thing — "it's Friday, here's something nice." There's the bi
+- BB-INT014-t23 :: [Q] Interviewer: That's a great point. Does that seasonal swing affect how you'd want to hear from them?
+- BB-INT014-t24 :: Nadia: Completely. Because right now I have to go remember they exist and go dig up the booking form every time. It's all on me to initiate. Whereas if they came to me at the ri
+- BB-INT014-t25 :: [Q] Interviewer: That's actually where I wanted to go — would you subscribe to a newsletter or an email list from them?
+- BB-INT014-t26 :: Nadia: For the group side? A hundred percent yes. And I'm normally the person who unsubscribes from everything, my inbox is a warzone, so that's saying something. But — here's w
+- BB-INT014-t27 :: [Q] Interviewer: So the newsletter is less marketing, more operational reassurance.
+- BB-INT014-t28 :: Nadia: Exactly. Talk to me like I'm running an operation, because I am. The person buying one taco wants your specials. I want your reliability. Give me the boring stuff — dates
+- BB-INT014-t29 :: [Q] Interviewer: That's really clear. Anything I haven't asked that I should have?
+- BB-INT014-t30 :: Nadia: Just — the sellout thing worries me for the big orders. When I went on my own that first time they'd sold out of brisket by early afternoon on a Saturday, which, great pr
+- BB-INT014-t31 :: [Q] Interviewer: Thanks so much for your time, Nadia.
+- BB-INT014-t32 :: Nadia: Oh, my pleasure — this was honestly kind of therapeutic. And listen, if they build the boring version of this, tell them Nadia in Calgary will be first in line. Feed my t
+
+### BB-INT015 — BB-INT015 — Tyler Brooks Tyler Brooks
+- BB-INT015-t1 :: [Q] Interviewer: So — how'd you end up eating here in the first place?
+- BB-INT015-t2 :: Tyler: Uh. It's just there. Like, it's by the train. I get off, it's right there, so... yeah.
+- BB-INT015-t3 :: [Q] Interviewer: Do you remember the first time?
+- BB-INT015-t4 :: Tyler: Not really. I was hungry, probably. [laughs] I dunno. It was there and the line wasn't crazy so I just got something. And it was fine, so I got it again. That's kind of i
+- BB-INT015-t5 :: [Q] Interviewer: Fair. How often now, would you say?
+- BB-INT015-t6 :: Tyler: Couple times a week? Depends on my shifts. If I'm on the early one I'll grab something after. It's not like a — I don't plan it. It's just on the way.
+- BB-INT015-t7 :: [Q] Interviewer: [pause] What keeps you coming back to it specifically? There's other food around here.
+- BB-INT015-t8 :: Tyler: Yeah but it's... fast? And it's not expensive. Well — it was cheap. It's decent. I get a couple things, I'm full, I'm not out like twenty-five bucks. That's mostly it, ho
+- BB-INT015-t9 :: [Q] Interviewer: Does the job. [pause] Anything you actually like about the food, or is it purely convenience?
+- BB-INT015-t10 :: Tyler: I mean... [pause] the brisket one's actually good. Like properly good. I didn't expect that from a truck. First time I had it I was kind of like, oh — okay. That one I'll
+- BB-INT015-t11 :: [Q] Interviewer: What is it about it, do you think?
+- BB-INT015-t12 :: Tyler: I dunno, it tastes like actual barbecue? Like someone smoked it for real. Most places it's just — meat. This one you can tell. I don't know how to say it better than that
+- BB-INT015-t13 :: [Q] Interviewer: No, that's great. Do you ever get into the — they do a fusion thing, Korean chicken, traditional stuff, there's kind of a whole story to it. Does any of that land for you
+- BB-INT015-t14 :: Tyler: [pause] Honestly? No idea what you're talking about. It's tacos. I get the brisket one. I don't really — I'm not looking at, like, is this authentic or whatever. It's foo
+- BB-INT015-t15 :: [Q] Interviewer: That's completely fair — genuinely useful, actually. So you don't follow them anywhere? Instagram, the—
+- BB-INT015-t16 :: Tyler: No. No. Why would I follow a taco truck? [laughs] No offence. I don't — I don't post food, I don't do any of that. My friend does, she photographs everything before she e
+- BB-INT015-t17 :: [Q] Interviewer: [laughs] What about the app — did you ever download it?
+- BB-INT015-t18 :: Tyler: I think I got it once? To like order ahead or something. I don't think I ever — yeah, I don't think I used it. I just walk up. It's faster to walk up than mess with the p
+- BB-INT015-t19 :: [Q] Interviewer: Okay. So here's a real one — what would actually make you stop coming? Like done, don't come back.
+- BB-INT015-t20 :: Tyler: [pause] If it wasn't here. Like if the truck just wasn't around when I got off the train — I'm not gonna go look for it. I'll just get something else. That's happened, ac
+- BB-INT015-t21 :: [Q] Interviewer: That's a big one. Anything else?
+- BB-INT015-t22 :: Tyler: The line. If it's like way down the block I'm not waiting, I've got — I'm on a break usually, I don't have twenty minutes. And, uh — price, I guess. It's crept up a bit. 
+- BB-INT015-t23 :: [Q] Interviewer: Yeah. Where's the line on that for you, roughly?
+- BB-INT015-t24 :: Tyler: I dunno exactly. It's more like — if I'm doing the math and going "eh," that's the sign. Right now I don't really do the math. If I start doing the math, that's when they
+- BB-INT015-t25 :: [Q] Interviewer: [pause] Last thing — would you ever sign up for a newsletter, emails, anything like that from them?
+- BB-INT015-t26 :: Tyler: [immediately] No. God no. My email's already a disaster. No.
+- BB-INT015-t27 :: [Q] Interviewer: [laughs] What if it wasn't email — is there any version of "hearing from them" you'd actually want?
+- BB-INT015-t28 :: Tyler: [pause] I mean... if it was a text that was just like "we're here today" — that I'd maybe want. 'Cause of the whole is-it-here thing. Or if it was an actual deal. Like a 
+- BB-INT015-t29 :: [Q] Interviewer: That's a really clear answer. Thanks so much for your time — and the taco was on me, so we're square.
+- BB-INT015-t30 :: Tyler: [laughs] Yeah, no worries. Thanks for the taco, man. ...The brisket one, yeah. Good call. ---
+
+### BB-INT016 — BB-INT016 — Megan Liu Megan Liu
+- BB-INT016-t1 :: [Q] Interviewer: Thanks for hopping on, Megan. Maybe just start with — how did you first come across BorderBlend?
+- BB-INT016-t2 :: Megan: Oh my god, okay, so — it was my friends? Like it wasn't me. [laughs] I feel like I never discover anything first, I'm always the last one. Um, so a bunch of us were at, l
+- BB-INT016-t3 :: [Q] Interviewer: Totally. So it was social from the start — friends pulling you in.
+- BB-INT016-t4 :: Megan: Yeah, one hundred percent. Like I would not have gone up to a random taco truck by myself and been like, "this is my brand now." [laughs] It's always somebody in the grou
+- BB-INT016-t5 :: [Q] Interviewer: When you're deciding where to eat on a normal day — not a festival, just a Tuesday — what actually drives that?
+- BB-INT016-t6 :: Megan: Honestly? Cheapest and closest. Like — that's it, that's the whole thing. [laughs] I'm a student, I'm broke, so it's like, what's near me, what's open right now, and what
+- BB-INT016-t7 :: [Q] Interviewer: And where does BorderBlend land on that? Is it your cheap-and-close option, or more of a treat?
+- BB-INT016-t8 :: Megan: See, that's — okay, this is the thing. It used to feel like a normal option, and now it feels a little bit more like a treat? Which is kind of a bummer. Like when I first
+- BB-INT016-t9 :: [Q] Interviewer: Do you remember roughly what it costs you now versus when you started?
+- BB-INT016-t10 :: Megan: Okay so — see, this is where I get weirdly specific. [laughs] When I started it was like, I could get out the door for under twelve bucks, like a taco and a drink and I w
+- BB-INT016-t11 :: [Q] Interviewer: That's really useful. What about the portions — when you spend that, do you feel like you got your money's worth?
+- BB-INT016-t12 :: Megan: Um — yeah, mostly? Like the food's good, I'm not — I don't want to sound like I'm hating, the brisket one is genuinely really good, everyone's right about it. It's more t
+- BB-INT016-t13 :: [Q] Interviewer: No, that's exactly the kind of thing we want. When your friend group goes, how does that usually play out — who decides?
+- BB-INT016-t14 :: Megan: It's — okay it's always the same one or two people, honestly. There's like a designated food person in every friend group and it's not me. [laughs] Someone will just be l
+- BB-INT016-t15 :: [Q] Interviewer: [laughs] It does. So the group is where the money goes.
+- BB-INT016-t16 :: Megan: Exactly, yeah. Solo I'm very disciplined, I get the one thing. In a group I'm a disaster. [laughs]
+- BB-INT016-t17 :: [Q] Interviewer: You mentioned you're big on Instagram and TikTok — do you follow BorderBlend on there, or see their stuff?
+- BB-INT016-t18 :: Megan: So — no. Like I'll watch it if it comes up? Like if the algorithm throws me a taco video I'm absolutely watching that, I'm not gonna scroll past a good first-bite video, 
+- BB-INT016-t19 :: [Q] Interviewer: So you'll consume the content but you don't seek it out.
+- BB-INT016-t20 :: Megan: Yeah. And I definitely don't post. Like, I'm a watcher, not a — I'm not gonna film myself eating a taco, that's not my — some people do and that's great, that's not me. [
+- BB-INT016-t21 :: [Q] Interviewer: Fair enough. Let me ask about loyalty — do you know they have a points programme? Would you use something like that?
+- BB-INT016-t22 :: Megan: Oh — do they? See, I didn't even — okay, no, I didn't know that. Um. I mean — maybe? Like here's the honest answer: if it was easy and it actually saved me money, yeah, I
+- BB-INT016-t23 :: [Q] Interviewer: So low friction is the whole game for you.
+- BB-INT016-t24 :: Megan: One hundred percent. I'm lazy and broke, that's the — [laughs] that's the demographic. It has to save me money and it has to be, like, zero effort. If it hits both of tho
+- BB-INT016-t25 :: [Q] Interviewer: That's a great point. What about a newsletter or emails — is there anything that would make you sign up?
+- BB-INT016-t26 :: Megan: Ugh, emails. [laughs] Okay — normally, no. Like my inbox is a graveyard, I don't open brand emails ever. Butttt — if it was, like, a student discount thing? Or, like, "he
+- BB-INT016-t27 :: [Q] Interviewer: Student-deal angle, basically.
+- BB-INT016-t28 :: Megan: Yeah. Like a proper student thing, show your student ID, or a code, whatever. That would genuinely change how often I go, I think. Because right now the only thing holdin
+- BB-INT016-t29 :: [Q] Interviewer: That makes complete sense. Last thing — if BorderBlend could fix or change one thing for you specifically, what is it?
+- BB-INT016-t30 :: Megan: Just — the price, or, like, a student version of the price. [laughs] I know that's boring. Everyone probably says something cooler. But genuinely — for me it's that. Make
+- BB-INT016-t31 :: [Q] Interviewer: It's a perfect answer. Thanks so much for your time, Megan.
+- BB-INT016-t32 :: Megan: No worries! This was fun, I feel like I just talked about being broke for half an hour. [laughs] Good luck with it. ---
+
+### BB-INT017 — BB-INT017 — André Silva André Silva
+- BB-INT017-t1 :: [Q] Interviewer: Thanks for meeting so late. Tell me how you first got onto BorderBlend.
+- BB-INT017-t2 :: André: Bro, okay — so this is a whole story. [laughs] A coworker of mine, Deshawn, we close the bar together, right, and one night like — 1:15, 1:30, we're both starving, dead o
+- BB-INT017-t3 :: [Q] Interviewer: What was it about that first taco specifically?
+- BB-INT017-t4 :: André: It's the smoke. Like — okay so I cook a little, right, I do line shifts, so I know when something's faked. A lot of places, "smoked brisket," it's braised and they hit it
+- BB-INT017-t5 :: [Q] Interviewer: So walk me through a typical late night. When does the BorderBlend craving hit?
+- BB-INT017-t6 :: André: So my shift ends, depends, like 12:30 if it's a weeknight, 2, 2:30 on a Friday-Saturday. And there's this — everyone in service knows this feeling — you've been on your f
+- BB-INT017-t7 :: [Q] Interviewer: You mentioned bringing coworkers. Is it usually a group thing?
+- BB-INT017-t8 :: André: Oh always. Always. It's like the after-party but it's tacos. [laughs] We come off shift, it's me, Deshawn, sometimes the kitchen crew, and we roll up like a little pack. 
+- BB-INT017-t9 :: [Q] Interviewer: That's actually the thing I want to dig into. "Where's the truck" — is that hard to figure out?
+- BB-INT017-t10 :: André: Ugh. BRO. Okay. This is — this is the pain. [leans forward, both hands on table] This is the one thing. So the food's perfect, the vibe's perfect, but at night? Finding t
+- BB-INT017-t11 :: [Q] Interviewer: So how do you actually find them, then?
+- BB-INT017-t12 :: André: Guesswork and DMs, man. It's embarrassing. I follow the local truck account on Instagram but half the time it's dead — like the last post is from four days ago, so I can'
+- BB-INT017-t13 :: [Q] Interviewer: When the app said "open now" and the truck wasn't there — how often does that happen?
+- BB-INT017-t14 :: André: Enough that I don't fully trust it anymore. Which is a shame 'cause I WANT to use it. Like I'll check it, but I check it the way you check a weather app you don't believe
+- BB-INT017-t15 :: [Q] Interviewer: Do you post about them when you do find them?
+- BB-INT017-t16 :: André: Constantly. [laughs] It's a ritual at this point. The midnight brisket taco, I unwrap it, I get the steam coming off it, the lights of the truck behind it — that shot goe
+- BB-INT017-t17 :: [Q] Interviewer: Let's talk about the fusion side. The brisket, the Korean chicken — does that land for you, or do you want it more traditional?
+- BB-INT017-t18 :: André: No no no, the fusion is the POINT. See, this is where people get it twisted. Fusion done lazy is a gimmick — you slap kimchi on something and call it Korean, it's garbage
+- BB-INT017-t19 :: [Q] Interviewer: Have you tried the plant-based one?
+- BB-INT017-t20 :: André: Yeah and — okay, I'm a meat guy, I'll be honest, I went in skeptical. Plant-based at a BRISKET truck felt like a trap. But it's actually good? Genuinely? Like I'd order i
+- BB-INT017-t21 :: [Q] Interviewer: If BorderBlend had a newsletter or a way to sign up for updates — would you?
+- BB-INT017-t22 :: André: In a HEARTBEAT. Are you kidding? [both hands up] If they could just TELL me where they're parked tonight — like a "we're at Richmond and Portland till 3am tonight" text o
+- BB-INT017-t23 :: [Q] Interviewer: What about loyalty — points, rewards, that kind of thing?
+- BB-INT017-t24 :: André: Honestly? The points thing I've never bothered with, it's confusing, I don't even know if I have an account. [waves hand dismissively] That's not the hook for me. The hoo
+- BB-INT017-t25 :: [Q] Interviewer: Fuego Nights — you know that one?
+- BB-INT017-t26 :: André: Oh the summer thing! Yeah, last year I caught it kind of by accident, saw a post one night and sprinted over. It was — the limited menu, the heat-level stuff, it was fun,
+- BB-INT017-t27 :: [Q] Interviewer: Last one — imagine you're telling another late-night service worker why they should care about BorderBlend. What do you say?
+- BB-INT017-t28 :: André: [leans back] I'd say — look, you've been on your feet all night, you've earned real food, not a regret. This is somebody actually smoking brisket at 1am because they care
+- BB-INT017-t29 :: [Q] Interviewer: Thanks so much for your time, André.
+- BB-INT017-t30 :: André: Anytime, man, this was great — you got me talking tacos at 11pm, now I'm hungry, I'm gonna go see if the truck's out. [laughs] Wish me luck finding it. ---
+
+### BB-INT018 — BB-INT018 — Sofia Tremblay Sofia Tremblay
+- BB-INT018-t1 :: [Q] Interviewer: Thanks for making time before your set. Maybe start with — how did you first come across BorderBlend?
+- BB-INT018-t2 :: Sofia: [pause] Word of mouth, first. Which is... the only way anything reaches me, honestly. A friend — she does lighting for a lot of the nights I play — she'd been to the truc
+- BB-INT018-t3 :: [Q] Interviewer: So the scene is the discovery channel more than the app or search?
+- BB-INT018-t4 :: Sofia: Completely. Nobody's Googling at 2 a.m. You're leaving a venue, you're with six people, everyone's a little... elevated, and the question is just — *where do we go.* And 
+- BB-INT018-t5 :: [Q] Interviewer: Tell me about that late-night moment. Walk me through it.
+- BB-INT018-t6 :: Sofia: [laughs softly] Okay. So — Montreal, late. You finish, you're hungry in this very specific way that only happens after you've been on your feet for hours. It's a ritual, 
+- BB-INT018-t7 :: [Q] Interviewer: "When you can find it" — say more.
+- BB-INT018-t8 :: Sofia: That's the whole problem, isn't it. [pause] It's a truck. It moves. So the question is never "is it good," it's "is it *there,* right now, and where." And that — the bran
+- BB-INT018-t9 :: [Q] Interviewer: So a dormant local account actively costs you the visit.
+- BB-INT018-t10 :: Sofia: Yes. And this is the frustrating part — because I *want* to come. The intent is there. I'm standing there with people ready to spend money and I can't confirm you exist t
+- BB-INT018-t11 :: [Q] Interviewer: Do you ever use the app for that?
+- BB-INT018-t12 :: Sofia: I tried it once. It didn't tell me anything the sad Instagram wasn't already not telling me. [dry laugh] The menu on the app wasn't what was on the truck board, and it co
+- BB-INT018-t13 :: [Q] Interviewer: Let me ask about the Instagram itself. You mentioned it reads English-only.
+- BB-INT018-t14 :: Sofia: [long pause] Yeah. This one I feel more than I can... let me say it right. The national account is all English. The captions, the launches, the — everything. And I notice
+- BB-INT018-t15 :: [Q] Interviewer: How does that land, emotionally?
+- BB-INT018-t16 :: Sofia: It's a small exclusion but it's a real one. You know when something's translated late, or badly, or not at all — you feel like an afterthought. And in Quebec that's not a
+- BB-INT018-t17 :: [Q] Interviewer: If they got the French right — genuinely right — what would that signal?
+- BB-INT018-t18 :: Sofia: That they see Montreal as a place with its own culture and not a franchise you paste the English onto. [pause] And it has to be *Québécois* French. Not the French from Fr
+- BB-INT018-t19 :: [Q] Interviewer: That's a strong line. Let's talk about the food. Where does the fusion sit for you — you're clearly food-literate.
+- BB-INT018-t20 :: Sofia: [pause] So I'm suspicious of fusion by default. Most of it's a gimmick — two cuisines in a headline to sell you a novelty, and it tastes like neither. But BorderBlend — t
+- BB-INT018-t21 :: [Q] Interviewer: Do you share it, then? When it's good?
+- BB-INT018-t22 :: Sofia: Of course. But quietly, in my way — a story, the wrapper, the salsa verde, the corner we ended up on. My scene watches those. That's more valuable to a brand than any bil
+- BB-INT018-t23 :: [Q] Interviewer: So the scene amplifies you, but only if the brand feels present.
+- BB-INT018-t24 :: Sofia: Exactly. I'm doing the marketing for them, essentially, for free, out of genuine affection. The least they can do is be *there* on the other end. Post. Answer. Exist in F
+- BB-INT018-t25 :: [Q] Interviewer: Let's imagine they wanted to keep you close — loyalty, a newsletter, something. What would make you actually opt in?
+- BB-INT018-t26 :: Sofia: [pause] Okay. Real answer. Location drops. If there were a thing that told me, late — *"the Mile End truck is parked on Saint-Viateur till 3"* — I would subscribe to that
+- BB-INT018-t27 :: [Q] Interviewer: Location drops, late-night specifically.
+- BB-INT018-t28 :: Sofia: Late-night specifically. Nobody serves the 1 a.m. crowd information. And then — insider things. Seasonal previews, the new menu before it drops, a "you're on the list" fe
+- BB-INT018-t29 :: [Q] Interviewer: And what would make you *not* subscribe — or unsubscribe fast?
+- BB-INT018-t30 :: Sofia: [immediately] English-only. Instant. That's the make-or-break, that one. And spam — if it's three "ORDER NOW" pushes a day with the little fire emojis, I'm gone, I don't 
+- BB-INT018-t31 :: [Q] Interviewer: If you had one sentence for the brand team in Toronto, what is it?
+- BB-INT018-t32 :: Sofia: [long pause] ...You already have the food, and you have people like me doing your word of mouth for free. Don't lose us over two things you could fix tomorrow — *tell us 
+- BB-INT018-t33 :: [Q] Interviewer: Thanks so much for your time — and have a good set tonight.
+- BB-INT018-t34 :: Sofia: [laughs] Merci. Come find the truck after. If you can figure out where it is. ---
+
+### BB-INT019 — BB-INT019 — Wesley Cho Wesley Cho
+- BB-INT019-t1 :: Dana: Thanks for hopping on, Wesley. I know lunch is precious real estate — appreciate you giving me some of it.
+- BB-INT019-t2 :: Wesley: Oh, no, this is great, I'm eating at my desk anyway, so you're just — you're the entertainment. [laughs] Honestly, talking about tacos while eating a taco is kind of the 
+- BB-INT019-t3 :: Dana: Let me start wide. When you think about lunch on a workday, what are you actually trying to get done?
+- BB-INT019-t4 :: Wesley: So — okay, I'll be honest with you, I used to be a person who "explored" at lunch. Air quotes. I'd wander, I'd try the new poke place, I'd, you know, treat it like a litt
+- BB-INT019-t5 :: Dana: How did BorderBlend first come onto your radar?
+- BB-INT019-t6 :: Wesley: Okay, so this is a bit of a story. Bear with me. There's a guy on my team, Priyank, who is — he's one of those people who's constitutionally incapable of eating a bad mea
+- BB-INT019-t7 :: Dana: So the brisket did the work.
+- BB-INT019-t8 :: Wesley: The brisket did all the work. And look, I want to be careful here because I don't want to oversell it like some — but it's real. It's actually smoked. You can taste that 
+- BB-INT019-t9 :: Dana: You mentioned the line being a gamble. Walk me through that.
+- BB-INT019-t10 :: Wesley: Yeah, so this is where the honeymoon meets reality. There are really two anxieties, and they're different. The first one is: is the truck even there. Because it's a truck
+- BB-INT019-t11 :: Dana: So if you could know something before you walked down —
+- BB-INT019-t12 :: Wesley: Is it open, where exactly is it today, and how long is the line. Those three. Honestly if my phone just told me those three things every morning I'd never have a bad lunc
+- BB-INT019-t13 :: Dana: There's an app. Have you tried it?
+- BB-INT019-t14 :: Wesley: I did! I did, and — okay, so, you'd think I of all people would love the app, right, I run operations, I'm the guy who's supposed to be into systems and dashboards. And I
+- BB-INT019-t15 :: Dana: If order-ahead genuinely worked — reliably — what changes for you?
+- BB-INT019-t16 :: Wesley: Oh, everything, and — and here's the part that I think matters for them, actually, more than just me: it changes the group thing. Because it's not always just me. Couple 
+- BB-INT019-t17 :: Dana: When you pick up for the team, how does the money side work?
+- BB-INT019-t18 :: Wesley: Ugh. Okay, so that's the other little papercut. Right now I pay, I get — if I'm lucky — a receipt that's already fading before I'm back at my desk, one of those thermal o
+- BB-INT019-t19 :: Dana: Let's talk about staying in touch. Would you sign up for a newsletter, or alerts?
+- BB-INT019-t20 :: Wesley: So my honest instinct is no, because my inbox is a warzone and I unsubscribe from things for sport. But — but — there's a version I'd actually want, and I've thought abou
+- BB-INT019-t21 :: Dana: Say more about that "truck is here today" alert — why's that the one?
+- BB-INT019-t22 :: Wesley: Because it fixes my number-one failure for basically zero cost to them. Remember, my worst day is walking down and it's not there — the empty curb, the stood-up feeling. 
+- BB-INT019-t23 :: Dana: You brought up a time it wasn't there. Can you tell me about that?
+- BB-INT019-t24 :: Wesley: Yeah. [laughs, a little rueful] Okay, so, there was this one Thursday. And it was a bad Thursday already — we'd had a shipment go sideways, everyone was frayed, and I'd b
+- BB-INT019-t25 :: Dana: That's a really honest way to put it. Last one — if the app and the ordering all worked the way you're describing, where does BorderBlend land for you?
+- BB-INT019-t26 :: Wesley: Then it stops being "the truck I roll the dice on" and it just becomes — part of the plumbing of my week. Like, load-bearing. I don't think about my transit card, I don't
+- BB-INT019-t27 :: Dana: Thanks so much for your time, Wesley.
+- BB-INT019-t28 :: Wesley: Anytime, genuinely. This was more fun than the carrier call I've got in — [checks phone] oh, eight minutes. See, that's a well-timed lunch. Okay. Go feed someone. Cheers.
+
+### BB-INT020 — BB-INT020 — Bianca Rossi Bianca Rossi
+- BB-INT020-t1 :: [Q] Interviewer: Thanks for squeezing me in, Bianca. Can we start with how BorderBlend first came onto your radar?
+- BB-INT020-t2 :: Bianca: Look — I don't discover restaurants. Restaurants get assigned to me. [laughs] One of our senior partners, Whitmore, comes back from some lunch and goes "Bianca, the brisk
+- BB-INT020-t3 :: [Q] Interviewer: So a partner drove it. Did you vet them yourself before booking?
+- BB-INT020-t4 :: Bianca: Of course. I'm not putting forty people's lunch on a partner's say-so — he'd eat a shoe if it had enough salt on it. So I walked over to the truck by the financial distri
+- BB-INT020-t5 :: [Q] Interviewer: And how did you find that out — the "can they deliver for thirty" part?
+- BB-INT020-t6 :: Bianca: Website. borderblend.ca. And — between you and me? That site is built for a twenty-four-year-old buying one taco on his lunch break. Not for me. I'm hunting for a "cateri
+- BB-INT020-t7 :: [Q] Interviewer: Let's talk about that thirty-person client lunch. Walk me through the run-up.
+- BB-INT020-t8 :: Bianca: So the run-up is where I don't sleep. [laughs] Here's the scenario — Whitmore's hosting a client, big file, the kind of client whose name is on buildings. Lunch is in our
+- BB-INT020-t9 :: [Q] Interviewer: So the confirmation itself — how solid was it?
+- BB-INT020-t10 :: Bianca: Soft. Too soft. I got a "yep, we've got you Thursday!" — exclamation mark and everything. And look, the guy was lovely, but I can't forward an exclamation mark to a partn
+- BB-INT020-t11 :: [Q] Interviewer: Where does that reliability worry rank against everything else — food, price, all of it?
+- BB-INT020-t12 :: Bianca: It's not a ranking. It's the whole thing. The food being good is the price of admission — I'm not booking anyone whose food is bad, obviously. But "will you be there, on 
+- BB-INT020-t13 :: [Q] Interviewer: Let's get into headcount and dietary. How does that work at thirty, forty people?
+- BB-INT020-t14 :: Bianca: Right, so this is the part that can actually hurt someone, so I don't mess about. First I send a form round — headcount, and who can't eat what. And on any group this siz
+- BB-INT020-t15 :: [Q] Interviewer: And could you get that from BorderBlend?
+- BB-INT020-t16 :: Bianca: Not easily. That's the gap. The menu tells me it's a "Korean-style chicken taco," lovely, but not whether there's sesame in the sauce, or nuts, or what's sharing a surfac
+- BB-INT020-t17 :: [Q] Interviewer: So a missing allergen sheet doesn't just annoy you — it loses the booking.
+- BB-INT020-t18 :: Bianca: It loses the whole booking. And it's a shame, because the food's better than the safe boring option I end up going with. But I'm not gambling a partner's client's airway 
+- BB-INT020-t19 :: [Q] Interviewer: Money side — invoicing, expensing. What do you need from them?
+- BB-INT020-t20 :: Bianca: Oh, this is my hill. Our accounts department is — how do I put this diplomatically — they are not a forgiving people. [laughs] I need a proper invoice. PDF. Itemised, HST
+- BB-INT020-t21 :: [Q] Interviewer: Is it the price itself, or the process around the price?
+- BB-INT020-t22 :: Bianca: Mostly the process — but I'll be honest, the price has crept. It's not the cheeky little bargain it used to be; it's getting close to just catering from a proper restaura
+- BB-INT020-t23 :: [Q] Interviewer: You mentioned there's a range of things you book. What's the rhythm?
+- BB-INT020-t24 :: Bianca: Three tiers. Tier one — client lunches, high stakes, partners hosting, this is where I don't breathe. Tier two — team lunches, associates, monthly-ish, casual but still m
+- BB-INT020-t25 :: [Q] Interviewer: Speaking of things flopping — has anything come close?
+- BB-INT020-t26 :: Bianca: A near-miss, yeah. Not BorderBlend — a different vendor, before them — but it's why I'm the way I am. Big team lunch, I'd confirmed by email, I thought. Day of, the food 
+- BB-INT020-t27 :: [Q] Interviewer: That leads me to where I wanted to go — would you subscribe to a catering list or newsletter from them? And what would make it worth your inbox versus clutter?
+- BB-INT020-t28 :: Bianca: [laughs] Okay, so I unsubscribe from things for sport. My inbox is a battlefield and I take no prisoners. "Check out our new taco"? Deleted before it loads. "It's Nationa
+- BB-INT020-t29 :: [Q] Interviewer: Please, the boring list is exactly what I want.
+- BB-INT020-t30 :: Bianca: [laughs] Fine. One: a catering menu with the allergen sheet attached, so I can forward it to a client's assistant and to accounts in one email and be done. That alone wou
+- BB-INT020-t31 :: [Q] Interviewer: So less marketing, more operational reassurance.
+- BB-INT020-t32 :: Bianca: Exactly. And look — I want to give you more business, that's the frustrating part. I'm not a hard sell, I'm a warm lead you're making work too hard. The food's good enoug
+- BB-INT020-t33 :: [Q] Interviewer: Anything I haven't asked that I should have?
+- BB-INT020-t34 :: Bianca: Just — remember that when I book you, I'm not the customer. The partner's the customer, the client's the customer, and I'm the one whose neck is out if you drop the ball.
+- BB-INT020-t35 :: [Q] Interviewer: Thanks so much for your time, Bianca.
+- BB-INT020-t36 :: Bianca: Don't thank me, just tell them to build the boring version and put a name on my booking. And — off the record — the brisket really is very good. Whitmore was right, which
+
+### VER-INT009 — VER-INT009 — Patrick Leblanc Patrick Leblanc
+- VER-INT009-t1 :: Claire: Before we get into the day-to-day — what made you join BorderBlend in the first place?
+- VER-INT009-t2 :: Patrick: The food, honestly. I'd done other things — I managed a restaurant kitchen for a long time, so I know the difference between a concept that's a costume and a concept that
+- VER-INT009-t3 :: Claire: Tell me about running two trucks in Quebec City specifically.
+- VER-INT009-t4 :: Patrick: It's a tight operation. I run it tight — that's just me. One truck downtown, near the — the tourist flow, Vieux-Québec area in the season. The other one moves, festivals,
+- VER-INT009-t5 :: Claire: Let's talk about that. What arrives late?
+- VER-INT009-t6 :: Patrick: The kits. The marketing kits — the campaign assets, the social captions, the promo copy, the seasonal stuff. When there's a drop, a new campaign, the English lands first.
+- VER-INT009-t7 :: Claire: When the French does arrive — is it usable as-is?
+- VER-INT009-t8 :: Patrick: [pause] Sometimes. But this is the part I really want you to understand, because it's not just "is it French or not." It's *which* French. What HQ sends is — it reads lik
+- VER-INT009-t9 :: Claire: Can you give me a concrete example?
+- VER-INT009-t10 :: Patrick: Yes. The famous one. [small smile] The pickled onions. On the brisket — you've got the pickled red onion, right, it's part of the item. The French description HQ sent des
+- VER-INT009-t11 :: Claire: That's the ticket — FT #010?
+- VER-INT009-t12 :: Patrick: If that's the number, yes. The correction went through quickly. I'm not — I want to be fair, the response was good. My point is the error shouldn't reach the truck in the
+- VER-INT009-t13 :: Claire: You mentioned register, not just vocabulary. Is there more than the one word?
+- VER-INT009-t14 :: Patrick: Oh, it's everywhere once you start looking. Small things. Here's one I love. [leans in] They had a location-slash-event asset that said "parking." In French copy. "Parkin
+- VER-INT009-t15 :: Claire: So what do you do about all of it? Practically.
+- VER-INT009-t16 :: Patrick: I rewrite it. Same as — I know Marc, in Montreal, does the same thing. We've compared notes. He translates and adapts everything himself, so do I. It's not translation, t
+- VER-INT009-t17 :: Claire: And the customers — do they actually register the difference, or is this more of a craftsman's standard you hold yourself to?
+- VER-INT009-t18 :: Patrick: Both. But they register it. Absolutely they register it. I've seen it on the national account — somebody from Quebec commented on a seasonal post, something like, "why ar
+- VER-INT009-t19 :: Claire: Is there a reference you can go to when you're unsure — a brand voice guide, something like that?
+- VER-INT009-t20 :: Patrick: There's a PDF. [pause] There's a brand voice PDF. It's — it exists. It's a document. And it's in English, and it's the English voice, "confident, short sentences, no fluf
+- VER-INT009-t21 :: Claire: Go on.
+- VER-INT009-t22 :: Patrick: The fusion story. What BorderBlend *is*. If you asked me, and asked Marc, and asked Diego in Toronto, "so what's the story — why Mexican and Korean and brisket, what's th
+- VER-INT009-t23 :: Claire: If you could design the support you actually want — what does good look like?
+- VER-INT009-t24 :: Patrick: Two things, and they're not expensive. One — French on the same cadence as English. Same drop. Not "French is coming," not two weeks later. The same day, in the box, done
+- VER-INT009-t25 :: Claire: You've framed all of this pretty generously toward HQ. Is that where you really sit?
+- VER-INT009-t26 :: Patrick: [pause] Look — I'm not angry. I want to be clear, because it's easy to read this as a complaint. It's not. It's the opposite. Quebec is a market where doing French *prope
+- VER-INT009-t27 :: Claire: That's a really clear way to put it. Anything I haven't asked that I should have?
+- VER-INT009-t28 :: Patrick: Just — don't treat Quebec as a translation problem. That's my one message. It's not "run the English through a translator." It's a market with its own language and its ow
+- VER-INT009-t29 :: Claire: Merci beaucoup, Patrick. This was exactly what I was hoping for.
+- VER-INT009-t30 :: Patrick: Ça m'a fait plaisir. And listen — if they ever want someone to sanity-check the French before it goes out, they know where the truck is. ---
+
+### SOC — Consumer Social Media Mentions 
+- SOC-M001 :: Platform: Instagram Sentiment: P Context: Photo post of smoked brisket taco with a plate of chips. Caption (paraphrase): "This brisket taco from BorderBlend hits every ti
+- SOC-M002 :: Platform: TikTok Sentiment: P Context: Short video of person receiving order at window, unwrapping taco, first bite. Caption: "I wasn't expecting it to be this good. The 
+- SOC-M003 :: Platform: Instagram Sentiment: N Context: Comment on BorderBlend's national account post. Comment: "Why does the Montreal location barely post? I literally can't tell if 
+- SOC-M004 :: Platform: TikTok Sentiment: P Context: Creator content — "best food trucks in city" format. Mention: BorderBlend named as first recommendation. "The smoked brisket is the
+- SOC-M005 :: Platform: Instagram Sentiment: M Context: Story re-share of a visit to a BorderBlend truck. Caption: "Food was incredible as always. But the line was forty minutes. I lov
+- SOC-M006 :: Platform: TikTok Sentiment: P Context: Video of a family group at a food truck. Caption: "Took the kids. They're picky. They both inhaled it. Family dinner solved." Engag
+- SOC-M007 :: Platform: Instagram Sentiment: N Context: Comment on a borderblend account post. Comment: "Price went up again. Tacos used to be affordable. Now it's almost the same as a
+- SOC-M008 :: Platform: TikTok Sentiment: P Context: Creator doing a "I tried it so you don't have to" format. Key line: "The fusion thing actually works here. It doesn't feel like the
+- SOC-M009 :: Platform: Instagram Sentiment: N Context: Direct message forwarded to brand account (with consent to use anonymously for research purposes). Message: "Hi — I have a nut a
+- SOC-M010 :: Platform: TikTok Sentiment: P Context: Short video — "night market haul" format. Mention: "BorderBlend had a stand at festival. Got two brisket tacos. The line was long a
+- SOC-M011 :: Platform: Instagram Sentiment: M Context: Food blogger post with review language. Key line: "The food is consistently excellent. The brand Instagram is inconsistent. Some
+- SOC-M012 :: Platform: TikTok Sentiment: P Context: User sharing a plant-based option specifically. Caption: "As a vegetarian I am shook. I went because my friend insisted. The plant-
+- SOC-M013 :: Platform: Instagram Sentiment: N Context: Comment on a franchisee's local account post. Comment: "Your app said you were open at this location today. You weren't there. W
+- SOC-M014 :: Platform: TikTok Sentiment: P Context: Creator doing "things I spend too much money on" format. Line: "BorderBlend tacos, specifically the smoked brisket one. I've been g
+- SOC-M015 :: Platform: Instagram Sentiment: I Context: Photo with location tag, no caption. Signal: High volume of location-tagged posts with no captions. These indicate strong enough
+- SOC-M016 :: Platform: TikTok Sentiment: N Context: Person filming an empty parking spot. Caption: "The BorderBlend truck is supposed to be here. I see no truck. I drove twenty minute
+- SOC-M017 :: Platform: Instagram Sentiment: P Context: Post featuring the Korean-style chicken taco. Caption: "The Korean-Mexican combo makes so much sense when it's done right. This 
+- SOC-M018 :: Platform: TikTok Sentiment: M Context: Creator review. Key lines: "Incredible food. Wish I could get it more consistently. Some days they're there, some days they're not.
+- SOC-M019 :: Platform: Instagram Sentiment: P Context: Shared story of a first-time visit after seeing a friend's post. Caption: "Your fault I'm now going twice a week. @friend name r
+- SOC-M020 :: Platform: TikTok Sentiment: P Context: "Things that surprised me" format. Line: "A food truck that sources real smoked brisket. This exists. I confirmed with the person a
+- SOC-M021 :: Platform: Instagram Sentiment: N Context: Comment on a seasonal campaign post. Comment: "Why are your captions always in English? I follow you from Quebec. Une petite ten
+- SOC-M022 :: Platform: TikTok Sentiment: P Context: Late-night food content. Caption: "11pm and I'm still thinking about the BorderBlend brisket I had for lunch. This is a problem." E
+- SOC-M023 :: Platform: Instagram Sentiment: M Context: Comment on a brand post showing a promotional item. Comment: "The taco is the thing. Stop trying to sell me a branded tote bag. 
+- SOC-M024 :: Platform: TikTok Sentiment: P Context: Video of someone eating outside on a sunny day. Caption: "Summer weather + BorderBlend = the move. Nothing else needed." Engagement
+- SOC-M025 :: Platform: Instagram Sentiment: N Context: Post reviewing a specific truck location. Key line: "The food is always 10/10. The experience when it's busy is 5/10. Short-staf
+
+### FT — Franchisee Portal Support Tickets 
+- FT-001 :: Category: Marketing materials — localisation Market: Quebec Summary: Franchisee requests French-language versions of the current seasonal campaign assets. Reports that th
+- FT-002 :: Category: Marketing materials — digital asset access Market: Toronto Summary: Franchisee cannot locate the current version of the logo file in high resolution for use in 
+- FT-003 :: Category: Operations — ingredient substitution Market: Calgary Summary: Franchisee reports a supply disruption affecting one of the core menu ingredients (fresh coriander
+- FT-004 :: Category: Brand compliance — social media Market: Vancouver Summary: HQ flags a franchisee's recent Instagram post that uses unapproved copy. The post includes a claim ("
+- FT-005 :: Category: Marketing materials — campaign economics Market: Toronto (multiple) Summary: Two Toronto franchisees contact support separately with concerns about the pricing 
+- FT-006 :: Category: Onboarding — materials access Market: BC Summary: New franchisee (first month of operation) reports that several of the onboarding modules in the portal are sho
+- FT-007 :: Category: Operations — staff training materials Market: Edmonton Summary: Franchisee asks if there are training materials for new staff covering food safety, customer ser
+- FT-008 :: Category: Marketing materials — brand compliance, positive Market: Ontario Summary: Franchisee submits a self-produced promotional graphic for optional review before post
+- FT-009 :: Category: Technical — POS system Market: BC Summary: Franchisee reports that the POS system integration with the consumer app ordering flow has been producing discrepanci
+- FT-010 :: Category: Marketing materials — French content Market: Quebec Summary: Franchisee notes that the French version of the new menu item description contains a translation er
+- FT-011 :: Category: Franchise agreement — territory question Market: Ontario Summary: Franchisee asks whether they can operate their truck at a location that falls at the edge of t
+- FT-012 :: Category: Marketing materials — seasonal kit delay Market: Multiple (4 tickets combined) Summary: Four franchisees in different cities contact support in the same week no
+- FT-013 :: Category: Operations — health inspection Market: Toronto Summary: Franchisee is due for a municipal health inspection and asks whether there is documentation they should 
+- FT-014 :: Category: Support — emotional Market: BC Summary: New franchisee (four months in) contacts support describing significant stress and uncertainty. Revenue has been lower t
+- FT-015 :: Category: Operations — weather contingency Market: Prairie markets (multiple) Summary: Two Alberta franchisees ask whether there is guidance on weather contingency planni
+
+### PAIN — BorderBlend Pain Points — Content & Knowledge Gaps 
+- PAIN-A :: The smoked brisket taco has a description in the consumer app, a different one on the website, a third in the franchisee training kit, and a fourth on signage templates. 
+- PAIN-B :: The app menu is static while actual availability varies by truck, day, and supply chain. Customers who order based on the app description arrive expecting something unava
+- PAIN-C :: No consistent origin story exists in franchisee training. Staff improvise answers to "what is this?" and "is this authentic Mexican?" — sometimes inaccurately, sometimes 
+- PAIN-D :: Basic food storytelling — how to describe the smoking process, what makes the salsa verde work with the brisket, how to handle "is this fusion or is this Mexican?" — is n
+- PAIN-E :: The tone and voice guide exists as a document. A franchisee writing an Instagram caption has no way to check whether their draft is on-brand before posting. There's no se
+- PAIN-F :: There is no structured content model — just individual campaign files. Producing French-language assets means starting a separate production effort from scratch rather th
+- PAIN-G :: HQ has run 12+ seasonal campaigns but there's no queryable record of which ran in which markets, how franchisees adapted them, what drove differential performance, and wh
+- PAIN-H :: The primary support network for franchisees operates outside HQ visibility. Incorrect operational advice circulates without correction. Useful local knowledge — what work
+- PAIN-I :: A campaign lands with a specific visual aesthetic — gritty neon-lit night photography designed for a downtown Toronto launch event. HQ sends the same assets nationally. A
+- PAIN-J :: App order data, social listening, support tickets, and franchisee feedback live in separate systems that don't talk. "What do customers who discovered us at a food truck 
+- PAIN-K :: There is no central record of which festivals and markets the trucks attend. Customers who discovered the brand at an event have no way to find out if there's a truck nea
+- PAIN-L :: Trucks break down, suppliers fail, promoted seasonal items sell out at noon. Franchisees have no approved, on-brand language for communicating these failures to waiting c
+- PAIN-M :: A limited seasonal item is promoted nationally via the app and social. Not every franchisee has the supply chain to execute it. Customers who come specifically for the pr
+- PAIN-N :: When the app fails — wrong wait time, order not appearing on the POS, truck showing as open when it isn't — heavy app users have systematically worse experiences than wal
+- PAIN-O :: Long-term customers who want to understand their points balance, available rewards, and expiry dates have to navigate an account interface that most abandon. The programm
+
+### APPLOG — Consumer App Search Logs 
+- APPLOG-r1 :: [Search: "truck near me"] | Very high | 38% drop-off if no truck shows as "open now" | Primary search intent; users checking whether a nearby truck is currently operating
+- APPLOG-r2 :: [Browse: location map with no "open" filter] | High | 34% drop-off | Users scanning the map cannot distinguish open from scheduled
+- APPLOG-r3 :: [Search: "open now"] | High | 49% drop-off | Term used when users are in real-time decision mode; app does not reliably surface this
+- APPLOG-r4 :: [Search: truck by neighbourhood name] | Medium-high | 27% drop-off | Specific neighbourhood searches suggest repeat customers checking a known location
+- APPLOG-r5 :: [Search: "hours today"] | Medium | 42% drop-off | Real-time hours query; static schedule does not satisfy this intent
+- APPLOG-r6 :: [Search: "Saturday locations"] | Medium | 31% drop-off | Weekend schedule query
+- APPLOG-r7 :: [Search: "festival" or "event"] | Medium | 24% drop-off | Event-based location intent; partial information available
+- APPLOG-r8 :: [Search: "brisket"] | Very high | 8% drop-off | Dominant menu search; users seeking the hero item convert well
+- APPLOG-r9 :: [Browse: menu page, time >60s] | High | 19% drop-off | Extended menu browsing before ordering — suggests some users are making up their minds
+- APPLOG-r10 :: [Search: "plant-based" or "vegetarian"] | Medium-high | 12% drop-off | Dietary option search converts well, suggesting good content for this category
+- APPLOG-r11 :: [Search: "gluten"] | Medium | 31% drop-off | Allergen information-seeking; exit rate suggests information is hard to find
+- APPLOG-r12 :: [Search: "seasonal"] | Medium | 22% drop-off | Users looking for limited/seasonal items; when the seasonal item is not listed, high drop-off
+- APPLOG-r13 :: [Search: "new"] | Medium | 28% drop-off | Menu curiosity / new item seeking
+- APPLOG-r14 :: [Browse: menu then exit without ordering] | High | — | Significant browse-and-exit pattern; in-app menu doesn't always match in-person menu
+- APPLOG-r15 :: [Checkout abandonment — payment step] | Medium | — | After selecting items, a segment drops off at payment; likely reflects UX friction or distrust of the payment flow
+- APPLOG-r16 :: [Search: "order ahead"] | Medium | 44% drop-off | Users explicitly seeking the pre-order function; when it doesn't work as expected, high abandonment
+- APPLOG-r17 :: [Checkout abandonment — location confirmation step] | High | — | Users who got to checkout drop off when asked to confirm pickup location — suggests the location they sel
+- APPLOG-r18 :: [Return visit without ordering] | Medium-high | — | Users who open the app, browse, but consistently don't order; may represent the "checking if the truck is open" use ca
+- APPLOG-r19 :: [Search: "loyalty" or "points"] | Medium | 33% drop-off | Users seeking loyalty programme information; discovery and conversion are incomplete
+- APPLOG-r20 :: [Account creation step abandonment] | Medium | — | A portion of users start account creation but do not complete it; likely friction in the registration flow
+- APPLOG-r21 :: [Search: "my account"] | Low-medium | 18% drop-off | Returning users managing their account; relatively smooth
+- APPLOG-r22 :: [Search: "referral"] | Low | 27% drop-off | Users seeking a referral or sharing mechanism; feature exists but is not prominent
+
+### FACT — BorderBlend Company Factsheet 
+- at-a-glance :: At a glance
+- brand-story :: Brand story
+- vision-mission :: Vision & mission
+- positioning :: Positioning
+- menu :: Menu
+- the-strategic-question :: The strategic question
+- business-franchise-model :: Business & franchise model
+- digital-channels :: Digital & channels
+- audiences :: Audiences
+- competitive-context :: Competitive context
+
+### MRKT — Canadian Mexican & Fusion Street-Food Market — 2026 
+- MR-C01 :: - The Canadian street-food and mobile-food category reached an estimated $1.19B in 2025 and is projected to grow at a 7.8% CAGR through 2029, outpacing the broader limite
+- MR-C02 :: - Mexican-rooted concepts are the single fastest-growing cuisine within mobile food, holding roughly 21% of active taco/burrito-forward truck menus nationally and gaining
+- MR-C03 :: - Fusion positioning is now a growth engine rather than a novelty: an estimated 24% of new food-truck launches in major metros in 2025 led with an explicit fusion concept
+- MR-C04 :: - Consumers reward fusion when it reads as intentional, not gimmicky — 68% of 18–34s say a "combination that makes sense" is more appealing than a strictly traditional me
+- MR-C05 :: - Real-time "where and when is it open" certainty is the top mobile-food purchase driver, cited by 71% of app users, ahead of price and menu.
+- MR-C06 :: - Values-led attributes (low-waste packaging, no single-use plastic) now influence choice for a majority of urban under-40 diners and support a modest price premium.
+- MR-C07 :: - Challenger brands operating 20–30 units are the category's most dynamic tier, well-positioned to convert social discovery and festival reach into repeat loyalty.
+- MR-C08 :: Canada's street-food and mobile-food sector — food trucks, carts, and festival/event vending — is estimated at $1.19B in 2025, having fully recovered from pandemic-era di
+- MR-C09 :: Mobile food has been the standout rebound story within foodservice: active permitted vendor counts across the seven largest metros rose an estimated 31% between 2021 and 
+- MR-C10 :: Within this category, Mexican-rooted cuisine is the clear momentum leader. Tacos, burritos, and related formats now anchor an estimated 21% of active mobile menus nationa
+- MR-C11 :: Consumer demand is broad rather than niche: 58% of Canadian adults report eating Mexican or Mexican-inspired food at least monthly, rising to 74% among adults under 35.
+- MR-C12 :: Fusion is the defining strategic story of the 2026 market. An estimated 24% of new food-truck launches in major Canadian metros in 2025 led with an explicit fusion concep
+- MR-C13 :: Crucially, fusion is no longer read as risky by consumers: 68% of 18–34s say a menu built around "combinations that make sense" is more appealing than a strictly traditio
+- MR-C14 :: ant provenance signals (real technique, quality proteins, a cuisine that "knows what it is") and want operators to feel free to innovate. In practice, 61% of foodie-ident
+- MR-C15 :: that earn fusion credibility do so through execution proof, not adjectives: an actually-smoked brisket, a house salsa regulars adopt as a staple, a plant-based option tha
+- MR-C16 :: Fusion wins hardest among younger, urban, food-culture-engaged diners, and among "social discoverers" who treat a distinctive item as shareable content.
+- MR-C17 :: Traditional offerings, by contrast, reassure — they lower the risk of a first visit and anchor the menu's credibility for older and value-led diners. The best-performing 
+- MR-C18 :: - Late-night / social: 22–29s out at night around bars, shows, and shifts; food-culture-driven and highly social. Highest willingness to try fusion and to post about it; 
+- MR-C19 :: - Weekday-lunch / business: professionals ordering midday, often for groups. Speed, reliability, and knowing the truck is where it says it is matter more than novelty; av
+- MR-C20 :: - Everyday value: convenience- and price-led diners who "just want something good to eat." Low brand engagement, high sensitivity to the "almost restaurant prices now" pe
+- MR-C21 :: - Families / weeknight: planners balancing schedules and mixed preferences; value predictability, allergen clarity, and a traditional option kids will accept alongside an
+- MR-C22 :: - Food-culture enthusiasts / creators: bloggers, reviewers, and amplifiers who scrutinize provenance and reward specificity; small in number but outsized in influence on 
+- MR-C23 :: Across segments, 63% of mobile-food purchases are decided the same day, underscoring how much real-time discovery and status information shape which truck actually captur
+- MR-C24 :: Digital certainty is now table stakes. Real-time location and open/closed status is the top-ranked purchase driver among mobile-food app users, cited by 71% — ahead of pr
+- MR-C25 :: Social platforms are the dominant discovery channel for the growth segments. Among 18–34s, 57% report discovering a food truck via TikTok or Instagram in the past year, a
+- MR-C26 :: The festival and event circuit is the single most efficient trial-acquisition channel per dollar for mobile brands, introducing concepts to large, receptive, discovery-mi
+- MR-C27 :: bscription mechanics are under-exploited across the category. While 66% of frequent mobile-food buyers say they would join a rewards programme if it were genuinely simple
+- MR-C28 :: Email/newsletter opt-in performs notably better when tied to a concrete value moment — early access to seasonal drops or first notice of a location — with best-in-class m
+- MR-C29 :: Values-led attributes have moved from differentiator to expectation among urban under-40 diners. A majority (54%) say low-waste, plastic-free packaging positively influen
+- MR-C30 :: "Hand food" positioning — formats that need no cutlery — reads as both authentic and low-waste, and tests well as a natural, non-preachy sustainability signal rather than
+- MR-C31 :: - Québec / bilingual: francophone diners expect genuine Québécois French (fr-CA), not translated-from-France terminology; 59% of Québec respondents say European-French wo
+- MR-C32 :: - Prairies (Calgary / Edmonton): strong summer and festival demand with pronounced winter seasonality; the highest-performing Prairie operators smooth revenue with season
+- MR-C33 :: - Toronto / Vancouver: highest density, highest willingness to pay, and the most crowded competitive set; these markets reward distinctiveness and reliability, and tolera
+- MR-C34 :: The category spans three overlapping tiers: independent single-truck operators, multi-unit mobile brands, and fast-casual Mexican storefronts, with ghost/virtual kitchens
+- MR-C35 :: Multi-unit mobile brands are consolidating: franchising and operator-partner models are the fastest-growing structure in the segment, letting brands scale local presence 
+- MR-C36 :: That structure's strength — local ownership and energy — is also its central challenge, since brand consistency (menu story, voice, seasonal execution) becomes harder to 
+- MR-C37 :: - Lead with a credible fusion hero, keep a traditional core. The hero drives search, social, and loyalty; the traditional line converts cautious first-timers and anchors 
+- MR-C38 :: - Win the real-time certainty battle. Accurate, live open/status and truck-board-matched menus address the single largest conversion barrier and the leading cause of app 
+- MR-C39 :: - Turn festivals and short-form video into a repeatable acquisition-to-loyalty engine, then convert that reach with a genuinely simple rewards programme and a value-ancho
+- MR-C40 :: - Localize Québec properly and treat sustainability as demonstrated practice, converting two areas most brands under-serve into visible points of differentiation.
+- MR-C41 :: - Protect consistency as you scale. A single source of truth for menu, fusion story, and brand voice lets a franchise-model brand grow unit count without diluting the dis
+- MR-REF01 :: Maple Foodservice Insights Inc. (2026). *Canadian Mobile & Street-Food Category Tracker, 2025 Annual.* Toronto.
+- MR-REF02 :: Restaurants & Mobile Foodservice Council of Canada (2025). *State of Street Food 2025: Cuisine Momentum & Operator Models.* Ottawa.
+- MR-REF03 :: Circana Canada (2025). *New Concept Launch Monitor — Foodservice Innovation Report.* (Metro launch panel, n=1,140 new units.)
+- MR-REF04 :: Maple Foodservice Insights Inc. (2026). *National Consumer Omnibus — Cuisine & Fusion Attitudes.* (n=4,180 adults 18+, weighted.)
+- MR-REF05 :: Nourish Digital Foodservice Lab (2025). *Mobile Ordering & Real-Time Discovery Benchmark.* (App-user survey, n=2,310.)
+- MR-REF06 :: EcoTable Consumer Panel (2025). *Values, Packaging & Willingness-to-Pay in Casual & Mobile Food.* (n=3,050.)
+- MR-REF07 :: Maple Foodservice Insights Inc. (2025). *Demand Occasions & Segments in Canadian Street Food.* (Segmentation module, n=2,900.)
+- MR-REF08 :: Prairie & Metro Events Alliance (2025). *Festival Foodservice Impact Study, 2024–2025 Season.* (Festival-goer intercept survey, n=1,620.)
+- MR-REF09 :: Statista Foodservice (2025). *Canada — Handheld & Ethnic Cuisine Foodservice Outlook 2025–2029.*
+- MR-REF10 :: Journal of Culinary Culture & Consumer Behaviour (2024). "The Authenticity Paradox in Fusion Foodservice," Vol. 12(3), pp. 211–238.
+- MR-REF11 :: Maple Foodservice Insights Inc. (2025). *Menu Architecture & Hero-Item Testing in Multi-Unit Mobile Brands.* (Operator study, n=62; concept test, n=880.)
+- MR-REF12 :: SocialPulse Analytics (2025). *Food-Truck Sentiment & Limited-Time-Offer Report.* (Social listening, 1.4M Canadian posts.)
+- MR-REF13 :: NPD/Datassential Canada (2025). *Value Perceptions & Price Sensitivity in Casual Dining & Mobile Food.*
+- MR-REF14 :: Short-Form Media & Discovery Institute (2025). *TikTok/Instagram Food Discovery in Canada.* (n=2,050 adults 18–34.)
+- MR-REF15 :: LoyaltyOne Foodservice Practice (2026). *Rewards, Subscription & Newsletter Benchmarks — Mobile & Fast-Casual.* (Programme audit + survey, n=1,780.)
+- MR-REF16 :: Institut québécois de la consommation alimentaire (2025). *Attentes linguistiques et de marque au Québec / Language & Brand Expectations in Québec.* (n=1,210 Québec adult
+- MR-REF17 :: Prairie Foodservice Association (2024). *Seasonality & Winter Operations in Western Canadian Mobile Food.*
+- MR-REF18 :: Circana Canada (2025). *Ghost Kitchens, Franchising & Consolidation in Canadian Foodservice.*

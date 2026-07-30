@@ -1,0 +1,128 @@
+{
+  "slug": "omar",
+  "code": "OMAR",
+  "name": "Omar",
+  "role": "Business Lunch — financial-district professional (solo weekday) · Toronto · 34",
+  "initials": "O",
+  "sections": [
+    {
+      "type": "DEMO",
+      "items": [
+        {"text": "34, a weekday professional whose calendar is a game of Tetris, buying <span class=\"entity\">lunch</span> in the gap he carves out between back-to-back work blocks.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t2", "BB-INT019-t4"]},
+        {"text": "A weekday regular at the truck near his office several times a week, usually ordering for himself and two-to-four colleagues.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t16", "BB-INT019-t16"]},
+        {"text": "Thinks in time, cost and trade-offs — \"on a weekday my constraint is time, not money\" — but is a self-confessed creature of habit and not embarrassed about it anymore.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t4", "BB-INT019-t4"]},
+        {"text": "Low social engagement and no <span class=\"entity\">loyalty programme</span> account — a high-value repeat customer who treats brand-story content as noise.", "insights": ["INS-C14", "INS-C01"], "evidence": ["BB-INT013-t20", "BB-INT019-t20"]}
+      ]
+    },
+    {
+      "type": "MIND",
+      "items": [
+        {"text": "<span class=\"entity\">Lunch</span> is a problem he has already solved and refuses to re-solve every single day — his exploring era is over.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t4", "BB-INT019-t4"]},
+        {"text": "Surprise is the enemy and a sit-down is a surprise machine, but he won't accept the \"well, it was fast\" compromise either — he wants a known quantity that isn't a step down.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t4", "BB-INT019-t4"]},
+        {"text": "He does the math: eighty percent of the restaurant experience for twenty percent of the time cost, fast and genuinely good when you normally only get to pick one.", "insights": ["INS-C06", "INS-C04"], "evidence": ["BB-INT013-t8", "BB-INT019-t8"]},
+        {"text": "The prize isn't his enthusiasm, it's his routine — he wants BorderBlend to become the plumbing of his week, load-bearing infrastructure rather than a favourite.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t28", "BB-INT019-t26"]}
+      ]
+    },
+    {
+      "type": "EMOT",
+      "emotions": [
+        {"emoji": "😤", "label": "Guarded", "tail": "a line at 12:40 is a genuine gamble against a 1 o'clock call", "insights": ["INS-C09"], "evidence": ["BB-INT013-t10", "BB-INT019-t10"]},
+        {"emoji": "🙂", "label": "Quietly won over", "tail": "the brisket was good enough to actually register — the end of his exploring era", "insights": ["INS-C06"], "evidence": ["BB-INT013-t6", "BB-INT019-t8"]},
+        {"emoji": "😑", "label": "Impatient with noise", "tail": "brand story, recipes and origin stories get an unsubscribe in four seconds", "insights": ["INS-C14"], "evidence": ["BB-INT013-t20", "BB-INT019-t20"]},
+        {"emoji": "😞", "label": "Deflated by the empty curb", "tail": "walking down to a bare curb feels like being stood up by something he was counting on", "insights": ["INS-C09"], "evidence": ["BB-INT019-t24", "BB-INT013-t10"]},
+        {"emoji": "🔒", "label": "Reassured by reliability", "tail": "three data points on his phone and he'd never have a bad lunch again", "insights": ["INS-C09"], "evidence": ["BB-INT013-t12", "BB-INT019-t12"]}
+      ]
+    },
+    {
+      "type": "VOIC",
+      "voice": "Efficient and time-aware, but warm and a little wry — he talks in trade-offs, ratios and \"the actual job,\" yet he'll answer a question with a short self-deprecating story before landing the point. He checks his watch mid-sentence and frames everything as signal versus noise: what earns a slot in his day and what wastes it. No gushing, no drama; he'd rather be understated and right, and quietly admit that he's done a stupid amount of math for a taco.",
+      "voice_insights": ["INS-C04"],
+      "quotes": [
+        {"text": "The job is: feed me, don't cost me time, don't make me think. On a weekday my constraint is time, not money.", "evidence": ["BB-INT013-t4"]},
+        {"text": "It's six minutes and it's not a step down. That's the whole magic trick — normally you only get to pick fast or good, and they gave me both.", "evidence": ["BB-INT019-t8"]},
+        {"text": "Is it open, where exactly is it, and how long is the line. Those three things. If I had those on my phone I'd never have a bad lunch again.", "evidence": ["BB-INT013-t12"]},
+        {"text": "The worst day is walking down and it's just an empty curb — you stood up a guy who was quietly relying on you. When you become someone's default, you take on their expectation.", "evidence": ["BB-INT019-t24"]}
+      ]
+    },
+    {
+      "type": "GOAL",
+      "items": [
+        {"text": "Solve <span class=\"entity\">lunch</span> once and never have to re-solve it — the least friction, the lowest chance of a surprise.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t4", "BB-INT019-t4"]},
+        {"text": "Get very good <span class=\"entity\">smoked brisket taco</span> in six minutes rather than commit forty to a sit-down.", "insights": ["INS-C06", "INS-C04"], "evidence": ["BB-INT013-t8", "BB-INT019-t8"]},
+        {"text": "Know before he leaves his desk whether the truck is open, exactly where it is, and how long the line is.", "insights": ["INS-C09"], "evidence": ["BB-INT013-t12", "BB-INT019-t12"]},
+        {"text": "Turn a grudging solo run into a happy group order — bring the truck three or four colleagues instead of one, cheerfully.", "insights": ["INS-C10", "INS-C04"], "evidence": ["BB-INT013-t16", "BB-INT019-t16"]},
+        {"text": "Make BorderBlend load-bearing infrastructure in his workday — the plumbing of his week, not a truck he rolls the dice on.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t28", "BB-INT019-t26"]}
+      ]
+    },
+    {
+      "type": "TASK",
+      "items": [
+        {"text": "Carve a lunch window out of a Tetris calendar and spend it without losing forty-five minutes.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t2", "BB-INT019-t4"]},
+        {"text": "Take orders from two-to-four colleagues and remember who wants no <span class=\"entity\">salsa verde</span> and who's the <span class=\"entity\">plant-based option</span>.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t16", "BB-INT019-t16"]},
+        {"text": "Gauge, before walking down, whether the truck is even there today and how deep the line is.", "insights": ["INS-C09"], "evidence": ["BB-INT013-t10", "BB-INT019-t10"]},
+        {"text": "Pay for the group and reconstruct the paperwork at month-end from a thermal receipt that's already faded to a grey square.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t18", "BB-INT019-t18"]},
+        {"text": "Occasionally source a proper working-lunch spread for an offsite or a long client session so the room doesn't have to break.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t24", "BB-INT019-t20"]}
+      ]
+    },
+    {
+      "type": "PAIN",
+      "items": [
+        {"text": "Walking down to a bare curb with a 1 o'clock looming — ten minutes gone and nothing to show, now forced to improvise the exact thing he built the habit to avoid.", "insights": ["INS-C09"], "evidence": ["BB-INT013-t10", "BB-INT019-t24"]},
+        {"text": "The 12:40 line that eats twenty minutes and makes him the guy who walks into the meeting late, still holding a taco.", "insights": ["INS-C09"], "evidence": ["BB-INT013-t10", "BB-INT019-t10"]},
+        {"text": "The <span class=\"entity\">BorderBlend app</span> promised order-ahead but the menu didn't match the board and there was no clean \"your order is ready\" moment, so it added uncertainty instead of removing it.", "insights": ["INS-C10"], "evidence": ["BB-INT013-t14", "BB-INT019-t14"]},
+        {"text": "A crumpled, fading thermal receipt is not what his finance team wants — no itemised invoice, no cost-centre or project code.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t18", "BB-INT019-t18"]},
+        {"text": "There's no obvious front door to book catering — \"I'm the customer waving money\" and can't find who to ask.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t26", "BB-INT019-t20"]}
+      ]
+    },
+    {
+      "type": "FEAR",
+      "items": [
+        {"text": "Being \"that guy\" who walks into the meeting late holding a taco — once was enough.", "insights": ["INS-C09"], "evidence": ["BB-INT013-t10", "BB-INT019-t10"]},
+        {"text": "Being forced to improvise <span class=\"entity\">lunch</span> on a cold corner — the exact outcome the habit exists to prevent.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t10", "BB-INT019-t24"]},
+        {"text": "The solved habit quietly breaking — being let down on the day he was relying on it, and having to go back to re-solving lunch daily.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t28", "BB-INT019-t24"]}
+      ]
+    },
+    {
+      "type": "ETRI",
+      "items": [
+        {"text": "The sharp memory of the empty curb and of being late once — \"not again\" — sits behind every lunch decision.", "insights": ["INS-C09"], "evidence": ["BB-INT013-t10", "BB-INT019-t24"]},
+        {"text": "The quiet satisfaction of a well-run lunch — back at his desk with minutes to spare before the next call.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t30", "BB-INT019-t28"]}
+      ]
+    },
+    {
+      "type": "XTRI",
+      "items": [
+        {"text": "A colleague's point-and-name recommendation — \"the brisket one\" was the whole pitch, sealed by the smell of real smoke.", "insights": ["INS-C02"], "evidence": ["BB-INT013-t6", "BB-INT019-t6"]},
+        {"text": "A mid-morning \"the truck is here today\" push telling him it's open, where it's parked, and that brisket's in stock.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t22", "BB-INT019-t22"]},
+        {"text": "A working lunch or client offsite on the calendar that needs feeding without breaking the room.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t24", "BB-INT019-t20"]}
+      ]
+    },
+    {
+      "type": "CRIT",
+      "items": [
+        {"text": "Can he confirm it's open, where exactly, and how long the line is — before he commits the walk.", "insights": ["INS-C09"], "evidence": ["BB-INT013-t12", "BB-INT019-t12"]},
+        {"text": "Reliability over novelty — sameness delivered predictably beats anything new.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t4", "BB-INT019-t4"]},
+        {"text": "Speed without compromise — very good in six minutes, not merely the best in forty.", "insights": ["INS-C06"], "evidence": ["BB-INT013-t8", "BB-INT019-t8"]},
+        {"text": "Expense-clean paperwork — an itemised invoice, emailed, that he can put a cost-centre or project code on.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t18", "BB-INT019-t18"]}
+      ]
+    },
+    {
+      "type": "CHAN",
+      "items": [
+        {"text": "Word of mouth and proximity — a trusted colleague's tip plus the pull of real smoke did the whole job.", "insights": ["INS-C02"], "evidence": ["BB-INT013-t6", "BB-INT019-t6"]},
+        {"text": "The <span class=\"entity\">BorderBlend app</span> — he'd live in it for order-ahead if it reliably delivered a bagged, labelled order and a clean ready-for-pickup moment.", "insights": ["INS-C10"], "evidence": ["BB-INT013-t14", "BB-INT019-t14"]},
+        {"text": "A narrow operational push — \"truck open till 2, brisket in stock\" — that he'd open every single day.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t22", "BB-INT019-t22"]},
+        {"text": "Not TikTok or Instagram — he rarely follows a food brand and does not care where it went to school, so the feeds don't reach him.", "insights": ["INS-C01"], "evidence": ["BB-INT013-t20", "BB-INT019-t20"]},
+        {"text": "A signal-only <span class=\"entity\">newsletter</span> — truck-is-here alerts, actionable specials and a way to book catering, nothing else.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t20", "BB-INT019-t20"]}
+      ]
+    },
+    {
+      "type": "RELT",
+      "rels": [
+        {"label": "With his colleagues", "points": ["Several times a week he's the one who says \"I'll grab lunch, what does everyone want\" and becomes the human order-aggregation system for the team.", "A working order-ahead would let him bring the truck three or four customers instead of one, cheerfully instead of resentfully — because a happy him brings the team, and a frustrated him says \"let's just order pizza.\""], "insights": ["INS-C04", "INS-C10"], "evidence": ["BB-INT013-t16", "BB-INT019-t16"]},
+        {"label": "With the truck & the BorderBlend app", "points": ["He's a loyal repeat customer, but takes his chances on the walk because he can't see whether the truck is open or how long the line is.", "He downloaded the <span class=\"entity\">BorderBlend app</span> for order-ahead, used it twice, and quietly gave up when it added uncertainty rather than removing it."], "insights": ["INS-C09", "INS-C10"], "evidence": ["BB-INT013-t14", "BB-INT019-t14"]},
+        {"label": "With his finance team", "points": ["Every group lunch becomes month-end friction because a faded thermal receipt is not what a finance system that trusts nobody wants to see.", "An itemised, emailed invoice with a cost-centre or project code would remove the one part of the habit that actually annoys him."], "insights": ["INS-C14"], "evidence": ["BB-INT013-t18", "BB-INT019-t18"]}
+      ]
+    }
+  ]
+}

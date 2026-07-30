@@ -1,0 +1,90 @@
+[
+  {
+    "id": "INS-C01",
+    "title": "Short-form video is the growth engine of discovery",
+    "category": "Discovery",
+    "strength": "verified",
+    "personas": ["late-night-foodie", "business-lunch", "everyday-20s"],
+    "statement": "TikTok and Instagram — especially close-up brisket and first-bite clips — are how BorderBlend's most valuable growth segments first meet the brand.",
+    "body": "The hero item is doing the acquisition work on feeds: Jasmine found BorderBlend through a specific, non-generic Instagram shot of the smoked brisket, and Priya filmed her own first-bite video that outperformed her usual content. Creator round-ups reliably name the brisket as the reason to go, and the wider market confirms 57% of 18–34s discovered a food truck via TikTok or Instagram in the past year. This is a genuine strength to press harder on — the product photographs and films well, so the ceiling on organic reach is set mostly by how consistently the brand shows up.",
+    "implication": "Doubling down on repeatable, product-led short-form formats (first bite, the smoker, the salsa verde) turns an already-strong organic channel into a predictable acquisition flywheel.",
+    "evidence": ["BB-INT007-t2", "BB-INT008-t6", "SOC-M004", "MR-C25"]
+  },
+  {
+    "id": "INS-C02",
+    "title": "Festivals and peer referral drive off-feed trial",
+    "category": "Discovery",
+    "strength": "verified",
+    "personas": ["family", "late-night-foodie", "everyday-20s"],
+    "statement": "Beyond the feeds, first contact comes through festivals, a trusted person's recommendation, or sheer proximity — the human and physical discovery paths.",
+    "body": "Thomas discovered BorderBlend among forty trucks at a river-valley festival; Carmen's kids smelled it and dragged her over at a waterfront event; André came via a coworker's after-shift referral; Megan is pulled in by her friend group rather than seeking it out. Social listening shows festival stands converting into repeat visits, and the market rates the festival/event circuit as the single most efficient trial-acquisition channel per dollar. These channels are already working in the brand's favour — the opportunity is to capture and route the reach they generate rather than let it dissipate after the event.",
+    "implication": "A documented event calendar plus a light capture-to-follow mechanism at festivals would convert high-intent first-timers into locatable regulars, extending the brand's reach advantage.",
+    "evidence": ["BB-INT011-t2", "BB-INT017-t2", "BB-INT016-t4", "SOC-M010", "MR-C26"]
+  },
+  {
+    "id": "INS-C03",
+    "title": "Late-night after-shift is a signature ritual occasion",
+    "category": "Occasion",
+    "strength": "verified",
+    "personas": ["late-night-foodie"],
+    "statement": "For service workers and the venue crowd, the post-midnight brisket run is a repeatable social ritual the brand is well-positioned to own.",
+    "body": "André describes the specific after-shift hunger and rolling up as a group — \"the after-party but it's tacos\" — while Sofia frames leaving a venue at 2 a.m. and asking \"where do we go\" as a ritual her scene shares. Social content like the 11 p.m. \"still thinking about the brisket\" post confirms the craving carries a distinct late-night charge, and the market segments the 22–29 late-night crowd as the highest willingness to try fusion and to post about it. This is a premium, underserved daypart the brand already resonates in — almost nobody serves this crowd reliable information at that hour.",
+    "implication": "Owning late-night location certainty (where is the truck parked, till when) would lock in a loyal, high-amplification crowd competitors largely ignore.",
+    "evidence": ["BB-INT017-t6", "BB-INT018-t6", "SOC-M022", "MR-C18"]
+  },
+  {
+    "id": "INS-C04",
+    "title": "Business lunch wants speed, reliability, and group ease",
+    "category": "Occasion",
+    "strength": "strong",
+    "personas": ["business-lunch"],
+    "statement": "Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.",
+    "body": "David sums the job as \"feed me, don't cost me time, don't make me think,\" and notes it is frequently a group buy for two-to-four colleagues; Nadia runs recurring Friday team treats and larger group orders; Rafael keeps returning because it is quick, decent, and reasonably priced downtown. The market segment confirms speed, reliability, and knowing the truck is where it says it is matter more than menu novelty for this audience. The product already clears their bar — the growth lever is making the transaction as dependable as the food.",
+    "implication": "Reliable order-ahead and group/catering paths would convert this segment from occasional walk-up to embedded weekday infrastructure with higher average spend.",
+    "evidence": ["BB-INT013-t4", "BB-INT013-t16", "BB-INT014-t22", "BB-INT010-t4", "MR-C19"]
+  },
+  {
+    "id": "INS-C05",
+    "title": "Weeknight family and everyday buys hinge on convenience",
+    "category": "Occasion",
+    "strength": "verified",
+    "personas": ["family", "everyday-20s"],
+    "statement": "Families solving a chaotic weeknight and everyday 20-somethings eating on the way both choose BorderBlend as the easy, low-friction option — when it's predictable.",
+    "body": "Carmen keeps BorderBlend on her brutal weeknight-dinner shortlist because it is the rare thing all her kids will eat, while Tyler grabs it a couple of times a week purely because it's on his route and fast. A social post captures the family payoff exactly — \"took the kids, they're picky, they both inhaled it, family dinner solved.\" These are frequency-driving everyday occasions the brand already wins on product; the market flags predictability and a kid-friendly traditional option as what this cohort values most.",
+    "implication": "Guaranteeing predictability (truck-is-there certainty, a dependable family/traditional option) converts these convenience visits into habitual, high-frequency loyalty.",
+    "evidence": ["BB-INT012-t4", "BB-INT015-t6", "SOC-M006", "MR-C21"]
+  },
+  {
+    "id": "INS-C06",
+    "title": "The actually-smoked brisket is the conversion engine",
+    "category": "Product & fusion",
+    "strength": "verified",
+    "personas": ["late-night-foodie", "business-lunch", "everyday-20s", "family"],
+    "statement": "Real, tastes-like-BBQ smoked brisket is the hero that converts sceptics into regulars across every persona.",
+    "body": "The signal is remarkably consistent: David returns because \"it's actually smoked — not a sauce pretending to be barbecue,\" André the line cook can tell it isn't faked, and even low-engagement Tyler calls it \"properly good... you can tell someone smoked it for real.\" App search data shows \"brisket\" as the dominant query with only 8% drop-off — it converts far better than any other term — and the market confirms fusion credibility is earned through execution proof like an actually-smoked brisket, not adjectives. This is the brand's strongest asset and the clearest reason it is winning.",
+    "implication": "Making the brisket's real-smoke story the spine of content, menu, and search protects the brand's core differentiator and keeps conversion high as it scales.",
+    "evidence": ["BB-INT013-t8", "BB-INT017-t4", "BB-INT015-t10", "SOC-M020", "APPLOG-r8", "MR-C15"]
+  },
+  {
+    "id": "INS-C07",
+    "title": "Fusion credibility and plant-based over-delivery win trust",
+    "category": "Product & fusion",
+    "strength": "verified",
+    "personas": ["late-night-foodie", "family", "everyday-20s"],
+    "statement": "Customers reward BorderBlend's fusion because the flavours make sense, and the plant-based option repeatedly beats low expectations to convert sceptics.",
+    "body": "André, food-literate from line work, insists \"the fusion is the POINT\" and distinguishes it from lazy gimmick fusion, a read Sofia — suspicious of fusion by default — shares once she tastes it. The plant-based option is a standout over-deliverer: Carmen's kid steals it off her plate and social posts show self-described vegetarians \"shook\" that it's this good at a brisket truck. The market backs the strategy hard — 68% of 18–34s prefer a \"combination that makes sense\" to a strictly traditional menu — so BorderBlend's intentional fusion is riding the category's defining growth story.",
+    "implication": "A single, well-told fusion narrative (why these combinations work) plus confident promotion of the plant-based item lets the brand lean into fusion as a differentiator without losing the \"not a gimmick\" credibility that earns trust.",
+    "evidence": ["BB-INT017-t18", "BB-INT012-t8", "SOC-M008", "SOC-M012", "MR-C13"]
+  },
+  {
+    "id": "INS-C08",
+    "title": "Price is nearing the \"almost a restaurant\" threshold",
+    "category": "Price & value",
+    "strength": "verified",
+    "personas": ["family", "everyday-20s", "business-lunch"],
+    "statement": "Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.",
+    "body": "The signal is emerging and consistent rather than alarming: Carmen finds feeding four is now basically the cost of takeout, Megan can no longer get out the door under twelve dollars, and Rafael has \"a number in my head\" above which he'd reconsider — while Nadia notes group orders edge close to restaurant catering. Social listening echoes it (\"almost the same as a restaurant now\"), and the market names this everyday-value cohort as highly sensitive to that perception. These customers still choose BorderBlend on product; the task is to protect the value story so price never becomes the reason a loyal regular does the math and hesitates.",
+    "implication": "Introducing predictable, legible value anchors — a family deal, a student price, clear combo pricing — defends frequency and reassures value-led segments while the premium product justifies the premium.",
+    "evidence": ["BB-INT012-t10", "BB-INT016-t10", "BB-INT010-t6", "SOC-M007", "MR-C20"]
+  }
+]

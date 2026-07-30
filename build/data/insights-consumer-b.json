@@ -1,0 +1,90 @@
+[
+  {
+    "id": "INS-C09",
+    "title": "Real-time \"open now\" certainty is the single biggest lever on conversion",
+    "category": "Location & app",
+    "strength": "verified",
+    "personas": ["late-night-foodie", "business-lunch", "everyday-20s", "family"],
+    "statement": "The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.",
+    "body": "The app search logs are unambiguous: \"open now\" queries drop off at 49% and \"truck near me\" at 38%, the two highest-intent searches on the platform, while \"hours today\" sheds 42% and checkout stalls when people are asked to confirm a pickup location. Consumers across every segment describe the same live-decision moment — Carmen sold her kids on brisket night and drove to an empty spot, André calls finding the truck at 1am \"the one thing,\" and David wants only three data points before he leaves the office: open, where, how long the line. The market backs this as a structural truth, not a BorderBlend quirk: 71% of mobile-food app users rank real-time open/status as their top purchase driver, ahead of price and menu, and 63% of purchases are decided same-day. Because the intent is already there — these are people trying hard to hand over money — the demand is fully qualified and waiting to be captured.",
+    "implication": "Owning live \"open now / here exactly / wait time\" status is the fastest, highest-leverage way to convert intent BorderBlend has already earned and to pull decisively ahead of trucks that still leave customers guessing.",
+    "evidence": ["APPLOG-r3", "APPLOG-r1", "APPLOG-r5", "APPLOG-r17", "SOC-M016", "BB-INT012-t14", "BB-INT017-t10", "BB-INT013-t12", "MR-C24"]
+  },
+  {
+    "id": "INS-C10",
+    "title": "The app's biggest fans feel its mismatches most — closing \"trust debt\" turns them into power users",
+    "category": "Location & app",
+    "strength": "strong",
+    "personas": ["business-lunch", "late-night-foodie", "everyday-20s"],
+    "statement": "The customers who reached for the app to go deeper — order-ahead, live menu — are exactly the high-intent users a static menu and POS mismatches let down, so fixing sync converts the most valuable segment into daily habit.",
+    "body": "The static app menu doesn't match the truck board, and POS-to-app sync produces discrepancies, so the heaviest, most committed users hit the worst experiences — a documented pattern, not an edge case. Priya downloaded it to order ahead and couldn't tell which trucks were open or trust the menu; André now checks the app \"the way you check a weather app you don't believe\"; Sofia found the app menu wasn't what was on the board. The logs show it too: order-ahead searches drop off at 44% and browse-then-exit is a significant pattern. These are enthusiasts leaning in — David is explicit that reliable order-ahead \"would change everything about how often I use them,\" moving BorderBlend from \"the truck I take my chances on\" to \"infrastructure.\"",
+    "implication": "A single live source of truth from truck board to app converts BorderBlend's most engaged customers from occasional triers into dependable power users — the stickiest position a challenger can hold.",
+    "evidence": ["PAIN-B", "PAIN-N", "FT-009", "APPLOG-r16", "APPLOG-r14", "BB-INT008-t16", "BB-INT017-t14", "BB-INT013-t28"]
+  },
+  {
+    "id": "INS-C11",
+    "title": "Clear allergen answers unlock cautious buyers and the group orderers who protect their teams",
+    "category": "Accessibility",
+    "strength": "strong",
+    "personas": ["family", "business-lunch"],
+    "statement": "When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won't risk a group on a vendor that can't answer plainly.",
+    "body": "Allergen-seeking behaviour shows real unmet demand and a clean exit: \"gluten\" searches drop off at 31%, and a customer with a nut allergy DM'd the brand directly because the answer wasn't there. The stakes rise sharply for group buyers — Nadia surveys her team for \"who can't eat what\" before every office order and is blunt that a missing straight answer \"creates work and it creates risk,\" so \"sometimes I just don't book the thing\" and goes to a vendor who has it spelled out. This is a segment BorderBlend can win outright: the plant-based line already over-delivers and \"plant-based\" searches convert well at 12% drop-off, showing dietary content pays back when it's present.",
+    "implication": "Making allergen and dietary information effortless to find removes a hard blocker for allergy sufferers and unlocks the high-value family and catering orders that hinge on a confident, documented answer.",
+    "evidence": ["APPLOG-r11", "SOC-M009", "BB-INT014-t14", "BB-INT014-t16", "APPLOG-r10"]
+  },
+  {
+    "id": "INS-C12",
+    "title": "A points programme people can actually see would convert affection that's already there",
+    "category": "Loyalty & subscription",
+    "strength": "strong",
+    "personas": ["everyday-20s", "late-night-foodie", "family"],
+    "statement": "BorderBlend's loyalty programme is opaque enough that regulars don't know it exists or abandon the account interface — a simple, visible scheme would monetise devotion the brand has already earned.",
+    "body": "The programme currently works against itself: \"loyalty/points\" searches drop off at 33%, the account interface is one \"most abandon,\" and there's a steady return-without-ordering pattern of people just checking status. The customers say it plainly and without heat — Megan, a self-described broke student and a natural regular, didn't even know a points programme existed; André has never bothered because \"it's confusing, I don't even know if I have an account\"; Thomas, burned by a fiddly coffee card, wants only \"scan when you pay, points accumulate, get notified\" with no separate download. The demand is real and category-wide: 66% of frequent mobile-food buyers say they'd join a rewards programme if it were genuinely simple.",
+    "implication": "Replacing the opaque account with a frictionless scan-and-earn scheme turns existing enthusiasm into measurable repeat frequency — pure upside from customers who already love the food.",
+    "evidence": ["PAIN-O", "APPLOG-r19", "APPLOG-r18", "BB-INT016-t22", "BB-INT017-t24", "BB-INT011-t12", "MR-C27"]
+  },
+  {
+    "id": "INS-C13",
+    "title": "For the late-night crowd, \"we're parked here till 3\" is the newsletter they'd actually subscribe to",
+    "category": "Loyalty & subscription",
+    "strength": "strong",
+    "personas": ["late-night-foodie", "everyday-20s"],
+    "statement": "Late-night foodies will opt in enthusiastically for one thing above all — a live location drop telling them where the truck is parked tonight — plus insider access to seasonal previews, and will bail instantly on generic push.",
+    "body": "This segment's subscription trigger is the exact information nobody serves them. André would sign up \"in a HEARTBEAT\" if BorderBlend could just text \"we're at Richmond and Portland till 3am tonight\"; Sofia names \"location drops\" as the thing she'd subscribe to, ideally late-night specific — \"nobody serves the 1am crowd information\" — alongside insider seasonal previews and a \"you're on the list\" feeling. Even low-engagement Tyler, who says \"God no\" to email, would want a text that says \"we're here today.\" The blocker is equally clear: Sofia would unsubscribe fast from \"three ORDER NOW pushes a day with fire emojis.\" The market confirms the mechanic — opt-in performs best when tied to a concrete value moment like first notice of a location.",
+    "implication": "A location-alert subscription tied to seasonal moments like Fuego Nights converts the brand's most social, high-frequency amplifiers into an owned, opt-in audience — and their word-of-mouth compounds the reach.",
+    "evidence": ["BB-INT017-t22", "BB-INT018-t26", "BB-INT018-t28", "BB-INT015-t28", "MR-C28"]
+  },
+  {
+    "id": "INS-C14",
+    "title": "The business-lunch buyer subscribes for operational reassurance, not marketing",
+    "category": "Loyalty & subscription",
+    "strength": "strong",
+    "personas": ["business-lunch"],
+    "statement": "Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: \"the truck is here today,\" confirmed catering bookings, and clean invoicing, not brand-story content.",
+    "body": "This segment draws a sharp signal-versus-noise line. David would unsubscribe in four seconds from \"meet the team\" and recipes, but calls a \"truck is here today\" alert \"the highest-value message they could possibly send me and it costs them basically nothing.\" Nadia — who unsubscribes from everything, \"my inbox is a warzone\" — says a group-side newsletter is \"a hundred percent yes\" if it's operational reassurance: \"talk to me like I'm running an operation, because I am… give me the boring stuff — dates.\" Both point to a booking gap the brand is leaving on the table: David does catered working lunches with \"no clear path to book that\" and is \"the customer waving money.\" The category proof holds — opt-in tied to a concrete value moment outperforms.",
+    "implication": "An operational subscription — daily location alerts plus a visible catering/office-order path and proper invoicing — converts BorderBlend from \"the truck I take my chances on\" into standing workday infrastructure and opens a high-value group-order revenue line.",
+    "evidence": ["BB-INT013-t20", "BB-INT013-t22", "BB-INT013-t24", "BB-INT014-t26", "BB-INT014-t28", "MR-C28"]
+  },
+  {
+    "id": "INS-C15",
+    "title": "Everyday and family buyers subscribe for concrete value: a student deal, a family price, early access",
+    "category": "Loyalty & subscription",
+    "strength": "strong",
+    "personas": ["everyday-20s", "family"],
+    "statement": "Value-led students and busy parents will opt in only when the email does a job for them — a real student discount, a predictable family deal, early access to seasonal — and treat anything that just \"talks at\" them as inbox noise.",
+    "body": "For these segments the subscription bar is a tangible payoff, not brand affection. Megan, whose inbox is \"a graveyard,\" would sign up for \"a proper student thing — show your student ID, or a code,\" and says it \"would genuinely change how often I go.\" Carmen's test is functional to the core: \"if you can take one decision off my plate you're my favourite brand… if you're just talking at me you're in the trash\" — a family deal she doesn't have to do math on, and help planning around the truck schedule, would earn the opt-in. Both are price-sensitive as the brand levels up its positioning, and the category shows the answer is design, not discount alone: opt-in tied to a concrete value moment such as early access to a seasonal drop is where best-in-class newsletters win.",
+    "implication": "A value-anchored subscription — student pricing, a clear family deal, and first access to seasonal menus — converts convenience-driven and budget-conscious regulars into a repeat, addressable audience without eroding the premium the brand has built.",
+    "evidence": ["BB-INT016-t26", "BB-INT016-t28", "BB-INT012-t20", "BB-INT012-t22", "MR-C28"]
+  },
+  {
+    "id": "INS-C16",
+    "title": "Getting Québécois French right turns a felt exclusion into a point of difference",
+    "category": "Localisation",
+    "strength": "strong",
+    "personas": ["late-night-foodie"],
+    "statement": "Quebec consumers experience the English-only national presence as a small but real exclusion, and genuine fr-CA — not translated-from-France copy — would signal respect and set BorderBlend apart in a market most brands under-serve.",
+    "body": "Consumers name it directly. Sofia describes the all-English national account as \"a small exclusion but a real one— you feel like an afterthought,\" and is precise that it must be Québécois French, not the French from France; English-only is her instant unsubscribe trigger. The pattern surfaces publicly too — a Quebec follower comments \"why are your captions always in English?\" on a seasonal post. This is a differentiation opportunity, not a deficit: 59% of Quebec respondents say European-French wording reads wrong, and doing French properly is an area competitors routinely miss. Sofia frames the upside herself — getting it right signals \"they see Montreal as a place with its own culture and not a franchise you paste the English onto.\"",
+    "implication": "Genuine, on-cadence fr-CA content converts a market most brands treat as a translation afterthought into a visible sign of respect — deepening loyalty among Quebec's influential, word-of-mouth-driven diners.",
+    "evidence": ["BB-INT018-t14", "BB-INT018-t16", "BB-INT018-t18", "SOC-M021", "MR-C31"]
+  }
+]

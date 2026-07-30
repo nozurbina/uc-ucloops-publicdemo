@@ -1,0 +1,3268 @@
+{
+ "file": "journey-map-business-lunch-v2.html",
+ "journey_description": "Two professionals — Omar, a solo weekday regular, and Grace, a thirty-person office coordinator — travel from a trusted colleague’s tip about a signature <span class=\"entity\">Dish</span> at the <span class=\"entity\">Truck</span>, through solo vetting, the <span class=\"entity\">App</span>, and group <span class=\"entity\">Catering</span> orders, to opting into the lunch alerts and <span class=\"entity\">Catering</span> <span class=\"entity\">Newsletter</span> that turn an earned habit into a subscribed, year-round relationship.<div class=\"trail-legend\"><b>Link trail:</b>\n<span class=\"step\">Journey <em>(this page)</em></span> →\n<span class=\"step\"><a href=\"persona-business-lunch.html\">Omar &amp; Grace’s persona (Business Lunch)</a></span> →\n<span class=\"step\"><a href=\"insights.html\">36 research insights</a></span> →\n<span class=\"step\">Source verbatims <em>(interviews, tickets, app logs, market report — linked from each insight)</em></span>.\n<br>Every persona row links up into the Business-Lunch persona (<span class=\"prov-link\" style=\"opacity:1\">↳ from Omar’s / Grace’s persona</span>); every item ID is a deep link to its source; each opportunity’s <em>Show references</em> opens the persona lines, insights and source verbatims it draws on; each insight links down to the dated verbatim.</div>",
+ "items": [
+  {
+   "id": "GOAL-SHAR-0001",
+   "row": "Goals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Convert the trusted human tip — the brand’s highest-performing channel — into a planned first visit for both the solo professional and the coordinator"
+  },
+  {
+   "id": "GOAL-SHAR-0002",
+   "row": "Goals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Be instantly verifiable at the moment of the tip: location, schedule, and a visible group/<span class=\"entity\">Catering</span> path"
+  },
+  {
+   "id": "GOAL-OMAR-0001",
+   "row": "Goals",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Register a credible new lunch option without spending any real decision effort on it — a tip from a colleague I trust means the first try is already vetted"
+  },
+  {
+   "id": "GOAL-OMAR-0002",
+   "row": "Goals",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Confirm the truck sits within a viable walk of my desk and my calendar"
+  },
+  {
+   "id": "GOAL-OMAR-0003",
+   "row": "Goals",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Keep lunch a solved problem — I’m not shopping, I’m filing"
+  },
+  {
+   "id": "GOAL-GRAC-0001",
+   "row": "Goals",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Identify a vendor that could level up our team lunches beyond the sad-tray-of-sandwiches default"
+  },
+  {
+   "id": "GOAL-GRAC-0002",
+   "row": "Goals",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Establish whether BorderBlend is even a candidate for group work: do they cater, can they invoice, will they show up"
+  },
+  {
+   "id": "GOAL-GRAC-0003",
+   "row": "Goals",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Protect my own name — no team exposure until I’ve vetted it personally"
+  },
+  {
+   "id": "GOAL-SHAR-0003",
+   "row": "Goals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Let the hero <span class=\"entity\">Dish</span> prove the quality-to-time promise in a single solo visit"
+  },
+  {
+   "id": "GOAL-SHAR-0004",
+   "row": "Goals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Pass the professional’s silent operational vetting — throughput, consistency, vendor readiness — alongside taste"
+  },
+  {
+   "id": "GOAL-OMAR-0004",
+   "row": "Goals",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Answer the only question that matters in one visit: is it worth the minutes — very good brisket in six minutes, not the best brisket in the city"
+  },
+  {
+   "id": "GOAL-OMAR-0005",
+   "row": "Goals",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Figure out what could let me down — how long the line gets, and whether the truck’s even there on a given day"
+  },
+  {
+   "id": "GOAL-OMAR-0006",
+   "row": "Goals",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Time the full desk-to-desk loop against a real between-meetings window"
+  },
+  {
+   "id": "GOAL-GRAC-0004",
+   "row": "Goals",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Personally verify the food before any team exposure — I will never put my name on something I haven’t eaten myself"
+  },
+  {
+   "id": "GOAL-GRAC-0005",
+   "row": "Goals",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Scout the operation up close: speed, service, how they handle a rush, what sells out and when"
+  },
+  {
+   "id": "GOAL-GRAC-0006",
+   "row": "Goals",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Decide whether the quality justifies the real work of investigating catering, invoicing, and reliability"
+  },
+  {
+   "id": "GOAL-SHAR-0005",
+   "row": "Goals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Hold the earned rotation slot: make BorderBlend the reliable weekday default and grow the group-run habit"
+  },
+  {
+   "id": "GOAL-SHAR-0006",
+   "row": "Goals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Open a working group and <span class=\"entity\">Catering</span> channel with availability and pricing up front"
+  },
+  {
+   "id": "GOAL-OMAR-0007",
+   "row": "Goals",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Solve lunch once and never re-solve it — make BorderBlend the default known quantity"
+  },
+  {
+   "id": "GOAL-OMAR-0008",
+   "row": "Goals",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Turn the grudging solo-run-for-four into a clean group order: four labelled items, one bag, one pickup"
+  },
+  {
+   "id": "GOAL-OMAR-0009",
+   "row": "Goals",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Know before I leave the desk, every time: open, where, and how long is the line"
+  },
+  {
+   "id": "GOAL-GRAC-0007",
+   "row": "Goals",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Move from personal endorsement to a first team order without putting my reputation at risk — the casual Friday treat, not the client event"
+  },
+  {
+   "id": "GOAL-GRAC-0008",
+   "row": "Goals",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Get the price up front, per head, so I can have it pre-approved — I’m more sensitive to surprises than to the number"
+  },
+  {
+   "id": "GOAL-GRAC-0009",
+   "row": "Goals",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Get a direct line to the Calgary operator and keep it warm: availability, menu, headcount, dietary"
+  },
+  {
+   "id": "GOAL-SHAR-0007",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Win on operations: deliver on time, at headcount, with written confirmation, allergen answers, and clean invoices as standard"
+  },
+  {
+   "id": "GOAL-SHAR-0008",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Make it easy for already-convinced business customers to say yes with real money"
+  },
+  {
+   "id": "GOAL-OMAR-0010",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Expense cleanly, forty times a quarter: a proper itemized invoice, emailed, with a cost centre or client code"
+  },
+  {
+   "id": "GOAL-OMAR-0011",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Find an obvious way to just book them for a proper paid working lunch — the one that beats the same three sad sandwich platters"
+  },
+  {
+   "id": "GOAL-OMAR-0012",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Put my name on a team order with confidence — I vouch for things I’ve verified, and I’ve verified the food"
+  },
+  {
+   "id": "GOAL-GRAC-0010",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Secure a hard, forwardable, in-writing confirmation: date, arrival time, duration, truck, driver’s cell — locked"
+  },
+  {
+   "id": "GOAL-GRAC-0011",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Get ingredient-level allergen information in writing that my tree-nut/EpiPen colleague can judge for himself"
+  },
+  {
+   "id": "GOAL-GRAC-0012",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Have our stock ring-fenced — reserved, prepped, guaranteed for my count, not first-come"
+  },
+  {
+   "id": "GOAL-GRAC-0013",
+   "row": "Goals",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Run the Friday treat, then the monthly lunch, then the high-stakes client catering in front of executives — and know the winter plan"
+  },
+  {
+   "id": "GOAL-SHAR-0009",
+   "row": "Goals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Convert the earned habit into owned subscriptions: the truck-day alert and the <span class=\"entity\">Catering</span> list"
+  },
+  {
+   "id": "GOAL-SHAR-0010",
+   "row": "Goals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Turn subscribers into champions who route colleagues and coordinators into the journey, year-round"
+  },
+  {
+   "id": "GOAL-OMAR-0013",
+   "row": "Goals",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Never walk down to an empty corner again — plan the midday around one trustworthy notification"
+  },
+  {
+   "id": "GOAL-OMAR-0014",
+   "row": "Goals",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Graduate BorderBlend from “the truck I take my chances on” to load-bearing infrastructure"
+  },
+  {
+   "id": "GOAL-OMAR-0015",
+   "row": "Goals",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Keep turning the morning alert into group runs — two to four colleagues, several times a week, happily"
+  },
+  {
+   "id": "GOAL-GRAC-0014",
+   "row": "Goals",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Stop having to remember BorderBlend exists — have them come to me at the right moment of the year with the practical details I actually need"
+  },
+  {
+   "id": "GOAL-GRAC-0015",
+   "row": "Goals",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Book constantly with confidence: real written confirmation and a day-before reminder as standard"
+  },
+  {
+   "id": "GOAL-GRAC-0016",
+   "row": "Goals",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Become the person who sends more business their way, year-round, winter option included"
+  },
+  {
+   "id": "NARR-OMAR-0001",
+   "row": "Narrative",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "We’re walking back from a meeting near King and Priyesh points at a truck and says “the brisket one.” That’s the entire pitch, and honestly, that’s the right length. I don’t follow food accounts, I don’t read reviews — I don’t have the minutes, and lunch is a problem I solved years ago. But a recommendation from a guy who bills by the hour carries weight. I clock the corner: maybe four minutes from the lobby. Fine. It goes in the mental file under “try when the calendar can absorb a line.” Anyway. Filed."
+  },
+  {
+   "id": "NARR-GRAC-0001",
+   "row": "Narrative",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Okay, so here’s the thing — I didn’t find them the way a normal person finds a taco truck. One of our engineers came back from a downtown offsite going “there’s a truck by the LRT, the brisket one, you have to.” Lovely. But I’m the person who feeds thirty people, so my brain skips straight past the taco to the checklist: do they cater? Can they invoice? Will they actually show up? So first I pull up borderblend.ca at my desk, notes open, and I start looking for a catering page before I’ve tasted a single thing. That’s the order of operations for me. Always has been."
+  },
+  {
+   "id": "NARR-OMAR-0002",
+   "row": "Narrative",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Thursday, a rare 90-minute gap, so I go. Reluctantly — a line at 12:40 is a real risk to a 1 o’clock, and I have been the guy who walks in late holding a taco. Once. Not again. Eight people ahead of me; I time it. Eleven minutes to the window, order the <span class=\"entity\">smoked brisket taco</span>, and — it’s genuinely good. Actually smoked, not a sauce pretending. Good enough that I registered it, which food rarely does when I’m in work mode. Desk to desk: twenty-two minutes. Eighty percent of a restaurant for twenty percent of the time cost. That ratio, I’ll take."
+  },
+  {
+   "id": "NARR-GRAC-0002",
+   "row": "Narrative",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "So I take my own lunch hour for this — that’s the rule, non-negotiable, I’ve been burned before. I walk over to the truck by the LRT, stand in the line like a civilian, and order the <span class=\"entity\">smoked brisket</span>. And, credit where it’s due: it’s very good. Not sad-tray-of-sandwiches good — actually good, actually smoked. But here’s the thing, I’m not just eating, I’m watching. How fast the line moves. How the two of them handle the rush. And I clock that the brisket sells out — early afternoon, gone. Great problem for them. A flashing warning light for me and my thirty people."
+  },
+  {
+   "id": "NARR-OMAR-0003",
+   "row": "Narrative",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "I didn’t decide to become a regular. It happened. Two, three times a week now, and increasingly it’s “I’ll grab lunch, what does everyone want” — so I’m carrying four orders in my head, tracking who’s plant-based and who skips the <span class=\"entity\">salsa verde</span>. The food has earned its slot; my job is protecting the slot. So I downloaded the app to order ahead — tap from the desk, walk down, one bag waiting. That was the dream. The app didn’t deliver it. Couldn’t tell if the truck was actually open, menu didn’t match the board, no “ready” moment. Used it twice. Closed it. Anyway. Back to walking up and taking my chances — at least when it goes wrong that way, I know exactly how."
+  },
+  {
+   "id": "NARR-GRAC-0003",
+   "row": "Narrative",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Right, so now the real work starts. I go back to borderblend.ca looking for the catering page — a “book us” button, anything — and it’s there, but it’s kind of buried, honestly. Built for the one-taco person, not for me booking thirty. I fill out the form, and then the Calgary operator emails back — lovely guy, genuinely — and we sort the actual details over email and one phone call, which I don’t mind, I prefer a human for anything that matters. But there were about four steps before I even knew if my date was available. Meanwhile I’ve sent my form to the team: how many, and who can’t eat what. Friday treat first. Low stakes. That’s deliberate."
+  },
+  {
+   "id": "NARR-OMAR-0004",
+   "row": "Narrative",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "The stakes went up quietly. It’s not just my lunch now — I’ve vouched for this truck to my team, and I’ve been asked to sort food for a working session: twelve people, client in the room, nobody breaking for an hour. I’d genuinely rather roll up a taco spread than platter number three. So I try to book it and — there’s just no obvious way to do it. Nowhere on the site, nobody to e-mail, no way to say “I would like to give you a defined amount of money for a defined event.” I’m the customer waving money. Meanwhile finance has flagged my fading thermal receipts twice this quarter. I’m not asking them to convince me. I’m already convinced. Make it easy to say yes."
+  },
+  {
+   "id": "NARR-GRAC-0004",
+   "row": "Narrative",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Okay, this is my pet peeve, so bear with me. The operator’s confirmation was “yep, we’ll be there!” — friendly, warm, and completely unforwardable. I am not sending “yep!” to leadership. So I chased it and pinned it down myself: date, arrival 11:30, ninety minutes, truck, driver’s cell. Same story with allergens — I emailed, got “let me check with the kitchen,” and had to push until it was written and specific, because I don’t gamble on somebody’s airway. The invoice took a couple of asks too. And then? They came. On time, full headcount, food was a hit, the client event landed beautifully. I just didn’t sleep the night before — because I didn’t have the paper until I’d extracted it myself."
+  },
+  {
+   "id": "NARR-OMAR-0005",
+   "row": "Narrative",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "They shipped the thing I’d have specced myself: a lunch alert. Push at 11:30 — “Bay Street truck open till 2, brisket in stock.” I’m a man whose inbox bar is very high; I unsubscribe from things for sport. I signed up for this one on the spot, because it’s not marketing, it’s operational information. One notification and my entire midday is planned. And the day it said “not out today — back tomorrow,” that was the moment I actually trusted it. Tell me the bad news early and I believe the good news. So: alerts on, loyalty account created, group runs booked off the morning push. It’s not my favourite restaurant. It’s better than that. It’s infrastructure. You don’t churn out of infrastructure."
+  },
+  {
+   "id": "NARR-GRAC-0005",
+   "row": "Narrative",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "So here’s the thing: I unsubscribe from everything. My inbox is a warzone. But when the catering list invitation came through, I signed up without blinking — a hundred percent yes — because it’s the boring version, which is to say, the correct version. The catering menu with the allergen sheet attached, so I forward it to the team and finance in one shot. Real availability. “Spring catering’s open, here’s how to lock a date.” And written confirmations with a day-before reminder baked into how they operate. I’ve already locked our Friday treats and the monthly lunches through fall, asked about the winter drop-off, and told two other office managers. Feed my team well and I will love you forever."
+  },
+  {
+   "id": "QUES-OMAR-0001",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Is this actually good, or is it just new to Priyesh?"
+  },
+  {
+   "id": "QUES-OMAR-0002",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "How far is that corner from my desk, door to door?"
+  },
+  {
+   "id": "QUES-OMAR-0003",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Is it there every weekday, or does it move around?"
+  },
+  {
+   "id": "QUES-OMAR-0004",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "What does the line look like at peak — 12:15 to 12:45?"
+  },
+  {
+   "id": "QUES-GRAC-0001",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Do they do group and catering orders at all, or is this strictly a one-taco-at-a-time operation?"
+  },
+  {
+   "id": "QUES-GRAC-0002",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Can they produce a proper invoice — itemised, GST broken out, our billing name on it?"
+  },
+  {
+   "id": "QUES-GRAC-0003",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Is there a Calgary truck with a regular spot, or is it wherever the wind blows?"
+  },
+  {
+   "id": "QUES-GRAC-0004",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Who do I even contact — head office in Toronto, or the local operator?"
+  },
+  {
+   "id": "QUES-GRAC-0005",
+   "row": "Questions",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "What happens in winter? Because this is Calgary, and February is coming whether they like it or not."
+  },
+  {
+   "id": "QUES-OMAR-0005",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Does the line move at a predictable rate, or does one complicated order stall everything?"
+  },
+  {
+   "id": "QUES-OMAR-0006",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Is the brisket like this every time, or did I catch a good day?"
+  },
+  {
+   "id": "QUES-OMAR-0007",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Do they sell out — and when?"
+  },
+  {
+   "id": "QUES-OMAR-0008",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "What’s my worst-case desk-to-desk time if I hit peak?"
+  },
+  {
+   "id": "QUES-GRAC-0006",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "If brisket sells out on an ordinary day, what happens to a booked order for thirty — is my stock reserved or am I gambling?"
+  },
+  {
+   "id": "QUES-GRAC-0007",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "The <span class=\"entity\">Korean-style chicken</span>, the <span class=\"entity\">salsa verde</span> — what’s actually in the sauces? Sesame? Nuts? Shared prep?"
+  },
+  {
+   "id": "QUES-GRAC-0008",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Can this two-person window physically serve thirty people in a lunch window, or does group mean a different setup?"
+  },
+  {
+   "id": "QUES-GRAC-0009",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Who runs this truck — is the Calgary operator someone I can build a working relationship with?"
+  },
+  {
+   "id": "QUES-GRAC-0010",
+   "row": "Questions",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "The <span class=\"entity\">plant-based option</span> — is it good enough for my vegetarians, or a token?"
+  },
+  {
+   "id": "QUES-OMAR-0009",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Before I leave the desk: is it open today, where exactly, and how long is the line right now?"
+  },
+  {
+   "id": "QUES-OMAR-0010",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Can I place one order with four labelled items instead of reciting four orders at the window?"
+  },
+  {
+   "id": "QUES-OMAR-0011",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Why does the app menu not match the board — which one is lying?"
+  },
+  {
+   "id": "QUES-OMAR-0012",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Will an order-ahead actually be bagged when I arrive, or am I standing there anyway?"
+  },
+  {
+   "id": "QUES-GRAC-0011",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "What’s the per-head price, in writing, before I go to finance — not after?"
+  },
+  {
+   "id": "QUES-GRAC-0012",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Which Fridays is the truck actually available, and how far ahead do I need to book?"
+  },
+  {
+   "id": "QUES-GRAC-0013",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Can the menu flex for my two vegetarians, my plant-based person, and my tree-nut colleague?"
+  },
+  {
+   "id": "QUES-GRAC-0014",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Is the form-then-email-then-call dance the permanent process, or is there a faster lane for repeat bookings?"
+  },
+  {
+   "id": "QUES-GRAC-0015",
+   "row": "Questions",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "If Friday goes well, what does the bigger monthly lunch look like — same process or something sturdier?"
+  },
+  {
+   "id": "QUES-OMAR-0013",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Who do I actually ask about catering — the guy at the window, a form, an email address that a human reads?"
+  },
+  {
+   "id": "QUES-OMAR-0014",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Can I get an itemized invoice, emailed as a PDF, with a client code on it?"
+  },
+  {
+   "id": "QUES-OMAR-0015",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Can they commit to a headcount and a time in writing — something I can forward internally?"
+  },
+  {
+   "id": "QUES-OMAR-0016",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "What happens to my twelve-person order if the truck has a normal lunchtime rush at the same time?"
+  },
+  {
+   "id": "QUES-GRAC-0016",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Can I get a real booking confirmation as standard — not something I have to chase every single time?"
+  },
+  {
+   "id": "QUES-GRAC-0017",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Is the allergen answer written, ingredient-level, and final — or still “let me check with the kitchen”?"
+  },
+  {
+   "id": "QUES-GRAC-0018",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Is my thirty-person order ring-fenced, or could a good Friday walk-up line eat my brisket?"
+  },
+  {
+   "id": "QUES-GRAC-0019",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Will the invoice arrive as an itemised PDF — GST broken out, billing name, PO reference — without a second ask?"
+  },
+  {
+   "id": "QUES-GRAC-0020",
+   "row": "Questions",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "What exactly is the November-through-March plan — drop-off? indoor setup? Because nobody’s queueing at a window at minus twenty-five, and I am not putting clients in a parking lot in parkas"
+  },
+  {
+   "id": "QUES-OMAR-0017",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Does the alert stay accurate — open when it says, where it says, with what it says in stock?"
+  },
+  {
+   "id": "QUES-OMAR-0018",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Will this list stay pure signal, or does the brand-story stuff start creeping in?"
+  },
+  {
+   "id": "QUES-OMAR-0019",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Does the loyalty side ever translate into something operational — like priority pickup on group runs?"
+  },
+  {
+   "id": "QUES-OMAR-0020",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "If the truck moves spots or seasons change, does the alert move with it?"
+  },
+  {
+   "id": "QUES-GRAC-0021",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Will the list stay operational — dates, allergens, availability, invoicing — or drift into “check out our new taco”?"
+  },
+  {
+   "id": "QUES-GRAC-0022",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Does the day-before reminder actually arrive before my first big booking, or is it a promise on a signup page?"
+  },
+  {
+   "id": "QUES-GRAC-0023",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "What does the winter offer look like in practice — drop-off catering? An indoor setup? Priced how?"
+  },
+  {
+   "id": "QUES-GRAC-0024",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Can repeat bookings get a fast lane — same team, same billing, one confirmation e-mail?"
+  },
+  {
+   "id": "QUES-GRAC-0025",
+   "row": "Questions",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "When I refer the other office managers, does their experience match mine — because my name rides on that too"
+  },
+  {
+   "id": "PROB-OMAR-0001",
+   "row": "Problems",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "I have zero appetite for evaluating a new lunch option — every minute spent researching food is a minute the client doesn’t get back"
+  },
+  {
+   "id": "PROB-OMAR-0002",
+   "row": "Problems",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "I can see the truck but I can’t see the commitment: no idea if it’s a six-minute stop or a twenty-five-minute gamble"
+  },
+  {
+   "id": "PROB-OMAR-0003",
+   "row": "Problems",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "A recommendation is not a schedule — “it’s usually there” is doing a lot of work in that sentence"
+  },
+  {
+   "id": "PROB-OMAR-0004",
+   "row": "Problems",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "My calendar this week has no slot that can absorb an unknown line"
+  },
+  {
+   "id": "PROB-GRAC-0001",
+   "row": "Problems",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "The website is clearly built for the person buying one taco on their lunch — nothing on a first look tells me how to order for a group, and I’m the one arriving with real money"
+  },
+  {
+   "id": "PROB-GRAC-0002",
+   "row": "Problems",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "An enthusiastic tip tells me the food is good; it tells me absolutely nothing about reliability, and reliability is my entire job"
+  },
+  {
+   "id": "PROB-GRAC-0003",
+   "row": "Problems",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "I once had a caterer no-show a 22-person client lunch — VP in the lobby, forty panic pizzas — so every new vendor starts from “prove to me you’ll be there”"
+  },
+  {
+   "id": "PROB-GRAC-0004",
+   "row": "Problems",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "No visible answer to the boring-but-critical questions: invoicing, per-head pricing, headcount handling"
+  },
+  {
+   "id": "PROB-OMAR-0005",
+   "row": "Problems",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "The queue is an unpriced cost — eight people could be nine minutes or nineteen, and I can’t tell from the back of the line"
+  },
+  {
+   "id": "PROB-OMAR-0006",
+   "row": "Problems",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "No visibility on sellouts: I half-heard the guy two ahead of me get told the brisket was low, and I did the maths on having queued for nothing"
+  },
+  {
+   "id": "PROB-OMAR-0007",
+   "row": "Problems",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "One data point is not reliability — a single great taco tells me about the food, not about the operation"
+  },
+  {
+   "id": "PROB-OMAR-0008",
+   "row": "Problems",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Standing in a line is the one part of this that doesn’t scale with my calendar"
+  },
+  {
+   "id": "PROB-GRAC-0005",
+   "row": "Problems",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "The menu board tells me “<span class=\"entity\">Korean-style chicken taco</span>, delicious” — it does not tell me what’s in the sauce, and I have a colleague with a genuine EpiPen-grade tree-nut allergy, so I cannot guess"
+  },
+  {
+   "id": "PROB-GRAC-0006",
+   "row": "Problems",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Watching the brisket sell out by early afternoon plants the sellout fear for group orders: “first come” is fine for one taco and a nightmare scenario for a client event"
+  },
+  {
+   "id": "PROB-GRAC-0007",
+   "row": "Problems",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "One truck, one window, one line — nothing about the walk-up experience tells me how they’d handle thirty covers on a schedule"
+  },
+  {
+   "id": "PROB-GRAC-0008",
+   "row": "Problems",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "It’s a gorgeous day today; standing here I’m already doing the math on minus twenty-five in February and clients in parkas"
+  },
+  {
+   "id": "PROB-OMAR-0009",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "The worst outcome keeps being possible: ten minutes walked, empty corner, 1 o’clock looming, and now I’m improvising — the exact thing I was trying to avoid"
+  },
+  {
+   "id": "PROB-OMAR-0010",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "The app added uncertainty instead of removing it — I half-decided on something at my desk that wasn’t even on the board when I got there"
+  },
+  {
+   "id": "PROB-OMAR-0011",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "No clear “your order is ready” moment, so order-ahead just relocates the waiting instead of deleting it"
+  },
+  {
+   "id": "PROB-OMAR-0012",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Carrying four colleagues’ orders verbally through a truck window is an error-prone process I would never accept in my actual work"
+  },
+  {
+   "id": "PROB-OMAR-0013",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Twenty minutes of line is the difference between early for my next thing and the guy who walks in late holding a taco"
+  },
+  {
+   "id": "PROB-GRAC-0009",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "The catering page is buried on a site built for the one-taco person — I’m arriving waving money and I still have to go hunting for it"
+  },
+  {
+   "id": "PROB-GRAC-0010",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Four steps before I even know if they’re available on my date; availability should be the first answer, not the fourth"
+  },
+  {
+   "id": "PROB-GRAC-0011",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "No published per-head catering price sheet, so pre-approval with finance means back-and-forth I shouldn’t have to do"
+  },
+  {
+   "id": "PROB-GRAC-0012",
+   "row": "Problems",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "My team form comes back with the usual mosaic — vegetarians, one plant-based, one serious allergy — and the public menu gives me nothing ingredient-level to plan against"
+  },
+  {
+   "id": "PROB-OMAR-0014",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "There’s simply no way I can find to book catering — I’m trying to hand over a large, defined amount of money and I can’t even find where to ask"
+  },
+  {
+   "id": "PROB-OMAR-0015",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "A crumpled thermal receipt that’s already fading is not what my finance team wants to see, forty times a quarter"
+  },
+  {
+   "id": "PROB-OMAR-0016",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Half these lunches are billable to a project, and without a cost centre or client code on paper the hassle lands on me at month-end"
+  },
+  {
+   "id": "PROB-OMAR-0017",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Asking at the window mid-rush gets me a nod and a verbal “yeah, probably” — which is not a thing I can put in front of a client session"
+  },
+  {
+   "id": "PROB-OMAR-0018",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "If I vouch for this and the order shows up short or late in front of a client, that’s my name on it, not theirs"
+  },
+  {
+   "id": "PROB-GRAC-0013",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "“Yep, we’ll be there!” is not a confirmation — I needed date, arrival time, duration, truck and driver’s cell in writing, and I had to chase and pin it down myself"
+  },
+  {
+   "id": "PROB-GRAC-0014",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "I lost sleep the night before the client event because the paper trail was thinner than my standards — the 22-person no-show lives in the back of my head every single time"
+  },
+  {
+   "id": "PROB-GRAC-0015",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Allergen answers came slowly and informally; with an EpiPen allergy on the team, “let me check with the kitchen” is the difference between booking and walking to a competitor with it all spelled out"
+  },
+  {
+   "id": "PROB-GRAC-0016",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "The invoice needed a couple of asks and arrived a little informal — finance bounces anything that isn’t an itemised PDF with GST broken out and our PO on it, and then I’m chasing again"
+  },
+  {
+   "id": "PROB-GRAC-0017",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "No stated guarantee that a booked order is reserved stock — the Saturday sellout replays in my head with a client watching"
+  },
+  {
+   "id": "PROB-GRAC-0018",
+   "row": "Problems",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "The winter question is still open, which caps this at a spring-to-fall relationship unless someone gives me an indoor or drop-off answer"
+  },
+  {
+   "id": "PROB-OMAR-0019",
+   "row": "Problems",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "One false alert — “brisket in stock” and it isn’t — re-opens every bit of uncertainty this subscription exists to close"
+  },
+  {
+   "id": "PROB-OMAR-0020",
+   "row": "Problems",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "If the feed drifts into recipes and meet-the-team content, I’m gone in four seconds, and taking the useful signal down with it"
+  },
+  {
+   "id": "PROB-OMAR-0021",
+   "row": "Problems",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "The alert solves me, but the group order still lives in my head and at the window — the last un-automated step in the routine"
+  },
+  {
+   "id": "PROB-OMAR-0022",
+   "row": "Problems",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "A loyalty programme framed as points and badges is noise; I don’t need to be rewarded, I need to be informed"
+  },
+  {
+   "id": "PROB-GRAC-0019",
+   "row": "Problems",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "One promotional-only e-mail and my trust wobbles — I signed up for the boring, useful version, not a specials flyer, and my unsubscribe finger is famously quick"
+  },
+  {
+   "id": "PROB-GRAC-0020",
+   "row": "Problems",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "The list only truly pays off if booking comes with it — if I still have to dig up the enquiry form each time, we’re back to everything being on me to initiate"
+  },
+  {
+   "id": "PROB-GRAC-0021",
+   "row": "Problems",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "November through March remains the open question on my calendar; without a firm winter answer, five months of my catering budget goes elsewhere"
+  },
+  {
+   "id": "PROB-GRAC-0022",
+   "row": "Problems",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "A first missed day-before reminder would send me straight back to chase-and-pin-down mode, which is exactly the job the subscription exists to retire"
+  },
+  {
+   "id": "TASK-OMAR-0001",
+   "row": "Tasks",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Take the colleague’s recommendation on board"
+  },
+  {
+   "id": "TASK-OMAR-0002",
+   "row": "Tasks",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Clock the truck’s location relative to the office"
+  },
+  {
+   "id": "TASK-OMAR-0003",
+   "row": "Tasks",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "File it mentally for a low-stakes day"
+  },
+  {
+   "id": "TASK-OMAR-0004",
+   "row": "Tasks",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Scan the calendar for a lunch window with slack in it"
+  },
+  {
+   "id": "TASK-GRAC-0001",
+   "row": "Tasks",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Note the engineer’s tip and where the truck parks relative to our office"
+  },
+  {
+   "id": "TASK-GRAC-0002",
+   "row": "Tasks",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Look BorderBlend up on borderblend.ca with my organiser’s checklist in hand — catering, invoicing, contact route"
+  },
+  {
+   "id": "TASK-GRAC-0003",
+   "row": "Tasks",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Book myself a solo reconnaissance lunch before the team’s name goes anywhere near this"
+  },
+  {
+   "id": "TASK-OMAR-0005",
+   "row": "Tasks",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Walk down on a low-stakes day and queue once"
+  },
+  {
+   "id": "TASK-OMAR-0006",
+   "row": "Tasks",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Order the <span class=\"entity\">smoked brisket taco</span>"
+  },
+  {
+   "id": "TASK-OMAR-0007",
+   "row": "Tasks",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Time the full desk-to-desk loop"
+  },
+  {
+   "id": "TASK-OMAR-0008",
+   "row": "Tasks",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Judge whether the loop fits a standard 45-minute window, line included"
+  },
+  {
+   "id": "TASK-GRAC-0004",
+   "row": "Tasks",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Take my own lunch hour for the trial run; order the <span class=\"entity\">smoked brisket</span>"
+  },
+  {
+   "id": "TASK-GRAC-0005",
+   "row": "Tasks",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Watch the truck like a vendor, not just a lunch — how fast the line moves, how they carry themselves, when things sell out, how they speak to customers"
+  },
+  {
+   "id": "TASK-GRAC-0006",
+   "row": "Tasks",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Chat briefly with the operator at the window; get a name and confirm they do catering"
+  },
+  {
+   "id": "TASK-GRAC-0007",
+   "row": "Tasks",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Start looking up group orders and catering properly the moment the food clears the bar — which it does"
+  },
+  {
+   "id": "TASK-OMAR-0009",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Fold the truck into the weekly rotation"
+  },
+  {
+   "id": "TASK-OMAR-0010",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Collect and carry colleagues’ orders, dietary quirks included"
+  },
+  {
+   "id": "TASK-OMAR-0011",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Try ordering ahead on the app; drop it when walking up turns out to work better"
+  },
+  {
+   "id": "TASK-OMAR-0012",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Recite, verify, and distribute four orders per group run"
+  },
+  {
+   "id": "TASK-OMAR-0013",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Expense each run off a crumpled thermal receipt"
+  },
+  {
+   "id": "TASK-GRAC-0008",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Hunt down the catering/group enquiry form on borderblend.ca and submit it"
+  },
+  {
+   "id": "TASK-GRAC-0009",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Work availability, menu, headcount and pricing out with the Calgary operator over email and one call"
+  },
+  {
+   "id": "TASK-GRAC-0010",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Send the team form: how many, and who can’t eat what; collate the answers"
+  },
+  {
+   "id": "TASK-GRAC-0011",
+   "row": "Tasks",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Get the Friday-treat total pre-approved before confirming anything"
+  },
+  {
+   "id": "TASK-OMAR-0014",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Ask at the window who handles group and catering orders"
+  },
+  {
+   "id": "TASK-OMAR-0015",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Request the itemized emailed invoice with cost-centre field"
+  },
+  {
+   "id": "TASK-OMAR-0016",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Scope the twelve-person working-lunch order: headcount, dietary needs, timing"
+  },
+  {
+   "id": "TASK-OMAR-0017",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Chase down a written confirmation solid enough to forward internally"
+  },
+  {
+   "id": "TASK-OMAR-0018",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Run the session order and debrief myself on whether it landed on time, at count"
+  },
+  {
+   "id": "TASK-GRAC-0012",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Chase and pin down the booking confirmation until it’s forwardable to my VP"
+  },
+  {
+   "id": "TASK-GRAC-0013",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "E-mail for allergen details; escalate until the answer is written and specific; hand it to my colleague to judge for himself"
+  },
+  {
+   "id": "TASK-GRAC-0014",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Get the total pre-approved with finance using the up-front price; obtain the itemised PDF invoice after"
+  },
+  {
+   "id": "TASK-GRAC-0015",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Deliver the monthly team lunch, then the client event; debrief — on time? at headcount? order intact?"
+  },
+  {
+   "id": "TASK-GRAC-0016",
+   "row": "Tasks",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Ask the operator directly about ring-fenced group stock and the winter option"
+  },
+  {
+   "id": "TASK-OMAR-0019",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Subscribe to the lunch alert and allow the morning push"
+  },
+  {
+   "id": "TASK-OMAR-0020",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Act on the first alert and verify it against reality"
+  },
+  {
+   "id": "TASK-OMAR-0021",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Trust the honest bad-news alert and re-plan at my desk instead of on a cold corner"
+  },
+  {
+   "id": "TASK-OMAR-0022",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Turn the morning alert into group runs — take orders in Slack, walk down once"
+  },
+  {
+   "id": "TASK-OMAR-0023",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Recommend the alert to the colleagues I keep feeding"
+  },
+  {
+   "id": "TASK-GRAC-0017",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Join the catering list; forward the menu-plus-allergen sheet to team and finance in one shot"
+  },
+  {
+   "id": "TASK-GRAC-0018",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Lock the season’s recurring dates — Friday treats, monthly lunches — through the operator, confirmations in writing"
+  },
+  {
+   "id": "TASK-GRAC-0019",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Ask for and book the winter/indoor or drop-off option for November through March"
+  },
+  {
+   "id": "TASK-GRAC-0020",
+   "row": "Tasks",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Tell people — the two office managers in our building, and anyone who asks; the organiser who trusts you becomes your best salesperson"
+  },
+  {
+   "id": "SENT-OMAR-0001",
+   "row": "Sentiment",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Guarded interest"
+  },
+  {
+   "id": "SENT-GRAC-0001",
+   "row": "Sentiment",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Intrigued-but-guarded"
+  },
+  {
+   "id": "SENT-OMAR-0002",
+   "row": "Sentiment",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Impressed, calculating"
+  },
+  {
+   "id": "SENT-GRAC-0002",
+   "row": "Sentiment",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Impressed-cautious"
+  },
+  {
+   "id": "SENT-OMAR-0003",
+   "row": "Sentiment",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Committed, mildly exasperated"
+  },
+  {
+   "id": "SENT-GRAC-0003",
+   "row": "Sentiment",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Determined"
+  },
+  {
+   "id": "SENT-OMAR-0004",
+   "row": "Sentiment",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Convinced, impatient"
+  },
+  {
+   "id": "SENT-GRAC-0004",
+   "row": "Sentiment",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Vindicated-tired"
+  },
+  {
+   "id": "SENT-OMAR-0005",
+   "row": "Sentiment",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Settled, quietly loyal"
+  },
+  {
+   "id": "SENT-GRAC-0005",
+   "row": "Sentiment",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Loyal-relieved"
+  },
+  {
+   "id": "QUOT-OMAR-0001",
+   "row": "Think/Feel quote",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "“Fine — one lunch slot. That’s the entire budget for this experiment.”"
+  },
+  {
+   "id": "QUOT-GRAC-0001",
+   "row": "Think/Feel quote",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "“Great, the brisket one — but do they cater, can they invoice, and are they going to actually show up?”"
+  },
+  {
+   "id": "QUOT-OMAR-0002",
+   "row": "Think/Feel quote",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "“Very good brisket in eleven minutes of queue. The taco passed; now the operation has to.”"
+  },
+  {
+   "id": "QUOT-GRAC-0002",
+   "row": "Think/Feel quote",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "“Okay, the food’s real. Now show me you can do this thirty times, on a date, in writing.”"
+  },
+  {
+   "id": "QUOT-OMAR-0003",
+   "row": "Think/Feel quote",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "“The food’s a solved problem. The getting-to-the-food is the part still costing me minutes.”"
+  },
+  {
+   "id": "QUOT-GRAC-0003",
+   "row": "Think/Feel quote",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "“I’m on your side here — I want to give you my business. Just make the door easier to find.”"
+  },
+  {
+   "id": "QUOT-OMAR-0004",
+   "row": "Think/Feel quote",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "“I’m the easiest sale they’ll get all year. Someone just has to pick up the money.”"
+  },
+  {
+   "id": "QUOT-GRAC-0004",
+   "row": "Think/Feel quote",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "“They were fantastic on the day — I just shouldn’t have had to build the paperwork myself to believe it.”"
+  },
+  {
+   "id": "QUOT-OMAR-0005",
+   "row": "Think/Feel quote",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "“One accurate notification a day. That’s the whole product. That’s the whole relationship.”"
+  },
+  {
+   "id": "QUOT-GRAC-0005",
+   "row": "Think/Feel quote",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "“Talk to me like I’m running an operation, because I am — give me the boring stuff and I’m your best customer.”"
+  },
+  {
+   "id": "ALTP-OMAR-0001",
+   "row": "Alternate paths",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "The colleague’s tip never lines up with a free window and the idea quietly expires"
+  },
+  {
+   "id": "ALTP-OMAR-0002",
+   "row": "Alternate paths",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "I Google “lunch near me” instead and the truck doesn’t surface, so the default sandwich place wins again"
+  },
+  {
+   "id": "ALTP-OMAR-0003",
+   "row": "Alternate paths",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "I walk past on a busy day, see fifteen people in line, and file it under “not for me”"
+  },
+  {
+   "id": "ALTP-GRAC-0001",
+   "row": "Alternate paths",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "The website gives me nothing at all for groups, so I quietly file BorderBlend under “nice for someone else’s lunch” and move on to a caterer with proper paperwork"
+  },
+  {
+   "id": "ALTP-GRAC-0002",
+   "row": "Alternate paths",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "The tip comes with a second endorsement from another exec, which bumps the recon lunch up my calendar"
+  },
+  {
+   "id": "ALTP-GRAC-0003",
+   "row": "Alternate paths",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "I can’t find a Calgary contact and email head office in Toronto instead, adding a week of back-and-forth"
+  },
+  {
+   "id": "ALTP-OMAR-0004",
+   "row": "Alternate paths",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "The line is fifteen deep and I bail without ordering — experiment postponed, not failed"
+  },
+  {
+   "id": "ALTP-OMAR-0005",
+   "row": "Alternate paths",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Brisket sold out at the window; I take the carne asada, which is fine, but “fine” doesn’t change a routine"
+  },
+  {
+   "id": "ALTP-OMAR-0006",
+   "row": "Alternate paths",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "The truck isn’t there at all and the whole idea takes a credibility hit on day one"
+  },
+  {
+   "id": "ALTP-GRAC-0004",
+   "row": "Alternate paths",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "The truck isn’t at its spot the day I walk over — and that single empty corner would honestly have ended the evaluation right there"
+  },
+  {
+   "id": "ALTP-GRAC-0005",
+   "row": "Alternate paths",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "The food is merely fine, and I keep our current caterer; good-not-great doesn’t justify new-vendor risk"
+  },
+  {
+   "id": "ALTP-GRAC-0006",
+   "row": "Alternate paths",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "The operator at the window is switched-on and hands me a catering contact directly, skipping a website step I was dreading"
+  },
+  {
+   "id": "ALTP-OMAR-0007",
+   "row": "Alternate paths",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "One empty-corner strike too many and the rotation slot quietly goes back to the boring-but-certain food court"
+  },
+  {
+   "id": "ALTP-OMAR-0008",
+   "row": "Alternate paths",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "A colleague’s order comes back wrong (<span class=\"entity\">salsa verde</span> on the no-salsa one) and I stop volunteering for group runs"
+  },
+  {
+   "id": "ALTP-OMAR-0009",
+   "row": "Alternate paths",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "I keep the habit solo-only, and the group runs — four orders a trip, several trips a week — never happen for them"
+  },
+  {
+   "id": "ALTP-GRAC-0007",
+   "row": "Alternate paths",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "My preferred Friday is taken and the booking slips two weeks, cooling the team’s enthusiasm off the back of my glowing endorsement"
+  },
+  {
+   "id": "ALTP-GRAC-0008",
+   "row": "Alternate paths",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Finance balks at an unconfirmed estimate and I have to go back to the operator for a written number before I can re-submit"
+  },
+  {
+   "id": "ALTP-GRAC-0009",
+   "row": "Alternate paths",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "The email thread goes quiet for three days mid-planning and I start, quietly, pricing the competitor who has everything spelled out as a fallback"
+  },
+  {
+   "id": "ALTP-OMAR-0010",
+   "row": "Alternate paths",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "No way to book them turns up in time and the sad sandwich platters win by default — their loss, literally"
+  },
+  {
+   "id": "ALTP-OMAR-0011",
+   "row": "Alternate paths",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "The invoice request gets a shrug, so I keep the solo habit but route group and client work to a vendor with paperwork"
+  },
+  {
+   "id": "ALTP-OMAR-0012",
+   "row": "Alternate paths",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "The order lands perfectly, on time, at count — and I go from customer to reference: “use the brisket truck, tell them I sent you”"
+  },
+  {
+   "id": "ALTP-GRAC-0010",
+   "row": "Alternate paths",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "The allergen answer never firms up, and despite preferring the food I book the competitor with it all spelled out in writing for the client event — not a close call when it’s someone’s airway"
+  },
+  {
+   "id": "ALTP-GRAC-0011",
+   "row": "Alternate paths",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Brisket runs short mid-service at the monthly lunch and the last six people get substitutions — survivable for the team, unthinkable for the client event"
+  },
+  {
+   "id": "ALTP-GRAC-0012",
+   "row": "Alternate paths",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "The operator, once asked, produces a proper written confirmation template immediately — and my anxiety drops a full notch for every booking after"
+  },
+  {
+   "id": "ALTP-GRAC-0013",
+   "row": "Alternate paths",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Finance rejects the informal invoice outright and reimbursement stalls, souring an otherwise perfect delivery"
+  },
+  {
+   "id": "ALTP-OMAR-0013",
+   "row": "Alternate paths",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "An alert misfires once; I keep the subscription but reinstate the walk-up-and-check habit until it re-earns the trust"
+  },
+  {
+   "id": "ALTP-OMAR-0014",
+   "row": "Alternate paths",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "The list turns into a <span class=\"entity\">newsletter</span> with a brand story; I unsubscribe, keep the lunch habit, and they lose their line to me"
+  },
+  {
+   "id": "ALTP-OMAR-0015",
+   "row": "Alternate paths",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "The alerts prove reliable for a full quarter and I move the team’s monthly working lunch onto them by default — routine, not enthusiasm, and worth more"
+  },
+  {
+   "id": "ALTP-GRAC-0014",
+   "row": "Alternate paths",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "The newsletter turns promotional and I unsubscribe in four seconds — the bookings survive, but they’re back to being work I initiate"
+  },
+  {
+   "id": "ALTP-GRAC-0015",
+   "row": "Alternate paths",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "The winter answer never materialises, and BorderBlend stays a seasonal vendor while a year-round competitor takes my November-to-March budget"
+  },
+  {
+   "id": "ALTP-GRAC-0016",
+   "row": "Alternate paths",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "The booking-plus-reminder system works flawlessly for a full quarter, and I start trusting them with the client events too — the highest-stakes business I have to give"
+  },
+  {
+   "id": "ALTP-GRAC-0017",
+   "row": "Alternate paths",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "A referred office manager gets the old chase-the-confirmation experience, and I quietly ease off recommending them until the process catches up with the food"
+  },
+  {
+   "id": "CHAN-OMAR-0001",
+   "row": "Channels",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Colleague word of mouth"
+  },
+  {
+   "id": "CHAN-OMAR-0002",
+   "row": "Channels",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Walking past the truck"
+  },
+  {
+   "id": "CHAN-OMAR-0003",
+   "row": "Channels",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Google “lunch near me”"
+  },
+  {
+   "id": "CHAN-OMAR-0004",
+   "row": "Channels",
+   "stage": 1,
+   "scope": "OMAR",
+   "text": "Outlook calendar"
+  },
+  {
+   "id": "CHAN-GRAC-0001",
+   "row": "Channels",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Colleague recommendation"
+  },
+  {
+   "id": "CHAN-GRAC-0002",
+   "row": "Channels",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "borderblend.ca"
+  },
+  {
+   "id": "CHAN-GRAC-0003",
+   "row": "Channels",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Vendor-vetting checklist"
+  },
+  {
+   "id": "CHAN-GRAC-0004",
+   "row": "Channels",
+   "stage": 1,
+   "scope": "GRAC",
+   "text": "Office Slack (tip repeated)"
+  },
+  {
+   "id": "CHAN-OMAR-0005",
+   "row": "Channels",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Walking past the truck"
+  },
+  {
+   "id": "CHAN-OMAR-0006",
+   "row": "Channels",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "The truck window"
+  },
+  {
+   "id": "CHAN-OMAR-0007",
+   "row": "Channels",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "The line (watching throughput)"
+  },
+  {
+   "id": "CHAN-OMAR-0008",
+   "row": "Channels",
+   "stage": 2,
+   "scope": "OMAR",
+   "text": "Phone clock/timer"
+  },
+  {
+   "id": "CHAN-GRAC-0005",
+   "row": "Channels",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "The truck on-site"
+  },
+  {
+   "id": "CHAN-GRAC-0006",
+   "row": "Channels",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Operator face-to-face"
+  },
+  {
+   "id": "CHAN-GRAC-0007",
+   "row": "Channels",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "borderblend.ca (mobile)"
+  },
+  {
+   "id": "CHAN-GRAC-0008",
+   "row": "Channels",
+   "stage": 2,
+   "scope": "GRAC",
+   "text": "Notes app"
+  },
+  {
+   "id": "CHAN-OMAR-0009",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "<span class=\"entity\">BorderBlend app</span>"
+  },
+  {
+   "id": "CHAN-OMAR-0010",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "The truck window"
+  },
+  {
+   "id": "CHAN-OMAR-0011",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Walking past the truck"
+  },
+  {
+   "id": "CHAN-OMAR-0012",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Slack (group orders)"
+  },
+  {
+   "id": "CHAN-OMAR-0013",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "OMAR",
+   "text": "Expense system"
+  },
+  {
+   "id": "CHAN-GRAC-0009",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Catering enquiry form"
+  },
+  {
+   "id": "CHAN-GRAC-0010",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "E-mail with the operator"
+  },
+  {
+   "id": "CHAN-GRAC-0011",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Phone (planning call)"
+  },
+  {
+   "id": "CHAN-GRAC-0012",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Office Slack + team dietary form"
+  },
+  {
+   "id": "CHAN-GRAC-0013",
+   "row": "Channels",
+   "stage": 3,
+   "scope": "GRAC",
+   "text": "Finance/AP system"
+  },
+  {
+   "id": "CHAN-OMAR-0014",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "The truck window"
+  },
+  {
+   "id": "CHAN-OMAR-0015",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "borderblend.ca"
+  },
+  {
+   "id": "CHAN-OMAR-0016",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "E-mail"
+  },
+  {
+   "id": "CHAN-OMAR-0017",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Slack (collecting orders)"
+  },
+  {
+   "id": "CHAN-OMAR-0018",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "OMAR",
+   "text": "Expense/finance system"
+  },
+  {
+   "id": "CHAN-GRAC-0014",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "E-mail with the operator"
+  },
+  {
+   "id": "CHAN-GRAC-0015",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Phone (driver’s cell)"
+  },
+  {
+   "id": "CHAN-GRAC-0016",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Invoice/AP system"
+  },
+  {
+   "id": "CHAN-GRAC-0017",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "The truck on-site"
+  },
+  {
+   "id": "CHAN-GRAC-0018",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "Office Slack"
+  },
+  {
+   "id": "CHAN-GRAC-0019",
+   "row": "Channels",
+   "stage": 4,
+   "scope": "GRAC",
+   "text": "VP/exec debrief"
+  },
+  {
+   "id": "CHAN-OMAR-0019",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "App push notifications"
+  },
+  {
+   "id": "CHAN-OMAR-0020",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "E-mail (alert list)"
+  },
+  {
+   "id": "CHAN-OMAR-0021",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Slack (group runs)"
+  },
+  {
+   "id": "CHAN-OMAR-0022",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "The truck window"
+  },
+  {
+   "id": "CHAN-OMAR-0023",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "OMAR",
+   "text": "Walking past the truck"
+  },
+  {
+   "id": "CHAN-GRAC-0020",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Catering list e-mail"
+  },
+  {
+   "id": "CHAN-GRAC-0021",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "E-mail with the operator"
+  },
+  {
+   "id": "CHAN-GRAC-0022",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Forwarded confirmations"
+  },
+  {
+   "id": "CHAN-GRAC-0023",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Invoice/AP system"
+  },
+  {
+   "id": "CHAN-GRAC-0024",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Office Slack"
+  },
+  {
+   "id": "CHAN-GRAC-0025",
+   "row": "Channels",
+   "stage": 5,
+   "scope": "GRAC",
+   "text": "Word of mouth to peers"
+  },
+  {
+   "id": "OPPO-SHAR-0001",
+   "row": "Opportunities",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Be findable at the moment of the tip: an always-current Google Business profile and borderblend.ca location page per <span class=\"entity\">Truck</span> showing today’s spot, hours, open/closed status, and the weekly schedule — kept true by an agentic availability monitor fed by operator check-in and POS activity, with no added work for the operator."
+  },
+  {
+   "id": "OPPO-SHAR-0002",
+   "row": "Opportunities",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> A visible group &amp; <span class=\"entity\">Catering</span> front door from the very first look: a “Feed your office” path one click from the borderblend.ca homepage, answering the coordinator’s checklist up front — yes we cater, yes we invoice (itemised, GST broken out, your billing name), here’s how headcount works, here’s the Calgary contact, and here’s the winter answer."
+  },
+  {
+   "id": "OPPO-SHAR-0003",
+   "row": "Opportunities",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Arm the recommender: a lightweight shareable <span class=\"entity\">Truck</span> card (link or QR at the <span class=\"entity\">Truck</span>) carrying the entire pitch a colleague would give — hero <span class=\"entity\">Dish</span>, today’s location and hours, weekly schedule, and one line each for “order ahead” and “we cater offices” — something concrete to forward in Slack instead of pointing at a corner."
+  },
+  {
+   "id": "OPPO-SHAR-0004",
+   "row": "Opportunities",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Publish the line and the stock: two live data points alongside open/closed status — current line length/estimated wait, and hero <span class=\"entity\">Dish</span> stock (“available / running low / sold out”) — fed from POS throughput and a one-tap operator update, propagated by an availability agent to <span class=\"entity\">App</span>, web, and the <span class=\"entity\">Truck</span>’s Google profile so no channel lies."
+  },
+  {
+   "id": "OPPO-SHAR-0005",
+   "row": "Opportunities",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Make the window vendor-vet-ready: a physical <span class=\"entity\">Catering</span> card at the window (local operator’s name, direct <span class=\"entity\">Catering</span> contact, lead times) and an ingredient/allergen sheet — printed and QR-linked — covering every item and sauce at ingredient level, with approved, on-brand language so the answer is consistent <span class=\"entity\">Truck</span> to <span class=\"entity\">Truck</span>."
+  },
+  {
+   "id": "OPPO-SHAR-0006",
+   "row": "Opportunities",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Prove consistency to the calculating professional: publish the operational facts a time-boxed professional is silently measuring — peak window (12:15–12:45), typical serve rate (“we move the line at about a minute a person”), and the consistency promise behind the hero <span class=\"entity\">Dish</span> (same process, same recipe, every day) — on the <span class=\"entity\">Truck</span> card, location page, and <span class=\"entity\">App</span> menu."
+  },
+  {
+   "id": "OPPO-SHAR-0007",
+   "row": "Opportunities",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Answer the pre-departure question every time: Omar’s three data points — open, where exactly, how long is the line — as one glanceable <span class=\"entity\">App</span>/web surface that is never wrong. Behind it, an agentic availability monitor: operator check-in opens the day, POS heartbeat confirms activity, geolocation pins the exact corner, and any gap auto-publishes honest “not out today” status to <span class=\"entity\">App</span>, web, and maps within minutes."
+  },
+  {
+   "id": "OPPO-SHAR-0008",
+   "row": "Opportunities",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Group order-ahead that actually deletes the waiting: one order, four labelled items (“Sam — hold the sauce”, “Dana — plant-based”), a menu synced to the <span class=\"entity\">Truck</span>’s actual board via POS, a firm “your order is ready” notification, and a labelled bag at a dedicated pickup point — receipts emailed automatically, setting up the Stage-4 expense rails."
+  },
+  {
+   "id": "OPPO-SHAR-0009",
+   "row": "Opportunities",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Availability-first <span class=\"entity\">Catering</span> flow with published per-head pricing: a date-availability checker as step one (“Friday the 14th, Calgary — available”), a published per-head price sheet she can take straight to finance, then menu/headcount/dietary details with the local operator — plus a fast lane that remembers repeat bookers and an operational-response agent that nudges the operator if an enquiry thread goes quiet."
+  },
+  {
+   "id": "OPPO-SHAR-0010",
+   "row": "Opportunities",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Confirmation-as-standard: every group booking automatically produces a forwardable written confirmation (date, arrival time, duration, <span class=\"entity\">Truck</span>, driver’s cell), a ring-fenced stock guarantee (“your 30 covers are reserved and prepped — walk-up demand cannot eat your reserved stock”), and a day-before reminder — assembled by an operational-response agent the moment the operator accepts, with proactive day-of change notification. The same flow gives Omar the discoverable front door for his twelve-person client session."
+  },
+  {
+   "id": "OPPO-SHAR-0011",
+   "row": "Opportunities",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> The allergen dossier: a maintained, versioned allergen and ingredient dossier — every item, every sauce, shared-prep notes — attached automatically to every <span class=\"entity\">Catering</span> quote and confirmation, and downloadable from the <span class=\"entity\">Catering</span> page. Built once from the brand’s existing recipe documentation, kept current by HQ, so no operator ever has to say “let me check with the kitchen.”"
+  },
+  {
+   "id": "OPPO-SHAR-0012",
+   "row": "Opportunities",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Business-grade money rails, two tiers on one rail: for <span class=\"entity\">Catering</span>, an itemised PDF invoice — GST broken out, billing name, PO reference — issued automatically with delivery, no second ask; for the high-frequency solo/group runner, emailed itemised receipts on every <span class=\"entity\">App</span> order with an optional cost-centre/client-code field saved to the account. Repeat bookings reuse billing details so finance sees the same clean paper every time."
+  },
+  {
+   "id": "OPPO-SHAR-0013",
+   "row": "Opportunities",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> The truck-day alert: a subscribable lunch alert — push at ~11:30: “Bay Street <span class=\"entity\">Truck</span> open till 2, the hero <span class=\"entity\">Dish</span> in stock” — generated automatically by the availability agent from operator check-in, geolocation, and live POS stock, so it is true by construction. Crucially, it also sends the honest negative (“not out today — back tomorrow”), and a group-run shortcut sits inside the notification: tap to open the saved crew order."
+  },
+  {
+   "id": "OPPO-SHAR-0014",
+   "row": "Opportunities",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> The <span class=\"entity\">Catering</span> list — “the boring version”: a coordinator-tier subscription that does Grace’s job with her — <span class=\"entity\">Catering</span> menu with the allergen dossier attached (forwardable to team and finance in one shot), real availability windows, written confirmations and day-before reminders baked in as standard, and a fast lane for repeat bookings. A proactive seasonal agent initiates at the right moments — “patio season’s starting, here’s how to lock a date,” “November’s coming: here’s the indoor/drop-off option, priced” — and pre-fills recurring dates for one-click confirmation."
+  },
+  {
+   "id": "OPPO-SHAR-0015",
+   "row": "Opportunities",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "<p><strong>Description:</strong> Signal-purity governance and the champion loop: govern both subscription channels with a hard editorial rule — operational signal only, enforced with a pre-send check against the brand’s voice model — and rebuild loyalty as operational privilege rather than points theatre: priority pickup on group runs, the repeat-booking fast lane, first access to seasonal <span class=\"entity\">Catering</span> dates. Then instrument the champion loop: when Omar recommends the alert or Grace refers another office manager, the referred experience is tracked end-to-end so it matches the one that earned the referral."
+  },
+  {
+   "id": "CONT-SHAR-0001",
+   "row": "Content assets",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Per-truck live location/schedule page on borderblend.ca (today’s spot, hours, open status, weekly pattern)"
+  },
+  {
+   "id": "CONT-SHAR-0002",
+   "row": "Content assets",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Google Business profiles per <span class=\"entity\">Truck</span>, synced to the same live status"
+  },
+  {
+   "id": "CONT-SHAR-0003",
+   "row": "Content assets",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "“Feed your office” <span class=\"entity\">Catering</span> landing page: capabilities, invoicing promise, per-head pricing range, Calgary/local contacts, winter answer"
+  },
+  {
+   "id": "CONT-SHAR-0004",
+   "row": "Content assets",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Forwardable/QR <span class=\"entity\">Truck</span> card (hero <span class=\"entity\">Dish</span>, location, schedule, <span class=\"entity\">Catering</span> link)"
+  },
+  {
+   "id": "CONT-SHAR-0005",
+   "row": "Content assets",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Hero <span class=\"entity\">Dish</span> one-pager: the signature item’s story in the brand’s specific, no-superlatives voice"
+  },
+  {
+   "id": "CONT-SHAR-0006",
+   "row": "Content assets",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Catering</span> FAQ (invoice format, headcount handling, lead times)"
+  },
+  {
+   "id": "CONT-SHAR-0007",
+   "row": "Content assets",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Live status module (open / location / wait estimate / hero <span class=\"entity\">Dish</span> stock) on <span class=\"entity\">App</span>, web, and Google profile"
+  },
+  {
+   "id": "CONT-SHAR-0008",
+   "row": "Content assets",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Printed + QR ingredient and allergen sheet, every item and sauce, ingredient-level"
+  },
+  {
+   "id": "CONT-SHAR-0009",
+   "row": "Content assets",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Window <span class=\"entity\">Catering</span> card: local operator name, direct <span class=\"entity\">Catering</span> contact, lead times"
+  },
+  {
+   "id": "CONT-SHAR-0010",
+   "row": "Content assets",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "“How the line works” micro-content: peak window, serve rate, best times to come"
+  },
+  {
+   "id": "CONT-SHAR-0011",
+   "row": "Content assets",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Consistency story asset: the process behind the hero <span class=\"entity\">Dish</span>, why it’s the same every day (specific, no superlatives)"
+  },
+  {
+   "id": "CONT-SHAR-0012",
+   "row": "Content assets",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Plant-based <span class=\"entity\">Dish</span> profile (it over-delivers — say so with specifics, for the vegetarians on Grace’s team)"
+  },
+  {
+   "id": "CONT-SHAR-0013",
+   "row": "Content assets",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Live three-data-point status surface (open / exact location / wait) with honest “not out today” messaging"
+  },
+  {
+   "id": "CONT-SHAR-0014",
+   "row": "Content assets",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Group order-ahead flow with per-item labels and dietary tags; saved “usual crew” order templates"
+  },
+  {
+   "id": "CONT-SHAR-0015",
+   "row": "Content assets",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "POS-synced live menu (what’s on the board is what’s in the <span class=\"entity\">App</span>)"
+  },
+  {
+   "id": "CONT-SHAR-0016",
+   "row": "Content assets",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "“Your order is ready” notification and labelled-bag pickup point"
+  },
+  {
+   "id": "CONT-SHAR-0017",
+   "row": "Content assets",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Published per-head <span class=\"entity\">Catering</span> price sheet (finance-ready PDF)"
+  },
+  {
+   "id": "CONT-SHAR-0018",
+   "row": "Content assets",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Date-availability checker for <span class=\"entity\">Catering</span> enquiries"
+  },
+  {
+   "id": "CONT-SHAR-0019",
+   "row": "Content assets",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Dietary/headcount collection template Grace can send her team (feeds the order directly)"
+  },
+  {
+   "id": "CONT-SHAR-0020",
+   "row": "Content assets",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Auto-emailed receipts for every <span class=\"entity\">App</span> order"
+  },
+  {
+   "id": "CONT-SHAR-0021",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Standard booking-confirmation template (date, arrival, duration, <span class=\"entity\">Truck</span>, driver’s cell) — forwardable PDF/e-mail"
+  },
+  {
+   "id": "CONT-SHAR-0022",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Ring-fenced stock guarantee statement within the confirmation"
+  },
+  {
+   "id": "CONT-SHAR-0023",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Day-before reminder message (automated)"
+  },
+  {
+   "id": "CONT-SHAR-0024",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Versioned allergen &amp; ingredient dossier (PDF + web), auto-attached to quotes and confirmations"
+  },
+  {
+   "id": "CONT-SHAR-0025",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Itemised PDF invoice template: GST broken out, billing name, PO/cost-centre fields"
+  },
+  {
+   "id": "CONT-SHAR-0026",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Emailed itemised receipt for every <span class=\"entity\">App</span> order"
+  },
+  {
+   "id": "CONT-SHAR-0027",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Catering</span> event run-sheet for coordinators (setup, service window, day-of contact)"
+  },
+  {
+   "id": "CONT-SHAR-0028",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Winter/indoor &amp; drop-off <span class=\"entity\">Catering</span> options sheet (the November-through-March answer, priced)"
+  },
+  {
+   "id": "CONT-SHAR-0029",
+   "row": "Content assets",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Post-event debrief summary: arrived [time], served [headcount], order intact"
+  },
+  {
+   "id": "CONT-SHAR-0030",
+   "row": "Content assets",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Truck-day alert (push/SMS/e-mail): open-till, exact location, hero <span class=\"entity\">Dish</span> stock — plus the honest “not out today”"
+  },
+  {
+   "id": "CONT-SHAR-0031",
+   "row": "Content assets",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Catering-list e-mail template: menu + allergen dossier attached, availability windows, booking link"
+  },
+  {
+   "id": "CONT-SHAR-0032",
+   "row": "Content assets",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Seasonal booking prompts (“patio season’s open,” “lock your November drop-off dates”) — calendar-triggered"
+  },
+  {
+   "id": "CONT-SHAR-0033",
+   "row": "Content assets",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Winter/indoor &amp; drop-off programme announcement with pricing (the November-through-March answer)"
+  },
+  {
+   "id": "CONT-SHAR-0034",
+   "row": "Content assets",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Repeat-booking fast-lane confirmation (same team, same billing, one e-mail)"
+  },
+  {
+   "id": "CONT-SHAR-0035",
+   "row": "Content assets",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Loyalty-as-operations explainer: priority pickup, fast lane, first access to seasonal dates — one screen, no badges"
+  },
+  {
+   "id": "CONT-SHAR-0036",
+   "row": "Content assets",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Referral kit: “send the alert to a colleague” / “refer an office manager” with a tracked warm-start for the referee"
+  },
+  {
+   "id": "CONT-SHAR-0037",
+   "row": "Content assets",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Day-before reminder message (standard on every booking)"
+  },
+  {
+   "id": "CTAT-SHAR-0001",
+   "row": "Calls to action",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "See today’s location &amp; hours"
+  },
+  {
+   "id": "CTAT-SHAR-0002",
+   "row": "Calls to action",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Planning food for a team? Start here"
+  },
+  {
+   "id": "CTAT-SHAR-0003",
+   "row": "Calls to action",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Send this <span class=\"entity\">Truck</span> to a colleague"
+  },
+  {
+   "id": "CTAT-SHAR-0004",
+   "row": "Calls to action",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Check if we’re near your office"
+  },
+  {
+   "id": "CTAT-SHAR-0005",
+   "row": "Calls to action",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Check the line before you walk"
+  },
+  {
+   "id": "CTAT-SHAR-0006",
+   "row": "Calls to action",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "See what’s in every item"
+  },
+  {
+   "id": "CTAT-SHAR-0007",
+   "row": "Calls to action",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Feeding a team? Talk to the operator — here’s the direct line"
+  },
+  {
+   "id": "CTAT-SHAR-0008",
+   "row": "Calls to action",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Best times to skip the queue"
+  },
+  {
+   "id": "CTAT-SHAR-0009",
+   "row": "Calls to action",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Check the <span class=\"entity\">Truck</span> before you leave your desk"
+  },
+  {
+   "id": "CTAT-SHAR-0010",
+   "row": "Calls to action",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Order ahead for the team — label every item"
+  },
+  {
+   "id": "CTAT-SHAR-0011",
+   "row": "Calls to action",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Save your crew’s usual order"
+  },
+  {
+   "id": "CTAT-SHAR-0012",
+   "row": "Calls to action",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Check your date’s availability"
+  },
+  {
+   "id": "CTAT-SHAR-0013",
+   "row": "Calls to action",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Download the per-head price sheet"
+  },
+  {
+   "id": "CTAT-SHAR-0014",
+   "row": "Calls to action",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Turn on “not out today” honesty alerts"
+  },
+  {
+   "id": "CTAT-SHAR-0015",
+   "row": "Calls to action",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Book your event — written confirmation within the hour"
+  },
+  {
+   "id": "CTAT-SHAR-0016",
+   "row": "Calls to action",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Download the allergen &amp; ingredient dossier"
+  },
+  {
+   "id": "CTAT-SHAR-0017",
+   "row": "Calls to action",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Add your PO / cost centre to this booking"
+  },
+  {
+   "id": "CTAT-SHAR-0018",
+   "row": "Calls to action",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Get every receipt emailed automatically"
+  },
+  {
+   "id": "CTAT-SHAR-0019",
+   "row": "Calls to action",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "See our winter <span class=\"entity\">Catering</span> options"
+  },
+  {
+   "id": "CTAT-SHAR-0020",
+   "row": "Calls to action",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Rebook this event in one click"
+  },
+  {
+   "id": "CTAT-SHAR-0021",
+   "row": "Calls to action",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Turn on the truck-day alert"
+  },
+  {
+   "id": "CTAT-SHAR-0022",
+   "row": "Calls to action",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Join the <span class=\"entity\">Catering</span> list — the boring version, promise"
+  },
+  {
+   "id": "CTAT-SHAR-0023",
+   "row": "Calls to action",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Lock your recurring dates for the season"
+  },
+  {
+   "id": "CTAT-SHAR-0024",
+   "row": "Calls to action",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Book the winter drop-off option"
+  },
+  {
+   "id": "CTAT-SHAR-0025",
+   "row": "Calls to action",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Rebook in one click — same team, same billing"
+  },
+  {
+   "id": "CTAT-SHAR-0026",
+   "row": "Calls to action",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Send the alert to the colleagues you keep feeding"
+  },
+  {
+   "id": "CTAT-SHAR-0027",
+   "row": "Calls to action",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Refer another office manager — we’ll start them with the written confirmation"
+  },
+  {
+   "id": "ENTR-SHAR-0001",
+   "row": "Entry signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "First-time visits to borderblend.ca location pages from office-district IPs and desktop browsers at desk hours"
+  },
+  {
+   "id": "ENTR-SHAR-0002",
+   "row": "Entry signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Google/Maps searches for “BorderBlend” plus a neighbourhood or “near me” from a new device"
+  },
+  {
+   "id": "ENTR-SHAR-0003",
+   "row": "Entry signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Catering</span> page visits with no prior order history"
+  },
+  {
+   "id": "ENTR-SHAR-0004",
+   "row": "Entry signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Shared truck-card link opens (referral parameter) and QR scans at the <span class=\"entity\">Truck</span>"
+  },
+  {
+   "id": "ENTR-SHAR-0005",
+   "row": "Entry signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Office-Slack-style referral spikes: several first-time visitors from one company domain in the same week"
+  },
+  {
+   "id": "ENTR-SHAR-0006",
+   "row": "Entry signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "First in-person order from a customer whose device previously viewed the location page (tip converting to trial)"
+  },
+  {
+   "id": "ENTR-SHAR-0007",
+   "row": "Entry signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Single-item orders of the hero <span class=\"entity\">Dish</span> at off-peak times (the deliberate low-stakes trial pattern)"
+  },
+  {
+   "id": "ENTR-SHAR-0008",
+   "row": "Entry signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Allergen/ingredient QR scans at the <span class=\"entity\">Truck</span>"
+  },
+  {
+   "id": "ENTR-SHAR-0009",
+   "row": "Entry signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "A customer asking the window about <span class=\"entity\">Catering</span>, group orders, or “who runs this <span class=\"entity\">Truck</span>”"
+  },
+  {
+   "id": "ENTR-SHAR-0010",
+   "row": "Entry signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Solo weekday visit followed by immediate menu/<span class=\"entity\">Catering</span> browsing on borderblend.ca (Grace’s in-line phone check)"
+  },
+  {
+   "id": "ENTR-SHAR-0011",
+   "row": "Entry signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Repeat weekly orders from the same account/card (rotation established)"
+  },
+  {
+   "id": "ENTR-SHAR-0012",
+   "row": "Entry signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Multi-item single-buyer orders with dietary variations (the group runner pattern)"
+  },
+  {
+   "id": "ENTR-SHAR-0013",
+   "row": "Entry signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Pre-noon <span class=\"entity\">App</span> opens that check status without ordering"
+  },
+  {
+   "id": "ENTR-SHAR-0014",
+   "row": "Entry signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Catering</span> enquiry form submissions and availability-checker uses"
+  },
+  {
+   "id": "ENTR-SHAR-0015",
+   "row": "Entry signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Receipt-forwarding or expense-note patterns on <span class=\"entity\">App</span> orders (business buyer marker)"
+  },
+  {
+   "id": "ENTR-SHAR-0016",
+   "row": "Entry signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "First <span class=\"entity\">Catering</span> booking confirmed (Friday treat, monthly lunch, or client event tier)"
+  },
+  {
+   "id": "ENTR-SHAR-0017",
+   "row": "Entry signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Invoice-format, PO-field, or allergen-documentation requests on an enquiry"
+  },
+  {
+   "id": "ENTR-SHAR-0018",
+   "row": "Entry signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Confirmation e-mails being forwarded (multiple opens from new corporate recipients — the VP forward)"
+  },
+  {
+   "id": "ENTR-SHAR-0019",
+   "row": "Entry signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Twelve-plus-cover event scoping from a high-frequency solo account (Omar’s tier jump)"
+  },
+  {
+   "id": "ENTR-SHAR-0020",
+   "row": "Entry signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Pre-event checking behaviour: repeated day-before opens of the booking status"
+  },
+  {
+   "id": "ENTR-SHAR-0021",
+   "row": "Entry signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Alert subscription and push permission granted (Omar’s tier)"
+  },
+  {
+   "id": "ENTR-SHAR-0022",
+   "row": "Entry signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Catering-list opt-in from an account with a delivered event (Grace’s tier)"
+  },
+  {
+   "id": "ENTR-SHAR-0023",
+   "row": "Entry signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Post-event prompt acceptance (“get the confirmation-and-reminder treatment on every booking”)"
+  },
+  {
+   "id": "ENTR-SHAR-0024",
+   "row": "Entry signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Loyalty Programme</span> account creation from a high-frequency weekday account"
+  },
+  {
+   "id": "ENTR-SHAR-0025",
+   "row": "Entry signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "First seasonal-prompt open and click-through to the availability checker"
+  },
+  {
+   "id": "TRAN-SHAR-0001",
+   "row": "Transition signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "A first solo order at the <span class=\"entity\">Truck</span> window from a new customer following a location-page visit"
+  },
+  {
+   "id": "TRAN-SHAR-0002",
+   "row": "Transition signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "The same device returns to the live-status page repeatedly before ordering (planning the first visit)"
+  },
+  {
+   "id": "TRAN-SHAR-0003",
+   "row": "Transition signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Catering</span> page visitor downloads the FAQ or notes the local contact (Grace’s recon behaviour)"
+  },
+  {
+   "id": "TRAN-SHAR-0004",
+   "row": "Transition signals",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">App</span> install or web-order account creation shortly after a referral link open"
+  },
+  {
+   "id": "TRAN-SHAR-0005",
+   "row": "Transition signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Second and third visits within two weeks from the same payment card or <span class=\"entity\">App</span> account (rotation forming)"
+  },
+  {
+   "id": "TRAN-SHAR-0006",
+   "row": "Transition signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Catering</span> enquiry form started or local operator contacted within days of a first visit"
+  },
+  {
+   "id": "TRAN-SHAR-0007",
+   "row": "Transition signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Wait-time/status module checked repeatedly on subsequent weekdays before ordering"
+  },
+  {
+   "id": "TRAN-SHAR-0008",
+   "row": "Transition signals",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Group-sized single orders beginning to appear (one buyer, multiple items)"
+  },
+  {
+   "id": "TRAN-SHAR-0009",
+   "row": "Transition signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "First completed group/<span class=\"entity\">Catering</span> booking request with a date, headcount, and dietary sheet attached (Grace moving to proof)"
+  },
+  {
+   "id": "TRAN-SHAR-0010",
+   "row": "Transition signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "A request for an itemised invoice, cost centre, or PO field (both personas entering the operational-proof stage)"
+  },
+  {
+   "id": "TRAN-SHAR-0011",
+   "row": "Transition signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Twelve-plus-cover order scoping or “who handles <span class=\"entity\">Catering</span>?” asked at the window (Omar’s event)"
+  },
+  {
+   "id": "TRAN-SHAR-0012",
+   "row": "Transition signals",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Repeat group orders stabilising at 2–4 covers, several times weekly (group habit locked, business account emerging)"
+  },
+  {
+   "id": "TRAN-SHAR-0013",
+   "row": "Transition signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "A delivered event debriefed as on-time-at-headcount, followed by a repeat or larger booking (proof converting to trust)"
+  },
+  {
+   "id": "TRAN-SHAR-0014",
+   "row": "Transition signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "The client-event tier booked after successful lower-stakes orders (Grace’s escalation ladder completing)"
+  },
+  {
+   "id": "TRAN-SHAR-0015",
+   "row": "Transition signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Post-event catering-list or alerts sign-up prompts accepted (the Stage-5 door opening)"
+  },
+  {
+   "id": "TRAN-SHAR-0016",
+   "row": "Transition signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Coordinator asks about recurring dates, seasonal booking, or the winter option (relationship extending beyond single events)"
+  },
+  {
+   "id": "TRAN-SHAR-0017",
+   "row": "Transition signals",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Referral language appearing: “tell them I sent you” / a second coordinator from the same building enquiring"
+  },
+  {
+   "id": "TRAN-SHAR-0018",
+   "row": "Transition signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "First alert acted on and verified accurate; alert-to-visit conversion holding across weeks"
+  },
+  {
+   "id": "TRAN-SHAR-0019",
+   "row": "Transition signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Recurring dates locked (Friday treats, monthly lunches) and winter option booked — the year-round relationship"
+  },
+  {
+   "id": "TRAN-SHAR-0020",
+   "row": "Transition signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Client-event tier moved onto the standard booking system (Grace’s highest-stakes trust transferred)"
+  },
+  {
+   "id": "TRAN-SHAR-0021",
+   "row": "Transition signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Referral links sent and converting: colleagues subscribing to alerts, new coordinators entering at Stage 1 with a warm start"
+  },
+  {
+   "id": "TRAN-SHAR-0022",
+   "row": "Transition signals",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Group runs booked directly from alert notifications; monthly team working-lunch moved onto alerts by default — routine, not enthusiasm"
+  },
+  {
+   "id": "DGEN-SHAR-0001",
+   "row": "Data generated",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Referral-channel data: shared-card opens, QR scans, referral parameters — a first-ever measure of the word-of-mouth channel the brand already wins on"
+  },
+  {
+   "id": "DGEN-SHAR-0002",
+   "row": "Data generated",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Discovery-source signal per new visitor (search vs. direct vs. shared card) to weight investment toward human-recommendation amplification"
+  },
+  {
+   "id": "DGEN-SHAR-0003",
+   "row": "Data generated",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Location-page and schedule-page view patterns by neighbourhood and time of day — demand mapping for <span class=\"entity\">Truck</span> placement"
+  },
+  {
+   "id": "DGEN-SHAR-0004",
+   "row": "Data generated",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Catering-page first-touch profiles (company domain, city, pages viewed) — an early register of inbound coordinator interest"
+  },
+  {
+   "id": "DGEN-SHAR-0005",
+   "row": "Data generated",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Winter-answer and invoicing FAQ views — direct demand evidence for the operational offer"
+  },
+  {
+   "id": "DGEN-SHAR-0006",
+   "row": "Data generated",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Verified wait-time and throughput data per <span class=\"entity\">Truck</span> per daypart — the operational dataset behind every later reliability promise"
+  },
+  {
+   "id": "DGEN-SHAR-0007",
+   "row": "Data generated",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Sellout timing by item, day, and <span class=\"entity\">Truck</span> — supply-planning signal and the input for honest stock alerts"
+  },
+  {
+   "id": "DGEN-SHAR-0008",
+   "row": "Data generated",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Allergen-sheet scan volume and item-level views — direct evidence of dietary-information demand"
+  },
+  {
+   "id": "DGEN-SHAR-0009",
+   "row": "Data generated",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Window catering-card handouts and resulting contacts — a trackable trial-to-vendor pipeline"
+  },
+  {
+   "id": "DGEN-SHAR-0010",
+   "row": "Data generated",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "First-visit conversion data: which discovery source and which daypart produce repeat visits"
+  },
+  {
+   "id": "DGEN-SHAR-0011",
+   "row": "Data generated",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Rotation telemetry: order frequency, daypart, and group size per account — identifying multi-cover “runner” accounts worth business-grade treatment"
+  },
+  {
+   "id": "DGEN-SHAR-0012",
+   "row": "Data generated",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Labelled-item and dietary-tag data (plant-based, sauce preferences, allergen flags) for personalised reorder defaults"
+  },
+  {
+   "id": "DGEN-SHAR-0013",
+   "row": "Data generated",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Status-check-to-order conversion rates — quantifying how much revenue trustworthy status protects"
+  },
+  {
+   "id": "DGEN-SHAR-0014",
+   "row": "Data generated",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Availability-checker queries by date and city — a forward demand calendar for <span class=\"entity\">Catering</span>"
+  },
+  {
+   "id": "DGEN-SHAR-0015",
+   "row": "Data generated",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Price-sheet downloads and enquiry-to-booking funnel data, including where threads stall (the operational-response agent’s trigger data)"
+  },
+  {
+   "id": "DGEN-SHAR-0016",
+   "row": "Data generated",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Saved group templates: named team preferences that become switching costs in the brand’s favour"
+  },
+  {
+   "id": "DGEN-SHAR-0017",
+   "row": "Data generated",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Delivery-performance record per event: confirmed vs. actual arrival, headcount served, order accuracy — the brand’s own reliability ledger, quotable to future coordinators"
+  },
+  {
+   "id": "DGEN-SHAR-0018",
+   "row": "Data generated",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Confirmation forwarding and open patterns — mapping the hidden approval chain (VP, finance) around each coordinator"
+  },
+  {
+   "id": "DGEN-SHAR-0019",
+   "row": "Data generated",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Dietary and allergen profiles per organisation (stored consent-based) for one-click rebooking"
+  },
+  {
+   "id": "DGEN-SHAR-0020",
+   "row": "Data generated",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Invoice and PO metadata: billing entities, cost codes, approval cycle times — the beginnings of a B2B account view"
+  },
+  {
+   "id": "DGEN-SHAR-0021",
+   "row": "Data generated",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Event-tier progression data (Friday treat → monthly → client event) as a template for scoring how coordinator accounts mature"
+  },
+  {
+   "id": "DGEN-SHAR-0022",
+   "row": "Data generated",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Winter-option enquiry volume by city — the demand case for the November-through-March offer"
+  },
+  {
+   "id": "DGEN-SHAR-0023",
+   "row": "Data generated",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Alert-accuracy ledger: every alert vs. actual <span class=\"entity\">Truck</span> status — the trust metric that governs the whole channel (and proof of the honest-bad-news policy working)"
+  },
+  {
+   "id": "DGEN-SHAR-0024",
+   "row": "Data generated",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Alert-to-visit and alert-to-group-run conversion by subscriber, daypart, and <span class=\"entity\">Truck</span> — direct revenue attribution for the operational channel"
+  },
+  {
+   "id": "DGEN-SHAR-0025",
+   "row": "Data generated",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Coordinator demand calendar: locked recurring dates, seasonal bookings, winter uptake — forward revenue visibility per city and operator"
+  },
+  {
+   "id": "DGEN-SHAR-0026",
+   "row": "Data generated",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Unsubscribe and engagement telemetry per content type — enforcing signal purity with evidence, catching drift before it costs subscribers"
+  },
+  {
+   "id": "DGEN-SHAR-0027",
+   "row": "Data generated",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Referral-graph data: who refers whom, referred-account conversion and experience quality — measuring and protecting the champion loop"
+  },
+  {
+   "id": "DGEN-SHAR-0028",
+   "row": "Data generated",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Loyalty-perk usage (priority pickups, fast-lane rebooks) proving which operational privileges deepen the routine"
+  },
+  {
+   "id": "DUSE-SHAR-0001",
+   "row": "Data used",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Truck</span> schedules, operator check-ins, and POS activity to publish live open/closed status (INS-C09, PAIN-B)"
+  },
+  {
+   "id": "DUSE-SHAR-0002",
+   "row": "Data used",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">App</span> search logs showing “<span class=\"entity\">Truck</span> near me”/“open now” intent and drop-off (APPLOG-r1, APPLOG-r3) to prioritise which status surfaces to fix first"
+  },
+  {
+   "id": "DUSE-SHAR-0003",
+   "row": "Data used",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Market intelligence on real-time certainty as the top purchase driver and same-day decision share (MR-C05, MR-C23, MR-C24)"
+  },
+  {
+   "id": "DUSE-SHAR-0004",
+   "row": "Data used",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Social listening on missed-visit complaints (SOC-M013, SOC-M016) to identify <span class=\"entity\">Trucks</span> whose published schedules under-deliver"
+  },
+  {
+   "id": "DUSE-SHAR-0005",
+   "row": "Data used",
+   "stage": 1,
+   "scope": "SHAR",
+   "text": "Existing web analytics on borderblend.ca navigation paths to measure how deeply the <span class=\"entity\">Catering</span> path is currently buried (BB-INT014-t8)"
+  },
+  {
+   "id": "DUSE-SHAR-0006",
+   "row": "Data used",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "POS transaction timestamps to derive real serve rates and peak windows (BB-INT013-t8)"
+  },
+  {
+   "id": "DUSE-SHAR-0007",
+   "row": "Data used",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Historical sellout patterns by <span class=\"entity\">Truck</span> and item to set stock-status thresholds (BB-INT014-t30, PAIN-B)"
+  },
+  {
+   "id": "DUSE-SHAR-0008",
+   "row": "Data used",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">App</span> search-log demand for dietary information (APPLOG-r10, APPLOG-r11) to prioritise the ingredient sheet"
+  },
+  {
+   "id": "DUSE-SHAR-0009",
+   "row": "Data used",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Existing recipe and ingredient documentation from franchisee training kits as the single source for the allergen sheet (INS-B01, PAIN-A)"
+  },
+  {
+   "id": "DUSE-SHAR-0010",
+   "row": "Data used",
+   "stage": 2,
+   "scope": "SHAR",
+   "text": "Social sentiment on line length and consistency (SOC-M005, SOC-M025) to target which <span class=\"entity\">Trucks</span> need throughput support first"
+  },
+  {
+   "id": "DUSE-SHAR-0011",
+   "row": "Data used",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "POS live menu and stock data to keep <span class=\"entity\">App</span> and board in sync (INS-B02, FT-009, PAIN-B)"
+  },
+  {
+   "id": "DUSE-SHAR-0012",
+   "row": "Data used",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Operator check-in/geolocation feeds powering the status surface (INS-C09, APPLOG-r1)"
+  },
+  {
+   "id": "DUSE-SHAR-0013",
+   "row": "Data used",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Stage-2 wait-time and sellout datasets to set order-ahead promise times honestly"
+  },
+  {
+   "id": "DUSE-SHAR-0014",
+   "row": "Data used",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "Order history to pre-fill “usual crew” templates and reorder suggestions (INS-C10)"
+  },
+  {
+   "id": "DUSE-SHAR-0015",
+   "row": "Data used",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">Catering</span> price list and operator calendars to drive the availability-first flow (BB-INT014-t8)"
+  },
+  {
+   "id": "DUSE-SHAR-0016",
+   "row": "Data used",
+   "stage": 3,
+   "scope": "SHAR",
+   "text": "<span class=\"entity\">App</span> abandonment analytics (APPLOG-r16, APPLOG-r17) to verify the rebuilt flow actually converts where the old one dropped users"
+  },
+  {
+   "id": "DUSE-SHAR-0017",
+   "row": "Data used",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Booking records to auto-assemble confirmations and day-before reminders (BB-INT014-t10, INS-C14)"
+  },
+  {
+   "id": "DUSE-SHAR-0018",
+   "row": "Data used",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Stage-2/3 sellout and throughput data to size ring-fenced prep against walk-up demand (BB-INT014-t30, PAIN-B)"
+  },
+  {
+   "id": "DUSE-SHAR-0019",
+   "row": "Data used",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "The recipe/ingredient single source of truth to generate the allergen dossier (PAIN-A, INS-B01)"
+  },
+  {
+   "id": "DUSE-SHAR-0020",
+   "row": "Data used",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Account order history to distinguish the high-frequency business runner (Omar’s forty-a-quarter pattern) and offer cost-code receipts proactively (BB-INT013-t18)"
+  },
+  {
+   "id": "DUSE-SHAR-0021",
+   "row": "Data used",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Operator calendars and event schedules to power availability answers and conflict detection (BB-INT014-t8)"
+  },
+  {
+   "id": "DUSE-SHAR-0022",
+   "row": "Data used",
+   "stage": 4,
+   "scope": "SHAR",
+   "text": "Prairie winter-operations guidance and seasonality data to build the winter offer (FT-015, MR-C32)"
+  },
+  {
+   "id": "DUSE-SHAR-0023",
+   "row": "Data used",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Live operator check-in, geolocation, and POS stock feeds to auto-generate accurate alerts (INS-C09, PAIN-B, INS-B02)"
+  },
+  {
+   "id": "DUSE-SHAR-0024",
+   "row": "Data used",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Stage-3/4 order history and saved crew templates to power one-tap group runs from the alert (INS-C10, BB-INT013-t16)"
+  },
+  {
+   "id": "DUSE-SHAR-0025",
+   "row": "Data used",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Booking and delivery-performance records to schedule confirmations, day-before reminders, and fast-lane rebooks (BB-INT014-t10, BB-INT014-t26)"
+  },
+  {
+   "id": "DUSE-SHAR-0026",
+   "row": "Data used",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Seasonal calendars, Prairie winter-operations guidance, and per-city demand curves to time proactive prompts and the winter offer (FT-015, MR-C32, BB-INT014-t24)"
+  },
+  {
+   "id": "DUSE-SHAR-0027",
+   "row": "Data used",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Segment-level subscription benchmarks — operational-signal opt-in propensity and value-moment triggers (INS-C14, MR-C27, MR-C28)"
+  },
+  {
+   "id": "DUSE-SHAR-0028",
+   "row": "Data used",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Stored billing, PO, and dietary profiles from Stage 4 to make every repeat booking a one-e-mail transaction (BB-INT014-t18, INS-C11)"
+  },
+  {
+   "id": "DUSE-SHAR-0029",
+   "row": "Data used",
+   "stage": 5,
+   "scope": "SHAR",
+   "text": "Brand-voice rules (no superlatives, no “authentic” claims) as the pre-send governance model for both lists (PAIN-E, brand factsheet voice rule)"
+  }
+ ]
+}

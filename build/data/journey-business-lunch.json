@@ -1,0 +1,214 @@
+{
+  "slug": "business-lunch",
+  "title": "Business Person at Lunch — Awareness → Newsletter Subscription",
+  "persona": "business-lunch",
+  "color": "var(--biz)",
+  "subtitle": "How a weekday professional and an office/catering coordinator turn a reliable brisket lunch into load-bearing routine — and opt in for operational signal.",
+  "stages": [
+    {"key": "awareness", "name": "Awareness", "sub": "notices the truck"},
+    {"key": "trial", "name": "Trial", "sub": "first lunch"},
+    {"key": "reorder", "name": "Reorder", "sub": "becomes a go-to"},
+    {"key": "group", "name": "Group & Catering", "sub": "brings the team / orders for the office"},
+    {"key": "reliance", "name": "Reliance", "sub": "depends on it, hits friction"},
+    {"key": "subscribe", "name": "Subscribe", "sub": "newsletter / loyalty / catering list"}
+  ],
+  "rows": [
+    {"key": "doing", "label": "Doing"},
+    {"key": "thinking", "label": "Thinking"},
+    {"key": "feeling", "label": "Feeling"},
+    {"key": "channels", "label": "Channels"},
+    {"key": "pains", "label": "Frictions"},
+    {"key": "opps", "label": "Opportunities"}
+  ],
+  "cells": {
+    "awareness": {
+      "doing": {
+        "text": "A colleague points at the truck on the walk back from a meeting — \"the brisket one\" is the whole pitch. The catering coordinator arrives differently: a team offsite surfaces it, then she immediately checks whether they cater, can invoice, and will actually show up.",
+        "insights": ["INS-C02", "INS-C04"],
+        "evidence": ["BB-INT013-t6", "BB-INT014-t2"]
+      },
+      "thinking": {
+        "text": "\"Is this fast enough for a workday, and can I trust it?\" The solo professional screens for time cost; the coordinator screens for whether it can carry a group booking she'd stake her name on.",
+        "insights": ["INS-C04"]
+      },
+      "feeling": {
+        "text": "Curious but guarded",
+        "emoji": "🤔",
+        "insights": ["INS-C04"]
+      },
+      "channels": {
+        "text": "A trusted colleague's word of mouth and sheer proximity to the office; for the coordinator, an offsite recommendation and the borderblend.ca website she goes hunting on for a \"book us\" option.",
+        "insights": ["INS-C02"]
+      },
+      "pains": {
+        "text": "There's no obvious front door for the group buyer — the catering path is buried behind a site built for the person buying one taco, so a high-intent lead has to dig to learn if BorderBlend even serves her use case.",
+        "insights": ["INS-C14", "INS-B09"],
+        "evidence": ["BB-INT014-t8"]
+      },
+      "opps": {
+        "text": "Capture the referral moment and make the group/catering path discoverable from first contact — a clear \"cater your team\" route alongside the consumer menu, so the coordinator who is already looking can find the door immediately.",
+        "insights": ["INS-C02", "INS-C14"],
+        "evidence": ["BB-INT014-t8"]
+      }
+    },
+    "trial": {
+      "doing": {
+        "text": "The professional stands in the 12:40 line once — reluctantly — and orders the smoked brisket taco. The coordinator vets it on her own lunch before she'll ever put her name on a team order: \"I will never put my name on something I haven't eaten myself.\"",
+        "insights": ["INS-C06", "INS-C04"],
+        "evidence": ["BB-INT013-t6", "BB-INT014-t4"]
+      },
+      "thinking": {
+        "text": "\"Very good brisket in six minutes — eighty percent of the restaurant for twenty percent of the time cost.\" The food registers even in work mode; the coordinator confirms it clears the bar of \"not sad-tray-of-sandwiches good.\"",
+        "insights": ["INS-C06", "INS-C07"],
+        "evidence": ["BB-INT013-t8", "BB-INT014-t16"]
+      },
+      "feeling": {
+        "text": "Pleasantly surprised",
+        "emoji": "😋",
+        "insights": ["INS-C06"]
+      },
+      "channels": {
+        "text": "The truck window and the in-person board — the first-hand product experience, not the app or social. The lunch line is the whole channel.",
+        "insights": ["INS-C06"]
+      },
+      "pains": {
+        "text": "A line at 12:40 is a real risk to a 1 o'clock meeting, and the hero can vanish — brisket sold out by early Saturday afternoon on the coordinator's first solo visit. Execution variability threatens the very first impression.",
+        "insights": ["INS-C09", "INS-C06"],
+        "evidence": ["BB-INT013-t10", "BB-INT014-t30"]
+      },
+      "opps": {
+        "text": "Let the product do the converting it already does — protect that first taste with reliable stock and a predictable line, and lean on the plant-based over-delivery that surprises even sceptics, so trial reliably becomes rotation.",
+        "insights": ["INS-C06", "INS-C07"],
+        "evidence": ["BB-INT013-t8", "BB-INT014-t16"]
+      }
+    },
+    "reorder": {
+      "doing": {
+        "text": "It quietly enters the rotation — \"I didn't decide to become a regular. It happened\" — two-to-four lunches a week. The coordinator moves BorderBlend onto her shortlist of trusted vendors for Friday treats and monthly team lunches.",
+        "insights": ["INS-C04", "INS-C05"],
+        "evidence": ["BB-INT013-t6", "BB-INT014-t22"]
+      },
+      "thinking": {
+        "text": "\"I don't need the best brisket in the city — I need very good brisket in six minutes.\" Lunch is now a solved problem he refuses to re-solve daily; reliability and sameness beat novelty.",
+        "insights": ["INS-C04", "INS-C06"],
+        "evidence": ["BB-INT013-t8"]
+      },
+      "feeling": {
+        "text": "Settled, low-effort trust",
+        "emoji": "😌",
+        "insights": ["INS-C04"]
+      },
+      "channels": {
+        "text": "Walk-up to the known truck, working off a remembered schedule; a first curious tap on the app to try ordering ahead.",
+        "insights": ["INS-C09", "INS-C10"],
+        "evidence": ["BB-INT013-t14"]
+      },
+      "pains": {
+        "text": "The one question every workday — is this specific truck open right now, and where — often has no reliable answer until he's standing on an empty corner. Price creep (\"almost the same as a restaurant now\") begins to register in the background.",
+        "insights": ["INS-C09", "INS-C08"],
+        "evidence": ["BB-INT013-t10", "APPLOG-r3", "BB-INT014-t20"]
+      },
+      "opps": {
+        "text": "Answering \"open now, where, how long's the line\" reliably — plus working order-ahead — converts an already-earned habit into daily use. Fixing app/POS sync turns the highest-intent repeat customer into load-bearing routine.",
+        "insights": ["INS-C09", "INS-C10"],
+        "evidence": ["BB-INT013-t12"]
+      }
+    },
+    "group": {
+      "doing": {
+        "text": "The professional becomes the \"I'll grab lunch — what does everyone want\" person two-to-four times a week, taking three or four orders in one trip. The coordinator books team lunches and client catering for ~30, sends out a dietary form, and plans over email and a phone call with the local operator.",
+        "insights": ["INS-C04", "INS-C11"],
+        "evidence": ["BB-INT013-t16", "BB-INT014-t14"]
+      },
+      "thinking": {
+        "text": "\"If I could pre-load a group order, that's me bringing them four customers instead of one.\" For the coordinator: \"Reliability is the whole game — will you actually show up, at the headcount I said.\" The food is table stakes; trust is the decision.",
+        "insights": ["INS-C04", "INS-C11", "INS-C14"],
+        "evidence": ["BB-INT013-t16", "BB-INT014-t12"]
+      },
+      "feeling": {
+        "text": "Anxious — reputation on the line",
+        "emoji": "😰",
+        "insights": ["INS-C14"]
+      },
+      "channels": {
+        "text": "A buried catering page on borderblend.ca, a booking form, back-and-forth email and one phone call; a crumpled thermal receipt or nothing where an invoice should be.",
+        "insights": ["INS-C14", "INS-B09"],
+        "evidence": ["BB-INT014-t8", "BB-INT013-t18"]
+      },
+      "pains": {
+        "text": "Ingredient-level allergen info is genuinely hard to get — with a tree-nut/EpiPen colleague at stake, no straight answer means she doesn't book at all. Confirmations are casual (\"yep we'll be there!\") when she needs a hard, forwardable booking for her VP; invoicing is informal; there's no clear front door for the professional \"waving money\" for catering.",
+        "insights": ["INS-C11", "INS-C09"],
+        "evidence": ["BB-INT014-t16", "BB-INT014-t10", "BB-INT013-t26"]
+      },
+      "opps": {
+        "text": "Ring-fence and reserve stock for booked group orders (never first-come), issue a hard forwardable confirmation, attach an ingredient-level allergen sheet, and provide a proper itemised invoice (GST broken out, PO reference) plus a clear catering price sheet and booking door — every one earns the loyalty of a buyer purchasing for 30, monthly, year-round.",
+        "insights": ["INS-C11", "INS-C14", "INS-C10"],
+        "evidence": ["BB-INT014-t18", "BB-INT014-t30", "BB-INT013-t18"]
+      }
+    },
+    "reliance": {
+      "doing": {
+        "text": "The professional now runs part of his workday around the truck — and downloads the app specifically to order ahead, uses it twice, then closes it. The coordinator carries the whole relationship: she has to remember they exist, dig up the booking form each time, and solve the Calgary winter herself.",
+        "insights": ["INS-C10", "INS-C04"],
+        "evidence": ["BB-INT013-t14", "BB-INT014-t24"]
+      },
+      "thinking": {
+        "text": "\"It stops being the truck I take my chances on and becomes infrastructure — you don't churn out of infrastructure.\" For the coordinator: \"It's all on me to initiate,\" and a food truck in a minus-25 February is a hard sell that needs an indoor answer.",
+        "insights": ["INS-C10", "INS-C04"],
+        "evidence": ["BB-INT013-t28", "BB-INT014-t22"]
+      },
+      "feeling": {
+        "text": "Frustrated the tool adds uncertainty",
+        "emoji": "😤",
+        "insights": ["INS-C10"]
+      },
+      "channels": {
+        "text": "The app and its order-ahead flow — where the menu didn't match the truck board, he couldn't tell if the truck was open, and there was no clear \"your order is ready\" moment; a POS that doesn't sync; a seasonal calendar with a winter hole.",
+        "insights": ["INS-C10", "INS-B02"],
+        "evidence": ["BB-INT013-t14", "APPLOG-r16", "APPLOG-r17"]
+      },
+      "pains": {
+        "text": "App↔POS sync failures and a static menu that doesn't match the board let the highest-intent users down; order-ahead shows 44% drop-off and pickup-location confirmation abandons at checkout. Meanwhile the coordinator has no winter/indoor catering path and shoulders every re-initiation herself.",
+        "insights": ["INS-C10", "INS-B02"],
+        "evidence": ["BB-INT013-t14", "APPLOG-r16", "APPLOG-r17"]
+      },
+      "opps": {
+        "text": "Reliable order-ahead with a genuine ready-for-pickup handoff turns a two-time app abandoner into daily infrastructure; a proactive seasonal prompt and a winter/indoor catering option means the coordinator no longer carries the initiation — the brand comes to her at the right moment.",
+        "insights": ["INS-C10", "INS-C14"],
+        "evidence": ["BB-INT013-t16", "BB-INT014-t24"]
+      }
+    },
+    "subscribe": {
+      "doing": {
+        "text": "Both are habitual unsubscribers who opt in anyway — narrowly. The professional signs up for high-signal lunch alerts; the coordinator says \"for the group side? A hundred percent yes,\" the strongest possible tell from someone who unsubscribes from everything.",
+        "insights": ["INS-C14"],
+        "evidence": ["BB-INT013-t20", "BB-INT014-t26"]
+      },
+      "thinking": {
+        "text": "\"Signal versus noise.\" Brand story, meet-the-team, recipes = unsubscribe in four seconds. \"Truck is here today,\" actionable specials, and a booking path = open every time. The coordinator: \"Talk to me like I'm running an operation, because I am.\"",
+        "insights": ["INS-C14"],
+        "evidence": ["BB-INT013-t20", "BB-INT014-t28"]
+      },
+      "feeling": {
+        "text": "Relieved, finally on board",
+        "emoji": "🙌",
+        "insights": ["INS-C14"]
+      },
+      "channels": {
+        "text": "An operational email newsletter, a morning \"truck is here today\" push, and a real catering booking system with a hard confirmation and a day-before reminder — not brand-story content.",
+        "insights": ["INS-C14", "INS-C13"],
+        "evidence": ["BB-INT013-t22", "BB-INT014-t26"]
+      },
+      "pains": {
+        "text": "The existing loyalty programme is opaque enough that regulars don't know it exists or abandon the account interface (33% drop-off on loyalty search), and any generic push or brand-story email triggers an instant unsubscribe — so the current offer converts neither buyer.",
+        "insights": ["INS-C12", "INS-C14"],
+        "evidence": ["BB-INT013-t20", "APPLOG-r19"]
+      },
+      "opps": {
+        "text": "The converting offer is purely operational: \"truck is here today\" morning lunch alerts and reliable pre-order for the professional; a catering menu with allergen sheet forwardable in one shot, real availability, a hard \"we're confirmed in writing\" booking with a day-before reminder, and clean itemised invoicing for the coordinator — plus seasonal open/close prompts and a simple, visible loyalty scheme. Give them the boring, load-bearing stuff and they subscribe and book constantly.",
+        "insights": ["INS-C14", "INS-C11", "INS-C10", "INS-C12"],
+        "evidence": ["BB-INT013-t22", "BB-INT014-t26", "BB-INT014-t28"]
+      }
+    }
+  }
+}

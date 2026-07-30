@@ -10,66 +10,102 @@ Written 2026-07-29.
 
 ## 1. The one thing you must not get wrong
 
-**Every HTML file in this repo is generated output. Editing it by hand is a dead
-end.** The generator lives in a *different* repository and will overwrite
-whatever you write here on its next run.
+**Every HTML file in `site/` is generated output. Editing it by hand is a dead
+end** — the next rebuild overwrites it.
 
 ```
-uc-pharma-analysis/OUTPUT/interim/borderblend/build.py   <- the real source
+build/source-data/   27 synthetic .md sources
+        │
+        ▼
+build/build.py  +  build/postbuild/*.py
         │
         │  writes 44 HTML files
         ▼
-uc-ucloops-publicdemo/                                    <- you are here
+site/                          <- the published artifact
         │
-        │  ai-projects-publisher MCP
+        │  ai-projects-publisher MCP, pointed at site/
         ▼
 urbinaconsulting.com/shares/ucloops/borderblend/
 ```
 
-If a fix belongs in the output, it belongs in `build.py` or in one of the
-post-build patch scripts. A hand-edit here survives exactly until someone rebuilds.
+As of 2026-07-29 this repo is **self-contained** — generator, source data, working
+JSON and patches all moved in from the uc-pharma-analysis workspace where
+BorderBlend was first built. There is no longer any outside dependency.
 
-That said — see §3. Right now several important fixes live *only* as post-build
-patches, so "just run build.py" produces a **worse** site than what is committed
-here. Read §3 before rebuilding anything.
+The `site/` + `build/` split exists for a specific reason: the publisher ships the
+entire folder it is pointed at, with no exclude option. Pointing it at `site/`
+keeps the toolchain, the source data and these docs off the live site.
+
+If a fix belongs in the output, it belongs in `build.py` or a post-build patch.
+
+**But read §3 before rebuilding anything** — the chain has a known gap and a bare
+rebuild produces a *worse* site than what is committed.
 
 ## 2. Where everything is
 
 | Thing | Location |
 |---|---|
 | This repo | `D:\DEV\uc-ucloops-publicdemo` · `github.com/nozurbina/uc-ucloops-publicdemo` |
-| Generator + source data | `D:\UC Dropbox\Work\UC\Orgs\ucLoops Projects\UC ucLoops for UC\Pharma\uc-pharma-analysis` |
-| Generator script | `<analysis>/OUTPUT/interim/borderblend/build.py` |
-| Post-build patches | `<analysis>/OUTPUT/interim/borderblend/postbuild/` |
-| Link validator | `<analysis>/OUTPUT/interim/borderblend/check_links.py` |
-| Project plan / status | `<analysis>/.claude/borderblend-plan.md` |
+| Published artifact | `site/` — **publish this folder, not the repo root** |
+| Generator | `build/build.py` |
+| Synthetic sources | `build/source-data/` (27 .md) |
+| Working data | `build/data/` (JSON, anchor-index, site.css, CANON.md) |
+| Post-build patches | `build/postbuild/` |
+| v2/v3 tooling | `build/v2/`, `build/v3/` |
+| Link validator | `build/check_links.py` |
 | Companion chat app | `D:\DEV\uc-ucloops-ui1` · `github.com/nozurbina/uc-ucloops-ui1` |
 | Live site | https://urbinaconsulting.com/shares/ucloops/borderblend/ |
 | Live app | https://ucloops-demo-v1.vercel.app |
 
-This repo was split out of `uc-pharma-analysis` on 2026-07-29 (fresh history; the
-older commits stay in the analysis repo). The folder was **removed** from the
-analysis repo deliberately — there is one copy, not two that drift.
+Split out of `uc-pharma-analysis` on 2026-07-29 (fresh history; older commits stay
+there), and made fully self-contained the same day — the generator, source data and
+patches were moved across and removed from the analysis repo, so there is one copy
+rather than two that drift. The companion app was already self-contained.
+
+Nothing here reads from the analysis workspace any more. If you find a path
+pointing at it, that is a bug.
 
 ## 3. Rebuilding — read this or you will ship regressions
 
 `build.py` does **not** emit the current markup. Four post-build patch scripts
 apply fixes it doesn't know about. Running the generator alone gives you a site
-with the old broken chrome, no mobile support, and no links to the persona app.
+with broken chrome, no mobile support, and no links to the persona app.
 
 ```sh
-export BORDERBLEND_SITE=/d/DEV/uc-ucloops-publicdemo
-cd "<analysis>/OUTPUT/interim/borderblend"
+cd build          # SITE defaults to ../site; BORDERBLEND_SITE overrides it
 python build.py --full
-python postbuild/mobile-journey.py    "$BORDERBLEND_SITE"   # order matters
-python postbuild/chrome-v2.py         "$BORDERBLEND_SITE"
-python postbuild/chrome-v3.py         "$BORDERBLEND_SITE"
-python postbuild/persona-sim-links.py "$BORDERBLEND_SITE"
+python postbuild/mobile-journey.py    ../site   # order matters
+python postbuild/chrome-v2.py         ../site
+python postbuild/chrome-v3.py         ../site
+python postbuild/persona-sim-links.py ../site
 python check_links.py
 ```
 
-- `BORDERBLEND_SITE` is required. Without it `build.py` falls back to the old
-  in-repo path and recreates the duplicate folder the split removed.
+### KNOWN GAP — a rebuild does not reproduce `site/`
+
+Verified 2026-07-29 by building into a scratch directory and diffing all 35
+generated files against the published ones: **every one differed.**
+
+`build.py` emits **no promo banner at all** (0 occurrences vs 22 in the published
+index). That step was applied straight to the HTML in an earlier session and was
+never captured as a script. Consequences, in order:
+
+1. `chrome-v2.py` looks for the banner's old sizing script, finds none, and fails
+   with `no old sizing script found` on every page.
+2. `chrome-v3.py` checks for v2's marker, doesn't find it, and refuses to run.
+3. The result is roughly **16.7KB per page short** — no banner, no dismiss button,
+   no logo, none of the chrome fixes.
+
+So: **never point a bare rebuild at `site/`.** Build into a scratch directory, run
+the patches there, and diff before letting anything near the published folder. The
+committed `site/` is currently the only complete copy of the chrome layer.
+
+Closing this — folding the banner and chrome into `build.py` so it emits final
+markup directly — is the highest-value open task. Until then `site/` cannot be
+regenerated from scratch, only patched forward.
+
+- `BORDERBLEND_SITE` overrides the output directory; it defaults to `../site`.
+  Use it for scratch builds.
 - **Order matters twice.** `chrome-v2.py` must run after `mobile-journey.py`: its
   CSS has to land later in the cascade to beat the drawer's `!important` height
   rule. And `chrome-v3.py` refuses to run before `chrome-v2.py` — it corrects v2's
@@ -102,8 +138,10 @@ Non-negotiables:
   this folder any more — open `D:\DEV\uc-ucloops-publicdemo` as the workspace.
 - Publishing is **incremental**. A one-file edit previews as `1 update, 49
   unchanged` and uploads only that file. There is no need to avoid republishing.
-- The whole folder ships, including `README.md` and this file. There is no exclude
-  option. If that matters, move them out first.
+- **Point it at `<repo>/site`**, never the repo root. The publisher ships the whole
+  folder it is given and has no exclude option, so the root would push the
+  toolchain, the synthetic sources and these docs onto the live site. Publishing
+  `site/` is the entire reason for the split.
 
 Credentials are DPAPI-encrypted per Windows user in
 `C:\Users\nozno\Documents\Codex\2026-07-10\g\tools\ai-projects\publish.local.json`.

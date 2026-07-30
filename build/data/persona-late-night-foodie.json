@@ -1,0 +1,72 @@
+{
+  "slug": "late-night-foodie",
+  "name": "Late-Night Foodie (André & Sofia archetype)",
+  "tagline": "The post-midnight brisket run is a ritual — and I'll bring the whole crew, if I can just find the truck.",
+  "emoji": "🌮",
+  "color": "var(--late)",
+  "one_liner": "A food-culture-driven 20-something out late off a bar shift or after a venue, for whom the post-midnight quality-taco run is a ritual. A genuine taco nerd and organic amplifier who converts the crew — held back only by not knowing which truck is open, and where, at the exact hour the craving peaks.",
+  "demographics": {
+    "Age": "22–29",
+    "Location": "Toronto / Montreal",
+    "Occupation": "Service industry (bartender, line cook) / creative nightlife (DJ, crew)",
+    "Occasion": "post-shift / after-venue late night (12:30–3am)",
+    "Digital": "TikTok + Instagram"
+  },
+  "quote": "I'm doing their marketing for free at 1am, bro — and happily. But the number one reply I always get is 'where.' Everyone can see it's incredible; it's 'where do I get it.'",
+  "quote_evidence": ["BB-INT017-t16"],
+  "evidence": ["BB-INT017", "BB-INT018"],
+  "blocks": [
+    {
+      "title": "Goals & motivations",
+      "items": [
+        {"text": "Cap the night with real food, not a regret — after eight hours on their feet, the post-shift/after-venue taco run is an earned ritual, not just a meal.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t6"]},
+        {"text": "Be the one who runs the table — convening coworkers and the venue crowd, ordering across the menu so everyone tastes everything, and converting sceptics on the spot.", "insights": ["INS-C03", "INS-C06"], "evidence": ["BB-INT017-t8"]},
+        {"text": "Champion fusion done right — evangelising a brisket and Korean-chicken taco whose flavours genuinely make sense, not a gimmick, as a badge of taste.", "insights": ["INS-C07"], "evidence": ["BB-INT018-t20"]},
+        {"text": "Be in the know — access and insider status matter more than points; being first to the drop is the real reward.", "insights": ["INS-C13"], "evidence": ["BB-INT017-t24"]}
+      ]
+    },
+    {
+      "title": "Behaviours & habits",
+      "items": [
+        {"text": "Comes off shift between 12:30 and 2:30am and rolls up as a pack — leads the group order, splits everything, and personally drags in coworkers, touring bands, DJs.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t8"]},
+        {"text": "Posts nearly every visit — the unwrap, the steam, the truck lights behind the taco — as stories and the occasional TikTok, generating a wave of replies.", "insights": ["INS-C01"], "evidence": ["BB-INT017-t16"]},
+        {"text": "Orders the smoked brisket as a baseline and puts the salsa verde on everything — deep, specific menu knowledge that makes the enthusiasm persuasive.", "insights": ["INS-C06"], "evidence": ["BB-INT017-t4"]},
+        {"text": "Runs an informal 'intelligence network' to locate the truck late — DMing the local account, texting friends, cross-referencing before committing to the walk.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t12"]}
+      ]
+    },
+    {
+      "title": "Discovery & channels",
+      "items": [
+        {"text": "Word of mouth within the scene is the real signal — a trusted person saying 'no, actually, go' outweighs any ad, especially at 2am when nobody is searching.", "insights": ["INS-C02"], "evidence": ["BB-INT018-t2"]},
+        {"text": "TikTok and Instagram — close-up brisket and first-bite clips — are the visual confirmation that makes the recommendation feel real.", "insights": ["INS-C01"], "evidence": ["BB-INT018-t4"]},
+        {"text": "Acts as an amplifier, not just a follower: their own posts drive a stream of 'where is this?' replies, seeding new demand from the scene.", "insights": ["INS-C01"], "evidence": ["BB-INT017-t16"]}
+      ]
+    },
+    {
+      "title": "Frictions (obstacles to going further)",
+      "items": [
+        {"text": "Cannot confirm which truck is open or where, late, when trucks relocate to venues and clubs — the single biggest barrier, turning a 20-minute walk into an empty corner.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t10"]},
+        {"text": "The app's 'open now' is no longer trusted and its static menu doesn't match the truck board, so the highest-intent user checks it 'like a weather app I don't believe.'", "insights": ["INS-C10", "INS-B02"], "evidence": ["BB-INT018-t12"]},
+        {"text": "A dormant local Instagram reads as closed even when the truck is out — 'you lose to certainty, not to quality' — so ready-to-spend intent goes to the place known to be open.", "insights": ["INS-C09"], "evidence": ["BB-INT018-t10"]},
+        {"text": "For the Montreal francophone, an English-only national presence reads as 'not made for here' — a small but real exclusion that cools the relationship.", "insights": ["INS-C16"], "evidence": ["BB-INT018-t16"]}
+      ]
+    },
+    {
+      "title": "What would deepen the relationship & drive subscription",
+      "items": [
+        {"text": "Late-night location drops above all — a 'we're parked at Richmond & Portland till 3am tonight' alert — framed as service, not marketing; would sign up in a heartbeat.", "insights": ["INS-C13"], "evidence": ["BB-INT018-t26"]},
+        {"text": "Insider / creator access — location drops and seasonal previews first, early notice of a Fuego Nights return — 'crew energy, not punch-card energy.'", "insights": ["INS-C13"], "evidence": ["BB-INT017-t24"]},
+        {"text": "Bilingual done properly in authentic fr-CA; English-only loyalty content is an instant unsubscribe, and translated-from-France copy is worse than English.", "insights": ["INS-C16"], "evidence": ["BB-INT018-t30"]},
+        {"text": "Skip the opaque points scheme — access beats discounts, and a friend-in-the-scene register beats three 'ORDER NOW' pushes a day.", "insights": ["INS-C12"], "evidence": ["BB-INT018-t30"]}
+      ]
+    },
+    {
+      "title": "Emotional arc",
+      "items": [
+        {"text": "Conversion: the first midnight brisket taco is a jolt of delight — real smoke, real technique at 1am — that turns a hungry regular into an evangelist.", "insights": ["INS-C06"], "evidence": ["BB-INT017-t4"]},
+        {"text": "Frustration on the hunt: intent and appetite are high, but not being able to confirm the truck is there leaves them 'mad and still hungry' — a lost sale from a superfan.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t14"]},
+        {"text": "Willing amplifier waiting to be armed: doing the word of mouth for free, out of genuine affection, and asking only that the brand meet them halfway — 'tell us where the truck is.'", "insights": ["INS-C13"], "evidence": ["BB-INT018-t32"]}
+      ]
+    }
+  ]
+}

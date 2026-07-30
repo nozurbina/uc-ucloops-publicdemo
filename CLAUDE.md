@@ -8,40 +8,58 @@ them, where every claim deep-links to its evidence.
 pipeline, the publishing flow, and several traps that will otherwise cost you a
 cycle each. What follows is the short version.
 
-## This repo is generated output, not source
-
-Every HTML file here is produced by a generator in a **different** repository:
+## Layout
 
 ```
-<analysis>/OUTPUT/interim/borderblend/build.py   ->   this repo   ->   live site
+site/     the published artifact - the publisher is pointed HERE, not at the repo root
+build/    everything that produces it (self-contained; no outside dependencies)
+            build.py            generator
+            source-data/        27 synthetic .md sources
+            data/               working JSON, anchor index, site.css
+            postbuild/          required patch scripts
+            v2/ v3/             tooling for the v2/v3 maps and personas
+            assets/             vendored humanloops-urbina.css
 ```
 
-where `<analysis>` is
-`D:\UC Dropbox\Work\UC\Orgs\ucLoops Projects\UC ucLoops for UC\Pharma\uc-pharma-analysis`.
+Anything outside `site/` is never published, which is why the toolchain and these
+docs can live here safely.
 
-**Do not hand-edit HTML here as a fix.** It survives only until the next rebuild.
-Fixes belong in `build.py` or in `<analysis>/OUTPUT/interim/borderblend/postbuild/`.
+## site/ is generated output, not source
 
-Small caveat, and it matters: several current fixes exist **only** as post-build
-patches, so running `build.py` on its own produces a *worse* site than what is
-committed here. Never rebuild without also running all three postbuild scripts.
+Every HTML file in `site/` is produced by `build/build.py`. **Do not hand-edit it
+as a fix** - it survives only until the next rebuild. Fixes belong in `build.py`
+or in `build/postbuild/`.
 
-## Rebuild (all steps required)
+Caveat, and it matters: several current fixes exist **only** as post-build patches,
+so `build.py` on its own produces a *worse* site than what is committed. Never
+rebuild without also running every postbuild script.
+
+## Rebuild
 
 ```sh
-export BORDERBLEND_SITE=/d/DEV/uc-ucloops-publicdemo
-cd "<analysis>/OUTPUT/interim/borderblend"
+cd build          # SITE defaults to ../site; BORDERBLEND_SITE overrides it
 python build.py --full
-python postbuild/mobile-journey.py    "$BORDERBLEND_SITE"   # order matters:
-python postbuild/chrome-v2.py         "$BORDERBLEND_SITE"   # v2 after the drawer,
-python postbuild/chrome-v3.py         "$BORDERBLEND_SITE"   # v3 after v2
-python postbuild/persona-sim-links.py "$BORDERBLEND_SITE"
+python postbuild/mobile-journey.py    ../site   # order matters:
+python postbuild/chrome-v2.py         ../site   # v2 after the drawer,
+python postbuild/chrome-v3.py         ../site   # v3 after v2
+python postbuild/persona-sim-links.py ../site
 python check_links.py
 ```
 
-`BORDERBLEND_SITE` is required — without it the generator writes to a stale
-in-repo path. All four patches are idempotent and marker-guarded; `chrome-v3.py`
-refuses to run before `chrome-v2.py`.
+All four patches are idempotent and marker-guarded; `chrome-v3.py` refuses to run
+before `chrome-v2.py`.
+
+> ### The chain is incomplete — a rebuild does NOT reproduce `site/`
+>
+> `build.py` emits **no promo banner**. That step was applied straight to the HTML
+> before anyone captured it as a script, so it exists only in the committed files.
+> `chrome-v2` then finds no banner to transform, reports `no old sizing script
+> found`, and `chrome-v3` refuses to run at all. A fresh build comes out roughly
+> **16.7KB per page short**: no banner, no dismiss button, no logo.
+>
+> **Never overwrite `site/` from a bare rebuild.** Build into a scratch directory
+> (`BORDERBLEND_SITE=/tmp/x`) and diff before letting anything near `site/`.
+> Closing this gap — folding the chrome into `build.py` — is the top open task.
 
 ## Publishing
 
@@ -54,7 +72,9 @@ language — nothing has changed yet.
   as the workspace when publishing.
 - Publishing is incremental; a one-file change uploads one file. Republishing is
   cheap, so don't avoid it.
-- The whole folder ships, `README.md` and `For AIs.md` included. No exclude option.
+- Point it at **`<repo>/site`**, not the repo root. That is the whole reason for
+  the split: the toolchain, source data and these docs are then never published,
+  and no file has to be held aside at publish time.
 
 ## Verify the artifact, not the report
 

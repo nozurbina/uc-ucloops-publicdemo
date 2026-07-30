@@ -1,0 +1,129 @@
+{
+  "slug": "business-lunch",
+  "code": "GRAC",
+  "name": "Grace",
+  "role": "Business Lunch — office manager & catering coordinator · Calgary · 41",
+  "initials": "G",
+  "sections": [
+    {
+      "type": "DEMO",
+      "items": [
+        {"text": "Forty-one, Calgary, office manager and executive assistant at a mid-size energy-services firm, feeding a roughly 30-person team.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t2"]},
+        {"text": "A group decider, not a solo eater — she books team <span class=\"entity\">lunch</span>es and larger client events, and vets a vendor herself before she puts her people or a partner in front of it.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t2", "BB-INT020-t4"]},
+        {"text": "Runs distinct ordering tiers: the casual team treat, the monthly team <span class=\"entity\">lunch</span>, and the high-stakes client or celebratory catering booking.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t22", "BB-INT020-t24"]},
+        {"text": "The highest-value repeat buyer in the room — she orders for thirty most months and wants to route more, all year, to a vendor she can trust.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t28", "BB-INT020-t32"]}
+      ]
+    },
+    {
+      "type": "MIND",
+      "items": [
+        {"text": "Vets everything herself before she commits the team — \"I will never put my name on something I haven't eaten myself,\" so she walks over on her own time first.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t4", "BB-INT020-t4"]},
+        {"text": "Reliability is the whole game and good food is only table stakes — she wouldn't book anyone whose food is bad, but showing up as promised, at the headcount she gave, is the entire job.", "insights": ["INS-C09"], "evidence": ["BB-INT014-t12", "BB-INT020-t12"]},
+        {"text": "Thinks like an operator and wants to be talked to like one — \"talk to me like I'm running an operation, because I am\" — not marketed at with specials.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t28", "BB-INT020-t30"]},
+        {"text": "Will not gamble on safety: when allergen answers are vague she simply books a better-documented competitor rather than risk a colleague or a client.", "insights": ["INS-C11"], "evidence": ["BB-INT014-t16", "BB-INT020-t18"]}
+      ]
+    },
+    {
+      "type": "EMOT",
+      "emotions": [
+        {"emoji": "😰", "label": "Anxious", "tail": "the no-show memory that \"lives in the back of my head every single time,\" and the week before a big booking when she doesn't sleep", "insights": ["INS-C09"], "evidence": ["BB-INT014-t6", "BB-INT020-t8"]},
+        {"emoji": "🛡️", "label": "Protective", "tail": "a real EpiPen tree-nut colleague, and a client whose partner once nearly died from nuts — she refuses to put either at risk", "insights": ["INS-C11"], "evidence": ["BB-INT014-t14", "BB-INT020-t14"]},
+        {"emoji": "😍", "label": "Delighted", "tail": "the <span class=\"entity\">plant-based option</span> won over people who don't usually go plant-based — a genuine surprise", "insights": ["INS-C07"], "evidence": ["BB-INT014-t16", "BB-INT020-t18"]},
+        {"emoji": "😤", "label": "Frustrated", "tail": "she's a warm lead being made to work too hard — \"I'm on your side here,\" and the catering path is buried", "insights": ["INS-C14"], "evidence": ["BB-INT014-t28", "BB-INT020-t32"]},
+        {"emoji": "🤝", "label": "Ready to commit", "tail": "\"build the boring version and I'll be first in line — just put a name on my booking\"", "insights": ["INS-C14"], "evidence": ["BB-INT014-t32", "BB-INT020-t36"]}
+      ]
+    },
+    {
+      "type": "VOIC",
+      "voice": "<em>She talks like someone who runs the room — organised, quick and dry, with a habit of flagging her own pet peeves before she launches into them (\"okay, bear with me\"). She swings between warm and methodical, narrating her process step by step, and brisk and budget-protective, clipping through a list. Either way she reaches for concrete scenes: a hungry executive team in a lobby, a partner who bills nine hundred an hour standing in a boardroom, forty panic-ordered pizzas, minus-twenty-five in a February parking lot. She's generous about the people she deals with (\"lovely guy,\" \"the guy was great\") but immovable on the boring stuff — dates, allergens, invoices, confirmations in writing — because that is the job she is judged on, and she is not the customer: the partner is, and her neck is the one out.</em>",
+      "voice_insights": ["INS-C14", "INS-C09"],
+      "quotes": [
+        {"text": "I need \"we are confirmed for Thursday, arriving 11:30, here for ninety minutes, this is the driver's cell.\" Locked. In writing. I'm not forwarding \"yep!\" to leadership.", "evidence": ["BB-INT014-t10"]},
+        {"text": "The guy was lovely, but I can't forward an exclamation mark to a partner. Give me the paper and I'd have been fine — instead I aged a year that week for no reason.", "evidence": ["BB-INT020-t10"]},
+        {"text": "I'm not going to gamble on somebody's airway to save a few dollars on nicer tacos. That's not a close call for me.", "evidence": ["BB-INT014-t16"]},
+        {"text": "When I book you, I'm not the customer — the partner is, the client is, and I'm the one whose neck is out. A clean invoice, allergen paper, a name I can call — that's you protecting my reputation.", "evidence": ["BB-INT020-t34"]}
+      ]
+    },
+    {
+      "type": "GOAL",
+      "items": [
+        {"text": "Feed thirty people well without the vendor-no-show nightmare — reliability she can stake her reputation on, especially with a client in the room.", "insights": ["INS-C09"], "evidence": ["BB-INT014-t12", "BB-INT020-t8"]},
+        {"text": "Get a hard, forwardable booking confirmation she can send straight up to her VP or a partner — date, arrival, duration, headcount and the driver's number.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t10", "BB-INT020-t10"]},
+        {"text": "Keep her people safe with ingredient-level allergen information in writing that she can hand to the allergic colleague, or a client's assistant, to decide for themselves.", "insights": ["INS-C11"], "evidence": ["BB-INT014-t14", "BB-INT020-t14"]},
+        {"text": "Make the occasion look good — a morale <span class=\"entity\">lunch</span> people notice, or a celebration that lands in front of forty — never the sad tray of sandwiches.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t20", "BB-INT020-t24"]},
+        {"text": "Route more business to <span class=\"entity\">BorderBlend</span> and make them her default for every event — if they help her through the Calgary winter and stop making it hard to say yes.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t22", "BB-INT020-t32"]}
+      ]
+    },
+    {
+      "type": "TASK",
+      "items": [
+        {"text": "Tries the truck solo first — she walked over on her own for the <span class=\"entity\">smoked brisket taco</span> — then investigates catering, invoicing and whether they'll actually turn up for thirty.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t2", "BB-INT020-t4"]},
+        {"text": "Sends a form round the team to collect headcount and who can't eat what — always two or three vegetarians, someone plant-based, and at least one serious allergy.", "insights": ["INS-C11"], "evidence": ["BB-INT014-t14", "BB-INT020-t14"]},
+        {"text": "Chases down and pins the confirmation herself when the operator's casual \"yep we'll be there!\" is too soft to forward upward.", "insights": ["INS-C09"], "evidence": ["BB-INT014-t10", "BB-INT020-t10"]},
+        {"text": "Gets the price pre-approved before the event and runs a proper invoice through the company — nothing finance or accounts will bounce back.", "insights": ["INS-C08"], "evidence": ["BB-INT014-t18", "BB-INT020-t20"]},
+        {"text": "Plans around her ordering tiers and Calgary seasonality — a spring-to-fall truck occasion, with a separate answer needed November to March.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t22", "BB-INT020-t24"]}
+      ]
+    },
+    {
+      "type": "PAIN",
+      "items": [
+        {"text": "The catering path is buried — the site felt built for the person buying one taco, not for her booking for thirty, with four steps before she even knew if they were free on her date.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t8", "BB-INT020-t6"]},
+        {"text": "Confirmations are too soft — a friendly \"yep!\" with an exclamation mark is not a booking she can forward to leadership, so she loses sleep the week before over not having the paper.", "insights": ["INS-C09"], "evidence": ["BB-INT014-t10", "BB-INT020-t10"]},
+        {"text": "Allergen information isn't there at ingredient level — the menu says <span class=\"entity\">Korean-style chicken taco</span> but not what's in the sauce, and the answer came back \"let me check with the kitchen.\"", "insights": ["INS-C11"], "evidence": ["BB-INT014-t14", "BB-INT020-t16"]},
+        {"text": "Invoicing is informal — it took a couple of asks to get an itemised PDF with tax broken out and a PO or matter reference, and a surprise number after the fact is a non-starter for pre-approval.", "insights": ["INS-C08"], "evidence": ["BB-INT014-t18", "BB-INT020-t20"]},
+        {"text": "Stock runs first-come — brisket had sold out by early Saturday afternoon when she visited, and a sellout on a booked group order with a client watching is her nightmare.", "insights": ["INS-B03"], "evidence": ["BB-INT014-t30", "BB-INT020-t26"]}
+      ]
+    },
+    {
+      "type": "FEAR",
+      "items": [
+        {"text": "The vendor no-show repeating — standing in a lobby or a boardroom with a hungry executive team, explaining to a partner why there's no <span class=\"entity\">lunch</span> for the client they're trying to keep.", "insights": ["INS-C09"], "evidence": ["BB-INT014-t6", "BB-INT020-t8"]},
+        {"text": "A brisket sellout on a booked catering order for thirty or forty, in front of a client — the near-miss all over again in a nicer outfit.", "insights": ["INS-B03"], "evidence": ["BB-INT014-t30", "BB-INT020-t26"]},
+        {"text": "An allergic reaction on her watch because the ingredient information she was given wasn't clear enough to trust.", "insights": ["INS-C11"], "evidence": ["BB-INT014-t14", "BB-INT020-t18"]}
+      ]
+    },
+    {
+      "type": "ETRI",
+      "items": [
+        {"text": "The lingering dread from being burned once — a client <span class=\"entity\">lunch</span> where the caterer never showed, or one that arrived short by eight orders in front of a senior associate.", "insights": ["INS-C09"], "evidence": ["BB-INT014-t6", "BB-INT020-t26"]},
+        {"text": "Not sleeping the week before a booking because she doesn't have a hard confirmation in hand.", "insights": ["INS-C09"], "evidence": ["BB-INT014-t10", "BB-INT020-t8"]},
+        {"text": "Wanting to look competent and calm in front of the people who matter — everything comes back to whether she can trust it in front of her executives.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t30", "BB-INT020-t34"]}
+      ]
+    },
+    {
+      "type": "XTRI",
+      "items": [
+        {"text": "The catering season opening — a well-timed \"patio season's starting, here's the menu, here's how to lock a date\" in April would land the booking.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t24"]},
+        {"text": "A trusted rave sending her to try it — an engineer's \"the brisket one, you have to,\" or a senior partner coming back from lunch and making it her problem.", "insights": ["INS-C02"], "evidence": ["BB-INT014-t2", "BB-INT020-t2"]},
+        {"text": "A finance or accounts bounce on an informal receipt, which forces her back into chasing a proper invoice.", "insights": ["INS-C08"], "evidence": ["BB-INT014-t18", "BB-INT020-t20"]}
+      ]
+    },
+    {
+      "type": "CRIT",
+      "items": [
+        {"text": "A confirmed, in-writing, forwardable booking with arrival time, duration, headcount and a named human's cell — plus a day-before reminder.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t10", "BB-INT020-t30"]},
+        {"text": "Ingredient-level allergen information she can hand to the team or a client; if she can't get a straight answer she books elsewhere, full stop.", "insights": ["INS-C11"], "evidence": ["BB-INT014-t16", "BB-INT020-t18"]},
+        {"text": "A proper itemised PDF invoice (tax broken out, billing name and PO or matter number) with the price agreed up front for pre-approval.", "insights": ["INS-C08"], "evidence": ["BB-INT014-t18", "BB-INT020-t20"]},
+        {"text": "Ring-fenced, reserved, guaranteed stock for her count — not first-come — so a group order can't be sold out from under her.", "insights": ["INS-B03"], "evidence": ["BB-INT014-t30", "BB-INT020-t26"]}
+      ]
+    },
+    {
+      "type": "CHAN",
+      "items": [
+        {"text": "A named human contact she can email and phone for the big bookings — a person who owns her booking, not a form or a \"reply to this address.\"", "insights": ["INS-C14"], "evidence": ["BB-INT014-t8", "BB-INT020-t30"]},
+        {"text": "An operational <span class=\"entity\">newsletter</span> she'd gladly subscribe to despite being a habitual unsubscriber — catering menu with allergen info attached to forward to team and finance in one shot, real availability, and seasonal open/close prompts.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t28", "BB-INT020-t30"]},
+        {"text": "A real booking system that issues a proper confirmation and a reminder the day before — the thing that would make her book constantly and stop stress-dreaming about empty rooms.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t28", "BB-INT020-t30"]},
+        {"text": "A clear catering page or \"book us\" front door on the website, easy to find for someone ordering for thirty rather than one taco.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t8", "BB-INT020-t6"]},
+        {"text": "A team dietary form she circulates herself to gather headcount and allergies before every order.", "insights": ["INS-C11"], "evidence": ["BB-INT014-t14", "BB-INT020-t14"]}
+      ]
+    },
+    {
+      "type": "RELT",
+      "rels": [
+        {"label": "With her executives & the partners", "points": ["Books the high-stakes client catering in front of the people the firm is trying to impress, so her own reputation rides on every order — she isn't the customer, the partner and the client are, and her neck is the one out.", "Needs a confirmation solid enough to forward upward — \"I'm not forwarding 'yep!' to leadership,\" and \"I can't forward an exclamation mark to a partner.\""], "insights": ["INS-C09", "INS-C14"], "evidence": ["BB-INT014-t10", "BB-INT020-t34"]},
+        {"label": "With her ~30-person team", "points": ["Runs the morale <span class=\"entity\">lunch</span>es and monthly team feeds, and collects everyone's headcount and dietary needs via a form.", "Protects the colleague with a genuine EpiPen tree-nut allergy — she needs ingredient-level answers in writing so he can decide for himself."], "insights": ["INS-C04", "INS-C11"], "evidence": ["BB-INT014-t14", "BB-INT020-t14"]},
+        {"label": "With the local operator, Accounts Payable & the EA network", "points": ["Plans directly with the local operator (\"lovely guy\") over email and a call, and would happily give him more business year-round — and route half the network his way, because the EAs all talk.", "Has to satisfy finance with an itemised PDF invoice — tax broken out, billing name and PO — or it bounces straight back to her."], "insights": ["INS-C14", "INS-C08"], "evidence": ["BB-INT014-t18", "BB-INT020-t32"]}
+      ]
+    }
+  ]
+}

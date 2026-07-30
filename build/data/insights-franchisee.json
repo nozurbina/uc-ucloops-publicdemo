@@ -1,0 +1,112 @@
+[
+  {
+    "id": "INS-F01",
+    "title": "The fusion story is told differently by every operator",
+    "category": "Brand consistency",
+    "strength": "strong",
+    "personas": ["franchisee"],
+    "statement": "There is no shared origin story or agreed way to talk about the food, so each franchisee improvises the answer to \"what is this?\"",
+    "body": "Ask Patrick in Quebec City, Marc in Montreal, and Diego in Toronto to explain why Mexican, Korean, and brisket belong together and you get three different answers, none of them wrong but none of them the same. Operators are proud of the product and want to sell its story well; the gap is simply that HQ has never codified it, so basic food storytelling gets reinvented at every truck window. A single, well-crafted narrative would let the whole network speak with one confident voice about the brand's biggest differentiator.",
+    "implication": "Codifying one fusion origin story and a shared \"how to talk about the food\" turns 27 improvised pitches into one amplified brand story, protecting the differentiator as the network scales.",
+    "evidence": ["VER-INT009-t22", "PAIN-C", "PAIN-D", "MR-C41"]
+  },
+  {
+    "id": "INS-F02",
+    "title": "Brand voice lives in a static PDF operators can't query",
+    "category": "Brand consistency",
+    "strength": "strong",
+    "personas": ["franchisee"],
+    "statement": "A franchisee drafting a caption has no way to check it is on-brand before posting, so compliance is caught only after the post is live.",
+    "body": "The voice guide exists as a long English-only PDF about logos and tone, which operators like Kenji describe as tools handed over with no strategy behind them and Patrick calls simply \"a document\". Because there is no searchable or interactive way to pressure-test a draft, an unapproved \"authentic\" or superlative claim only surfaces when HQ flags it after publication. Franchisees clearly want to stay on-brand, as the operators who submit graphics for optional pre-review show; they just lack a fast way to self-check.",
+    "implication": "A queryable, on-demand brand-voice checker would let operators publish confidently and fast while keeping compliance ahead of the post rather than behind it, freeing HQ from reactive policing.",
+    "evidence": ["PAIN-E", "FT-004", "FT-008", "VER-INT009-t20", "BB-INT005-t10"]
+  },
+  {
+    "id": "INS-F03",
+    "title": "French localisation arrives late and in the wrong French",
+    "category": "Localisation",
+    "strength": "verified",
+    "personas": ["franchisee"],
+    "statement": "Quebec operators receive French assets after the English drop, and when they arrive the register is often European French, not Québécois.",
+    "body": "Patrick's \"pickled onion\" ticket is the emblem: HQ's French described the brisket's pickled red onion with a European-French term, and small register errors like \"parking\" recur once you start looking. Marc reports the same, translating and adapting every asset himself because the marketing kit French lags or misses. Quebec customers notice and comment publicly, and 59% of Québec diners say European-French wording reads as an out-of-touch afterthought, so getting fr-CA right is a visible mark of respect for the market rather than a mere translation task.",
+    "implication": "Treating Québec as its own market with genuine fr-CA voice, not a translation problem, converts an under-served area into a point of differentiation and stops operators from doing HQ's localisation for free.",
+    "evidence": ["VER-INT009-t10", "VER-INT009-t8", "FT-010", "FT-001", "BB-INT002-t6", "PAIN-F", "MR-C31"]
+  },
+  {
+    "id": "INS-F04",
+    "title": "French assets on the same cadence, not \"French is coming\"",
+    "category": "Localisation",
+    "strength": "strong",
+    "personas": ["franchisee"],
+    "statement": "Operators want committed French versions of every campaign asset released on the same day as the English, not weeks later.",
+    "body": "Marc is explicit that even a good-enough French version on the same release beats a perfect one that arrives late, and Patrick names same-cadence French as the first of the two low-cost things he actually wants. The delay is structural: with no shared content model, producing French means starting a separate effort from scratch each time, and seasonal kits already arrive late enough that multiple markets open tickets. Solving this is inexpensive and would let bilingual operators launch campaigns on time instead of absorbing the timing gap themselves.",
+    "implication": "A content model that produces fr-CA assets in the same box, on the same date, lets Quebec operators run national campaigns on schedule and signals that the market is a first-class part of the brand's growth.",
+    "evidence": ["BB-INT002-t18", "VER-INT009-t24", "PAIN-F", "FT-012"]
+  },
+  {
+    "id": "INS-F05",
+    "title": "National creative doesn't fit every local market",
+    "category": "Campaigns",
+    "strength": "strong",
+    "personas": ["franchisee"],
+    "statement": "One national aesthetic and copy set is shipped everywhere, but it often mismatches the operator's actual neighbourhood and audience.",
+    "body": "Diego uses the imagery but rewrites captions, tags local events, and names specific neighbourhoods because the national kit is built for a different context than his financial-district clientele; a gritty neon night-launch look designed for a downtown Toronto event lands flat when sent unchanged nationally. Operators are willing to do this adaptation because they know their markets intimately, but every hour spent reworking a mismatched asset is an hour not spent growing the business. The appetite is for creative that flexes to local context, not a single template stretched across all 27 trucks.",
+    "implication": "Modular, locally-adaptable campaign assets let operators plug in their neighbourhood and audience without rebuilding from scratch, turning local ownership into a strength rather than a workaround.",
+    "evidence": ["BB-INT001-t6", "PAIN-I", "FT-005"]
+  },
+  {
+    "id": "INS-F06",
+    "title": "Discount-led campaign pricing breaks high-cost-market margins",
+    "category": "Campaigns",
+    "strength": "verified",
+    "personas": ["franchisee"],
+    "statement": "National campaign pricing guidance is set for one market and squeezes operators in higher-cost cities like Toronto.",
+    "body": "Diego's Fuego Nights example is concrete: a great concept with slick materials, but pricing guidance calibrated for a different market that didn't work for his cost base, a concern two Toronto franchisees raised through support in the same window. Because the economics are handed down rather than modelled per market, operators either eat the margin or quietly deviate from the guidance. Franchisees back the campaigns and want them to succeed; they need the pricing to reflect that Toronto and Vancouver carry the highest costs even as they command the highest willingness to pay.",
+    "implication": "Market-aware pricing guidance, tested before rollout, lets seasonal campaigns like Fuego Nights drive urgency and social buzz everywhere without eroding the margins of the brand's highest-value markets.",
+    "evidence": ["BB-INT001-t12", "FT-005", "FT-012", "PAIN-I"]
+  },
+  {
+    "id": "INS-F07",
+    "title": "Involve operators before the campaign is built, not after",
+    "category": "Campaigns",
+    "strength": "strong",
+    "personas": ["franchisee"],
+    "statement": "Campaigns are designed centrally then handed down to execute, when operators hold years of local customer data that could sharpen them.",
+    "body": "Diego wants to be treated as a business partner rather than an execution layer, arguing for test-in-a-market-first before national rollout, and points to the franchisee advisory council as early proof it works. Beatriz makes the same case from five years and three trucks: trust the operators who are performing and don't treat them as a uniform execution layer. These are invested partners with real market intelligence asking to contribute upstream, which is a low-cost way to raise campaign hit-rate and buy-in across the network.",
+    "implication": "Bringing high-performing operators into campaign design early, and piloting in one or two markets before national launch, raises both execution quality and network commitment while surfacing local pitfalls before they scale.",
+    "evidence": ["BB-INT001-t14", "BB-INT001-t20", "BB-INT003-t18"]
+  },
+  {
+    "id": "INS-F08",
+    "title": "The portal is organised for storage, not for the moment of need",
+    "category": "Onboarding & support",
+    "strength": "strong",
+    "personas": ["franchisee"],
+    "statement": "New operators struggle to find the right asset in the moment, and there is no marketing onboarding track to match the strong operational one.",
+    "body": "Yuki finds the portal extensive but organised by document type rather than by the task at hand, so finding what she needs mid-service is the real challenge; Aisha wanted a sequenced first-90-days checklist, and a new BC operator ticketed missing onboarding modules. Kenji, from restaurant management, contrasts excellent food-prep training with a marketing side that is just tools and no strategy, and asks for a marketing onboarding track alongside the operational one. New franchisees are eager and capable; the gap is discoverability and a guided ramp for the brand-marketing side.",
+    "implication": "Reorganising the portal around tasks and adding a structured marketing onboarding track would get new operators to confident, on-brand execution faster, accelerating how quickly each new truck contributes to network growth.",
+    "evidence": ["BB-INT004-t4", "BB-INT006-t6", "FT-006", "FT-002", "BB-INT005-t18"]
+  },
+  {
+    "id": "INS-F09",
+    "title": "New operators fly blind without benchmarks",
+    "category": "Onboarding & support",
+    "strength": "strong",
+    "personas": ["franchisee"],
+    "statement": "Without anonymised performance benchmarks or a scaling financial model, operators can't tell if their numbers are good, creating avoidable anxiety.",
+    "body": "Yuki and Kenji both describe decent early revenue but no way to know what \"good\" looks like at their stage, and asked for aggregate benchmarks (not other operators' confidential figures) and were declined. Beatriz recalls having no structured guidance on staffing ratios or unit economics when weighing a second truck, and one BC operator reached out in genuine stress over lower-than-hoped revenue. These are committed partners who want to level up; a simple anonymised benchmark and a scaling model would replace guesswork with confidence.",
+    "implication": "Sharing anonymised cohort benchmarks and a scaling financial model turns new-operator anxiety into informed decision-making, helping strong operators expand and de-risking the growth of the whole network.",
+    "evidence": ["BB-INT004-t12", "BB-INT005-t14", "BB-INT003-t16", "FT-014"]
+  },
+  {
+    "id": "INS-F10",
+    "title": "Peer Slack carries the support load HQ can't see",
+    "category": "Operations",
+    "strength": "strong",
+    "personas": ["franchisee"],
+    "statement": "The franchisee Slack is the real support network and often answers faster than HQ, but it runs outside HQ visibility and misses region-specific gaps like Prairie winters.",
+    "body": "Beatriz calls the Slack channel the best part of the arrangement, where a fellow operator usually answers a newcomer before HQ does, and Yuki credits Beatriz personally as invaluable. The strength is also the risk: useful local knowledge stays trapped and incorrect advice can circulate uncorrected, and structural gaps show up where no playbook exists, such as the Alberta operators asking for winter weather-contingency guidance. The network is generously self-organising; capturing and lightly stewarding that knowledge would multiply it.",
+    "implication": "Making the peer network visible and turning its best answers into stewarded, searchable guidance, including seasonal playbooks for Prairie winters, scales operator-to-operator expertise across the network instead of losing it in a Slack scroll.",
+    "evidence": ["BB-INT003-t14", "BB-INT004-t10", "PAIN-H", "FT-015", "MR-C32"]
+  }
+]

@@ -1,0 +1,127 @@
+{
+  "slug": "late-night-foodie",
+  "code": "MATE",
+  "name": "Mateo",
+  "role": "Late-Night Foodie — nightlife service worker · Toronto · 26",
+  "initials": "M",
+  "sections": [
+    {
+      "type": "DEMO",
+      "items": [
+        {"text": "26, Toronto — tends bar four nights a week and picks up line-cook shifts, so his \"lunch\" is 1am and his food radar is entirely late-night.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t6"]},
+        {"text": "A genuine taco nerd who cooks a little himself — can spot a real smoke ring versus liquid smoke, which makes his enthusiasm unusually persuasive.", "insights": ["INS-C06"], "evidence": ["BB-INT017-t4"]},
+        {"text": "Lives on Instagram and TikTok, follows food creators, and posts nearly every visit; his scene includes bartenders, servers, DJs and touring crews.", "insights": ["INS-C01"], "evidence": ["BB-INT017-t16"]},
+        {"text": "Rarely eats alone — comes off shift between 12:30 and 2:30am and rolls up to the truck as a pack, leading the group order.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t8"]}
+      ]
+    },
+    {
+      "type": "MIND",
+      "items": [
+        {"text": "After eight hours on his feet, the <span class=\"entity\">late-night meal</span> is an earned ritual — not a slice or a sad shawarma, but real food from someone who still cares at 1am.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t6"]},
+        {"text": "Fusion done right is a badge of taste: the <span class=\"entity\">smoked brisket taco</span> and <span class=\"entity\">Korean-style chicken taco</span> earn the fusion because the flavours make sense, whereas a gimmick is contempt for the eater.", "insights": ["INS-C07"], "evidence": ["BB-INT017-t18"]},
+        {"text": "Within the scene, a trusted person saying \"no, actually, go\" outweighs any ad — word of mouth is the only signal that really travels at 2am.", "insights": ["INS-C02"], "evidence": ["BB-INT018-t2"]},
+        {"text": "Access and being in the know matter more than points; being first to the drop is the real reward, not a stamp card.", "insights": ["INS-C13"], "evidence": ["BB-INT017-t24"]}
+      ]
+    },
+    {
+      "type": "EMOT",
+      "emotions": [
+        {"emoji": "🤩", "label": "Converted", "tail": "the first midnight brisket taco — real smoke, real technique at 1am — turned a hungry regular into an evangelist", "insights": ["INS-C06"]},
+        {"emoji": "😤", "label": "Frustrated", "tail": "appetite and intent are high, but not being able to confirm the truck is there leaves him mad and still hungry", "insights": ["INS-C09"]},
+        {"emoji": "🙌", "label": "Proud", "tail": "he runs the table — orders across the menu, converts sceptics on the spot, and drags a whole crew along", "insights": ["INS-C06"]},
+        {"emoji": "🤨", "label": "Distrustful", "tail": "checks the app the way you check a weather app you don't believe — wants to trust it, can't", "insights": ["INS-C10"]}
+      ]
+    },
+    {
+      "type": "VOIC",
+      "voice": "He talks fast and warm, in a rush of \"bro,\" \"honestly,\" and \"the best,\" hands moving the whole time — drawing a smoke ring in the air, clapping when he hits the point. Food-nerd specifics tumble out (the pink band under the bark, the salsa cutting the fat) and every story ends up back at the same place: where's the truck. He's exclamatory and generous, evangelising rather than complaining — even the pain comes out as \"it should not be this hard\" from someone who plainly loves the thing.",
+      "voice_insights": ["INS-C03", "INS-C06"],
+      "quotes": [
+        {"text": "First bite I'm like — okay. Okay. What IS this. That was the conversion moment. Honestly the best.", "evidence": ["BB-INT017-t2"]},
+        {"text": "I'm doing their marketing for free at 1am, bro — and happily. But the number one reply I always get is \"where.\" Everyone can see it's incredible; it's \"where do I get it.\"", "evidence": ["BB-INT017-t16"]},
+        {"text": "The app says \"open now\" and then you get there and it's just... not there. Empty spot. It's 1:30 and now I'm mad and I'm still hungry.", "evidence": ["BB-INT017-t10"]},
+        {"text": "If they could just tell me where they're parked tonight — \"we're at Richmond and Portland till 3am\" — I'd sign up so fast. That's the whole game.", "evidence": ["BB-INT017-t22"]}
+      ]
+    },
+    {
+      "type": "GOAL",
+      "items": [
+        {"text": "Cap the night with real food, not a regret — the post-shift <span class=\"entity\">late-night taco run</span> is the one thing open late that doesn't make you feel like garbage after.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t6"]},
+        {"text": "Run the table — convene the crew, order across the menu so everyone tastes everything, and convert the sceptics on the spot.", "insights": ["INS-C06"], "evidence": ["BB-INT017-t8"]},
+        {"text": "Champion fusion done right — evangelising a <span class=\"entity\">smoked brisket taco</span> and <span class=\"entity\">Korean-style chicken taco</span> whose flavours genuinely make sense, as a badge of taste.", "insights": ["INS-C07"], "evidence": ["BB-INT017-t18"]},
+        {"text": "Be in the know — insider access and first look at drops matter more than any discount, so he feels like part of the crew rather than a stamp-card holder.", "insights": ["INS-C13"], "evidence": ["BB-INT017-t24"]}
+      ]
+    },
+    {
+      "type": "TASK",
+      "items": [
+        {"text": "Comes off shift between 12:30 and 2:30am, rounds up coworkers, the kitchen crew, sometimes a touring band, and leads the group order — splitting everything so all tastes everything.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t8"]},
+        {"text": "Runs an informal intelligence network to locate the truck late — DMing the local account, texting friends who text three more people, before committing to the walk.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t12"]},
+        {"text": "Cross-references the <span class=\"entity\">BorderBlend app</span> against the local Instagram before setting out, because neither alone can be trusted to say the truck is really out tonight.", "insights": ["INS-C10", "INS-B02"], "evidence": ["BB-INT017-t14"]},
+        {"text": "Posts the unwrap — steam off the taco, truck lights behind it — as stories and the occasional TikTok every time he finds them, generating a wave of \"where is this?\" replies.", "insights": ["INS-C01"], "evidence": ["BB-INT017-t16"]},
+        {"text": "Orders the <span class=\"entity\">smoked brisket taco</span> as his baseline and puts the <span class=\"entity\">salsa verde</span> on everything — deep, specific menu knowledge that makes the recommendation land.", "insights": ["INS-C06"], "evidence": ["BB-INT017-t4"]}
+      ]
+    },
+    {
+      "type": "PAIN",
+      "items": [
+        {"text": "Can't confirm which truck is open or where, late, when trucks relocate to venues and clubs — the single biggest barrier, turning a 20-minute walk into an empty corner at 1:30am.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t10"]},
+        {"text": "The app's \"open now\" is no longer trusted and its static menu doesn't match the truck board, so the highest-intent user checks it \"like a weather app I don't believe.\"", "insights": ["INS-C10", "INS-B02"], "evidence": ["BB-INT017-t14"]},
+        {"text": "A dormant local Instagram reads as closed even when the truck is out — \"you lose to certainty, not to quality\" — so ready-to-spend intent goes to the place known to be open.", "insights": ["INS-C09"], "evidence": ["BB-INT018-t10"]},
+        {"text": "Almost missed <span class=\"entity\">Fuego Nights</span> because he only found out by chance-scrolling — a heads-up would have turned a near-miss into a whole night organised around it.", "insights": ["INS-B03", "INS-C13"], "evidence": ["BB-INT017-t26"]},
+        {"text": "For his Montreal counterparts in the scene, an English-only national presence reads as \"not made for here\" — a small but real exclusion that cools the relationship.", "insights": ["INS-C16"], "evidence": ["BB-INT018-t16"]}
+      ]
+    },
+    {
+      "type": "FEAR",
+      "items": [
+        {"text": "Walking 20–30 minutes on a maybe, finding nothing, and giving up on the thing he actually wanted — eating something worse and feeling the loss keenly.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t14"]},
+        {"text": "Vouching for the truck to a crew he's brought along and it not being there — losing face as the guy who's supposed to know.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t8"]},
+        {"text": "That the brand he does free word of mouth for treats the scene — and Montreal especially — as a market on a map rather than people worth speaking to properly.", "insights": ["INS-C16"], "evidence": ["BB-INT018-t16"]}
+      ]
+    },
+    {
+      "type": "ETRI",
+      "items": [
+        {"text": "The post-shift, wired-but-empty craving for a real <span class=\"entity\">late-night meal</span> — a specific hunger that only hits after hours on your feet.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t6"]},
+        {"text": "The convener impulse — wanting the whole crew to taste everything and being the one who makes that happen.", "insights": ["INS-C06"], "evidence": ["BB-INT017-t8"]},
+        {"text": "Being first to the drop — the insider thrill of knowing where the truck is, or that a seasonal is coming, before the room does.", "insights": ["INS-C13"], "evidence": ["BB-INT017-t24"]}
+      ]
+    },
+    {
+      "type": "XTRI",
+      "items": [
+        {"text": "A trusted person in the scene saying \"no, actually, go\" — the recommendation that outweighs any ad at 2am.", "insights": ["INS-C02"], "evidence": ["BB-INT018-t2"]},
+        {"text": "A close-up brisket or first-bite clip in the feed that confirms the recommendation is real.", "insights": ["INS-C01"], "evidence": ["BB-INT018-t4"]},
+        {"text": "A confirmed late-night location drop — \"parked at Richmond & Portland till 3am tonight\" — that removes the one thing standing between craving and the walk.", "insights": ["INS-C13"], "evidence": ["BB-INT017-t22"]}
+      ]
+    },
+    {
+      "type": "CRIT",
+      "items": [
+        {"text": "Can I confirm this specific truck is open and exactly where, right now — the question everything else hangs on.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t10"]},
+        {"text": "Is it a real meal that respects the late hour — actual smoked brisket, not something greasy that sits like a brick.", "insights": ["INS-C06"], "evidence": ["BB-INT017-t6"]},
+        {"text": "Does the fusion make sense rather than read as a gimmick — the flavours have to actually belong together.", "insights": ["INS-C07"], "evidence": ["BB-INT017-t18"]},
+        {"text": "Does it speak to the scene in the right register — a friend-in-the-scene tone, and genuine fr-CA for the Montreal crowd, not English-only or translated-from-France copy.", "insights": ["INS-C16"], "evidence": ["BB-INT018-t18"]}
+      ]
+    },
+    {
+      "type": "CHAN",
+      "items": [
+        {"text": "Instagram and TikTok — close-up brisket and first-bite clips are how he meets the brand and how he passes it on.", "insights": ["INS-C01"], "evidence": ["BB-INT018-t4"]},
+        {"text": "Word of mouth within the scene — a trusted voice is the real discovery channel, the app and search barely register at 2am.", "insights": ["INS-C02"], "evidence": ["BB-INT018-t2"]},
+        {"text": "DMs and texts — to the local truck account and to friends — as an ad-hoc way to locate the truck late when nothing official can.", "insights": ["INS-C09"], "evidence": ["BB-INT017-t12"]},
+        {"text": "The <span class=\"entity\">BorderBlend app</span> — downloaded and checked, but no longer believed because \"open now\" and the menu don't match reality.", "insights": ["INS-C10"], "evidence": ["BB-INT017-t14"]},
+        {"text": "Late-night location-drop alerts — the one channel he'd opt into instantly, framed as service, not marketing; the opaque <span class=\"entity\">loyalty programme</span> leaves him cold.", "insights": ["INS-C13", "INS-C12"], "evidence": ["BB-INT017-t22"]}
+      ]
+    },
+    {
+      "type": "RELT",
+      "rels": [
+        {"label": "With the brand & truck staff", "points": ["A willing amplifier waiting to be armed — does the word of mouth for free, out of genuine affection, asking only that the brand meet him halfway and tell him where the truck is.", "Would sign up in a heartbeat for location drops and insider access; wants creator-friend energy, not punch-card energy."], "insights": ["INS-C13"]},
+        {"label": "With the crew", "points": ["The convener who drags a dozen coworkers, DJs and touring bands to the truck and personally runs the group order.", "Each of his visits multiplies into conversions — solve his location problem and he becomes a repeatable acquisition engine, offline and social."], "insights": ["INS-C03"]},
+        {"label": "With the scene", "points": ["A trusted tastemaker whose posts seed a stream of \"where is this?\" demand from fellow foodies and creators.", "Amplifies only when the brand feels present — a dormant local account makes tagging feel like shouting into an empty room."], "insights": ["INS-C01"]}
+      ]
+    }
+  ]
+}

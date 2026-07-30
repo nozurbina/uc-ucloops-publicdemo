@@ -1,0 +1,860 @@
+[
+ {
+  "id": "GOAL-MATE-ST01-0001",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Figure out if this truck is actually worth my attention — my recommendations carry weight in my scene, so I don't hand them out for free."
+ },
+ {
+  "id": "GOAL-MATE-ST01-0002",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Confirm the hype with my own eyes before I commit a late-night detour to a truck I've never heard of."
+ },
+ {
+  "id": "GOAL-MATE-ST01-0003",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Bank it as a real option for the after-shift ritual — the 1am meal I've earned, not settled for."
+ },
+ {
+  "id": "GOAL-MATE-ST02-0001",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Cap the night with real food, not a regret — eight hours on my feet earned an actual meal."
+ },
+ {
+  "id": "GOAL-MATE-ST02-0002",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Test it against my own standards: real smoke or faked, fusion that makes sense or a stunt."
+ },
+ {
+  "id": "GOAL-MATE-ST02-0003",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Have a first experience good enough that I can put my name on it to my people."
+ },
+ {
+  "id": "GOAL-MATE-ST03-0001",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Be the one who runs the table — get the post-shift crew together and win over the sceptics face to face."
+ },
+ {
+  "id": "GOAL-MATE-ST03-0002",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Put my name behind fusion done right — it's a badge of taste, and my calls are my currency in this scene."
+ },
+ {
+  "id": "GOAL-MATE-ST03-0003",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Keep my standing: every recommendation I make has my name riding on it, so the truck has to keep earning it."
+ },
+ {
+  "id": "GOAL-MATE-ST04-0001",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Confirm, at 1am, which truck is out and exactly where — before I commit the walk with people behind me."
+ },
+ {
+  "id": "GOAL-MATE-ST04-0002",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Get the crew there while the night and the appetite are still live."
+ },
+ {
+  "id": "GOAL-MATE-ST04-0003",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Never again end a night mad and still hungry on an empty corner."
+ },
+ {
+  "id": "GOAL-MATE-ST05-0001",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Just get told where the truck is late at night — kill the hunt for good."
+ },
+ {
+  "id": "GOAL-MATE-ST05-0002",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Be in the know: location drops and seasonal word before the general public — access over points."
+ },
+ {
+  "id": "GOAL-MATE-ST05-0003",
+  "row": "Goals",
+  "scope": "MATE",
+  "text": "Never miss a Fuego Nights again — get the heads-up early enough to organize the whole night around it."
+ },
+ {
+  "id": "NARR-MATE-ST01-0001",
+  "row": "Narrative",
+  "scope": "MATE",
+  "text": "So Dani closes with me Thursdays, and mid-shift she's wiping the bar going \"the brisket truck, Mateo. The BRISKET truck.\" And she doesn't hype things — that's what got me. An ad says \"best tacos,\" whatever, everyone says that. Somebody in the scene saying \"no, actually, go\"? That's the real signal. So I'm on the streetcar home at 1:40 doing my homework: their TikTok, the national account, the Toronto one. Close-up brisket, steam, that pink smoke ring — okay, that's either real or they hired a very good liar. The feed makes it feel real. I'm not converted yet. But I'm listening."
+ },
+ {
+  "id": "NARR-MATE-ST02-0001",
+  "row": "Narrative",
+  "scope": "MATE",
+  "text": "Thursday close, 1:10, and Dani goes \"nope, no pizza, walk with me.\" Four blocks and I smell it before I see it — actual smoke, the real kind, drifting over a string of lights. I get the brisket because obviously, and the first bite I just — stop. On the sidewalk. There's a smoke ring. A proper pink band under the bark, at a taco truck, at one in the morning, and the salsa verde is cutting the fat like it was engineered for it. Somebody CARES back there. Somebody is still cooking like it matters, at 1am, and I've been eating sad rotating shawarma like a fool. I take the photo before I even mean to. Steam, truck lights, wrapper. That was the moment they got me."
+ },
+ {
+  "id": "NARR-MATE-ST03-0001",
+  "row": "Narrative",
+  "scope": "MATE",
+  "text": "It's a thing now. Thursday close, sometimes Saturday, we roll up like a little pack — me, Dani, half the kitchen, once an entire touring band I basically kidnapped from their load-out. And I run the table: you're getting the brisket, you're getting the Korean chicken, we're splitting everything so everyone tastes everything. I made Theo — carne asada purist, \"tacos peaked in 1985\" Theo — eat the Korean chicken and he went quiet. Quiet! And I post every visit: the unwrap, the steam, the corner we ended up on. My scene watches those. And every single time, the replies are the same word. Not \"what is that.\" Where. Where where where."
+ },
+ {
+  "id": "NARR-MATE-ST04-0001",
+  "row": "Narrative",
+  "scope": "MATE",
+  "text": "Here's the thing nobody warns you about becoming a superfan of a truck: the truck moves. Daytime, fine, it's by the office towers. But at night they chase the venues, the clubs on Richmond, and you have no idea where. So I run what is honestly an underground intelligence network for tacos. Check the app — \"open now,\" sure, buddy — I read that thing like a weather app I don't believe. Cross-reference the 'gram: last post, four days old. DM them \"yo you open, where you at\" and maybe get an answer in twenty minutes, which at 1am is a geological era. Text Dani, who's texting three other people. All this effort is proof of how good the food is. But it should not be this hard to give someone money."
+ },
+ {
+  "id": "NARR-MATE-ST05-0001",
+  "row": "Narrative",
+  "scope": "MATE",
+  "text": "So the window guy — who knows us by now, we're the Thursday pack — points at a little sign: \"Want to know where we're parked? Get the late-night drop.\" And I actually laughed, because YES. That's the thing. That's the only thing. I sign up right there, salsa verde still on my thumb. First alert lands a week later, 12:40am: \"Parked at Richmond &amp; Portland till 3 tonight.\" No fire emojis, no ORDER NOW — just a friend in the scene texting me a tip. Then the good one: \"Fuego Nights is back Thursday — you're hearing it first.\" I had the whole crew locked in by 1am. This isn't marketing. This is service. They finally armed me."
+ },
+ {
+  "id": "QUES-MATE-ST01-0001",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Is that brisket actually smoked, or is it braised-plus-liquid-smoke like every other place that says \"smoked\"?"
+ },
+ {
+  "id": "QUES-MATE-ST01-0002",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Is the Korean chicken thing real fusion or two cuisines stapled together to sell a novelty?"
+ },
+ {
+  "id": "QUES-MATE-ST01-0003",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Where does this truck even park at night — and how does anybody know?"
+ },
+ {
+  "id": "QUES-MATE-ST01-0004",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Who else in my world has been? Has Dani's word been backed up by anyone?"
+ },
+ {
+  "id": "QUES-MATE-ST01-0005",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Why is the local account's last post from days ago if they're supposedly out every night?"
+ },
+ {
+  "id": "QUES-MATE-ST02-0001",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Is it this good every night, or did I catch the truck on a heater?"
+ },
+ {
+  "id": "QUES-MATE-ST02-0002",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Does the Korean chicken hold up to the brisket, or is one taco carrying the whole roster?"
+ },
+ {
+  "id": "QUES-MATE-ST02-0003",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "What are the actual hours — how late does that smoker realistically run?"
+ },
+ {
+  "id": "QUES-MATE-ST02-0004",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Would this survive me bringing the carne-asada purists and the vegetarian from the kitchen?"
+ },
+ {
+  "id": "QUES-MATE-ST02-0005",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Was this corner their regular Thursday spot, or luck?"
+ },
+ {
+  "id": "QUES-MATE-ST03-0001",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "What do I actually tell the twelve people DMing me \"where is this\" — a corner that changes nightly?"
+ },
+ {
+  "id": "QUES-MATE-ST03-0002",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Is anyone on the other end of that local account, or am I tagging a graveyard?"
+ },
+ {
+  "id": "QUES-MATE-ST03-0003",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "How do I get the vegetarian coworker in without her feeling like the afterthought she is everywhere else?"
+ },
+ {
+  "id": "QUES-MATE-ST03-0004",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Does the truck crew even know I keep bringing them platoons of service workers?"
+ },
+ {
+  "id": "QUES-MATE-ST03-0005",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Is it this good every single visit, or am I about to get burned vouching for them?"
+ },
+ {
+  "id": "QUES-MATE-ST04-0001",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Open now... but WHERE now? Why does the app answer half the question?"
+ },
+ {
+  "id": "QUES-MATE-ST04-0002",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Did the truck move to a venue tonight, or is it dark entirely?"
+ },
+ {
+  "id": "QUES-MATE-ST04-0003",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Do I burn the twenty-minute walk on a maybe, with four hungry people trusting my call?"
+ },
+ {
+  "id": "QUES-MATE-ST04-0004",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "How long till the window closes — am I racing a clock I can't see?"
+ },
+ {
+  "id": "QUES-MATE-ST04-0005",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "How many nights have I eaten something worse purely because I couldn't confirm they existed?"
+ },
+ {
+  "id": "QUES-MATE-ST05-0001",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Can I get it as a push or a text — something that finds me at 12:40, not an email I open Tuesday?"
+ },
+ {
+  "id": "QUES-MATE-ST05-0002",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Will the drops stay reliable — if it says \"till 3,\" is the truck actually there till 3?"
+ },
+ {
+  "id": "QUES-MATE-ST05-0003",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "What else comes with being on the inside — seasonal previews, first taste of new items?"
+ },
+ {
+  "id": "QUES-MATE-ST05-0004",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Will they keep talking to me like a friend in the scene, or does this slowly curdle into three promo blasts a day?"
+ },
+ {
+  "id": "QUES-MATE-ST05-0005",
+  "row": "Questions",
+  "scope": "MATE",
+  "text": "Do the points I've apparently been earning ever amount to anything — do I even have an account?"
+ },
+ {
+  "id": "PROB-MATE-ST01-0001",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "The local Toronto account is half-asleep — last post is four days old, so I can't tell from the feed whether this truck is actually out at night or it's a lunch thing that dies at 9."
+ },
+ {
+  "id": "PROB-MATE-ST01-0002",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "Nothing anywhere tells me where or when the truck actually shows up late — no schedule, no pattern I can find, just vibes and a pin on a website that clearly means daytime."
+ },
+ {
+  "id": "PROB-MATE-ST01-0003",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "Fusion is guilty until proven innocent — \"Korean-style taco\" reads gimmick from a distance, and I can't tell craft from marketing through a screen."
+ },
+ {
+  "id": "PROB-MATE-ST01-0004",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "Nobody's Googling at 2am — if the answer isn't already in my head or my group chat by the time I'm hungry, this truck doesn't exist for me tonight."
+ },
+ {
+  "id": "PROB-MATE-ST02-0001",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "I would never have found this truck without Dani physically walking me there — there was no trail I could've followed on my own, and that's a weird thing to say about a business this good."
+ },
+ {
+  "id": "PROB-MATE-ST02-0002",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "No board, no post, nothing saying how long they're parked — I'm standing there at 1:30 not knowing if \"till 3\" is real or if the shutter drops in ten minutes."
+ },
+ {
+  "id": "PROB-MATE-ST02-0003",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "I open the app to see the full menu while I'm in line and it doesn't match the truck board — there's stuff on the board the app's never heard of, so which one do I trust?"
+ },
+ {
+  "id": "PROB-MATE-ST03-0001",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "My DMs after every post are a wall of \"where do I get it\" and I have no good answer — all these people want it and there's nowhere to point them, like pouring drinks with no glass under the tap."
+ },
+ {
+  "id": "PROB-MATE-ST03-0002",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "Tagging the local account feels like shouting into an empty room — the page is a graveyard half the time, so my shout-outs land on nothing and the sharing quietly dries up."
+ },
+ {
+  "id": "PROB-MATE-ST03-0003",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "Coordinating six hungry post-shift people around a truck whose location is folklore is a logistics job I never applied for — one wrong call and I've marched the whole crew to a dead corner on my credibility."
+ },
+ {
+  "id": "PROB-MATE-ST03-0004",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "The touring band DMs me from the road asking where the truck is when they're back — and I'm out here playing travel agent for a business that could just tell them itself."
+ },
+ {
+  "id": "PROB-MATE-ST04-0001",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "The app says \"open now\" and then you get there and it's just... not there. Empty spot. It's 1:30, I'm mad and I'm still hungry, and I check that app now the way you check a weather app you don't believe."
+ },
+ {
+  "id": "PROB-MATE-ST04-0002",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "The trucks relocate at night — venues, the clubs on Richmond — and nothing anywhere tells you where. The single thing I need most exists only in the driver's head."
+ },
+ {
+  "id": "PROB-MATE-ST04-0003",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "The local Instagram's silence reads as closed even when they're not — so my crew, cash in hand, walks to the place we KNOW is open. They lose to certainty, not to quality."
+ },
+ {
+  "id": "PROB-MATE-ST04-0004",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "A DM back takes twenty minutes on a good night, never on a bad one — useless at 1am, when the whole decision lives and dies inside ten."
+ },
+ {
+  "id": "PROB-MATE-ST04-0005",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "Every failed hunt is a lost sale from their biggest fan — me plus the six people behind me — and I nearly missed Fuego Nights entirely last summer because I only caught it scrolling at the right second. If I'd had a heads-up I'd have built the whole night around it. That's a missed party. That's them leaving the best night of the summer on the table."
+ },
+ {
+  "id": "PROB-MATE-ST05-0001",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "The points side of the programme is a fog — I genuinely don't know if I have an account or what a point buys, and if the sign-up had led with that punch-card energy instead of location drops, I'd have walked."
+ },
+ {
+  "id": "PROB-MATE-ST05-0002",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "The sign-up form looks like it's email-only at first — the one thing that's useless to me at 1am — and I have to dig for the push-or-text option that's the entire reason I'm here."
+ },
+ {
+  "id": "PROB-MATE-ST05-0003",
+  "row": "Problems",
+  "scope": "MATE",
+  "text": "Trust is on probation: the app burned me enough times that the first drop that says \"till 3\" and isn't true would undo all of this in one night."
+ },
+ {
+  "id": "TASK-MATE-ST01-0001",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Grill Dani properly: what did you get, was it actually smoked, was the tortilla doing any work?"
+ },
+ {
+  "id": "TASK-MATE-ST01-0002",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Look up the national and local BorderBlend accounts on Instagram and TikTok; watch the brisket and first-bite clips."
+ },
+ {
+  "id": "TASK-MATE-ST01-0003",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Cross-check the vibe — real craft or fusion-as-costume — against my own food radar."
+ },
+ {
+  "id": "TASK-MATE-ST01-0004",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Note roughly where and when the truck seems to surface in Toronto; file it in the mental map."
+ },
+ {
+  "id": "TASK-MATE-ST01-0005",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Drop it in the group chat as a \"we're trying this\" flag."
+ },
+ {
+  "id": "TASK-MATE-ST02-0001",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Follow Dani to the truck; order the smoked brisket taco, no debate."
+ },
+ {
+  "id": "TASK-MATE-ST02-0002",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Run the taste test: smoke ring, bark, moisture, salsa verde against the fat."
+ },
+ {
+  "id": "TASK-MATE-ST02-0003",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Order across the menu — Korean chicken, a traditional one — to figure out what's worth evangelizing."
+ },
+ {
+  "id": "TASK-MATE-ST02-0004",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Take the first ritual shot: the unwrap, the steam, the lights."
+ },
+ {
+  "id": "TASK-MATE-ST02-0005",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Ask the window crew how late they run and where they usually park."
+ },
+ {
+  "id": "TASK-MATE-ST03-0001",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Lead the post-shift group order; split everything so everyone tastes everything."
+ },
+ {
+  "id": "TASK-MATE-ST03-0002",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Convert the holdouts — Theo the purist, the vegetarian coworker on the plant-based one."
+ },
+ {
+  "id": "TASK-MATE-ST03-0003",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Post the ritual shot every visit; field the \"where\" replies as best I can."
+ },
+ {
+  "id": "TASK-MATE-ST03-0004",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Tag the truck when the account feels alive; skip it when it's a graveyard."
+ },
+ {
+  "id": "TASK-MATE-ST03-0005",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Keep quietly re-testing quality every visit, because my name is on this now."
+ },
+ {
+  "id": "TASK-MATE-ST04-0001",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Check the app's \"open now,\" then immediately cross-reference the local Instagram."
+ },
+ {
+  "id": "TASK-MATE-ST04-0002",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "DM the local account \"yo you open, where you at\" and start the twenty-minute prayer."
+ },
+ {
+  "id": "TASK-MATE-ST04-0003",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Text the network — \"you seen the truck?\" — because a person is more reliable than the app."
+ },
+ {
+  "id": "TASK-MATE-ST04-0004",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Make the call: commit the walk on a maybe, or take the crew to the certain option."
+ },
+ {
+  "id": "TASK-MATE-ST04-0005",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Log the pattern in my head: which corners, which nights, building the map the brand won't give me."
+ },
+ {
+  "id": "TASK-MATE-ST05-0001",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Sign up for the newsletter the second it's clear it means actual location drops — points or no points."
+ },
+ {
+  "id": "TASK-MATE-ST05-0002",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Turn on push and text — the stuff that actually finds me at 1am: \"open now, parked HERE.\""
+ },
+ {
+  "id": "TASK-MATE-ST05-0003",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Pick my city and what matters — Toronto trucks, late-night drops first."
+ },
+ {
+  "id": "TASK-MATE-ST05-0004",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Act on the first alerts: rally the crew, show up, post it — same ritual, zero hunt."
+ },
+ {
+  "id": "TASK-MATE-ST05-0005",
+  "row": "Tasks",
+  "scope": "MATE",
+  "text": "Forward the sign-up to the touring band and the whole \"where is this\" DM list — let the brand answer them directly now."
+ },
+ {
+  "id": "SENT-MATE-ST01-0001",
+  "row": "Sentiment",
+  "scope": "MATE",
+  "text": "Intrigued"
+ },
+ {
+  "id": "SENT-MATE-ST02-0001",
+  "row": "Sentiment",
+  "scope": "MATE",
+  "text": "Delighted"
+ },
+ {
+  "id": "SENT-MATE-ST03-0001",
+  "row": "Sentiment",
+  "scope": "MATE",
+  "text": "Proud"
+ },
+ {
+  "id": "SENT-MATE-ST04-0001",
+  "row": "Sentiment",
+  "scope": "MATE",
+  "text": "Frustrated, hungry"
+ },
+ {
+  "id": "SENT-MATE-ST05-0001",
+  "row": "Sentiment",
+  "scope": "MATE",
+  "text": "Vindicated"
+ },
+ {
+  "id": "QUOT-MATE-ST01-0001",
+  "row": "Think/Feel",
+  "scope": "MATE",
+  "text": "“Dani doesn’t hype things. So now I have to know.”"
+ },
+ {
+  "id": "QUOT-MATE-ST02-0001",
+  "row": "Think/Feel",
+  "scope": "MATE",
+  "text": "“A smoke ring. At a taco truck. At one in the morning. Okay. OKAY.”"
+ },
+ {
+  "id": "QUOT-MATE-ST03-0001",
+  "row": "Think/Feel",
+  "scope": "MATE",
+  "text": "“I’m doing their marketing for free at 1am — happily — and every reply I get is the same word: where.”"
+ },
+ {
+  "id": "QUOT-MATE-ST04-0001",
+  "row": "Think/Feel",
+  "scope": "MATE",
+  "text": "“I have the money, the crew, and the craving — just tell me where the truck IS.”"
+ },
+ {
+  "id": "QUOT-MATE-ST05-0001",
+  "row": "Think/Feel",
+  "scope": "MATE",
+  "text": "“‘Parked at Richmond &amp; Portland till 3’ — that’s not marketing, that’s service. Took my money and my loyalty in one text.”"
+ },
+ {
+  "id": "ALTP-MATE-ST01-0001",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "Dani's rec doesn't get backed up by the feed — dead account, generic content — and the whole thing stalls at \"maybe someday.\""
+ },
+ {
+  "id": "ALTP-MATE-ST01-0002",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "I ask around and someone in the scene shrugs, \"it's fine\" — and \"fine\" kills it, because I don't spend a 1am detour on fine."
+ },
+ {
+  "id": "ALTP-MATE-ST01-0003",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The clips look great but nowhere says anything about late hours, so it quietly gets filed under daytime food — wrong shelf, forgotten."
+ },
+ {
+  "id": "ALTP-MATE-ST01-0004",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "An ad finds me before the feed does, and it reads as marketing instead of scene truth — actively sets me back a step."
+ },
+ {
+  "id": "ALTP-MATE-ST02-0001",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The truck isn't where Dani thought and the first attempt dies on an empty corner — we never get our tacos that night, and the story I tell people afterwards is about the hunt, not the taco."
+ },
+ {
+  "id": "ALTP-MATE-ST02-0002",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The brisket is merely good — no smoke ring, no jolt — and BorderBlend files itself under \"solid option\" instead of \"religion,\" which means I never bring anyone."
+ },
+ {
+  "id": "ALTP-MATE-ST02-0003",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The line is deep at 1am (good sign, bad night) and the crew bails for the certain place around the corner."
+ },
+ {
+  "id": "ALTP-MATE-ST02-0004",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "I try the Korean chicken first instead of the brisket and judge the whole truck off the second-best song on the album."
+ },
+ {
+  "id": "ALTP-MATE-ST03-0001",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "One off night — dry brisket, a rushed order — in front of people I dragged there, and I go quiet about the place for a month to protect my own credibility."
+ },
+ {
+  "id": "ALTP-MATE-ST03-0002",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The local account goes fully dormant, my tags echo into nothing, and I stop posting them — not out of spite, it just stops feeling like a conversation."
+ },
+ {
+  "id": "ALTP-MATE-ST03-0003",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "A rival late-night spot with boring food but bulletproof hours starts absorbing my crew on the nights we can't confirm the truck."
+ },
+ {
+  "id": "ALTP-MATE-ST03-0004",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The plant-based taco disappoints the one vegetarian I personally guaranteed it to, and I am never talking them into trying it again."
+ },
+ {
+  "id": "ALTP-MATE-ST04-0001",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The empty-corner night: twenty-minute walk, no truck, and the crew eats regret from the certain place while I apologize for tacos that weren't there."
+ },
+ {
+  "id": "ALTP-MATE-ST04-0002",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The DM answers at 1:50 — \"yeah we're at Richmond &amp; Portland!\" — and we're already three bites into the wrong meal. Salt in the wound."
+ },
+ {
+  "id": "ALTP-MATE-ST04-0003",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "One of my network hits first — \"truck's by the venue on Richmond\" — and we make it, but the win belongs to the group chat, not the brand."
+ },
+ {
+  "id": "ALTP-MATE-ST04-0004",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "Enough failed hunts pile up and even I — even ME — start defaulting to certainty, and the ritual quietly erodes."
+ },
+ {
+  "id": "ALTP-MATE-ST05-0001",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The offer leads with points and coupons instead of location, and I skim right past the one thing I'd actually sign up for — they had me and lost me in the first sentence."
+ },
+ {
+  "id": "ALTP-MATE-ST05-0002",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "The first drop is wrong — \"till 3\" and the truck's gone at 2 — and now the alert gets the same weather-app treatment I give the app. One strike, maybe two, that's it."
+ },
+ {
+  "id": "ALTP-MATE-ST05-0003",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "It curdles into three ORDER NOW pushes a day with the little fire emojis, and I'm gone, I don't care how good the brisket is."
+ },
+ {
+  "id": "ALTP-MATE-ST05-0004",
+  "row": "Alternate paths",
+  "scope": "MATE",
+  "text": "It works so well I become the guy who no longer needs to be asked \"where\" — my posts start carrying the corner and the closing time, and the DM flood finally has somewhere to go."
+ },
+ {
+  "id": "CHAN-MATE-ST01-0001",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Word of mouth"
+ },
+ {
+  "id": "CHAN-MATE-ST01-0002",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Instagram"
+ },
+ {
+  "id": "CHAN-MATE-ST01-0003",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "TikTok"
+ },
+ {
+  "id": "CHAN-MATE-ST01-0004",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Group chat"
+ },
+ {
+  "id": "CHAN-MATE-ST02-0001",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Word of mouth"
+ },
+ {
+  "id": "CHAN-MATE-ST02-0002",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Truck window"
+ },
+ {
+  "id": "CHAN-MATE-ST02-0003",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "BorderBlend app (menu check)"
+ },
+ {
+  "id": "CHAN-MATE-ST02-0004",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Instagram"
+ },
+ {
+  "id": "CHAN-MATE-ST03-0001",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Truck window"
+ },
+ {
+  "id": "CHAN-MATE-ST03-0002",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Instagram"
+ },
+ {
+  "id": "CHAN-MATE-ST03-0003",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "TikTok"
+ },
+ {
+  "id": "CHAN-MATE-ST03-0004",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Word of mouth"
+ },
+ {
+  "id": "CHAN-MATE-ST03-0005",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Group chat"
+ },
+ {
+  "id": "CHAN-MATE-ST04-0001",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "BorderBlend app (\"open now\")"
+ },
+ {
+  "id": "CHAN-MATE-ST04-0002",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Instagram + DMs"
+ },
+ {
+  "id": "CHAN-MATE-ST04-0003",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Group chat / texts"
+ },
+ {
+  "id": "CHAN-MATE-ST04-0004",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Word of mouth"
+ },
+ {
+  "id": "CHAN-MATE-ST04-0005",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "The street itself"
+ },
+ {
+  "id": "CHAN-MATE-ST05-0001",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Truck window (QR)"
+ },
+ {
+  "id": "CHAN-MATE-ST05-0002",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "BorderBlend app / newsletter sign-up"
+ },
+ {
+  "id": "CHAN-MATE-ST05-0003",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Push / text"
+ },
+ {
+  "id": "CHAN-MATE-ST05-0004",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "E-mail"
+ },
+ {
+  "id": "CHAN-MATE-ST05-0005",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Instagram"
+ },
+ {
+  "id": "CHAN-MATE-ST05-0006",
+  "row": "Channels",
+  "scope": "MATE",
+  "text": "Group chat"
+ }
+]

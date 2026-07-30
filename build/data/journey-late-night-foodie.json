@@ -1,0 +1,73 @@
+{
+  "slug": "late-night-foodie",
+  "title": "Late-Night Foodie — Awareness → Newsletter Subscription",
+  "persona": "late-night-foodie",
+  "color": "var(--late)",
+  "subtitle": "How the post-midnight, food-culture 20-something goes from a first-bite clip to opting in for location drops and insider seasonal access.",
+  "stages": [
+    {"key": "awareness", "name": "Awareness", "sub": "first hears of BorderBlend"},
+    {"key": "consideration", "name": "Consideration", "sub": "decides to try"},
+    {"key": "firstbite", "name": "First Bite", "sub": "first late-night visit"},
+    {"key": "ritual", "name": "Ritual", "sub": "becomes a repeat habit"},
+    {"key": "advocacy", "name": "Advocacy", "sub": "posts & brings friends"},
+    {"key": "subscribe", "name": "Subscribe", "sub": "newsletter / loyalty sign-up"}
+  ],
+  "rows": [
+    {"key": "doing", "label": "Doing"},
+    {"key": "thinking", "label": "Thinking"},
+    {"key": "feeling", "label": "Feeling"},
+    {"key": "channels", "label": "Channels"},
+    {"key": "pains", "label": "Frictions"},
+    {"key": "opps", "label": "Opportunities"}
+  ],
+  "cells": {
+    "awareness": {
+      "doing": {"text": "Scrolling TikTok and Instagram after a late shift, they catch a close-up midnight brisket first-bite clip — or a coworker leaving the bar says \"the brisket one\" and shows them a photo. Discovery is social and word-of-mouth, inside the service-industry and night-scene crowd.", "insights": ["INS-C01", "INS-C02"], "evidence": ["BB-INT017-t2", "BB-INT018-t2"]},
+      "thinking": {"text": "\"Wait — actual smoked brisket at a taco truck, at 1 a.m.? That's not the usual sad late-night option.\"", "insights": ["INS-C01", "INS-C06"]},
+      "feeling": {"text": "Intrigued, curious", "emoji": "🤔", "insights": ["INS-C01"]},
+      "channels": {"text": "TikTok, Instagram, word of mouth (service crew / night scene), festival stalls", "insights": ["INS-C01", "INS-C02"]},
+      "pains": {"text": "The national feed lands the hook, but the local truck account that would make it feel real and findable nearby is often dormant — so the brand shows up as a vibe, not yet a place they can actually get to tonight.", "insights": ["INS-B09", "INS-C09"], "evidence": ["SOC-M003", "SOC-M022"]},
+      "opps": {"text": "Arm the scene as the discovery engine it already is: feed the food-culture crowd close-up brisket and first-bite clips built for reshare, so social reach compounds into trial rather than evaporating.", "insights": ["INS-C01"], "evidence": ["SOC-M002", "SOC-M004"]}
+    },
+    "consideration": {
+      "doing": {"text": "Watches a few more clips, then tries to pin down where a truck actually is tonight — checks the app and the local Instagram, and pings the group chat: \"where do we go?\"", "insights": ["INS-C09", "INS-C01"], "evidence": ["BB-INT018-t4", "BB-INT017-t12"]},
+      "thinking": {"text": "\"Is this genuinely good or just a good photo — and more urgently, where is it right now, because I'm not chasing a truck across the city at 2 a.m.\"", "insights": ["INS-C06", "INS-C09"]},
+      "feeling": {"text": "Keen but uncertain", "emoji": "😋", "insights": ["INS-C09"]},
+      "channels": {"text": "App, Instagram (local truck account), group chat, TikTok", "insights": ["INS-C09"]},
+      "pains": {"text": "The one question — is this specific truck open now, and exactly where — is the hardest to answer, and late-night makes it worse: the app menu is static and out of sync with the truck board, so intent goes unconverted.", "insights": ["INS-C09", "INS-B02"], "evidence": ["APPLOG-r3", "BB-INT018-t8"]},
+      "opps": {"text": "Win the real-time certainty battle for the late crowd: a reliable \"open now, parked here\" answer turns high late-night intent into a first visit — the highest-return move available.", "insights": ["INS-C09", "INS-C10"], "evidence": ["APPLOG-r1", "MR-C24"]}
+    },
+    "firstbite": {
+      "doing": {"text": "Finds the truck after a shift or a show, rolls up with the crew, orders the smoked brisket, and films the unwrap and first bite — steam off the taco, truck lights behind it.", "insights": ["INS-C03", "INS-C06"], "evidence": ["BB-INT017-t2", "BB-INT018-t6"]},
+      "thinking": {"text": "\"Okay — this is the real thing. Somebody actually smoked this. That was worth finding.\"", "insights": ["INS-C06", "INS-C07"]},
+      "feeling": {"text": "Delighted, converted", "emoji": "🤩", "insights": ["INS-C06"]},
+      "channels": {"text": "The truck window, TikTok / Instagram story", "insights": ["INS-C01", "INS-C06"]},
+      "pains": {"text": "They only got here by guesswork and DMs — and the hero can sell out, with no approved on-brand line when the brisket is gone, risking a first impression of \"drove there for nothing.\"", "insights": ["INS-C09", "INS-B10", "INS-B03"], "evidence": ["BB-INT017-t10", "SOC-M016"]},
+      "opps": {"text": "The first midnight bite is the conversion moment — make it effortless to capture and share, and protect hero availability for the late-night occasion so the first visit lands every time.", "insights": ["INS-C06", "INS-C03"], "evidence": ["SOC-M002"]}
+    },
+    "ritual": {
+      "doing": {"text": "The post-shift / post-show brisket run becomes a standing thing with the crew — a repeatable social ritual the truck is well-positioned to own.", "insights": ["INS-C03"], "evidence": ["BB-INT017-t6", "BB-INT017-t8"]},
+      "thinking": {"text": "\"This is our spot after close — when I can actually find it.\"", "insights": ["INS-C03", "INS-C09"]},
+      "feeling": {"text": "Belonging, hooked", "emoji": "🌮", "insights": ["INS-C03"]},
+      "channels": {"text": "The truck, Instagram DMs, group chat, local truck account", "insights": ["INS-C03", "INS-C09"]},
+      "pains": {"text": "The ritual is fragile: the truck moves, the local account goes quiet for days, and a drove-there-and-no-truck night breaks the habit — the discovery-to-loyalty chain leaks exactly where it should compound.", "insights": ["INS-C09", "INS-B02"], "evidence": ["BB-INT018-t9", "SOC-M016"]},
+      "opps": {"text": "Own the post-midnight occasion outright: make the truck reliably findable late so the ritual compounds visit over visit into durable habit.", "insights": ["INS-C03", "INS-C13"], "evidence": ["BB-INT017-t14"]}
+    },
+    "advocacy": {
+      "doing": {"text": "Posts the midnight brisket shot, tags the truck, and brings coworkers and the scene along — running genuine word-of-mouth for the brand, quietly and constantly.", "insights": ["INS-C01", "INS-C02"], "evidence": ["BB-INT017-t16", "BB-INT018-t22"]},
+      "thinking": {"text": "\"I'm basically doing their marketing for free — out of real affection. The least they can do is be there on the other end.\"", "insights": ["INS-C01"], "evidence": ["BB-INT018-t24"]},
+      "feeling": {"text": "Proud insider", "emoji": "🔥", "insights": ["INS-C03", "INS-C01"]},
+      "channels": {"text": "TikTok, Instagram stories, group chat, the local scene", "insights": ["INS-C01", "INS-C02"]},
+      "pains": {"text": "The brand often isn't present on the other end — a dormant local account, and in Montreal an English-only presence that reads as a small but real exclusion — which blunts the free amplification a superfan is already generating.", "insights": ["INS-C16", "INS-B09"], "evidence": ["SOC-M003", "SOC-M021"]},
+      "opps": {"text": "Arm the superfan: reshare their content, stay present locally, and show up in genuine fr-CA for Montreal so the scene's word-of-mouth pays off and sets BorderBlend apart in a market most brands under-serve.", "insights": ["INS-C01", "INS-C16"], "evidence": ["BB-INT018-t24"]}
+    },
+    "subscribe": {
+      "doing": {"text": "Opts in enthusiastically — but for one thing above all: a live late-night location drop telling them where the truck is parked tonight, plus insider early access to seasonal previews like Fuego Nights, and joins loyalty when it is genuinely simple.", "insights": ["INS-C13", "INS-C12"], "evidence": ["BB-INT017-t22", "BB-INT018-t26"]},
+      "thinking": {"text": "\"If you just tell me where you're parked tonight — and let me in early on the seasonal stuff before it drops — I'm in, in a heartbeat.\"", "insights": ["INS-C13"], "evidence": ["BB-INT018-t28"]},
+      "feeling": {"text": "On the list, insider", "emoji": "🎉", "insights": ["INS-C13"]},
+      "channels": {"text": "SMS / push location drops, email newsletter, app loyalty, Instagram", "insights": ["INS-C13", "INS-C12"]},
+      "pains": {"text": "Today's loyalty programme is opaque enough that most don't know it exists or abandon the account interface — and generic \"ORDER NOW\" push, or English-only copy in Montreal, gets them to bail instantly.", "insights": ["INS-C12", "INS-C16", "INS-B10"], "evidence": ["BB-INT017-t24", "BB-INT018-t30"]},
+      "opps": {"text": "Convert devotion the brand has already earned into subscription: a \"we're parked here tonight\" late-night alert, Fuego Nights / seasonal early access, a genuine insider-creator feel, and real Québécois French for Montreal — tie opt-in to a concrete value moment, not brand-story noise.", "insights": ["INS-C13", "INS-C12", "INS-C16"], "evidence": ["BB-INT018-t26", "MR-C28"]}
+    }
+  }
+}

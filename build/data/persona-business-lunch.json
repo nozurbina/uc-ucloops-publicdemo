@@ -1,0 +1,72 @@
+{
+  "slug": "business-lunch",
+  "name": "The Business Lunch",
+  "tagline": "Feed me, don't cost me time, don't make me think.",
+  "emoji": "💼",
+  "color": "var(--biz)",
+  "one_liner": "The weekday professional and office organiser for whom BorderBlend is a time-constrained, reliability-first lunch — often ordering for colleagues or coordinating catering. Newness is noise; predictable, forwardable, invoice-clean reliability is the whole game.",
+  "demographics": {
+    "Age": "30–45",
+    "Location": "Toronto / Calgary",
+    "Occupation": "Management consultant / office manager coordinating team lunches & catering",
+    "Occasion": "weekday lunch / team + catering",
+    "Decision driver": "speed & reliability"
+  },
+  "quote": "The job is: feed me, don't cost me time, don't make me think. When it works, it stops being the truck I take my chances on and becomes infrastructure — part of how my workday runs. You don't churn out of infrastructure.",
+  "quote_evidence": ["BB-INT013-t4", "BB-INT013-t28"],
+  "evidence": ["BB-INT013", "BB-INT014"],
+  "blocks": [
+    {
+      "title": "Goals & motivations",
+      "items": [
+        {"text": "Solve lunch once and never have to re-solve it — on a weekday the constraint is time, not money. A fifteen-dollar lunch is fine; forty-five lost minutes is not. Surprise is the enemy.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t4"]},
+        {"text": "Get very good brisket in six minutes — roughly eighty percent of the restaurant experience for twenty percent of the time cost. Not the best brisket in the city; the most reliable one that fits between two meetings.", "insights": ["INS-C06", "INS-C04"], "evidence": ["BB-INT013-t8"]},
+        {"text": "For the organiser, reliability she can stake her reputation on — feeding ~30 people, sometimes in front of executives, without the vendor-no-show nightmare. \"Will you actually show up\" is the entire job; the food being good is table stakes.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t12"]},
+        {"text": "Turn a grudging solo run into a happy group order — bring BorderBlend two-to-four colleagues several times a week, gladly, instead of reluctantly standing in a line for everyone.", "insights": ["INS-C04", "INS-C10"], "evidence": ["BB-INT013-t16"]}
+      ]
+    },
+    {
+      "title": "Behaviours & habits",
+      "items": [
+        {"text": "Orders for the group two-to-four times a week — \"I'll grab lunch, what does everyone want\" — taking four orders, tracking who's plant-based and who skips the salsa verde.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t16"]},
+        {"text": "Vets a vendor solo before ever putting the team's name on it: \"I will never put my name on something I haven't eaten myself.\" Tries the truck alone, then investigates catering, invoicing and whether they'll actually turn up.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t4"]},
+        {"text": "Runs a predictable rhythm — the casual Friday team treat, the bigger monthly team lunch, and the high-stakes client catering booking — and knows exactly which one carries reputational risk.", "insights": ["INS-C04"], "evidence": ["BB-INT014-t22"]},
+        {"text": "Low social engagement and no loyalty account; treats brand-story and newness as noise and wants sameness delivered reliably. The only \"hearing from them\" that survives the inbox is operational signal.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t20"]}
+      ]
+    },
+    {
+      "title": "Discovery & channels",
+      "items": [
+        {"text": "Word of mouth from a colleague did the whole job — \"the brisket one,\" a point at the truck, and that was the pitch. Discovery is human and physical, not the feeds.", "insights": ["INS-C02"], "evidence": ["BB-INT013-t6"]},
+        {"text": "The organiser finds everything through logistics — an engineer's offsite tip led her to try it solo, then straight to \"do they cater, can they invoice, will they show up?\"", "insights": ["INS-C02"], "evidence": ["BB-INT014-t2"]},
+        {"text": "Not reached through TikTok or Instagram close-ups the way the amplifier segments are — this professional rarely follows a food brand, so proximity and a trusted recommendation are the live channels.", "insights": ["INS-C01"], "evidence": ["BB-INT013-t6"]}
+      ]
+    },
+    {
+      "title": "Frictions (obstacles to going further)",
+      "items": [
+        {"text": "The one question that must be answered before leaving the desk — is this specific truck open right now, where exactly, and how long is the line. The number-one failure is walking down to an empty corner with a 1 o'clock looming.", "insights": ["INS-C09"], "evidence": ["BB-INT013-t10", "BB-INT013-t12"]},
+        {"text": "Order-ahead promised the dream — tap from the desk, walk down, one bag waiting — but the app menu didn't match the board, the truck's status was unclear, and there was no clean \"your order is ready\" moment, so it added uncertainty instead of removing it.", "insights": ["INS-C10"], "evidence": ["BB-INT013-t14"]},
+        {"text": "At group scale, allergen information isn't easy to find — with a genuine tree-nut/EpiPen colleague she needs ingredient-level answers in writing, and when she can't get them she simply books a better-documented competitor instead.", "insights": ["INS-C11"], "evidence": ["BB-INT014-t14", "BB-INT014-t16"]},
+        {"text": "Price is creeping toward the restaurant ceiling — \"getting close to just catering from a restaurant\" — but the real irritant is surprises, not the number: she needs the price up front, per head, to get it pre-approved.", "insights": ["INS-C08"], "evidence": ["BB-INT014-t20"]}
+      ]
+    },
+    {
+      "title": "What would deepen the relationship & drive subscription",
+      "items": [
+        {"text": "A \"the truck is here today\" alert — ideally mid-morning, with location and whether brisket's in stock. The highest-value message they could send, near-zero cost, opened every time; even the bad news (\"not out today\") earns trust.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t22"]},
+        {"text": "A real catering front door with a hard, forwardable confirmation and a day-before reminder — \"I'm not forwarding 'yep!' to leadership.\" Right now there's no obvious way to book, and she's the customer already waving money.", "insights": ["INS-C14"], "evidence": ["BB-INT014-t26", "BB-INT013-t26"]},
+        {"text": "A proper itemised invoice — GST broken out, billing name and PO/cost-centre or client code, emailed as a PDF — plus a published per-head catering price sheet. Removes the one part of the habit that actually annoys, forty times a quarter.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t18", "BB-INT014-t18"]},
+        {"text": "An operational newsletter she'd gladly subscribe to despite being a habitual unsubscriber: catering menu with allergen info attached to forward in one shot, real availability, and seasonal open/close prompts (\"patio season's starting,\" \"here's the winter option\").", "insights": ["INS-C14", "INS-C11"], "evidence": ["BB-INT014-t28"]}
+      ]
+    },
+    {
+      "title": "Emotional arc",
+      "items": [
+        {"text": "Starts wary of surprise — a line at 12:40 is a real risk to a 1 o'clock, and for the organiser a vendor once no-showed a 22-person client lunch, a memory that \"lives in the back of my head every single time.\"", "insights": ["INS-C09"], "evidence": ["BB-INT013-t10", "BB-INT014-t6"]},
+        {"text": "Trust is earned and then guarded — the food is a solved problem he refuses to re-solve daily, so every ask is friction sitting on top of a thing that already works, not a complaint about the product.", "insights": ["INS-C04"], "evidence": ["BB-INT013-t20"]},
+        {"text": "The prize is routine, not enthusiasm — when it all works, BorderBlend becomes load-bearing infrastructure and the organiser becomes a champion (\"tell them Nadia in Calgary will be first in line\") actively routing more business in.", "insights": ["INS-C14"], "evidence": ["BB-INT013-t28", "BB-INT014-t32"]}
+      ]
+    }
+  ]
+}

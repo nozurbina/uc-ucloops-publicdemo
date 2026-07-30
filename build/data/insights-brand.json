@@ -1,0 +1,112 @@
+[
+  {
+    "id": "INS-B01",
+    "title": "One product entity, told once — a single source of truth for the menu",
+    "category": "Content architecture",
+    "strength": "strong",
+    "personas": ["brand", "franchisee"],
+    "statement": "The smoked brisket taco is authored four separate times — app, website, training kit, signage — with no single source of truth, so descriptions drift and recipe or seasonal updates land unevenly across touchpoints.",
+    "body": "The structural gap is that BorderBlend has content copies, not a content model: each touchpoint holds its own free-text version of a product that should be one governed entity. A content-consistency agent sitting over a component/entity record can detect when a product changes and propagate or auto-draft the update everywhere it appears — app, site, kit, signage — so the hero item is described consistently and current by design rather than by manual chasing.",
+    "implication": "A single source of truth lets BorderBlend scale unit count and seasonal velocity without diluting the distinctiveness that made the brisket taco the brand — consistency becomes a growth asset, not an overhead.",
+    "evidence": ["PAIN-A", "MR-C41", "BB-INT001-t8"]
+  },
+  {
+    "id": "INS-B02",
+    "title": "Close the gap between the digital promise and the truck board",
+    "category": "Omnichannel",
+    "strength": "verified",
+    "personas": ["brand", "consumer", "franchisee"],
+    "statement": "The app menu and status are static while the truck's reality varies by day and supply, so heavy app users are systematically let down and the discrepancy is invisible to HQ.",
+    "body": "The structural gap is that no signal connects in-person operational reality to the digital content that made the promise, so failures stay isolated and unmeasured — creating trust debt precisely among the brand's most engaged customers. A menu-sync plus experience-monitoring agent watches POS signals and franchisee inputs, flags where the app diverges from the truck, triggers content-update workflows, and aggregates failure signals into a single incident picture HQ can act on.",
+    "implication": "Making the digital layer trustworthy converts the brand's most valuable, highest-frequency users from disappointed to loyal, and turns scattered failures into a measurable signal HQ can lead with.",
+    "evidence": ["PAIN-B", "PAIN-N", "APPLOG-r14", "BB-INT008-t16", "SOC-M013"]
+  },
+  {
+    "id": "INS-B03",
+    "title": "Availability-aware seasonal content so the promise never outpaces the truck",
+    "category": "Omnichannel",
+    "strength": "strong",
+    "personas": ["brand", "consumer"],
+    "statement": "Seasonal drops are promoted nationally through app and social, but not every truck can execute them, so customers arrive for a promoted item that isn't there — with no explanation on any channel.",
+    "body": "The structural gap is that promotional content carries no availability condition tied to a specific truck, so the content system cannot know when its own promise has become false locally. An availability-monitoring agent reads supply signals per location and automatically suppresses or swaps the relevant promotional content in the app and web flow for that truck, keeping the seasonal urgency moment intact without manufacturing disappointment.",
+    "implication": "BorderBlend can keep running the high-energy seasonal drops that drive social and urgency while protecting the experience at every truck — leaning into fusion moments confidently because the content self-corrects to reality.",
+    "evidence": ["PAIN-M", "APPLOG-r12", "SOC-M018", "BB-INT017-t26"]
+  },
+  {
+    "id": "INS-B04",
+    "title": "The fusion question is a content-model question — give it a semantic brand model",
+    "category": "Content architecture",
+    "strength": "strong",
+    "personas": ["brand", "franchisee"],
+    "statement": "The fusion origin story and the language for describing the food are explained differently by every franchisee, because they live in individual memory rather than in a structured, retrievable brand model.",
+    "body": "The strategic 'how hard do we lean into fusion' debate is really a content-architecture problem: without a semantic model of what BorderBlend is — the smoking process, why the salsa verde works, how to answer 'is this authentic Mexican?' — the identity is reconstructed inconsistently at each truck. A franchisee-facing brand-knowledge agent, drawing on a structured knowledge graph rather than a PDF, surfaces the right origin story and food talking-point in context, so every staff member can tell the fusion story with the same cultural grounding.",
+    "implication": "Encoding the fusion identity as retrievable structured knowledge lets BorderBlend commit to its differentiator with confidence — the story scales to every new truck and every new hire without eroding, turning fusion clarity into a defensible edge.",
+    "evidence": ["PAIN-C", "PAIN-D", "VER-INT009-t22", "MR-C37", "BB-INT015-t14"]
+  },
+  {
+    "id": "INS-B05",
+    "title": "Make brand voice queryable — pre-publish compliance instead of after-the-fact catch",
+    "category": "Agentic AI",
+    "strength": "moderate",
+    "personas": ["brand", "franchisee"],
+    "statement": "Brand voice lives as a static PDF that can't be queried, so a franchisee has no way to check a caption before posting and compliance breaches (superlatives, 'authentic' claims) are only caught after publication.",
+    "body": "The structural gap is that 'BorderBlend voice' has no semantic representation a tool can apply, so the guidance can inform work only if a human reads and remembers a long document. A brand-compliance agent backed by a vector-indexed voice model reviews draft captions and promo copy as a pre-publish step — flagging the specific guideline at risk and suggesting an on-brand alternative — moving governance from reactive correction to in-workflow enablement.",
+    "implication": "A queryable voice model frees franchisees to post confidently and often in their own markets while protecting the brand line, so local energy amplifies rather than risks the brand as BorderBlend scales.",
+    "evidence": ["PAIN-E", "FT-004", "VER-INT009-t20"]
+  },
+  {
+    "id": "INS-B06",
+    "title": "Localisation as architecture — fr-CA as a variant, not a separate project",
+    "category": "Localisation",
+    "strength": "verified",
+    "personas": ["brand", "franchisee", "consumer"],
+    "statement": "Because there is no structured content model, French assets are produced from scratch as a separate effort rather than generated as a variant, which is why fr-CA always arrives late and sometimes in European-French terms.",
+    "body": "The structural gap is architectural, not effort-based: with only individual campaign files there is no shared source component from which a localised variant can be spun, so parallel production is impossible by design. A localisation agent takes structured source components and generates dialect-aware Québécois-French variants on the same release cadence as English — treating Quebec as a market with its own language rather than a translation afterthought.",
+    "implication": "Localisation-by-architecture turns an area most brands under-serve into a visible point of differentiation in Quebec, letting BorderBlend reach francophone customers in genuine fr-CA on day one and signalling that it sees Montreal and Quebec City as cultures, not paste-overs.",
+    "evidence": ["PAIN-F", "VER-INT009-t24", "BB-INT002-t18", "MR-C31", "SOC-M021"]
+  },
+  {
+    "id": "INS-B07",
+    "title": "Give campaigns a memory — a queryable record of what's been tried",
+    "category": "Knowledge management",
+    "strength": "strong",
+    "personas": ["brand", "franchisee"],
+    "statement": "HQ has run 12+ seasonal campaigns but keeps no queryable record of which ran where, how franchisees adapted them, or what drove performance — so each cycle restarts from near-zero institutional memory.",
+    "body": "The structural gap is the absence of a knowledge graph linking campaign, market, adaptation, and outcome, so hard-won learning evaporates between cycles and mistakes (like mismatched pricing guidance) recur. A campaign-intelligence agent ingests performance data, franchisee adaptations, and market context, then surfaces relevant precedents when a new campaign is being planned — replacing institutional amnesia with compounding know-how.",
+    "implication": "Campaign memory lets BorderBlend get sharper with every drop instead of starting over, and lets it involve high-performing franchisees with evidence rather than assumption — a market-leader's advantage that grows with scale.",
+    "evidence": ["PAIN-G", "BB-INT001-t14", "MR-C41"]
+  },
+  {
+    "id": "INS-B08",
+    "title": "Capture the knowledge already flowing — Slack wisdom and campaign briefs as structured objects",
+    "category": "Knowledge management",
+    "strength": "strong",
+    "personas": ["brand", "franchisee"],
+    "statement": "The franchisee network's best operational knowledge lives in an unmonitored Slack channel, and campaign creative ships nationally without the brief, rationale, or adaptation rules that would let franchisees localise it well.",
+    "body": "The structural gap is that BorderBlend's richest working knowledge — how the network actually solves problems, and the intent behind each campaign — never becomes a structured, reusable object, so it can't be surfaced, corrected, or travelled with the assets. A knowledge-monitoring agent extracts useful franchisee know-how (and flags incorrect advice) into the graph, while a campaign-adaptation agent carries the brief and adaptation latitude as metadata alongside every asset, guiding franchisees on what's fixed and what's flexible.",
+    "implication": "Turning informal network wisdom and campaign intent into structured knowledge lets HQ scale the network's collective intelligence and give franchisees the context to adapt on-brand — strengthening the local-ownership model that is the franchise structure's core advantage.",
+    "evidence": ["PAIN-H", "PAIN-I", "BB-INT003-t14", "BB-INT001-t12"]
+  },
+  {
+    "id": "INS-B09",
+    "title": "Connect the signals — turn siloed data and an undocumented event circuit into intelligence",
+    "category": "Signals & intelligence",
+    "strength": "strong",
+    "personas": ["brand", "consumer", "franchisee"],
+    "statement": "App orders, social listening, tickets, and franchisee feedback live in separate systems, and the festival/event circuit is undocumented — so basic questions like 'what do festival-discovered customers order first?' are unanswerable and the discovery-to-loyalty chain produces no intelligence.",
+    "body": "The structural gap is the absence of an intelligence layer over the brand's own signals, so content and expansion decisions are made by assumption rather than evidence, and the brand's single most efficient acquisition channel leaves no trace. A signal-synthesis agent continuously ingests data across touchpoints and surfaces plain-language patterns for content teams, while an event-intelligence agent maintains an event-to-location-to-customer graph — making the discovery chain both discoverable for customers and legible for HQ.",
+    "implication": "An intelligence layer lets BorderBlend answer the questions market leaders act on — which event contexts convert best, how discovery channels differ — and route festival discovery into durable loyalty, extending the lead through evidence rather than instinct.",
+    "evidence": ["PAIN-J", "PAIN-K", "APPLOG-r7", "SOC-M015", "BB-INT011-t2"]
+  },
+  {
+    "id": "INS-B10",
+    "title": "Proactive by design — approved language when things go wrong, and loyalty that comes to the customer",
+    "category": "Agentic AI",
+    "strength": "moderate",
+    "personas": ["brand", "franchisee", "consumer"],
+    "statement": "Franchisees have no approved on-brand language for sellouts and breakdowns, and the loyalty programme is an opaque interface most customers abandon — so both the failure moment and the loyalty relationship depend on effort no one has time for.",
+    "body": "The structural gap is that BorderBlend's content is passive: it waits to be authored under pressure or to be logged into, rather than acting when the moment calls for it. An operational-response agent detects failure signals (truck absent, POS offline, complaints spiking) and surfaces approved, context-appropriate language within minutes, while a proactive loyalty agent monitors visit cadence and points and sends timely, contextual nudges — so the brand shows up well in the hard moment and keeps the loyalty relationship alive without a dashboard.",
+    "implication": "Making communications and loyalty proactive turns two neglected moments — the failure and the dormant account — into brand-building touches, extending BorderBlend's reputation for being real and present exactly when competitors go quiet.",
+    "evidence": ["PAIN-L", "PAIN-O", "SOC-M016", "BB-INT011-t10", "APPLOG-r19"]
+  }
+]

@@ -1,0 +1,334 @@
+{
+  "slug": "everyday-20s",
+  "code": "TYLR",
+  "name": "Tyler",
+  "role": "Everyday 20-something — convenience-first eater · Vancouver · 24",
+  "initials": "T",
+  "sections": [
+    {
+      "type": "DEMO",
+      "items": [
+        {
+          "text": "24, Vancouver — works shifts (retail and warehouse floor, varies week to week) and grabs BorderBlend on the walk home, right by his SkyTrain stop.",
+          "insights": ["INS-C05"],
+          "evidence": ["BB-INT015-t2", "BB-INT015-t6"]
+        },
+        {
+          "text": "Buys a couple of times a week, entirely unplanned — dictated by his shift and whatever's on the way, never a destination.",
+          "insights": ["INS-C05"],
+          "evidence": ["BB-INT015-t6"]
+        },
+        {
+          "text": "The occasion is <span class=\"entity\">a quick meal</span> after a shift: fast, filling, and cheap enough that he's not out twenty-five bucks.",
+          "insights": ["INS-C05", "INS-C08"],
+          "evidence": ["BB-INT015-t8"]
+        },
+        {
+          "text": "Decides on proximity, speed and price — open-now and right there wins, every time.",
+          "insights": ["INS-C05", "INS-C09"],
+          "evidence": ["BB-INT015-t2", "BB-INT015-t8"]
+        }
+      ]
+    },
+    {
+      "type": "MIND",
+      "items": [
+        {
+          "text": "Genuinely doesn't care whether it's fusion or traditional — 'it's tacos, I get the brisket one' — so the brand's big strategy debate is completely invisible to him.",
+          "insights": ["INS-C06"],
+          "evidence": ["BB-INT015-t14"]
+        },
+        {
+          "text": "Low brand engagement by choice: he'd never call himself a fan, doesn't post food, and can't see why you'd follow a taco truck.",
+          "insights": ["INS-C01"],
+          "evidence": ["BB-INT015-t16"]
+        },
+        {
+          "text": "Value is the whole relationship — he wants to get full without spending restaurant money, which makes him a genuinely easy sell the moment it's cheap and easy.",
+          "insights": ["INS-C08", "INS-C15"],
+          "evidence": ["BB-INT015-t8", "BB-INT016-t24"]
+        },
+        {
+          "text": "Quietly won over by one thing: the <span class=\"entity\">smoked brisket taco</span> over-delivered against low expectations, and it's the item he'll go out of his way for.",
+          "insights": ["INS-C06"],
+          "evidence": ["BB-INT015-t10"]
+        }
+      ]
+    },
+    {
+      "type": "EMOT",
+      "emotions": [
+        {
+          "emoji": "😌",
+          "label": "Unbothered",
+          "tail": "grabbing food is a solved problem — it's right there and it does the job",
+          "insights": ["INS-C05"]
+        },
+        {
+          "emoji": "😋",
+          "label": "Pleasantly surprised",
+          "tail": "the brisket was properly good — a small 'oh, okay' he didn't see coming from a truck",
+          "insights": ["INS-C06"]
+        },
+        {
+          "emoji": "🤷",
+          "label": "Indifferent",
+          "tail": "the whole fusion-versus-traditional story washes right over him — it's just tacos",
+          "insights": ["INS-C06"]
+        },
+        {
+          "emoji": "😬",
+          "label": "Slightly wary",
+          "tail": "price is creeping from 'a deal' toward 'normal', and he's starting to notice",
+          "insights": ["INS-C08"]
+        },
+        {
+          "emoji": "🙅",
+          "label": "Allergic to marketing",
+          "tail": "a newsletter is an instant no — his inbox is already a disaster",
+          "insights": ["INS-C13"]
+        }
+      ]
+    },
+    {
+      "type": "VOIC",
+      "voice": "He talks in short, flat bursts with a lot of shrug in his voice — 'uh', 'I dunno', 'so... yeah' — trailing off rather than finishing a thought, and laughing at himself when he catches how little he's overthought any of it. Plain words, no fuss, a dry edge ('why would I follow a taco truck?'). When something genuinely lands he slows down and gets almost sincere about it, then waves it off. He's honest to a fault and faintly amused that anyone wants his opinion on a taco.",
+      "voice_insights": ["INS-C05", "INS-C06"],
+      "quotes": [
+        {
+          "text": "It's just there. Like, it's by the train. I get off, it's right there, so... yeah.",
+          "evidence": ["BB-INT015-t2"]
+        },
+        {
+          "text": "The brisket one's actually good. Like properly good. I didn't expect that from a truck.",
+          "evidence": ["BB-INT015-t10"]
+        },
+        {
+          "text": "No idea what you're talking about. It's tacos. I get the brisket one.",
+          "evidence": ["BB-INT015-t14"]
+        },
+        {
+          "text": "If it wasn't here — I'm not gonna go look for it. I'll just get something else.",
+          "evidence": ["BB-INT015-t20"]
+        }
+      ]
+    },
+    {
+      "type": "GOAL",
+      "items": [
+        {
+          "text": "Solve 'I'm hungry' with the least possible effort — fast, filling, and right on the route home between shifts.",
+          "insights": ["INS-C05"],
+          "evidence": ["BB-INT015-t2", "BB-INT015-t6"]
+        },
+        {
+          "text": "Get full without spending restaurant money — stay comfortably under the 'is this basically a restaurant now?' line.",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT015-t8"]
+        },
+        {
+          "text": "Keep it effortless: walk up, order, done — no phone, no account, no planning ahead.",
+          "insights": ["INS-C10"],
+          "evidence": ["BB-INT015-t18"]
+        },
+        {
+          "text": "Reliably get the one item he actually rates, the <span class=\"entity\">smoked brisket taco</span>, without a big wait.",
+          "insights": ["INS-C06"],
+          "evidence": ["BB-INT015-t10"]
+        }
+      ]
+    },
+    {
+      "type": "TASK",
+      "items": [
+        {
+          "text": "Grab <span class=\"entity\">a quick meal</span> on the way home from a shift, a couple of times a week.",
+          "insights": ["INS-C05"],
+          "evidence": ["BB-INT015-t6"]
+        },
+        {
+          "text": "Orders the brisket as the one thing worth a small detour; everything else is 'just food.'",
+          "insights": ["INS-C06"],
+          "evidence": ["BB-INT015-t10"]
+        },
+        {
+          "text": "Walks up and pays at the window — skips the <span class=\"entity\">BorderBlend app</span> because it's faster than messing with his phone.",
+          "insights": ["INS-C10"],
+          "evidence": ["BB-INT015-t18"]
+        },
+        {
+          "text": "Disciplined solo (one item, then finishes eating at home), but gets swept up and spends more when friends pile on.",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT016-t14", "BB-INT016-t16"]
+        },
+        {
+          "text": "Checks nothing before he goes — if the truck's there it's dinner, if it's not he gets something else.",
+          "insights": ["INS-C09"],
+          "evidence": ["BB-INT015-t20"]
+        }
+      ]
+    },
+    {
+      "type": "PAIN",
+      "items": [
+        {
+          "text": "If the truck isn't where it usually is he won't hunt for it — he just gets something else, so truck-status uncertainty is pure, silent churn.",
+          "insights": ["INS-C09"],
+          "evidence": ["BB-INT015-t20", "BB-INT016-t30"]
+        },
+        {
+          "text": "A line down the block on a short break is a dealbreaker — he hasn't got twenty minutes to spare.",
+          "insights": ["INS-C09"],
+          "evidence": ["BB-INT015-t22"]
+        },
+        {
+          "text": "Price is creeping toward 'normal' — the moment he starts 'doing the math,' a place he can sit down starts to look better.",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT015-t22", "BB-INT015-t24"]
+        },
+        {
+          "text": "The <span class=\"entity\">BorderBlend app</span> never beat just walking up, so it got downloaded once and probably deleted.",
+          "insights": ["INS-C10"],
+          "evidence": ["BB-INT015-t18"]
+        }
+      ]
+    },
+    {
+      "type": "FEAR",
+      "items": [
+        {
+          "text": "That the truck quietly stops being where he expects it and the whole habit just ends, with no fuss and no goodbye.",
+          "insights": ["INS-C09"],
+          "evidence": ["BB-INT015-t20"]
+        },
+        {
+          "text": "That it drifts into 'restaurant money' and stops being the easy, cheap default it's always been.",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT015-t24"]
+        }
+      ]
+    },
+    {
+      "type": "ETRI",
+      "items": [
+        {
+          "text": "The small 'oh, okay' hit when the brisket over-delivers — the one flash of delight that keeps him coming back.",
+          "insights": ["INS-C06"],
+          "evidence": ["BB-INT015-t10"]
+        },
+        {
+          "text": "Faint irritation at being marketed to — anything that resembles a brand story is an instant turn-off.",
+          "insights": ["INS-C13"],
+          "evidence": ["BB-INT015-t26"]
+        }
+      ]
+    },
+    {
+      "type": "XTRI",
+      "items": [
+        {
+          "text": "Sheer proximity — getting off the train and seeing the truck right there on his way home.",
+          "insights": ["INS-C02"],
+          "evidence": ["BB-INT015-t2"]
+        },
+        {
+          "text": "Open-now and a short line — if it's quick he's in, if it's backed up he's gone.",
+          "insights": ["INS-C09"],
+          "evidence": ["BB-INT015-t22"]
+        },
+        {
+          "text": "Friends saying 'get the brisket one' — social pull does the work no brand account does for him.",
+          "insights": ["INS-C02"],
+          "evidence": ["BB-INT016-t2", "BB-INT016-t4"]
+        }
+      ]
+    },
+    {
+      "type": "CRIT",
+      "items": [
+        {
+          "text": "Is it right here, on my way? Proximity beats everything else.",
+          "insights": ["INS-C05"],
+          "evidence": ["BB-INT015-t2"]
+        },
+        {
+          "text": "Is it fast — short line, no waiting when I'm on a break?",
+          "insights": ["INS-C09"],
+          "evidence": ["BB-INT015-t22"]
+        },
+        {
+          "text": "Is it still cheap enough that I'm not doing the math on it?",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT015-t24"]
+        },
+        {
+          "text": "When he does choose, the <span class=\"entity\">smoked brisket taco</span> is the pick.",
+          "insights": ["INS-C06"],
+          "evidence": ["BB-INT015-t10"]
+        }
+      ]
+    },
+    {
+      "type": "CHAN",
+      "items": [
+        {
+          "text": "Physical proximity — the truck by the SkyTrain stop is basically his only 'channel.'",
+          "insights": ["INS-C02"],
+          "evidence": ["BB-INT015-t2"]
+        },
+        {
+          "text": "Word of mouth — friends' recommendations, never brand-owned accounts.",
+          "insights": ["INS-C02"],
+          "evidence": ["BB-INT016-t2"]
+        },
+        {
+          "text": "Passive social — he'll watch a good first-bite video if the algorithm serves it, but he never follows, seeks it out, or posts.",
+          "insights": ["INS-C01"],
+          "evidence": ["BB-INT015-t16", "BB-INT016-t18"]
+        },
+        {
+          "text": "A utility text — 'we're here today' or 'brisket's half off' — is the one push he'd actually accept.",
+          "insights": ["INS-C13"],
+          "evidence": ["BB-INT015-t28"]
+        },
+        {
+          "text": "Not a <span class=\"entity\">newsletter</span> — email is a hard, immediate no.",
+          "insights": ["INS-C13"],
+          "evidence": ["BB-INT015-t26"]
+        }
+      ]
+    },
+    {
+      "type": "RELT",
+      "rels": [
+        {
+          "label": "With the truck & brand",
+          "points": [
+            "Purely transactional today — no loyalty account, no follow, no fandom.",
+            "Winnable to a deeper habit on value and ease, not on story — zero-friction <span class=\"entity\">loyalty programme</span> (phone number at the window) is the kind of thing that would land."
+          ],
+          "insights": ["INS-C12"],
+          "evidence": ["BB-INT016-t22"]
+        },
+        {
+          "label": "With his friends",
+          "points": [
+            "Friends are both his discovery channel and his upsell — a group message is how the outing starts.",
+            "In a group the basket grows: he gets swept up and spends more than his disciplined solo order."
+          ],
+          "insights": ["INS-C02", "INS-C08"],
+          "evidence": ["BB-INT016-t14", "BB-INT016-t16"]
+        },
+        {
+          "label": "With the app & brand comms",
+          "points": [
+            "Downloaded the <span class=\"entity\">BorderBlend app</span> once, never really used it — walking up is faster.",
+            "Only a narrow, utility alert would earn a place on his phone; brand content would not."
+          ],
+          "insights": ["INS-C10", "INS-C13"],
+          "evidence": ["BB-INT015-t18", "BB-INT015-t28"]
+        }
+      ]
+    }
+  ]
+}

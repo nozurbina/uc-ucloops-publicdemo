@@ -1,0 +1,135 @@
+{
+  "slug": "everyday-20s",
+  "name": "The Everyday 20-Something",
+  "tagline": "Just wants something to eat",
+  "emoji": "🍽️",
+  "color": "var(--every)",
+  "one_liner": "The frictionless majority: buys twice a week on proximity, price and open-now, shrugs at the fusion-vs-traditional debate entirely — and is quietly won over anyway by a brisket that's better than a taco truck has any right to be.",
+  "demographics": {
+    "Age": "22–27",
+    "Location": "Vancouver / Edmonton",
+    "Context": "student / shift work",
+    "Occasion": "convenience / on the way",
+    "Decision driver": "proximity, price, open-now"
+  },
+  "quote": "It's right there and it does the job. But the brisket one's actually good — properly good. I didn't expect that from a truck.",
+  "quote_evidence": ["BB-INT015-t8", "BB-INT015-t10"],
+  "evidence": ["BB-INT015", "BB-INT016"],
+  "blocks": [
+    {
+      "title": "Goals & motivations",
+      "items": [
+        {
+          "text": "Solve 'I'm hungry' with the least possible effort — fast, filling, and right on the route home or between shifts. BorderBlend wins because it's the easy default, not because it's a destination.",
+          "insights": ["INS-C05"],
+          "evidence": ["BB-INT015-t2", "BB-INT015-t6"]
+        },
+        {
+          "text": "Get full without spending restaurant money. Value is the whole relationship — as long as a couple of items and a drink stays well under the 'is this basically a restaurant now?' line.",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT016-t8", "BB-INT015-t8"]
+        },
+        {
+          "text": "Genuinely does not care whether it's fusion or traditional — 'it's tacos' — which is the useful signal: the brand's big strategy debate is invisible to them. What actually moves them is the brisket over-delivering against low expectations.",
+          "insights": ["INS-C06", "INS-C07"],
+          "evidence": ["BB-INT015-t14", "BB-INT015-t12"]
+        }
+      ]
+    },
+    {
+      "title": "Behaviours & habits",
+      "items": [
+        {
+          "text": "High-frequency but completely unplanned — a couple of times a week, dictated by shifts and whatever's on the way. 'I don't plan it. It's just on the way.'",
+          "insights": ["INS-C05"],
+          "evidence": ["BB-INT015-t6"]
+        },
+        {
+          "text": "Orders the brisket as the one thing worth a small detour; everything else is 'just food.' Low menu curiosity, high loyalty to the single hero item.",
+          "insights": ["INS-C06"],
+          "evidence": ["BB-INT015-t10", "BB-INT016-t10"]
+        },
+        {
+          "text": "Disciplined solo (one item, then finishes eating at home), a pushover in a group — gets swept up and spends more when friends pile on. The group order is where the basket grows.",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT016-t14", "BB-INT016-t16"]
+        },
+        {
+          "text": "Downloaded the app once to order ahead, never really used it, maybe deleted it — 'faster to walk up than mess with the phone.'",
+          "insights": ["INS-C10"],
+          "evidence": ["BB-INT015-t18"]
+        }
+      ]
+    },
+    {
+      "title": "Discovery & channels",
+      "items": [
+        {
+          "text": "First contact is human and physical, never brand-owned: sheer proximity to a SkyTrain stop or campus, a festival appearance, and friends saying 'get the brisket one.' 'I found out where they'd be from my friends, not from the brand.'",
+          "insights": ["INS-C02"],
+          "evidence": ["BB-INT016-t2", "BB-INT015-t2"]
+        },
+        {
+          "text": "Will happily watch a good first-bite video if the algorithm serves it, but never follows, seeks out, or posts — a watcher, not a poster. Content reaches them by accident, not by subscription.",
+          "insights": ["INS-C01"],
+          "evidence": ["BB-INT016-t10", "BB-INT015-t16"]
+        }
+      ]
+    },
+    {
+      "title": "Frictions (obstacles to going further)",
+      "items": [
+        {
+          "text": "If the truck isn't where it usually is, they don't hunt for it — they just get something else. Truck-status uncertainty is experienced as pure, silent churn, and it's the single fastest way to lose them.",
+          "insights": ["INS-C09"],
+          "evidence": ["BB-INT015-t20", "BB-INT016-t16"]
+        },
+        {
+          "text": "Price is creeping from 'a deal' toward 'normal' — the moment they start 'doing the math,' they'd rather sit down somewhere. A soft ceiling (~$15 with a drink) is quietly forming.",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT015-t22", "BB-INT016-t8"]
+        },
+        {
+          "text": "On a work break with no time to spare, a line down the block is a dealbreaker — and the app never solved it, so it stayed unused. Beating 'walk up and wait' is the bar order-ahead has to clear.",
+          "insights": ["INS-C10"],
+          "evidence": ["BB-INT015-t22", "BB-INT015-t18"]
+        }
+      ]
+    },
+    {
+      "title": "What would deepen the relationship & drive subscription",
+      "items": [
+        {
+          "text": "A genuine student discount or a real deal is the only email hook that works — 'tell me how to spend less,' not 'the story of our brisket.' Make it about money and it turns a treat back into a default.",
+          "insights": ["INS-C15"],
+          "evidence": ["BB-INT016-t14", "BB-INT015-t28"]
+        },
+        {
+          "text": "A narrow, utility-only alert — 'we're here today' or 'brisket's half off' — is the one push they'd actually accept, because it answers the is-it-here question and offers value. Anything resembling brand content is a hard no.",
+          "insights": ["INS-C13"],
+          "evidence": ["BB-INT015-t28", "BB-INT016-t16"]
+        },
+        {
+          "text": "Zero-friction loyalty they didn't even know existed — 'phone number at the window, done.' The instant it needs an account, a password, or a download, they're gone; make it effortless and this segment is an easy sell.",
+          "insights": ["INS-C12"],
+          "evidence": ["BB-INT016-t12", "BB-INT016-t12"]
+        }
+      ]
+    },
+    {
+      "title": "Emotional arc",
+      "items": [
+        {
+          "text": "Starts transactional and faintly amused by the whole idea of caring about a taco truck ('why would I follow a taco truck?'), then gets quietly, genuinely won over by the brisket — a small 'oh, okay' moment that keeps them coming back.",
+          "insights": ["INS-C06"],
+          "evidence": ["BB-INT015-t16", "BB-INT015-t10"]
+        },
+        {
+          "text": "Low-grade wariness about price is the only thing that could gently lose them — no drama, just a slow drift to 'the place I can sit down.' Entirely winnable back on value and ease.",
+          "insights": ["INS-C08"],
+          "evidence": ["BB-INT016-t18", "BB-INT015-t24"]
+        }
+      ]
+    }
+  ]
+}

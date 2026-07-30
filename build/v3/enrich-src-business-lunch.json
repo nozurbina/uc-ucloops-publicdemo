@@ -1,0 +1,1640 @@
+[
+ {
+  "id": "GOAL-OMAR-ST01-0001",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Register a credible new lunch option without spending any real decision effort on it — a tip from a colleague I trust means the first try is already vetted"
+ },
+ {
+  "id": "GOAL-OMAR-ST01-0002",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Confirm the truck sits within a viable walk of my desk and my calendar"
+ },
+ {
+  "id": "GOAL-OMAR-ST01-0003",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Keep lunch a solved problem — I’m not shopping, I’m filing"
+ },
+ {
+  "id": "GOAL-GRAC-ST01-0001",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Identify a vendor that could level up our team lunches beyond the sad-tray-of-sandwiches default"
+ },
+ {
+  "id": "GOAL-GRAC-ST01-0002",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Establish whether BorderBlend is even a candidate for group work: do they cater, can they invoice, will they show up"
+ },
+ {
+  "id": "GOAL-GRAC-ST01-0003",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Protect my own name — no team exposure until I’ve vetted it personally"
+ },
+ {
+  "id": "GOAL-OMAR-ST02-0001",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Answer the only question that matters in one visit: is it worth the minutes — very good brisket in six minutes, not the best brisket in the city"
+ },
+ {
+  "id": "GOAL-OMAR-ST02-0002",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Figure out what could let me down — how long the line gets, and whether the truck’s even there on a given day"
+ },
+ {
+  "id": "GOAL-OMAR-ST02-0003",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Time the full desk-to-desk loop against a real between-meetings window"
+ },
+ {
+  "id": "GOAL-GRAC-ST02-0001",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Personally verify the food before any team exposure — I will never put my name on something I haven’t eaten myself"
+ },
+ {
+  "id": "GOAL-GRAC-ST02-0002",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Scout the operation up close: speed, service, how they handle a rush, what sells out and when"
+ },
+ {
+  "id": "GOAL-GRAC-ST02-0003",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Decide whether the quality justifies the real work of investigating catering, invoicing, and reliability"
+ },
+ {
+  "id": "GOAL-OMAR-ST03-0001",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Solve lunch once and never re-solve it — make BorderBlend the default known quantity"
+ },
+ {
+  "id": "GOAL-OMAR-ST03-0002",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Turn the grudging solo-run-for-four into a clean group order: four labelled items, one bag, one pickup"
+ },
+ {
+  "id": "GOAL-OMAR-ST03-0003",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Know before I leave the desk, every time: open, where, and how long is the line"
+ },
+ {
+  "id": "GOAL-GRAC-ST03-0001",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Move from personal endorsement to a first team order without putting my reputation at risk — the casual Friday treat, not the client event"
+ },
+ {
+  "id": "GOAL-GRAC-ST03-0002",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Get the price up front, per head, so I can have it pre-approved — I’m more sensitive to surprises than to the number"
+ },
+ {
+  "id": "GOAL-GRAC-ST03-0003",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Get a direct line to the Calgary operator and keep it warm: availability, menu, headcount, dietary"
+ },
+ {
+  "id": "GOAL-OMAR-ST04-0001",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Expense cleanly, forty times a quarter: a proper itemized invoice, emailed, with a cost centre or client code"
+ },
+ {
+  "id": "GOAL-OMAR-ST04-0002",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Find an obvious way to just book them for a proper paid working lunch — the one that beats the same three sad sandwich platters"
+ },
+ {
+  "id": "GOAL-OMAR-ST04-0003",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Put my name on a team order with confidence — I vouch for things I’ve verified, and I’ve verified the food"
+ },
+ {
+  "id": "GOAL-GRAC-ST04-0001",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Secure a hard, forwardable, in-writing confirmation: date, arrival time, duration, truck, driver’s cell — locked"
+ },
+ {
+  "id": "GOAL-GRAC-ST04-0002",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Get ingredient-level allergen information in writing that my tree-nut/EpiPen colleague can judge for himself"
+ },
+ {
+  "id": "GOAL-GRAC-ST04-0003",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Have our stock ring-fenced — reserved, prepped, guaranteed for my count, not first-come"
+ },
+ {
+  "id": "GOAL-GRAC-ST04-0004",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Run the Friday treat, then the monthly lunch, then the high-stakes client catering in front of executives — and know the winter plan"
+ },
+ {
+  "id": "GOAL-OMAR-ST05-0001",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Never walk down to an empty corner again — plan the midday around one trustworthy notification"
+ },
+ {
+  "id": "GOAL-OMAR-ST05-0002",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Graduate BorderBlend from “the truck I take my chances on” to load-bearing infrastructure"
+ },
+ {
+  "id": "GOAL-OMAR-ST05-0003",
+  "row": "Goals",
+  "scope": "OMAR",
+  "text": "Keep turning the morning alert into group runs — two to four colleagues, several times a week, happily"
+ },
+ {
+  "id": "GOAL-GRAC-ST05-0001",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Stop having to remember BorderBlend exists — have them come to me at the right moment of the year with the practical details I actually need"
+ },
+ {
+  "id": "GOAL-GRAC-ST05-0002",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Book constantly with confidence: real written confirmation and a day-before reminder as standard"
+ },
+ {
+  "id": "GOAL-GRAC-ST05-0003",
+  "row": "Goals",
+  "scope": "GRAC",
+  "text": "Become the person who sends more business their way, year-round, winter option included"
+ },
+ {
+  "id": "NARR-OMAR-ST01-0001",
+  "row": "Narrative",
+  "scope": "OMAR",
+  "text": "We’re walking back from a meeting near King and Priyesh points at a truck and says “the brisket one.” That’s the entire pitch, and honestly, that’s the right length. I don’t follow food accounts, I don’t read reviews — I don’t have the minutes, and lunch is a problem I solved years ago. But a recommendation from a guy who bills by the hour carries weight. I clock the corner: maybe four minutes from the lobby. Fine. It goes in the mental file under “try when the calendar can absorb a line.” Anyway. Filed."
+ },
+ {
+  "id": "NARR-GRAC-ST01-0001",
+  "row": "Narrative",
+  "scope": "GRAC",
+  "text": "Okay, so here’s the thing — I didn’t find them the way a normal person finds a taco truck. One of our engineers came back from a downtown offsite going “there’s a truck by the LRT, the brisket one, you have to.” Lovely. But I’m the person who feeds thirty people, so my brain skips straight past the taco to the checklist: do they cater? Can they invoice? Will they actually show up? So first I pull up borderblend.ca at my desk, notes open, and I start looking for a catering page before I’ve tasted a single thing. That’s the order of operations for me. Always has been."
+ },
+ {
+  "id": "NARR-OMAR-ST02-0001",
+  "row": "Narrative",
+  "scope": "OMAR",
+  "text": "Thursday, a rare 90-minute gap, so I go. Reluctantly — a line at 12:40 is a real risk to a 1 o’clock, and I have been the guy who walks in late holding a taco. Once. Not again. Eight people ahead of me; I time it. Eleven minutes to the window, order the smoked brisket taco, and — it’s genuinely good. Actually smoked, not a sauce pretending. Good enough that I registered it, which food rarely does when I’m in work mode. Desk to desk: twenty-two minutes. Eighty percent of a restaurant for twenty percent of the time cost. That ratio, I’ll take."
+ },
+ {
+  "id": "NARR-GRAC-ST02-0001",
+  "row": "Narrative",
+  "scope": "GRAC",
+  "text": "So I take my own lunch hour for this — that’s the rule, non-negotiable, I’ve been burned before. I walk over to the truck by the LRT, stand in the line like a civilian, and order the smoked brisket. And, credit where it’s due: it’s very good. Not sad-tray-of-sandwiches good — actually good, actually smoked. But here’s the thing, I’m not just eating, I’m watching. How fast the line moves. How the two of them handle the rush. And I clock that the brisket sells out — early afternoon, gone. Great problem for them. A flashing warning light for me and my thirty people."
+ },
+ {
+  "id": "NARR-OMAR-ST03-0001",
+  "row": "Narrative",
+  "scope": "OMAR",
+  "text": "I didn’t decide to become a regular. It happened. Two, three times a week now, and increasingly it’s “I’ll grab lunch, what does everyone want” — so I’m carrying four orders in my head, tracking who’s plant-based and who skips the salsa verde. The food has earned its slot; my job is protecting the slot. So I downloaded the app to order ahead — tap from the desk, walk down, one bag waiting. That was the dream. The app didn’t deliver it. Couldn’t tell if the truck was actually open, menu didn’t match the board, no “ready” moment. Used it twice. Closed it. Anyway. Back to walking up and taking my chances — at least when it goes wrong that way, I know exactly how."
+ },
+ {
+  "id": "NARR-GRAC-ST03-0001",
+  "row": "Narrative",
+  "scope": "GRAC",
+  "text": "Right, so now the real work starts. I go back to borderblend.ca looking for the catering page — a “book us” button, anything — and it’s there, but it’s kind of buried, honestly. Built for the one-taco person, not for me booking thirty. I fill out the form, and then the Calgary operator emails back — lovely guy, genuinely — and we sort the actual details over email and one phone call, which I don’t mind, I prefer a human for anything that matters. But there were about four steps before I even knew if my date was available. Meanwhile I’ve sent my form to the team: how many, and who can’t eat what. Friday treat first. Low stakes. That’s deliberate."
+ },
+ {
+  "id": "NARR-OMAR-ST04-0001",
+  "row": "Narrative",
+  "scope": "OMAR",
+  "text": "The stakes went up quietly. It’s not just my lunch now — I’ve vouched for this truck to my team, and I’ve been asked to sort food for a working session: twelve people, client in the room, nobody breaking for an hour. I’d genuinely rather roll up a taco spread than platter number three. So I try to book it and — there’s just no obvious way to do it. Nowhere on the site, nobody to e-mail, no way to say “I would like to give you a defined amount of money for a defined event.” I’m the customer waving money. Meanwhile finance has flagged my fading thermal receipts twice this quarter. I’m not asking them to convince me. I’m already convinced. Make it easy to say yes."
+ },
+ {
+  "id": "NARR-GRAC-ST04-0001",
+  "row": "Narrative",
+  "scope": "GRAC",
+  "text": "Okay, this is my pet peeve, so bear with me. The operator’s confirmation was “yep, we’ll be there!” — friendly, warm, and completely unforwardable. I am not sending “yep!” to leadership. So I chased it and pinned it down myself: date, arrival 11:30, ninety minutes, truck, driver’s cell. Same story with allergens — I emailed, got “let me check with the kitchen,” and had to push until it was written and specific, because I don’t gamble on somebody’s airway. The invoice took a couple of asks too. And then? They came. On time, full headcount, food was a hit, the client event landed beautifully. I just didn’t sleep the night before — because I didn’t have the paper until I’d extracted it myself."
+ },
+ {
+  "id": "NARR-OMAR-ST05-0001",
+  "row": "Narrative",
+  "scope": "OMAR",
+  "text": "They shipped the thing I’d have specced myself: a lunch alert. Push at 11:30 — “Bay Street truck open till 2, brisket in stock.” I’m a man whose inbox bar is very high; I unsubscribe from things for sport. I signed up for this one on the spot, because it’s not marketing, it’s operational information. One notification and my entire midday is planned. And the day it said “not out today — back tomorrow,” that was the moment I actually trusted it. Tell me the bad news early and I believe the good news. So: alerts on, loyalty account created, group runs booked off the morning push. It’s not my favourite restaurant. It’s better than that. It’s infrastructure. You don’t churn out of infrastructure."
+ },
+ {
+  "id": "NARR-GRAC-ST05-0001",
+  "row": "Narrative",
+  "scope": "GRAC",
+  "text": "So here’s the thing: I unsubscribe from everything. My inbox is a warzone. But when the catering list invitation came through, I signed up without blinking — a hundred percent yes — because it’s the boring version, which is to say, the correct version. The catering menu with the allergen sheet attached, so I forward it to the team and finance in one shot. Real availability. “Spring catering’s open, here’s how to lock a date.” And written confirmations with a day-before reminder baked into how they operate. I’ve already locked our Friday treats and the monthly lunches through fall, asked about the winter drop-off, and told two other office managers. Feed my team well and I will love you forever."
+ },
+ {
+  "id": "QUES-OMAR-ST01-0001",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Is this actually good, or is it just new to Priyesh?"
+ },
+ {
+  "id": "QUES-OMAR-ST01-0002",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "How far is that corner from my desk, door to door?"
+ },
+ {
+  "id": "QUES-OMAR-ST01-0003",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Is it there every weekday, or does it move around?"
+ },
+ {
+  "id": "QUES-OMAR-ST01-0004",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "What does the line look like at peak — 12:15 to 12:45?"
+ },
+ {
+  "id": "QUES-GRAC-ST01-0001",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Do they do group and catering orders at all, or is this strictly a one-taco-at-a-time operation?"
+ },
+ {
+  "id": "QUES-GRAC-ST01-0002",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Can they produce a proper invoice — itemised, GST broken out, our billing name on it?"
+ },
+ {
+  "id": "QUES-GRAC-ST01-0003",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Is there a Calgary truck with a regular spot, or is it wherever the wind blows?"
+ },
+ {
+  "id": "QUES-GRAC-ST01-0004",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Who do I even contact — head office in Toronto, or the local operator?"
+ },
+ {
+  "id": "QUES-GRAC-ST01-0005",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "What happens in winter? Because this is Calgary, and February is coming whether they like it or not."
+ },
+ {
+  "id": "QUES-OMAR-ST02-0001",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Does the line move at a predictable rate, or does one complicated order stall everything?"
+ },
+ {
+  "id": "QUES-OMAR-ST02-0002",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Is the brisket like this every time, or did I catch a good day?"
+ },
+ {
+  "id": "QUES-OMAR-ST02-0003",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Do they sell out — and when?"
+ },
+ {
+  "id": "QUES-OMAR-ST02-0004",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "What’s my worst-case desk-to-desk time if I hit peak?"
+ },
+ {
+  "id": "QUES-GRAC-ST02-0001",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "If brisket sells out on an ordinary day, what happens to a booked order for thirty — is my stock reserved or am I gambling?"
+ },
+ {
+  "id": "QUES-GRAC-ST02-0002",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "The Korean-style chicken, the salsa verde — what’s actually in the sauces? Sesame? Nuts? Shared prep?"
+ },
+ {
+  "id": "QUES-GRAC-ST02-0003",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Can this two-person window physically serve thirty people in a lunch window, or does group mean a different setup?"
+ },
+ {
+  "id": "QUES-GRAC-ST02-0004",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Who runs this truck — is the Calgary operator someone I can build a working relationship with?"
+ },
+ {
+  "id": "QUES-GRAC-ST02-0005",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "The plant-based option — is it good enough for my vegetarians, or a token?"
+ },
+ {
+  "id": "QUES-OMAR-ST03-0001",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Before I leave the desk: is it open today, where exactly, and how long is the line right now?"
+ },
+ {
+  "id": "QUES-OMAR-ST03-0002",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Can I place one order with four labelled items instead of reciting four orders at the window?"
+ },
+ {
+  "id": "QUES-OMAR-ST03-0003",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Why does the app menu not match the board — which one is lying?"
+ },
+ {
+  "id": "QUES-OMAR-ST03-0004",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Will an order-ahead actually be bagged when I arrive, or am I standing there anyway?"
+ },
+ {
+  "id": "QUES-GRAC-ST03-0001",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "What’s the per-head price, in writing, before I go to finance — not after?"
+ },
+ {
+  "id": "QUES-GRAC-ST03-0002",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Which Fridays is the truck actually available, and how far ahead do I need to book?"
+ },
+ {
+  "id": "QUES-GRAC-ST03-0003",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Can the menu flex for my two vegetarians, my plant-based person, and my tree-nut colleague?"
+ },
+ {
+  "id": "QUES-GRAC-ST03-0004",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Is the form-then-email-then-call dance the permanent process, or is there a faster lane for repeat bookings?"
+ },
+ {
+  "id": "QUES-GRAC-ST03-0005",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "If Friday goes well, what does the bigger monthly lunch look like — same process or something sturdier?"
+ },
+ {
+  "id": "QUES-OMAR-ST04-0001",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Who do I actually ask about catering — the guy at the window, a form, an email address that a human reads?"
+ },
+ {
+  "id": "QUES-OMAR-ST04-0002",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Can I get an itemized invoice, emailed as a PDF, with a client code on it?"
+ },
+ {
+  "id": "QUES-OMAR-ST04-0003",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Can they commit to a headcount and a time in writing — something I can forward internally?"
+ },
+ {
+  "id": "QUES-OMAR-ST04-0004",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "What happens to my twelve-person order if the truck has a normal lunchtime rush at the same time?"
+ },
+ {
+  "id": "QUES-GRAC-ST04-0001",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Can I get a real booking confirmation as standard — not something I have to chase every single time?"
+ },
+ {
+  "id": "QUES-GRAC-ST04-0002",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Is the allergen answer written, ingredient-level, and final — or still “let me check with the kitchen”?"
+ },
+ {
+  "id": "QUES-GRAC-ST04-0003",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Is my thirty-person order ring-fenced, or could a good Friday walk-up line eat my brisket?"
+ },
+ {
+  "id": "QUES-GRAC-ST04-0004",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Will the invoice arrive as an itemised PDF — GST broken out, billing name, PO reference — without a second ask?"
+ },
+ {
+  "id": "QUES-GRAC-ST04-0005",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "What exactly is the November-through-March plan — drop-off? indoor setup? Because nobody’s queueing at a window at minus twenty-five, and I am not putting clients in a parking lot in parkas"
+ },
+ {
+  "id": "QUES-OMAR-ST05-0001",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Does the alert stay accurate — open when it says, where it says, with what it says in stock?"
+ },
+ {
+  "id": "QUES-OMAR-ST05-0002",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Will this list stay pure signal, or does the brand-story stuff start creeping in?"
+ },
+ {
+  "id": "QUES-OMAR-ST05-0003",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "Does the loyalty side ever translate into something operational — like priority pickup on group runs?"
+ },
+ {
+  "id": "QUES-OMAR-ST05-0004",
+  "row": "Questions",
+  "scope": "OMAR",
+  "text": "If the truck moves spots or seasons change, does the alert move with it?"
+ },
+ {
+  "id": "QUES-GRAC-ST05-0001",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Will the list stay operational — dates, allergens, availability, invoicing — or drift into “check out our new taco”?"
+ },
+ {
+  "id": "QUES-GRAC-ST05-0002",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Does the day-before reminder actually arrive before my first big booking, or is it a promise on a signup page?"
+ },
+ {
+  "id": "QUES-GRAC-ST05-0003",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "What does the winter offer look like in practice — drop-off catering? An indoor setup? Priced how?"
+ },
+ {
+  "id": "QUES-GRAC-ST05-0004",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "Can repeat bookings get a fast lane — same team, same billing, one confirmation e-mail?"
+ },
+ {
+  "id": "QUES-GRAC-ST05-0005",
+  "row": "Questions",
+  "scope": "GRAC",
+  "text": "When I refer the other office managers, does their experience match mine — because my name rides on that too"
+ },
+ {
+  "id": "PROB-OMAR-ST01-0001",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "I have zero appetite for evaluating a new lunch option — every minute spent researching food is a minute the client doesn’t get back"
+ },
+ {
+  "id": "PROB-OMAR-ST01-0002",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "I can see the truck but I can’t see the commitment: no idea if it’s a six-minute stop or a twenty-five-minute gamble"
+ },
+ {
+  "id": "PROB-OMAR-ST01-0003",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "A recommendation is not a schedule — “it’s usually there” is doing a lot of work in that sentence"
+ },
+ {
+  "id": "PROB-OMAR-ST01-0004",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "My calendar this week has no slot that can absorb an unknown line"
+ },
+ {
+  "id": "PROB-GRAC-ST01-0001",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "The website is clearly built for the person buying one taco on their lunch — nothing on a first look tells me how to order for a group, and I’m the one arriving with real money"
+ },
+ {
+  "id": "PROB-GRAC-ST01-0002",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "An enthusiastic tip tells me the food is good; it tells me absolutely nothing about reliability, and reliability is my entire job"
+ },
+ {
+  "id": "PROB-GRAC-ST01-0003",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "I once had a caterer no-show a 22-person client lunch — VP in the lobby, forty panic pizzas — so every new vendor starts from “prove to me you’ll be there”"
+ },
+ {
+  "id": "PROB-GRAC-ST01-0004",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "No visible answer to the boring-but-critical questions: invoicing, per-head pricing, headcount handling"
+ },
+ {
+  "id": "PROB-OMAR-ST02-0001",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "The queue is an unpriced cost — eight people could be nine minutes or nineteen, and I can’t tell from the back of the line"
+ },
+ {
+  "id": "PROB-OMAR-ST02-0002",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "No visibility on sellouts: I half-heard the guy two ahead of me get told the brisket was low, and I did the maths on having queued for nothing"
+ },
+ {
+  "id": "PROB-OMAR-ST02-0003",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "One data point is not reliability — a single great taco tells me about the food, not about the operation"
+ },
+ {
+  "id": "PROB-OMAR-ST02-0004",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "Standing in a line is the one part of this that doesn’t scale with my calendar"
+ },
+ {
+  "id": "PROB-GRAC-ST02-0001",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "The menu board tells me “Korean-style chicken taco, delicious” — it does not tell me what’s in the sauce, and I have a colleague with a genuine EpiPen-grade tree-nut allergy, so I cannot guess"
+ },
+ {
+  "id": "PROB-GRAC-ST02-0002",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "Watching the brisket sell out by early afternoon plants the sellout fear for group orders: “first come” is fine for one taco and a nightmare scenario for a client event"
+ },
+ {
+  "id": "PROB-GRAC-ST02-0003",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "One truck, one window, one line — nothing about the walk-up experience tells me how they’d handle thirty covers on a schedule"
+ },
+ {
+  "id": "PROB-GRAC-ST02-0004",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "It’s a gorgeous day today; standing here I’m already doing the math on minus twenty-five in February and clients in parkas"
+ },
+ {
+  "id": "PROB-OMAR-ST03-0001",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "The worst outcome keeps being possible: ten minutes walked, empty corner, 1 o’clock looming, and now I’m improvising — the exact thing I was trying to avoid"
+ },
+ {
+  "id": "PROB-OMAR-ST03-0002",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "The app added uncertainty instead of removing it — I half-decided on something at my desk that wasn’t even on the board when I got there"
+ },
+ {
+  "id": "PROB-OMAR-ST03-0003",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "No clear “your order is ready” moment, so order-ahead just relocates the waiting instead of deleting it"
+ },
+ {
+  "id": "PROB-OMAR-ST03-0004",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "Carrying four colleagues’ orders verbally through a truck window is an error-prone process I would never accept in my actual work"
+ },
+ {
+  "id": "PROB-OMAR-ST03-0005",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "Twenty minutes of line is the difference between early for my next thing and the guy who walks in late holding a taco"
+ },
+ {
+  "id": "PROB-GRAC-ST03-0001",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "The catering page is buried on a site built for the one-taco person — I’m arriving waving money and I still have to go hunting for it"
+ },
+ {
+  "id": "PROB-GRAC-ST03-0002",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "Four steps before I even know if they’re available on my date; availability should be the first answer, not the fourth"
+ },
+ {
+  "id": "PROB-GRAC-ST03-0003",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "No published per-head catering price sheet, so pre-approval with finance means back-and-forth I shouldn’t have to do"
+ },
+ {
+  "id": "PROB-GRAC-ST03-0004",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "My team form comes back with the usual mosaic — vegetarians, one plant-based, one serious allergy — and the public menu gives me nothing ingredient-level to plan against"
+ },
+ {
+  "id": "PROB-OMAR-ST04-0001",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "There’s simply no way I can find to book catering — I’m trying to hand over a large, defined amount of money and I can’t even find where to ask"
+ },
+ {
+  "id": "PROB-OMAR-ST04-0002",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "A crumpled thermal receipt that’s already fading is not what my finance team wants to see, forty times a quarter"
+ },
+ {
+  "id": "PROB-OMAR-ST04-0003",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "Half these lunches are billable to a project, and without a cost centre or client code on paper the hassle lands on me at month-end"
+ },
+ {
+  "id": "PROB-OMAR-ST04-0004",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "Asking at the window mid-rush gets me a nod and a verbal “yeah, probably” — which is not a thing I can put in front of a client session"
+ },
+ {
+  "id": "PROB-OMAR-ST04-0005",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "If I vouch for this and the order shows up short or late in front of a client, that’s my name on it, not theirs"
+ },
+ {
+  "id": "PROB-GRAC-ST04-0001",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "“Yep, we’ll be there!” is not a confirmation — I needed date, arrival time, duration, truck and driver’s cell in writing, and I had to chase and pin it down myself"
+ },
+ {
+  "id": "PROB-GRAC-ST04-0002",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "I lost sleep the night before the client event because the paper trail was thinner than my standards — the 22-person no-show lives in the back of my head every single time"
+ },
+ {
+  "id": "PROB-GRAC-ST04-0003",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "Allergen answers came slowly and informally; with an EpiPen allergy on the team, “let me check with the kitchen” is the difference between booking and walking to a competitor with it all spelled out"
+ },
+ {
+  "id": "PROB-GRAC-ST04-0004",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "The invoice needed a couple of asks and arrived a little informal — finance bounces anything that isn’t an itemised PDF with GST broken out and our PO on it, and then I’m chasing again"
+ },
+ {
+  "id": "PROB-GRAC-ST04-0005",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "No stated guarantee that a booked order is reserved stock — the Saturday sellout replays in my head with a client watching"
+ },
+ {
+  "id": "PROB-GRAC-ST04-0006",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "The winter question is still open, which caps this at a spring-to-fall relationship unless someone gives me an indoor or drop-off answer"
+ },
+ {
+  "id": "PROB-OMAR-ST05-0001",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "One false alert — “brisket in stock” and it isn’t — re-opens every bit of uncertainty this subscription exists to close"
+ },
+ {
+  "id": "PROB-OMAR-ST05-0002",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "If the feed drifts into recipes and meet-the-team content, I’m gone in four seconds, and taking the useful signal down with it"
+ },
+ {
+  "id": "PROB-OMAR-ST05-0003",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "The alert solves me, but the group order still lives in my head and at the window — the last un-automated step in the routine"
+ },
+ {
+  "id": "PROB-OMAR-ST05-0004",
+  "row": "Problems",
+  "scope": "OMAR",
+  "text": "A loyalty programme framed as points and badges is noise; I don’t need to be rewarded, I need to be informed"
+ },
+ {
+  "id": "PROB-GRAC-ST05-0001",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "One promotional-only e-mail and my trust wobbles — I signed up for the boring, useful version, not a specials flyer, and my unsubscribe finger is famously quick"
+ },
+ {
+  "id": "PROB-GRAC-ST05-0002",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "The list only truly pays off if booking comes with it — if I still have to dig up the enquiry form each time, we’re back to everything being on me to initiate"
+ },
+ {
+  "id": "PROB-GRAC-ST05-0003",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "November through March remains the open question on my calendar; without a firm winter answer, five months of my catering budget goes elsewhere"
+ },
+ {
+  "id": "PROB-GRAC-ST05-0004",
+  "row": "Problems",
+  "scope": "GRAC",
+  "text": "A first missed day-before reminder would send me straight back to chase-and-pin-down mode, which is exactly the job the subscription exists to retire"
+ },
+ {
+  "id": "TASK-OMAR-ST01-0001",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Take the colleague’s recommendation on board"
+ },
+ {
+  "id": "TASK-OMAR-ST01-0002",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Clock the truck’s location relative to the office"
+ },
+ {
+  "id": "TASK-OMAR-ST01-0003",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "File it mentally for a low-stakes day"
+ },
+ {
+  "id": "TASK-OMAR-ST01-0004",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Scan the calendar for a lunch window with slack in it"
+ },
+ {
+  "id": "TASK-GRAC-ST01-0001",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Note the engineer’s tip and where the truck parks relative to our office"
+ },
+ {
+  "id": "TASK-GRAC-ST01-0002",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Look BorderBlend up on borderblend.ca with my organiser’s checklist in hand — catering, invoicing, contact route"
+ },
+ {
+  "id": "TASK-GRAC-ST01-0003",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Book myself a solo reconnaissance lunch before the team’s name goes anywhere near this"
+ },
+ {
+  "id": "TASK-OMAR-ST02-0001",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Walk down on a low-stakes day and queue once"
+ },
+ {
+  "id": "TASK-OMAR-ST02-0002",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Order the smoked brisket taco"
+ },
+ {
+  "id": "TASK-OMAR-ST02-0003",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Time the full desk-to-desk loop"
+ },
+ {
+  "id": "TASK-OMAR-ST02-0004",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Judge whether the loop fits a standard 45-minute window, line included"
+ },
+ {
+  "id": "TASK-GRAC-ST02-0001",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Take my own lunch hour for the trial run; order the smoked brisket"
+ },
+ {
+  "id": "TASK-GRAC-ST02-0002",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Watch the truck like a vendor, not just a lunch — how fast the line moves, how they carry themselves, when things sell out, how they speak to customers"
+ },
+ {
+  "id": "TASK-GRAC-ST02-0003",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Chat briefly with the operator at the window; get a name and confirm they do catering"
+ },
+ {
+  "id": "TASK-GRAC-ST02-0004",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Start looking up group orders and catering properly the moment the food clears the bar — which it does"
+ },
+ {
+  "id": "TASK-OMAR-ST03-0001",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Fold the truck into the weekly rotation"
+ },
+ {
+  "id": "TASK-OMAR-ST03-0002",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Collect and carry colleagues’ orders, dietary quirks included"
+ },
+ {
+  "id": "TASK-OMAR-ST03-0003",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Try ordering ahead on the app; drop it when walking up turns out to work better"
+ },
+ {
+  "id": "TASK-OMAR-ST03-0004",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Recite, verify, and distribute four orders per group run"
+ },
+ {
+  "id": "TASK-OMAR-ST03-0005",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Expense each run off a crumpled thermal receipt"
+ },
+ {
+  "id": "TASK-GRAC-ST03-0001",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Hunt down the catering/group enquiry form on borderblend.ca and submit it"
+ },
+ {
+  "id": "TASK-GRAC-ST03-0002",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Work availability, menu, headcount and pricing out with the Calgary operator over email and one call"
+ },
+ {
+  "id": "TASK-GRAC-ST03-0003",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Send the team form: how many, and who can’t eat what; collate the answers"
+ },
+ {
+  "id": "TASK-GRAC-ST03-0004",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Get the Friday-treat total pre-approved before confirming anything"
+ },
+ {
+  "id": "TASK-OMAR-ST04-0001",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Ask at the window who handles group and catering orders"
+ },
+ {
+  "id": "TASK-OMAR-ST04-0002",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Request the itemized emailed invoice with cost-centre field"
+ },
+ {
+  "id": "TASK-OMAR-ST04-0003",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Scope the twelve-person working-lunch order: headcount, dietary needs, timing"
+ },
+ {
+  "id": "TASK-OMAR-ST04-0004",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Chase down a written confirmation solid enough to forward internally"
+ },
+ {
+  "id": "TASK-OMAR-ST04-0005",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Run the session order and debrief myself on whether it landed on time, at count"
+ },
+ {
+  "id": "TASK-GRAC-ST04-0001",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Chase and pin down the booking confirmation until it’s forwardable to my VP"
+ },
+ {
+  "id": "TASK-GRAC-ST04-0002",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "E-mail for allergen details; escalate until the answer is written and specific; hand it to my colleague to judge for himself"
+ },
+ {
+  "id": "TASK-GRAC-ST04-0003",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Get the total pre-approved with finance using the up-front price; obtain the itemised PDF invoice after"
+ },
+ {
+  "id": "TASK-GRAC-ST04-0004",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Deliver the monthly team lunch, then the client event; debrief — on time? at headcount? order intact?"
+ },
+ {
+  "id": "TASK-GRAC-ST04-0005",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Ask the operator directly about ring-fenced group stock and the winter option"
+ },
+ {
+  "id": "TASK-OMAR-ST05-0001",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Subscribe to the lunch alert and allow the morning push"
+ },
+ {
+  "id": "TASK-OMAR-ST05-0002",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Act on the first alert and verify it against reality"
+ },
+ {
+  "id": "TASK-OMAR-ST05-0003",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Trust the honest bad-news alert and re-plan at my desk instead of on a cold corner"
+ },
+ {
+  "id": "TASK-OMAR-ST05-0004",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Turn the morning alert into group runs — take orders in Slack, walk down once"
+ },
+ {
+  "id": "TASK-OMAR-ST05-0005",
+  "row": "Tasks",
+  "scope": "OMAR",
+  "text": "Recommend the alert to the colleagues I keep feeding"
+ },
+ {
+  "id": "TASK-GRAC-ST05-0001",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Join the catering list; forward the menu-plus-allergen sheet to team and finance in one shot"
+ },
+ {
+  "id": "TASK-GRAC-ST05-0002",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Lock the season’s recurring dates — Friday treats, monthly lunches — through the operator, confirmations in writing"
+ },
+ {
+  "id": "TASK-GRAC-ST05-0003",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Ask for and book the winter/indoor or drop-off option for November through March"
+ },
+ {
+  "id": "TASK-GRAC-ST05-0004",
+  "row": "Tasks",
+  "scope": "GRAC",
+  "text": "Tell people — the two office managers in our building, and anyone who asks; the organiser who trusts you becomes your best salesperson"
+ },
+ {
+  "id": "SENT-OMAR-ST01-0001",
+  "row": "Sentiment",
+  "scope": "OMAR",
+  "text": "Guarded interest"
+ },
+ {
+  "id": "SENT-GRAC-ST01-0001",
+  "row": "Sentiment",
+  "scope": "GRAC",
+  "text": "Intrigued-but-guarded"
+ },
+ {
+  "id": "SENT-OMAR-ST02-0001",
+  "row": "Sentiment",
+  "scope": "OMAR",
+  "text": "Impressed, calculating"
+ },
+ {
+  "id": "SENT-GRAC-ST02-0001",
+  "row": "Sentiment",
+  "scope": "GRAC",
+  "text": "Impressed-cautious"
+ },
+ {
+  "id": "SENT-OMAR-ST03-0001",
+  "row": "Sentiment",
+  "scope": "OMAR",
+  "text": "Committed, mildly exasperated"
+ },
+ {
+  "id": "SENT-GRAC-ST03-0001",
+  "row": "Sentiment",
+  "scope": "GRAC",
+  "text": "Determined"
+ },
+ {
+  "id": "SENT-OMAR-ST04-0001",
+  "row": "Sentiment",
+  "scope": "OMAR",
+  "text": "Convinced, impatient"
+ },
+ {
+  "id": "SENT-GRAC-ST04-0001",
+  "row": "Sentiment",
+  "scope": "GRAC",
+  "text": "Vindicated-tired"
+ },
+ {
+  "id": "SENT-OMAR-ST05-0001",
+  "row": "Sentiment",
+  "scope": "OMAR",
+  "text": "Settled, quietly loyal"
+ },
+ {
+  "id": "SENT-GRAC-ST05-0001",
+  "row": "Sentiment",
+  "scope": "GRAC",
+  "text": "Loyal-relieved"
+ },
+ {
+  "id": "QUOT-OMAR-ST01-0001",
+  "row": "Think/Feel",
+  "scope": "OMAR",
+  "text": "“Fine — one lunch slot. That’s the entire budget for this experiment.”"
+ },
+ {
+  "id": "QUOT-GRAC-ST01-0001",
+  "row": "Think/Feel",
+  "scope": "GRAC",
+  "text": "“Great, the brisket one — but do they cater, can they invoice, and are they going to actually show up?”"
+ },
+ {
+  "id": "QUOT-OMAR-ST02-0001",
+  "row": "Think/Feel",
+  "scope": "OMAR",
+  "text": "“Very good brisket in eleven minutes of queue. The taco passed; now the operation has to.”"
+ },
+ {
+  "id": "QUOT-GRAC-ST02-0001",
+  "row": "Think/Feel",
+  "scope": "GRAC",
+  "text": "“Okay, the food’s real. Now show me you can do this thirty times, on a date, in writing.”"
+ },
+ {
+  "id": "QUOT-OMAR-ST03-0001",
+  "row": "Think/Feel",
+  "scope": "OMAR",
+  "text": "“The food’s a solved problem. The getting-to-the-food is the part still costing me minutes.”"
+ },
+ {
+  "id": "QUOT-GRAC-ST03-0001",
+  "row": "Think/Feel",
+  "scope": "GRAC",
+  "text": "“I’m on your side here — I want to give you my business. Just make the door easier to find.”"
+ },
+ {
+  "id": "QUOT-OMAR-ST04-0001",
+  "row": "Think/Feel",
+  "scope": "OMAR",
+  "text": "“I’m the easiest sale they’ll get all year. Someone just has to pick up the money.”"
+ },
+ {
+  "id": "QUOT-GRAC-ST04-0001",
+  "row": "Think/Feel",
+  "scope": "GRAC",
+  "text": "“They were fantastic on the day — I just shouldn’t have had to build the paperwork myself to believe it.”"
+ },
+ {
+  "id": "QUOT-OMAR-ST05-0001",
+  "row": "Think/Feel",
+  "scope": "OMAR",
+  "text": "“One accurate notification a day. That’s the whole product. That’s the whole relationship.”"
+ },
+ {
+  "id": "QUOT-GRAC-ST05-0001",
+  "row": "Think/Feel",
+  "scope": "GRAC",
+  "text": "“Talk to me like I’m running an operation, because I am — give me the boring stuff and I’m your best customer.”"
+ },
+ {
+  "id": "ALTP-OMAR-ST01-0001",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "The colleague’s tip never lines up with a free window and the idea quietly expires"
+ },
+ {
+  "id": "ALTP-OMAR-ST01-0002",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "I Google “lunch near me” instead and the truck doesn’t surface, so the default sandwich place wins again"
+ },
+ {
+  "id": "ALTP-OMAR-ST01-0003",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "I walk past on a busy day, see fifteen people in line, and file it under “not for me”"
+ },
+ {
+  "id": "ALTP-GRAC-ST01-0001",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The website gives me nothing at all for groups, so I quietly file BorderBlend under “nice for someone else’s lunch” and move on to a caterer with proper paperwork"
+ },
+ {
+  "id": "ALTP-GRAC-ST01-0002",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The tip comes with a second endorsement from another exec, which bumps the recon lunch up my calendar"
+ },
+ {
+  "id": "ALTP-GRAC-ST01-0003",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "I can’t find a Calgary contact and email head office in Toronto instead, adding a week of back-and-forth"
+ },
+ {
+  "id": "ALTP-OMAR-ST02-0001",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "The line is fifteen deep and I bail without ordering — experiment postponed, not failed"
+ },
+ {
+  "id": "ALTP-OMAR-ST02-0002",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "Brisket sold out at the window; I take the carne asada, which is fine, but “fine” doesn’t change a routine"
+ },
+ {
+  "id": "ALTP-OMAR-ST02-0003",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "The truck isn’t there at all and the whole idea takes a credibility hit on day one"
+ },
+ {
+  "id": "ALTP-GRAC-ST02-0001",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The truck isn’t at its spot the day I walk over — and that single empty corner would honestly have ended the evaluation right there"
+ },
+ {
+  "id": "ALTP-GRAC-ST02-0002",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The food is merely fine, and I keep our current caterer; good-not-great doesn’t justify new-vendor risk"
+ },
+ {
+  "id": "ALTP-GRAC-ST02-0003",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The operator at the window is switched-on and hands me a catering contact directly, skipping a website step I was dreading"
+ },
+ {
+  "id": "ALTP-OMAR-ST03-0001",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "One empty-corner strike too many and the rotation slot quietly goes back to the boring-but-certain food court"
+ },
+ {
+  "id": "ALTP-OMAR-ST03-0002",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "A colleague’s order comes back wrong (salsa verde on the no-salsa one) and I stop volunteering for group runs"
+ },
+ {
+  "id": "ALTP-OMAR-ST03-0003",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "I keep the habit solo-only, and the group runs — four orders a trip, several trips a week — never happen for them"
+ },
+ {
+  "id": "ALTP-GRAC-ST03-0001",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "My preferred Friday is taken and the booking slips two weeks, cooling the team’s enthusiasm off the back of my glowing endorsement"
+ },
+ {
+  "id": "ALTP-GRAC-ST03-0002",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "Finance balks at an unconfirmed estimate and I have to go back to the operator for a written number before I can re-submit"
+ },
+ {
+  "id": "ALTP-GRAC-ST03-0003",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The email thread goes quiet for three days mid-planning and I start, quietly, pricing the competitor who has everything spelled out as a fallback"
+ },
+ {
+  "id": "ALTP-OMAR-ST04-0001",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "No way to book them turns up in time and the sad sandwich platters win by default — their loss, literally"
+ },
+ {
+  "id": "ALTP-OMAR-ST04-0002",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "The invoice request gets a shrug, so I keep the solo habit but route group and client work to a vendor with paperwork"
+ },
+ {
+  "id": "ALTP-OMAR-ST04-0003",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "The order lands perfectly, on time, at count — and I go from customer to reference: “use the brisket truck, tell them I sent you”"
+ },
+ {
+  "id": "ALTP-GRAC-ST04-0001",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The allergen answer never firms up, and despite preferring the food I book the competitor with it all spelled out in writing for the client event — not a close call when it’s someone’s airway"
+ },
+ {
+  "id": "ALTP-GRAC-ST04-0002",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "Brisket runs short mid-service at the monthly lunch and the last six people get substitutions — survivable for the team, unthinkable for the client event"
+ },
+ {
+  "id": "ALTP-GRAC-ST04-0003",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The operator, once asked, produces a proper written confirmation template immediately — and my anxiety drops a full notch for every booking after"
+ },
+ {
+  "id": "ALTP-GRAC-ST04-0004",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "Finance rejects the informal invoice outright and reimbursement stalls, souring an otherwise perfect delivery"
+ },
+ {
+  "id": "ALTP-OMAR-ST05-0001",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "An alert misfires once; I keep the subscription but reinstate the walk-up-and-check habit until it re-earns the trust"
+ },
+ {
+  "id": "ALTP-OMAR-ST05-0002",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "The list turns into a newsletter with a brand story; I unsubscribe, keep the lunch habit, and they lose their line to me"
+ },
+ {
+  "id": "ALTP-OMAR-ST05-0003",
+  "row": "Alternate paths",
+  "scope": "OMAR",
+  "text": "The alerts prove reliable for a full quarter and I move the team’s monthly working lunch onto them by default — routine, not enthusiasm, and worth more"
+ },
+ {
+  "id": "ALTP-GRAC-ST05-0001",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The newsletter turns promotional and I unsubscribe in four seconds — the bookings survive, but they’re back to being work I initiate"
+ },
+ {
+  "id": "ALTP-GRAC-ST05-0002",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The winter answer never materialises, and BorderBlend stays a seasonal vendor while a year-round competitor takes my November-to-March budget"
+ },
+ {
+  "id": "ALTP-GRAC-ST05-0003",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "The booking-plus-reminder system works flawlessly for a full quarter, and I start trusting them with the client events too — the highest-stakes business I have to give"
+ },
+ {
+  "id": "ALTP-GRAC-ST05-0004",
+  "row": "Alternate paths",
+  "scope": "GRAC",
+  "text": "A referred office manager gets the old chase-the-confirmation experience, and I quietly ease off recommending them until the process catches up with the food"
+ },
+ {
+  "id": "CHAN-OMAR-ST01-0001",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Colleague word of mouth"
+ },
+ {
+  "id": "CHAN-OMAR-ST01-0002",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Walking past the truck"
+ },
+ {
+  "id": "CHAN-OMAR-ST01-0003",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Google “lunch near me”"
+ },
+ {
+  "id": "CHAN-OMAR-ST01-0004",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Outlook calendar"
+ },
+ {
+  "id": "CHAN-GRAC-ST01-0001",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Colleague recommendation"
+ },
+ {
+  "id": "CHAN-GRAC-ST01-0002",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "borderblend.ca"
+ },
+ {
+  "id": "CHAN-GRAC-ST01-0003",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Vendor-vetting checklist"
+ },
+ {
+  "id": "CHAN-GRAC-ST01-0004",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Office Slack (tip repeated)"
+ },
+ {
+  "id": "CHAN-OMAR-ST02-0001",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Walking past the truck"
+ },
+ {
+  "id": "CHAN-OMAR-ST02-0002",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "The truck window"
+ },
+ {
+  "id": "CHAN-OMAR-ST02-0003",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "The line (watching throughput)"
+ },
+ {
+  "id": "CHAN-OMAR-ST02-0004",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Phone clock/timer"
+ },
+ {
+  "id": "CHAN-GRAC-ST02-0001",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "The truck on-site"
+ },
+ {
+  "id": "CHAN-GRAC-ST02-0002",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Operator face-to-face"
+ },
+ {
+  "id": "CHAN-GRAC-ST02-0003",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "borderblend.ca (mobile)"
+ },
+ {
+  "id": "CHAN-GRAC-ST02-0004",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Notes app"
+ },
+ {
+  "id": "CHAN-OMAR-ST03-0001",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "BorderBlend app"
+ },
+ {
+  "id": "CHAN-OMAR-ST03-0002",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "The truck window"
+ },
+ {
+  "id": "CHAN-OMAR-ST03-0003",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Walking past the truck"
+ },
+ {
+  "id": "CHAN-OMAR-ST03-0004",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Slack (group orders)"
+ },
+ {
+  "id": "CHAN-OMAR-ST03-0005",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Expense system"
+ },
+ {
+  "id": "CHAN-GRAC-ST03-0001",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Catering enquiry form"
+ },
+ {
+  "id": "CHAN-GRAC-ST03-0002",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "E-mail with the operator"
+ },
+ {
+  "id": "CHAN-GRAC-ST03-0003",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Phone (planning call)"
+ },
+ {
+  "id": "CHAN-GRAC-ST03-0004",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Office Slack + team dietary form"
+ },
+ {
+  "id": "CHAN-GRAC-ST03-0005",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Finance/AP system"
+ },
+ {
+  "id": "CHAN-OMAR-ST04-0001",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "The truck window"
+ },
+ {
+  "id": "CHAN-OMAR-ST04-0002",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "borderblend.ca"
+ },
+ {
+  "id": "CHAN-OMAR-ST04-0003",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "E-mail"
+ },
+ {
+  "id": "CHAN-OMAR-ST04-0004",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Slack (collecting orders)"
+ },
+ {
+  "id": "CHAN-OMAR-ST04-0005",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Expense/finance system"
+ },
+ {
+  "id": "CHAN-GRAC-ST04-0001",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "E-mail with the operator"
+ },
+ {
+  "id": "CHAN-GRAC-ST04-0002",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Phone (driver’s cell)"
+ },
+ {
+  "id": "CHAN-GRAC-ST04-0003",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Invoice/AP system"
+ },
+ {
+  "id": "CHAN-GRAC-ST04-0004",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "The truck on-site"
+ },
+ {
+  "id": "CHAN-GRAC-ST04-0005",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Office Slack"
+ },
+ {
+  "id": "CHAN-GRAC-ST04-0006",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "VP/exec debrief"
+ },
+ {
+  "id": "CHAN-OMAR-ST05-0001",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "App push notifications"
+ },
+ {
+  "id": "CHAN-OMAR-ST05-0002",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "E-mail (alert list)"
+ },
+ {
+  "id": "CHAN-OMAR-ST05-0003",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Slack (group runs)"
+ },
+ {
+  "id": "CHAN-OMAR-ST05-0004",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "The truck window"
+ },
+ {
+  "id": "CHAN-OMAR-ST05-0005",
+  "row": "Channels",
+  "scope": "OMAR",
+  "text": "Walking past the truck"
+ },
+ {
+  "id": "CHAN-GRAC-ST05-0001",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Catering list e-mail"
+ },
+ {
+  "id": "CHAN-GRAC-ST05-0002",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "E-mail with the operator"
+ },
+ {
+  "id": "CHAN-GRAC-ST05-0003",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Forwarded confirmations"
+ },
+ {
+  "id": "CHAN-GRAC-ST05-0004",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Invoice/AP system"
+ },
+ {
+  "id": "CHAN-GRAC-ST05-0005",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Office Slack"
+ },
+ {
+  "id": "CHAN-GRAC-ST05-0006",
+  "row": "Channels",
+  "scope": "GRAC",
+  "text": "Word of mouth to peers"
+ }
+]
