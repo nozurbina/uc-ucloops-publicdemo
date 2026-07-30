@@ -36,6 +36,10 @@ provenance behaviour can be fixed. Three things:
    untouched: they already carry the same `.tip` hover previews as the rest of the
    site, and the viewer needs to see them as ordinary navigation.
 
+   The maps' own `toggleRefs()` function is left defined and unreachable — nothing
+   calls it once the buttons are gone. Deleting it would mean editing their inline
+   script, which buys nothing; if you are reading it and wondering, that is why.
+
 Idempotent, via `uc-journey-chrome`, `uc-journey-perslinks` and `uc-journey-trail`.
 """
 
