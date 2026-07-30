@@ -366,7 +366,7 @@ a.trail-toggle{border-bottom:1px dashed currentColor;cursor:pointer;color:inheri
 a.trail-toggle:hover{text-decoration:none;border-bottom-style:solid}
 """
 
-SCRIPT = """<script>
+SCRIPT = chrome.JUMP_HELPERS + """<script>
 /* uc-journey-chrome */
 
 /* The viewer's toolbar button ends up here: the injected frame script calls
@@ -377,7 +377,10 @@ SCRIPT = """<script>
 function toggleProv(btn){
   var grid = document.querySelector('.journey-grid');
   if(!grid) return;
-  var on = grid.classList.toggle('show-refs');
+  /* Showing every reference row adds thousands of pixels; ucKeepPlace pins whatever
+     id you were looking at so the toggle doesn't move the page out from under you. */
+  function flip(){ return grid.classList.toggle('show-refs'); }
+  var on = window.ucKeepPlace ? ucKeepPlace(flip) : flip();
   var b = btn && btn.tagName ? btn : document.querySelector('.provtoggle');
   if(b){
     b.textContent = on ? 'Hide Item IDs & Provenance' : 'Show Item IDs & Provenance';
@@ -392,71 +395,17 @@ function toggleItemRefs(){ return toggleProv(document.querySelector('.provtoggle
 function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle')); return false; }
 
 (function(){
-  function ensureRefsShown(){
-    var grid = document.querySelector('.journey-grid');
-    if(grid && !grid.classList.contains('show-refs')) toggleProv(null);
-  }
-  function flash(el){
-    el.classList.remove('uc-jump-flash');
-    void el.offsetWidth;                     /* restart the animation */
-    el.classList.add('uc-jump-flash');
-    setTimeout(function(){ el.classList.remove('uc-jump-flash'); }, 2000);
-  }
-  /* Scrolling a jump target into view is not one thing here.
-     Direct: this document scrolls, so scrollIntoView does the job.
-     Embedded: it does not — the parent scrolls the whole frame — so scrollIntoView
-     silently does nothing vertically, and a native hash jump lands the target under
-     the parent's fixed toolbar. So compute it: the frame's offset in the parent, plus
-     the target's offset in here, minus the toolbar and some air. */
-  function scrollToBox(box){
-    var HEADROOM = 28;
-    try{
-      if(document.documentElement.classList.contains("uc-embedded")){
-        var pwin = window.parent;
-        var frame = pwin.document.getElementById("ai-projects-frame-content");
-        if(frame && frame.contentWindow === window){
-          var tb = pwin.document.querySelector(".ai-projects-project-toolbar");
-          var chrome = document.querySelector(".uc-chrome");
-          var top = frame.getBoundingClientRect().top + pwin.scrollY
-                  + box.getBoundingClientRect().top
-                  - (tb ? tb.offsetHeight : 0)
-                  - (chrome ? chrome.offsetHeight : 0) - HEADROOM;
-          pwin.scrollTo({top: Math.max(0, top), behavior: "smooth"});
-          /* Horizontal is still ours: the grid pans inside this document. */
-          box.scrollIntoView({block:"nearest", inline:"center"});
-          return;
-        }
-      }
-    }catch(e){ /* fall through to the plain version */ }
-    box.scrollIntoView({block:"center", inline:"center", behavior:"smooth"});
-  }
-
-  function jump(id){
+  /* The one thing the shared helper cannot know: on these pages the references have
+     to be showing before a jump to one of them means anything. */
+  var jump = window.ucJumpTo;
+  if(!jump) return;
+  window.ucJumpTo = function(id){
     var el = document.getElementById(id);
-    if(!el) return false;
-    ensureRefsShown();
-    var box = el.closest('.grid-cell, .opportunity-card') || el;
-    scrollToBox(box);
-    flash(box);
-    return true;
-  }
-  /* Capture phase, and we stop propagation on a hit: inside the viewer the frame
-     script also listens on document for link clicks and would hand this off to the
-     parent page as navigation. Only same-page (#) links are ours. */
-  document.addEventListener('click', function(e){
-    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
-    if(!a) return;
-    var id = decodeURIComponent(a.getAttribute('href').slice(1));
-    if(!id || !jump(id)) return;
-    e.preventDefault();
-    e.stopPropagation();
-    if(history.replaceState) history.replaceState(null, '', '#' + id);
-  }, true);
-
-  /* Arriving with a hash (from another page, or the viewer's own hash sync). */
-  function onHash(){ var h = location.hash.slice(1); if(h) setTimeout(function(){ jump(h); }, 60); }
-  window.addEventListener('hashchange', onHash);
-  window.addEventListener('load', onHash);
+    var grid = document.querySelector('.journey-grid');
+    if(el && grid && !grid.classList.contains('show-refs') &&
+       el.closest('.evidence, .item-ref, .opportunity-card')) toggleProv(null);
+    return jump(id);
+  };
 })();
 </script>
 """

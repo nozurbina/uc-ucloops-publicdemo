@@ -122,8 +122,145 @@ def chrome(bar=""):
     return '<div class="uc-chrome">' + banner() + bar + "</div>"
 
 
+# ── Scroll helpers, shared by every page including the hand-authored maps ─────
+#
+# Both problems these solve come from the same fact: **inside the viewer this
+# document does not scroll.** The parent sizes the iframe to the full content height
+# and scrolls its own page instead. So `scrollIntoView` is a no-op vertically, a
+# native `#id` jump moves nothing, and the highlight fires somewhere off screen where
+# nobody sees it. Everything here therefore asks "who actually scrolls?" first:
+#
+#   embedded      -> the parent window (same origin, so its scroll is ours to set)
+#   journey maps  -> `.container`, an inner box, when viewed directly
+#   otherwise     -> this window
+#
+# `ucKeepPlace` is the other half: the provenance toggle changes the page height, and
+# without it you lose your place. It pins the topmost id that is currently on screen
+# and puts it back where it was afterwards.
+#
+# Emitted into build.py's pages via SCRIPTS below, and into the journey maps by
+# postbuild/journey-chrome.py, which imports this constant rather than keeping a
+# second copy that could drift.
+JUMP_HELPERS = """<script>
+/* uc-jump: shared scroll + highlight helpers. See chrome.py for why. */
+(function(){
+  function parentFrame(){
+    if(window.parent === window) return null;
+    try{
+      var pw = window.parent;
+      var fr = pw.document.getElementById("ai-projects-frame-content");
+      if(!fr || fr.contentWindow !== window) return null;
+      return {win: pw, frame: fr};
+    }catch(e){ return null; }        /* cross-origin embed: treat as standalone */
+  }
+
+  /* Height to keep clear at the top: the viewer's toolbar plus our own chrome. */
+  function headroom(){
+    var h = 24, p = parentFrame();
+    if(p){
+      var tb = p.win.document.querySelector(".ai-projects-project-toolbar");
+      if(tb) h += tb.offsetHeight;
+    }
+    var c = document.querySelector(".uc-chrome");
+    if(c) h += c.offsetHeight;
+    return h;
+  }
+
+  function innerBox(){
+    var b = document.querySelector(".container");
+    return (b && b.scrollHeight > b.clientHeight + 1) ? b : null;
+  }
+
+  function host(){
+    var p = parentFrame();
+    if(p) return {
+      by: function(d){ p.win.scrollBy(0, d); },
+      to: function(y){ p.win.scrollTo({top: Math.max(0, y), behavior: "smooth"}); },
+      /* Our rects are document coordinates, since this document never scrolls. */
+      docTop: function(){ return p.frame.getBoundingClientRect().top + p.win.scrollY; },
+      band: function(){
+        var r = p.frame.getBoundingClientRect();
+        return {top: Math.max(0, -r.top), bottom: Math.min(p.win.innerHeight - r.top, r.height)};
+      }
+    };
+    var box = innerBox();
+    if(box) return {
+      by: function(d){ box.scrollTop += d; }, to: null,
+      band: function(){ var r = box.getBoundingClientRect(); return {top: r.top, bottom: r.bottom}; }
+    };
+    return {
+      by: function(d){ window.scrollBy(0, d); }, to: null,
+      band: function(){ return {top: 0, bottom: window.innerHeight}; }
+    };
+  }
+
+  /* The box worth highlighting: the row, card or section the id sits in, not the
+     badge itself — a 60px badge flashing in a 10,000px page is easy to miss. */
+  var BOXES = ".grid-cell,.opportunity-card,article.insight,.turn,.card,.pblock,.section," +
+              ".emotion-tag,.quote-block,tr,li,p,h2,h3";
+  function boxFor(el){ return el.closest(BOXES) || el; }
+
+  window.ucFlash = function(el){
+    el.classList.remove("flash");
+    void el.offsetWidth;                       /* restart a running animation */
+    el.classList.add("flash");
+    setTimeout(function(){ el.classList.remove("flash"); }, 2100);
+  };
+
+  window.ucJumpTo = function(id){
+    var el = id && document.getElementById(id);
+    if(!el) return false;
+    var box = boxFor(el), h = host();
+    if(h.to) h.to(h.docTop() + box.getBoundingClientRect().top - headroom());
+    else box.scrollIntoView({block: "center", inline: "center", behavior: "smooth"});
+    /* Horizontal is always ours, even when the parent owns the vertical. */
+    if(h.to) box.scrollIntoView({block: "nearest", inline: "center"});
+    ucFlash(box);
+    return true;
+  };
+
+  window.ucKeepPlace = function(mutate){
+    var h = host(), band = h.band(), keep = band.top + headroom();
+    var ref = null, before = 0, all = document.querySelectorAll("[id]");
+    for(var i = 0; i < all.length; i++){
+      var r = all[i].getBoundingClientRect();
+      if(r.height && r.bottom > keep){ ref = all[i]; before = r.top; break; }
+    }
+    var out = mutate();
+    if(ref){
+      var delta = ref.getBoundingClientRect().top - before;
+      if(Math.abs(delta) > 1) h.by(delta);
+    }
+    return out;
+  };
+
+  /* Same-page links are ours: inside the viewer the injected frame script also
+     listens for clicks and would hand a `#id` link to the parent as navigation,
+     which lands the target under the toolbar. Capture phase so we go first. */
+  document.addEventListener("click", function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if(!a) return;
+    var id = decodeURIComponent(a.getAttribute("href").slice(1));
+    if(!ucJumpTo(id)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    if(history.replaceState) history.replaceState(null, "", "#" + id);
+  }, true);
+
+  /* Arriving with a hash — from another page, or from the viewer's own hash sync.
+     The delay lets the viewer finish its own scroll attempt before we correct it. */
+  function onHash(){
+    var h = location.hash.slice(1);
+    if(h) setTimeout(function(){ ucJumpTo(decodeURIComponent(h)); }, 350);
+  }
+  window.addEventListener("hashchange", onHash);
+  window.addEventListener("load", onHash);
+})();
+</script>
+"""
+
 # Placed at the end of <body> so the whole chrome exists before it measures.
-SCRIPTS = """<script>
+SCRIPTS = JUMP_HELPERS + """<script>
 /* Chrome sizing. The chrome is sticky and therefore in normal flow, so nothing
    needs padding reserved for it. --chrome-h is still published because the
    journey-map container sizes itself against it. */

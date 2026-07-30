@@ -183,18 +183,19 @@ def page(title, body, rel="", extra_head="", body_class="", prov=False, bar=None
 
 JS = r"""
 // Toggle item IDs + provenance (evidence rows). Pages start with body.prov-hidden.
+// Wrapped in ucKeepPlace (see chrome.py) because showing the evidence changes the
+// page height under you: without it, toggling halfway down a long page throws you
+// somewhere else entirely.
 function toggleProv(btn){
-  var on = document.body.classList.toggle('prov-hidden');
-  btn.innerHTML = on ? 'Show Item IDs &amp; Provenance' : 'Hide Item IDs &amp; Provenance';
+  var on = window.ucKeepPlace ? ucKeepPlace(flip) : flip();
+  if (btn && btn.innerHTML !== undefined)
+    btn.innerHTML = on ? 'Show Item IDs &amp; Provenance' : 'Hide Item IDs &amp; Provenance';
+  return on;
+  function flip(){ return document.body.classList.toggle('prov-hidden'); }
 }
-// Evidence-trail helpers: hover/click preview of the verbatim a link points to.
-document.addEventListener('DOMContentLoaded',function(){
-  // highlight target on hash nav
-  function flash(){var h=location.hash.slice(1); if(!h)return;
-    var el=document.getElementById(decodeURIComponent(h)); if(el){el.classList.add('flash');
-    setTimeout(function(){el.classList.remove('flash');},1600); el.scrollIntoView({block:'center'});}}
-  window.addEventListener('hashchange',flash); flash();
-});
+// Jumping to an evidence target, and the landing highlight, live in chrome.py's
+// JUMP_HELPERS — they have to know whether this page or the viewer's parent is the
+// thing that scrolls, and the journey maps need the same answers.
 """
 
 # ───────────────────────── transcript parsing ─────────────────────────

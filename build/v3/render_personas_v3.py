@@ -193,11 +193,19 @@ a.item-ref{{text-decoration:none;cursor:pointer}}a.item-ref:hover{{outline:1px s
 {''.join(body_parts)}
 </main>
 <footer class="page-footer"><div>Prepared by: ucLoops UX Assistant | Urbina Consulting — BorderBlend (synthetic)</div></footer>
-<script>function toggleProv(btn){{var on=document.body.classList.toggle('prov-hidden');btn.innerHTML=on?'Show Item IDs &amp; Provenance':'Hide Item IDs &amp; Provenance';}}
+<script>/* ucKeepPlace (chrome.py) pins whatever you were reading: revealing every
+   evidence row on a page this long otherwise moves the text out from under you. */
+function toggleProv(btn){{
+  function flip(){{return document.body.classList.toggle('prov-hidden');}}
+  var on=window.ucKeepPlace?ucKeepPlace(flip):flip();
+  if(btn&&btn.innerHTML!==undefined)btn.innerHTML=on?'Show Item IDs &amp; Provenance':'Hide Item IDs &amp; Provenance';
+  return on;
+}}
 /* The "Evidence trail" label is the explanation of what the toggle does, so it is
    also the control — people read the sentence and then look for the switch. */
 function ucToggleFromTrail(){{toggleProv(document.querySelector('.provtoggle'));return false;}}
-document.addEventListener('DOMContentLoaded',function(){{function f(){{var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(decodeURIComponent(h));if(el){{el.style.transition='background 1.5s';el.style.background='#fff3c9';setTimeout(function(){{el.style.background='';}},1500);el.scrollIntoView({{block:'center'}});}}}}window.addEventListener('hashchange',f);f();}});</script>
+/* Jumping and the landing highlight come from chrome.py's JUMP_HELPERS, which knows
+   whether this page or the viewer's parent is the thing that scrolls. */</script>
 {chrome.SCRIPTS}</body></html>
 {chrome.MARKER}
 """

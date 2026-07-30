@@ -1,0 +1,23 @@
+{
+  "name": "uc-ucloops-publicdemo",
+  "version": "1.0.0",
+  "description": "A worked example of the **ucLoops** methodology: a complete, traceable research deliverable set — personas, journey maps, insights, and the source verbatims they rest on — where every claim links back to the evidence behind it.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nozurbina/uc-ucloops-publicdemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nozurbina/uc-ucloops-publicdemo/issues"
+  },
+  "homepage": "https://github.com/nozurbina/uc-ucloops-publicdemo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2"
+  }
+}
