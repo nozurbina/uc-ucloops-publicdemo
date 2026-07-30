@@ -6,7 +6,7 @@ through the ucLoops prompt chain — so this is the one place their chrome and t
 provenance behaviour can be fixed. Three things:
 
 1. THE STICKY BAR. Replaced with `chrome.sticky_bar()`, same as every generated
-   page, with the journey's own name as the page title. Their hand-written bar
+   page: the way back and the provenance toggle, nothing else. Their hand-written bar
    nested the site name inside the back link, and the AI-projects viewer reads that
    link's textContent as the label for the *parent* page's toolbar — so the toolbar
    came out as "←BorderBlend Evidence Map   BorderBlend Evidence Map".
@@ -36,7 +36,7 @@ provenance behaviour can be fixed. Three things:
    untouched: they already carry the same `.tip` hover previews as the rest of the
    site, and the viewer needs to see them as ordinary navigation.
 
-Idempotent via the `uc-journey-chrome` marker.
+Idempotent, via `uc-journey-chrome`, `uc-journey-perslinks` and `uc-journey-trail`.
 """
 
 import re
@@ -49,6 +49,7 @@ import naming
 
 MARKER = "uc-journey-chrome"
 LINKS_MARKER = "uc-journey-perslinks"
+TRAIL_MARKER = "uc-journey-trail"
 
 CSS = """
 /* ── uc-journey-chrome ── */
@@ -63,6 +64,11 @@ CSS = """
    a grid cell and on an inline badge without moving anything. */
 @keyframes uc-jump-flash{0%{background:#fff3c9;box-shadow:0 0 0 3px #fde68a}100%{background:transparent;box-shadow:none}}
 .uc-jump-flash{animation:uc-jump-flash 1.8s ease-out}
+
+/* "Evidence trail" in the legend is a control, not a link out — same treatment as
+   the persona pages give it. */
+a.trail-toggle{border-bottom:1px dashed currentColor;cursor:pointer;color:inherit}
+a.trail-toggle:hover{text-decoration:none;border-bottom-style:solid}
 """
 
 SCRIPT = """<script>
@@ -86,6 +92,9 @@ function toggleProv(btn){
 }
 /* Kept: older inline handlers and the persona controls call this name. */
 function toggleItemRefs(){ return toggleProv(document.querySelector('.provtoggle')); }
+/* The legend's "Evidence trail" label explains the toggle, so it is also the
+   toggle — same on the persona pages. */
+function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle')); return false; }
 
 (function(){
   function ensureRefsShown(){
@@ -129,14 +138,58 @@ function toggleItemRefs(){ return toggleProv(document.querySelector('.provtoggle
 """
 
 
-def bar_title(s: str) -> str:
-    """"Journey · Late-Night Foodie (v3)" out of the page's own <title>."""
-    m = re.search(r"<title>(.*?)</title>", s, re.S)
-    t = " ".join(m.group(1).split()) if m else "Journey map"
-    t = re.sub(r"\s+—\s+Journey Map\s*$", "", t)
-    name = t.split(" — ")[0]
-    ver = re.search(r"\((v\d)\)", t)
-    return f"Journey · {name}" + (f" ({ver.group(1)})" if ver else "")
+# Who each multi-persona map is about, in the order the legend names them. Only the
+# business-lunch maps have a trail legend; the late-night ones never had one.
+TRAIL_PERSONAS = {"business-lunch": (("Omar", "omar"), ("Grace", "grace"))}
+
+# The one link that used to cover both names — v3 maps point at a v3 persona page,
+# v2 maps at the v1 page.
+TRAIL_OLD_LINKS = (
+    '<a href="pers-omar-business-lunch-v3.html">Omar &amp; Grace’s persona (Business Lunch)</a>',
+    '<a href="pers-business-lunch-v1.html">Omar &amp; Grace’s persona (Business Lunch)</a>',
+)
+
+
+def fix_trail_legend(path: Path) -> str:
+    """"Evidence trail", one link per person, and no stale instructions.
+
+    Three things wrong with the legend: it said "Link trail" where the rest of the
+    site says "Evidence trail", it wrapped *both* persona names in a single link to
+    Omar's page, and it still told people to use the per-card "Show references"
+    buttons that step 3 removes.
+    """
+    s = path.read_text(encoding="utf-8")
+    if TRAIL_MARKER in s:
+        return "skipped (already fixed)"
+    if '<div class="trail-legend">' not in s:
+        return "no trail legend on this map"
+
+    # Same wording and same behaviour as the persona pages: the label explains what
+    # the toggle does, so it is also the toggle.
+    s = s.replace(
+        "<b>Link trail:</b>",
+        '<a class="trail-toggle" href="#" onclick="return ucToggleFromTrail()">'
+        "<b>Evidence trail</b></a>:", 1)
+
+    journey = "business-lunch" if "business-lunch" in path.name else ""
+    people = TRAIL_PERSONAS.get(journey)
+    old = next((o for o in TRAIL_OLD_LINKS if o in s), None)
+    if people and old:
+        v1 = "-v2.html" in path.name
+        links = " &amp; ".join(
+            f'<a href="{naming.persona_v1_page(journey) if v1 else naming.persona_page(person, journey)}">{name}</a>'
+            for name, person in people)
+        s = s.replace(old, f"{links}’s personas", 1)
+
+    s = s.replace(
+        "each opportunity’s <em>Show references</em> opens the persona lines, "
+        "insights and source verbatims it draws on",
+        "each opportunity lists the persona lines, insights and source verbatims it "
+        "draws on — click one to jump to it in the map", 1)
+
+    s += "\n<!-- " + TRAIL_MARKER + " -->\n"
+    path.write_text(s, encoding="utf-8")
+    return "trail legend fixed"
 
 
 def patch(path: Path) -> str:
@@ -150,7 +203,7 @@ def patch(path: Path) -> str:
         return "FAILED: no stickybar"
     old = m.group(0)
     jid = re.search(r'<span class="journey-id">[^<]*</span>', old)
-    bar = chrome.sticky_bar(page_title=bar_title(s))
+    bar = chrome.sticky_bar()
     if jid:
         bar = bar.replace('<button class="provtoggle"', jid.group(0) + '<button class="provtoggle"')
     s = s[: m.start()] + bar + s[m.end():]
@@ -200,3 +253,4 @@ base = Path(sys.argv[1])
 for f in sorted(base.glob("journey-map-*.html")):
     print(f"  {f.name:42s} {patch(f)}")
     print(f"  {'':42s} {relink_personas(f)}")
+    print(f"  {'':42s} {fix_trail_legend(f)}")

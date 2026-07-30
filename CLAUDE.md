@@ -124,13 +124,19 @@ in a new tab so they don't replace the viewer iframe. Source lives at
 - The top chrome comes from `build/chrome.py` and its CSS from
   `build/assets/chrome.css`. One sticky wrapper, banner then bar, on every page.
 - **The viewer reads our sticky bar to build the parent page's toolbar.** It takes
-  the back link's `textContent` as the "Back to X" label and `.sb-title`'s as the
-  toolbar title, and its toggle button calls `window.toggleProv(button)` in the
-  frame — falling back to flipping `body.prov-hidden`. So: keep the back label
-  short and free of the arrow (the arrow is `::before`), put the *page's* name in
-  `.sb-title`, and define `toggleProv` on any page whose provenance works some
-  other way. The journey maps didn't, which is why their toggle was dead live and
-  fine locally.
+  the back link's `textContent` as its back label and `.sb-title`'s as the toolbar
+  title, and its toggle button calls `window.toggleProv(button)` in the frame —
+  falling back to flipping `body.prov-hidden`. So: keep the back label short (it is
+  `chrome.BACK_LABEL`, arrow included, since a CSS arrow would not survive the copy),
+  emit no `.sb-title` at all (the page's `<h1>` is right below it), and define
+  `toggleProv` on any page whose provenance works some other way. The journey maps
+  didn't, which is why their toggle was dead live and fine locally.
+- **A 16px white band above the banner in the viewer is not ours.** The plugin sets
+  `#ai-projects-frame{padding-top: toolbar.offsetHeight + 16}` and sizes the iframe
+  to `content + 16`. Measured: 71px of padding under a 55px toolbar. Nothing in this
+  repo can close it; the fix is in `project-frame.js`.
+- **"Evidence trail" is a control**, not just a label — on persona pages and the
+  journey legends it calls `ucToggleFromTrail()`, which drives the same toggle.
 - Persona pages are `pers-<person>-<archetype>-v<n>.html`, from `build/naming.py`.
   Old names still resolve via generated redirect stubs.
 - Body classes vary (`srcpage`, `docwrap`, `jny-wrap`, `prov-hidden`) — match

@@ -182,19 +182,22 @@ a.item-ref{{text-decoration:none;cursor:pointer}}a.item-ref:hover{{outline:1px s
 .trail-note .tn{{background:#fff8ef;border:1px solid #f3c9ad;border-radius:10px;padding:.6rem .9rem;font-size:.82rem;color:#7a4b2a}}
 .persona-topbar .provtoggle{{float:right}}
 </style></head><body class="prov-hidden">
-{chrome.EARLY}{chrome.chrome(chrome.sticky_bar(page_title=f"Persona · {esc(persona['name'])}"))}
+{chrome.EARLY}{chrome.chrome(chrome.sticky_bar())}
 <header class="page-header">
 <h1>Persona Profile</h1>
 <div class="avatar-wrapper">{headshot}<div class="initials">{esc(persona['initials'])}</div></div>
 <div class="persona-name">{esc(persona['name'])}</div>
 <div class="persona-role">{esc(persona['role'])}</div>
 </header>
-<div class="trail-note"><div class="tn"><b>Evidence trail:</b> every item ID links to the <b>insight</b> it rests on; each insight links down to the <b>verbatim</b> source. Direct source quotes are linked inline too{rellink}.</div></div>
+<div class="trail-note"><div class="tn"><a class="trail-toggle" href="#" onclick="return ucToggleFromTrail()"><b>Evidence trail</b></a>: every item ID links to the <b>insight</b> it rests on; each insight links down to the <b>verbatim</b> source. Direct source quotes are linked inline too{rellink}.</div></div>
 <main class="content">
 {''.join(body_parts)}
 </main>
 <footer class="page-footer"><div>Prepared by: ucLoops UX Assistant | Urbina Consulting — BorderBlend (synthetic)</div></footer>
 <script>function toggleProv(btn){{var on=document.body.classList.toggle('prov-hidden');btn.innerHTML=on?'Show Item IDs &amp; Provenance':'Hide Item IDs &amp; Provenance';}}
+/* The "Evidence trail" label is the explanation of what the toggle does, so it is
+   also the control — people read the sentence and then look for the switch. */
+function ucToggleFromTrail(){{toggleProv(document.querySelector('.provtoggle'));return false;}}
 document.addEventListener('DOMContentLoaded',function(){{function f(){{var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(decodeURIComponent(h));if(el){{el.style.transition='background 1.5s';el.style.background='#fff3c9';setTimeout(function(){{el.style.background='';}},1500);el.scrollIntoView({{block:'center'}});}}}}window.addEventListener('hashchange',f);f();}});</script>
 {chrome.SCRIPTS}</body></html>
 {chrome.MARKER}

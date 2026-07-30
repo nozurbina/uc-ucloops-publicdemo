@@ -35,11 +35,11 @@ import pathlib
 HERE = pathlib.Path(__file__).resolve().parent
 LOGO = HERE / "assets" / "2023-uc-logo-outline.svg"
 
-# The sticky bar's back link. Kept short deliberately — the AI-projects viewer
-# reads this element's textContent as the label for the *parent* page's toolbar
-# ("Back to <label>"), and it has to survive a phone-width bar. The arrow is CSS
-# (`.sb-home::before`), not markup, so it stays out of that textContent.
-BACK_LABEL = "Evidence Map"
+# The sticky bar's back link, and the only thing in that bar besides the toggle.
+# Kept short deliberately: the AI-projects viewer reads this element's textContent
+# as the label for the *parent* page's toolbar, and it has to survive a phone-width
+# bar. The arrow is part of the text so the viewer's copy keeps it too.
+BACK_LABEL = "← Evidence Map"
 
 # Site name, for the index's own <title> and the archive pages that have no better
 # label of their own.
@@ -89,18 +89,17 @@ def banner():
     )
 
 
-def sticky_bar(home="index.html", page_title="", toggle=True):
-    """The dark bar under the banner: back link, where you are, provenance toggle.
+def sticky_bar(home="index.html", toggle=True):
+    """The dark bar under the banner: the way back, and the provenance toggle.
 
-    The two texts are deliberately different things, because the viewer maps them
-    onto separate slots in the parent page's toolbar:
+    Nothing else goes in here. It briefly carried the page's own name as well, which
+    the viewer copies into its toolbar title — but the page says what it is in its own
+    <h1> a few pixels below, so it was a restatement taking the room the back link
+    needs on a phone.
 
-        <a class="sb-home">   -> "Back to {this}"   (BACK_LABEL, short)
-        <span class="sb-title"> -> the toolbar title (this page)
-
-    They used to be the same string, nested — so the toolbar read
-    "←BorderBlend Evidence Map   BorderBlend Evidence Map" and told you nothing
-    about where you were. Keep the page's own name in `page_title`.
+    What matters is that this link's **textContent** is what the viewer uses for the
+    parent page's back label. Keep it short, and keep the arrow in it, since it is
+    the only part of our bar that survives into the toolbar.
 
     `toggle=False` for pages with nothing to fold away. Lives here rather than in
     build.py because the v3 renderers emit it too, and when they each had their own
@@ -109,11 +108,8 @@ def sticky_bar(home="index.html", page_title="", toggle=True):
     btn = ('<button class="provtoggle" onclick="toggleProv(this)">'
            'Show Item IDs &amp; Provenance</button>') if toggle else ''
     esc = lambda s: html.escape(str(s), quote=True)
-    title = (f'<span class="sb-title">{esc(page_title)}</span>'
-             if page_title else '')
     return (f'<div class="stickybar"><a class="sb-home" href="{home}" '
-            f'title="Back to the {esc(BACK_LABEL)}">{esc(BACK_LABEL)}</a>'
-            f'{title}{btn}</div>')
+            f'title="Back to the evidence map">{esc(BACK_LABEL)}</a>{btn}</div>')
 
 
 def chrome(bar=""):

@@ -154,7 +154,7 @@ def md_blocks(md, row_anchor_prefix=None, row_counter=None):
 def css():
     return styles.stylesheet()
 
-def page(title, body, rel="", extra_head="", body_class="", prov=False, bar=None, bar_title=""):
+def page(title, body, rel="", extra_head="", body_class="", prov=False, bar=None):
     """Full page. The top chrome (promo banner + sticky bar) is emitted here for
     every page — see chrome.py; it used to be bolted on by postbuild patches, which
     is what made the site un-rebuildable.
@@ -169,10 +169,7 @@ def page(title, body, rel="", extra_head="", body_class="", prov=False, bar=None
     if prov:
         body_class = (body_class + " prov-hidden").strip()
     if show_bar:
-        # bar_title is what the page IS, not what the site is — the viewer puts it
-        # in the parent toolbar next to a "Back to Evidence Map" link.
-        bar_html = chrome.sticky_bar(home=f'{rel}index.html',
-                                    page_title=bar_title or title, toggle=prov)
+        bar_html = chrome.sticky_bar(home=f'{rel}index.html', toggle=prov)
     return f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{esc(title)}</title>
@@ -279,8 +276,7 @@ def render_transcript(tid, meta, secs, turns):
 </section>
 <section class="notes"><h2>Post-interview notes</h2>{post}</section>
 """
-    (SRC_OUT / f'{tid}.html').write_text(page(f'{tid} — {meta.get("Participant","")}', body, body_class="srcpage", prov=True, rel="../",
-                                          bar_title=f'Source · {tid}'), encoding='utf-8')
+    (SRC_OUT / f'{tid}.html').write_text(page(f'{tid} — {meta.get("Participant","")}', body, body_class="srcpage", prov=True, rel="../"), encoding='utf-8')
 
 # ───────────────────────── dataset: card-style (social, tickets) ─────────────
 def parse_card_dataset(path, key, id_from_heading, kind, title, kicker):
@@ -321,8 +317,7 @@ def parse_card_dataset(path, key, id_from_heading, kind, title, kicker):
 <section class="cards">{''.join(cardhtml)}</section>
 {('<section class="notes">'+tail+'</section>') if tail else ''}
 """
-    (SRC_OUT / f'{key}.html').write_text(page(title, body, body_class="srcpage", prov=True, rel="../",
-                                              bar_title=f'Source · {key}'), encoding='utf-8')
+    (SRC_OUT / f'{key}.html').write_text(page(title, body, body_class="srcpage", prov=True, rel="../"), encoding='utf-8')
 
 # ───────────────────────── dataset: doc-style (applogs, factsheet) ─────────────
 def render_doc_source(path, key, kind, title, kicker, row_prefix=None):
@@ -341,8 +336,7 @@ def render_doc_source(path, key, kind, title, kicker, row_prefix=None):
 <section class="doc">{hhtml}</section>"""
     is_ctx = kind == 'factsheet'
     (SRC_OUT / f'{key}.html').write_text(page(title, body, body_class="srcpage",
-                                             prov=not is_ctx, bar=True, rel="../",
-                                             bar_title=f'Source · {key}'), encoding='utf-8')
+                                             prov=not is_ctx, bar=True, rel="../"), encoding='utf-8')
 
 # ───────────────────────── market research (claim anchors) ─────────────
 def render_market(path, key='MRKT'):
@@ -387,8 +381,7 @@ def render_market(path, key='MRKT'):
 <p class="hint">Tagged claims (MR-C##) and references (MR-REF##) are individually addressable — downstream insights link straight to the specific claim.</p></header>
 <section class="doc market">{hhtml}{refs_html}</section>"""
     (SRC_OUT / f'{key}.html').write_text(page('Market research — BorderBlend', body, body_class="srcpage",
-                                             prov=False, bar=True, rel="../",
-                                             bar_title=f'Source · {key}'), encoding='utf-8')
+                                             prov=False, bar=True, rel="../"), encoding='utf-8')
 
 # ───────────────────────── heading helpers for datasets ─────────────
 def social_id(h):
@@ -509,7 +502,7 @@ def render_insights():
           f'<span class="strength st-{strength}">{esc(strength)}</span></h3>'
           f'<div class="body"><p><strong>{md_inline(ins.get("statement",""))}</strong></p>'
           f'<p>{md_inline(ins.get("body",""))}</p>'
-          f'<p class="imp">↗ <em>{md_inline(ins.get("implication",""))}</em></p>'
+          f'<p class="imp"><span class="imp-tag">Key takeaway</span>{md_inline(ins.get("implication",""))}</p>'
           f'{evidence_row(ins.get("evidence",[]))}</div></article>')
     catbtns = ''.join(f'<button data-f="cat:{esc(c)}">{esc(c)}</button>' for c in cats)
     perbtns = ''.join(f'<button data-f="per:{p}">{p}</button>' for p in personas)
@@ -522,8 +515,7 @@ def render_insights():
 </header>
 <section class="insights">{''.join(card(i) for i in data)}</section>
 """
-    (SITE/'insights.html').write_text(page('BorderBlend — Insights', body, body_class='docwrap', extra_head=INSIGHT_JS, prov=True,
-                                          bar_title='Insights'), encoding='utf-8')
+    (SITE/'insights.html').write_text(page('BorderBlend — Insights', body, body_class='docwrap', extra_head=INSIGHT_JS, prov=True), encoding='utf-8')
     print(f'  insights: {len(data)}')
 
 INSIGHT_JS = """<script>document.addEventListener('DOMContentLoaded',function(){
@@ -597,8 +589,7 @@ def render_one_persona(p):
 <div class="two-col">{''.join(blocks)}</div>
 """
     (SITE/naming.persona_v1_page(slug)).write_text(
-        page(f'Persona — {p.get("name",slug)}', body, body_class='docwrap',
-             bar_title=f'Persona · {p.get("name",slug)} (v1)'), encoding='utf-8')
+        page(f'Persona — {p.get("name",slug)}', body, body_class='docwrap'), encoding='utf-8')
 
 def slug_short(t):
     return re.sub(r'[^a-z0-9]+','-', t.lower()).strip('-')[:18]

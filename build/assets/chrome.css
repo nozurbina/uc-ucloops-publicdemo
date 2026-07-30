@@ -93,14 +93,17 @@ html{overflow-x:clip}
 
 /* Background stretches, content stays in the 72rem column. */
 .uc-chrome .promo-banner .banner-inner{max-width:72rem;margin-left:auto;margin-right:auto;
-  position:relative;padding-right:2.8rem}
+  position:relative;padding-right:3.4rem}
 
-/* Anchored to the content column rather than the banner edge, with the padding
-   above reserving its space — so it clears the Learn more button at every width
-   instead of relying on a gutter that only exists on wide screens. */
-.uc-chrome .promo-banner .promo-close{position:absolute;top:0;right:0}
+/* Note what this is actually positioned against: the button is a *sibling* of
+   .banner-inner, so its containing block is .promo-banner (position:relative, part
+   2) — it sits in the banner's own top-right corner, not the content column's. What
+   keeps it clear of "Learn more" is the padding-right reserved on .banner-inner
+   above: measured clearance is 42px at 1600 and 1100, and the two are on separate
+   rows below 859px. Inset from the corner rather than flush in it. */
+.uc-chrome .promo-banner .promo-close{position:absolute;top:.5rem;right:.5rem}
 
 @media(max-width:859px){
   .uc-chrome .promo-banner{padding-right:1.25rem}
-  .uc-chrome .promo-banner .banner-inner{padding-right:2.4rem}
+  .uc-chrome .promo-banner .banner-inner{padding-right:2.9rem}
 }
