@@ -44,10 +44,18 @@ provenance behaviour can be fixed. Three things:
    horizontal scroll with it. Documented at VIEWPORT_CSS below; it predates this
    script.
 
-Idempotent, via `uc-journey-chrome`, `uc-journey-perslinks`, `uc-journey-trail` and
-`uc-journey-viewport`.
+6. THE OPPORTUNITY REFERENCE LISTS, restyled as ordinary `.evidence` rows so an
+   opportunity's provenance looks and behaves like the same provenance anywhere else
+   — grey INSIGHT → / VERBATIM → groups, hover previews from the same anchor index
+   the generator uses. Channel pills also learn to wrap while provenance is showing;
+   they are `white-space:nowrap`, which stretched the grid column.
+
+Idempotent, via `uc-journey-chrome`, `uc-journey-perslinks`, `uc-journey-trail`,
+`uc-journey-viewport` and `uc-journey-oppev`.
 """
 
+import html as _html
+import json
 import re
 import sys
 from pathlib import Path
@@ -60,6 +68,72 @@ MARKER = "uc-journey-chrome"
 LINKS_MARKER = "uc-journey-perslinks"
 TRAIL_MARKER = "uc-journey-trail"
 VIEWPORT_MARKER = "uc-journey-viewport"
+OPPEV_MARKER = "uc-journey-oppev"
+
+# ── Evidence lookups ─────────────────────────────────────────────────────────
+# The same data build.py renders from, so the hover previews an opportunity shows
+# are the ones the rest of the site shows for the same id.
+WORK = Path(__file__).resolve().parents[1] / "data"
+_IDX = json.loads((WORK / "anchor-index.json").read_text(encoding="utf-8"))
+ANCHORS, SOURCES = _IDX["anchors"], _IDX["sources"]
+INSIGHTS = {}
+for _f in ("insights-consumer-a.json", "insights-consumer-b.json",
+           "insights-franchisee.json", "insights-brand.json"):
+    for _i in json.loads((WORK / _f).read_text(encoding="utf-8")):
+        INSIGHTS[_i["id"]] = _i
+
+KIND_LABEL = {
+    "transcript-turn": "Interview",
+    "social": "Social mention",
+    "ticket": "Franchisee ticket",
+    "pain": "Pain point",
+    "applog-row": "App search log",
+    "mr-claim": "Market report · claim",
+    "mr-ref": "Market report · ref",
+    "factsheet-section": "Factsheet",
+}
+
+
+def esc(s):
+    return _html.escape(str(s), quote=True)
+
+
+def plain(fragment):
+    """Inner HTML -> plain text, for use inside a tip that we then escape.
+
+    The maps mark up domain terms inline (`<span class="entity">lunch</span>`), so a
+    quote lifted straight out of the markup and escaped shows the tags as text.
+    """
+    return " ".join(_html.unescape(re.sub(r"<[^>]+>", "", fragment or "")).split())
+
+
+def evref(anchor_id, href, fallback_label="", fallback_quote=""):
+    """An `.evref` badge with the hover preview the rest of the site uses."""
+    rec = ANCHORS.get(anchor_id)
+    label, quote = fallback_label, fallback_quote
+    if rec:
+        kind = rec.get("kind")
+        label = (f'{rec.get("source_key")} · {rec.get("speaker")}'.strip(" ·")
+                 if kind == "transcript-turn" else
+                 f'{KIND_LABEL.get(kind, kind)} {anchor_id}')
+        quote = " ".join((rec.get("text") or "").split())
+    elif anchor_id in SOURCES:
+        m = SOURCES[anchor_id]
+        label = f'{anchor_id} · {m.get("participant","")}'.strip(" ·")
+        quote = "(full source)"
+    quote = quote[:260] + ("…" if len(quote) > 260 else "")
+    tip = (f'<span class="tip"><span class="src">{esc(label)}</span>'
+           f'{esc(quote)}</span>') if (label or quote) else ""
+    return f'<a class="evref" href="{href}">{esc(anchor_id)}{tip}</a>'
+
+
+def insref(iid):
+    i = INSIGHTS.get(iid)
+    tip = ""
+    if i:
+        tip = (f'<span class="tip"><span class="src">Insight · '
+               f'{esc(i.get("category",""))}</span>{esc(i.get("statement",""))}</span>')
+    return f'<a class="evref insid" href="insights.html#{iid}">{esc(iid)}{tip}</a>'
 
 # ── The scrollbar that grew forever ──────────────────────────────────────────
 #
@@ -280,8 +354,11 @@ CSS = """
 
 /* Landing highlight for an in-map reference jump. Backgrounds only, so it works on
    a grid cell and on an inline badge without moving anything. */
-@keyframes uc-jump-flash{0%{background:#fff3c9;box-shadow:0 0 0 3px #fde68a}100%{background:transparent;box-shadow:none}}
-.uc-jump-flash{animation:uc-jump-flash 1.8s ease-out}
+@keyframes uc-jump-flash{
+  0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
+  70%{background:#fff8e1;box-shadow:0 0 0 3px rgba(251,191,36,.55),0 4px 12px rgba(0,0,0,.07)}
+  100%{background:transparent;box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+.uc-jump-flash{animation:uc-jump-flash 1.9s ease-out;border-radius:8px}
 
 /* "Evidence trail" in the legend is a control, not a link out — same treatment as
    the persona pages give it. */
@@ -323,14 +400,43 @@ function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle'));
     el.classList.remove('uc-jump-flash');
     void el.offsetWidth;                     /* restart the animation */
     el.classList.add('uc-jump-flash');
-    setTimeout(function(){ el.classList.remove('uc-jump-flash'); }, 1900);
+    setTimeout(function(){ el.classList.remove('uc-jump-flash'); }, 2000);
   }
+  /* Scrolling a jump target into view is not one thing here.
+     Direct: this document scrolls, so scrollIntoView does the job.
+     Embedded: it does not — the parent scrolls the whole frame — so scrollIntoView
+     silently does nothing vertically, and a native hash jump lands the target under
+     the parent's fixed toolbar. So compute it: the frame's offset in the parent, plus
+     the target's offset in here, minus the toolbar and some air. */
+  function scrollToBox(box){
+    var HEADROOM = 28;
+    try{
+      if(document.documentElement.classList.contains("uc-embedded")){
+        var pwin = window.parent;
+        var frame = pwin.document.getElementById("ai-projects-frame-content");
+        if(frame && frame.contentWindow === window){
+          var tb = pwin.document.querySelector(".ai-projects-project-toolbar");
+          var chrome = document.querySelector(".uc-chrome");
+          var top = frame.getBoundingClientRect().top + pwin.scrollY
+                  + box.getBoundingClientRect().top
+                  - (tb ? tb.offsetHeight : 0)
+                  - (chrome ? chrome.offsetHeight : 0) - HEADROOM;
+          pwin.scrollTo({top: Math.max(0, top), behavior: "smooth"});
+          /* Horizontal is still ours: the grid pans inside this document. */
+          box.scrollIntoView({block:"nearest", inline:"center"});
+          return;
+        }
+      }
+    }catch(e){ /* fall through to the plain version */ }
+    box.scrollIntoView({block:"center", inline:"center", behavior:"smooth"});
+  }
+
   function jump(id){
     var el = document.getElementById(id);
     if(!el) return false;
     ensureRefsShown();
     var box = el.closest('.grid-cell, .opportunity-card') || el;
-    box.scrollIntoView({block:'center', inline:'center', behavior:'smooth'});
+    scrollToBox(box);
     flash(box);
     return true;
   }
@@ -366,6 +472,85 @@ TRAIL_OLD_LINKS = (
     '<a href="pers-omar-business-lunch-v3.html">Omar &amp; Grace’s persona (Business Lunch)</a>',
     '<a href="pers-business-lunch-v1.html">Omar &amp; Grace’s persona (Business Lunch)</a>',
 )
+
+
+OPPEV_CSS = """
+/* ── uc-journey-oppev ── */
+
+/* An opportunity's references are now ordinary .evidence rows, so they inherit the
+   grey INSIGHT → / VERBATIM → look and the hover previews from the shared
+   stylesheet. This is the only thing they need on top: room to breathe under the
+   card's prose. */
+.journey-grid .opportunity-card .evidence{margin-top:.5rem;padding-top:.45rem;
+  border-top:1px dashed #e2e8f0}
+.journey-grid .opportunity-card .evidence .lbl{display:inline-block;margin-left:.15rem}
+
+/* Channel entries are pills with white-space:nowrap, which is right until an
+   evidence row goes inside one — then the pill cannot wrap and stretches the grid
+   column to the width of the whole row. While provenance is showing they become
+   stacked blocks instead. */
+.journey-grid.show-refs .channels-tags{display:block}
+.journey-grid.show-refs .channels-tags li{display:block;white-space:normal;
+  border-radius:10px;margin:0 0 .4rem;padding:.4rem .65rem}
+"""
+
+
+def opportunity_evidence(path: Path) -> str:
+    """Rewrite each opportunity's reference list as a standard `.evidence` row.
+
+    They were a bespoke list — id, source label, then the quote printed in full — so
+    an opportunity's provenance looked nothing like the same provenance on a persona
+    line two rows above, and none of it had the hover previews. Same three groups as
+    everywhere else now (in-map item, insight, verbatim), same badges, same tips,
+    pulled from the same anchor index and insight JSON the generator uses.
+    """
+    s = path.read_text(encoding="utf-8")
+    if OPPEV_MARKER in s:
+        return "skipped (already converted)"
+
+    item_re = re.compile(
+        r'<p class="ref-item"[^>]*>\s*<a class="ref-item-id" href="([^"]+)">([^<]+)</a>'
+        r'(?:\s*<span class="ref-source">(.*?)</span>)?'
+        r'(?:\s*<span class="ref-verbatim">(.*?)</span>)?\s*</p>',
+        re.S)
+
+    converted = [0, 0]   # blocks, refs
+
+    def convert(block_match):
+        inner = block_match.group(1)
+        in_map, insights, verbatims = [], [], []
+        for href, rid, source, quote in item_re.findall(inner):
+            rid, source = rid.strip(), plain(source)
+            quote = plain(quote).strip("“”\" ")
+            converted[1] += 1
+            if href.startswith("#"):
+                in_map.append(evref(rid, href, source, quote))
+            elif "insights.html#" in href:
+                insights.append(insref(rid))
+            else:
+                verbatims.append(evref(rid, href, source, quote))
+        bits = []
+        for label, group in (("In this map →", in_map), ("Insight →", insights),
+                             ("Verbatim →", verbatims)):
+            if group:
+                bits.append(f'<span class="lbl">{label}</span> ' + " ".join(group))
+        if not bits:
+            return block_match.group(0)
+        converted[0] += 1
+        return '<div class="evidence">' + "  ".join(bits) + "</div>"
+
+    s = re.sub(r'<div class="opp-refs">(.*?)</div>\s*(?=</div>)', convert, s, flags=re.S)
+    if not converted[0]:
+        return "no opportunity references found"
+
+    i = s.rfind("</style>")
+    if i == -1:
+        return "FAILED: no </style>"
+    s = s[:i] + OPPEV_CSS + s[i:]
+
+    s += "\n<!-- " + OPPEV_MARKER + " -->\n"
+    path.write_text(s, encoding="utf-8")
+    return f"references restyled ({converted[0]} cards, {converted[1]} refs)"
 
 
 def fix_viewport_loop(path: Path) -> str:
@@ -499,3 +684,4 @@ for f in sorted(base.glob("journey-map-*.html")):
     print(f"  {'':42s} {relink_personas(f)}")
     print(f"  {'':42s} {fix_trail_legend(f)}")
     print(f"  {'':42s} {fix_viewport_loop(f)}")
+    print(f"  {'':42s} {opportunity_evidence(f)}")

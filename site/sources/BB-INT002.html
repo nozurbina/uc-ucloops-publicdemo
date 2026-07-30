@@ -1142,6 +1142,11 @@ body.prov-hidden article.insight > h3 .idbadge{display:inline-block}
 a.trail-toggle{border-bottom:1px dashed currentColor;cursor:pointer}
 a.trail-toggle:hover{text-decoration:none;border-bottom-style:solid}
 
+/* Anything with an id is a potential jump target, and the chrome is sticky on top of
+   the page — so reserve its height plus a little air. --chrome-h is published by the
+   chrome's own sizing script; the fallback covers the moment before it runs. */
+[id]{scroll-margin-top:calc(var(--chrome-h, 150px) + 1.5rem)}
+
 /* layout wrappers */
 .srcpage{max-width:64rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
 .docwrap{max-width:72rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
@@ -1266,9 +1271,16 @@ a.trail-toggle:hover{text-decoration:none;border-bottom-style:solid}
 .jstage-head .sub{display:block;font-weight:400;font-size:.75rem;opacity:.9}
 .stagecell{font-size:.84rem}.stagecell .cellid{margin-bottom:.25rem}.emoji{font-size:1.1rem}
 
-/* flash on hash-nav */
-.flash,tr.flash td{animation:flash 1.6s ease-out}
-@keyframes flash{0%{background:#fff3c9}100%{}}
+/* Landing on a jump target. Loud enough to find with your eye in a long page, over
+   in under two seconds: outline plus a warm background that fades out. Background
+   and box-shadow only, so nothing reflows and it works on a table row, an inline
+   badge and a whole card alike. */
+.flash,tr.flash td{animation:flash 1.9s ease-out}
+.flash{border-radius:8px}
+@keyframes flash{
+  0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
+  70%{background:#fff8e1;box-shadow:0 0 0 3px rgba(251,191,36,.55),0 4px 12px rgba(0,0,0,.07)}
+  100%{background:transparent;box-shadow:0 0 0 0 rgba(251,191,36,0)}}
 
 /* tables in doc/source pages */
 .tablewrap{overflow-x:auto;margin:1rem 0}
