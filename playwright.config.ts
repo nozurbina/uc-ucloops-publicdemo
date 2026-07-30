@@ -1,79 +1,72 @@
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
+ * Tests for the BorderBlend evidence map.
+ *
+ * Two things shape this config.
+ *
+ * 1. The site is static files, so a plain Python http.server over `site/` is the
+ *    whole test environment. No build step, no API.
+ * 2. Almost every bug this site has had lived in the *embedded* case — the pages are
+ *    normally viewed inside an iframe on urbinaconsulting.com, where this document
+ *    does not scroll and a plugin rewrites the chrome. `tests/fixtures/viewer.html`
+ *    reproduces that contract locally so those paths are testable; read the comments
+ *    in it before changing anything there.
+ *
+ * Chromium is the default project because it is what the site is developed and
+ * screenshotted against. Firefox and WebKit are defined but only run when asked for
+ * (`npx playwright test --project=firefox`), so the everyday run stays fast: they are
+ * there to catch the sticky/scroll differences that bite hardest.
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+const PORT = Number(process.env.PORT || 4173);
+// `python` on Windows, `python3` on the CI runner.
+const PYTHON = process.env.PYTHON || 'python';
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
 export default defineConfig({
   testDir: './tests',
-  /* Run tests in files in parallel */
   fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]]
+                           : [['list'], ['html', { open: 'never' }]],
   use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    baseURL: `http://127.0.0.1:${PORT}`,
     trace: 'on-first-retry',
   },
 
-  /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      testIgnore: /mobile\.spec\.ts/,
+      use: { ...devices['Desktop Chrome'], viewport: { width: 1400, height: 900 } },
     },
-
+    {
+      // The mobile breakpoint is 859px everywhere; a Pixel 5 sits well inside it.
+      name: 'mobile',
+      testMatch: /mobile\.spec\.ts/,
+      use: { ...devices['Pixel 5'] },
+    },
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      testIgnore: /mobile\.spec\.ts/,
+      use: { ...devices['Desktop Firefox'], viewport: { width: 1400, height: 900 } },
     },
-
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      testIgnore: /mobile\.spec\.ts/,
+      use: { ...devices['Desktop Safari'], viewport: { width: 1400, height: 900 } },
     },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://localhost:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
+  webServer: {
+    // Rooted at the repo, not at site/: the viewer fixture in tests/fixtures has to
+    // be same-origin as the pages it frames, or the parent access those pages rely on
+    // is blocked and the embedded half of this suite cannot run at all. Pages are
+    // therefore served under /site/ — see tests/utils.ts.
+    command: `${PYTHON} -m http.server ${PORT} --directory . --bind 127.0.0.1`,
+    url: `http://127.0.0.1:${PORT}/site/index.html`,
+    reuseExistingServer: !process.env.CI,
+    timeout: 30_000,
+  },
 });

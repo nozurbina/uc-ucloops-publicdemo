@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+  A local stand-in for the AI-projects viewer, faithful to the parts our pages
+  depend on. Load it as `/tests/fixtures/viewer.html?p=<page>` — but note the tests
+  serve it from the repo root, not from site/, so they pass an absolute page path.
+
+  Why this exists: the published pages live inside an iframe whose height the parent
+  sets from the content, which means **the framed document never scrolls itself**.
+  Nearly every scroll, sticky and highlight bug this site has had was invisible until
+  it was tested in that arrangement. What the real plugin
+  (wp-content/plugins/ai-projects/assets/project-frame.js, v0.16.6) does, and this
+  copies:
+
+    - iframe id="ai-projects-frame-content"
+    - hides the page's own .stickybar and rebuilds it above the frame, reading
+      the back link's textContent, .sb-title's textContent, and .provtoggle
+    - sizes the frame to max(body.scrollHeight, documentElement.scrollHeight) + 16
+      on a ResizeObserver of the framed documentElement  <- the runaway-growth source
+    - pads the frame container by toolbar height + 16                <- the white band
+    - its toolbar toggle posts {type:'ai-projects-toggle-provenance'} into the frame,
+      which calls window.toggleProv(button) if that function exists
+
+  The +16s are reproduced deliberately, wart and all: they are the behaviour our
+  pages have to survive, and a test against a tidied-up copy of the viewer would
+  prove nothing.
+-->
+<html lang="en"><head><meta charset="utf-8"><title>Viewer fixture</title>
+<style>
+  html,body{margin:0;font-family:system-ui,sans-serif;background:#fff}
+  #site-header{height:64px;background:#111;color:#fff;display:flex;align-items:center;padding:0 1rem}
+  .ai-projects-project-toolbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;
+    gap:.75rem;background:#2c3e50;color:#fff;padding:.55rem .9rem;font-size:.85rem}
+  .ai-projects-project-toolbar__back{color:#cdd7e0;text-decoration:none}
+  .ai-projects-project-toolbar__title{font-weight:600}
+  .ai-projects-project-toolbar__toggle{margin-left:auto;background:#f59e0b;color:#2c3e50;
+    border:0;border-radius:6px;padding:.3rem .7rem;font-weight:700;cursor:pointer}
+  #ai-projects-frame{padding:0}
+  #ai-projects-frame-content{width:100%;border:0;display:block}
+</style></head>
+<body>
+<div id="site-header">urbinaconsulting.com (fixture)</div>
+<main class="ai-projects-frame" id="ai-projects-frame">
+  <iframe id="ai-projects-frame-content" title="frame"></iframe>
+</main>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  const page = params.get('p') || '/site/index.html';
+  const frame = document.getElementById('ai-projects-frame-content');
+  const container = document.getElementById('ai-projects-frame');
+
+  // Instrumentation the tests read; the real plugin has no equivalent.
+  window.__viewer = { heights: [], toolbar: null };
+
+  let toolbar = null;
+  function renderToolbar(header){
+    if (!header) return;
+    if (!toolbar) {
+      toolbar = document.createElement('div');
+      toolbar.className = 'ai-projects-project-toolbar';
+      container.parentNode.insertBefore(toolbar, container);
+    }
+    toolbar.replaceChildren();
+    if (header.backHref) {
+      const a = document.createElement('a');
+      a.className = 'ai-projects-project-toolbar__back';
+      a.href = new URL(header.backHref, frame.src).href;
+      a.textContent = header.backLabel || 'Back';
+      toolbar.append(a);
+    }
+    const t = document.createElement('span');
+    t.className = 'ai-projects-project-toolbar__title';
+    t.textContent = header.title || '';
+    toolbar.append(t);
+    if (header.hasToggle) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'ai-projects-project-toolbar__toggle';
+      b.textContent = header.toggleText || 'Toggle details';
+      b.addEventListener('click', () => frame.contentWindow.postMessage(
+        { type: 'ai-projects-toggle-provenance' }, location.origin));
+      toolbar.append(b);
+    }
+    window.__viewer.toolbar = { backLabel: header.backLabel, title: header.title,
+                                toggleText: header.toggleText, hasToggle: header.hasToggle };
+    container.style.paddingTop = (toolbar.offsetHeight + 16) + 'px';
+  }
+
+  window.addEventListener('message', (e) => {
+    if (e.origin !== location.origin || !e.data) return;
+    if (e.data.type === 'ai-projects-frame-layout') renderToolbar(e.data.header || null);
+    if (e.data.type === 'ai-projects-frame-height') {
+      const h = Number(e.data.height);
+      if (Number.isFinite(h) && h > 0) {
+        window.__viewer.heights.push(h);
+        frame.style.height = Math.ceil(h + 16) + 'px';
+      }
+    }
+    if (e.data.type === 'ai-projects-frame-link' && typeof e.data.url === 'string') {
+      // The real one rewrites the browser URL; for tests, just follow it in the frame.
+      const target = new URL(e.data.url.replace(/^\//, '/'), location.origin);
+      frame.contentWindow.location.replace(target.href);
+    }
+  });
+
+  // The plugin injects this into the framed document. Same code path, same reads.
+  const INJECT = `
+    (function(){
+      if (window.parent === window) return;
+      const origin = window.location.origin;
+      const nativeBar = () => document.querySelector('.stickybar');
+      function headerDetails(){
+        const bar = nativeBar();
+        if (!bar) return null;
+        const back = bar.querySelector('a');
+        const button = bar.querySelector('.provtoggle');
+        const title = bar.querySelector('.sb-title');
+        return { backHref: back ? back.getAttribute('href') : '',
+                 backLabel: back ? back.textContent : 'Back',
+                 title: title ? title.textContent : '',
+                 toggleText: button ? button.textContent : '',
+                 hasToggle: !!button };
+      }
+      function sendLayout(){
+        const bar = nativeBar();
+        if (bar) bar.style.display = 'none';
+        window.parent.postMessage({ type:'ai-projects-frame-layout', header: headerDetails() }, origin);
+      }
+      function sendHeight(){
+        window.parent.postMessage({ type:'ai-projects-frame-height',
+          height: Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) }, origin);
+      }
+      function toggleProvenance(){
+        const button = document.querySelector('.provtoggle');
+        if (!button) return;
+        if (typeof window.toggleProv === 'function') window.toggleProv(button);
+        else document.body.classList.toggle('prov-hidden');
+        sendLayout(); sendHeight();
+      }
+      window.addEventListener('message', (e) => {
+        if (e.origin !== origin || !e.data) return;
+        if (e.data.type === 'ai-projects-toggle-provenance') toggleProvenance();
+      });
+      document.addEventListener('click', (e) => {
+        const link = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!link) return;
+        let target; try { target = new URL(link.href, window.location.href); } catch (err) { return; }
+        if (target.origin !== origin || !/[.]html?$/i.test(target.pathname)) return;
+        e.preventDefault();
+        window.parent.postMessage({ type:'ai-projects-frame-link',
+          url: target.pathname + target.search + target.hash }, origin);
+      });
+      sendLayout(); sendHeight();
+      if (window.ResizeObserver) new ResizeObserver(sendHeight).observe(document.documentElement);
+      window.addEventListener('load', () => { sendLayout(); sendHeight(); });
+    })();
+  `;
+
+  frame.addEventListener('load', () => {
+    try {
+      const d = frame.contentDocument;
+      if (d.documentElement.dataset.ucFixtureInjected) return;
+      d.documentElement.dataset.ucFixtureInjected = '1';
+      const s = d.createElement('script');
+      s.textContent = INJECT;
+      d.body.appendChild(s);
+    } catch (err) { /* cross-origin: nothing to do */ }
+  });
+
+  frame.src = page;
+})();
+</script>
+</body></html>

@@ -1410,6 +1410,130 @@ html.uc-embedded .journey-grid.uc-dragging{cursor:grabbing;user-select:none}
 .journey-grid.show-refs .channels-tags{display:block}
 .journey-grid.show-refs .channels-tags li{display:block;white-space:normal;
   border-radius:10px;margin:0 0 .4rem;padding:.4rem .65rem}
+
+/* ── uc-journey-css: live copy of build/assets/chrome.css ── */
+
+/* ── Top chrome, part 1 of 3: the promo banner's own look ──
+   Emitted by build/chrome.py on every page. Read all three parts together: the
+   `position:fixed` and `body{padding-top}` here are *overridden* below, and are
+   kept only because they are the original rules and nothing depends on removing
+   them. Flattening the three parts into one non-!important block is a safe
+   cleanup, but do it with before/after screenshots at 1600/1100/700 — see
+   "Verify the artifact, not the report" in For AIs.md. ── */
+body{position:relative}
+.promo-banner{position:fixed;top:0;left:0;right:0;background:rgba(80,8,80,.95);color:#fff;padding:.9rem 1.25rem;z-index:300}
+.promo-banner .banner-inner{max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:1.5rem}
+.promo-banner .banner-logo{height:34px;width:auto;flex-shrink:0;display:block}
+.promo-banner .banner-copy{flex:1;min-width:0}
+.promo-banner .banner-line{font-size:1.02rem;line-height:1.2;margin:0 0 .1rem}
+.promo-banner .banner-line:last-child{margin-bottom:0}
+.promo-banner b{color:#d7a32b;font-weight:700}
+.promo-banner a.banner-link{color:#d7a32b;font-weight:700;text-decoration:none}
+.promo-banner a.banner-link:hover{text-decoration:underline}
+.promo-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e8bc52,#d7a32b);color:#2c3e50;border:none;padding:.5rem 1.4rem;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;transition:.2s;white-space:nowrap;flex-shrink:0}
+.promo-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(215,163,43,.3);text-decoration:none}
+body{padding-top:8rem}
+@media(max-width:900px){.promo-banner{padding:.8rem 1.25rem}.promo-banner .banner-inner{flex-wrap:wrap}.promo-banner .banner-logo{height:26px}body{padding-top:12rem}}
+
+/* Company Factsheet & Market Research — equal height */
+.orgcontext-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:900px){.orgcontext-grid{grid-template-columns:1fr}}
+
+/* ── Top chrome, part 2 of 3: banner + sticky bar as one sticky wrapper ──
+   Previously both bars were position:fixed independently, offset from each
+   other by a JS-measured --banner-h, with body padding-top reserving room for
+   them. Three things had to agree and often didn't — hence the white seam.
+
+   Sticky instead of fixed, deliberately. These pages are normally viewed inside
+   the AI-projects viewer, which hides our .stickybar (it rebuilds it in the
+   parent page above the iframe) and auto-sizes the iframe to content height.
+   With no independent viewport, `fixed` buys nothing and the reserved padding
+   becomes a visible empty band. Sticky sits in normal flow — nothing to reserve,
+   nothing to measure — and still sticks when the page IS viewed directly. ── */
+.uc-chrome{position:sticky;top:0;z-index:300}
+.uc-chrome .promo-banner{position:relative !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+.uc-chrome .stickybar{position:static !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+/* The chrome is in flow now, so any reserved space is a gap. */
+body{padding-top:0 !important}
+
+/* Dismiss. Applied to <html> by a parser-blocking script before the banner is
+   parsed, so a previously-dismissed banner never flashes into view. */
+.uc-promo-hidden .promo-banner{display:none !important}
+.promo-close{position:absolute;top:.45rem;right:.55rem;width:26px;height:26px;padding:0;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:6px;
+  color:#fff;font-size:.8rem;line-height:1;cursor:pointer;font-family:inherit;
+  display:flex;align-items:center;justify-content:center}
+.promo-close:hover{background:rgba(255,255,255,.26)}
+
+@media(max-width:859px){
+  /* The logo is the first thing to sacrifice — it carries no information the
+     copy doesn't already, and it costs a whole row once the text wraps. */
+  .uc-chrome .promo-banner .banner-logo{display:none}
+  .uc-chrome .promo-banner .banner-inner{flex-direction:column;align-items:stretch;gap:.55rem}
+  .uc-chrome .promo-banner .banner-line{font-size:.92rem}
+  .uc-chrome .promo-banner .promo-btn{align-self:flex-start}
+  .promo-close{top:.3rem;right:.35rem}
+  .uc-chrome .promo-banner{padding-right:2.4rem}
+
+  /* The stage grid is several times wider than a phone. The drawer patch added
+     .container{overflow-x:hidden} so the off-canvas sidebar couldn't create a
+     page-level scrollbar — but that also clipped the grid, making every stage
+     after the first unreachable. Give the grid its own horizontal scroll. */
+  .main-content{overflow-x:auto !important;-webkit-overflow-scrolling:touch}
+}
+
+/* ── Top chrome, part 3 of 3: full bleed, logo, close button ── */
+
+/* Full-bleed. `body` is `.docwrap` (max-width:72rem;margin:0 auto) on most pages,
+   so the sticky chrome from v2 was capped at the text column. 50% here is half
+   the content box, so this resolves to 0 when the parent is already full width —
+   correct on the journey maps too, without a second rule.
+
+   No `width:100vw` on purpose. Setting width alongside both margins
+   over-constrains a block, so margin-right is dropped and the banner ends a
+   scrollbar-width short of the right edge — a visible sliver. With width auto,
+   both margins apply.
+
+   --half-vw is set from documentElement.clientWidth by the script at the end of
+   the body. Plain `50vw` overshoots by half a scrollbar width — `vw` counts the
+   scrollbar, `50%` does not — which is enough to raise a horizontal scrollbar on
+   every page that scrolls vertically. `50vw` stays as the no-JS fallback, with
+   overflow-x:clip below containing it in that case. */
+.uc-chrome{margin-left:calc(50% - var(--half-vw, 50vw));margin-right:calc(50% - var(--half-vw, 50vw))}
+
+/* `clip`, not `hidden`: `hidden` would make <html> a scroll container and break
+   the sticky chrome. */
+html{overflow-x:clip}
+
+/* Background stretches, content stays in the 72rem column. */
+.uc-chrome .promo-banner .banner-inner{max-width:72rem;margin-left:auto;margin-right:auto;
+  position:relative;padding-right:3.4rem}
+
+/* Note what this is actually positioned against: the button is a *sibling* of
+   .banner-inner, so its containing block is .promo-banner (position:relative, part
+   2) — it sits in the banner's own top-right corner, not the content column's. What
+   keeps it clear of "Learn more" is the padding-right reserved on .banner-inner
+   above: measured clearance is 42px at 1600 and 1100, and the two are on separate
+   rows below 859px. Inset from the corner rather than flush in it. */
+.uc-chrome .promo-banner .promo-close{position:absolute;top:.5rem;right:.5rem}
+
+@media(max-width:859px){
+  .uc-chrome .promo-banner{padding-right:1.25rem}
+  .uc-chrome .promo-banner .banner-inner{padding-right:2.9rem}
+}
+
+/* ── uc-journey-css: the site-wide bits these frozen stylesheets would otherwise
+   miss. Appended last on purpose — see refresh_shared_css in journey-chrome.py. ── */
+
+/* Landing highlight, same as every other page. */
+@keyframes flash{
+  0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
+  70%{background:#fff8e1;box-shadow:0 0 0 3px rgba(251,191,36,.55),0 4px 12px rgba(0,0,0,.07)}
+  100%{background:transparent;box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+.flash{animation:flash 1.9s ease-out;border-radius:8px}
+
+/* A hash jump should not land under the sticky chrome. */
+[id]{scroll-margin-top:calc(var(--chrome-h, 150px) + 1.5rem)}
 </style></head>
 <body>
 <script>
@@ -3136,13 +3260,23 @@ function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle'));
 /* uc-journey-viewport: reachable horizontal panning for the embedded layout. */
 (function(){
   if(!document.documentElement.classList.contains("uc-embedded")) return;
-  /* .container is the horizontal scroller — the grid is its child, not
-     .main-content's, which is why an earlier version of this mirrored the wrong
-     element and never showed. */
-  var scroller = document.querySelector(".container");
   var main = document.querySelector(".main-content");
   var grid = document.querySelector(".journey-grid");
-  if(!scroller || !main || !grid) return;
+  if(!main || !grid) return;
+
+  /* Which element scrolls sideways is not fixed: `.grid-container` when the map keeps
+     its app layout, `.container` in embedded flow mode. Measured both ways, so resolve
+     it by asking who actually overflows rather than assuming — an earlier version
+     mirrored `.main-content`, which never overflows, and the bar never appeared. */
+  function scrollerFor(){
+    var el = grid.parentElement;
+    while(el && el !== document.documentElement){
+      if(el.scrollWidth > el.clientWidth + 1) return el;
+      el = el.parentElement;
+    }
+    return document.querySelector(".container") || main;
+  }
+  var scroller = scrollerFor();
 
   /* A mirror of the grid's width: same thumb, same drag, in the place a horizontal
      scrollbar belongs — the bottom of the visible area. */
@@ -3207,6 +3341,7 @@ function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle'));
 
   var syncing = false;
   function size(){
+    scroller = scrollerFor();
     /* The bar is as wide as the *visible* area and holds a spacer as wide as the
        whole grid — that is what gives it a thumb to drag. In flow mode
        .main-content stretches to the grid's width, so without this the bar would be
@@ -3266,3 +3401,5 @@ function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle'));
 <!-- uc-journey-viewport -->
 
 <!-- uc-journey-oppev -->
+
+<!-- uc-journey-css -->

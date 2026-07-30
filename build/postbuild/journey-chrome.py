@@ -50,8 +50,13 @@ provenance behaviour can be fixed. Three things:
    the generator uses. Channel pills also learn to wrap while provenance is showing;
    they are `white-space:nowrap`, which stretched the grid column.
 
+7. THE FROZEN STYLESHEET. Their `<style>` is a copy of the site CSS from whenever
+   they were authored, so later fixes in build/assets/ never reached them. The current
+   chrome.css is re-appended, which is why the close button in their banner matches
+   everywhere else again.
+
 Idempotent, via `uc-journey-chrome`, `uc-journey-perslinks`, `uc-journey-trail`,
-`uc-journey-viewport` and `uc-journey-oppev`.
+`uc-journey-viewport`, `uc-journey-oppev` and `uc-journey-css`.
 """
 
 import html as _html
@@ -63,12 +68,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import chrome
 import naming
+import styles
 
 MARKER = "uc-journey-chrome"
 LINKS_MARKER = "uc-journey-perslinks"
 TRAIL_MARKER = "uc-journey-trail"
 VIEWPORT_MARKER = "uc-journey-viewport"
 OPPEV_MARKER = "uc-journey-oppev"
+CSS_MARKER = "uc-journey-css"
 
 # ── Evidence lookups ─────────────────────────────────────────────────────────
 # The same data build.py renders from, so the hover previews an opportunity shows
@@ -227,13 +234,23 @@ VIEWPORT_SCRIPT = """<script>
 /* uc-journey-viewport: reachable horizontal panning for the embedded layout. */
 (function(){
   if(!document.documentElement.classList.contains("uc-embedded")) return;
-  /* .container is the horizontal scroller — the grid is its child, not
-     .main-content's, which is why an earlier version of this mirrored the wrong
-     element and never showed. */
-  var scroller = document.querySelector(".container");
   var main = document.querySelector(".main-content");
   var grid = document.querySelector(".journey-grid");
-  if(!scroller || !main || !grid) return;
+  if(!main || !grid) return;
+
+  /* Which element scrolls sideways is not fixed: `.grid-container` when the map keeps
+     its app layout, `.container` in embedded flow mode. Measured both ways, so resolve
+     it by asking who actually overflows rather than assuming — an earlier version
+     mirrored `.main-content`, which never overflows, and the bar never appeared. */
+  function scrollerFor(){
+    var el = grid.parentElement;
+    while(el && el !== document.documentElement){
+      if(el.scrollWidth > el.clientWidth + 1) return el;
+      el = el.parentElement;
+    }
+    return document.querySelector(".container") || main;
+  }
+  var scroller = scrollerFor();
 
   /* A mirror of the grid's width: same thumb, same drag, in the place a horizontal
      scrollbar belongs — the bottom of the visible area. */
@@ -298,6 +315,7 @@ VIEWPORT_SCRIPT = """<script>
 
   var syncing = false;
   function size(){
+    scroller = scrollerFor();
     /* The bar is as wide as the *visible* area and holds a spacer as wide as the
        whole grid — that is what gives it a thumb to drag. In flow mode
        .main-content stretches to the grid's width, so without this the bar would be
@@ -606,6 +624,51 @@ def patch(path: Path) -> str:
     return f"patched ({n_btn} per-card buttons removed)"
 
 
+def refresh_shared_css(path: Path) -> str:
+    """Re-append the current chrome stylesheet, and the shared bits these pages want.
+
+    These four maps have no generator, so their `<style>` is a **frozen copy** of the
+    site CSS from whenever they were last authored. Every later fix in
+    `build/assets/*.css` therefore misses them — which is how they ended up with a
+    close button still at `top:0;right:0` two rounds after that was fixed everywhere
+    else, and how they would quietly drift further with each change.
+
+    Appending the live `assets/chrome.css` last means it wins over the stale copy on
+    specificity-equal rules, and the maps track the stylesheet from here on. Only the
+    chrome plus two shared behaviours are taken: appending all of `supplement.css`
+    would fight the maps' own layout, which has its own `.stickybar`, `.evidence` and
+    grid rules.
+    """
+    s = path.read_text(encoding="utf-8")
+    if CSS_MARKER in s:
+        return "skipped (css already refreshed)"
+
+    shared = """
+/* ── uc-journey-css: the site-wide bits these frozen stylesheets would otherwise
+   miss. Appended last on purpose — see refresh_shared_css in journey-chrome.py. ── */
+
+/* Landing highlight, same as every other page. */
+@keyframes flash{
+  0%{background:#fff3c9;box-shadow:0 0 0 3px #fbbf24,0 6px 18px rgba(0,0,0,.12)}
+  70%{background:#fff8e1;box-shadow:0 0 0 3px rgba(251,191,36,.55),0 4px 12px rgba(0,0,0,.07)}
+  100%{background:transparent;box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+.flash{animation:flash 1.9s ease-out;border-radius:8px}
+
+/* A hash jump should not land under the sticky chrome. */
+[id]{scroll-margin-top:calc(var(--chrome-h, 150px) + 1.5rem)}
+"""
+
+    i = s.rfind("</style>")
+    if i == -1:
+        return "FAILED: no </style>"
+    banner = "\n/* ── uc-journey-css: live copy of build/assets/chrome.css ── */\n"
+    s = s[:i] + banner + styles.chrome_css() + shared + s[i:]
+
+    s += "\n<!-- " + CSS_MARKER + " -->\n"
+    path.write_text(s, encoding="utf-8")
+    return "shared css refreshed"
+
+
 def relink_personas(path: Path) -> str:
     """Point the sidebar cards and cell links at the renamed persona pages.
 
@@ -634,3 +697,4 @@ for f in sorted(base.glob("journey-map-*.html")):
     print(f"  {'':42s} {fix_trail_legend(f)}")
     print(f"  {'':42s} {fix_viewport_loop(f)}")
     print(f"  {'':42s} {opportunity_evidence(f)}")
+    print(f"  {'':42s} {refresh_shared_css(f)}")

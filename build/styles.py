@@ -23,6 +23,16 @@ ASSETS = pathlib.Path(__file__).resolve().parent / "assets"
 PARTS = ("humanloops-urbina.css", "supplement.css", "chrome.css")
 
 
+def chrome_css():
+    """Just the chrome layer.
+
+    The four journey maps carry a frozen copy of this stylesheet — they have no
+    generator — so `postbuild/journey-chrome.py` re-appends this over their copy to
+    keep their banner in step with everyone else's.
+    """
+    return (ASSETS / "chrome.css").read_text(encoding="utf-8")
+
+
 def stylesheet():
     base, supplement, chrome_css = (
         (ASSETS / p).read_text(encoding="utf-8") for p in PARTS)

@@ -8,11 +8,19 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      # Two things here need an interpreter: the test server (`http.server` over the
+      # repo) and the build-integrity specs, which shell out to the generator rather
+      # than reimplementing what "correct" means. On the runner it is python3.
+      PYTHON: python3
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers

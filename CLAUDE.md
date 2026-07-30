@@ -56,6 +56,20 @@ Four files have **no generator** and are patched forward only:
 `journey-map-{late-night,business-lunch}-{v2,v3}.html`. They were authored on
 `journey-map-template.html` via the ucLoops prompt chain.
 
+## Tests
+
+```sh
+npm test                # chromium + mobile + firefox + webkit, ~35s
+npm run test:chromium   # the everyday run
+```
+
+197 Playwright tests over the built `site/`, including the **embedded** case via
+`tests/fixtures/viewer.html`, which reproduces what the AI-projects plugin does around
+our pages. `tests/build-integrity.spec.ts` also runs `check_links.py` and asserts a
+scratch rebuild is byte-identical to `site/`, so the reproducibility invariant is
+enforced rather than remembered. Read [`tests/README.md`](tests/README.md) before
+editing them — the fixture's two `+ 16`s look like bugs and are deliberate.
+
 ## Publishing
 
 Use the `ai-projects-publisher` MCP: `preview_project_publish`, show the user the

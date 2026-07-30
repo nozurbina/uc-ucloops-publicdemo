@@ -1,9 +1,17 @@
 {
   "name": "uc-ucloops-publicdemo",
   "version": "1.0.0",
-  "description": "A worked example of the **ucLoops** methodology: a complete, traceable research deliverable set — personas, journey maps, insights, and the source verbatims they rest on — where every claim links back to the evidence behind it.",
+  "description": "The BorderBlend evidence map - a worked example of the ucLoops methodology.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:chromium": "playwright test --project=chromium",
+    "test:mobile": "playwright test --project=mobile",
+    "test:crossbrowser": "playwright test --project=firefox --project=webkit",
+    "report": "playwright show-report",
+    "serve": "python -m http.server 4173 --directory . --bind 127.0.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nozurbina/uc-ucloops-publicdemo.git"
