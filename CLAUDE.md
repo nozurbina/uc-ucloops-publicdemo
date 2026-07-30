@@ -135,6 +135,16 @@ in a new tab so they don't replace the viewer iframe. Source lives at
   `#ai-projects-frame{padding-top: toolbar.offsetHeight + 16}` and sizes the iframe
   to `content + 16`. Measured: 71px of padding under a 55px toolbar. Nothing in this
   repo can close it; the fix is in `project-frame.js`.
+- **Never let a page be shorter than its frame.** The same `+ 16` turns into a
+  runaway: the viewer posts `max(body.scrollHeight, documentElement.scrollHeight)`,
+  and `documentElement.scrollHeight` never reports less than the frame — so a short
+  page grows 16px per cycle for as long as its `ResizeObserver` keeps firing. That
+  was the journey maps' "scrollbar grows for ten seconds and then no horizontal
+  scroll": they clipped themselves to `calc(100vh - --chrome-h)` with both scrollbars
+  inside, so they were always exactly one screen tall. They now flow to full height
+  when embedded (`html.uc-embedded`, from `postbuild/journey-chrome.py`) with a pan
+  bar and drag-to-pan for the horizontal axis. Any new full-height layout needs the
+  same treatment.
 - **"Evidence trail" is a control**, not just a label — on persona pages and the
   journey legends it calls `ucToggleFromTrail()`, which drives the same toggle.
 - Persona pages are `pers-<person>-<archetype>-v<n>.html`, from `build/naming.py`.

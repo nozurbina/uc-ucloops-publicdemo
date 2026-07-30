@@ -40,7 +40,12 @@ provenance behaviour can be fixed. Three things:
    calls it once the buttons are gone. Deleting it would mean editing their inline
    script, which buys nothing; if you are reading it and wondering, that is why.
 
-Idempotent, via `uc-journey-chrome`, `uc-journey-perslinks` and `uc-journey-trail`.
+5. THE VIEWPORT FEEDBACK LOOP — the scrollbar that grew forever and took the
+   horizontal scroll with it. Documented at VIEWPORT_CSS below; it predates this
+   script.
+
+Idempotent, via `uc-journey-chrome`, `uc-journey-perslinks`, `uc-journey-trail` and
+`uc-journey-viewport`.
 """
 
 import re
@@ -54,6 +59,144 @@ import naming
 MARKER = "uc-journey-chrome"
 LINKS_MARKER = "uc-journey-perslinks"
 TRAIL_MARKER = "uc-journey-trail"
+VIEWPORT_MARKER = "uc-journey-viewport"
+
+# ── The scrollbar that grew forever ──────────────────────────────────────────
+#
+# Reported as: on load the vertical scrollbar grows for ~10 seconds, then there is
+# no horizontal scroll. Predates this script — the version live before it ratcheted
+# identically, verified by emulating the viewer's own loop (150 -> 534px in 25
+# cycles, +16 each, monotonic).
+#
+# The cause is not the `100vh` you would suspect first. It is this:
+#
+#   documentElement.scrollHeight never reports less than the frame's own height,
+#
+# and the viewer posts `Math.max(body.scrollHeight, documentElement.scrollHeight)`
+# to the parent, which sets the iframe to that **+ 16**. So for any page whose real
+# content is *shorter* than its frame, docEl.scrollHeight is just the frame height
+# and every cycle adds 16px, forever. Isolated in a 6-line test page: body stayed at
+# 200px while docEl climbed 200 -> 216 -> 232 -> 248 in lockstep with the frame.
+#
+# Every other page on this site is far taller than the frame, so `body` wins the max
+# and the loop settles. These maps are the exception: they are a fixed-viewport app
+# (`.container{height:calc(100vh - --chrome-h)}` with both scrollbars inside that
+# box), so their content is always exactly one screen — shorter than the frame, every
+# time. And once the frame is taller than the parent's viewport, the container's own
+# scrollbars sit below the fold, which is the missing horizontal scroll.
+#
+# So the fix is to stop being shorter than the frame: when embedded, let the map
+# flow to its natural height (~10,000px) like every other page. The parent scrolls it
+# vertically, `body.scrollHeight` wins the max, and the ratchet becomes the same
+# harmless 16px of trailing whitespace every other page already has.
+#
+# The cost is that the horizontal scrollbar moves to the bottom of a very tall grid,
+# out of reach — so this also adds a pan bar that stays put while you scroll
+# horizontally, and drag-to-pan anywhere on the grid.
+#
+# The real fix is two lines in the plugin: measure `body.scrollHeight` rather than
+# `max(..., documentElement.scrollHeight)`, and drop the `+ 16`.
+VIEWPORT_EARLY = """<script>
+/* uc-journey-viewport: sets the flag before first paint, hence up here. */
+(function(){
+  if(window.parent!==window) document.documentElement.className+=" uc-embedded";
+})();
+</script>
+"""
+
+VIEWPORT_CSS = """
+/* ── uc-journey-viewport ──
+   Embedded only: the map flows to its natural height instead of clipping itself to
+   one screen. See the long comment in postbuild/journey-chrome.py for why that is
+   what stops the frame growing. `html.uc-embedded` outranks the plain `.container`
+   selectors, so cascade order between the postbuild patches doesn't matter. */
+html.uc-embedded .container{height:auto !important}
+html.uc-embedded .main-content{height:auto !important}
+
+@media(min-width:860px){
+  /* position:fixed against a viewport that is the whole frame would pin the sidebar
+     to the top of a 10,000px page. In flow, as the flex item it already is, it
+     stretches beside the grid — and .main-content's offset for the fixed copy goes. */
+  html.uc-embedded .sidebar{position:static !important;height:auto !important}
+  html.uc-embedded .main-content{margin-left:0 !important}
+}
+
+/* Pan bar: the grid's horizontal scrollbar is now at the bottom of a very tall
+   element, so this is a second, reachable one. `position:sticky;left:0` inside the
+   horizontal scroller is what keeps it in place while the grid pans under it. */
+html.uc-embedded .uc-panbar{position:sticky;left:0;height:14px;margin:.6rem 1rem 0;
+  overflow-x:auto;overflow-y:hidden;background:#f1f5f9;border-radius:7px}
+html.uc-embedded .uc-panbar>div{height:1px}
+html.uc-embedded .uc-panbar[hidden]{display:none}
+html.uc-embedded .journey-grid{cursor:grab}
+html.uc-embedded .journey-grid.uc-dragging{cursor:grabbing;user-select:none}
+"""
+
+VIEWPORT_SCRIPT = """<script>
+/* uc-journey-viewport: reachable horizontal panning for the embedded layout. */
+(function(){
+  if(!document.documentElement.classList.contains("uc-embedded")) return;
+  /* .container is the horizontal scroller — the grid is its child, not
+     .main-content's, which is why an earlier version of this mirrored the wrong
+     element and never showed. */
+  var scroller = document.querySelector(".container");
+  var main = document.querySelector(".main-content");
+  var grid = document.querySelector(".journey-grid");
+  if(!scroller || !main || !grid) return;
+
+  /* A mirror of the grid's width, directly above the grid, held in place while the
+     grid pans under it. */
+  var bar = document.createElement("div");
+  bar.className = "uc-panbar";
+  var inner = document.createElement("div");
+  bar.appendChild(inner);
+  grid.parentNode.insertBefore(bar, grid);
+
+  var syncing = false;
+  function size(){
+    /* The bar is as wide as the *visible* area and holds a spacer as wide as the
+       whole grid — that is what gives it a thumb to drag. In flow mode
+       .main-content stretches to the grid's width, so without this the bar would be
+       3000px wide and never overflow. */
+    bar.style.width = scroller.clientWidth + "px";
+    inner.style.width = scroller.scrollWidth + "px";
+    bar.hidden = scroller.scrollWidth <= scroller.clientWidth + 1;
+  }
+  bar.addEventListener("scroll", function(){
+    if(syncing) return; syncing = true; scroller.scrollLeft = bar.scrollLeft; syncing = false;
+  });
+  scroller.addEventListener("scroll", function(){
+    if(syncing) return; syncing = true; bar.scrollLeft = scroller.scrollLeft; syncing = false;
+  });
+  window.addEventListener("resize", size);
+  if(window.ResizeObserver) new ResizeObserver(size).observe(grid);
+  size();
+
+  /* Drag anywhere on the grid. Guarded so it never eats a click on a link, a button
+     or a text selection: panning only starts once the pointer has moved 5px. */
+  var down = null;
+  grid.addEventListener("pointerdown", function(e){
+    if(e.button !== 0) return;
+    if(e.target.closest("a,button,input,select,textarea")) return;
+    down = {x:e.clientX, left:scroller.scrollLeft, panning:false};
+  });
+  window.addEventListener("pointermove", function(e){
+    if(!down) return;
+    var dx = e.clientX - down.x;
+    if(!down.panning){
+      if(Math.abs(dx) < 5) return;
+      down.panning = true;
+      grid.classList.add("uc-dragging");
+    }
+    scroller.scrollLeft = down.left - dx;
+  });
+  window.addEventListener("pointerup", function(){
+    if(down && down.panning) grid.classList.remove("uc-dragging");
+    down = null;
+  });
+})();
+</script>
+"""
 
 CSS = """
 /* ── uc-journey-chrome ── */
@@ -152,6 +295,32 @@ TRAIL_OLD_LINKS = (
     '<a href="pers-omar-business-lunch-v3.html">Omar &amp; Grace’s persona (Business Lunch)</a>',
     '<a href="pers-business-lunch-v1.html">Omar &amp; Grace’s persona (Business Lunch)</a>',
 )
+
+
+def fix_viewport_loop(path: Path) -> str:
+    """Size the map from the parent's viewport when embedded. See VIEWPORT_* above."""
+    s = path.read_text(encoding="utf-8")
+    if VIEWPORT_MARKER in s:
+        return "skipped (already sized)"
+
+    m = re.search(r"<body\b[^>]*>", s)
+    if not m:
+        return "FAILED: no <body>"
+    s = s[: m.end()] + "\n" + VIEWPORT_EARLY + s[m.end():]
+
+    i = s.rfind("</style>")
+    if i == -1:
+        return "FAILED: no </style>"
+    s = s[:i] + VIEWPORT_CSS + s[i:]
+
+    j = s.rfind("</body>")
+    if j == -1:
+        return "FAILED: no </body>"
+    s = s[:j] + VIEWPORT_SCRIPT + s[j:]
+
+    s += "\n<!-- " + VIEWPORT_MARKER + " -->\n"
+    path.write_text(s, encoding="utf-8")
+    return "embedded layout + pan bar added"
 
 
 def fix_trail_legend(path: Path) -> str:
@@ -258,3 +427,4 @@ for f in sorted(base.glob("journey-map-*.html")):
     print(f"  {f.name:42s} {patch(f)}")
     print(f"  {'':42s} {relink_personas(f)}")
     print(f"  {'':42s} {fix_trail_legend(f)}")
+    print(f"  {'':42s} {fix_viewport_loop(f)}")

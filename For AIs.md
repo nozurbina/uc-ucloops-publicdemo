@@ -164,7 +164,17 @@ block); it hides our bar and rebuilds it in the parent page from these three rea
 | Toolbar title | `.stickybar .sb-title` → its `textContent` |
 | Toggle button | presence of `.provtoggle`; its `textContent` is the label |
 
-and its toggle button posts `ai-projects-toggle-provenance` back into the frame,
+It also measures the page and sizes the iframe to
+`max(body.scrollHeight, documentElement.scrollHeight) + 16`. That `+ 16` is why every
+page has a 16px band of the parent showing below it — and it is a **runaway loop for
+any page shorter than its frame**, because `documentElement.scrollHeight` never
+reports less than the frame height: each measurement adds 16px, which resizes the
+frame, which triggers the frame's `ResizeObserver`, which measures again. The journey
+maps hit this because they clipped themselves to one screen; they now flow to full
+height when embedded. Isolated in a six-line test page: `body` stayed at 200px while
+`documentElement` climbed 200 → 216 → 232 → 248 in lockstep with the frame.
+
+Its toggle button posts `ai-projects-toggle-provenance` back into the frame,
 where the injected script calls **`window.toggleProv(button)` if that function
 exists**, otherwise falls back to toggling `body.prov-hidden`.
 
