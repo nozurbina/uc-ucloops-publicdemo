@@ -18,6 +18,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import naming
+
 MARKER = "uc-persona-sim"
 APP = "https://ucloops-demo-v1.vercel.app/"
 
@@ -25,13 +28,7 @@ APP = "https://ucloops-demo-v1.vercel.app/"
 # current set and each corresponds to exactly one agent. The older pages are
 # left alone — persona-business-lunch.html covers two personas at once, so there
 # is no single agent to send someone to.
-PAGE_TO_AGENT = {
-    "persona-omar-v3.html": ("omar", "Omar"),
-    "persona-grace-v3.html": ("grace", "Grace"),
-    "persona-late-night-foodie-v3.html": ("mateo", "Mateo"),
-    "persona-franchisee-v3.html": ("diego", "Diego"),
-    "persona-everyday-20s-v3.html": ("tyler", "Tyler"),
-}
+PAGE_TO_AGENT = {naming.v3_page(a): (a, a.capitalize()) for a in naming.V3_ARCHETYPE}
 
 CSS = """
 /* ── uc-persona-sim: links out to the persona simulation app ── */

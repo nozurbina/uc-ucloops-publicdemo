@@ -1,0 +1,1457 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persona: Grace — Business Lunch — office manager &amp; catering coordinator · Calgary · 41</title>
+<style>/* base */
+/* ═══════════════════════════════════════════════════════════════
+   ucLoops — Urbina Consulting
+   Shared stylesheet for journey maps and persona profiles.
+
+   Loaded by:
+     • journey-map-template.html  (journey maps from /j-create-page)
+     • persona-template.html      (persona profiles from /p-create-page)
+
+   Structure:
+     1.  Global base
+     2.  Domain entity highlighting (shared)
+     3.  Item reference badges (shared)
+     4.  Journey map — layout
+     5.  Journey map — sidebar & persona cards
+     6.  Journey map — grid system
+     7.  Journey map — persona content blocks
+     8.  Journey map — persona-scoped rows
+     9.  Journey map — multi-persona shared rows
+     10. Journey map — brand / shared rows
+     11. Journey map — journey header UI
+     12. Persona profile — page header
+     13. Persona profile — content sections
+     14. Persona profile — emotions, voice, channels, relationships
+     15. Persona profile — footer
+     16. Responsive
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ───────────────────────────────────────────────────────────────
+   1. GLOBAL BASE
+   ─────────────────────────────────────────────────────────────── */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Journey maps use an app-shell layout (fixed sidebar, internal
+   scrolling). Lock body scrolling only when a .container is
+   present (i.e. on journey maps). Persona profiles flow normally. */
+body:has(.container) {
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+ul {
+    padding-left: 1em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   2. DOMAIN ENTITY HIGHLIGHTING (shared)
+   ─────────────────────────────────────────────────────────────── */
+
+.entity {
+    color: #1a1a6b;
+    font-weight: 700;
+    background-color: #CFCFFE;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 0.92em;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   3. ITEM REFERENCE BADGES (shared)
+   Defaults: visible on persona profiles, hidden on journey maps
+   (where there are far more of them) until toggled on via the
+   "Show item IDs" button.
+   ─────────────────────────────────────────────────────────────── */
+
+.item-ref {
+    display: inline;
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #94a3b8;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    margin-right: 0.35rem;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+.journey-grid .item-ref               { display: none; }
+.journey-grid.show-refs .item-ref     { display: inline; }
+
+.ref-item-id {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #78350f;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    margin-right: 0.3rem;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   JOURNEY MAP STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   4. LAYOUT
+   ─────────────────────────────────────────────────────────────── */
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow-x: auto;
+}
+
+.main-content {
+    margin-left: 240px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   5. SIDEBAR & PERSONA CARDS
+   ─────────────────────────────────────────────────────────────── */
+
+.sidebar {
+    width: 240px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.show-all-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.show-all-btn:hover { background-color: #2980b9; }
+
+.persona-card {
+    background-color: #34495e;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.persona-card:hover {
+    background-color: #3d566e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.persona-card.active   { border-color: #3498db; background-color: #3d566e; }
+.persona-card.removed  { opacity: 0.5; transform: scale(0.95); }
+.persona-card.removed:hover { transform: scale(0.95); }
+
+.persona-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    background: #667eea;
+}
+.persona-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.persona-avatar .initials {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.15rem;
+    color: white;
+    font-size: 0.7rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+    z-index: 2;
+}
+
+/* Named avatar colours for journey sidebar */
+.persona1-avatar { background: #5b6abf; }
+.persona2-avatar { background: #c06195; }
+.persona3-avatar { background: #4facfe; }
+.persona4-avatar { background: #fa709a; }
+.persona5-avatar { background: #43d854; }
+.jordan-avatar   { background: #667eea; }
+.lisa-avatar     { background: #f093fb; }
+.samantha-avatar { background: #4facfe; }
+.marcus-avatar   { background: #fa709a; }
+.alex-avatar     { background: #43d854; }
+.cara-avatar     { background: #c06195; }
+
+/* Name + role inside sidebar cards (scoped to avoid clashing
+   with the persona page header) */
+.persona-card .persona-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+.persona-card .persona-role {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.persona-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    justify-content: center;
+}
+.persona-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    border: none;
+}
+.persona-btn.focus-btn  { background: #2c3e50d4; }
+.persona-btn.remove-btn { background: #502c2cd4; }
+.persona-btn span       { display: none; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   6. GRID SYSTEM
+   ─────────────────────────────────────────────────────────────── */
+
+.grid-container {
+    flex: 1;
+    overflow-x: scroll;
+    overflow-y: auto;
+    position: relative;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: 200px repeat(var(--stage-count, 5), 400px);
+    grid-auto-rows: min-content;
+    min-width: max-content;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    --stage-count: 5;
+}
+.journey-grid > * { align-self: stretch; }
+
+.grid-header {
+    position: sticky;
+    top: 0;
+    background-color: #34495e;
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid #2c3e50;
+}
+.grid-header.corner { background-color: #2c3e50; }
+
+.row-header {
+    position: sticky;
+    left: 0;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-right: 2px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 10;
+}
+.row-icon { font-size: 1.1rem; }
+
+.grid-cell {
+    padding: 1rem;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    display: grid;
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: 1rem;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   7. PERSONA CONTENT BLOCKS (inside grid cells)
+   ─────────────────────────────────────────────────────────────── */
+
+.persona-content {
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+.persona-content h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #2c3e50;
+}
+.persona-content p {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+.persona-content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.persona-content li {
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+.persona-content > *:last-child { margin-bottom: 0; }
+
+/* Persona-coloured left accents (match sidebar avatar colours) */
+.highlight-persona1 { border-left: 3px solid #5b6abf; }
+.highlight-persona2 { border-left: 3px solid #c06195; }
+.highlight-persona3 { border-left: 3px solid #4facfe; }
+.highlight-persona4 { border-left: 3px solid #fa709a; }
+.highlight-persona5 { border-left: 3px solid #43d854; }
+.highlight-jordan   { border-left: 3px solid #667eea; }
+.highlight-lisa     { border-left: 3px solid #f093fb; }
+.highlight-samantha { border-left: 3px solid #4facfe; }
+.highlight-marcus   { border-left: 3px solid #fa709a; }
+.highlight-alex     { border-left: 3px solid #43d854; }
+.highlight-cara     { border-left: 3px solid #c06195; }
+
+.persona-content.hidden,
+.hidden { display: none; }
+
+/* Shared list line-height */
+.grid-cell [class$="-row"] li,
+.grid-cell [class*="-row "] li { line-height: 1.4; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   8. PERSONA-SCOPED ROWS
+   ─────────────────────────────────────────────────────────────── */
+
+/* Goals — orange / amber */
+.row-header.goals-row          { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.grid-cell.goals-row           { background-color: #fffbeb; }
+.grid-cell.goals-row h4        { color: #92400e; }
+
+/* Narrative — warm yellow */
+.row-header.narrative-row      { background-color: #fef9c3; border-left: 4px solid #eab308; }
+.grid-cell.narrative-row       { background-color: #fefce8; }
+.grid-cell.narrative-row h4    { color: #713f12; }
+
+/* Questions — gold */
+.row-header.questions-row      { background-color: #fff3cd; border-left: 4px solid #f0ad4e; }
+.grid-cell.questions-row       { background-color: #fff8e1; }
+.grid-cell.questions-row h4    { color: #b7791f; }
+.grid-cell.questions-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.questions-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #fff3cd;
+    border-left: 3px solid #f0ad4e;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Problems — red */
+.row-header.problems-row       { background-color: #fee2e2; border-left: 4px solid #ef4444; }
+.grid-cell.problems-row        { background-color: #fef2f2; }
+.grid-cell.problems-row h4     { color: #991b1b; }
+.grid-cell.problems-row ul     { list-style: none; padding-left: 0; }
+.grid-cell.problems-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #fee2e2;
+    border-left: 3px solid #ef4444;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Tasks — green */
+.row-header.tasks-row          { background-color: #dcfce7; border-left: 4px solid #22c55e; }
+.grid-cell.tasks-row           { background-color: #f0fdf4; }
+.grid-cell.tasks-row h4        { color: #166534; }
+.grid-cell.tasks-row ul        { list-style: none; padding-left: 0; }
+.grid-cell.tasks-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #dcfce7;
+    border-left: 3px solid #22c55e;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Sentiment — cyan */
+.row-header.sentiment-row      { background-color: #cffafe; border-left: 4px solid #06b6d4; }
+.grid-cell.sentiment-row       { background-color: #ecfeff; }
+.grid-cell.sentiment-row h4    { color: #164e63; }
+.grid-cell.sentiment-row p     { font-weight: 600; font-size: 0.9rem; color: #0e7490; }
+
+/* Think/Feel quote — cool grey */
+.row-header.quote-row          { background-color: #f3f4f6; border-left: 4px solid #9ca3af; }
+.grid-cell.quote-row           { background-color: #fafafa; }
+.grid-cell.quote-row h4        { color: #374151; }
+.grid-cell.quote-row p {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #1f2937;
+    border-left: 3px solid #9ca3af;
+    padding-left: 0.75rem;
+    margin: 0.35rem 0 0;
+    line-height: 1.5;
+}
+
+/* Alternate paths — purple */
+.row-header.alternate-paths-row  { background-color: #ede9fe; border-left: 4px solid #a855f7; }
+.grid-cell.alternate-paths-row   { background-color: #faf5ff; }
+.grid-cell.alternate-paths-row h4 { color: #6b21a8; }
+.grid-cell.alternate-paths-row ul { list-style: none; padding-left: 0; }
+.grid-cell.alternate-paths-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #ede9fe;
+    border-left: 3px solid #a855f7;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Channels — blue */
+.row-header.channels-row       { background-color: #dbeafe; border-left: 4px solid #3b82f6; }
+.grid-cell.channels-row        { background-color: #eff6ff; }
+.grid-cell.channels-row h4     { color: #1e40af; }
+.channels-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+.channels-tags li {
+    background-color: #dbeafe;
+    border: 1px solid #93c5fd;
+    color: #1d4ed8;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   9. MULTI-PERSONA SHARED ROWS (j-multi-outline)
+   ─────────────────────────────────────────────────────────────── */
+
+/* Key shared activities — blue-grey */
+.row-header.activities-row     { background-color: #dde3ea; border-left: 4px solid #64748b; }
+.grid-cell.activities-row      { background-color: #f0f4f8; }
+.grid-cell.activities-row h4   { color: #1e293b; }
+.grid-cell.activities-row ul   { list-style: none; padding-left: 0; }
+.grid-cell.activities-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #e2e8f0;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Key communications — sage green */
+.row-header.communications-row { background-color: #bbf7d0; border-left: 4px solid #16a34a; }
+.grid-cell.communications-row  { background-color: #e8f5e8; }
+.grid-cell.communications-row h4 { color: #14532d; }
+.grid-cell.communications-row ul { list-style: none; padding-left: 0; }
+.grid-cell.communications-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #dcfce7;
+    border-left: 3px solid #4ade80;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Key assets — rose / pink */
+.row-header.assets-row         { background-color: #fce7f3; border-left: 4px solid #db2777; }
+.grid-cell.assets-row          { background-color: #fdf2f8; }
+.grid-cell.assets-row h4       { color: #831843; }
+.grid-cell.assets-row ul       { list-style: none; padding-left: 0; }
+.grid-cell.assets-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #fce7f3;
+    border-left: 3px solid #f472b6;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Decision gates — violet */
+.row-header.decisions-row      { background-color: #ede9fe; border-left: 4px solid #7c3aed; }
+.grid-cell.decisions-row       { background-color: #f5f3ff; }
+.grid-cell.decisions-row h4    { color: #4c1d95; }
+.grid-cell.decisions-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.decisions-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #ede9fe;
+    border-left: 3px solid #a78bfa;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   10. BRAND / SHARED ROWS (from /j-suggest, /j-data)
+   ─────────────────────────────────────────────────────────────── */
+
+/* Opportunities — warm amber + reference panels */
+.row-header.opportunities-row  { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.grid-cell.opportunities-row   { background-color: #fffbeb; }
+.grid-cell.opportunities-row h4 { color: #92400e; }
+
+.opportunity-card {
+    border: 1px solid #fde68a;
+    border-radius: 6px;
+    background: #fff;
+    padding: 0.6rem 0.75rem 0.5rem;
+    margin-bottom: 0.6rem;
+}
+.opportunity-card:last-child { margin-bottom: 0; }
+.opportunity-card p {
+    margin: 0 0 0.3rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #1c1917;
+}
+.opportunity-card p strong { color: #92400e; font-weight: 700; }
+
+.refs-toggle {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.18rem 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.refs-toggle:hover { background: #fde68a; }
+
+.opp-refs {
+    display: none;
+    margin-top: 0.45rem;
+    padding: 0.4rem 0.55rem;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #44403c;
+}
+.opp-refs.open                 { display: block; }
+.opp-refs .ref-item            { margin: 0 0 0.3rem; }
+.opp-refs .ref-item:last-child { margin-bottom: 0; }
+.opp-refs .ref-source          { font-weight: 600; color: #78350f; }
+.opp-refs .ref-verbatim        { font-style: italic; }
+
+/* Content assets — sky blue */
+.row-header.content-assets-row { background-color: #bae6fd; border-left: 4px solid #0284c7; }
+.grid-cell.content-assets-row  { background-color: #f0f9ff; }
+.grid-cell.content-assets-row h4 { color: #0c4a6e; }
+.grid-cell.content-assets-row ul  { list-style: none; padding-left: 0; }
+.grid-cell.content-assets-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #e0f2fe;
+    border-left: 3px solid #0284c7;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Calls to action — emerald green */
+.row-header.cta-row            { background-color: #bbf7d0; border-left: 4px solid #16a34a; }
+.grid-cell.cta-row             { background-color: #f0fdf4; }
+.grid-cell.cta-row h4          { color: #14532d; }
+.cta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+.cta-tags li {
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    color: #15803d;
+    border-radius: 999px;
+    padding: 0.22rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Stage transition signals — slate */
+.row-header.transitions-row    { background-color: #e2e8f0; border-left: 4px solid #64748b; }
+.grid-cell.transitions-row     { background-color: #f8fafc; }
+.grid-cell.transitions-row h4  { color: #1e293b; }
+.grid-cell.transitions-row ul  { list-style: none; padding-left: 0; }
+.grid-cell.transitions-row li {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background-color: #f1f5f9;
+    border-left: 3px solid #94a3b8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Data generated — teal */
+.row-header.data-generated-row { background-color: #ccfbf1; border-left: 4px solid #14b8a6; }
+.grid-cell.data-generated-row  { background-color: #f0fdfa; }
+.grid-cell.data-generated-row h4 { color: #0f766e; }
+.grid-cell.data-generated-row ul { list-style: none; padding-left: 0; }
+.grid-cell.data-generated-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #ccfbf1;
+    border-left: 3px solid #14b8a6;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+/* Data used — indigo */
+.row-header.data-used-row      { background-color: #e0e7ff; border-left: 4px solid #6366f1; }
+.grid-cell.data-used-row       { background-color: #f8fafc; }
+.grid-cell.data-used-row h4    { color: #1e40af; }
+.grid-cell.data-used-row ul    { list-style: none; padding-left: 0; }
+.grid-cell.data-used-row li {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.4rem;
+    background-color: #e0e7ff;
+    border-left: 3px solid #6366f1;
+    border-radius: 0 4px 4px 0;
+    font-weight: 500;
+    line-height: 1.4;
+    list-style: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   11. JOURNEY HEADER UI
+   ─────────────────────────────────────────────────────────────── */
+
+.journey-header {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    flex-shrink: 0;
+}
+.journey-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    color: #2c3e50;
+}
+.journey-header p { color: #666; font-size: 0.9rem; }
+
+.journey-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.journey-id {
+    font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 0.18rem 0.5rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.refs-toggle-btn {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+.refs-toggle-btn:hover         { background: #f1f5f9; border-color: #94a3b8; }
+.refs-toggle-btn.refs-visible  { background: #1e293b; border-color: #1e293b; color: #f8fafc; }
+
+.journey-description {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 900px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 0.15rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PERSONA PROFILE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   12. PAGE HEADER
+   ─────────────────────────────────────────────────────────────── */
+
+.page-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 2rem 1.5rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #4a6fa5;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+.avatar-wrapper .initials {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+    z-index: 3;
+}
+
+/* Persona name + role inside the page header */
+.page-header .persona-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.page-header .persona-role {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   13. CONTENT SECTIONS
+   ─────────────────────────────────────────────────────────────── */
+
+.content {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
+}
+
+.section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f59e0b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.section h3 .section-icon { font-size: 1.2rem; }
+
+.section ul    { padding-left: 1.25rem; }
+.section li    {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    font-size: 0.92rem;
+}
+.section p     {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Pain points + Fears variant — red accent */
+.section.pain-points              { background-color: #fef2f2; border-color: #ef4444; }
+.section.pain-points h3           { color: #991b1b; border-bottom-color: #ef4444; }
+.section.pain-points li           { color: #4a1c1c; }
+
+/* Goals variant — green accent */
+.section.goals                    { background-color: #f0fdf4; border-color: #22c55e; }
+.section.goals h3                 { color: #166534; border-bottom-color: #22c55e; }
+.section.goals li                 { color: #1a3a1a; }
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   14. EMOTIONS, VOICE, CHANNELS, RELATIONSHIPS
+   ─────────────────────────────────────────────────────────────── */
+
+.emotion-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.emotion-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #2c3e50;
+    transition: all 0.2s ease;
+}
+.emotion-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.emotion-tag .emotion-label {
+    font-weight: 400;
+    color: #555;
+    font-size: 0.82rem;
+}
+
+.voice-description {
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.quote-block {
+    background-color: #f8f9fa;
+    border-left: 4px solid #f59e0b;
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: #444;
+}
+.quote-block:last-child { margin-bottom: 0; }
+
+.channel-list {
+    list-style: none;
+    padding-left: 0;
+}
+.channel-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.92rem;
+}
+.channel-list li:last-child { border-bottom: none; }
+
+.channel-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #f59e0b;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.relationship-block {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e0e0e0;
+}
+.relationship-block:last-child { margin-bottom: 0; }
+.relationship-block h4 {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+.relationship-block p,
+.relationship-block li {
+    font-size: 0.88rem;
+    color: #555;
+}
+.relationship-block ul {
+    padding-left: 1.25rem;
+    margin-top: 0.35rem;
+}
+.relationship-block li { margin-bottom: 0.25rem; }
+
+
+/* ───────────────────────────────────────────────────────────────
+   15. PAGE FOOTER
+   ─────────────────────────────────────────────────────────────── */
+
+.page-footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+.footer-divider {
+    width: 60px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.75rem auto;
+}
+
+
+/* ───────────────────────────────────────────────────────────────
+   16. RESPONSIVE (persona profile only — journey maps are
+       designed for horizontal scroll on any screen)
+   ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .two-col           { grid-template-columns: 1fr; }
+    .page-header       { padding: 1.5rem 1rem 1.25rem; }
+    .page-header .persona-name { font-size: 1.6rem; }
+    .avatar-wrapper    { width: 100px; height: 100px; font-size: 2.2rem; }
+    .content           { padding: 0 1rem 2rem; }
+    .section           { padding: 1.25rem; }
+    .emotion-grid      { gap: 0.5rem; }
+    .emotion-tag       { padding: 0.4rem 0.75rem; font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+    .page-header .persona-name { font-size: 1.4rem; }
+    .avatar-wrapper    { width: 80px; height: 80px; font-size: 1.8rem; }
+    .emotion-grid      { flex-direction: column; }
+    .emotion-tag       { justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BorderBlend site supplement — brand-aligned (ucLoops / Urbina).
+   Appended AFTER humanloops-urbina.css. Light theme only.
+   Palette: slate #2c3e50 · orange #f59e0b · entity #CFCFFE/#1a1a6b
+            · id-badge slate on #f1f5f9 · source badge amber #fef3c7
+   Styles ONLY the custom components the generator emits (index, insights,
+   source pages, v1 personas/journeys). Template classes (.entity, .item-ref,
+   .section, .two-col, .quote-block, …) inherit from humanloops-urbina.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* link conventions: no underline at rest; underline text links on hover; badges/tiles never underline */
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+.tile,.tile:hover,.idbadge,.idbadge:hover,.item-ref,.item-ref:hover,.evref,.evref:hover,
+.rowid,.rowid:hover,.claimid,.claimid:hover,.refcite,.refcite:hover{text-decoration:none}
+
+/* Sticky compact bar (always shows the document + the provenance toggle, even when deep-linked down) */
+.stickybar{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:.6rem;
+  background:#2c3e50;color:#fff;padding:.4rem .7rem;border-radius:0 0 10px 10px;
+  box-shadow:0 3px 10px rgba(0,0,0,.18);margin:0 0 1rem}
+/* The arrow is CSS, not markup, on purpose: the viewer uses this link's
+   textContent as the parent toolbar's back label, and an arrow character in there
+   comes out as "←Evidence Map" next to the title. See chrome.py. */
+.stickybar .sb-home{color:#cdd7e0;text-decoration:none;font-size:.82rem;font-weight:600;
+  flex-shrink:0;display:flex;align-items:center;gap:.35rem;white-space:nowrap}
+.stickybar .sb-home::before{content:"←";font-size:1rem;line-height:1}
+.stickybar .sb-home:hover{color:#fff;text-decoration:none}
+/* Where you are. Takes the slack, and is the first thing to ellipsis on a phone. */
+.stickybar .sb-title{flex:1;min-width:0;font-weight:600;font-size:.82rem;opacity:.85;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stickybar .sb-kicker{font-weight:400;opacity:.7;font-size:.72rem;margin-right:.35rem}
+@media(max-width:520px){
+  /* Below this the bar is back link + button only; the page name is the thing you
+     can afford to lose, since the page itself says it in the <h1>. */
+  .stickybar .sb-title{display:none}
+}
+/* "Show Item IDs & Provenance" toggle */
+.provtoggle{background:#f59e0b;color:#2c3e50;border:none;border-radius:6px;padding:.32rem .7rem;
+  font-size:.74rem;font-weight:700;cursor:pointer;margin:0;flex-shrink:0;white-space:nowrap}
+.provtoggle:hover{background:#e08e1e;text-decoration:none}
+body.prov-hidden .idbadge,body.prov-hidden .item-ref,body.prov-hidden .evidence,
+body.prov-hidden .prov-link,body.prov-hidden .reflist .idbadge{display:none}
+/* An insight's own ID is not provenance — it is the insight's name, and it is what
+   every journey cell and persona line cites. It stays visible with the toggle off;
+   what the toggle folds away on this page is the evidence underneath. */
+body.prov-hidden article.insight > h3 .idbadge{display:inline-block}
+
+/* layout wrappers */
+.srcpage{max-width:64rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+.docwrap{max-width:72rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+.home{display:inline-block;font-size:.8rem;color:#667085;margin:.2rem 0 1rem}
+.home:hover{color:#2c3e50}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#b45309;font-weight:700}
+.srchead{border-bottom:2px solid #f59e0b;padding-bottom:1rem;margin-bottom:1.25rem}
+.srchead h1{font-size:1.5rem;margin:.25rem 0 .6rem;color:#2c3e50}
+.hint{font-weight:400;color:#667085;font-size:.82rem}
+.metagrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.2rem .9rem;font-size:.82rem}
+.metagrid .mk{color:#667085;margin-right:.4rem}
+.metagrid .mv{font-weight:600;color:#2c3e50}
+.lead{font-size:1.05rem;color:#444;margin:.6rem 0}
+
+/* clickable ID badges (match template .item-ref look) */
+.idbadge,.rowid,.claimid,.refcite{
+  font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-weight:700;font-size:.66rem;
+  letter-spacing:.3px;white-space:nowrap;background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;
+  border-radius:5px;padding:.08rem .34rem;text-decoration:none;display:inline-block}
+.idbadge:hover,.rowid:hover,.claimid:hover,.refcite:hover{text-decoration:none;outline:1px solid #f59e0b}
+.claimid{vertical-align:super;font-size:.58rem;margin-left:.15rem;background:#fef3c7;color:#78350f;border-color:#fde68a}
+.refcite{border-style:dashed}
+.reflist li{margin:.3rem 0;font-size:.86rem}
+
+/* transcript turns */
+.transcript{margin-top:.5rem}
+.turn{padding:.5rem .7rem;border-radius:9px;margin:.35rem 0;border:1px solid transparent}
+.turn.participant{background:#fff;border-color:#e0e0e0}
+.turn.interviewer{background:transparent}
+.turn.interviewer .turntext{color:#667085}
+.turnhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem}
+.spk{font-weight:700;font-size:.82rem;color:#2c3e50}
+.turn.interviewer .spk{color:#667085;font-weight:600}
+.turntext p{margin:.3rem 0}
+
+/* cards (social / tickets / pains) + doc */
+.cards{display:grid;gap:.7rem}
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.7rem .85rem;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.cardhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem}
+.ch{font-weight:700;font-size:.9rem;color:#2c3e50}
+.cardbody p{margin:.3rem 0;font-size:.9rem}
+.notes{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.4rem 1rem;margin:1rem 0}
+.doc h2{margin-top:1.6rem;border-bottom:1px solid #e0e0e0;padding-bottom:.3rem;color:#2c3e50}
+.doc h3{color:#2c3e50}
+
+/* home / index tiles */
+.hero{padding:2rem 0 1rem;border-bottom:2px solid #f59e0b;margin-bottom:1.5rem}
+.hero h1{font-size:2rem;margin:.2rem 0;color:#2c3e50}
+.hero p{color:#667085;max-width:46rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr))}
+.tile{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1rem;display:block;color:inherit;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.15s}
+.tile:hover{text-decoration:none;border-color:#f59e0b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.tile h3{margin:.1rem 0 .3rem;font-size:1.02rem;color:#2c3e50}
+.tile p{margin:0;font-size:.83rem;color:#667085}
+.sec-title{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#b45309;font-weight:700;margin:2rem 0 .8rem}
+.trailnote{background:#fff8ef;border:1px solid #f3c9ad;border-radius:10px;padding:.8rem 1rem;font-size:.86rem;margin:1rem 0;color:#7a4b2a}
+.trailnote code{background:#fff}
+/* Project Overview — prominent full-width white box */
+.overview{background:#fff;border:1px solid #e0e0e0;border-left:6px solid #f59e0b;border-radius:12px;
+  padding:1.3rem 1.6rem;margin:.4rem 0 1.4rem;box-shadow:0 4px 18px rgba(0,0,0,.09)}
+.overview h2{margin:0 0 .6rem;font-size:1.25rem;color:#2c3e50}
+.overview p{margin:.4rem 0;color:#333;font-size:.97rem;line-height:1.6;max-width:62rem}
+.overview p.ctx{font-size:.9rem;color:#555}
+.overview a{color:#b45309;font-weight:700}
+.srccode{font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-size:.72rem;font-weight:700;
+  color:#475569;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:4px;padding:.02rem .3rem}
+
+/* resolved evidence links + hover preview */
+.evidence{margin:.4rem 0 0;font-size:.8rem;color:#667085}
+.evidence .lbl{text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;margin-right:.3rem}
+.evref{font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-weight:700;font-size:.66rem;
+  background:#fef3c7;color:#78350f;border:1px solid #fde68a;border-radius:5px;padding:.08rem .34rem;
+  text-decoration:none;display:inline-block;margin:.1rem .25rem .1rem 0;position:relative}
+.evref:hover{outline:1px solid #f59e0b;text-decoration:none}
+.evref.insid{background:#e0f2f1;color:#0b6a5b;border-color:#b2dfdb}
+.evref .tip{display:none;position:absolute;left:0;top:135%;z-index:20;width:22rem;max-width:70vw;
+  background:#fff;border:1px solid #f59e0b;border-radius:9px;padding:.55rem .7rem;font-family:-apple-system,sans-serif;
+  font-weight:400;font-size:.78rem;color:#333;box-shadow:0 8px 26px rgba(0,0,0,.18);white-space:normal;line-height:1.4}
+.evref:hover .tip,.evref:focus .tip{display:block}
+.evref .tip .src{display:block;color:#b45309;font-weight:700;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
+
+/* insights page */
+.insight{background:#fff;border:1px solid #e0e0e0;border-left:4px solid #f59e0b;border-radius:10px;padding:.9rem 1.05rem;margin:.9rem 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.insight h3{font-size:1.05rem;margin:.1rem 0 .3rem;display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap;color:#2c3e50}
+.insight .cat{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:#667085;border:1px solid #e0e0e0;border-radius:20px;padding:.05rem .5rem}
+.insight .strength{font-size:.66rem;font-weight:700;padding:.05rem .45rem;border-radius:20px}
+.st-verified{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.st-strong{background:#fff7ed;color:#b45309;border:1px solid #fed7aa}
+.st-moderate{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.insight .body{font-size:.92rem}
+.insight .imp{color:#166534}
+.filterbar{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0;align-items:center}
+.filterbar button{background:#fff;border:1px solid #cbd5e1;border-radius:20px;padding:.3rem .8rem;cursor:pointer;color:#2c3e50;font-size:.8rem}
+.filterbar button.on{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.filterbar .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#667085}
+
+/* v1 persona pages (superseded by v3 but kept on-brand) */
+.persona-head{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;border-bottom:2px solid #f59e0b;padding-bottom:1rem;margin-bottom:1.2rem}
+.avatar{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;flex-shrink:0;background:#4a6fa5}
+.pblock{background:#fff;border:1px solid #e0e0e0;border-radius:11px;padding:.9rem 1.05rem;margin:.8rem 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.pblock h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#b45309;margin:0 0 .5rem}
+.pitem{margin:.45rem 0}.pitem .txt{font-size:.92rem}
+.two-col-cards{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:720px){.two-col-cards{grid-template-columns:1fr}}
+.quotebar{font-size:1.05rem;font-style:italic;border-left:4px solid #f59e0b;padding:.4rem 1rem;color:#333;margin:.6rem 0;background:#f8f9fa;border-radius:0 8px 8px 0}
+
+/* v1 journey grid (kept on-brand) */
+.jny-wrap{padding:1rem}
+.scrollx{overflow-x:auto;padding-bottom:1rem}
+.jgrid{display:grid;min-width:max-content;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;background:#fff}
+.jgrid>div{border-right:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;padding:.6rem .7rem}
+.jrow-label{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;background:#f1f5f9;color:#667085;position:sticky;left:0;z-index:2}
+.jstage-head{background:#2c3e50;color:#fff;font-weight:700}
+.jstage-head .sub{display:block;font-weight:400;font-size:.75rem;opacity:.9}
+.stagecell{font-size:.84rem}.stagecell .cellid{margin-bottom:.25rem}.emoji{font-size:1.1rem}
+
+/* flash on hash-nav */
+.flash,tr.flash td{animation:flash 1.6s ease-out}
+@keyframes flash{0%{background:#fff3c9}100%{}}
+
+/* tables in doc/source pages */
+.tablewrap{overflow-x:auto;margin:1rem 0}
+
+/* ── Top chrome, part 1 of 3: the promo banner's own look ──
+   Emitted by build/chrome.py on every page. Read all three parts together: the
+   `position:fixed` and `body{padding-top}` here are *overridden* below, and are
+   kept only because they are the original rules and nothing depends on removing
+   them. Flattening the three parts into one non-!important block is a safe
+   cleanup, but do it with before/after screenshots at 1600/1100/700 — see
+   "Verify the artifact, not the report" in For AIs.md. ── */
+body{position:relative}
+.promo-banner{position:fixed;top:0;left:0;right:0;background:rgba(80,8,80,.95);color:#fff;padding:.9rem 1.25rem;z-index:300}
+.promo-banner .banner-inner{max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:1.5rem}
+.promo-banner .banner-logo{height:34px;width:auto;flex-shrink:0;display:block}
+.promo-banner .banner-copy{flex:1;min-width:0}
+.promo-banner .banner-line{font-size:1.02rem;line-height:1.2;margin:0 0 .1rem}
+.promo-banner .banner-line:last-child{margin-bottom:0}
+.promo-banner b{color:#d7a32b;font-weight:700}
+.promo-banner a.banner-link{color:#d7a32b;font-weight:700;text-decoration:none}
+.promo-banner a.banner-link:hover{text-decoration:underline}
+.promo-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e8bc52,#d7a32b);color:#2c3e50;border:none;padding:.5rem 1.4rem;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;transition:.2s;white-space:nowrap;flex-shrink:0}
+.promo-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(215,163,43,.3);text-decoration:none}
+body{padding-top:8rem}
+@media(max-width:900px){.promo-banner{padding:.8rem 1.25rem}.promo-banner .banner-inner{flex-wrap:wrap}.promo-banner .banner-logo{height:26px}body{padding-top:12rem}}
+
+/* Company Factsheet & Market Research — equal height */
+.orgcontext-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:900px){.orgcontext-grid{grid-template-columns:1fr}}
+
+/* ── Top chrome, part 2 of 3: banner + sticky bar as one sticky wrapper ──
+   Previously both bars were position:fixed independently, offset from each
+   other by a JS-measured --banner-h, with body padding-top reserving room for
+   them. Three things had to agree and often didn't — hence the white seam.
+
+   Sticky instead of fixed, deliberately. These pages are normally viewed inside
+   the AI-projects viewer, which hides our .stickybar (it rebuilds it in the
+   parent page above the iframe) and auto-sizes the iframe to content height.
+   With no independent viewport, `fixed` buys nothing and the reserved padding
+   becomes a visible empty band. Sticky sits in normal flow — nothing to reserve,
+   nothing to measure — and still sticks when the page IS viewed directly. ── */
+.uc-chrome{position:sticky;top:0;z-index:300}
+.uc-chrome .promo-banner{position:relative !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+.uc-chrome .stickybar{position:static !important;top:auto !important;left:auto !important;right:auto !important;z-index:auto !important}
+/* The chrome is in flow now, so any reserved space is a gap. */
+body{padding-top:0 !important}
+
+/* Dismiss. Applied to <html> by a parser-blocking script before the banner is
+   parsed, so a previously-dismissed banner never flashes into view. */
+.uc-promo-hidden .promo-banner{display:none !important}
+.promo-close{position:absolute;top:.45rem;right:.55rem;width:26px;height:26px;padding:0;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:6px;
+  color:#fff;font-size:.8rem;line-height:1;cursor:pointer;font-family:inherit;
+  display:flex;align-items:center;justify-content:center}
+.promo-close:hover{background:rgba(255,255,255,.26)}
+
+@media(max-width:859px){
+  /* The logo is the first thing to sacrifice — it carries no information the
+     copy doesn't already, and it costs a whole row once the text wraps. */
+  .uc-chrome .promo-banner .banner-logo{display:none}
+  .uc-chrome .promo-banner .banner-inner{flex-direction:column;align-items:stretch;gap:.55rem}
+  .uc-chrome .promo-banner .banner-line{font-size:.92rem}
+  .uc-chrome .promo-banner .promo-btn{align-self:flex-start}
+  .promo-close{top:.3rem;right:.35rem}
+  .uc-chrome .promo-banner{padding-right:2.4rem}
+
+  /* The stage grid is several times wider than a phone. The drawer patch added
+     .container{overflow-x:hidden} so the off-canvas sidebar couldn't create a
+     page-level scrollbar — but that also clipped the grid, making every stage
+     after the first unreachable. Give the grid its own horizontal scroll. */
+  .main-content{overflow-x:auto !important;-webkit-overflow-scrolling:touch}
+}
+
+/* ── Top chrome, part 3 of 3: full bleed, logo, close button ── */
+
+/* Full-bleed. `body` is `.docwrap` (max-width:72rem;margin:0 auto) on most pages,
+   so the sticky chrome from v2 was capped at the text column. 50% here is half
+   the content box, so this resolves to 0 when the parent is already full width —
+   correct on the journey maps too, without a second rule.
+
+   No `width:100vw` on purpose. Setting width alongside both margins
+   over-constrains a block, so margin-right is dropped and the banner ends a
+   scrollbar-width short of the right edge — a visible sliver. With width auto,
+   both margins apply.
+
+   --half-vw is set from documentElement.clientWidth by the script at the end of
+   the body. Plain `50vw` overshoots by half a scrollbar width — `vw` counts the
+   scrollbar, `50%` does not — which is enough to raise a horizontal scrollbar on
+   every page that scrolls vertically. `50vw` stays as the no-JS fallback, with
+   overflow-x:clip below containing it in that case. */
+.uc-chrome{margin-left:calc(50% - var(--half-vw, 50vw));margin-right:calc(50% - var(--half-vw, 50vw))}
+
+/* `clip`, not `hidden`: `hidden` would make <html> a scroll container and break
+   the sticky chrome. */
+html{overflow-x:clip}
+
+/* Background stretches, content stays in the 72rem column. */
+.uc-chrome .promo-banner .banner-inner{max-width:72rem;margin-left:auto;margin-right:auto;
+  position:relative;padding-right:2.8rem}
+
+/* Anchored to the content column rather than the banner edge, with the padding
+   above reserving its space — so it clears the Learn more button at every width
+   instead of relying on a gutter that only exists on wide screens. */
+.uc-chrome .promo-banner .promo-close{position:absolute;top:0;right:0}
+
+@media(max-width:859px){
+  .uc-chrome .promo-banner{padding-right:1.25rem}
+  .uc-chrome .promo-banner .banner-inner{padding-right:2.4rem}
+}
+
+a.item-ref{text-decoration:none;cursor:pointer}a.item-ref:hover{outline:1px solid #f59e0b}
+.content .evidence{margin:.3rem 0 .2rem}.persona-topbar{max-width:960px;margin:0 auto;padding:.6rem 1.5rem 0}
+.persona-topbar a{font-size:.8rem;color:#667085}.trail-note{max-width:960px;margin:.4rem auto 0;padding:0 1.5rem}
+.trail-note .tn{background:#fff8ef;border:1px solid #f3c9ad;border-radius:10px;padding:.6rem .9rem;font-size:.82rem;color:#7a4b2a}
+.persona-topbar .provtoggle{float:right}
+
+/* ── uc-persona-sim: links out to the persona simulation app ── */
+.persona-actions{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+a.persona-btn{text-decoration:none}
+a.persona-btn.chat-btn{background:rgba(117,6,117,.9);border-color:rgba(215,163,43,.6);color:#fff}
+a.persona-btn.chat-btn:hover{background:rgba(117,6,117,1);border-color:#d7a32b;text-decoration:none}
+
+.sim-launch-wrap{margin:.9rem auto 0;text-align:center}
+.sim-launch{display:inline-flex;align-items:center;gap:.5rem;
+  background:linear-gradient(180deg,#e8bc52,#d7a32b);border:1px solid #d7a32b;border-radius:999px;
+  color:#500850;text-decoration:none;font-weight:700;font-size:.95rem;padding:.55rem 1.2rem}
+.sim-launch:hover{filter:brightness(1.06);text-decoration:none;color:#500850}
+.sim-launch-note{display:block;font-size:.75rem;color:rgba(255,255,255,.75);margin-top:.4rem}
+</style></head><body class="prov-hidden">
+<script>try{if(localStorage.getItem("ucPromoDismissed")==="1")document.documentElement.className+=" uc-promo-hidden";}catch(e){}</script>
+<div class="uc-chrome"><div class="promo-banner"><button class="promo-close" type="button" onclick="ucCloseBanner()" aria-label="Dismiss this notice" title="Dismiss">&#10005;</button><div class="banner-inner"><img class="banner-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NjMuOTIgMjAwIj4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjkuOC45LCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjEgQnVpbGQgMSkgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGFhZ18xIj4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNTQuNjgsMjVjLTM0LjAxLDAtNjIuNzksMjIuNzYtNzEuOTUsNTMuODRDNzMuNTYsNDcuNzYsNDQuNzgsMjUsMTAuNzcsMjVoLTMuMDV2NzVjMCw0MS4zNCwzMy42Niw3NSw3NSw3NSwxMy4wMywwLDI1LjI5LTMuMzUsMzUuOTgtOS4yMSwxMC42OSw1Ljg2LDIyLjk1LDkuMjEsMzUuOTgsOS4yMWgzLjA1VjI1aC0zLjA1Wk04Mi43MywxNjguOTFjLTM3Ljk5LDAtNjguOTEtMzAuOTEtNjguOTEtNjguOTFWMzEuMTZjMzYuNTksMS41OSw2NS44NiwzMS44OCw2NS44Niw2OC44NGgwYzAsMjUuNzgsMTMuMDgsNDguNTYsMzIuOTUsNjIuMDYtOS4wNSw0LjM4LTE5LjIsNi44NC0yOS45MSw2Ljg0aC4wMVpNMTUxLjY0LDE2OC44M2MtOS41OS0uNDItMTguNjYtMi44MS0yNi44Ni02Ljc3LDExLjc3LTcuOTksMjEuMTYtMTkuMjcsMjYuODYtMzIuNDZ2MzkuMjNaTTExOC43MSwxNTguNzNjLTE5LjczLTEyLjEyLTMyLjkzLTMzLjkxLTMyLjkzLTU4LjczLDAtMzYuOTgsMjkuMjctNjcuMjQsNjUuODYtNjguODR2NjguODRjMCwyNC44Mi0xMy4yLDQ2LjYyLTMyLjkzLDU4LjczWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI5NC42LDczLjU5djMzLjA1aC04LjU1VjI1aDI4LjI2YzkuNDksMCwxNi41OCwyLjI5LDIxLjM4LDYuNzgsNC45LDQuNDgsNy4zLDEwLjIyLDcuMywxN3MtMi4wOSwxMS45OS02LjM2LDE2LjA2Yy00LjI4LDQuMDctOS41OSw2LjQ2LTE2LjA2LDcuM2wyMi4zMSwzNC41MWgtMTAuMjRsLTIxLjM1LTMzLjA1aC0xNi42OVpNMjk0LjYsNjUuNzdoMTguOThjNi44OCwwLDEyLjEtMS42NywxNS41NC00LjksMy40NC0zLjIzLDUuMjEtNy4xOSw1LjIxLTExLjc4LDAtOS4xOC02LjI2LTE2LjA2LTIwLjU0LTE2LjA2aC0xOS4xOXMwLDMyLjc0LDAsMzIuNzRaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzY5LjM5LDI1aDI5LjNjNy43MiwwLDEzLjk3LDEuNzcsMTguODcsNS40Miw0LjksMy42NSw3LjQsOC42NSw3LjQsMTUuMTIsMCwyLjUtLjMxLDQuOS0xLjg4LDguNzYtMS4zNiwzLjc1LTUuMjEsNy41MS0xMC41Myw5LjkxLDUuNDIsMS4zNiw5LjQ5LDQuMDcsMTIuMSw4LjEzLDIuNjEsNC4wNywzLjk2LDguMDMsMy45NiwxMS44OSwwLDcuNC0yLjcxLDEzLjAzLTguMjQsMTYuNzktNS40MiwzLjc1LTEyLjMsNS42My0yMC42NCw1LjYzaC0zMC4zNFYyNWgwWk0zNzcuODQsNjEuMjloMTkuNWMxMi44MiwwLDE4Ljk4LTYuMTUsMTguOTgtMTQuODEsMC05LjI4LTcuOTItMTMuNjYtMTguMzUtMTMuNjZoLTIwLjEydjI4LjQ3aC0uMDFaTTM3Ny44NCw5OC44M2gyMi4xYzUuMzIsMCw5LjkxLTEuMjUsMTMuODctMy42NSw0LjA3LTIuNCw2LjA1LTYuMjYsNi4wNS0xMS41NywwLTMuNjUtMS4xNS02LjU3LTMuNTUtOC44Ni00LjY5LTQuNjktMTAuODQtNS44NC0xNy45My01Ljg0aC0yMC41NHYyOS45M2gwWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTQ2NC44MSwxMDYuNjRoLTguNTVWMjVoOC41NXY4MS42NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNTYuNTUsMjVoLTguNTV2NzMuNjFoLTIxLjc5Yy0xMy42NiwwLTIyLjQyLTcuNjEtMjIuNDItMjQuNjFWMjVoLTguNTV2NTAuMTVoMGMuMTMsOS40NiwyLjgzLDE3LjA0LDguMDIsMjIuNzMsNS4zMiw1Ljg0LDEyLjkzLDguNzYsMjIuNjMsOC43NmgzMC42NlYyNWgtLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTY0Ni43OSw1Ni40OWMtLjEzLTkuNDYtMi44My0xNy4wNC04LjAyLTIyLjczLTUuMzItNS44NC0xMi45My04Ljc2LTIyLjYzLTguNzZoLTMwLjY2djgxLjY0aDguNTV2LTM3Ljc1aDQ0LjIxdjM3Ljc1aDguNTV2LTUwLjE1aC0uMDEsMFpNNTk0LjA0LDYxLjI5di0yOC4yNmgyMS43OWMxMy42NiwwLDIyLjQyLDcuNjEsMjIuNDIsMjQuNjF2My42NWgtNDQuMjEsMFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01NTUuOSwxMDYuNjRoLTguMjNsLTQ0Ljc2LTY4LjMxdjY4LjMxaC04LjIzVjI1aDguMjNsNDQuNzYsNjguNDJWMjVoOC4yM3Y4MS42NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMzEuMjQsMTMxLjI1YzMuNjgsMi43Miw2LjI3LDYuNDgsNy43NywxMS4yNmgtNC45MmMtMS4yNC0zLjM3LTMuMy02LjA1LTYuMTgtOC4wNC0yLjg4LTEuOTktNi40NC0yLjk5LTEwLjctMi45OS0zLjIzLDAtNi4xNy44LTguOCwyLjM5LTIuNjQsMS41OS00LjcxLDMuODgtNi4yMSw2Ljg0LTEuNTEsMi45Ny0yLjI2LDYuNDItMi4yNiwxMC4zNnMuNzUsNy4zOSwyLjI2LDEwLjMzYzEuNTEsMi45NSwzLjU4LDUuMjIsNi4yMSw2LjgxLDIuNjQsMS41OSw1LjU3LDIuMzksOC44LDIuMzksNC4yNSwwLDcuODItMSwxMC43LTIuOTksMi44OC0xLjk5LDQuOTQtNC42Nyw2LjE4LTguMDRoNC45MmMtMS41MSw0Ljc4LTQuMSw4LjU0LTcuNzcsMTEuMjYtMy42OCwyLjcyLTguMzMsNC4wOS0xMy45NSw0LjA5LTQuMywwLTguMTMtMS4wMi0xMS40OS0zLjA2LTMuMzctMi4wNC01Ljk4LTQuODYtNy44NC04LjQ3cy0yLjc5LTcuNzItMi43OS0xMi4zMi45My04Ljc5LDIuNzktMTIuNDIsNC40Ny02LjQ1LDcuODQtOC40N2MzLjM3LTIuMDEsNy4yLTMuMDIsMTEuNDktMy4wMiw1LjYyLDAsMTAuMjcsMS4zNiwxMy45NSw0LjA5WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI4Ny4xMiwxMzAuMTZjMy40NSwyLjA0LDYuMTcsNC44Nyw4LjE0LDguNXMyLjk2LDcuNzUsMi45NiwxMi4zNi0uOTksOC43NC0yLjk2LDEyLjM5LTQuNjgsNi41LTguMTQsOC41NGMtMy40NiwyLjA0LTcuMzUsMy4wNi0xMS42OSwzLjA2cy04LjI0LTEuMDItMTEuNjktMy4wNmMtMy40Ni0yLjA0LTYuMTctNC44OC04LjE0LTguNTQtMS45Ny0zLjY1LTIuOTYtNy43OC0yLjk2LTEyLjM5cy45OS04LjczLDIuOTYtMTIuMzZjMS45Ny0zLjYzLDQuNjgtNi40Nyw4LjE0LTguNSwzLjQ1LTIuMDQsNy4zNS0zLjA2LDExLjY5LTMuMDZzOC4yNCwxLjAyLDExLjY5LDMuMDZaTTI2Ni4yMywxMzMuODFjLTIuNzIsMS41OS00Ljg3LDMuODgtNi40NCw2Ljg0LTEuNTcsMi45Ny0yLjM2LDYuNDItMi4zNiwxMC4zNnMuNzksNy40LDIuMzYsMTAuMzZjMS41NywyLjk3LDMuNzIsNS4yNSw2LjQ0LDYuODRzNS43OSwyLjM5LDkuMiwyLjM5LDYuNDgtLjgsOS4yLTIuMzksNC44Ny0zLjg4LDYuNDQtNi44NGMxLjU3LTIuOTcsMi4zNi02LjQyLDIuMzYtMTAuMzZzLS43OS03LjQtMi4zNi0xMC4zNmMtMS41Ny0yLjk3LTMuNzItNS4yNS02LjQ0LTYuODRzLTUuNzktMi4zOS05LjItMi4zOS02LjQ4LjgtOS4yLDIuMzlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzkyLjI1LDE2OC41OGMtMSwxLjg4LTIuNTQsMy40MS00LjYyLDQuNThzLTQuNjcsMS43Ni03Ljc3LDEuNzYtNS42OS0uNTUtOC4wNC0xLjY2LTQuMjItMi42Mi01LjYxLTQuNTVjLTEuMzktMS45My0yLjItNC4wOS0yLjQyLTYuNDhoNC45MmMuMTgsMS4zNy42OSwyLjc1LDEuNTMsNC4xMnMyLjA2LDIuNTEsMy42NSwzLjQyLDMuNTIsMS4zNiw1Ljc4LDEuMzZjMi45NywwLDUuMjQtLjgsNi44MS0yLjM5czIuMzYtMy42MSwyLjM2LTYuMDVjMC0yLjA4LS41Mi0zLjc4LTEuNTYtNS4wOC0xLjA0LTEuMzEtMi4zMi0yLjMxLTMuODUtMy4wMnMtMy42Mi0xLjQ4LTYuMjgtMi4zM2MtMi45Mi0uOTMtNS4yOC0xLjgzLTcuMDgtMi42OS0xLjc5LS44Ni0zLjMxLTIuMTQtNC41NS0zLjgycy0xLjg2LTMuOTItMS44Ni02LjcxYzAtMy41NCwxLjI0LTYuNDIsMy43Mi04LjY0LDIuNDgtMi4yMSw1Ljg5LTMuMzIsMTAuMjMtMy4zMnM3Ljk0LDEuMDksMTAuNTMsMy4yNmMyLjU5LDIuMTcsNC4xMyw0Ljg3LDQuNjIsOC4xMWgtNC45OGMtLjQtMS45OS0xLjQ1LTMuNzYtMy4xNi01LjMxLTEuNzEtMS41NS00LjA0LTIuMzMtNy4wMS0yLjMzLTIuNzUsMC00Ljk0LjcxLTYuNTgsMi4xMy0xLjY0LDEuNDItMi40NiwzLjM5LTIuNDYsNS45MSwwLDEuOTkuNTEsMy42MSwxLjUzLDQuODVzMi4yNywyLjE5LDMuNzUsMi44NmMxLjQ4LjY2LDMuNTEsMS40Miw2LjA4LDIuMjYsMi45Ny45Myw1LjM3LDEuODQsNy4yMSwyLjcyLDEuODQuODksMy40LDIuMjIsNC42OCwzLjk5czEuOTMsNC4xMiwxLjkzLDcuMDRjMCwyLjEzLS41LDQuMTMtMS41LDYuMDFoMFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MTMuMjgsMTI3LjYydjI4LjM3YzAsNS4wMSwxLjEsOC42OCwzLjI5LDExLjAzczUuMTksMy41Miw5LDMuNTIsNi43OS0xLjE3LDguOTQtMy41MiwzLjIyLTYuMDIsMy4yMi0xMS4wM3YtMjguMzdoNC42NXYyOC4zN2MwLDYuMzMtMS41MywxMS4wNy00LjU4LDE0LjIyLTMuMDYsMy4xNS03LjE1LDQuNzItMTIuMjksNC43MnMtOS4yMy0xLjU3LTEyLjI5LTQuNzJjLTMuMDYtMy4xNC00LjU4LTcuODgtNC41OC0xNC4yMnYtMjguMzdoNC42NS0uMDFaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDYzLjU3LDE3MC43NWgxNy4wMXYzLjcyaC0yMS43MnYtNDYuODRoNC43MnY0My4xMmgtLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTUxNy40MiwxMjcuNjJ2My43OWgtMTMuMzV2NDMuMDVoLTQuNjV2LTQzLjA1aC0xMy4yOXYtMy43OWgzMS4yOVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01MzUuNzUsMTI3LjYydjQ2Ljg0aC00Ljcydi00Ni44NHM0LjcyLDAsNC43MiwwWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTYzNy45NiwxMzEuMjJjMy42OCwyLjY2LDYuMiw2LjI3LDcuNTcsMTAuODNoLTQuODVjLTEuMi0zLjE0LTMuMjItNS42OS02LjA4LTcuNjQtMi44Ni0xLjk1LTYuMjMtMi45Mi0xMC4xMy0yLjkyLTMuMzcsMC02LjQxLjgtOS4xMywyLjM5LTIuNzIsMS41OS00Ljg2LDMuODgtNi40MSw2Ljg0LTEuNTUsMi45Ny0yLjMzLDYuNDItMi4zMywxMC4zNnMuNzksNy41MywyLjM2LDEwLjUsMy43NCw1LjI1LDYuNTEsNi44NCw1LjkyLDIuMzksOS40NywyLjM5YzMuMTQsMCw2LjAyLS43LDguNjQtMi4wOSwyLjYxLTEuNCw0LjczLTMuNDIsNi4zNC02LjA4LDEuNjItMi42NiwyLjU2LTUuNzgsMi44Mi05LjM3aC0xOC40NHYtMy41MmgyMi40OXY0LjEyYy0uMzEsMy45OS0xLjQzLDcuNTctMy4zNiwxMC43Ni0xLjkzLDMuMTktNC41Miw1LjctNy43Nyw3LjU0LTMuMjYsMS44NC02Ljk3LDIuNzYtMTEuMTMsMi43Ni00LjQzLDAtOC4zNy0xLjAxLTExLjgzLTMuMDItMy40Ni0yLjAxLTYuMTQtNC44NC04LjA0LTguNDctMS45LTMuNjMtMi44Ni03Ljc1LTIuODYtMTIuMzZzLjk1LTguNzIsMi44Ni0xMi4zNmMxLjktMy42Myw0LjU3LTYuNDUsOC4wMS04LjQ3LDMuNDMtMi4wMSw3LjM2LTMuMDIsMTEuNzktMy4wMiw1LjMxLDAsOS44MSwxLjMzLDEzLjQ5LDMuOTloLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTU4OS4wNCwxNzQuNDdoLTQuNzJsLTI1LjY4LTM5LjE5djM5LjE5aC00Ljcydi00Ni44NGg0LjcybDI1LjY4LDM5LjI1di0zOS4yNWg0LjcydjQ2Ljg0WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTM0OS4xNiwxNzQuNDdoLTQuNzJsLTI1LjY4LTM5LjE5djM5LjE5aC00Ljcydi00Ni44NGg0LjcybDI1LjY4LDM5LjI1di0zOS4yNWg0LjcydjQ2Ljg0WiIvPgogIDwvZz4KPC9zdmc+" alt="Urbina Consulting"><div class="banner-copy"><div class="banner-line">This is a generated example built with Urbina's ucLoops AI methodology.</div><div class="banner-line">It's even better when used with <b>real research sources!</b></div><div class="banner-line">Learn how to use it yourself on our <a class="banner-link" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">cohort or private courses.</a></div></div><a class="promo-btn" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">Learn more</a></div></div><div class="stickybar"><a class="sb-home" href="index.html" title="Back to the Evidence Map">Evidence Map</a><span class="sb-title">Persona · Grace</span><button class="provtoggle" onclick="toggleProv(this)">Show Item IDs &amp; Provenance</button></div></div>
+<header class="page-header">
+<h1>Persona Profile</h1>
+<div class="avatar-wrapper"><img src="headshots/grace.jpg" alt="Grace"><div class="initials">G</div></div>
+<div class="persona-name">Grace</div>
+<div class="persona-role">Business Lunch — office manager &amp; catering coordinator · Calgary · 41</div>
+<div class="sim-launch-wrap"><a class="sim-launch" href="https://ucloops-demo-v1.vercel.app/?agent=grace" target="_blank" rel="noopener">&#128488;&#65039; Launch AI Persona Sim</a><span class="sim-launch-note">Chat with Grace in the ucLoops demo app &middot; opens in a new tab</span></div>
+
+</header>
+<div class="trail-note"><div class="tn"><b>Evidence trail:</b> every item ID links to the <b>insight</b> it rests on; each insight links down to the <b>verbatim</b> source. Direct source quotes are linked inline too · <a href="journey-map-business-lunch-v3.html">see journey map →</a>.</div></div>
+<main class="content">
+<div class="two-col"><div class="section" id="demographics"><h3><span class="section-icon">&#128100;</span> Demographics and key characteristics</h3><ul><li><a class="item-ref" id="DEMO-GRAC-0001" href="insights.html#INS-C04" title="Insight: Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.">DEMO-GRAC-0001</a>Forty-one, Calgary, office manager and executive assistant at a mid-size energy-services firm, feeding a roughly 30-person team.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C04">INS-C04<span class="tip"><span class="src">Insight · Occasion</span>Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t2">BB-INT014-t2<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so — here&#x27;s the thing, I didn&#x27;t find them the way a normal person finds a taco truck. [laughs] I find everything through logistics. We had a team offsite last spring, downtown, and one of our engineers said &quot;there&#x27;s a truck that parks by the LRT, the bris…”</span></a></div></li><li><a class="item-ref" id="DEMO-GRAC-0002" href="insights.html#INS-C04" title="Insight: Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.">DEMO-GRAC-0002</a>A group decider, not a solo eater — she books team <span class="entity">lunch</span>es and larger client events, and vets a vendor herself before she puts her people or a partner in front of it.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C04">INS-C04<span class="tip"><span class="src">Insight · Occasion</span>Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t2">BB-INT014-t2<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so — here&#x27;s the thing, I didn&#x27;t find them the way a normal person finds a taco truck. [laughs] I find everything through logistics. We had a team offsite last spring, downtown, and one of our engineers said &quot;there&#x27;s a truck that parks by the LRT, the bris…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t4">BB-INT020-t4<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Of course. I&#x27;m not putting forty people&#x27;s lunch on a partner&#x27;s say-so — he&#x27;d eat a shoe if it had enough salt on it. So I walked over to the truck by the financial district on my own dime, got the brisket, and — fine, credit where it&#x27;s due, it&#x27;s genuinely good…”</span></a></div></li><li><a class="item-ref" id="DEMO-GRAC-0003" href="insights.html#INS-C04" title="Insight: Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.">DEMO-GRAC-0003</a>Runs distinct ordering tiers: the casual team treat, the monthly team <span class="entity">lunch</span>, and the high-stakes client or celebratory catering booking.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C04">INS-C04<span class="tip"><span class="src">Insight · Occasion</span>Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t22">BB-INT014-t22<span class="tip"><span class="src">BB-INT014 · Nadia</span>“So there&#x27;s a few things I run. There&#x27;s the Friday team treat, which is smaller, more casual, sort of a morale thing — &quot;it&#x27;s Friday, here&#x27;s something nice.&quot; There&#x27;s the bigger monthly team lunch. And then there&#x27;s client catering, which is the high-stakes one, t…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t24">BB-INT020-t24<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Three tiers. Tier one — client lunches, high stakes, partners hosting, this is where I don&#x27;t breathe. Tier two — team lunches, associates, monthly-ish, casual but still my name on it. Tier three — the fun stuff, a closing celebration when a big file settles, a…”</span></a></div></li><li><a class="item-ref" id="DEMO-GRAC-0004" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">DEMO-GRAC-0004</a>The highest-value repeat buyer in the room — she orders for thirty most months and wants to route more, all year, to a vendor she can trust.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t28">BB-INT014-t28<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Exactly. Talk to me like I&#x27;m running an operation, because I am. The person buying one taco wants your specials. I want your reliability. Give me the boring stuff — dates, allergens, invoicing, &quot;we confirm in writing&quot; — and I&#x27;m your best customer, because I&#x27;m …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t32">BB-INT020-t32<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Exactly. And look — I want to give you more business, that&#x27;s the frustrating part. I&#x27;m not a hard sell, I&#x27;m a warm lead you&#x27;re making work too hard. The food&#x27;s good enough that I want you to be my default for every event this firm throws. But you&#x27;ve got to mak…”</span></a></div></li></ul></div><div class="section" id="background-mindset"><h3><span class="section-icon">&#128161;</span> Background and mindset</h3><ul><li><a class="item-ref" id="MIND-GRAC-0001" href="insights.html#INS-C04" title="Insight: Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.">MIND-GRAC-0001</a>Vets everything herself before she commits the team — "I will never put my name on something I haven't eaten myself," so she walks over on her own time first.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C04">INS-C04<span class="tip"><span class="src">Insight · Occasion</span>Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t4">BB-INT014-t4<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Always. I will never put my name on something I haven&#x27;t eaten myself. That&#x27;s — I&#x27;ve been burned. I&#x27;ll tell you the burned story later, remind me. But yes, I vet everything first.”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t4">BB-INT020-t4<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Of course. I&#x27;m not putting forty people&#x27;s lunch on a partner&#x27;s say-so — he&#x27;d eat a shoe if it had enough salt on it. So I walked over to the truck by the financial district on my own dime, got the brisket, and — fine, credit where it&#x27;s due, it&#x27;s genuinely good…”</span></a></div></li><li><a class="item-ref" id="MIND-GRAC-0002" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">MIND-GRAC-0002</a>Reliability is the whole game and good food is only table stakes — she wouldn't book anyone whose food is bad, but showing up as promised, at the headcount she gave, is the entire job.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t12">BB-INT014-t12<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Oh it&#x27;s number one. By a mile. Reliability is the whole game for me. The food being good is table stakes — I wouldn&#x27;t book anyone whose food is bad. But &quot;will you actually show up when you said, at the headcount I said&quot; — that&#x27;s the entire job. If I could pay …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t12">BB-INT020-t12<span class="tip"><span class="src">BB-INT020 · Bianca</span>“It&#x27;s not a ranking. It&#x27;s the whole thing. The food being good is the price of admission — I&#x27;m not booking anyone whose food is bad, obviously. But &quot;will you be there, on time, with the right amount of food, when there&#x27;s a client in the room&quot; — that IS the job.…”</span></a></div></li><li><a class="item-ref" id="MIND-GRAC-0003" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">MIND-GRAC-0003</a>Thinks like an operator and wants to be talked to like one — "talk to me like I'm running an operation, because I am" — not marketed at with specials.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t28">BB-INT014-t28<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Exactly. Talk to me like I&#x27;m running an operation, because I am. The person buying one taco wants your specials. I want your reliability. Give me the boring stuff — dates, allergens, invoicing, &quot;we confirm in writing&quot; — and I&#x27;m your best customer, because I&#x27;m …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t30">BB-INT020-t30<span class="tip"><span class="src">BB-INT020 · Bianca</span>“[laughs] Fine. One: a catering menu with the allergen sheet attached, so I can forward it to a client&#x27;s assistant and to accounts in one email and be done. That alone would make me love you. Two: how to book, with real availability — so I&#x27;m not doing the four-…”</span></a></div></li><li><a class="item-ref" id="MIND-GRAC-0004" href="insights.html#INS-C11" title="Insight: When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.">MIND-GRAC-0004</a>Will not gamble on safety: when allergen answers are vague she simply books a better-documented competitor rather than risk a colleague or a client.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C11">INS-C11<span class="tip"><span class="src">Insight · Accessibility</span>When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t16">BB-INT014-t16<span class="tip"><span class="src">BB-INT014 · Nadia</span>“It creates work and it creates risk. And when I can&#x27;t get a straight answer, honestly? Sometimes I just don&#x27;t book the thing. I&#x27;ll go with a vendor who has it all spelled out, because I&#x27;m not going to gamble on somebody&#x27;s airway to save a few dollars on nicer …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t18">BB-INT020-t18<span class="tip"><span class="src">BB-INT020 · Bianca</span>“It loses the whole booking. And it&#x27;s a shame, because the food&#x27;s better than the safe boring option I end up going with. But I&#x27;m not gambling a partner&#x27;s client&#x27;s airway to save eight dollars a head on nicer brisket. Make it easy for me to keep people safe and…”</span></a></div></li></ul></div></div><div class="section" id="main-emotions"><h3><span class="section-icon">&#128148;</span> Main emotions</h3><div class="emotion-grid"><div class="emotion-tag"><a class="item-ref" id="EMOT-GRAC-0001" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">EMOT-GRAC-0001</a>😰 <span class="emotion-label">Anxious</span> &mdash; the no-show memory that "lives in the back of my head every single time," and the week before a big booking when she doesn't sleep</div><div class="emotion-tag"><a class="item-ref" id="EMOT-GRAC-0002" href="insights.html#INS-C11" title="Insight: When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.">EMOT-GRAC-0002</a>🛡️ <span class="emotion-label">Protective</span> &mdash; a real EpiPen tree-nut colleague, and a client whose partner once nearly died from nuts — she refuses to put either at risk</div><div class="emotion-tag"><a class="item-ref" id="EMOT-GRAC-0003" href="insights.html#INS-C07" title="Insight: Customers reward BorderBlend&#x27;s fusion because the flavours make sense, and the plant-based option repeatedly beats low expectations to convert sceptics.">EMOT-GRAC-0003</a>😍 <span class="emotion-label">Delighted</span> &mdash; the <span class="entity">plant-based option</span> won over people who don't usually go plant-based — a genuine surprise</div><div class="emotion-tag"><a class="item-ref" id="EMOT-GRAC-0004" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">EMOT-GRAC-0004</a>😤 <span class="emotion-label">Frustrated</span> &mdash; she's a warm lead being made to work too hard — "I'm on your side here," and the catering path is buried</div><div class="emotion-tag"><a class="item-ref" id="EMOT-GRAC-0005" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">EMOT-GRAC-0005</a>🤝 <span class="emotion-label">Ready to commit</span> &mdash; "build the boring version and I'll be first in line — just put a name on my booking"</div></div></div><div class="section" id="voice-tone"><h3><span class="section-icon">&#128172;</span> Voice and tone</h3><p class="voice-description"><a class="item-ref" id="VOIC-GRAC-0001" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">VOIC-GRAC-0001</a><em>She talks like someone who runs the room — organised, quick and dry, with a habit of flagging her own pet peeves before she launches into them ("okay, bear with me"). She swings between warm and methodical, narrating her process step by step, and brisk and budget-protective, clipping through a list. Either way she reaches for concrete scenes: a hungry executive team in a lobby, a partner who bills nine hundred an hour standing in a boardroom, forty panic-ordered pizzas, minus-twenty-five in a February parking lot. She's generous about the people she deals with ("lovely guy," "the guy was great") but immovable on the boring stuff — dates, allergens, invoices, confirmations in writing — because that is the job she is judged on, and she is not the customer: the partner is, and her neck is the one out.</em><div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a></div></p><div class="quote-block"><a class="item-ref" id="QUOT-GRAC-0001" href="sources/BB-INT014.html#BB-INT014-t10" title="Source evidence">QUOT-GRAC-0001</a>&ldquo;I need "we are confirmed for Thursday, arriving 11:30, here for ninety minutes, this is the driver's cell." Locked. In writing. I'm not forwarding "yep!" to leadership.&rdquo;<div class="evidence"><span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t10">BB-INT014-t10<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[pause] So this is my pet peeve. Which — okay, this is my pet peeve, so bear with me. I need a hard confirmation. Not &quot;sounds good!&quot; in an email. I need &quot;Nadia, we are confirmed for Thursday the whatever, arriving 11:30, here for ninety minutes, this is the tr…”</span></a></div></div><div class="quote-block"><a class="item-ref" id="QUOT-GRAC-0002" href="sources/BB-INT020.html#BB-INT020-t10" title="Source evidence">QUOT-GRAC-0002</a>&ldquo;The guy was lovely, but I can't forward an exclamation mark to a partner. Give me the paper and I'd have been fine — instead I aged a year that week for no reason.&rdquo;<div class="evidence"><span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t10">BB-INT020-t10<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Soft. Too soft. I got a &quot;yep, we&#x27;ve got you Thursday!&quot; — exclamation mark and everything. And look, the guy was lovely, but I can&#x27;t forward an exclamation mark to a partner. I need a proper confirmation. Date, arrival time, how long they&#x27;re parked, headcount l…”</span></a></div></div><div class="quote-block"><a class="item-ref" id="QUOT-GRAC-0003" href="sources/BB-INT014.html#BB-INT014-t16" title="Source evidence">QUOT-GRAC-0003</a>&ldquo;I'm not going to gamble on somebody's airway to save a few dollars on nicer tacos. That's not a close call for me.&rdquo;<div class="evidence"><span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t16">BB-INT014-t16<span class="tip"><span class="src">BB-INT014 · Nadia</span>“It creates work and it creates risk. And when I can&#x27;t get a straight answer, honestly? Sometimes I just don&#x27;t book the thing. I&#x27;ll go with a vendor who has it all spelled out, because I&#x27;m not going to gamble on somebody&#x27;s airway to save a few dollars on nicer …”</span></a></div></div><div class="quote-block"><a class="item-ref" id="QUOT-GRAC-0004" href="sources/BB-INT020.html#BB-INT020-t34" title="Source evidence">QUOT-GRAC-0004</a>&ldquo;When I book you, I'm not the customer — the partner is, the client is, and I'm the one whose neck is out. A clean invoice, allergen paper, a name I can call — that's you protecting my reputation.&rdquo;<div class="evidence"><span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t34">BB-INT020-t34<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Just — remember that when I book you, I&#x27;m not the customer. The partner&#x27;s the customer, the client&#x27;s the customer, and I&#x27;m the one whose neck is out if you drop the ball. So everything you do to make me look competent and calm in front of them, I feel that. Re…”</span></a></div></div></div><div class="two-col"><div class="section goals" id="goals"><h3><span class="section-icon">&#127919;</span> Goals</h3><ul><li><a class="item-ref" id="GOAL-GRAC-0001" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">GOAL-GRAC-0001</a>Feed thirty people well without the vendor-no-show nightmare — reliability she can stake her reputation on, especially with a client in the room.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t12">BB-INT014-t12<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Oh it&#x27;s number one. By a mile. Reliability is the whole game for me. The food being good is table stakes — I wouldn&#x27;t book anyone whose food is bad. But &quot;will you actually show up when you said, at the headcount I said&quot; — that&#x27;s the entire job. If I could pay …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t8">BB-INT020-t8<span class="tip"><span class="src">BB-INT020 · Bianca</span>“So the run-up is where I don&#x27;t sleep. [laughs] Here&#x27;s the scenario — Whitmore&#x27;s hosting a client, big file, the kind of client whose name is on buildings. Lunch is in our boardroom, thirty people, noon sharp. And the entire week before, one question is living …”</span></a></div></li><li><a class="item-ref" id="GOAL-GRAC-0002" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">GOAL-GRAC-0002</a>Get a hard, forwardable booking confirmation she can send straight up to her VP or a partner — date, arrival, duration, headcount and the driver's number.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t10">BB-INT014-t10<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[pause] So this is my pet peeve. Which — okay, this is my pet peeve, so bear with me. I need a hard confirmation. Not &quot;sounds good!&quot; in an email. I need &quot;Nadia, we are confirmed for Thursday the whatever, arriving 11:30, here for ninety minutes, this is the tr…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t10">BB-INT020-t10<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Soft. Too soft. I got a &quot;yep, we&#x27;ve got you Thursday!&quot; — exclamation mark and everything. And look, the guy was lovely, but I can&#x27;t forward an exclamation mark to a partner. I need a proper confirmation. Date, arrival time, how long they&#x27;re parked, headcount l…”</span></a></div></li><li><a class="item-ref" id="GOAL-GRAC-0003" href="insights.html#INS-C11" title="Insight: When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.">GOAL-GRAC-0003</a>Keep her people safe with ingredient-level allergen information in writing that she can hand to the allergic colleague, or a client's assistant, to decide for themselves.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C11">INS-C11<span class="tip"><span class="src">Insight · Accessibility</span>When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t14">BB-INT014-t14<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Right, so — this is where it gets fiddly. First I send out a form to the team, because I have to know: how many, and who can&#x27;t eat what. And here&#x27;s the thing, on a team of thirty you always have — you&#x27;ve got two or three vegetarians, you&#x27;ve got someone plant-b…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t14">BB-INT020-t14<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Right, so this is the part that can actually hurt someone, so I don&#x27;t mess about. First I send a form round — headcount, and who can&#x27;t eat what. And on any group this size you&#x27;ve always got the same cast: two vegetarians, someone plant-based, someone doing ket…”</span></a></div></li><li><a class="item-ref" id="GOAL-GRAC-0004" href="insights.html#INS-C04" title="Insight: Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.">GOAL-GRAC-0004</a>Make the occasion look good — a morale <span class="entity">lunch</span> people notice, or a celebration that lands in front of forty — never the sad tray of sandwiches.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C04">INS-C04<span class="tip"><span class="src">Insight · Occasion</span>Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t20">BB-INT014-t20<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Bit of both. It&#x27;s crept up — I&#x27;ve noticed it&#x27;s not the bargain it maybe was, it&#x27;s getting close to just catering from a restaurant. But honestly for the team I&#x27;ll pay for good, that&#x27;s fine, people notice and it makes the Friday feel special. I&#x27;m more sensitive…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t24">BB-INT020-t24<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Three tiers. Tier one — client lunches, high stakes, partners hosting, this is where I don&#x27;t breathe. Tier two — team lunches, associates, monthly-ish, casual but still my name on it. Tier three — the fun stuff, a closing celebration when a big file settles, a…”</span></a></div></li><li><a class="item-ref" id="GOAL-GRAC-0005" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">GOAL-GRAC-0005</a>Route more business to <span class="entity">BorderBlend</span> and make them her default for every event — if they help her through the Calgary winter and stop making it hard to say yes.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t22">BB-INT014-t22<span class="tip"><span class="src">BB-INT014 · Nadia</span>“So there&#x27;s a few things I run. There&#x27;s the Friday team treat, which is smaller, more casual, sort of a morale thing — &quot;it&#x27;s Friday, here&#x27;s something nice.&quot; There&#x27;s the bigger monthly team lunch. And then there&#x27;s client catering, which is the high-stakes one, t…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t32">BB-INT020-t32<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Exactly. And look — I want to give you more business, that&#x27;s the frustrating part. I&#x27;m not a hard sell, I&#x27;m a warm lead you&#x27;re making work too hard. The food&#x27;s good enough that I want you to be my default for every event this firm throws. But you&#x27;ve got to mak…”</span></a></div></li></ul></div><div class="section" id="key-tasks"><h3><span class="section-icon">&#9745;</span> Key tasks</h3><ul><li><a class="item-ref" id="TASK-GRAC-0001" href="insights.html#INS-C04" title="Insight: Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.">TASK-GRAC-0001</a>Tries the truck solo first — she walked over on her own for the <span class="entity">smoked brisket taco</span> — then investigates catering, invoicing and whether they'll actually turn up for thirty.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C04">INS-C04<span class="tip"><span class="src">Insight · Occasion</span>Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t2">BB-INT014-t2<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so — here&#x27;s the thing, I didn&#x27;t find them the way a normal person finds a taco truck. [laughs] I find everything through logistics. We had a team offsite last spring, downtown, and one of our engineers said &quot;there&#x27;s a truck that parks by the LRT, the bris…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t4">BB-INT020-t4<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Of course. I&#x27;m not putting forty people&#x27;s lunch on a partner&#x27;s say-so — he&#x27;d eat a shoe if it had enough salt on it. So I walked over to the truck by the financial district on my own dime, got the brisket, and — fine, credit where it&#x27;s due, it&#x27;s genuinely good…”</span></a></div></li><li><a class="item-ref" id="TASK-GRAC-0002" href="insights.html#INS-C11" title="Insight: When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.">TASK-GRAC-0002</a>Sends a form round the team to collect headcount and who can't eat what — always two or three vegetarians, someone plant-based, and at least one serious allergy.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C11">INS-C11<span class="tip"><span class="src">Insight · Accessibility</span>When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t14">BB-INT014-t14<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Right, so — this is where it gets fiddly. First I send out a form to the team, because I have to know: how many, and who can&#x27;t eat what. And here&#x27;s the thing, on a team of thirty you always have — you&#x27;ve got two or three vegetarians, you&#x27;ve got someone plant-b…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t14">BB-INT020-t14<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Right, so this is the part that can actually hurt someone, so I don&#x27;t mess about. First I send a form round — headcount, and who can&#x27;t eat what. And on any group this size you&#x27;ve always got the same cast: two vegetarians, someone plant-based, someone doing ket…”</span></a></div></li><li><a class="item-ref" id="TASK-GRAC-0003" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">TASK-GRAC-0003</a>Chases down and pins the confirmation herself when the operator's casual "yep we'll be there!" is too soft to forward upward.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t10">BB-INT014-t10<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[pause] So this is my pet peeve. Which — okay, this is my pet peeve, so bear with me. I need a hard confirmation. Not &quot;sounds good!&quot; in an email. I need &quot;Nadia, we are confirmed for Thursday the whatever, arriving 11:30, here for ninety minutes, this is the tr…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t10">BB-INT020-t10<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Soft. Too soft. I got a &quot;yep, we&#x27;ve got you Thursday!&quot; — exclamation mark and everything. And look, the guy was lovely, but I can&#x27;t forward an exclamation mark to a partner. I need a proper confirmation. Date, arrival time, how long they&#x27;re parked, headcount l…”</span></a></div></li><li><a class="item-ref" id="TASK-GRAC-0004" href="insights.html#INS-C08" title="Insight: Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.">TASK-GRAC-0004</a>Gets the price pre-approved before the event and runs a proper invoice through the company — nothing finance or accounts will bounce back.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C08">INS-C08<span class="tip"><span class="src">Insight · Price &amp; value</span>Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t18">BB-INT014-t18<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so, expenses. I run these through the company, so I need a proper invoice. Itemised, GST broken out, our billing name and PO reference on it, emailed to me as a PDF. Not a — not a photo of a receipt, not a Square text link. Our finance team will bounce th…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t20">BB-INT020-t20<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Oh, this is my hill. Our accounts department is — how do I put this diplomatically — they are not a forgiving people. [laughs] I need a proper invoice. PDF. Itemised, HST broken out, the firm&#x27;s billing name, and the matter number or PO on it so I can bill it t…”</span></a></div></li><li><a class="item-ref" id="TASK-GRAC-0005" href="insights.html#INS-C04" title="Insight: Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.">TASK-GRAC-0005</a>Plans around her ordering tiers and Calgary seasonality — a spring-to-fall truck occasion, with a separate answer needed November to March.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C04">INS-C04<span class="tip"><span class="src">Insight · Occasion</span>Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t22">BB-INT014-t22<span class="tip"><span class="src">BB-INT014 · Nadia</span>“So there&#x27;s a few things I run. There&#x27;s the Friday team treat, which is smaller, more casual, sort of a morale thing — &quot;it&#x27;s Friday, here&#x27;s something nice.&quot; There&#x27;s the bigger monthly team lunch. And then there&#x27;s client catering, which is the high-stakes one, t…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t24">BB-INT020-t24<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Three tiers. Tier one — client lunches, high stakes, partners hosting, this is where I don&#x27;t breathe. Tier two — team lunches, associates, monthly-ish, casual but still my name on it. Tier three — the fun stuff, a closing celebration when a big file settles, a…”</span></a></div></li></ul></div></div><div class="section pain-points" id="pain-points"><h3><span class="section-icon">&#9888;</span> Pain points</h3><ul><li><a class="item-ref" id="PAIN-GRAC-0001" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">PAIN-GRAC-0001</a>The catering path is buried — the site felt built for the person buying one taco, not for her booking for thirty, with four steps before she even knew if they were free on her date.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t8">BB-INT014-t8<span class="tip"><span class="src">BB-INT014 · Nadia</span>“So first I go to the website, borderblend.ca, and I&#x27;m looking for a catering page or a &quot;book us&quot; button. And it&#x27;s — it&#x27;s there, but it&#x27;s kind of buried, honestly. It felt built for the person buying one taco on their lunch, not for me booking for thirty. Then …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t6">BB-INT020-t6<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Website. borderblend.ca. And — between you and me? That site is built for a twenty-four-year-old buying one taco on his lunch break. Not for me. I&#x27;m hunting for a &quot;catering&quot; or &quot;book us&quot; link and it&#x27;s tucked away like a state secret. I fill in a form, I wait, …”</span></a></div></li><li><a class="item-ref" id="PAIN-GRAC-0002" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">PAIN-GRAC-0002</a>Confirmations are too soft — a friendly "yep!" with an exclamation mark is not a booking she can forward to leadership, so she loses sleep the week before over not having the paper.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t10">BB-INT014-t10<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[pause] So this is my pet peeve. Which — okay, this is my pet peeve, so bear with me. I need a hard confirmation. Not &quot;sounds good!&quot; in an email. I need &quot;Nadia, we are confirmed for Thursday the whatever, arriving 11:30, here for ninety minutes, this is the tr…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t10">BB-INT020-t10<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Soft. Too soft. I got a &quot;yep, we&#x27;ve got you Thursday!&quot; — exclamation mark and everything. And look, the guy was lovely, but I can&#x27;t forward an exclamation mark to a partner. I need a proper confirmation. Date, arrival time, how long they&#x27;re parked, headcount l…”</span></a></div></li><li><a class="item-ref" id="PAIN-GRAC-0003" href="insights.html#INS-C11" title="Insight: When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.">PAIN-GRAC-0003</a>Allergen information isn't there at ingredient level — the menu says <span class="entity">Korean-style chicken taco</span> but not what's in the sauce, and the answer came back "let me check with the kitchen."<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C11">INS-C11<span class="tip"><span class="src">Insight · Accessibility</span>When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t14">BB-INT014-t14<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Right, so — this is where it gets fiddly. First I send out a form to the team, because I have to know: how many, and who can&#x27;t eat what. And here&#x27;s the thing, on a team of thirty you always have — you&#x27;ve got two or three vegetarians, you&#x27;ve got someone plant-b…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t16">BB-INT020-t16<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Not easily. That&#x27;s the gap. The menu tells me it&#x27;s a &quot;Korean-style chicken taco,&quot; lovely, but not whether there&#x27;s sesame in the sauce, or nuts, or what&#x27;s sharing a surface with what. I had to email and ask, and even then it was a bit &quot;let me check with the kit…”</span></a></div></li><li><a class="item-ref" id="PAIN-GRAC-0004" href="insights.html#INS-C08" title="Insight: Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.">PAIN-GRAC-0004</a>Invoicing is informal — it took a couple of asks to get an itemised PDF with tax broken out and a PO or matter reference, and a surprise number after the fact is a non-starter for pre-approval.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C08">INS-C08<span class="tip"><span class="src">Insight · Price &amp; value</span>Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t18">BB-INT014-t18<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so, expenses. I run these through the company, so I need a proper invoice. Itemised, GST broken out, our billing name and PO reference on it, emailed to me as a PDF. Not a — not a photo of a receipt, not a Square text link. Our finance team will bounce th…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t20">BB-INT020-t20<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Oh, this is my hill. Our accounts department is — how do I put this diplomatically — they are not a forgiving people. [laughs] I need a proper invoice. PDF. Itemised, HST broken out, the firm&#x27;s billing name, and the matter number or PO on it so I can bill it t…”</span></a></div></li><li><a class="item-ref" id="PAIN-GRAC-0005" href="insights.html#INS-B03" title="Insight: Seasonal drops are promoted nationally through app and social, but not every truck can execute them, so customers arrive for a promoted item that isn&#x27;t there — with no explanation on any channel.">PAIN-GRAC-0005</a>Stock runs first-come — brisket had sold out by early Saturday afternoon when she visited, and a sellout on a booked group order with a client watching is her nightmare.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-B03">INS-B03<span class="tip"><span class="src">Insight · Omnichannel</span>Seasonal drops are promoted nationally through app and social, but not every truck can execute them, so customers arrive for a promoted item that isn&#x27;t there — with no explanation on any channel.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t30">BB-INT014-t30<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Just — the sellout thing worries me for the big orders. When I went on my own that first time they&#x27;d sold out of brisket by early afternoon on a Saturday, which, great problem for them, but if that ever happened on a booked catering order for thirty people? Wi…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t26">BB-INT020-t26<span class="tip"><span class="src">BB-INT020 · Bianca</span>“A near-miss, yeah. Not BorderBlend — a different vendor, before them — but it&#x27;s why I&#x27;m the way I am. Big team lunch, I&#x27;d confirmed by email, I thought. Day of, the food shows forty minutes late, and short. Short by like eight orders. So I&#x27;ve got eight people,…”</span></a></div></li></ul></div><div class="section pain-points" id="fears-concerns"><h3><span class="section-icon">&#128561;</span> Fears and concerns</h3><ul><li><a class="item-ref" id="FEAR-GRAC-0001" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">FEAR-GRAC-0001</a>The vendor no-show repeating — standing in a lobby or a boardroom with a hungry executive team, explaining to a partner why there's no <span class="entity">lunch</span> for the client they're trying to keep.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t6">BB-INT014-t6<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[laughs] Okay, quick version — different vendor, not them. I booked a caterer for a client lunch, twenty-two people, big deal, our VP was hosting. Confirmed by email, I thought. The day of? Nothing. No truck, no van, no call. I&#x27;m standing in the lobby at 11:45…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t8">BB-INT020-t8<span class="tip"><span class="src">BB-INT020 · Bianca</span>“So the run-up is where I don&#x27;t sleep. [laughs] Here&#x27;s the scenario — Whitmore&#x27;s hosting a client, big file, the kind of client whose name is on buildings. Lunch is in our boardroom, thirty people, noon sharp. And the entire week before, one question is living …”</span></a></div></li><li><a class="item-ref" id="FEAR-GRAC-0002" href="insights.html#INS-B03" title="Insight: Seasonal drops are promoted nationally through app and social, but not every truck can execute them, so customers arrive for a promoted item that isn&#x27;t there — with no explanation on any channel.">FEAR-GRAC-0002</a>A brisket sellout on a booked catering order for thirty or forty, in front of a client — the near-miss all over again in a nicer outfit.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-B03">INS-B03<span class="tip"><span class="src">Insight · Omnichannel</span>Seasonal drops are promoted nationally through app and social, but not every truck can execute them, so customers arrive for a promoted item that isn&#x27;t there — with no explanation on any channel.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t30">BB-INT014-t30<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Just — the sellout thing worries me for the big orders. When I went on my own that first time they&#x27;d sold out of brisket by early afternoon on a Saturday, which, great problem for them, but if that ever happened on a booked catering order for thirty people? Wi…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t26">BB-INT020-t26<span class="tip"><span class="src">BB-INT020 · Bianca</span>“A near-miss, yeah. Not BorderBlend — a different vendor, before them — but it&#x27;s why I&#x27;m the way I am. Big team lunch, I&#x27;d confirmed by email, I thought. Day of, the food shows forty minutes late, and short. Short by like eight orders. So I&#x27;ve got eight people,…”</span></a></div></li><li><a class="item-ref" id="FEAR-GRAC-0003" href="insights.html#INS-C11" title="Insight: When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.">FEAR-GRAC-0003</a>An allergic reaction on her watch because the ingredient information she was given wasn't clear enough to trust.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C11">INS-C11<span class="tip"><span class="src">Insight · Accessibility</span>When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t14">BB-INT014-t14<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Right, so — this is where it gets fiddly. First I send out a form to the team, because I have to know: how many, and who can&#x27;t eat what. And here&#x27;s the thing, on a team of thirty you always have — you&#x27;ve got two or three vegetarians, you&#x27;ve got someone plant-b…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t18">BB-INT020-t18<span class="tip"><span class="src">BB-INT020 · Bianca</span>“It loses the whole booking. And it&#x27;s a shame, because the food&#x27;s better than the safe boring option I end up going with. But I&#x27;m not gambling a partner&#x27;s client&#x27;s airway to save eight dollars a head on nicer brisket. Make it easy for me to keep people safe and…”</span></a></div></li></ul></div><div class="two-col"><div class="section" id="emotional-triggers"><h3><span class="section-icon">&#128293;</span> Emotional decision triggers</h3><ul><li><a class="item-ref" id="ETRI-GRAC-0001" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">ETRI-GRAC-0001</a>The lingering dread from being burned once — a client <span class="entity">lunch</span> where the caterer never showed, or one that arrived short by eight orders in front of a senior associate.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t6">BB-INT014-t6<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[laughs] Okay, quick version — different vendor, not them. I booked a caterer for a client lunch, twenty-two people, big deal, our VP was hosting. Confirmed by email, I thought. The day of? Nothing. No truck, no van, no call. I&#x27;m standing in the lobby at 11:45…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t26">BB-INT020-t26<span class="tip"><span class="src">BB-INT020 · Bianca</span>“A near-miss, yeah. Not BorderBlend — a different vendor, before them — but it&#x27;s why I&#x27;m the way I am. Big team lunch, I&#x27;d confirmed by email, I thought. Day of, the food shows forty minutes late, and short. Short by like eight orders. So I&#x27;ve got eight people,…”</span></a></div></li><li><a class="item-ref" id="ETRI-GRAC-0002" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">ETRI-GRAC-0002</a>Not sleeping the week before a booking because she doesn't have a hard confirmation in hand.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t10">BB-INT014-t10<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[pause] So this is my pet peeve. Which — okay, this is my pet peeve, so bear with me. I need a hard confirmation. Not &quot;sounds good!&quot; in an email. I need &quot;Nadia, we are confirmed for Thursday the whatever, arriving 11:30, here for ninety minutes, this is the tr…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t8">BB-INT020-t8<span class="tip"><span class="src">BB-INT020 · Bianca</span>“So the run-up is where I don&#x27;t sleep. [laughs] Here&#x27;s the scenario — Whitmore&#x27;s hosting a client, big file, the kind of client whose name is on buildings. Lunch is in our boardroom, thirty people, noon sharp. And the entire week before, one question is living …”</span></a></div></li><li><a class="item-ref" id="ETRI-GRAC-0003" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">ETRI-GRAC-0003</a>Wanting to look competent and calm in front of the people who matter — everything comes back to whether she can trust it in front of her executives.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t30">BB-INT014-t30<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Just — the sellout thing worries me for the big orders. When I went on my own that first time they&#x27;d sold out of brisket by early afternoon on a Saturday, which, great problem for them, but if that ever happened on a booked catering order for thirty people? Wi…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t34">BB-INT020-t34<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Just — remember that when I book you, I&#x27;m not the customer. The partner&#x27;s the customer, the client&#x27;s the customer, and I&#x27;m the one whose neck is out if you drop the ball. So everything you do to make me look competent and calm in front of them, I feel that. Re…”</span></a></div></li></ul></div><div class="section" id="external-triggers"><h3><span class="section-icon">&#128202;</span> External decision triggers</h3><ul><li><a class="item-ref" id="XTRI-GRAC-0001" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">XTRI-GRAC-0001</a>The catering season opening — a well-timed "patio season's starting, here's the menu, here's how to lock a date" in April would land the booking.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t24">BB-INT014-t24<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Completely. Because right now I have to go remember they exist and go dig up the booking form every time. It&#x27;s all on me to initiate. Whereas if they came to me at the right moment — like, &quot;patio season&#x27;s starting, here&#x27;s our catering menu, here&#x27;s how to lock …”</span></a></div></li><li><a class="item-ref" id="XTRI-GRAC-0002" href="insights.html#INS-C02" title="Insight: Beyond the feeds, first contact comes through festivals, a trusted person&#x27;s recommendation, or sheer proximity — the human and physical discovery paths.">XTRI-GRAC-0002</a>A trusted rave sending her to try it — an engineer's "the brisket one, you have to," or a senior partner coming back from lunch and making it her problem.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C02">INS-C02<span class="tip"><span class="src">Insight · Discovery</span>Beyond the feeds, first contact comes through festivals, a trusted person&#x27;s recommendation, or sheer proximity — the human and physical discovery paths.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t2">BB-INT014-t2<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so — here&#x27;s the thing, I didn&#x27;t find them the way a normal person finds a taco truck. [laughs] I find everything through logistics. We had a team offsite last spring, downtown, and one of our engineers said &quot;there&#x27;s a truck that parks by the LRT, the bris…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t2">BB-INT020-t2<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Look — I don&#x27;t discover restaurants. Restaurants get assigned to me. [laughs] One of our senior partners, Whitmore, comes back from some lunch and goes &quot;Bianca, the brisket taco, find out if they cater, I want it for the closing dinner.&quot; That&#x27;s my discovery. A…”</span></a></div></li><li><a class="item-ref" id="XTRI-GRAC-0003" href="insights.html#INS-C08" title="Insight: Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.">XTRI-GRAC-0003</a>A finance or accounts bounce on an informal receipt, which forces her back into chasing a proper invoice.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C08">INS-C08<span class="tip"><span class="src">Insight · Price &amp; value</span>Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t18">BB-INT014-t18<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so, expenses. I run these through the company, so I need a proper invoice. Itemised, GST broken out, our billing name and PO reference on it, emailed to me as a PDF. Not a — not a photo of a receipt, not a Square text link. Our finance team will bounce th…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t20">BB-INT020-t20<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Oh, this is my hill. Our accounts department is — how do I put this diplomatically — they are not a forgiving people. [laughs] I need a proper invoice. PDF. Itemised, HST broken out, the firm&#x27;s billing name, and the matter number or PO on it so I can bill it t…”</span></a></div></li></ul></div></div><div class="section" id="decision-criteria"><h3><span class="section-icon">&#9878;</span> Key decision criteria</h3><ul><li><a class="item-ref" id="CRIT-GRAC-0001" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">CRIT-GRAC-0001</a>A confirmed, in-writing, forwardable booking with arrival time, duration, headcount and a named human's cell — plus a day-before reminder.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t10">BB-INT014-t10<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[pause] So this is my pet peeve. Which — okay, this is my pet peeve, so bear with me. I need a hard confirmation. Not &quot;sounds good!&quot; in an email. I need &quot;Nadia, we are confirmed for Thursday the whatever, arriving 11:30, here for ninety minutes, this is the tr…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t30">BB-INT020-t30<span class="tip"><span class="src">BB-INT020 · Bianca</span>“[laughs] Fine. One: a catering menu with the allergen sheet attached, so I can forward it to a client&#x27;s assistant and to accounts in one email and be done. That alone would make me love you. Two: how to book, with real availability — so I&#x27;m not doing the four-…”</span></a></div></li><li><a class="item-ref" id="CRIT-GRAC-0002" href="insights.html#INS-C11" title="Insight: When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.">CRIT-GRAC-0002</a>Ingredient-level allergen information she can hand to the team or a client; if she can't get a straight answer she books elsewhere, full stop.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C11">INS-C11<span class="tip"><span class="src">Insight · Accessibility</span>When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t16">BB-INT014-t16<span class="tip"><span class="src">BB-INT014 · Nadia</span>“It creates work and it creates risk. And when I can&#x27;t get a straight answer, honestly? Sometimes I just don&#x27;t book the thing. I&#x27;ll go with a vendor who has it all spelled out, because I&#x27;m not going to gamble on somebody&#x27;s airway to save a few dollars on nicer …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t18">BB-INT020-t18<span class="tip"><span class="src">BB-INT020 · Bianca</span>“It loses the whole booking. And it&#x27;s a shame, because the food&#x27;s better than the safe boring option I end up going with. But I&#x27;m not gambling a partner&#x27;s client&#x27;s airway to save eight dollars a head on nicer brisket. Make it easy for me to keep people safe and…”</span></a></div></li><li><a class="item-ref" id="CRIT-GRAC-0003" href="insights.html#INS-C08" title="Insight: Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.">CRIT-GRAC-0003</a>A proper itemised PDF invoice (tax broken out, billing name and PO or matter number) with the price agreed up front for pre-approval.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C08">INS-C08<span class="tip"><span class="src">Insight · Price &amp; value</span>Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t18">BB-INT014-t18<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so, expenses. I run these through the company, so I need a proper invoice. Itemised, GST broken out, our billing name and PO reference on it, emailed to me as a PDF. Not a — not a photo of a receipt, not a Square text link. Our finance team will bounce th…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t20">BB-INT020-t20<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Oh, this is my hill. Our accounts department is — how do I put this diplomatically — they are not a forgiving people. [laughs] I need a proper invoice. PDF. Itemised, HST broken out, the firm&#x27;s billing name, and the matter number or PO on it so I can bill it t…”</span></a></div></li><li><a class="item-ref" id="CRIT-GRAC-0004" href="insights.html#INS-B03" title="Insight: Seasonal drops are promoted nationally through app and social, but not every truck can execute them, so customers arrive for a promoted item that isn&#x27;t there — with no explanation on any channel.">CRIT-GRAC-0004</a>Ring-fenced, reserved, guaranteed stock for her count — not first-come — so a group order can't be sold out from under her.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-B03">INS-B03<span class="tip"><span class="src">Insight · Omnichannel</span>Seasonal drops are promoted nationally through app and social, but not every truck can execute them, so customers arrive for a promoted item that isn&#x27;t there — with no explanation on any channel.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t30">BB-INT014-t30<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Just — the sellout thing worries me for the big orders. When I went on my own that first time they&#x27;d sold out of brisket by early afternoon on a Saturday, which, great problem for them, but if that ever happened on a booked catering order for thirty people? Wi…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t26">BB-INT020-t26<span class="tip"><span class="src">BB-INT020 · Bianca</span>“A near-miss, yeah. Not BorderBlend — a different vendor, before them — but it&#x27;s why I&#x27;m the way I am. Big team lunch, I&#x27;d confirmed by email, I thought. Day of, the food shows forty minutes late, and short. Short by like eight orders. So I&#x27;ve got eight people,…”</span></a></div></li></ul></div><div class="section" id="tools-channels"><h3><span class="section-icon">&#128421;</span> Tools and channels</h3><ul class="channel-list"><li><span class="channel-number">1</span><span><a class="item-ref" id="CHAN-GRAC-0001" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">CHAN-GRAC-0001</a>A named human contact she can email and phone for the big bookings — a person who owns her booking, not a form or a "reply to this address."<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t8">BB-INT014-t8<span class="tip"><span class="src">BB-INT014 · Nadia</span>“So first I go to the website, borderblend.ca, and I&#x27;m looking for a catering page or a &quot;book us&quot; button. And it&#x27;s — it&#x27;s there, but it&#x27;s kind of buried, honestly. It felt built for the person buying one taco on their lunch, not for me booking for thirty. Then …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t30">BB-INT020-t30<span class="tip"><span class="src">BB-INT020 · Bianca</span>“[laughs] Fine. One: a catering menu with the allergen sheet attached, so I can forward it to a client&#x27;s assistant and to accounts in one email and be done. That alone would make me love you. Two: how to book, with real availability — so I&#x27;m not doing the four-…”</span></a></div></span></li><li><span class="channel-number">2</span><span><a class="item-ref" id="CHAN-GRAC-0002" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">CHAN-GRAC-0002</a>An operational <span class="entity">newsletter</span> she'd gladly subscribe to despite being a habitual unsubscriber — catering menu with allergen info attached to forward to team and finance in one shot, real availability, and seasonal open/close prompts.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t28">BB-INT014-t28<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Exactly. Talk to me like I&#x27;m running an operation, because I am. The person buying one taco wants your specials. I want your reliability. Give me the boring stuff — dates, allergens, invoicing, &quot;we confirm in writing&quot; — and I&#x27;m your best customer, because I&#x27;m …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t30">BB-INT020-t30<span class="tip"><span class="src">BB-INT020 · Bianca</span>“[laughs] Fine. One: a catering menu with the allergen sheet attached, so I can forward it to a client&#x27;s assistant and to accounts in one email and be done. That alone would make me love you. Two: how to book, with real availability — so I&#x27;m not doing the four-…”</span></a></div></span></li><li><span class="channel-number">3</span><span><a class="item-ref" id="CHAN-GRAC-0003" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">CHAN-GRAC-0003</a>A real booking system that issues a proper confirmation and a reminder the day before — the thing that would make her book constantly and stop stress-dreaming about empty rooms.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t28">BB-INT014-t28<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Exactly. Talk to me like I&#x27;m running an operation, because I am. The person buying one taco wants your specials. I want your reliability. Give me the boring stuff — dates, allergens, invoicing, &quot;we confirm in writing&quot; — and I&#x27;m your best customer, because I&#x27;m …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t30">BB-INT020-t30<span class="tip"><span class="src">BB-INT020 · Bianca</span>“[laughs] Fine. One: a catering menu with the allergen sheet attached, so I can forward it to a client&#x27;s assistant and to accounts in one email and be done. That alone would make me love you. Two: how to book, with real availability — so I&#x27;m not doing the four-…”</span></a></div></span></li><li><span class="channel-number">4</span><span><a class="item-ref" id="CHAN-GRAC-0004" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">CHAN-GRAC-0004</a>A clear catering page or "book us" front door on the website, easy to find for someone ordering for thirty rather than one taco.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t8">BB-INT014-t8<span class="tip"><span class="src">BB-INT014 · Nadia</span>“So first I go to the website, borderblend.ca, and I&#x27;m looking for a catering page or a &quot;book us&quot; button. And it&#x27;s — it&#x27;s there, but it&#x27;s kind of buried, honestly. It felt built for the person buying one taco on their lunch, not for me booking for thirty. Then …”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t6">BB-INT020-t6<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Website. borderblend.ca. And — between you and me? That site is built for a twenty-four-year-old buying one taco on his lunch break. Not for me. I&#x27;m hunting for a &quot;catering&quot; or &quot;book us&quot; link and it&#x27;s tucked away like a state secret. I fill in a form, I wait, …”</span></a></div></span></li><li><span class="channel-number">5</span><span><a class="item-ref" id="CHAN-GRAC-0005" href="insights.html#INS-C11" title="Insight: When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.">CHAN-GRAC-0005</a>A team dietary form she circulates herself to gather headcount and allergies before every order.<div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C11">INS-C11<span class="tip"><span class="src">Insight · Accessibility</span>When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t14">BB-INT014-t14<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Right, so — this is where it gets fiddly. First I send out a form to the team, because I have to know: how many, and who can&#x27;t eat what. And here&#x27;s the thing, on a team of thirty you always have — you&#x27;ve got two or three vegetarians, you&#x27;ve got someone plant-b…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t14">BB-INT020-t14<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Right, so this is the part that can actually hurt someone, so I don&#x27;t mess about. First I send a form round — headcount, and who can&#x27;t eat what. And on any group this size you&#x27;ve always got the same cast: two vegetarians, someone plant-based, someone doing ket…”</span></a></div></span></li></ul></div><div class="section" id="relationships"><h3><span class="section-icon">&#128101;</span> Relationships</h3><div class="relationship-block"><h4><a class="item-ref" id="RELT-GRAC-0001" href="insights.html#INS-C09" title="Insight: The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.">RELT-GRAC-0001</a>With her executives & the partners</h4><ul><li>Books the high-stakes client catering in front of the people the firm is trying to impress, so her own reputation rides on every order — she isn't the customer, the partner and the client are, and her neck is the one out.</li><li>Needs a confirmation solid enough to forward upward — "I'm not forwarding 'yep!' to leadership," and "I can't forward an exclamation mark to a partner."</li></ul><div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C09">INS-C09<span class="tip"><span class="src">Insight · Location &amp; app</span>The one question every hungry customer asks first — is this specific truck open right now, and exactly where — is also the moment BorderBlend most often loses them, and answering it reliably is the highest-return move available.</span></a> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t10">BB-INT014-t10<span class="tip"><span class="src">BB-INT014 · Nadia</span>“[pause] So this is my pet peeve. Which — okay, this is my pet peeve, so bear with me. I need a hard confirmation. Not &quot;sounds good!&quot; in an email. I need &quot;Nadia, we are confirmed for Thursday the whatever, arriving 11:30, here for ninety minutes, this is the tr…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t34">BB-INT020-t34<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Just — remember that when I book you, I&#x27;m not the customer. The partner&#x27;s the customer, the client&#x27;s the customer, and I&#x27;m the one whose neck is out if you drop the ball. So everything you do to make me look competent and calm in front of them, I feel that. Re…”</span></a></div></div><div class="relationship-block"><h4><a class="item-ref" id="RELT-GRAC-0002" href="insights.html#INS-C04" title="Insight: Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.">RELT-GRAC-0002</a>With her ~30-person team</h4><ul><li>Runs the morale <span class="entity">lunch</span>es and monthly team feeds, and collects everyone's headcount and dietary needs via a form.</li><li>Protects the colleague with a genuine EpiPen tree-nut allergy — she needs ingredient-level answers in writing so he can decide for himself.</li></ul><div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C04">INS-C04<span class="tip"><span class="src">Insight · Occasion</span>Weekday professionals treat BorderBlend as a time-constrained, often group, lunch decision where reliability beats novelty.</span></a> <a class="evref insid" href="insights.html#INS-C11">INS-C11<span class="tip"><span class="src">Insight · Accessibility</span>When allergen information is easy to find, BorderBlend earns not just the individual allergy sufferer but the careful planners — parents and office orderers — who won&#x27;t risk a group on a vendor that can&#x27;t answer plainly.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t14">BB-INT014-t14<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Right, so — this is where it gets fiddly. First I send out a form to the team, because I have to know: how many, and who can&#x27;t eat what. And here&#x27;s the thing, on a team of thirty you always have — you&#x27;ve got two or three vegetarians, you&#x27;ve got someone plant-b…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t14">BB-INT020-t14<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Right, so this is the part that can actually hurt someone, so I don&#x27;t mess about. First I send a form round — headcount, and who can&#x27;t eat what. And on any group this size you&#x27;ve always got the same cast: two vegetarians, someone plant-based, someone doing ket…”</span></a></div></div><div class="relationship-block"><h4><a class="item-ref" id="RELT-GRAC-0003" href="insights.html#INS-C14" title="Insight: Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.">RELT-GRAC-0003</a>With the local operator, Accounts Payable & the EA network</h4><ul><li>Plans directly with the local operator ("lovely guy") over email and a call, and would happily give him more business year-round — and route half the network his way, because the EAs all talk.</li><li>Has to satisfy finance with an itemised PDF invoice — tax broken out, billing name and PO — or it bounces straight back to her.</li></ul><div class="evidence"><span class="lbl">Insight →</span> <a class="evref insid" href="insights.html#INS-C14">INS-C14<span class="tip"><span class="src">Insight · Loyalty &amp; subscription</span>Professionals and office orderers will opt in gladly — even the habitual unsubscribers — but only for operational signal: &quot;the truck is here today,&quot; confirmed catering bookings, and clean invoicing, not brand-story content.</span></a> <a class="evref insid" href="insights.html#INS-C08">INS-C08<span class="tip"><span class="src">Insight · Price &amp; value</span>Repeat customers are noticing prices creep toward a personal ceiling where BorderBlend stops feeling like great-value street food.</span></a>  <span class="lbl">Verbatim →</span> <a class="evref" href="sources/BB-INT014.html#BB-INT014-t18">BB-INT014-t18<span class="tip"><span class="src">BB-INT014 · Nadia</span>“Okay so, expenses. I run these through the company, so I need a proper invoice. Itemised, GST broken out, our billing name and PO reference on it, emailed to me as a PDF. Not a — not a photo of a receipt, not a Square text link. Our finance team will bounce th…”</span></a> <a class="evref" href="sources/BB-INT020.html#BB-INT020-t32">BB-INT020-t32<span class="tip"><span class="src">BB-INT020 · Bianca</span>“Exactly. And look — I want to give you more business, that&#x27;s the frustrating part. I&#x27;m not a hard sell, I&#x27;m a warm lead you&#x27;re making work too hard. The food&#x27;s good enough that I want you to be my default for every event this firm throws. But you&#x27;ve got to mak…”</span></a></div></div></div>
+</main>
+<footer class="page-footer"><div>Prepared by: ucLoops UX Assistant | Urbina Consulting — BorderBlend (synthetic)</div></footer>
+<script>function toggleProv(btn){var on=document.body.classList.toggle('prov-hidden');btn.innerHTML=on?'Show Item IDs &amp; Provenance':'Hide Item IDs &amp; Provenance';}
+document.addEventListener('DOMContentLoaded',function(){function f(){var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(decodeURIComponent(h));if(el){el.style.transition='background 1.5s';el.style.background='#fff3c9';setTimeout(function(){el.style.background='';},1500);el.scrollIntoView({block:'center'});}}window.addEventListener('hashchange',f);f();});</script>
+<script>
+/* Chrome sizing. The chrome is sticky and therefore in normal flow, so nothing
+   needs padding reserved for it. --chrome-h is still published because the
+   journey-map container sizes itself against it. */
+(function(){
+  var KEY="ucPromoDismissed";
+  function fit(){
+    var c=document.querySelector(".uc-chrome");
+    var h=c?c.offsetHeight:0;
+    document.documentElement.style.setProperty("--chrome-h",h+"px");
+  }
+  window.ucFitChrome=fit;
+  window.ucCloseBanner=function(){
+    document.documentElement.classList.add("uc-promo-hidden");
+    try{localStorage.setItem(KEY,"1");}catch(e){}
+    fit();
+  };
+  fit();
+  window.addEventListener("load",fit);
+  window.addEventListener("resize",fit);
+  /* The banner's height depends on how the copy wraps, which web fonts change
+     after first paint. Without this the reserved space can be stale. */
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+})();
+</script>
+<script>
+/* Publish half the *content* viewport width so the full-bleed margins land
+   exactly on the visible edges. clientWidth excludes the scrollbar; the vw unit
+   does not, and that difference is enough to raise a horizontal scrollbar. */
+(function(){
+  function setHalfVw(){
+    document.documentElement.style.setProperty(
+      "--half-vw", (document.documentElement.clientWidth / 2) + "px");
+  }
+  setHalfVw();
+  window.addEventListener("resize", setHalfVw);
+  window.addEventListener("load", setHalfVw);
+})();
+</script>
+</body></html>
+<!-- uc-chrome -->
+
+<!-- uc-persona-sim -->

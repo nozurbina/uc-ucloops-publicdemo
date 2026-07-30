@@ -5,6 +5,7 @@
   "role": "Business Lunch — office manager & catering coordinator · Calgary · 41",
   "initials": "G",
   "agent": "grace",
+  "archetype": "business-lunch",
   "sections": [
     {
       "type": "DEMO",

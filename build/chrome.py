@@ -35,7 +35,14 @@ import pathlib
 HERE = pathlib.Path(__file__).resolve().parent
 LOGO = HERE / "assets" / "2023-uc-logo-outline.svg"
 
-# Shown in the sticky bar on every page of the site.
+# The sticky bar's back link. Kept short deliberately — the AI-projects viewer
+# reads this element's textContent as the label for the *parent* page's toolbar
+# ("Back to <label>"), and it has to survive a phone-width bar. The arrow is CSS
+# (`.sb-home::before`), not markup, so it stays out of that textContent.
+BACK_LABEL = "Evidence Map"
+
+# Site name, for the index's own <title> and the archive pages that have no better
+# label of their own.
 SITE_TITLE = "BorderBlend Evidence Map"
 
 PROMO_URL = "https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/"
@@ -82,22 +89,31 @@ def banner():
     )
 
 
-def sticky_bar(home="index.html", label=SITE_TITLE, toggle=True):
-    """The dark bar under the banner: back-to-index link + provenance toggle.
+def sticky_bar(home="index.html", page_title="", toggle=True):
+    """The dark bar under the banner: back link, where you are, provenance toggle.
 
-    Arrow and label sit *inside* the link — the whole bar's left half is the way
-    home, which is why `.sb-home` is the flex row and `.sb-title` no longer
-    positions itself. `toggle=False` for pages with nothing to fold away.
+    The two texts are deliberately different things, because the viewer maps them
+    onto separate slots in the parent page's toolbar:
 
-    Lives here rather than in build.py because the v3 renderers emit it too, and
-    when they each had their own copy the two drifted apart.
+        <a class="sb-home">   -> "Back to {this}"   (BACK_LABEL, short)
+        <span class="sb-title"> -> the toolbar title (this page)
+
+    They used to be the same string, nested — so the toolbar read
+    "←BorderBlend Evidence Map   BorderBlend Evidence Map" and told you nothing
+    about where you were. Keep the page's own name in `page_title`.
+
+    `toggle=False` for pages with nothing to fold away. Lives here rather than in
+    build.py because the v3 renderers emit it too, and when they each had their own
+    copy the two drifted apart.
     """
     btn = ('<button class="provtoggle" onclick="toggleProv(this)">'
            'Show Item IDs &amp; Provenance</button>') if toggle else ''
     esc = lambda s: html.escape(str(s), quote=True)
+    title = (f'<span class="sb-title">{esc(page_title)}</span>'
+             if page_title else '')
     return (f'<div class="stickybar"><a class="sb-home" href="{home}" '
-            f'title="{esc(label)}"><span class="sb-arrow">←</span>'
-            f'<span class="sb-title">{esc(label)}</span></a>{btn}</div>')
+            f'title="Back to the {esc(BACK_LABEL)}">{esc(BACK_LABEL)}</a>'
+            f'{title}{btn}</div>')
 
 
 def chrome(bar=""):

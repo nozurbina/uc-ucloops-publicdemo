@@ -16,6 +16,7 @@ Design rules enforced here:
 import json, re, html, os, pathlib
 
 import chrome   # shared top chrome (promo banner + sticky bar); see chrome.py
+import naming   # output filenames for persona pages; see naming.py
 import styles   # the composed stylesheet; see styles.py
 
 # Everything this needs lives in the repo, so paths are relative to this file.
@@ -153,7 +154,7 @@ def md_blocks(md, row_anchor_prefix=None, row_counter=None):
 def css():
     return styles.stylesheet()
 
-def page(title, body, rel="", extra_head="", body_class="", prov=False, bar=None):
+def page(title, body, rel="", extra_head="", body_class="", prov=False, bar=None, bar_title=""):
     """Full page. The top chrome (promo banner + sticky bar) is emitted here for
     every page — see chrome.py; it used to be bolted on by postbuild patches, which
     is what made the site un-rebuildable.
@@ -168,7 +169,10 @@ def page(title, body, rel="", extra_head="", body_class="", prov=False, bar=None
     if prov:
         body_class = (body_class + " prov-hidden").strip()
     if show_bar:
-        bar_html = chrome.sticky_bar(home=f'{rel}index.html', toggle=prov)
+        # bar_title is what the page IS, not what the site is — the viewer puts it
+        # in the parent toolbar next to a "Back to Evidence Map" link.
+        bar_html = chrome.sticky_bar(home=f'{rel}index.html',
+                                    page_title=bar_title or title, toggle=prov)
     return f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{esc(title)}</title>
@@ -275,7 +279,8 @@ def render_transcript(tid, meta, secs, turns):
 </section>
 <section class="notes"><h2>Post-interview notes</h2>{post}</section>
 """
-    (SRC_OUT / f'{tid}.html').write_text(page(f'{tid} — {meta.get("Participant","")}', body, body_class="srcpage", prov=True, rel="../"), encoding='utf-8')
+    (SRC_OUT / f'{tid}.html').write_text(page(f'{tid} — {meta.get("Participant","")}', body, body_class="srcpage", prov=True, rel="../",
+                                          bar_title=f'Source · {tid}'), encoding='utf-8')
 
 # ───────────────────────── dataset: card-style (social, tickets) ─────────────
 def parse_card_dataset(path, key, id_from_heading, kind, title, kicker):
@@ -316,7 +321,8 @@ def parse_card_dataset(path, key, id_from_heading, kind, title, kicker):
 <section class="cards">{''.join(cardhtml)}</section>
 {('<section class="notes">'+tail+'</section>') if tail else ''}
 """
-    (SRC_OUT / f'{key}.html').write_text(page(title, body, body_class="srcpage", prov=True, rel="../"), encoding='utf-8')
+    (SRC_OUT / f'{key}.html').write_text(page(title, body, body_class="srcpage", prov=True, rel="../",
+                                              bar_title=f'Source · {key}'), encoding='utf-8')
 
 # ───────────────────────── dataset: doc-style (applogs, factsheet) ─────────────
 def render_doc_source(path, key, kind, title, kicker, row_prefix=None):
@@ -335,7 +341,8 @@ def render_doc_source(path, key, kind, title, kicker, row_prefix=None):
 <section class="doc">{hhtml}</section>"""
     is_ctx = kind == 'factsheet'
     (SRC_OUT / f'{key}.html').write_text(page(title, body, body_class="srcpage",
-                                             prov=not is_ctx, bar=True, rel="../"), encoding='utf-8')
+                                             prov=not is_ctx, bar=True, rel="../",
+                                             bar_title=f'Source · {key}'), encoding='utf-8')
 
 # ───────────────────────── market research (claim anchors) ─────────────
 def render_market(path, key='MRKT'):
@@ -380,7 +387,8 @@ def render_market(path, key='MRKT'):
 <p class="hint">Tagged claims (MR-C##) and references (MR-REF##) are individually addressable — downstream insights link straight to the specific claim.</p></header>
 <section class="doc market">{hhtml}{refs_html}</section>"""
     (SRC_OUT / f'{key}.html').write_text(page('Market research — BorderBlend', body, body_class="srcpage",
-                                             prov=False, bar=True, rel="../"), encoding='utf-8')
+                                             prov=False, bar=True, rel="../",
+                                             bar_title=f'Source · {key}'), encoding='utf-8')
 
 # ───────────────────────── heading helpers for datasets ─────────────
 def social_id(h):
@@ -514,7 +522,8 @@ def render_insights():
 </header>
 <section class="insights">{''.join(card(i) for i in data)}</section>
 """
-    (SITE/'insights.html').write_text(page('BorderBlend — Insights', body, body_class='docwrap', extra_head=INSIGHT_JS, prov=True), encoding='utf-8')
+    (SITE/'insights.html').write_text(page('BorderBlend — Insights', body, body_class='docwrap', extra_head=INSIGHT_JS, prov=True,
+                                          bar_title='Insights'), encoding='utf-8')
     print(f'  insights: {len(data)}')
 
 INSIGHT_JS = """<script>document.addEventListener('DOMContentLoaded',function(){
@@ -587,7 +596,9 @@ def render_one_persona(p):
 {srcline}
 <div class="two-col">{''.join(blocks)}</div>
 """
-    (SITE/f'persona-{slug}.html').write_text(page(f'Persona — {p.get("name",slug)}', body, body_class='docwrap'), encoding='utf-8')
+    (SITE/naming.persona_v1_page(slug)).write_text(
+        page(f'Persona — {p.get("name",slug)}', body, body_class='docwrap',
+             bar_title=f'Persona · {p.get("name",slug)} (v1)'), encoding='utf-8')
 
 def slug_short(t):
     return re.sub(r'[^a-z0-9]+','-', t.lower()).strip('-')[:18]
@@ -633,7 +644,7 @@ def render_one_journey(j):
             parts.append(f'<div class="stagecell" id="{cid}">{inner}</div>')
     grid = f'<div class="jgrid" style="{colcss}">' + ''.join(parts) + '</div>'
     persona = PERSONAS.get(j.get('persona'),{})
-    plink = (f'<a href="persona-{j["persona"]}.html">{esc(persona.get("name",j.get("persona","")))}</a>'
+    plink = (f'<a href="{naming.persona_v1_page(j["persona"])}">{esc(persona.get("name",j.get("persona","")))}</a>'
              if j.get('persona') else '')
     body = f"""
 <header class="srchead"><div class="kicker">Journey map · <a class="idbadge" id="{jid}" href="#{jid}">{jid}</a></div>
@@ -675,17 +686,17 @@ def render_index(insights, personas, journeys):
                     tile('journey-map-business-lunch-v3.html','🗺️ Business Lunch journey',
                          'Personas: Omar + Grace (multi-persona) · Focus / Remove, catering stage, verbatim references')])
     v3pers = tiles([
-        tile('persona-late-night-foodie-v3.html','🌮 Mateo','Late-Night Foodie — nightlife service worker, Toronto'),
-        tile('persona-omar-v3.html','💼 Omar','Business Lunch — solo financial-district professional, Toronto'),
-        tile('persona-grace-v3.html','💼 Grace','Business Lunch — office manager & catering coordinator, Calgary'),
-        tile('persona-everyday-20s-v3.html','🍽️ Tyler','Everyday 20-something — convenience-first eater, Vancouver'),
-        tile('persona-franchisee-v3.html','🚚 Diego','Franchisee / Operator — multi-truck veteran archetype'),
+        tile(naming.v3_page('mateo'),'🌮 Mateo','Late-Night Foodie — nightlife service worker, Toronto'),
+        tile(naming.v3_page('omar'),'💼 Omar','Business Lunch — solo financial-district professional, Toronto'),
+        tile(naming.v3_page('grace'),'💼 Grace','Business Lunch — office manager & catering coordinator, Calgary'),
+        tile(naming.v3_page('tyler'),'🍽️ Tyler','Everyday 20-something — convenience-first eater, Vancouver'),
+        tile(naming.v3_page('diego'),'🚚 Diego','Franchisee / Operator — multi-truck veteran archetype'),
     ])
     earlier = tiles(
         [f'<a class="tile" href="journey-{j["slug"]}.html"><h3>🗺️ {esc(j.get("title",j["slug"]))} <span class="cat">v1</span></h3><p>first draft</p></a>' for j in journeys]
         + [f'<a class="tile" href="{fn}"><h3>🗺️ {esc(t)} <span class="cat">v2</span></h3><p>pre-restyle</p></a>' for fn,t in [
             ('journey-map-late-night-v2.html','Late-Night Foodie'),('journey-map-business-lunch-v2.html','Business Lunch')]]
-        + [f'<a class="tile" href="persona-{p["slug"]}.html"><h3>{p.get("emoji","🌮")} {esc(p.get("name",p["slug"]))} <span class="cat">v1 persona</span></h3><p>superseded</p></a>' for p in personas])
+        + [f'<a class="tile" href="{naming.persona_v1_page(p["slug"])}"><h3>{p.get("emoji","🌮")} {esc(p.get("name",p["slug"]))} <span class="cat">v1 persona</span></h3><p>superseded</p></a>' for p in personas])
     fact_href = SOURCES.get('FACT',{}).get('html','sources/FACT.html')
     mrkt = SOURCES.get('MRKT',{})
     # Own grid class, not .grid: two tiles of very different copy length, and the
@@ -703,7 +714,7 @@ def render_index(insights, personas, journeys):
 <p>This is a demo of Urbina Consulting ucLoops.</p>
 </header>
 <div class="overview"><strong>How this was created:</strong> ucLoops is a method you can use in the AI tools of your choice (Claude, ChatGPT, Grok, etc) that lets you ingest data sources like interviews, analytics, support tickets, existing persona/journey research, and more, and output richly linked, living deliverables. Everything you see here can be (re)built to your own templates for strategy, personas, journeys, and the rest.<br/><br/>
-<strong>How to use this demo:</strong> Click around the <a href="journey-map-late-night-v3.html">journey maps</a>, <a href="persona-late-night-foodie-v3.html">personas</a>, and <a href="insights.html">insights</a>, and click the <span class="evref">Show Item IDs and Provenance</span> buttons (top right). Each section will show what it draws on, linking all the way back to the exact <span class="evref">verbatim</span> lines in a transcript, dataset row, pain point, or market-report claim.<br/><br/><strong>How to have some <i>real</i> fun:</strong> You can chat live with the <a href="https://urbinaconsulting.com/ai/synthetic-users-vs-persona-simulations/">Persona Simulations</a> used to create these materials by clicking over to the <a href="https://ucloops-demo-v1.vercel.app/">interactive demo app</a>.</div>
+<strong>How to use this demo:</strong> Click around the <a href="journey-map-late-night-v3.html">journey maps</a>, <a href="{naming.v3_page('mateo')}">personas</a>, and <a href="insights.html">insights</a>, and click the <span class="evref">Show Item IDs and Provenance</span> buttons (top right). Each section will show what it draws on, linking all the way back to the exact <span class="evref">verbatim</span> lines in a transcript, dataset row, pain point, or market-report claim.<br/><br/><strong>How to have some <i>real</i> fun:</strong> You can chat live with the <a href="https://urbinaconsulting.com/ai/synthetic-users-vs-persona-simulations/">Persona Simulations</a> used to create these materials by clicking over to the <a href="https://ucloops-demo-v1.vercel.app/">interactive demo app</a>.</div>
 <div class="sec-title">Organisational Context</div>
 <div class="overview">
 <h2>Project Overview</h2>
@@ -721,11 +732,38 @@ def render_index(insights, personas, journeys):
 """
     (SITE/'index.html').write_text(page('BorderBlend — Evidence Map', body, body_class='docwrap'), encoding='utf-8')
 
+def render_legacy_redirects():
+    """A stub at every persona URL that used to be live, pointing at its new name.
+
+    The persona pages were renamed to `pers-<person>-<archetype>-v<n>.html`; these
+    were public URLs, and the companion app hardcoded five of them. A stub costs
+    ~1KB and means nothing that already links to one breaks. They are generated, so
+    when the old names have been dead long enough, empty `naming.LEGACY` and they
+    disappear on the next build.
+
+    Meta refresh *and* a visible link: the refresh does the work, the link is what
+    check_links.py can see, and it's the fallback if a viewer blocks the refresh.
+    """
+    for old, new in naming.LEGACY.items():
+        body = f"""
+<header class="srchead"><div class="kicker">Moved</div>
+<h1>This page has a new address</h1>
+<p>It is now at <a href="{new}">{new}</a>. Redirecting…</p></header>
+"""
+        head = (f'<meta http-equiv="refresh" content="0;url={new}">'
+                f'<link rel="canonical" href="{new}">')
+        (SITE/old).write_text(page('Moved — BorderBlend evidence map', body,
+                                   body_class='docwrap', extra_head=head), encoding='utf-8')
+    return len(naming.LEGACY)
+
+
 def pass_b():
     render_insights()
     personas = render_personas()
     journeys = render_journeys()
     render_index(list(INSIGHTS.values()), personas, journeys)
+    n = render_legacy_redirects()
+    if n: print(f'  legacy redirects: {n}')
     if WARN:
         print(f'  WARNINGS ({len(WARN)}):')
         for w in WARN[:40]: print('   -', w)

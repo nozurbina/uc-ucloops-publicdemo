@@ -18,17 +18,32 @@ a:hover{text-decoration:underline}
 .stickybar{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:.6rem;
   background:#2c3e50;color:#fff;padding:.4rem .7rem;border-radius:0 0 10px 10px;
   box-shadow:0 3px 10px rgba(0,0,0,.18);margin:0 0 1rem}
-.stickybar .sb-home{color:#cdd7e0;text-decoration:none;font-size:1rem;flex:1;min-width:0;display:flex;align-items:center;gap:.4rem}
+/* The arrow is CSS, not markup, on purpose: the viewer uses this link's
+   textContent as the parent toolbar's back label, and an arrow character in there
+   comes out as "←Evidence Map" next to the title. See chrome.py. */
+.stickybar .sb-home{color:#cdd7e0;text-decoration:none;font-size:.82rem;font-weight:600;
+  flex-shrink:0;display:flex;align-items:center;gap:.35rem;white-space:nowrap}
+.stickybar .sb-home::before{content:"←";font-size:1rem;line-height:1}
 .stickybar .sb-home:hover{color:#fff;text-decoration:none}
-.stickybar .sb-arrow{display:inline-block}
-.stickybar .sb-title{flex:1;font-weight:600;font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Where you are. Takes the slack, and is the first thing to ellipsis on a phone. */
+.stickybar .sb-title{flex:1;min-width:0;font-weight:600;font-size:.82rem;opacity:.85;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .stickybar .sb-kicker{font-weight:400;opacity:.7;font-size:.72rem;margin-right:.35rem}
+@media(max-width:520px){
+  /* Below this the bar is back link + button only; the page name is the thing you
+     can afford to lose, since the page itself says it in the <h1>. */
+  .stickybar .sb-title{display:none}
+}
 /* "Show Item IDs & Provenance" toggle */
 .provtoggle{background:#f59e0b;color:#2c3e50;border:none;border-radius:6px;padding:.32rem .7rem;
   font-size:.74rem;font-weight:700;cursor:pointer;margin:0;flex-shrink:0;white-space:nowrap}
 .provtoggle:hover{background:#e08e1e;text-decoration:none}
 body.prov-hidden .idbadge,body.prov-hidden .item-ref,body.prov-hidden .evidence,
 body.prov-hidden .prov-link,body.prov-hidden .reflist .idbadge{display:none}
+/* An insight's own ID is not provenance — it is the insight's name, and it is what
+   every journey cell and persona line cites. It stays visible with the toggle off;
+   what the toggle folds away on this page is the evidence underneath. */
+body.prov-hidden article.insight > h3 .idbadge{display:inline-block}
 
 /* layout wrappers */
 .srcpage{max-width:64rem;margin:0 auto;padding:1.5rem 1.25rem 5rem}

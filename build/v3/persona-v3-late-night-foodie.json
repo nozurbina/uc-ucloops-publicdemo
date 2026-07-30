@@ -5,6 +5,7 @@
   "role": "Late-Night Foodie — nightlife service worker · Toronto · 26",
   "initials": "M",
   "agent": "mateo",
+  "archetype": "late-night-foodie",
   "sections": [
     {
       "type": "DEMO",

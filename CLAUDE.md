@@ -15,6 +15,7 @@ site/     the published artifact - the publisher is pointed HERE, not at the rep
 build/    everything that produces it (self-contained; no outside dependencies)
             build.py            generator
             chrome.py           shared top chrome (promo banner + sticky bar)
+            naming.py           persona page filenames + legacy redirect map
             styles.py           composes the one stylesheet from assets/
             source-data/        27 synthetic .md sources
             data/               working JSON + anchor index
@@ -38,11 +39,12 @@ what it changed. Fixes belong in `build.py`, `chrome.py`, `assets/*.css`, or
 
 ```sh
 cd build          # SITE defaults to ../site; BORDERBLEND_SITE overrides it
-python build.py --full                          # 35 files
+python build.py --full                          # 44 files (35 + 9 legacy redirect stubs)
 python v3/render_personas_v3.py                 # the 5 v3 persona pages
+python postbuild/journey-chrome.py    ../site   # journey maps: chrome, toggle, persona relink
 python postbuild/mobile-journey.py    ../site   # journey maps only
-python postbuild/persona-sim-links.py ../site   # after the v3 renderer, which rewrites its targets
-python check_links.py                           # 6,461 links, expect 0 broken
+python postbuild/persona-sim-links.py ../site   # last: needs the relinked hrefs and the fresh v3 pages
+python check_links.py                           # 6,479 links, expect 0 broken
 ```
 
 A clean rebuild reproduces `site/` exactly - that is the acceptance test, and it was
@@ -106,7 +108,7 @@ language — nothing has changed yet.
   or victim tone. Re-read this before generating any content.
 - **Don't break the evidence chain.** Every ID is a link; every link targets a
   specific `#anchor`, never a page top; trails resolve persona → insight →
-  dated verbatim. `check_links.py` validates it (last run 2026-07-30: 6,461 links, 0 broken).
+  dated verbatim. `check_links.py` validates it (last run 2026-07-30: 6,479 links, 0 broken).
 
 ## Companion app
 
@@ -121,6 +123,16 @@ in a new tab so they don't replace the viewer iframe. Source lives at
 - Mobile breakpoint is **859px** throughout.
 - The top chrome comes from `build/chrome.py` and its CSS from
   `build/assets/chrome.css`. One sticky wrapper, banner then bar, on every page.
+- **The viewer reads our sticky bar to build the parent page's toolbar.** It takes
+  the back link's `textContent` as the "Back to X" label and `.sb-title`'s as the
+  toolbar title, and its toggle button calls `window.toggleProv(button)` in the
+  frame — falling back to flipping `body.prov-hidden`. So: keep the back label
+  short and free of the arrow (the arrow is `::before`), put the *page's* name in
+  `.sb-title`, and define `toggleProv` on any page whose provenance works some
+  other way. The journey maps didn't, which is why their toggle was dead live and
+  fine locally.
+- Persona pages are `pers-<person>-<archetype>-v<n>.html`, from `build/naming.py`.
+  Old names still resolve via generated redirect stubs.
 - Body classes vary (`srcpage`, `docwrap`, `jny-wrap`, `prov-hidden`) — match
   `<body\b[^>]*>`, never a literal `<body>`.
 - Journey sidebar persona cards carry `data-persona="personaN"` and link to their

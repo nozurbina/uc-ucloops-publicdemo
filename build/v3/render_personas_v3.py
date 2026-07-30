@@ -17,6 +17,7 @@ SITE = pathlib.Path(os.environ.get("BORDERBLEND_SITE") or (ROOT / "site"))
 
 sys.path.insert(0, str(HERE.parent))
 import chrome   # the shared top chrome — same markup build.py emits
+import naming   # output filenames for persona pages
 import styles   # the same composed stylesheet build.py inlines
 
 CSS = styles.stylesheet()
@@ -181,7 +182,7 @@ a.item-ref{{text-decoration:none;cursor:pointer}}a.item-ref:hover{{outline:1px s
 .trail-note .tn{{background:#fff8ef;border:1px solid #f3c9ad;border-radius:10px;padding:.6rem .9rem;font-size:.82rem;color:#7a4b2a}}
 .persona-topbar .provtoggle{{float:right}}
 </style></head><body class="prov-hidden">
-{chrome.EARLY}{chrome.chrome(chrome.sticky_bar())}
+{chrome.EARLY}{chrome.chrome(chrome.sticky_bar(page_title=f"Persona · {esc(persona['name'])}"))}
 <header class="page-header">
 <h1>Persona Profile</h1>
 <div class="avatar-wrapper">{headshot}<div class="initials">{esc(persona['initials'])}</div></div>
@@ -198,13 +199,15 @@ document.addEventListener('DOMContentLoaded',function(){{function f(){{var h=loc
 {chrome.SCRIPTS}</body></html>
 {chrome.MARKER}
 """
-    (SITE / f"persona-{slug}-v3.html").write_text(doc, encoding="utf-8")
-    return slug, sum(counters.values())
+    # pers-<person>-<archetype>-v3.html — see naming.py for why both halves.
+    out = naming.persona_page(persona["agent"], persona["archetype"])
+    (SITE / out).write_text(doc, encoding="utf-8")
+    return out, sum(counters.values())
 
 if __name__ == "__main__":
     import glob
     for f in sorted(glob.glob(str(HERE/"persona-v3-*.json"))):
         p = json.loads(pathlib.Path(f).read_text(encoding="utf-8"))
         out_slug = pathlib.Path(f).stem.replace("persona-v3-", "")
-        slug, n = render(p, out_slug)
-        print(f"persona-{slug}-v3.html  ({n} item-refs)")
+        out, n = render(p, out_slug)
+        print(f"{out}  ({n} item-refs)")

@@ -72,17 +72,20 @@ pointing at it, that is a bug.
 
 ```sh
 cd build          # SITE defaults to ../site; BORDERBLEND_SITE overrides it
-python build.py --full                          # 35 files: sources, insights, v1 personas/journeys, index
+python build.py --full                          # 44 files: sources, insights, v1 personas/journeys, index, 9 redirect stubs
 python v3/render_personas_v3.py                 # 5 files: the v3 persona pages
+python postbuild/journey-chrome.py    ../site   # journey maps: chrome, provenance toggle, persona relink
 python postbuild/mobile-journey.py    ../site   # journey maps only
 python postbuild/persona-sim-links.py ../site   # journey maps + v3 persona pages
-python check_links.py                           # 6,461 internal links, expect 0 broken
+python check_links.py                           # 6,479 internal links, expect 0 broken
 ```
 
-Both postbuild scripts are idempotent (markers `uc-mobile-drawer`,
-`uc-persona-sim`), so re-running is safe and a partial run can be resumed. Order is
-no longer load-bearing between them; `persona-sim-links` must run *after* the v3
-persona renderer, because that renderer rewrites those five files.
+All three postbuild scripts are idempotent (markers `uc-journey-chrome`,
+`uc-journey-perslinks`, `uc-mobile-drawer`, `uc-persona-sim`), so re-running is safe
+and a partial run can be resumed. Two ordering constraints:
+`persona-sim-links` runs **last** — it needs the v3 renderer's fresh pages (it
+rewrites those five files) and `journey-chrome`'s relinked hrefs, because it finds
+each sidebar card's agent by looking for a known persona filename inside the card.
 
 **Four of the 44 files have no generator**: `journey-map-{late-night,business-lunch}-{v2,v3}.html`.
 They were authored on `journey-map-template.html` through the ucLoops prompt chain
@@ -147,6 +150,37 @@ Credentials are DPAPI-encrypted per Windows user in
 If you see `rest_forbidden` / 401, the stored application password is wrong. If you
 see DPAPI "Key not valid for use in specified state", the credential needs
 re-encrypting via `setup-publisher.ps1` (interactive — the user must run it).
+
+## 4b. The viewer's contract with our sticky bar
+
+Worth knowing before you touch `.stickybar`, because three separate bugs came out of
+not knowing it. The plugin injects a script into every page it serves
+(`wp-content/plugins/ai-projects/assets/project-frame.js` + a per-page inline
+block); it hides our bar and rebuilds it in the parent page from these three reads:
+
+| Parent toolbar slot | Read from |
+|---|---|
+| "Back to X" link | `.stickybar a` → its **`textContent`** |
+| Toolbar title | `.stickybar .sb-title` → its `textContent` |
+| Toggle button | presence of `.provtoggle`; its `textContent` is the label |
+
+and its toggle button posts `ai-projects-toggle-provenance` back into the frame,
+where the injected script calls **`window.toggleProv(button)` if that function
+exists**, otherwise falls back to toggling `body.prov-hidden`.
+
+Consequences we hit:
+
+- The bar used to nest the site name *inside* the back link, so `backLabel` came out
+  as "←BorderBlend Evidence Map" next to a title of "BorderBlend Evidence Map" — the
+  toolbar said the same thing twice and told you nothing about where you were. The
+  arrow is now `.sb-home::before` (CSS, invisible to `textContent`), the back label
+  is the short constant `chrome.BACK_LABEL`, and `.sb-title` carries the page.
+- The journey maps' toggle did nothing live while working perfectly locally: they
+  defined `toggleItemRefs()` and key their CSS off `.journey-grid.show-refs`, so the
+  fallback flipped a class nothing reads. They now define `toggleProv`.
+- That script also *re-executes* inline scripts to restore `onclick` handlers, and
+  finds them by searching script text for `function <name>`. Declare page handlers as
+  function statements, not `window.x = function`.
 
 ## 5. The viewer changes how these pages render
 
