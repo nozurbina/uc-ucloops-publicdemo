@@ -72,3 +72,5 @@ Second — an experienced franchisee matched to every new franchisee before they
 ## Post-interview notes
 
 Interesting profile: experienced in food operations, inexperienced in brand marketing — this is the inverse of Yuki Tanaka (inexperienced in food operations, more comfortable with social media). The gap is marketing strategy versus brand asset availability. The "tools without instructions for what to build" framing is precise and quotable. Marketing onboarding track suggestion is specific and actionable — pairs with Yuki's social media playbook request (same need, articulated differently). Formal mentorship suggestion (contrasted with informal Slack connection) is consistent across Yuki (INT004) and Kenji — pattern emerging from two independent new franchisee sources. Diego Montoya is being used as an informal mentor by both Kenji and presumably others — he is a de facto knowledge resource that the system relies on without compensating or formally recognising. Benchmarking gap consistent with Yuki.
+
+**Persona mapping:** Diego (Franchisee)

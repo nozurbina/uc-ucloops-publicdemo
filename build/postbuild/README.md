@@ -1,6 +1,6 @@
 # Post-build patches for the BorderBlend site
 
-Three patches are left, and they all exist for the same reason: their targets are the
+Four patches are left, and they all exist for the same reason: their targets are the
 four journey maps that have **no generator** — `journey-map-{late-night,business-lunch}-{v2,v3}.html`
 were authored on `journey-map-template.html` through the ucLoops prompt chain, so
 there is nowhere upstream to put the fix. (`persona-sim-links.py` also touches the
@@ -11,6 +11,7 @@ Run them after every rebuild, in this order:
 ```sh
 python journey-chrome.py    ../site
 python mobile-journey.py    ../site
+python row-collapse.py      ../site
 python persona-sim-links.py ../site
 ```
 
@@ -18,6 +19,7 @@ python persona-sim-links.py ../site
 |---|---|---|
 | `journey-chrome.py` | `uc-journey-chrome`, `uc-journey-perslinks` | Gives the maps the shared sticky bar, defines `toggleProv` so the viewer's toolbar toggle works, folds the per-card "Show references" buttons into the one site-wide toggle, makes in-map reference links scroll + flash their target, and points ~250 persona hrefs per map at the renamed persona pages. |
 | `mobile-journey.py` | `uc-mobile-drawer` | Turns the journey maps' fixed 240px sidebar into an off-canvas drawer below 859px, with a backdrop and an "Open personas & filters" bar. Auto-dismiss is gated on `ucIsNarrow()` so desktop never auto-closes. |
+| `row-collapse.py` | `uc-row-collapse` | **v3 maps only.** Hideable rows + combinable "Views". Clicking a row header removes the row from the grid entirely (safe because the whole contiguous header+cells run goes together); it reappears as a coloured chip in a bar above the map — click to restore, and the bar only exists while something is hidden. A "Views" button opens a dropdown of checkboxes (Empathy, Content strategy, UX design, Marketing & growth, Data & measurement, Strategy/exec) whose ticked set shows the union of rows those disciplines need — Goals is never hidden by a view. The button lives in the sticky bar beside the prov toggle standalone, and is injected into the *parent* viewer toolbar when embedded (the viewer hides our bar; the parent is same-origin), with the panel floated under that toolbar. Must run after `journey-chrome.py` (anchors on its stickybar). The chips bar is sticky against the horizontal scroller and JS-sized to the scrollport, since `.main-content` is as wide as the grid. Wraps `ucJumpTo` so an evidence jump into a hidden row restores it first, and ignores clicks that were actually drag-to-pan gestures. |
 | `persona-sim-links.py` | `uc-persona-sim` | Adds the 🗨️ Chat action to v3 journey sidebar persona cards and the **Launch AI Persona Sim** button to v3 persona pages, both deep-linking `?agent=<id>`. |
 
 All are idempotent — each checks its own marker and skips a file that already has

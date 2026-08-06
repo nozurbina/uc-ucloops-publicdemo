@@ -76,7 +76,9 @@ test.describe('build integrity', () => {
                   'journey-map-late-night-v2.html', 'journey-map-late-night-v3.html'];
     for (const map of maps) {
       const html = readFileSync(path.join(REPO, 'site', map), 'utf8');
-      for (const marker of markers) {
+      // Hideable rows + Views ship on the current maps only; v2 stays as-authored.
+      const expected = map.includes('-v3') ? [...markers, 'uc-row-collapse'] : markers;
+      for (const marker of expected) {
         expect(html.includes(marker), `${map} is missing ${marker}`).toBe(true);
       }
       // Balanced markup: the patches cut and paste whole <div> subtrees.

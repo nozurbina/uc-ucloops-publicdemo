@@ -43,6 +43,7 @@ python build.py --full                          # 44 files (35 + 9 legacy redire
 python v3/render_personas_v3.py                 # the 5 v3 persona pages
 python postbuild/journey-chrome.py    ../site   # journey maps: chrome, toggle, persona relink
 python postbuild/mobile-journey.py    ../site   # journey maps only
+python postbuild/row-collapse.py      ../site   # v3 journey maps only: hideable rows + Views dropdown
 python postbuild/persona-sim-links.py ../site   # last: needs the relinked hrefs and the fresh v3 pages
 python check_links.py                           # 6,479 links, expect 0 broken
 ```
@@ -55,6 +56,13 @@ published folder. Anything in that diff you didn't intend is a bug you just caug
 Four files have **no generator** and are patched forward only:
 `journey-map-{late-night,business-lunch}-{v2,v3}.html`. They were authored on
 `journey-map-template.html` via the ucLoops prompt chain.
+
+**Only the latest version gets updated.** Where a page exists in multiple
+versions (`-v2` vs `-v3`, or any future version bump), apply fixes and content
+changes to the latest version only, unless the user explicitly asks for an
+older version too. Older versions are kept around for comparison, not as
+duplicates to maintain — don't spend tokens syncing a change across all of
+them by default.
 
 ## Tests
 

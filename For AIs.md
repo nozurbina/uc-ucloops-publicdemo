@@ -76,12 +76,14 @@ python build.py --full                          # 44 files: sources, insights, v
 python v3/render_personas_v3.py                 # 5 files: the v3 persona pages
 python postbuild/journey-chrome.py    ../site   # journey maps: chrome, provenance toggle, persona relink
 python postbuild/mobile-journey.py    ../site   # journey maps only
+python postbuild/row-collapse.py      ../site   # v3 journey maps only: hideable rows + Views
 python postbuild/persona-sim-links.py ../site   # journey maps + v3 persona pages
 python check_links.py                           # 6,479 internal links, expect 0 broken
 ```
 
-All three postbuild scripts are idempotent (markers `uc-journey-chrome`,
-`uc-journey-perslinks`, `uc-mobile-drawer`, `uc-persona-sim`), so re-running is safe
+All four postbuild scripts are idempotent (markers `uc-journey-chrome`,
+`uc-journey-perslinks`, `uc-mobile-drawer`, `uc-row-collapse`, `uc-persona-sim`),
+so re-running is safe
 and a partial run can be resumed. Two ordering constraints:
 `persona-sim-links` runs **last** — it needs the v3 renderer's fresh pages (it
 rewrites those five files) and `journey-chrome`'s relinked hrefs, because it finds

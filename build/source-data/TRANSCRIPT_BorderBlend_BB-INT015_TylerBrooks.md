@@ -92,3 +92,5 @@ Key signals:
 - **Newsletter = hard no**, but a narrow yes exists: a *utility* message, not a brand message — specifically "we're here today" (directly solving the truck-status friction) or a genuine deal. Any "story"/brand content is actively unwanted. Notification value for this segment is functional, not emotional.
 
 Cross-references: sits with **Rafael Cruz (BB-INT010)** and **Thomas Hardy (BB-INT011)** as the practical, low-loyalty, price/speed-driven cohort — Tyler is the younger, even lower-engagement end of it (Hardy has no loyalty account either; Cruz is occasional/price-speed). Sharp contrast with the foodie/amplifier consumers **Priya Sharma (BB-INT008)** and **Jasmine Oduro (BB-INT007)**, and critic-blogger **Lena Kowalski (BB-INT009)** — where those profiles engage with menu narrative, platform norms, and provenance, Tyler engages with none of it and still buys twice a week. The contrast is the point: content strategy serves the amplifier minority; convenience, reliability, and price serve the silent majority. Both are real revenue; they are reached through different levers.
+
+**Persona mapping:** Tyler (Everyday 20s)

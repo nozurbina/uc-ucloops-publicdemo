@@ -76,3 +76,5 @@ And the community. The network of franchisees is strong. The most useful thing B
 ## Post-interview notes
 
 High-value participant: experienced, specific, and clearly invested despite frustrations. Key themes: marketing kit adaptation as a parallel content operation franchisees run independently; campaign economics mismatch between HQ assumptions and market reality; franchisee advisory council exists but is consultative and slow; peer network as the most valued support mechanism; the food/product quality as the baseline trust anchor. The Fuego Nights pricing example is specific, quotable, and financially grounded. The "execution layer versus business partner" framing is the core tension of the franchise relationship and will be central to the franchisee insight index. Useful contrast point: Diego is vocal and engaged; compare with Yuki Tanaka (BB-INT004) who is new, overwhelmed, and needs the support Diego no longer needs.
+
+**Persona mapping:** Diego (Franchisee)

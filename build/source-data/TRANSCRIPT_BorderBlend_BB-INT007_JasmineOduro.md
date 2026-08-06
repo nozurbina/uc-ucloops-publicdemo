@@ -64,3 +64,5 @@ What gets engagement from me: specific food content. A close-up of something bei
 ## Post-interview notes
 
 Social-first discovery pathway confirmed; Instagram is the genuine entry point for this consumer type. Quality consistency as the retention driver is interesting — she can detect when it slips. Brand honesty/authenticity is a value dimension she applies critically: generic solidarity content is called out as falling short of what the brand's specific story could do. Provenance content gap is market-specific and Montreal-specific — important for local content strategy. Local truck account dormancy is a specific discovery friction point. The "video about the smoking process" is a named best-practice example of content that works for this consumer type. "Generic content for content's sake" is clearly her main critique — quantity without quality is counterproductive for this segment. She is a genuine brand advocate but her engagement is conditional on content quality. Compare with Priya Sharma (BB-INT008) for the Toronto/TikTok variant of this consumer type.
+
+**Consumer insight:** Social amplifier / Montreal market (informs multiple personas)

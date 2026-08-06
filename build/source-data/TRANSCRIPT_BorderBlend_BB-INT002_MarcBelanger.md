@@ -74,3 +74,5 @@ The gap is marketing. Specifically localisation. HQ builds English-first content
 ## Post-interview notes
 
 Core issue is localisation, not the underlying content strategy. The French voice adaptation challenge is more nuanced than translation — it's about register calibration in a different language. Three-hour campaign adaptation time is a specific, quantifiable cost of the gap. Engagement rate appears positive despite (or because of) the adaptation effort — this is a potential success signal worth exploring. The supply chain satisfaction is consistent and should be noted as a baseline strength. Compare with VER-INT003 (Dr. Sarah Moss) for a parallel French-language access pattern in a completely different industry — cross-brand consistency would strengthen this as a finding. Diego Montoya (BB-INT001) and Marc Bélanger share the campaign economics frustration (Fuego Nights named by both) but from different angles: Diego's is pricing, Marc's is language.
+
+**Persona mapping:** Diego (Franchisee)

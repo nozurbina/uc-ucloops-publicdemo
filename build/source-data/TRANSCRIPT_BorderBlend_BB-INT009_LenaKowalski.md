@@ -64,3 +64,5 @@ What falls short: the environmental and sourcing story. For a brand that is expl
 ## Post-interview notes
 
 Most analytically rigorous participant in the consumer cohort. Her second review and public/private response preference is a useful brand crisis communication signal. Sourcing story as the key gap for Vancouver/sustainability-conscious consumers is specific and market-relevant. The Korean-Mexican origin story content is a named best-practice example that connects brand identity to historical context — that's specific and quotable. The "superlatives undermine credibility" principle is consistent with BorderBlend's own brand voice guidelines — this consumer is applying the same standard the brand has set for itself. Local truck account dormancy mentioned again (consistent with Jasmine Oduro, BB-INT007) — two-source signal for this issue. Her positioning between positive and critical makes her a more useful voice than a pure advocate — she represents informed, demanding loyalty.
+
+**Consumer insight:** Social critic / Vancouver market (informs content and positioning strategy)

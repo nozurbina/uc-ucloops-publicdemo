@@ -70,3 +70,5 @@ More practically: find an experienced franchisee in the network before you open,
 ## Post-interview notes
 
 Key contrast archetype with Diego and Beatriz: new, no industry background, reliant on official guidance. The portal organisation problem is specific: organised by document type, not by user situation. Social media strategy gap is clearly distinct from assets quality — HQ provides the "what" not the "how." Beatriz Santos is named explicitly as the peer support source — the peer network is functioning but entirely through informal individual relationships. Benchmarking gap creates a specific kind of management uncertainty (am I doing okay?) that's distinct from operational challenges. Recipe/food preparation training rated as the best training — product quality confidence is the anchor. "Find an experienced franchisee before you open" is a key recommendation from inside the experience that HQ could formalise. The "I handled them anyway" resilience frame is genuine — she is not failing, she just needed more preparation.
+
+**Persona mapping:** Diego (Franchisee)

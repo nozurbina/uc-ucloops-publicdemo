@@ -1105,7 +1105,7 @@ ul {
 a.ref-item-id{text-decoration:none;}
 
 /* ── v2.1 additions: link trail, provenance links, linked item-refs ── */
-.trail-legend{background:#12345910;border:1px solid #cfd8dc;border-radius:10px;padding:14px 18px;margin:14px 0 4px;font-size:13.5px;line-height:1.6}
+.trail-legend{display:inline-block;max-width:100%;background:#12345910;border:1px solid #cfd8dc;border-radius:10px;padding:14px 18px;margin:14px 0 4px;font-size:13.5px;line-height:1.6}
 .trail-legend b{color:#124559}.trail-legend .step{display:inline-block;background:#fff;border:1px solid #d5dde0;border-radius:6px;padding:2px 9px;margin:2px 2px}
 .trail-legend a{font-weight:600}
 .prov-link{margin-top:8px;font-size:11.5px;opacity:.8}.prov-link a{font-weight:600}
@@ -1534,6 +1534,57 @@ html{overflow-x:clip}
 
 /* A hash jump should not land under the sticky chrome. */
 [id]{scroll-margin-top:calc(var(--chrome-h, 150px) + 1.5rem)}
+
+/* ── uc-row-collapse: hideable rows, restore chips, and the Views dropdown. ── */
+.row-header{cursor:pointer;user-select:none}
+.row-header:hover{filter:brightness(.97)}
+.row-header .uc-row-hide{margin-left:auto;align-self:flex-start;flex:0 0 auto;
+  font-size:.66rem;line-height:1.4rem;opacity:.35;transition:opacity .15s}
+.row-header:hover .uc-row-hide{opacity:.85}
+/* A hidden row leaves the grid entirely. Safe only because the whole contiguous
+   run — header plus every stage cell — goes together; auto-placement would shear
+   every row below if just some of a row's items were removed. */
+.row-header.uc-row-hidden,.grid-cell.uc-row-hidden{display:none}
+
+/* Views button, in the sticky bar next to the provenance toggle and dressed like
+   it (see supplement.css .provtoggle — same orange, same shape). Not the
+   provtoggle class itself: the viewer reads that class's textContent for its
+   toolbar label, and toggleProv's fallback targets it. */
+.uc-views-wrap{position:relative;flex-shrink:0;margin-right:.55rem}
+.uc-views-btn{background:#f59e0b;color:#2c3e50;border:none;border-radius:6px;
+  padding:.32rem .7rem;font-size:.74rem;font-weight:700;cursor:pointer;margin:0;
+  white-space:nowrap;font-family:inherit}
+.uc-views-btn:hover{background:#e08e1e}
+
+.uc-lens-panel{position:absolute;top:calc(100% + 10px);right:0;z-index:520;
+  background:#fff;border:1px solid #d6dde5;border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);padding:.7rem .8rem;width:248px;
+  text-align:left;font-size:.78rem;font-weight:400}
+/* Embedded: body-attached, pinned under the parent's toolbar by ucFloatPanel. */
+.uc-lens-panel.uc-lens-float{right:16px;left:auto}
+.uc-lens-panel[hidden]{display:none}
+.uc-lens-panel label{display:flex;align-items:center;gap:.45rem;padding:.26rem 0;
+  cursor:pointer;font-weight:600;color:#2c3e50;font-size:.78rem}
+.uc-lens-hint{font-size:.68rem;line-height:1.45;color:#64748b;margin:0 0 .5rem}
+.uc-lens-clear{margin-top:.5rem;width:100%;background:#eef2f6;border:1px solid #d6dde5;
+  border-radius:8px;padding:.35rem .6rem;font-family:inherit;font-size:.72rem;
+  font-weight:700;cursor:pointer;color:#2c3e50}
+.uc-lens-clear:hover{background:#e2e8f0}
+
+/* The chips bar above the grid: only exists while rows are hidden. Sticky and
+   JS-sized because .main-content is as wide as the grid. */
+.uc-hiddenrows{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;
+  margin:1rem 1rem 0;padding:.4rem .6rem;background:#fff;border-radius:10px;
+  box-shadow:0 1px 4px rgba(0,0,0,.08);font-size:.78rem;position:sticky;z-index:60;
+  box-sizing:border-box;max-width:calc(100vw - 2rem)}
+.uc-hiddenrows[hidden]{display:none}
+.uc-hidden-lbl{color:#64748b;font-weight:700;white-space:nowrap}
+.uc-chip{display:inline-flex;align-items:center;gap:.35rem;border:1px solid #d6dde5;
+  border-left-width:4px;border-radius:999px;background:#f8fafc;color:#2c3e50;
+  padding:.2rem .6rem;font-family:inherit;font-size:.72rem;font-weight:600;
+  cursor:pointer;white-space:nowrap}
+.uc-chip:hover{background:#eef2f6}
+.uc-chip .uc-chip-plus{opacity:.55;font-size:.66rem}
 </style></head>
 <body>
 <script>
@@ -1543,9 +1594,24 @@ html{overflow-x:clip}
 })();
 </script>
 
-<script>try{if(localStorage.getItem("ucPromoDismissed")==="1")document.documentElement.className+=" uc-promo-hidden";}catch(e){}</script>
+<script>try{if(sessionStorage.getItem("ucPromoDismissed")==="1")document.documentElement.className+=" uc-promo-hidden";}catch(e){}</script>
 
-<div class="uc-chrome"><div class="promo-banner"><button class="promo-close" type="button" onclick="ucCloseBanner()" aria-label="Dismiss this notice" title="Dismiss">&#10005;</button><div class="banner-inner"><img class="banner-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NjMuOTIgMjAwIj4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjkuOC45LCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjEgQnVpbGQgMSkgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGFhZ18xIj4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNTQuNjgsMjVjLTM0LjAxLDAtNjIuNzksMjIuNzYtNzEuOTUsNTMuODRDNzMuNTYsNDcuNzYsNDQuNzgsMjUsMTAuNzcsMjVoLTMuMDV2NzVjMCw0MS4zNCwzMy42Niw3NSw3NSw3NSwxMy4wMywwLDI1LjI5LTMuMzUsMzUuOTgtOS4yMSwxMC42OSw1Ljg2LDIyLjk1LDkuMjEsMzUuOTgsOS4yMWgzLjA1VjI1aC0zLjA1Wk04Mi43MywxNjguOTFjLTM3Ljk5LDAtNjguOTEtMzAuOTEtNjguOTEtNjguOTFWMzEuMTZjMzYuNTksMS41OSw2NS44NiwzMS44OCw2NS44Niw2OC44NGgwYzAsMjUuNzgsMTMuMDgsNDguNTYsMzIuOTUsNjIuMDYtOS4wNSw0LjM4LTE5LjIsNi44NC0yOS45MSw2Ljg0aC4wMVpNMTUxLjY0LDE2OC44M2MtOS41OS0uNDItMTguNjYtMi44MS0yNi44Ni02Ljc3LDExLjc3LTcuOTksMjEuMTYtMTkuMjcsMjYuODYtMzIuNDZ2MzkuMjNaTTExOC43MSwxNTguNzNjLTE5LjczLTEyLjEyLTMyLjkzLTMzLjkxLTMyLjkzLTU4LjczLDAtMzYuOTgsMjkuMjctNjcuMjQsNjUuODYtNjguODR2NjguODRjMCwyNC44Mi0xMy4yLDQ2LjYyLTMyLjkzLDU4LjczWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI5NC42LDczLjU5djMzLjA1aC04LjU1VjI1aDI4LjI2YzkuNDksMCwxNi41OCwyLjI5LDIxLjM4LDYuNzgsNC45LDQuNDgsNy4zLDEwLjIyLDcuMywxN3MtMi4wOSwxMS45OS02LjM2LDE2LjA2Yy00LjI4LDQuMDctOS41OSw2LjQ2LTE2LjA2LDcuM2wyMi4zMSwzNC41MWgtMTAuMjRsLTIxLjM1LTMzLjA1aC0xNi42OVpNMjk0LjYsNjUuNzdoMTguOThjNi44OCwwLDEyLjEtMS42NywxNS41NC00LjksMy40NC0zLjIzLDUuMjEtNy4xOSw1LjIxLTExLjc4LDAtOS4xOC02LjI2LTE2LjA2LTIwLjU0LTE2LjA2aC0xOS4xOXMwLDMyLjc0LDAsMzIuNzRaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzY5LjM5LDI1aDI5LjNjNy43MiwwLDEzLjk3LDEuNzcsMTguODcsNS40Miw0LjksMy42NSw3LjQsOC42NSw3LjQsMTUuMTIsMCwyLjUtLjMxLDQuOS0xLjg4LDguNzYtMS4zNiwzLjc1LTUuMjEsNy41MS0xMC41Myw5LjkxLDUuNDIsMS4zNiw5LjQ5LDQuMDcsMTIuMSw4LjEzLDIuNjEsNC4wNywzLjk2LDguMDMsMy45NiwxMS44OSwwLDcuNC0yLjcxLDEzLjAzLTguMjQsMTYuNzktNS40MiwzLjc1LTEyLjMsNS42My0yMC42NCw1LjYzaC0zMC4zNFYyNWgwWk0zNzcuODQsNjEuMjloMTkuNWMxMi44MiwwLDE4Ljk4LTYuMTUsMTguOTgtMTQuODEsMC05LjI4LTcuOTItMTMuNjYtMTguMzUtMTMuNjZoLTIwLjEydjI4LjQ3aC0uMDFaTTM3Ny44NCw5OC44M2gyMi4xYzUuMzIsMCw5LjkxLTEuMjUsMTMuODctMy42NSw0LjA3LTIuNCw2LjA1LTYuMjYsNi4wNS0xMS41NywwLTMuNjUtMS4xNS02LjU3LTMuNTUtOC44Ni00LjY5LTQuNjktMTAuODQtNS44NC0xNy45My01Ljg0aC0yMC41NHYyOS45M2gwWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTQ2NC44MSwxMDYuNjRoLTguNTVWMjVoOC41NXY4MS42NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNTYuNTUsMjVoLTguNTV2NzMuNjFoLTIxLjc5Yy0xMy42NiwwLTIyLjQyLTcuNjEtMjIuNDItMjQuNjFWMjVoLTguNTV2NTAuMTVoMGMuMTMsOS40NiwyLjgzLDE3LjA0LDguMDIsMjIuNzMsNS4zMiw1Ljg0LDEyLjkzLDguNzYsMjIuNjMsOC43NmgzMC42NlYyNWgtLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTY0Ni43OSw1Ni40OWMtLjEzLTkuNDYtMi44My0xNy4wNC04LjAyLTIyLjczLTUuMzItNS44NC0xMi45My04Ljc2LTIyLjYzLTguNzZoLTMwLjY2djgxLjY0aDguNTV2LTM3Ljc1aDQ0LjIxdjM3Ljc1aDguNTV2LTUwLjE1aC0uMDEsMFpNNTk0LjA0LDYxLjI5di0yOC4yNmgyMS43OWMxMy42NiwwLDIyLjQyLDcuNjEsMjIuNDIsMjQuNjF2My42NWgtNDQuMjEsMFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01NTUuOSwxMDYuNjRoLTguMjNsLTQ0Ljc2LTY4LjMxdjY4LjMxaC04LjIzVjI1aDguMjNsNDQuNzYsNjguNDJWMjVoOC4yM3Y4MS42NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMzEuMjQsMTMxLjI1YzMuNjgsMi43Miw2LjI3LDYuNDgsNy43NywxMS4yNmgtNC45MmMtMS4yNC0zLjM3LTMuMy02LjA1LTYuMTgtOC4wNC0yLjg4LTEuOTktNi40NC0yLjk5LTEwLjctMi45OS0zLjIzLDAtNi4xNy44LTguOCwyLjM5LTIuNjQsMS41OS00LjcxLDMuODgtNi4yMSw2Ljg0LTEuNTEsMi45Ny0yLjI2LDYuNDItMi4yNiwxMC4zNnMuNzUsNy4zOSwyLjI2LDEwLjMzYzEuNTEsMi45NSwzLjU4LDUuMjIsNi4yMSw2LjgxLDIuNjQsMS41OSw1LjU3LDIuMzksOC44LDIuMzksNC4yNSwwLDcuODItMSwxMC43LTIuOTksMi44OC0xLjk5LDQuOTQtNC42Nyw2LjE4LTguMDRoNC45MmMtMS41MSw0Ljc4LTQuMSw4LjU0LTcuNzcsMTEuMjYtMy42OCwyLjcyLTguMzMsNC4wOS0xMy45NSw0LjA5LTQuMywwLTguMTMtMS4wMi0xMS40OS0zLjA2LTMuMzctMi4wNC01Ljk4LTQuODYtNy44NC04LjQ3cy0yLjc5LTcuNzItMi43OS0xMi4zMi45My04Ljc5LDIuNzktMTIuNDIsNC40Ny02LjQ1LDcuODQtOC40N2MzLjM3LTIuMDEsNy4yLTMuMDIsMTEuNDktMy4wMiw1LjYyLDAsMTAuMjcsMS4zNiwxMy45NSw0LjA5WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI4Ny4xMiwxMzAuMTZjMy40NSwyLjA0LDYuMTcsNC44Nyw4LjE0LDguNXMyLjk2LDcuNzUsMi45NiwxMi4zNi0uOTksOC43NC0yLjk2LDEyLjM5LTQuNjgsNi41LTguMTQsOC41NGMtMy40NiwyLjA0LTcuMzUsMy4wNi0xMS42OSwzLjA2cy04LjI0LTEuMDItMTEuNjktMy4wNmMtMy40Ni0yLjA0LTYuMTctNC44OC04LjE0LTguNTQtMS45Ny0zLjY1LTIuOTYtNy43OC0yLjk2LTEyLjM5cy45OS04LjczLDIuOTYtMTIuMzZjMS45Ny0zLjYzLDQuNjgtNi40Nyw4LjE0LTguNSwzLjQ1LTIuMDQsNy4zNS0zLjA2LDExLjY5LTMuMDZzOC4yNCwxLjAyLDExLjY5LDMuMDZaTTI2Ni4yMywxMzMuODFjLTIuNzIsMS41OS00Ljg3LDMuODgtNi40NCw2Ljg0LTEuNTcsMi45Ny0yLjM2LDYuNDItMi4zNiwxMC4zNnMuNzksNy40LDIuMzYsMTAuMzZjMS41NywyLjk3LDMuNzIsNS4yNSw2LjQ0LDYuODRzNS43OSwyLjM5LDkuMiwyLjM5LDYuNDgtLjgsOS4yLTIuMzksNC44Ny0zLjg4LDYuNDQtNi44NGMxLjU3LTIuOTcsMi4zNi02LjQyLDIuMzYtMTAuMzZzLS43OS03LjQtMi4zNi0xMC4zNmMtMS41Ny0yLjk3LTMuNzItNS4yNS02LjQ0LTYuODRzLTUuNzktMi4zOS05LjItMi4zOS02LjQ4LjgtOS4yLDIuMzlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzkyLjI1LDE2OC41OGMtMSwxLjg4LTIuNTQsMy40MS00LjYyLDQuNThzLTQuNjcsMS43Ni03Ljc3LDEuNzYtNS42OS0uNTUtOC4wNC0xLjY2LTQuMjItMi42Mi01LjYxLTQuNTVjLTEuMzktMS45My0yLjItNC4wOS0yLjQyLTYuNDhoNC45MmMuMTgsMS4zNy42OSwyLjc1LDEuNTMsNC4xMnMyLjA2LDIuNTEsMy42NSwzLjQyLDMuNTIsMS4zNiw1Ljc4LDEuMzZjMi45NywwLDUuMjQtLjgsNi44MS0yLjM5czIuMzYtMy42MSwyLjM2LTYuMDVjMC0yLjA4LS41Mi0zLjc4LTEuNTYtNS4wOC0xLjA0LTEuMzEtMi4zMi0yLjMxLTMuODUtMy4wMnMtMy42Mi0xLjQ4LTYuMjgtMi4zM2MtMi45Mi0uOTMtNS4yOC0xLjgzLTcuMDgtMi42OS0xLjc5LS44Ni0zLjMxLTIuMTQtNC41NS0zLjgycy0xLjg2LTMuOTItMS44Ni02LjcxYzAtMy41NCwxLjI0LTYuNDIsMy43Mi04LjY0LDIuNDgtMi4yMSw1Ljg5LTMuMzIsMTAuMjMtMy4zMnM3Ljk0LDEuMDksMTAuNTMsMy4yNmMyLjU5LDIuMTcsNC4xMyw0Ljg3LDQuNjIsOC4xMWgtNC45OGMtLjQtMS45OS0xLjQ1LTMuNzYtMy4xNi01LjMxLTEuNzEtMS41NS00LjA0LTIuMzMtNy4wMS0yLjMzLTIuNzUsMC00Ljk0LjcxLTYuNTgsMi4xMy0xLjY0LDEuNDItMi40NiwzLjM5LTIuNDYsNS45MSwwLDEuOTkuNTEsMy42MSwxLjUzLDQuODVzMi4yNywyLjE5LDMuNzUsMi44NmMxLjQ4LjY2LDMuNTEsMS40Miw2LjA4LDIuMjYsMi45Ny45Myw1LjM3LDEuODQsNy4yMSwyLjcyLDEuODQuODksMy40LDIuMjIsNC42OCwzLjk5czEuOTMsNC4xMiwxLjkzLDcuMDRjMCwyLjEzLS41LDQuMTMtMS41LDYuMDFoMFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MTMuMjgsMTI3LjYydjI4LjM3YzAsNS4wMSwxLjEsOC42OCwzLjI5LDExLjAzczUuMTksMy41Miw5LDMuNTIsNi43OS0xLjE3LDguOTQtMy41MiwzLjIyLTYuMDIsMy4yMi0xMS4wM3YtMjguMzdoNC42NXYyOC4zN2MwLDYuMzMtMS41MywxMS4wNy00LjU4LDE0LjIyLTMuMDYsMy4xNS03LjE1LDQuNzItMTIuMjksNC43MnMtOS4yMy0xLjU3LTEyLjI5LTQuNzJjLTMuMDYtMy4xNC00LjU4LTcuODgtNC41OC0xNC4yMnYtMjguMzdoNC42NS0uMDFaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDYzLjU3LDE3MC43NWgxNy4wMXYzLjcyaC0yMS43MnYtNDYuODRoNC43MnY0My4xMmgtLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTUxNy40MiwxMjcuNjJ2My43OWgtMTMuMzV2NDMuMDVoLTQuNjV2LTQzLjA1aC0xMy4yOXYtMy43OWgzMS4yOVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01MzUuNzUsMTI3LjYydjQ2Ljg0aC00Ljcydi00Ni44NHM0LjcyLDAsNC43MiwwWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTYzNy45NiwxMzEuMjJjMy42OCwyLjY2LDYuMiw2LjI3LDcuNTcsMTAuODNoLTQuODVjLTEuMi0zLjE0LTMuMjItNS42OS02LjA4LTcuNjQtMi44Ni0xLjk1LTYuMjMtMi45Mi0xMC4xMy0yLjkyLTMuMzcsMC02LjQxLjgtOS4xMywyLjM5LTIuNzIsMS41OS00Ljg2LDMuODgtNi40MSw2Ljg0LTEuNTUsMi45Ny0yLjMzLDYuNDItMi4zMywxMC4zNnMuNzksNy41MywyLjM2LDEwLjUsMy43NCw1LjI1LDYuNTEsNi44NCw1LjkyLDIuMzksOS40NywyLjM5YzMuMTQsMCw2LjAyLS43LDguNjQtMi4wOSwyLjYxLTEuNCw0LjczLTMuNDIsNi4zNC02LjA4LDEuNjItMi42NiwyLjU2LTUuNzgsMi44Mi05LjM3aC0xOC40NHYtMy41MmgyMi40OXY0LjEyYy0uMzEsMy45OS0xLjQzLDcuNTctMy4zNiwxMC43Ni0xLjkzLDMuMTktNC41Miw1LjctNy43Nyw3LjU0LTMuMjYsMS44NC02Ljk3LDIuNzYtMTEuMTMsMi43Ni00LjQzLDAtOC4zNy0xLjAxLTExLjgzLTMuMDItMy40Ni0yLjAxLTYuMTQtNC44NC04LjA0LTguNDctMS45LTMuNjMtMi44Ni03Ljc1LTIuODYtMTIuMzZzLjk1LTguNzIsMi44Ni0xMi4zNmMxLjktMy42Myw0LjU3LTYuNDUsOC4wMS04LjQ3LDMuNDMtMi4wMSw3LjM2LTMuMDIsMTEuNzktMy4wMiw1LjMxLDAsOS44MSwxLjMzLDEzLjQ5LDMuOTloLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTU4OS4wNCwxNzQuNDdoLTQuNzJsLTI1LjY4LTM5LjE5djM5LjE5aC00Ljcydi00Ni44NGg0LjcybDI1LjY4LDM5LjI1di0zOS4yNWg0LjcydjQ2Ljg0WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTM0OS4xNiwxNzQuNDdoLTQuNzJsLTI1LjY4LTM5LjE5djM5LjE5aC00Ljcydi00Ni44NGg0LjcybDI1LjY4LDM5LjI1di0zOS4yNWg0LjcydjQ2Ljg0WiIvPgogIDwvZz4KPC9zdmc+" alt="Urbina Consulting"><div class="banner-copy"><div class="banner-line">This is a generated example built with Urbina's ucLoops AI methodology.</div><div class="banner-line">It's even better when used with <b>real research sources!</b></div><div class="banner-line">Learn how to use it yourself on our <a class="banner-link" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">cohort or private courses.</a></div></div><a class="promo-btn" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">Learn more</a></div></div><div class="stickybar"><a class="sb-home" href="index.html" title="Back to the evidence map">← Evidence Map</a><span class="journey-id">JOUR-0002</span><button class="provtoggle" onclick="toggleProv(this)">Show Item IDs &amp; Provenance</button></div></div>
+<div class="uc-chrome"><div class="promo-banner"><button class="promo-close" type="button" onclick="ucCloseBanner()" aria-label="Dismiss this notice" title="Dismiss">&#10005;</button><div class="banner-inner"><img class="banner-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NjMuOTIgMjAwIj4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjkuOC45LCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjEgQnVpbGQgMSkgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGFhZ18xIj4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNTQuNjgsMjVjLTM0LjAxLDAtNjIuNzksMjIuNzYtNzEuOTUsNTMuODRDNzMuNTYsNDcuNzYsNDQuNzgsMjUsMTAuNzcsMjVoLTMuMDV2NzVjMCw0MS4zNCwzMy42Niw3NSw3NSw3NSwxMy4wMywwLDI1LjI5LTMuMzUsMzUuOTgtOS4yMSwxMC42OSw1Ljg2LDIyLjk1LDkuMjEsMzUuOTgsOS4yMWgzLjA1VjI1aC0zLjA1Wk04Mi43MywxNjguOTFjLTM3Ljk5LDAtNjguOTEtMzAuOTEtNjguOTEtNjguOTFWMzEuMTZjMzYuNTksMS41OSw2NS44NiwzMS44OCw2NS44Niw2OC44NGgwYzAsMjUuNzgsMTMuMDgsNDguNTYsMzIuOTUsNjIuMDYtOS4wNSw0LjM4LTE5LjIsNi44NC0yOS45MSw2Ljg0aC4wMVpNMTUxLjY0LDE2OC44M2MtOS41OS0uNDItMTguNjYtMi44MS0yNi44Ni02Ljc3LDExLjc3LTcuOTksMjEuMTYtMTkuMjcsMjYuODYtMzIuNDZ2MzkuMjNaTTExOC43MSwxNTguNzNjLTE5LjczLTEyLjEyLTMyLjkzLTMzLjkxLTMyLjkzLTU4LjczLDAtMzYuOTgsMjkuMjctNjcuMjQsNjUuODYtNjguODR2NjguODRjMCwyNC44Mi0xMy4yLDQ2LjYyLTMyLjkzLDU4LjczWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI5NC42LDczLjU5djMzLjA1aC04LjU1VjI1aDI4LjI2YzkuNDksMCwxNi41OCwyLjI5LDIxLjM4LDYuNzgsNC45LDQuNDgsNy4zLDEwLjIyLDcuMywxN3MtMi4wOSwxMS45OS02LjM2LDE2LjA2Yy00LjI4LDQuMDctOS41OSw2LjQ2LTE2LjA2LDcuM2wyMi4zMSwzNC41MWgtMTAuMjRsLTIxLjM1LTMzLjA1aC0xNi42OVpNMjk0LjYsNjUuNzdoMTguOThjNi44OCwwLDEyLjEtMS42NywxNS41NC00LjksMy40NC0zLjIzLDUuMjEtNy4xOSw1LjIxLTExLjc4LDAtOS4xOC02LjI2LTE2LjA2LTIwLjU0LTE2LjA2aC0xOS4xOXMwLDMyLjc0LDAsMzIuNzRaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzY5LjM5LDI1aDI5LjNjNy43MiwwLDEzLjk3LDEuNzcsMTguODcsNS40Miw0LjksMy42NSw3LjQsOC42NSw3LjQsMTUuMTIsMCwyLjUtLjMxLDQuOS0xLjg4LDguNzYtMS4zNiwzLjc1LTUuMjEsNy41MS0xMC41Myw5LjkxLDUuNDIsMS4zNiw5LjQ5LDQuMDcsMTIuMSw4LjEzLDIuNjEsNC4wNywzLjk2LDguMDMsMy45NiwxMS44OSwwLDcuNC0yLjcxLDEzLjAzLTguMjQsMTYuNzktNS40MiwzLjc1LTEyLjMsNS42My0yMC42NCw1LjYzaC0zMC4zNFYyNWgwWk0zNzcuODQsNjEuMjloMTkuNWMxMi44MiwwLDE4Ljk4LTYuMTUsMTguOTgtMTQuODEsMC05LjI4LTcuOTItMTMuNjYtMTguMzUtMTMuNjZoLTIwLjEydjI4LjQ3aC0uMDFaTTM3Ny44NCw5OC44M2gyMi4xYzUuMzIsMCw5LjkxLTEuMjUsMTMuODctMy42NSw0LjA3LTIuNCw2LjA1LTYuMjYsNi4wNS0xMS41NywwLTMuNjUtMS4xNS02LjU3LTMuNTUtOC44Ni00LjY5LTQuNjktMTAuODQtNS44NC0xNy45My01Ljg0aC0yMC41NHYyOS45M2gwWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTQ2NC44MSwxMDYuNjRoLTguNTVWMjVoOC41NXY4MS42NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNTYuNTUsMjVoLTguNTV2NzMuNjFoLTIxLjc5Yy0xMy42NiwwLTIyLjQyLTcuNjEtMjIuNDItMjQuNjFWMjVoLTguNTV2NTAuMTVoMGMuMTMsOS40NiwyLjgzLDE3LjA0LDguMDIsMjIuNzMsNS4zMiw1Ljg0LDEyLjkzLDguNzYsMjIuNjMsOC43NmgzMC42NlYyNWgtLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTY0Ni43OSw1Ni40OWMtLjEzLTkuNDYtMi44My0xNy4wNC04LjAyLTIyLjczLTUuMzItNS44NC0xMi45My04Ljc2LTIyLjYzLTguNzZoLTMwLjY2djgxLjY0aDguNTV2LTM3Ljc1aDQ0LjIxdjM3Ljc1aDguNTV2LTUwLjE1aC0uMDEsMFpNNTk0LjA0LDYxLjI5di0yOC4yNmgyMS43OWMxMy42NiwwLDIyLjQyLDcuNjEsMjIuNDIsMjQuNjF2My42NWgtNDQuMjEsMFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01NTUuOSwxMDYuNjRoLTguMjNsLTQ0Ljc2LTY4LjMxdjY4LjMxaC04LjIzVjI1aDguMjNsNDQuNzYsNjguNDJWMjVoOC4yM3Y4MS42NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMzEuMjQsMTMxLjI1YzMuNjgsMi43Miw2LjI3LDYuNDgsNy43NywxMS4yNmgtNC45MmMtMS4yNC0zLjM3LTMuMy02LjA1LTYuMTgtOC4wNC0yLjg4LTEuOTktNi40NC0yLjk5LTEwLjctMi45OS0zLjIzLDAtNi4xNy44LTguOCwyLjM5LTIuNjQsMS41OS00LjcxLDMuODgtNi4yMSw2Ljg0LTEuNTEsMi45Ny0yLjI2LDYuNDItMi4yNiwxMC4zNnMuNzUsNy4zOSwyLjI2LDEwLjMzYzEuNTEsMi45NSwzLjU4LDUuMjIsNi4yMSw2LjgxLDIuNjQsMS41OSw1LjU3LDIuMzksOC44LDIuMzksNC4yNSwwLDcuODItMSwxMC43LTIuOTksMi44OC0xLjk5LDQuOTQtNC42Nyw2LjE4LTguMDRoNC45MmMtMS41MSw0Ljc4LTQuMSw4LjU0LTcuNzcsMTEuMjYtMy42OCwyLjcyLTguMzMsNC4wOS0xMy45NSw0LjA5LTQuMywwLTguMTMtMS4wMi0xMS40OS0zLjA2LTMuMzctMi4wNC01Ljk4LTQuODYtNy44NC04LjQ3cy0yLjc5LTcuNzItMi43OS0xMi4zMi45My04Ljc5LDIuNzktMTIuNDIsNC40Ny02LjQ1LDcuODQtOC40N2MzLjM3LTIuMDEsNy4yLTMuMDIsMTEuNDktMy4wMiw1LjYyLDAsMTAuMjcsMS4zNiwxMy45NSw0LjA5WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI4Ny4xMiwxMzAuMTZjMy40NSwyLjA0LDYuMTcsNC44Nyw4LjE0LDguNXMyLjk2LDcuNzUsMi45NiwxMi4zNi0uOTksOC43NC0yLjk2LDEyLjM5LTQuNjgsNi41LTguMTQsOC41NGMtMy40NiwyLjA0LTcuMzUsMy4wNi0xMS42OSwzLjA2cy04LjI0LTEuMDItMTEuNjktMy4wNmMtMy40Ni0yLjA0LTYuMTctNC44OC04LjE0LTguNTQtMS45Ny0zLjY1LTIuOTYtNy43OC0yLjk2LTEyLjM5cy45OS04LjczLDIuOTYtMTIuMzZjMS45Ny0zLjYzLDQuNjgtNi40Nyw4LjE0LTguNSwzLjQ1LTIuMDQsNy4zNS0zLjA2LDExLjY5LTMuMDZzOC4yNCwxLjAyLDExLjY5LDMuMDZaTTI2Ni4yMywxMzMuODFjLTIuNzIsMS41OS00Ljg3LDMuODgtNi40NCw2Ljg0LTEuNTcsMi45Ny0yLjM2LDYuNDItMi4zNiwxMC4zNnMuNzksNy40LDIuMzYsMTAuMzZjMS41NywyLjk3LDMuNzIsNS4yNSw2LjQ0LDYuODRzNS43OSwyLjM5LDkuMiwyLjM5LDYuNDgtLjgsOS4yLTIuMzksNC44Ny0zLjg4LDYuNDQtNi44NGMxLjU3LTIuOTcsMi4zNi02LjQyLDIuMzYtMTAuMzZzLS43OS03LjQtMi4zNi0xMC4zNmMtMS41Ny0yLjk3LTMuNzItNS4yNS02LjQ0LTYuODRzLTUuNzktMi4zOS05LjItMi4zOS02LjQ4LjgtOS4yLDIuMzlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzkyLjI1LDE2OC41OGMtMSwxLjg4LTIuNTQsMy40MS00LjYyLDQuNThzLTQuNjcsMS43Ni03Ljc3LDEuNzYtNS42OS0uNTUtOC4wNC0xLjY2LTQuMjItMi42Mi01LjYxLTQuNTVjLTEuMzktMS45My0yLjItNC4wOS0yLjQyLTYuNDhoNC45MmMuMTgsMS4zNy42OSwyLjc1LDEuNTMsNC4xMnMyLjA2LDIuNTEsMy42NSwzLjQyLDMuNTIsMS4zNiw1Ljc4LDEuMzZjMi45NywwLDUuMjQtLjgsNi44MS0yLjM5czIuMzYtMy42MSwyLjM2LTYuMDVjMC0yLjA4LS41Mi0zLjc4LTEuNTYtNS4wOC0xLjA0LTEuMzEtMi4zMi0yLjMxLTMuODUtMy4wMnMtMy42Mi0xLjQ4LTYuMjgtMi4zM2MtMi45Mi0uOTMtNS4yOC0xLjgzLTcuMDgtMi42OS0xLjc5LS44Ni0zLjMxLTIuMTQtNC41NS0zLjgycy0xLjg2LTMuOTItMS44Ni02LjcxYzAtMy41NCwxLjI0LTYuNDIsMy43Mi04LjY0LDIuNDgtMi4yMSw1Ljg5LTMuMzIsMTAuMjMtMy4zMnM3Ljk0LDEuMDksMTAuNTMsMy4yNmMyLjU5LDIuMTcsNC4xMyw0Ljg3LDQuNjIsOC4xMWgtNC45OGMtLjQtMS45OS0xLjQ1LTMuNzYtMy4xNi01LjMxLTEuNzEtMS41NS00LjA0LTIuMzMtNy4wMS0yLjMzLTIuNzUsMC00Ljk0LjcxLTYuNTgsMi4xMy0xLjY0LDEuNDItMi40NiwzLjM5LTIuNDYsNS45MSwwLDEuOTkuNTEsMy42MSwxLjUzLDQuODVzMi4yNywyLjE5LDMuNzUsMi44NmMxLjQ4LjY2LDMuNTEsMS40Miw2LjA4LDIuMjYsMi45Ny45Myw1LjM3LDEuODQsNy4yMSwyLjcyLDEuODQuODksMy40LDIuMjIsNC42OCwzLjk5czEuOTMsNC4xMiwxLjkzLDcuMDRjMCwyLjEzLS41LDQuMTMtMS41LDYuMDFoMFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MTMuMjgsMTI3LjYydjI4LjM3YzAsNS4wMSwxLjEsOC42OCwzLjI5LDExLjAzczUuMTksMy41Miw5LDMuNTIsNi43OS0xLjE3LDguOTQtMy41MiwzLjIyLTYuMDIsMy4yMi0xMS4wM3YtMjguMzdoNC42NXYyOC4zN2MwLDYuMzMtMS41MywxMS4wNy00LjU4LDE0LjIyLTMuMDYsMy4xNS03LjE1LDQuNzItMTIuMjksNC43MnMtOS4yMy0xLjU3LTEyLjI5LTQuNzJjLTMuMDYtMy4xNC00LjU4LTcuODgtNC41OC0xNC4yMnYtMjguMzdoNC42NS0uMDFaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDYzLjU3LDE3MC43NWgxNy4wMXYzLjcyaC0yMS43MnYtNDYuODRoNC43MnY0My4xMmgtLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTUxNy40MiwxMjcuNjJ2My43OWgtMTMuMzV2NDMuMDVoLTQuNjV2LTQzLjA1aC0xMy4yOXYtMy43OWgzMS4yOVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01MzUuNzUsMTI3LjYydjQ2Ljg0aC00Ljcydi00Ni44NHM0LjcyLDAsNC43MiwwWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTYzNy45NiwxMzEuMjJjMy42OCwyLjY2LDYuMiw2LjI3LDcuNTcsMTAuODNoLTQuODVjLTEuMi0zLjE0LTMuMjItNS42OS02LjA4LTcuNjQtMi44Ni0xLjk1LTYuMjMtMi45Mi0xMC4xMy0yLjkyLTMuMzcsMC02LjQxLjgtOS4xMywyLjM5LTIuNzIsMS41OS00Ljg2LDMuODgtNi40MSw2Ljg0LTEuNTUsMi45Ny0yLjMzLDYuNDItMi4zMywxMC4zNnMuNzksNy41MywyLjM2LDEwLjUsMy43NCw1LjI1LDYuNTEsNi44NCw1LjkyLDIuMzksOS40NywyLjM5YzMuMTQsMCw2LjAyLS43LDguNjQtMi4wOSwyLjYxLTEuNCw0LjczLTMuNDIsNi4zNC02LjA4LDEuNjItMi42NiwyLjU2LTUuNzgsMi44Mi05LjM3aC0xOC40NHYtMy41MmgyMi40OXY0LjEyYy0uMzEsMy45OS0xLjQzLDcuNTctMy4zNiwxMC43Ni0xLjkzLDMuMTktNC41Miw1LjctNy43Nyw3LjU0LTMuMjYsMS44NC02Ljk3LDIuNzYtMTEuMTMsMi43Ni00LjQzLDAtOC4zNy0xLjAxLTExLjgzLTMuMDItMy40Ni0yLjAxLTYuMTQtNC44NC04LjA0LTguNDctMS45LTMuNjMtMi44Ni03Ljc1LTIuODYtMTIuMzZzLjk1LTguNzIsMi44Ni0xMi4zNmMxLjktMy42Myw0LjU3LTYuNDUsOC4wMS04LjQ3LDMuNDMtMi4wMSw3LjM2LTMuMDIsMTEuNzktMy4wMiw1LjMxLDAsOS44MSwxLjMzLDEzLjQ5LDMuOTloLjAxWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTU4OS4wNCwxNzQuNDdoLTQuNzJsLTI1LjY4LTM5LjE5djM5LjE5aC00Ljcydi00Ni44NGg0LjcybDI1LjY4LDM5LjI1di0zOS4yNWg0LjcydjQ2Ljg0WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTM0OS4xNiwxNzQuNDdoLTQuNzJsLTI1LjY4LTM5LjE5djM5LjE5aC00Ljcydi00Ni44NGg0LjcybDI1LjY4LDM5LjI1di0zOS4yNWg0LjcydjQ2Ljg0WiIvPgogIDwvZz4KPC9zdmc+" alt="Urbina Consulting"><div class="banner-copy"><div class="banner-line">This is a generated example built with Urbina's ucLoops AI methodology.</div><div class="banner-line">It's even better when used with <b>real research sources!</b></div><div class="banner-line">Learn how to use it yourself on our <a class="banner-link" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">cohort or private courses.</a></div></div><a class="promo-btn" href="https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-2026/">Learn more</a></div></div><div class="stickybar"><a class="sb-home" href="index.html" title="Back to the evidence map">← Evidence Map</a><span class="journey-id">JOUR-0002</span><span class="uc-views-wrap">
+<button class="uc-views-btn" type="button" onclick="ucToggleLensPanel()" aria-haspopup="true" aria-expanded="false">Views &#9662;</button>
+<div class="uc-lens-panel" hidden>
+<p class="uc-lens-hint">Tick views to combine them &mdash; the map shows every row any
+ticked view needs, and Goals always stays. Changing views resets individual row
+choices; untick everything for the full map.</p>
+<label><input type="checkbox" data-lens="empathy" onchange="ucLensChange()"> &#128155; Empathy</label>
+<label><input type="checkbox" data-lens="content" onchange="ucLensChange()"> &#128221; Content strategy</label>
+<label><input type="checkbox" data-lens="ux" onchange="ucLensChange()"> &#129517; UX design</label>
+<label><input type="checkbox" data-lens="marketing" onchange="ucLensChange()"> &#128200; Marketing &amp; growth</label>
+<label><input type="checkbox" data-lens="data" onchange="ucLensChange()"> &#128202; Data &amp; measurement</label>
+<label><input type="checkbox" data-lens="strategy" onchange="ucLensChange()"> &#9823;&#65039; Strategy / exec</label>
+<button class="uc-lens-clear" type="button" onclick="ucLensClear()">Show all rows</button>
+</div>
+</span>
+<button class="provtoggle" onclick="toggleProv(this)">Show Item IDs &amp; Provenance</button></div></div>
 
 
 
@@ -1592,14 +1658,17 @@ html{overflow-x:clip}
 
 <div class="journey-header">
 <h1>Business Lunch — Awareness to Newsletter Subscription (v3)</h1>
-<p class="journey-description">Two professionals — Omar, a solo weekday regular, and Grace, a thirty-person office coordinator — travel from a trusted colleague’s tip about a signature <span class="entity">Dish</span> at the <span class="entity">Truck</span>, through solo vetting, the <span class="entity">App</span>, and group <span class="entity">Catering</span> orders, to opting into the lunch alerts and <span class="entity">Catering</span> <span class="entity">Newsletter</span> that turn an earned habit into a subscribed, year-round relationship.<div class="trail-legend"><a class="trail-toggle" href="#" onclick="return ucToggleFromTrail()"><b>Evidence trail</b></a>:
+<p class="journey-description">Two professionals — Omar, a solo weekday regular, and Grace, a thirty-person office coordinator — travel from a trusted colleague’s tip about a signature <span class="entity">Dish</span> at the <span class="entity">Truck</span>, through solo vetting, the <span class="entity">App</span>, and group <span class="entity">Catering</span> orders, to opting into the lunch alerts and <span class="entity">Catering</span> <span class="entity">Newsletter</span> that turn an earned habit into a subscribed, year-round relationship. The <span class="entity">Meal</span> occasion in focus is <span class="entity">lunch</span> — the weekday midday break and the team / catering window.<div class="trail-legend"><a class="trail-toggle" href="#" onclick="return ucToggleFromTrail()"><b>Evidence trail</b></a>:
 <span class="step">Journey <em>(this page)</em></span> →
 <span class="step"><a href="pers-omar-business-lunch-v3.html">Omar</a> &amp; <a href="pers-grace-business-lunch-v3.html">Grace</a>’s personas</span> →
 <span class="step"><a href="insights.html">36 research insights</a></span> →
-<span class="step">Source verbatims <em>(interviews, tickets, app logs, market report — linked from each insight)</em></span>.
-<br>Every persona row links up into the Business-Lunch persona (<span class="prov-link" style="opacity:1">↳ from Omar’s / Grace’s persona</span>); every item ID is a deep link to its source; each opportunity lists the persona lines, insights and source verbatims it draws on — click one to jump to it in the map; each insight links down to the dated verbatim.</div> The <span class="entity">Meal</span> occasion in focus is <span class="entity">lunch</span> — the weekday midday break and the team / catering window.</p>
+<span class="step">Source verbatims <em>(interviews, tickets, app logs, market report — linked from each insight)</em></span>.</div></p>
 </div>
 
+<div class="uc-hiddenrows" hidden>
+<span class="uc-hidden-lbl">Hidden rows &mdash; click to restore:</span>
+<span class="uc-chip-list"></span>
+</div>
 <div class="grid-container">
 <div class="journey-grid">
 
@@ -3072,7 +3141,7 @@ document.addEventListener('DOMContentLoaded', function(){
   window.ucFitChrome=fit;
   window.ucCloseBanner=function(){
     document.documentElement.classList.add("uc-promo-hidden");
-    try{localStorage.setItem(KEY,"1");}catch(e){}
+    try{sessionStorage.setItem(KEY,"1");}catch(e){}
     fit();
   };
   fit();
@@ -3402,6 +3471,255 @@ function ucToggleFromTrail(){ toggleProv(document.querySelector('.provtoggle'));
     if(down && down.panning) grid.classList.remove("uc-dragging");
     down = null;
   });
+})();
+</script>
+<script>
+/* uc-row-collapse */
+var UC_ROW_PRESETS = {
+  empathy:   ["narrative-row", "sentiment-row", "quote-row", "questions-row"],
+  content:   ["channels-row", "content-assets-row", "cta-row", "questions-row",
+              "entry-signals-row", "opportunities-row"],
+  ux:        ["tasks-row", "problems-row", "alternate-paths-row", "questions-row",
+              "entry-signals-row", "transitions-row", "opportunities-row"],
+  marketing: ["channels-row", "entry-signals-row", "transitions-row", "cta-row",
+              "opportunities-row"],
+  data:      ["data-generated-row", "data-used-row", "entry-signals-row", "transitions-row"],
+  strategy:  ["goals-row", "problems-row", "opportunities-row", "sentiment-row"]
+};
+
+function ucRowClass(el){
+  var cls = null;
+  el.classList.forEach(function(c){
+    if(c !== "row-header" && c !== "grid-cell" && c !== "uc-row-hidden" && /-row$/.test(c)) cls = c;
+  });
+  return cls;
+}
+
+function ucSetRow(cls, show){
+  document.querySelectorAll(".row-header." + cls + ", .grid-cell." + cls).forEach(function(el){
+    el.classList.toggle("uc-row-hidden", !show);
+  });
+}
+
+function ucSyncChips(){
+  var list = document.querySelector(".uc-chip-list");
+  var bar = document.querySelector(".uc-hiddenrows");
+  if(!list || !bar) return;
+  list.textContent = "";
+  var hidden = document.querySelectorAll(".row-header.uc-row-hidden");
+  bar.hidden = hidden.length === 0;
+  hidden.forEach(function(h){
+    var cls = ucRowClass(h);
+    if(!cls) return;
+    var chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "uc-chip";
+    var icon = h.querySelector(".row-icon");
+    var label = "";
+    h.childNodes.forEach(function(n){ if(n.nodeType === 3) label += n.textContent; });
+    label = label.replace(/\s+/g, " ").trim();
+    var ic = document.createElement("span");
+    ic.textContent = icon ? icon.textContent : "";
+    var tx = document.createElement("span");
+    tx.textContent = label;
+    var plus = document.createElement("span");
+    plus.className = "uc-chip-plus";
+    plus.textContent = "\uFF0B";
+    chip.appendChild(ic); chip.appendChild(tx); chip.appendChild(plus);
+    chip.title = "Show the " + label + " row again";
+    /* Row accent colour straight off the header, so no colour table lives here.
+       Computed style resolves fine on a display:none element. */
+    try{ chip.style.borderLeftColor = getComputedStyle(h).borderLeftColor; }catch(e){}
+    chip.addEventListener("click", function(){ ucShowRow(cls); });
+    list.appendChild(chip);
+  });
+}
+
+function ucShowRow(cls){
+  function apply(){ ucSetRow(cls, true); ucSyncChips(); }
+  if(window.ucKeepPlace) ucKeepPlace(apply); else apply();
+}
+
+function ucHideRow(cls){
+  function apply(){ ucSetRow(cls, false); ucSyncChips(); }
+  if(window.ucKeepPlace) ucKeepPlace(apply); else apply();
+}
+
+function ucLensChange(){
+  var keep = [];
+  document.querySelectorAll(".uc-lens-panel input[data-lens]:checked").forEach(function(cb){
+    keep = keep.concat(UC_ROW_PRESETS[cb.getAttribute("data-lens")] || []);
+  });
+  function apply(){
+    document.querySelectorAll(".row-header[data-uc-collapsible]").forEach(function(h){
+      var cls = ucRowClass(h);
+      if(!cls) return;
+      /* Goals is the frame the rest hangs off: no view ever hides it. */
+      ucSetRow(cls, keep.length === 0 || cls === "goals-row" || keep.indexOf(cls) !== -1);
+    });
+    ucSyncChips();
+  }
+  if(window.ucKeepPlace) ucKeepPlace(apply); else apply();
+}
+
+function ucLensClear(){
+  document.querySelectorAll(".uc-lens-panel input[data-lens]").forEach(function(cb){
+    cb.checked = false;
+  });
+  ucLensChange();
+}
+
+function ucToggleLensPanel(){
+  var p = document.querySelector(".uc-lens-panel");
+  if(!p) return;
+  p.hidden = !p.hidden;
+  document.querySelectorAll(".uc-views-btn").forEach(function(b){
+    b.setAttribute("aria-expanded", p.hidden ? "false" : "true");
+  });
+  if(!p.hidden) ucFloatPanel();
+}
+
+/* Embedded, the sticky bar (and the in-bar button) is hidden and the panel's
+   anchor is a button in the PARENT toolbar — so the panel re-parents to <body>
+   and pins just under that toolbar, at the top of the visible band of the frame.
+   position:fixed is no use here: inside an auto-height iframe it pins to the
+   whole frame, not the screen (same story as the pan bar). */
+function ucFloatPanel(){
+  var p = document.querySelector(".uc-lens-panel");
+  if(!p || !document.documentElement.classList.contains("uc-embedded")) return;
+  try{
+    var pwin = window.parent;
+    var fr = pwin.document.getElementById("ai-projects-frame-content");
+    if(!fr || fr.contentWindow !== window) return;
+    if(p.parentNode !== document.body){
+      p.classList.add("uc-lens-float");
+      document.body.appendChild(p);
+    }
+    var tb = pwin.document.querySelector(".ai-projects-project-toolbar");
+    var visTop = Math.max(0, -fr.getBoundingClientRect().top);
+    p.style.top = Math.round(visTop + (tb ? tb.offsetHeight : 0) + 12) + "px";
+  }catch(e){}
+}
+
+/* The viewer rebuilds only back-link + title + prov-toggle in its toolbar, so the
+   in-bar Views button is invisible embedded. The parent is same-origin: put a
+   matching button into that toolbar directly, and put it back whenever the
+   viewer rebuilds the bar. Deliberately NOT the plugin's __toggle class — the
+   plugin and the tests select by it. */
+function ucMountToolbarViews(){
+  if(!document.documentElement.classList.contains("uc-embedded")) return;
+  try{
+    var pwin = window.parent;
+    var fr = pwin.document.getElementById("ai-projects-frame-content");
+    if(!fr || fr.contentWindow !== window) return;
+    var tb = pwin.document.querySelector(".ai-projects-project-toolbar");
+    if(!tb || tb.querySelector(".uc-views-toolbar-btn")) return;
+    var b = pwin.document.createElement("button");
+    b.type = "button";
+    b.className = "uc-views-toolbar-btn";
+    b.textContent = "Views \u25BE";
+    b.style.cssText = "margin-left:auto;background:#f59e0b;color:#2c3e50;border:none;" +
+      "border-radius:6px;padding:.32rem .7rem;font-size:.74rem;font-weight:700;" +
+      "cursor:pointer;white-space:nowrap;font-family:inherit";
+    var ref = tb.querySelector(".ai-projects-project-toolbar__toggle");
+    if(ref){ ref.style.marginLeft = "10px"; tb.insertBefore(b, ref); }
+    else tb.appendChild(b);
+    b.addEventListener("click", function(){ ucToggleLensPanel(); });
+    if(pwin.MutationObserver && !window.ucViewsTbObserver){
+      window.ucViewsTbObserver = new pwin.MutationObserver(function(){ ucMountToolbarViews(); });
+      window.ucViewsTbObserver.observe(tb, {childList: true});
+    }
+  }catch(e){}
+}
+
+/* Pin the chips bar to the visible slice of the map. Mirrors the pan bar: find
+   who actually scrolls sideways, then place against that scrollport, in its
+   content coordinates — holds in the app layout (fixed sidebar + margin) and the
+   embedded flow layout (static sidebar) alike. */
+function ucPlaceRowbar(){
+  var chips = document.querySelector(".uc-hiddenrows");
+  var mc = document.querySelector(".main-content");
+  var grid = document.querySelector(".journey-grid");
+  if(!chips || !mc || !grid) return;
+  var sc = grid.parentElement;
+  while(sc && sc !== document.documentElement && sc.scrollWidth <= sc.clientWidth + 1)
+    sc = sc.parentElement;
+  if(!sc || sc === document.documentElement){
+    chips.style.left = ""; chips.style.width = "";
+    return;
+  }
+  var offset = mc.getBoundingClientRect().left - sc.getBoundingClientRect().left + sc.scrollLeft;
+  chips.style.left = Math.round(offset + 16) + "px";
+  chips.style.width = Math.round(sc.clientWidth - offset - 32) + "px";
+}
+
+(function(){
+  if(window.ucRowCollapse) return;   /* the viewer re-executes inline scripts */
+  window.ucRowCollapse = true;
+
+  var downAt = null;
+  document.querySelectorAll(".row-header").forEach(function(h){
+    if(!ucRowClass(h) || h.dataset.ucCollapsible) return;
+    h.dataset.ucCollapsible = "1";
+    h.setAttribute("role", "button");
+    h.setAttribute("tabindex", "0");
+    h.title = "Hide this row (restore it from the bar above the map)";
+    var x = document.createElement("span");
+    x.className = "uc-row-hide";
+    x.textContent = "\u2715";
+    h.appendChild(x);
+    h.addEventListener("pointerdown", function(e){ downAt = {x: e.clientX, y: e.clientY}; });
+    h.addEventListener("click", function(e){
+      /* Same 5px threshold journey-chrome's pan uses: a pan is not a hide. */
+      if(downAt && (Math.abs(e.clientX - downAt.x) > 5 || Math.abs(e.clientY - downAt.y) > 5)) return;
+      ucHideRow(ucRowClass(h));
+    });
+    h.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " "){ e.preventDefault(); ucHideRow(ucRowClass(h)); }
+    });
+  });
+
+  /* The Views panel closes on an outside click or Escape, like any dropdown.
+     (A click on the parent-toolbar button never reaches this document, so it
+     cannot fight the toggle.) */
+  document.addEventListener("click", function(e){
+    var p = document.querySelector(".uc-lens-panel");
+    if(!p || p.hidden) return;
+    if(e.target && e.target.closest &&
+       e.target.closest(".uc-views-wrap, .uc-lens-panel")) return;
+    ucToggleLensPanel();
+  });
+  document.addEventListener("keydown", function(e){
+    var p = document.querySelector(".uc-lens-panel");
+    if(e.key === "Escape" && p && !p.hidden) ucToggleLensPanel();
+  });
+
+  window.addEventListener("resize", ucPlaceRowbar);
+  window.addEventListener("load", function(){ ucPlaceRowbar(); ucMountToolbarViews(); });
+  ucPlaceRowbar();
+  /* The parent toolbar may not exist yet at parse time. */
+  ucMountToolbarViews();
+  setTimeout(ucMountToolbarViews, 1000);
+  setTimeout(ucMountToolbarViews, 3000);
+  /* Keep the floating panel under the toolbar while it is open. */
+  if(document.documentElement.classList.contains("uc-embedded"))
+    setInterval(function(){
+      var p = document.querySelector(".uc-lens-panel");
+      if(p && !p.hidden) ucFloatPanel();
+    }, 250);
+
+  /* An evidence jump must never land in a hidden row. journey-chrome already
+     wraps ucJumpTo to reveal provenance first; this wraps that. */
+  var jump = window.ucJumpTo;
+  if(jump) window.ucJumpTo = function(id){
+    var el = document.getElementById(id);
+    var cell = el && el.closest ? el.closest(".grid-cell.uc-row-hidden") : null;
+    if(cell){
+      var cls = ucRowClass(cell);
+      if(cls) ucShowRow(cls);
+    }
+    return jump(id);
+  };
 })();
 </script>
 </body>

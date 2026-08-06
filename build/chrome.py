@@ -51,9 +51,11 @@ PROMO_URL = "https://urbinaconsulting.com/shares/ucloops/cohort-journeys-sept-20
 MARKER = "<!-- uc-chrome -->"
 
 # Runs during parsing, before the banner exists, so a banner dismissed on an
-# earlier page never flashes into view on this one.
+# earlier page never flashes into view on this one. sessionStorage, not
+# localStorage: dismissal should hold for the rest of this visit (across page
+# navigations in the same tab) but reappear on the next visit, not vanish forever.
 EARLY = (
-    '<script>try{if(localStorage.getItem("ucPromoDismissed")==="1")'
+    '<script>try{if(sessionStorage.getItem("ucPromoDismissed")==="1")'
     'document.documentElement.className+=" uc-promo-hidden";}catch(e){}</script>\n'
 )
 
@@ -293,7 +295,7 @@ SCRIPTS = JUMP_HELPERS + """<script>
   window.ucFitChrome=fit;
   window.ucCloseBanner=function(){
     document.documentElement.classList.add("uc-promo-hidden");
-    try{localStorage.setItem(KEY,"1");}catch(e){}
+    try{sessionStorage.setItem(KEY,"1");}catch(e){}
     fit();
   };
   fit();

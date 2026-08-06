@@ -74,3 +74,5 @@ HQ should formalise this more. The informal network is great but it's fragile â€
 ## Post-interview notes
 
 Highest-value participant in the franchisee cohort for a different reason than Diego: she has longitudinal perspective and scale. Key themes: quality brand support infrastructure development over five years; campaign planning exclusion is a consistent pattern at all tenure levels; local social brand equity (her local account > national account) is a significant finding about where brand relationships actually live; informal franchisee peer network as the de facto support system; financial modelling gap for scaling decisions. The "content calendar with local-execution ideas" suggestion is specific and implementable â€” distinct from Diego's "involve us in campaign design" (those are not the same request; this is less about co-creation and more about clear national-local framing). Financial model for expansion is a gap that a newer franchisee (Yuki, Kenji) would feel more acutely. "Ideas from the trucks not the boardroom" is a strong closing line.
+
+**Persona mapping:** Diego (Franchisee)
